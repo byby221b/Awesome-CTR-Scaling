@@ -39,6 +39,7 @@ This repository focuses on a rapidly emerging research direction: how to effecti
 | **Realizing Scaling Laws in Recommender Systems: A Foundation-Expert Paradigm for Hyperscale Model Deployment** | Meta | arXiv | 2025 | [[Paper]](https://arxiv.org/abs/2508.02929) | Foundation model + surface-specific experts; HyperCast infrastructure; first Foundation-Expert deployment at scale |
 | **MTmixAtt: Integrating Mixture-of-Experts with Multi-Mix Attention for Large-Scale Recommendation** | Meituan | arXiv | 2025 | [[Paper]](https://arxiv.org/abs/2510.15286) | MoE + multi-mix attention with AutoToken; scales to 1B params; +3.62% payment PV |
 | **OnePiece: Bringing Context Engineering and Reasoning to Industrial Cascade Ranking System** | Shopee | arXiv | 2025 | [[Paper]](https://arxiv.org/abs/2509.18091) | LLM-style context engineering + block-wise latent reasoning in cascade ranking; +2% GMV |
+| **INFNet: Aggregate and Broadcast: Scalable and Efficient Feature Interaction for Recommender Systems** | Kuaishou | arXiv | 2025 | [[Paper]](https://arxiv.org/abs/2508.11565) | Linear-complexity task-aware feature interaction via aggregate-and-broadcast hub tokens; +1.587% revenue and +1.155% CTR in online ads |
 | **Kunlun: Establishing Scaling Laws for Massive-Scale Recommendation Systems Through Unified Architecture Design** | Meta | arXiv | 2026 | [[Paper]](https://arxiv.org/abs/2602.10016) | Unified architecture design for predictable scaling laws; governs relationship between performance and computational investment |
 | **SparseCTR: Unleashing the Potential of Sparse Attention on Long-Term Behaviors for CTR Prediction** | Meituan | WWW | 2026 | [[Paper]](https://arxiv.org/abs/2601.17836) | Three-branch sparse attention for long behaviors; demonstrates scaling law across 3 orders of magnitude in FLOPs |
 | **LLaTTE: Scaling Laws for Multi-Stage Sequence Modeling in Large-Scale Ads Recommendation** | Meta | arXiv | 2026 | [[Paper]](https://arxiv.org/abs/2601.20083) | Power-law scaling for ads rec; two-stage async architecture; largest user model at Meta; +4.3% conversion |
@@ -91,7 +92,7 @@ Additional papers that are relevant to understanding the CTR scaling landscape.
 | **Google** | Hiformer |
 | **LinkedIn** | LiRank, CADET |
 | **NetEase** | Climber |
-| **Kuaishou** | UniMixer, CHIME, VQL |
+| **Kuaishou** | UniMixer, INFNet, CHIME, VQL |
 | **Shopee** | OnePiece |
 
 ## Contributing
