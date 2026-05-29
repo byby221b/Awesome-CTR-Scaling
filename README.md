@@ -54,7 +54,7 @@ This repository focuses on a rapidly emerging research direction: how to effecti
 | **ULTRA-HSTU: Bending the Scaling Law Curve in Large-Scale Recommendation Systems** | Meta | arXiv | 2026 | [[Paper]](https://arxiv.org/abs/2602.16986) | Sparse Attention + FlashAttention-V3; bends the scaling curve beyond HSTU |
 | **CADET: Context-Conditioned Ads CTR Prediction With a Decoder-Only Transformer** | LinkedIn | arXiv | 2026 | [[Paper]](https://arxiv.org/abs/2602.11410) | Decoder-only Transformer for ads CTR; self-gated attention, timestamp RoPE, Flash Attention |
 | **SORT: A Systematically Optimized Ranking Transformer for Industrial-Scale Recommenders** | Alibaba | arXiv | 2026 | [[Paper]](https://arxiv.org/abs/2603.03988) | Systematically optimizes Transformer for industrial ranking; addresses high feature heterogeneity challenges |
-| **Beyond Dense Connectivity: Explicit Sparsity for Scalable Recommendation** | - | SIGIR | 2026 | [[Paper]](https://arxiv.org/abs/2604.08011) | Introduces explicit sparsity mechanisms as an alternative to dense connectivity for scalable recommendation |
+| **Beyond Dense Connectivity: Explicit Sparsity for Scalable Recommendation** | Alibaba | SIGIR | 2026 | [[Paper]](https://arxiv.org/abs/2604.08011) | Introduces explicit sparsity mechanisms as an alternative to dense connectivity for scalable recommendation |
 | **TokenFormer: Unify the Multi-Field and Sequential Recommendation Worlds** | Tencent | arXiv | 2026 | [[Paper]](https://arxiv.org/abs/2604.13737) | Unifies multi-field and sequential recommendation; Bottom-Full-Top-Sliding attention; solves Sequential Collapse Propagation |
 | **UniMixer: A Unified Architecture for Scaling Laws in Recommendation Systems** | Kuaishou | arXiv | 2026 | [[Paper]](https://arxiv.org/abs/2604.00590) | Unifies attention/TokenMixer/FM into single scaling framework; proposes UniMixing-Lite for improved scaling ROI |
 | **RankUp: Towards High-Rank Representations for Large Scale Advertising Recommender Systems** | Tencent (Weixin) | arXiv | 2026 | [[Paper]](https://arxiv.org/abs/2604.17878) | Addresses representation collapse when scaling MetaFormer-based ranking models |
@@ -89,7 +89,7 @@ Additional papers that are relevant to understanding the CTR scaling landscape.
 |:--------|:-------|
 | **Meta** | Understanding Scaling Laws, Wukong, HSTU, InterFormer, ULTRA-HSTU, Foundation-Expert, Kunlun, LLaTTE, DHEN |
 | **ByteDance** | RankMixer, OneTrans, HyFormer, Zenith, TokenMixer-Large, UG-Sep, MixFormer, Rec-Distill, LONGER, Make It Long Keep It Fast |
-| **Alibaba** | GPSD, FAT, HHFT, EST, HeteroMixer, SORT, ENCODE, MUSE |
+| **Alibaba** | GPSD, FAT, HHFT, EST, HeteroMixer, SORT, Beyond Dense Connectivity, ENCODE, MUSE |
 | **Meituan** | SUAN, MTFM, MTmixAtt, SparseCTR |
 | **Tencent** | GE4Rec, TokenFormer, RankUp (Weixin) |
 | **Google** | Hiformer |
