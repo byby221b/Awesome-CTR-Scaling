@@ -58,6 +58,7 @@ This repository focuses on a rapidly emerging research direction: how to effecti
 | **TokenFormer: Unify the Multi-Field and Sequential Recommendation Worlds** | Tencent | arXiv | 2026 | [[Paper]](https://arxiv.org/abs/2604.13737) | Unifies multi-field and sequential recommendation; Bottom-Full-Top-Sliding attention; solves Sequential Collapse Propagation |
 | **UniMixer: A Unified Architecture for Scaling Laws in Recommendation Systems** | Kuaishou | arXiv | 2026 | [[Paper]](https://arxiv.org/abs/2604.00590) | Unifies attention/TokenMixer/FM into single scaling framework; proposes UniMixing-Lite for improved scaling ROI |
 | **RankUp: Towards High-Rank Representations for Large Scale Advertising Recommender Systems** | Tencent (Weixin) | arXiv | 2026 | [[Paper]](https://arxiv.org/abs/2604.17878) | Addresses representation collapse when scaling MetaFormer-based ranking models |
+| **On the Practice of Scaling Search Conversion Rate Prediction** | Coupang | arXiv | 2026 | [[Paper]](https://arxiv.org/abs/2605.29232) | **Search CVR** scaling: empirical study across backbone compute / embedding size / training data (independent and additive); warmstart training + decoupled graph execution + dynamic batching for low-latency GPU serving |
 | **Rec-Distill: An Industrial Distillation Pipeline for Large-Scale Recommendation Models** | ByteDance | arXiv | 2026 | [[Paper]](https://arxiv.org/abs/2605.29755) | Industrial knowledge distillation pipeline transferring large-scale teacher ranking models into deployable student models for production serving |
 
 > 🌱 **Emerging sub-direction — Distillation & Compression for Scaling**: Rec-Distill (above) tackles the deployment bottleneck of scaled ranking models via knowledge distillation. To be promoted into a dedicated sub-section once more works appear.
@@ -97,6 +98,7 @@ Additional papers that are relevant to understanding the CTR scaling landscape.
 | **NetEase** | Climber |
 | **Kuaishou** | UniMixer, INFNet, CHIME, VQL |
 | **Shopee** | OnePiece |
+| **Coupang** | Search CVR Scaling |
 
 ## Contributing
 
