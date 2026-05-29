@@ -59,9 +59,10 @@ This repository focuses on a rapidly emerging research direction: how to effecti
 | **UniMixer: A Unified Architecture for Scaling Laws in Recommendation Systems** | Kuaishou | arXiv | 2026 | [[Paper]](https://arxiv.org/abs/2604.00590) | Unifies attention/TokenMixer/FM into single scaling framework; proposes UniMixing-Lite for improved scaling ROI |
 | **RankUp: Towards High-Rank Representations for Large Scale Advertising Recommender Systems** | Tencent (Weixin) | arXiv | 2026 | [[Paper]](https://arxiv.org/abs/2604.17878) | Addresses representation collapse when scaling MetaFormer-based ranking models |
 | **On the Practice of Scaling Search Conversion Rate Prediction** | Coupang | arXiv | 2026 | [[Paper]](https://arxiv.org/abs/2605.29232) | **Search CVR** scaling: empirical study across backbone compute / embedding size / training data (independent and additive); warmstart training + decoupled graph execution + dynamic batching for low-latency GPU serving |
+| **LoopFM: Learning frOm HistOrical RePresentations of Foundation Model for Recommendation** | Meta | arXiv | 2026 | [[Paper]](https://arxiv.org/abs/2605.29280) | FM-to-VM knowledge transfer via cached FM intermediate embeddings as VM input features; bypasses real-time FM serving; ~2× transfer ratio over scalar KD on trillion-param FMs |
 | **Rec-Distill: An Industrial Distillation Pipeline for Large-Scale Recommendation Models** | ByteDance | arXiv | 2026 | [[Paper]](https://arxiv.org/abs/2605.29755) | Industrial knowledge distillation pipeline transferring large-scale teacher ranking models into deployable student models for production serving |
 
-> 🌱 **Emerging sub-direction — Distillation & Compression for Scaling**: Rec-Distill (above) tackles the deployment bottleneck of scaled ranking models via knowledge distillation. To be promoted into a dedicated sub-section once more works appear.
+> 🌱 **Emerging sub-direction — Distillation & Compression for Scaling**: Rec-Distill and LoopFM (above) tackle the deployment bottleneck of scaled ranking/foundation models — via knowledge distillation and cached-representation transfer respectively. To be promoted into a dedicated sub-section as more works appear.
 
 ## Related Work
 
@@ -88,7 +89,7 @@ Additional papers that are relevant to understanding the CTR scaling landscape.
 
 | Company | Papers |
 |:--------|:-------|
-| **Meta** | Understanding Scaling Laws, Wukong, HSTU, InterFormer, ULTRA-HSTU, Foundation-Expert, Kunlun, LLaTTE, DHEN |
+| **Meta** | Understanding Scaling Laws, Wukong, HSTU, InterFormer, ULTRA-HSTU, Foundation-Expert, Kunlun, LLaTTE, DHEN, LoopFM |
 | **ByteDance** | RankMixer, OneTrans, HyFormer, Zenith, TokenMixer-Large, UG-Sep, MixFormer, Rec-Distill, LONGER, Make It Long Keep It Fast |
 | **Alibaba** | GPSD, FAT, HHFT, EST, HeteroMixer, SORT, Beyond Dense Connectivity, ENCODE, MUSE |
 | **Meituan** | SUAN, MTFM, MTmixAtt, SparseCTR |
