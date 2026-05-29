@@ -58,30 +58,57 @@ This repository focuses on a rapidly emerging research direction: how to effecti
 | **TokenFormer: Unify the Multi-Field and Sequential Recommendation Worlds** | Tencent | arXiv | 2026 | [[Paper]](https://arxiv.org/abs/2604.13737) | Unifies multi-field and sequential recommendation; Bottom-Full-Top-Sliding attention; solves Sequential Collapse Propagation |
 | **UniMixer: A Unified Architecture for Scaling Laws in Recommendation Systems** | Kuaishou | arXiv | 2026 | [[Paper]](https://arxiv.org/abs/2604.00590) | Unifies attention/TokenMixer/FM into single scaling framework; proposes UniMixing-Lite for improved scaling ROI |
 | **RankUp: Towards High-Rank Representations for Large Scale Advertising Recommender Systems** | Tencent (Weixin) | arXiv | 2026 | [[Paper]](https://arxiv.org/abs/2604.17878) | Addresses representation collapse when scaling MetaFormer-based ranking models |
+| **LoopCTR: Unlocking the Loop Scaling Power for Click-Through Rate Prediction** | Alibaba | arXiv | 2026 | [[Paper]](https://arxiv.org/abs/2604.19550) | "Loop scaling" paradigm via recursive reuse of shared layers; decouples training-time compute from parameter count; train-multi-loop, infer-zero-loop strategy |
+| **Expand More, Shrink Less: Shaping Effective-Rank Dynamics for Dense Scaling in Recommendation** | Tencent | KDD | 2026 | [[Paper]](https://arxiv.org/abs/2605.23191) | Identifies embedding collapse in RankMixer-style dense scaling; RankElastor with parameterized full mixing + GLU-improved P-FFNs for spectrum-robust scaling |
+| **Selective Test-Time Compute Scaling for CTR Prediction via Uncertainty-Triggered Feature Path Exploration** | Alibaba | arXiv | 2026 | [[Paper]](https://arxiv.org/abs/2605.24989) | UTTSI: training-free per-instance test-time compute scaling for CTR; routes uncertain instances through stochastic feature-path explorations |
 | **On the Practice of Scaling Search Conversion Rate Prediction** | Coupang | arXiv | 2026 | [[Paper]](https://arxiv.org/abs/2605.29232) | **Search CVR** scaling: empirical study across backbone compute / embedding size / training data (independent and additive); warmstart training + decoupled graph execution + dynamic batching for low-latency GPU serving |
-| **LoopFM: Learning frOm HistOrical RePresentations of Foundation Model for Recommendation** | Meta | arXiv | 2026 | [[Paper]](https://arxiv.org/abs/2605.29280) | FM-to-VM knowledge transfer via cached FM intermediate embeddings as VM input features; bypasses real-time FM serving; ~2× transfer ratio over scalar KD on trillion-param FMs |
-| **Rec-Distill: An Industrial Distillation Pipeline for Large-Scale Recommendation Models** | ByteDance | arXiv | 2026 | [[Paper]](https://arxiv.org/abs/2605.29755) | Industrial knowledge distillation pipeline transferring large-scale teacher ranking models into deployable student models for production serving |
-
-> 🌱 **Emerging sub-direction — Distillation & Compression for Scaling**: Rec-Distill and LoopFM (above) tackle the deployment bottleneck of scaled ranking/foundation models — via knowledge distillation and cached-representation transfer respectively. To be promoted into a dedicated sub-section as more works appear.
 
 ## Related Work
 
-Additional papers that are relevant to understanding the CTR scaling landscape.
+Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 
-- **KDEF**: KD+DML framework enabling CTR models to follow scaling laws — [[Paper]](https://arxiv.org/abs/2411.16122) (2024)
-- **CETNet**: Collaborative ensemble with confidence-based fusion — [[Paper]](https://arxiv.org/abs/2411.13700) (Meta, 2024)
+### Long Sequence Modeling
+
 - **CHIME**: Compressive framework for holistic interest modeling; LLM-based encoding + residual VQ — [[Paper]](https://arxiv.org/abs/2504.06780) (Kuaishou, 2025)
 - **LONGER**: Scales ultra-long user behavior sequences beyond two-stage retrieval — [[Paper]](https://arxiv.org/abs/2505.04421) (ByteDance, RecSys 2025)
-- **VQL**: Context-aware vector quantization attention for ultra-long behavior modeling — [[Paper]](https://arxiv.org/abs/2508.17125) (Kuaishou, 2025)
 - **ENCODE**: Efficient clustering-based two-stage approach for long-term user interest modeling — [[Paper]](https://arxiv.org/abs/2508.13567) (Alibaba, TKDE 2025)
-- **LIME**: Linear attention (O(N)) for efficient scaling — [[Paper]](https://arxiv.org/abs/2510.18239) (2025)
+- **VQL**: Context-aware vector quantization attention for ultra-long behavior modeling — [[Paper]](https://arxiv.org/abs/2508.17125) (Kuaishou, 2025)
 - **Make It Long, Keep It Fast**: End-to-end 10K-sequence modeling at billion scale on Douyin — [[Paper]](https://arxiv.org/abs/2511.06077) (ByteDance, 2025)
 - **MUSE**: Multimodal search-based framework for 100K-length lifelong user interest modeling — [[Paper]](https://arxiv.org/abs/2512.07216) (Alibaba, 2025)
-- **COFFEE**: Enriches embeddings following scaling law principles — [[Paper]](https://arxiv.org/abs/2601.02807) (Meta, 2026)
 - **PerSRec**: Compresses long histories into learnable tokens for HSTU/HLLM — [[Paper]](https://arxiv.org/abs/2601.03479) (Meta, 2026)
 - **MALLOC**: Benchmark for memory-efficient long sequence compression — [[Paper]](https://arxiv.org/abs/2601.20234) (2026)
+- **MoS (Mixture of Sequence)**: Theme-aware MoE for long-sequence recommendation; routes subsequences to filter session-hopping noise — [[Paper]](https://arxiv.org/abs/2604.20858) (Meta, WWW 2026)
+- **Memento**: RAG-style long-retention data scaling for Meta Ads; MMR-based retrieval over user-history corpus — [[Paper]](https://arxiv.org/abs/2605.24051) (Meta, 2026)
+- **SIREN**: Multi-modal lifelong user interest via unified multi-granularity semantic interaction; deployed in Tencent advertising (Weixin) — [[Paper]](https://arxiv.org/abs/2605.25726) (Tencent, 2026)
+
+### Generative Recommendation
+
+- **SID-MLP**: MLP-centric distillation of attention-heavy generative recommender decoders; 8.74× inference speedup — [[Paper]](https://arxiv.org/abs/2605.12617) (UCSD / Snap, 2026)
+- **Towards Generalizable and Efficient Large-Scale Generative Recommenders**: Addresses task headroom, repeated-training cost, serving latency, and item freshness for production GR — [[Paper]](https://arxiv.org/abs/2605.23312) (Netflix, 2026)
+- **TubiFM**: Unified foundation model across item / carousel / search ranking for streaming discovery — [[Paper]](https://arxiv.org/abs/2605.23702) (Tubi, 2026)
+
+### Knowledge Distillation & Compression
+
+- **KDEF**: KD+DML framework enabling CTR models to follow scaling laws — [[Paper]](https://arxiv.org/abs/2411.16122) (2024)
+- **LoopFM**: FM-to-VM knowledge transfer via cached FM intermediate embeddings; bypasses real-time FM serving; ~2× transfer ratio over scalar KD on trillion-param FMs — [[Paper]](https://arxiv.org/abs/2605.29280) (Meta, 2026)
+- **Rec-Distill**: Industrial knowledge distillation pipeline transferring large-scale teacher ranking models into deployable student models — [[Paper]](https://arxiv.org/abs/2605.29755) (ByteDance, 2026)
+
+### Engineering & Serving
+
+- **LIME**: Linear attention (O(N)) for efficient scaling — [[Paper]](https://arxiv.org/abs/2510.18239) (2025)
+- **Quantized Inference for OneRec-V2**: Low-precision quantization for industrial recommender deployment; OneRec follow-up — [[Paper]](https://arxiv.org/abs/2603.11486) (Kuaishou, 2026)
 - **SOLARIS**: Speculative offloading for serving large rec foundation models — [[Paper]](https://arxiv.org/abs/2604.12110) (Meta, 2026)
+- **FreeScale**: Distributed training system; load-balanced samples + prioritized embedding updates + SM-free communication; up to 90.3% bubble reduction on 256 H100s — [[Paper]](https://arxiv.org/abs/2604.24073) (Meta, MLSys 2026)
 - **Versioned Late Materialization**: Data infrastructure for ultra-long sequence training — [[Paper]](https://arxiv.org/abs/2604.24806) (Meta, 2026)
+
+### Retrieval & Reranking Scaling
+
+- **Scaling Laws for Cross-Encoder Reranking**: First systematic study of scaling laws for cross-encoder rerankers across pointwise / pairwise / listwise objectives — [[Paper]](https://arxiv.org/abs/2603.04816) (Academic, 2026)
+
+### Other
+
+- **CETNet**: Collaborative ensemble with confidence-based fusion — [[Paper]](https://arxiv.org/abs/2411.13700) (Meta, 2024)
+- **COFFEE**: Enriches embeddings following scaling law principles — [[Paper]](https://arxiv.org/abs/2601.02807) (Meta, 2026)
 
 ---
 
@@ -89,17 +116,19 @@ Additional papers that are relevant to understanding the CTR scaling landscape.
 
 | Company | Papers |
 |:--------|:-------|
-| **Meta** | Understanding Scaling Laws, Wukong, HSTU, InterFormer, ULTRA-HSTU, Foundation-Expert, Kunlun, LLaTTE, DHEN, LoopFM |
+| **Meta** | Understanding Scaling Laws, Wukong, HSTU, InterFormer, ULTRA-HSTU, Foundation-Expert, Kunlun, LLaTTE, DHEN, LoopFM, MoS, Memento, FreeScale |
 | **ByteDance** | RankMixer, OneTrans, HyFormer, Zenith, TokenMixer-Large, UG-Sep, MixFormer, Rec-Distill, LONGER, Make It Long Keep It Fast |
-| **Alibaba** | GPSD, FAT, HHFT, EST, HeteroMixer, SORT, Beyond Dense Connectivity, ENCODE, MUSE |
+| **Alibaba** | GPSD, FAT, HHFT, EST, HeteroMixer, SORT, Beyond Dense Connectivity, LoopCTR, UTTSI, ENCODE, MUSE |
 | **Meituan** | SUAN, MTFM, MTmixAtt, SparseCTR |
-| **Tencent** | GE4Rec, TokenFormer, RankUp (Weixin) |
+| **Tencent** | GE4Rec, TokenFormer, RankUp (Weixin), RankElastor, SIREN (Weixin) |
 | **Google** | Hiformer |
 | **LinkedIn** | LiRank, CADET |
 | **NetEase** | Climber |
-| **Kuaishou** | UniMixer, INFNet, CHIME, VQL |
+| **Kuaishou** | UniMixer, INFNet, CHIME, VQL, OneRec-V2 Quantized |
 | **Shopee** | OnePiece |
 | **Coupang** | Search CVR Scaling |
+| **Netflix** | Large-Scale Generative Recommenders |
+| **Tubi** | TubiFM |
 
 ## Contributing
 
