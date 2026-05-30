@@ -96,6 +96,7 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 ### Engineering & Serving
 
 - **LIME**: Linear attention (O(N)) for efficient scaling — [[Paper]](https://arxiv.org/abs/2510.18239) (2025)
+- **Context Features Are Cheap**: Rank-Aware Decomposition for Efficient Feature Interaction in Recommender Systems — [[Paper]](https://arxiv.org/abs/2605.27450) (2026)
 - **Quantized Inference for OneRec-V2**: Low-precision quantization for industrial recommender deployment; OneRec follow-up — [[Paper]](https://arxiv.org/abs/2603.11486) (Kuaishou, 2026)
 - **SOLARIS**: Speculative offloading for serving large rec foundation models — [[Paper]](https://arxiv.org/abs/2604.12110) (Meta, 2026)
 - **FreeScale**: Distributed training system; load-balanced samples + prioritized embedding updates + SM-free communication; up to 90.3% bubble reduction on 256 H100s — [[Paper]](https://arxiv.org/abs/2604.24073) (Meta, MLSys 2026)
@@ -107,6 +108,7 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 
 ### Other
 
+- **ACE**: Anisotropy-Controllable Embedding for LLM-enhanced Sequential Recommendation — [[Paper]](https://arxiv.org/abs/2605.29322) (SIGIR 2026)
 - **CETNet**: Collaborative ensemble with confidence-based fusion — [[Paper]](https://arxiv.org/abs/2411.13700) (Meta, 2024)
 - **COFFEE**: Enriches embeddings following scaling law principles — [[Paper]](https://arxiv.org/abs/2601.02807) (Meta, 2026)
 
