@@ -108,7 +108,6 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 
 ### Other
 
-- **ACE**: Anisotropy-Controllable Embedding for LLM-enhanced Sequential Recommendation — [[Paper]](https://arxiv.org/abs/2605.29322) (SIGIR 2026)
 - **CETNet**: Collaborative ensemble with confidence-based fusion — [[Paper]](https://arxiv.org/abs/2411.13700) (Meta, 2024)
 - **COFFEE**: Enriches embeddings following scaling law principles — [[Paper]](https://arxiv.org/abs/2601.02807) (Meta, 2026)
 
