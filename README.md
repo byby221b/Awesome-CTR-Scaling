@@ -31,9 +31,7 @@ This repository focuses on a rapidly emerging research direction: how to effecti
 | **SUAN: Exploring Scaling Laws of CTR Model for Online Performance Improvement** | Meituan | RecSys | 2025 | [[Paper]](https://arxiv.org/abs/2508.15326) | Systematically explores how CTR model scaling translates to online performance; practical methodology for scaling decisions |
 | **Climber: Toward Efficient Scaling Laws for Large Recommendation Models** | NetEase | WWW | 2025 | [[Paper]](https://arxiv.org/abs/2502.09888) | Multi-scale sequence extraction + dynamic temperature modulation; first publicly documented continuous online scaling |
 | **RankMixer: Scaling Up Ranking Models in Industrial Recommenders** | ByteDance | CIKM | 2025 | [[Paper]](https://arxiv.org/abs/2507.15551) | Efficient TokenMixer-based architecture for scaling ranking models; addresses training and serving cost |
-| **GE4Rec: From Feature Interaction to Feature Generation: A Generative Paradigm of CTR Prediction Models** | Tencent | arXiv | 2025 | [[Paper]](https://arxiv.org/abs/2512.14041) | Shifts from discriminative feature interaction to supervised feature generation paradigm |
 | **HHFT: Hierarchical Heterogeneous Feature Transformer for Recommendation Systems** | Alibaba | arXiv | 2025 | [[Paper]](https://arxiv.org/abs/2511.20235) | Hierarchical Transformer addressing DNN limitations with three key designs for heterogeneous features |
-| **GPSD: Scaling Transformers for Discriminative Recommendation via Generative Pretraining** | Alibaba | KDD | 2025 | [[Paper]](https://arxiv.org/abs/2506.03699) | Generative pretraining for discriminative downstream tasks (CTR/CVR); bridges generative and discriminative paradigms |
 | **Realizing Scaling Laws in Recommender Systems: A Foundation-Expert Paradigm for Hyperscale Model Deployment** | Meta | arXiv | 2025 | [[Paper]](https://arxiv.org/abs/2508.02929) | Foundation model + surface-specific experts; HyperCast infrastructure; first Foundation-Expert deployment at scale |
 | **MTmixAtt: Integrating Mixture-of-Experts with Multi-Mix Attention for Large-Scale Recommendation** | Meituan | arXiv | 2025 | [[Paper]](https://arxiv.org/abs/2510.15286) | MoE + multi-mix attention with AutoToken; scales to 1B params |
 | **OnePiece: Bringing Context Engineering and Reasoning to Industrial Cascade Ranking System** | Shopee | arXiv | 2025 | [[Paper]](https://arxiv.org/abs/2509.18091) | LLM-style context engineering + block-wise latent reasoning in cascade ranking |
@@ -61,7 +59,6 @@ This repository focuses on a rapidly emerging research direction: how to effecti
 | **RankUp: Towards High-Rank Representations for Large Scale Advertising Recommender Systems** | Tencent (Weixin) | arXiv | 2026 | [[Paper]](https://arxiv.org/abs/2604.17878) | Addresses representation collapse when scaling MetaFormer-based ranking models |
 | **LoopCTR: Unlocking the Loop Scaling Power for Click-Through Rate Prediction** | Alibaba | arXiv | 2026 | [[Paper]](https://arxiv.org/abs/2604.19550) | "Loop scaling" paradigm via recursive reuse of shared layers; decouples training-time compute from parameter count; train-multi-loop, infer-zero-loop strategy |
 | **Expand More, Shrink Less: Shaping Effective-Rank Dynamics for Dense Scaling in Recommendation** | Tencent | KDD | 2026 | [[Paper]](https://arxiv.org/abs/2605.23191) | Identifies embedding collapse in RankMixer-style dense scaling; RankElastor with parameterized full mixing + GLU-improved P-FFNs for spectrum-robust scaling |
-| **Self-Balancing Gradient Allocation for Heterogeneity-Aware Feature Generation in Click-Through Rate Prediction** | Alibaba | arXiv | 2026 | [[Paper]](https://arxiv.org/abs/2605.24986) | HeteGenCTR: per-field learnable difficulty parameters for generative CTR; self-balancing loss and difficulty-guided attention address generative difficulty imbalance |
 | **Selective Test-Time Compute Scaling for CTR Prediction via Uncertainty-Triggered Feature Path Exploration** | Alibaba | arXiv | 2026 | [[Paper]](https://arxiv.org/abs/2605.24989) | UTTSI: training-free per-instance test-time compute scaling for CTR; routes uncertain instances through stochastic feature-path explorations |
 | **On the Practice of Scaling Search Conversion Rate Prediction** | Coupang | arXiv | 2026 | [[Paper]](https://arxiv.org/abs/2605.29232) | **Search CVR** scaling: empirical study across backbone compute / embedding size / training data (independent and additive); warmstart training + decoupled graph execution + dynamic batching for low-latency GPU serving |
 
@@ -92,6 +89,12 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 - **TubiFM**: Unified foundation model across item / carousel / search ranking for streaming discovery — [[Paper]](https://arxiv.org/abs/2605.23702) (Tubi, 2026)
 - **DeGRe**: Dense-supervised generative reranking with offline-online decoupled design; deployed on Taobao Flash Shopping — [[Paper]](https://arxiv.org/abs/2605.25749) (Alibaba, KDD 2026)
 - **VarLenRec**: Variable-length tokenization for generative recommendation via hyperbolic residual quantization; addresses Popularity-Length Paradox — [[Paper]](https://arxiv.org/abs/2605.17779) (2026)
+
+### Generative Pre-training for CTR
+
+- **GE4Rec**: Shifts from discriminative feature interaction to supervised feature generation paradigm — [[Paper]](https://arxiv.org/abs/2512.14041) (Tencent, 2025)
+- **GPSD**: Generative pretraining for discriminative downstream tasks (CTR/CVR); bridges generative and discriminative paradigms — [[Paper]](https://arxiv.org/abs/2506.03699) (Alibaba, KDD 2025)
+- **HeteGenCTR**: Per-field learnable difficulty parameters for generative CTR; self-balancing loss and difficulty-guided attention address generative difficulty imbalance — [[Paper]](https://arxiv.org/abs/2605.24986) (Alibaba, 2026)
 
 ### Knowledge Distillation & Compression
 
