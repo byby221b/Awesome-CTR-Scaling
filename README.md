@@ -54,7 +54,6 @@ This repository focuses on a rapidly emerging research direction: how to effecti
 | **SORT: A Systematically Optimized Ranking Transformer for Industrial-Scale Recommenders** | Alibaba | arXiv | 2026 | [[Paper]](https://arxiv.org/abs/2603.03988) | Systematically optimizes Transformer for industrial ranking; addresses high feature heterogeneity challenges |
 | **Beyond Dense Connectivity: Explicit Sparsity for Scalable Recommendation** | Alibaba | SIGIR | 2026 | [[Paper]](https://arxiv.org/abs/2604.08011) | Introduces explicit sparsity mechanisms as an alternative to dense connectivity for scalable recommendation |
 | **TokenFormer: Unify the Multi-Field and Sequential Recommendation Worlds** | Tencent | arXiv | 2026 | [[Paper]](https://arxiv.org/abs/2604.13737) | Unifies multi-field and sequential recommendation; Bottom-Full-Top-Sliding attention; solves Sequential Collapse Propagation |
-| **Sample Is Feature: Beyond Item-Level, Toward Sample-Level Tokens for Unified Large Recommender Models** | Meituan | arXiv | 2026 | [[Paper]](https://arxiv.org/abs/2604.15650) | Encodes historical raw samples directly into sequence tokens via HGAQ; unifies sample information scaling and model capacity scaling |
 | **UniMixer: A Unified Architecture for Scaling Laws in Recommendation Systems** | Kuaishou | arXiv | 2026 | [[Paper]](https://arxiv.org/abs/2604.00590) | Unifies attention/TokenMixer/FM into single scaling framework; proposes UniMixing-Lite for improved scaling ROI |
 | **RankUp: Towards High-Rank Representations for Large Scale Advertising Recommender Systems** | Tencent (Weixin) | arXiv | 2026 | [[Paper]](https://arxiv.org/abs/2604.17878) | Addresses representation collapse when scaling MetaFormer-based ranking models |
 | **LoopCTR: Unlocking the Loop Scaling Power for Click-Through Rate Prediction** | Alibaba | arXiv | 2026 | [[Paper]](https://arxiv.org/abs/2604.19550) | "Loop scaling" paradigm via recursive reuse of shared layers; decouples training-time compute from parameter count; train-multi-loop, infer-zero-loop strategy |
@@ -79,8 +78,12 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 - **MoS (Mixture of Sequence)**: Theme-aware MoE for long-sequence recommendation; routes subsequences to filter session-hopping noise — [[Paper]](https://arxiv.org/abs/2604.20858) (Meta, WWW 2026)
 - **Memento**: RAG-style long-retention data scaling for Meta Ads; MMR-based retrieval over user-history corpus — [[Paper]](https://arxiv.org/abs/2605.24051) (Meta, 2026)
 - **SIREN**: Multi-modal lifelong user interest via unified multi-granularity semantic interaction; deployed in Tencent advertising (Weixin) — [[Paper]](https://arxiv.org/abs/2605.25726) (Tencent, 2026)
-- **IAT**: Instance-As-Token compression compresses all features of each historical interaction into a unified instance embedding — [[Paper]](https://arxiv.org/abs/2604.08933) (2026)
 - **LENS**: Target-Conditioned Query Gate and Position Bias for restoring target-specific control in latent-query CTR backbones — [[Paper]](https://arxiv.org/abs/2605.25583) (2026)
+
+### Sample/Instance Compression for Sequence Modeling
+
+- **IAT**: Instance-As-Token compression compresses all features of each historical interaction into a unified instance embedding — [[Paper]](https://arxiv.org/abs/2604.08933) (2026)
+- **SIF**: Encodes historical raw samples directly into sequence tokens via hierarchical group-adaptive quantization (HGAQ); unifies sample information scaling and model capacity scaling — [[Paper]](https://arxiv.org/abs/2604.15650) (Meituan, 2026)
 
 ### Generative Recommendation
 
@@ -131,7 +134,7 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 | **Meta** | Understanding Scaling Laws, Wukong, HSTU, InterFormer, ULTRA-HSTU, Foundation-Expert, Kunlun, LLaTTE, DHEN, LoopFM, MoS, Memento, FreeScale |
 | **ByteDance** | RankMixer, OneTrans, HyFormer, Zenith, TokenMixer-Large, UG-Sep, MixFormer, Rec-Distill, LONGER, Make It Long Keep It Fast |
 | **Alibaba** | GPSD, FAT, HHFT, EST, HeteroMixer, SORT, Beyond Dense Connectivity, LoopCTR, UTTSI, HeteGenCTR, ENCODE, MUSE |
-| **Meituan** | SUAN, MTFM, MTmixAtt, SparseCTR, SIF |
+| **Meituan** | SUAN, MTFM, MTmixAtt, SparseCTR |
 | **Tencent** | GE4Rec, TokenFormer, RankUp (Weixin), RankElastor, SIREN (Weixin) |
 | **Google** | Hiformer |
 | **LinkedIn** | LiRank, CADET |
