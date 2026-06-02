@@ -38,17 +38,17 @@ This repository focuses on a rapidly emerging research direction: how to effecti
 | **INFNet: Aggregate and Broadcast: Scalable and Efficient Feature Interaction for Recommender Systems** | Kuaishou | arXiv | 2025 | [[Paper]](https://arxiv.org/abs/2508.11565) | Linear-complexity task-aware feature interaction via aggregate-and-broadcast hub tokens |
 | **OneTrans: Unified Feature Interaction and Sequence Modeling with One Transformer in Industrial Recommender** | ByteDance | WWW | 2026 | [[Paper]](https://arxiv.org/abs/2510.26104) | Unified tokenizer + causal attention + KV caching; co-optimizes sequence and feature interaction |
 | **FAT: From Scaling to Structured Expressivity: Rethinking Transformers for CTR Prediction** | Alibaba | KDD | 2026 | [[Paper]](https://arxiv.org/abs/2511.12081) | Field-Aware Transformer with decomposed content alignment; first formal scaling law for CTR based on Rademacher complexity |
-| **Kunlun: Establishing Scaling Laws for Massive-Scale Recommendation Systems Through Unified Architecture Design** | Meta | arXiv | 2026 | [[Paper]](https://arxiv.org/abs/2602.10016) | Unified architecture design for predictable scaling laws; governs relationship between performance and computational investment |
+| **Kunlun: Establishing Scaling Laws for Massive-Scale Recommendation Systems Through Unified Architecture Design** | Meta | KDD | 2026 | [[Paper]](https://arxiv.org/abs/2602.10016) | Unified architecture design for predictable scaling laws; governs relationship between performance and computational investment |
 | **SparseCTR: Unleashing the Potential of Sparse Attention on Long-Term Behaviors for CTR Prediction** | Meituan | WWW | 2026 | [[Paper]](https://arxiv.org/abs/2601.17836) | Three-branch sparse attention for long behaviors; demonstrates scaling law across 3 orders of magnitude in FLOPs |
 | **LLaTTE: Scaling Laws for Multi-Stage Sequence Modeling in Large-Scale Ads Recommendation** | Meta | arXiv | 2026 | [[Paper]](https://arxiv.org/abs/2601.20083) | Power-law scaling for ads rec; two-stage async architecture; largest user model at Meta |
-| **HyFormer: Revisiting the Roles of Sequence Modeling and Feature Interaction in CTR Prediction** | ByteDance | arXiv | 2026 | [[Paper]](https://arxiv.org/abs/2601.12681) | Revisits the roles of sequence modeling vs. feature interaction under efficiency constraints |
+| **HyFormer: Revisiting the Roles of Sequence Modeling and Feature Interaction in CTR Prediction** | ByteDance | SIGIR | 2026 | [[Paper]](https://arxiv.org/abs/2601.12681) | Revisits the roles of sequence modeling vs. feature interaction under efficiency constraints |
 | **Zenith: Scaling Up Ranking Models for Billion-Scale Livestreaming Recommendation** | ByteDance | arXiv | 2026 | [[Paper]](https://arxiv.org/abs/2601.21285) | Scales ranking models for livestream scenarios; demonstrates scaling benefits for feature interactions |
-| **TokenMixer-Large: Scaling Up Large Ranking Models in Industrial Recommenders** | ByteDance | arXiv | 2026 | [[Paper]](https://arxiv.org/abs/2602.06563) | Addresses hardware under-utilization in scaling; optimized TokenMixer architecture for industrial deployment |
+| **TokenMixer-Large: Scaling Up Large Ranking Models in Industrial Recommenders** | ByteDance | KDD | 2026 | [[Paper]](https://arxiv.org/abs/2602.06563) | Addresses hardware under-utilization in scaling; optimized TokenMixer architecture for industrial deployment |
 | **HeteroMixer: Query-Mixed Interest Extraction and Heterogeneous Interaction: A Scalable CTR Model for Industrial Recommender Systems** | Alibaba | arXiv | 2026 | [[Paper]](https://arxiv.org/abs/2602.09387) | Query-mixed interest extraction with heterogeneous interaction for sparse multi-field inputs and ultra-long sequences |
 | **UG-Sep: Compute Only Once: UG-Separation for Efficient Large Recommendation Models** | ByteDance | arXiv | 2026 | [[Paper]](https://arxiv.org/abs/2602.10455) | User-general feature separation to reduce redundant computation; enables affordable scaling |
 | **EST: Towards Efficient Scaling Laws in Click-Through Rate Prediction via Unified Modeling** | Alibaba | KDD | 2026 | [[Paper]](https://arxiv.org/abs/2602.10811) | Efficient unified modeling for scalable CTR; addresses early aggregation limitations |
 | **MTFM: A Scalable and Alignment-Free Foundation Model for Industrial Recommendation in Meituan** | Meituan | arXiv | 2026 | [[Paper]](https://arxiv.org/abs/2602.11235) | Full Attn / Target Attn alternation; CPU-GPU pipeline optimization; custom Triton kernels (PyTorch → Triton) |
-| **MixFormer: Co-Scaling Up Dense and Sequence in Industrial Recommenders** | ByteDance | arXiv | 2026 | [[Paper]](https://arxiv.org/abs/2602.14110) | User-item decoupled architecture (no ad-side sequence); co-scales dense features and user sequences |
+| **MixFormer: Co-Scaling Up Dense and Sequence in Industrial Recommenders** | ByteDance | WWW | 2026 | [[Paper]](https://arxiv.org/abs/2602.14110) | User-item decoupled architecture (no ad-side sequence); co-scales dense features and user sequences |
 | **ULTRA-HSTU: Bending the Scaling Law Curve in Large-Scale Recommendation Systems** | Meta | arXiv | 2026 | [[Paper]](https://arxiv.org/abs/2602.16986) | Sparse Attention + FlashAttention-V3; bends the scaling curve beyond HSTU |
 | **CADET: Context-Conditioned Ads CTR Prediction With a Decoder-Only Transformer** | LinkedIn | arXiv | 2026 | [[Paper]](https://arxiv.org/abs/2602.11410) | Decoder-only Transformer for ads CTR; self-gated attention, timestamp RoPE, Flash Attention |
 | **SORT: A Systematically Optimized Ranking Transformer for Industrial-Scale Recommenders** | Alibaba | arXiv | 2026 | [[Paper]](https://arxiv.org/abs/2603.03988) | Systematically optimizes Transformer for industrial ranking; addresses high feature heterogeneity challenges |
@@ -61,6 +61,7 @@ This repository focuses on a rapidly emerging research direction: how to effecti
 | **Selective Test-Time Compute Scaling for CTR Prediction via Uncertainty-Triggered Feature Path Exploration** | Alibaba | arXiv | 2026 | [[Paper]](https://arxiv.org/abs/2605.24989) | UTTSI: training-free per-instance test-time compute scaling for CTR; routes uncertain instances through stochastic feature-path explorations |
 | **On the Practice of Scaling Search Conversion Rate Prediction** | Coupang | arXiv | 2026 | [[Paper]](https://arxiv.org/abs/2605.29232) | **Search CVR** scaling: empirical study across backbone compute / embedding size / training data (independent and additive); warmstart training + decoupled graph execution + dynamic batching for low-latency GPU serving |
 | **ML-DCN: Masked Low-Rank Deep Crossing Network Towards Scalable Ads Click-through Rate Prediction at Pinterest** | Pinterest | arXiv | 2026 | [[Paper]](https://arxiv.org/abs/2602.09194) | Instance-conditioned mask + low-rank crossing layer for scalable ads CTR; online A/B tests at Pinterest with neutral serving cost |
+| **UniPinRec: Unifying Generative Retrieval and Ranking at Pinterest Scale** | Pinterest | arXiv | 2026 | [[Paper]](https://arxiv.org/abs/2606.00422) | Full-stack unification of retrieval and ranking with one transformer; shared user encoder with task-specific heads |
 | **Scaling Recommender Transformers to One Billion Parameters** | Yandex | KDD | 2026 | [[Paper]](https://arxiv.org/abs/2507.15994) | Recipe for training transformer recommenders up to 1B parameters; establishes scaling recipe for recommendation transformers |
 
 ## Related Work
@@ -73,7 +74,7 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 - **LONGER**: Scales ultra-long user behavior sequences beyond two-stage retrieval — [[Paper]](https://arxiv.org/abs/2505.04421) (ByteDance, RecSys 2025)
 - **ENCODE**: Efficient clustering-based two-stage approach for long-term user interest modeling — [[Paper]](https://arxiv.org/abs/2508.13567) (Alibaba, TKDE 2025)
 - **VQL**: Context-aware vector quantization attention for ultra-long behavior modeling — [[Paper]](https://arxiv.org/abs/2508.17125) (Kuaishou, 2025)
-- **Make It Long, Keep It Fast**: End-to-end 10K-sequence modeling at billion scale on Douyin — [[Paper]](https://arxiv.org/abs/2511.06077) (ByteDance, 2025)
+- **Make It Long, Keep It Fast**: End-to-end 10K-sequence modeling at billion scale on Douyin — [[Paper]](https://arxiv.org/abs/2511.06077) (ByteDance, WWW 2026)
 - **MUSE**: Multimodal search-based framework for 100K-length lifelong user interest modeling — [[Paper]](https://arxiv.org/abs/2512.07216) (Alibaba, 2025)
 - **PerSRec**: Compresses long histories into learnable tokens for HSTU/HLLM — [[Paper]](https://arxiv.org/abs/2601.03479) (Meta, 2026)
 - **MALLOC**: Benchmark for memory-efficient long sequence compression — [[Paper]](https://arxiv.org/abs/2601.20234) (2026)
@@ -99,6 +100,9 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 - **Next-Scale Generative Reranking**: Tree-based generative rerank framework for multi-stage recommendation; deployed on Meituan food delivery — [[Paper]](https://arxiv.org/abs/2604.05314) (Meituan, 2026)
 - **GenRec**: Preference-oriented generative framework for large-scale recommendation via next-token prediction with preference alignment — [[Paper]](https://arxiv.org/abs/2604.14878) (JD, 2026)
 - **R3-VAE**: Reference vector-guided rating residual quantization VAE for generative recommendation; improves semantic identifier quality — [[Paper]](https://arxiv.org/abs/2604.11440) (2026)
+- **Beyond the Flat Sequence: Hierarchical and Preference-Aware Generative Recommendations** — [[Paper]](https://arxiv.org/abs/2603.00980) (WWW 2026)
+- **Time-Aware Diffusion based on Preference Disentanglement for Generative Recommendation** — [[Paper]](https://arxiv.org/abs/2606.01670) (2026)
+- **LLMs Need Encoders for Semantic IDs Too**: Lightweight SID encoder based on prefix n-gram memory tables for structured prefix-conditioned representations in generative recommendation — [[Paper]](https://arxiv.org/abs/2606.00324) (2026)
 
 ### Generative Pre-training for CTR
 
@@ -122,12 +126,16 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 - **Versioned Late Materialization**: Data infrastructure for ultra-long sequence training — [[Paper]](https://arxiv.org/abs/2604.24806) (Meta, 2026)
 - **Intelligent Elastic Feature Fading**: Retrain-free feature efficiency rollouts at scale via elastic feature coverage control at serving time — [[Paper]](https://arxiv.org/abs/2605.00324) (2026)
 - **TurboGR**: Accelerated training system for large-scale generative recommendation on Ascend NPUs; 54.71% MFU with near-linear scalability — [[Paper]](https://arxiv.org/abs/2605.13433) (2026)
+- **Quantizing Intent: Cross-Domain Semantic IDs from Organic Activity for Industrial Ranking**: Residual finite scalar quantization of cross-domain user semantic IDs for ads CTR; organic-to-ads transfer with +0.213% AUC — [[Paper]](https://arxiv.org/abs/2606.01396) (LinkedIn, 2026)
+- **LeAP: Learnable Adaptive Permutation for Feature Selection in Heterogeneous and Sparse Recommender Systems**: Addresses extreme sparsity and heterogeneous feature dimensions in large-scale feature selection — [[Paper]](https://arxiv.org/abs/2606.01111) (2026)
+- **Decoupled Residual Quantization for Robust Semantic IDs in Recommendation**: Diagnostic framework for semantic ID tokenizer failures; proposes decoupled residual quantization for robust discrete item representations — [[Paper]](https://arxiv.org/abs/2606.01844) (2026)
 
 ### Retrieval & Reranking Scaling
 
 - **Scaling Laws for Cross-Encoder Reranking**: First systematic study of scaling laws for cross-encoder rerankers across pointwise / pairwise / listwise objectives — [[Paper]](https://arxiv.org/abs/2603.04816) (Academic, 2026)
 - **LRanker**: LLM ranker for massive candidate pools; addresses context length and computational cost constraints in real-world ranking — [[Paper]](https://arxiv.org/abs/2605.27810) (UIUC, 2026)
 - **Efficient Retrieval Scaling with Hierarchical Indexing**: Hierarchical index learning over foundational retrieval model memory; deployed at Meta — [[Paper]](https://arxiv.org/abs/2604.12965) (Meta, 2026)
+- **Whole-Pool Setwise Reranking with Long-Context Language Models**: Reranks all candidates at once using long-context LLMs; DualEnd fills ranking from both ends with 50 serial calls for 100 candidates — [[Paper]](https://arxiv.org/abs/2606.01782) (2026)
 
 ### Other
 
@@ -147,14 +155,14 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 | **Meituan** | SUAN, MTFM, MTmixAtt, SparseCTR, Next-Scale Generative Reranking |
 | **Tencent** | GE4Rec, TokenFormer, RankUp (Weixin), RankElastor, SIREN (Weixin) |
 | **Google** | Hiformer |
-| **LinkedIn** | LiRank, CADET |
+| **LinkedIn** | LiRank, CADET, Quantizing Intent |
 | **NetEase** | Climber, Climber-Pilot |
 | **Kuaishou** | UniMixer, INFNet, CHIME, VQL, OneRec-V2 Quantized |
 | **Shopee** | OnePiece |
 | **Coupang** | Search CVR Scaling |
 | **Netflix** | Large-Scale Generative Recommenders |
 | **Tubi** | TubiFM |
-| **Pinterest** | ML-DCN |
+| **Pinterest** | ML-DCN, UniPinRec |
 | **Yandex** | Scaling Recommender Transformers |
 | **JD** | GenRec |
 
