@@ -61,7 +61,6 @@ This repository focuses on a rapidly emerging research direction: how to effecti
 | **Selective Test-Time Compute Scaling for CTR Prediction via Uncertainty-Triggered Feature Path Exploration** | Alibaba | arXiv | 2026 | [[Paper]](https://arxiv.org/abs/2605.24989) | UTTSI: training-free per-instance test-time compute scaling for CTR; routes uncertain instances through stochastic feature-path explorations |
 | **On the Practice of Scaling Search Conversion Rate Prediction** | Coupang | arXiv | 2026 | [[Paper]](https://arxiv.org/abs/2605.29232) | **Search CVR** scaling: empirical study across backbone compute / embedding size / training data (independent and additive); warmstart training + decoupled graph execution + dynamic batching for low-latency GPU serving |
 | **ML-DCN: Masked Low-Rank Deep Crossing Network Towards Scalable Ads Click-through Rate Prediction at Pinterest** | Pinterest | arXiv | 2026 | [[Paper]](https://arxiv.org/abs/2602.09194) | Instance-conditioned mask + low-rank crossing layer for scalable ads CTR; online A/B tests at Pinterest with neutral serving cost |
-| **UniPinRec: Unifying Generative Retrieval and Ranking at Pinterest Scale** | Pinterest | arXiv | 2026 | [[Paper]](https://arxiv.org/abs/2606.00422) | Full-stack unification of retrieval and ranking with one transformer; shared user encoder with task-specific heads |
 | **Scaling Recommender Transformers to One Billion Parameters** | Yandex | KDD | 2026 | [[Paper]](https://arxiv.org/abs/2507.15994) | Recipe for training transformer recommenders up to 1B parameters; establishes scaling recipe for recommendation transformers |
 
 ## Related Work
@@ -100,9 +99,6 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 - **Next-Scale Generative Reranking**: Tree-based generative rerank framework for multi-stage recommendation; deployed on Meituan food delivery — [[Paper]](https://arxiv.org/abs/2604.05314) (Meituan, 2026)
 - **GenRec**: Preference-oriented generative framework for large-scale recommendation via next-token prediction with preference alignment — [[Paper]](https://arxiv.org/abs/2604.14878) (JD, 2026)
 - **R3-VAE**: Reference vector-guided rating residual quantization VAE for generative recommendation; improves semantic identifier quality — [[Paper]](https://arxiv.org/abs/2604.11440) (2026)
-- **Beyond the Flat Sequence: Hierarchical and Preference-Aware Generative Recommendations** — [[Paper]](https://arxiv.org/abs/2603.00980) (WWW 2026)
-- **Time-Aware Diffusion based on Preference Disentanglement for Generative Recommendation** — [[Paper]](https://arxiv.org/abs/2606.01670) (2026)
-- **LLMs Need Encoders for Semantic IDs Too**: Lightweight SID encoder based on prefix n-gram memory tables for structured prefix-conditioned representations in generative recommendation — [[Paper]](https://arxiv.org/abs/2606.00324) (2026)
 
 ### Generative Pre-training for CTR
 
@@ -126,16 +122,12 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 - **Versioned Late Materialization**: Data infrastructure for ultra-long sequence training — [[Paper]](https://arxiv.org/abs/2604.24806) (Meta, 2026)
 - **Intelligent Elastic Feature Fading**: Retrain-free feature efficiency rollouts at scale via elastic feature coverage control at serving time — [[Paper]](https://arxiv.org/abs/2605.00324) (2026)
 - **TurboGR**: Accelerated training system for large-scale generative recommendation on Ascend NPUs; 54.71% MFU with near-linear scalability — [[Paper]](https://arxiv.org/abs/2605.13433) (2026)
-- **Quantizing Intent: Cross-Domain Semantic IDs from Organic Activity for Industrial Ranking**: Residual finite scalar quantization of cross-domain user semantic IDs for ads CTR; organic-to-ads transfer with +0.213% AUC — [[Paper]](https://arxiv.org/abs/2606.01396) (LinkedIn, 2026)
-- **LeAP: Learnable Adaptive Permutation for Feature Selection in Heterogeneous and Sparse Recommender Systems**: Addresses extreme sparsity and heterogeneous feature dimensions in large-scale feature selection — [[Paper]](https://arxiv.org/abs/2606.01111) (2026)
-- **Decoupled Residual Quantization for Robust Semantic IDs in Recommendation**: Diagnostic framework for semantic ID tokenizer failures; proposes decoupled residual quantization for robust discrete item representations — [[Paper]](https://arxiv.org/abs/2606.01844) (2026)
 
 ### Retrieval & Reranking Scaling
 
 - **Scaling Laws for Cross-Encoder Reranking**: First systematic study of scaling laws for cross-encoder rerankers across pointwise / pairwise / listwise objectives — [[Paper]](https://arxiv.org/abs/2603.04816) (Academic, 2026)
 - **LRanker**: LLM ranker for massive candidate pools; addresses context length and computational cost constraints in real-world ranking — [[Paper]](https://arxiv.org/abs/2605.27810) (UIUC, 2026)
 - **Efficient Retrieval Scaling with Hierarchical Indexing**: Hierarchical index learning over foundational retrieval model memory; deployed at Meta — [[Paper]](https://arxiv.org/abs/2604.12965) (Meta, 2026)
-- **Whole-Pool Setwise Reranking with Long-Context Language Models**: Reranks all candidates at once using long-context LLMs; DualEnd fills ranking from both ends with 50 serial calls for 100 candidates — [[Paper]](https://arxiv.org/abs/2606.01782) (2026)
 
 ### Other
 
@@ -155,14 +147,14 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 | **Meituan** | SUAN, MTFM, MTmixAtt, SparseCTR, Next-Scale Generative Reranking |
 | **Tencent** | GE4Rec, TokenFormer, RankUp (Weixin), RankElastor, SIREN (Weixin) |
 | **Google** | Hiformer |
-| **LinkedIn** | LiRank, CADET, Quantizing Intent |
+| **LinkedIn** | LiRank, CADET |
 | **NetEase** | Climber, Climber-Pilot |
 | **Kuaishou** | UniMixer, INFNet, CHIME, VQL, OneRec-V2 Quantized |
 | **Shopee** | OnePiece |
 | **Coupang** | Search CVR Scaling |
 | **Netflix** | Large-Scale Generative Recommenders |
 | **Tubi** | TubiFM |
-| **Pinterest** | ML-DCN, UniPinRec |
+| **Pinterest** | ML-DCN |
 | **Yandex** | Scaling Recommender Transformers |
 | **JD** | GenRec |
 
