@@ -61,7 +61,7 @@ This repository focuses on a rapidly emerging research direction: how to effecti
 | **Selective Test-Time Compute Scaling for CTR Prediction via Uncertainty-Triggered Feature Path Exploration** | Alibaba | arXiv | 2026 | [[Paper]](https://arxiv.org/abs/2605.24989) | UTTSI: training-free per-instance test-time compute scaling for CTR; routes uncertain instances through stochastic feature-path explorations |
 | **On the Practice of Scaling Search Conversion Rate Prediction** | Coupang | arXiv | 2026 | [[Paper]](https://arxiv.org/abs/2605.29232) | **Search CVR** scaling: empirical study across backbone compute / embedding size / training data (independent and additive); warmstart training + decoupled graph execution + dynamic batching for low-latency GPU serving |
 | **ML-DCN: Masked Low-Rank Deep Crossing Network Towards Scalable Ads Click-through Rate Prediction at Pinterest** | Pinterest | arXiv | 2026 | [[Paper]](https://arxiv.org/abs/2602.09194) | Instance-conditioned mask + low-rank crossing layer for scalable ads CTR; online A/B tests at Pinterest with neutral serving cost |
-| **Scaling Recommender Transformers to One Billion Parameters** | Yandex | arXiv | 2026 | [[Paper]](https://arxiv.org/abs/2507.15994) | Recipe for training transformer recommenders up to 1B parameters; establishes scaling recipe for recommendation transformers |
+| **Scaling Recommender Transformers to One Billion Parameters** | Yandex | KDD | 2026 | [[Paper]](https://arxiv.org/abs/2507.15994) | Recipe for training transformer recommenders up to 1B parameters; establishes scaling recipe for recommendation transformers |
 
 ## Related Work
 
