@@ -64,7 +64,7 @@ This repository focuses on a rapidly emerging research direction: how to effecti
 | **Scaling Laws for Behavioral Foundation Models over User Event Sequences** | Unbox AI | arXiv | 2026 | [[Paper]](https://arxiv.org/abs/2606.05257) | Systematic scaling law study for behavioral foundation models across ~600 runs and 10^15-10^19 FLOPs; reveals compute-optimal embedder size (~2%), data-heavy training, and metric-dependent scaling dynamics |
 | **ML-DCN: Masked Low-Rank Deep Crossing Network Towards Scalable Ads Click-through Rate Prediction at Pinterest** | Pinterest | arXiv | 2026 | [[Paper]](https://arxiv.org/abs/2602.09194) | Instance-conditioned mask + low-rank crossing layer for scalable ads CTR; online A/B tests at Pinterest with neutral serving cost |
 | **Scaling Recommender Transformers to One Billion Parameters** | Yandex | KDD | 2026 | [[Paper]](https://arxiv.org/abs/2507.15994) | Recipe for training transformer recommenders up to 1B parameters; establishes scaling recipe for recommendation transformers |
-| **Principled Synthetic Data Enables the First Scaling Laws for LLMs in Recommendation** | Meta | arXiv | 2026 | [[Paper]](https://arxiv.org/abs/2602.07298) | Layered synthetic data framework enabling robust power-law scaling for continually pre-trained recommendation LLMs; demonstrates first predictable scaling laws for LLM-based recommendation |
+| **Principled Synthetic Data Enables the First Scaling Laws for LLMs in Recommendation** | Meta | ICML | 2026 | [[Paper]](https://arxiv.org/abs/2602.07298) | Layered synthetic data framework enabling robust power-law scaling for continually pre-trained recommendation LLMs; demonstrates first predictable scaling laws for LLM-based recommendation |
 
 ## Related Work
 
