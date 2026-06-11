@@ -66,6 +66,7 @@ This repository focuses on a rapidly emerging research direction: how to effecti
 | **Scaling Recommender Transformers to One Billion Parameters** | Yandex | KDD | 2026 | [[Paper]](https://arxiv.org/abs/2507.15994) | Recipe for training transformer recommenders up to 1B parameters; establishes scaling recipe for recommendation transformers |
 | **Principled Synthetic Data Enables the First Scaling Laws for LLMs in Recommendation** | Meta | ICML | 2026 | [[Paper]](https://arxiv.org/abs/2602.07298) | Layered synthetic data framework enabling robust power-law scaling for continually pre-trained recommendation LLMs; demonstrates first predictable scaling laws for LLM-based recommendation |
 | **DeRes: Decoupling Residual Stability and Adaptivity for Scalable CTR Prediction** | Industry | arXiv | 2026 | [[Paper]](https://arxiv.org/abs/2606.07980) | Dual-path residual (Identity + Block Attention Residual) with Pointwise AttnRes (SiLU); fits steeper compute–AUC scaling law (γ=0.118 vs 0.071 for OneTrans, 1.66× gap); 2× compute saving at equivalent AUC |
+| **LUM: Unlocking Scaling Law in Industrial Recommendation Systems with a Three-step Paradigm based Large User Model** | Alibaba | WSDM | 2026 | [[Paper]](https://arxiv.org/abs/2502.08309) | Three-step paradigm (pre-training → fine-tuning → distillation) based Large User Model; scales to 7B parameters; unlocks scaling law for industrial recommendation surpassing DLRMs and E2E-GR |
 
 ## Related Work
 
@@ -108,6 +109,7 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 - **AdaGRPO**: Per-sample gated GRPO + NLL for noise-robust RL in generative recommendation; binary clip based on policy difficulty and reward discriminability; A/B CTR+dwell gains — [[Paper]](https://arxiv.org/abs/2606.08480) (JD, 2026)
 - **GBLA**: Gated Bidirectional Linear Attention encoder for generative retrieval; linear-time with 8.2× speedup at 32K history vs FlashAttention-v3; hybrid SA/GBLA matches full self-attention quality — [[Paper]](https://arxiv.org/abs/2606.07317) (Yandex, SIGIR 2026)
 - **SSRLive**: Dynamic Semantic ID for live streaming GR; generative + discriminative unified architecture with dynamic SID updates and user–streamer interaction; A/B +3.38% watch time, +0.72% GMV — [[Paper]](https://arxiv.org/abs/2606.06970) (Alibaba, 2026)
+- **HiGR**: Industrial-scale hierarchical generative slate recommendation; structured SIDs via PCRQ-VAE + Hierarchical Slate Decoder for holistic slate quality and latency — [[Paper]](https://arxiv.org/abs/2512.24787) (Tencent, CIKM 2026)
 
 ### Generative Pre-training for CTR
 
@@ -152,9 +154,9 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 |:--------|:-------|
 | **Meta** | Understanding Scaling Laws, Wukong, HSTU, InterFormer, ULTRA-HSTU, Foundation-Expert, Kunlun, LLaTTE, DHEN, Principled Synthetic Data Scaling Laws, LoopFM, MoS, Memento, FreeScale, Efficient Retrieval Scaling |
 | **ByteDance** | RankMixer, OneTrans, HyFormer, Zenith, TokenMixer-Large, MSN, UG-Sep, MixFormer, Rec-Distill, LONGER, Make It Long Keep It Fast |
-| **Alibaba** | GPSD, FAT, HHFT, EST, HeteroMixer, SORT, Beyond Dense Connectivity, LoopCTR, UTTSI, HeteGenCTR, ENCODE, MUSE, SSRLive |
+| **Alibaba** | GPSD, FAT, HHFT, EST, HeteroMixer, SORT, Beyond Dense Connectivity, LoopCTR, UTTSI, HeteGenCTR, ENCODE, MUSE, SSRLive, LUM |
 | **Meituan** | SUAN, MTFM, MTmixAtt, SparseCTR, Next-Scale Generative Reranking |
-| **Tencent** | GE4Rec, TokenFormer, RankUp (Weixin), RankElastor, SIREN (Weixin) |
+| **Tencent** | GE4Rec, TokenFormer, RankUp (Weixin), RankElastor, SIREN (Weixin), HiGR |
 | **Google** | Hiformer |
 | **LinkedIn** | LiRank, CADET |
 | **NetEase** | Climber, Climber-Pilot |
