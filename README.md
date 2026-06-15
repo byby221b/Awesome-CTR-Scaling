@@ -67,6 +67,7 @@ This repository focuses on a rapidly emerging research direction: how to effecti
 | **Principled Synthetic Data Enables the First Scaling Laws for LLMs in Recommendation** | Meta | ICML | 2026 | [[Paper]](https://arxiv.org/abs/2602.07298) | Layered synthetic data framework enabling robust power-law scaling for continually pre-trained recommendation LLMs; demonstrates first predictable scaling laws for LLM-based recommendation |
 | **DeRes: Decoupling Residual Stability and Adaptivity for Scalable CTR Prediction** | Industry | arXiv | 2026 | [[Paper]](https://arxiv.org/abs/2606.07980) | Dual-path residual (Identity + Block Attention Residual) with Pointwise AttnRes (SiLU); fits steeper compute–AUC scaling law (γ=0.118 vs 0.071 for OneTrans, 1.66× gap); 2× compute saving at equivalent AUC |
 | **LUM: Unlocking Scaling Law in Industrial Recommendation Systems with a Three-step Paradigm based Large User Model** | Alibaba | WSDM | 2026 | [[Paper]](https://arxiv.org/abs/2502.08309) | Three-step paradigm (pre-training → fine-tuning → distillation) based Large User Model; scales to 7B parameters; unlocks scaling law for industrial recommendation surpassing DLRMs and E2E-GR |
+| **UniPinRec: Unifying Generative Retrieval and Ranking at Pinterest Scale** | Pinterest | arXiv | 2026 | [[Paper]](https://arxiv.org/abs/2606.00422) | Full-stack unification of retrieval and ranking at Pinterest; shared transformer with Masked Action Modeling + blended training + cross-stage KV cache sharing; +1% engagement, -11.1% latency, +63.6% QPS |
 
 ## Related Work
 
@@ -87,6 +88,7 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 - **SIREN**: Multi-modal lifelong user interest via unified multi-granularity semantic interaction; deployed in Tencent advertising (Weixin) — [[Paper]](https://arxiv.org/abs/2605.25726) (Tencent, 2026)
 - **LENS**: Target-Conditioned Query Gate and Position Bias for restoring target-specific control in latent-query CTR backbones — [[Paper]](https://arxiv.org/abs/2605.25583) (2026)
 - **Beyond Item IDs**: Semantic-native long sequence modeling for short-form-video recommendation; Global-Aware Compression Transformer with non-parametric temporal folding; deployed at billion-user scale — [[Paper]](https://arxiv.org/abs/2606.07546) (Google, SIGIR 2026)
+- **SinkRec**: Mitigates semantic state sink in linear attention for long-sequence recommendation; hybrid memory-transition looped architecture with memory-conditioned Gated Delta Networks — [[Paper]](https://arxiv.org/abs/2606.09888) (2026)
 
 ### Sample/Instance Compression for Sequence Modeling
 
@@ -112,6 +114,7 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 - **SSRLive**: Dynamic Semantic ID for live streaming GR; generative + discriminative unified architecture with dynamic SID updates and user–streamer interaction; A/B +3.38% watch time, +0.72% GMV — [[Paper]](https://arxiv.org/abs/2606.06970) (Alibaba, 2026)
 - **HiGR**: Industrial-scale hierarchical generative slate recommendation; structured SIDs via PCRQ-VAE + Hierarchical Slate Decoder for holistic slate quality and latency — [[Paper]](https://arxiv.org/abs/2512.24787) (Tencent, CIKM 2026)
 - **ChronoID**: Time-aware Semantic ID learning for generative recommendation; characterizes the design space of temporal signals along three orthogonal dimensions; new time-explicit generation recommendation benchmark — [[Paper]](https://arxiv.org/abs/2606.14260) (Meta MRS / U. Rochester / MBZUAI, 2026)
+- **PauseRec**: Implicit reasoning paradigm for LLM-based generative recommendation; outperforms explicit CoT by 6.22% while reducing training cost by 65% GPU hours and speeding up inference by 71.3% — [[Paper]](https://arxiv.org/abs/2606.14142) (2026)
 
 ### Generative Pre-training for CTR
 
@@ -143,6 +146,10 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 - **Efficient Retrieval Scaling with Hierarchical Indexing**: Hierarchical index learning over foundational retrieval model memory; deployed at Meta — [[Paper]](https://arxiv.org/abs/2604.12965) (Meta, 2026)
 - **OneRetrieval**: One-model editable generative retrieval for industrial e-commerce search; Keyword-Aligned Encoding (KAE) ties identifier slots to interpretable attribute words; reserved codebook slots enable real-time term injection without retraining; matches strongest GR baseline on 5M real-traffic requests with order-of-magnitude higher intervention hit rate — [[Paper]](https://arxiv.org/abs/2606.13533) (Kuaishou, 2026)
 
+### Architecture Innovations Beyond Recommendation
+
+> Papers on model architecture design from non-recommendation domains (NLP, CV, etc.) that may inspire CTR/ranking model scaling — e.g., efficient attention, sparse/MoE scaling, novel token mixing, training stability at depth.
+
 ### Other
 
 - **CETNet**: Collaborative ensemble with confidence-based fusion — [[Paper]](https://arxiv.org/abs/2411.13700) (Meta, 2024)
@@ -168,7 +175,7 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 | **Coupang** | Search CVR Scaling |
 | **Netflix** | Large-Scale Generative Recommenders |
 | **Tubi** | TubiFM |
-| **Pinterest** | ML-DCN |
+| **Pinterest** | ML-DCN, UniPinRec |
 | **Yandex** | Scaling Recommender Transformers, Gryphon, GBLA |
 | **JD** | GenRec, AdaGRPO |
 
