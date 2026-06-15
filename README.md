@@ -86,6 +86,7 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 - **Memento**: RAG-style long-retention data scaling for Meta Ads; MMR-based retrieval over user-history corpus — [[Paper]](https://arxiv.org/abs/2605.24051) (Meta, 2026)
 - **SIREN**: Multi-modal lifelong user interest via unified multi-granularity semantic interaction; deployed in Tencent advertising (Weixin) — [[Paper]](https://arxiv.org/abs/2605.25726) (Tencent, 2026)
 - **LENS**: Target-Conditioned Query Gate and Position Bias for restoring target-specific control in latent-query CTR backbones — [[Paper]](https://arxiv.org/abs/2605.25583) (2026)
+- **Beyond Item IDs**: Semantic-native long sequence modeling for short-form-video recommendation; Global-Aware Compression Transformer with non-parametric temporal folding; deployed at billion-user scale — [[Paper]](https://arxiv.org/abs/2606.07546) (Google, SIGIR 2026)
 
 ### Sample/Instance Compression for Sequence Modeling
 
@@ -157,7 +158,7 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 | **Alibaba** | GPSD, FAT, HHFT, EST, HeteroMixer, SORT, Beyond Dense Connectivity, LoopCTR, UTTSI, HeteGenCTR, ENCODE, MUSE, SSRLive, LUM |
 | **Meituan** | SUAN, MTFM, MTmixAtt, SparseCTR, Next-Scale Generative Reranking |
 | **Tencent** | GE4Rec, TokenFormer, RankUp (Weixin), RankElastor, SIREN (Weixin), HiGR |
-| **Google** | Hiformer |
+| **Google** | Hiformer, Beyond Item IDs |
 | **LinkedIn** | LiRank, CADET |
 | **NetEase** | Climber, Climber-Pilot |
 | **Kuaishou** | UniMixer, INFNet, CHIME, VQL, OneRec-V2 Quantized, OneReason |
