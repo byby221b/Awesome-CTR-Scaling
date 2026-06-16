@@ -68,6 +68,7 @@ This repository focuses on a rapidly emerging research direction: how to effecti
 | **DeRes: Decoupling Residual Stability and Adaptivity for Scalable CTR Prediction** | Industry | arXiv | 2026 | [[Paper]](https://arxiv.org/abs/2606.07980) | Dual-path residual (Identity + Block Attention Residual) with Pointwise AttnRes (SiLU); fits steeper compute–AUC scaling law (γ=0.118 vs 0.071 for OneTrans, 1.66× gap); 2× compute saving at equivalent AUC |
 | **LUM: Unlocking Scaling Law in Industrial Recommendation Systems with a Three-step Paradigm based Large User Model** | Alibaba | WSDM | 2026 | [[Paper]](https://arxiv.org/abs/2502.08309) | Three-step paradigm (pre-training → fine-tuning → distillation) based Large User Model; scales to 7B parameters; unlocks scaling law for industrial recommendation surpassing DLRMs and E2E-GR |
 | **UniPinRec: Unifying Generative Retrieval and Ranking at Pinterest Scale** | Pinterest | arXiv | 2026 | [[Paper]](https://arxiv.org/abs/2606.00422) | Full-stack unification of retrieval and ranking at Pinterest; shared transformer with Masked Action Modeling + blended training + cross-stage KV cache sharing; +1% engagement, -11.1% latency, +63.6% QPS |
+| **OneRank: Unified Transformer-Native Ranking Architecture for Multi-Task Recommendation** | Shopee / RUC | KDD | 2026 | [[Paper]](https://arxiv.org/abs/2606.16838) | Eliminates encoder-predictor separation in multi-task ranking; task-private channels with task-conditioned selection, gradient detachment, and dynamic matching-based scoring |
 
 ## Related Work
 
@@ -150,6 +151,11 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 
 > Papers on model architecture design from non-recommendation domains (NLP, CV, etc.) that may inspire CTR/ranking model scaling — e.g., efficient attention, sparse/MoE scaling, novel token mixing, training stability at depth.
 
+- **Tying the Loop -- Tied Expert Layers in Mixture-of-Experts Language Models**: Shares expert parameters across consecutive transformer layers while preserving independent routing; reduces memory footprint by ~2× at virtually no quality degradation — [[Paper]](https://arxiv.org/abs/2606.16825) (2026)
+- **Taming Curvature: Architecture Warm-Up for Stable Transformer Training**: Fast online estimator of largest Hessian eigenvalue for per-iteration curvature tracking; enables stable billion-parameter Transformer training — [[Paper]](https://arxiv.org/abs/2606.16768) (2026)
+- **Taylor-Calibrate: Principled Initialization for Hybrid Linear Attention Distillation**: Principled initialization for converting pretrained Transformers to Gated DeltaNet linear attention students; addresses brittleness in hybrid linear attention distillation — [[Paper]](https://arxiv.org/abs/2606.16429) (2026)
+- **SPRI: SVD-Partitioned Residual Initialization for Data-Constrained MoE Upcycling**: SVD-partitioned residual initialization for converting dense models to sparse MoE under data constraints; outperforms existing upcycling methods — [[Paper]](https://arxiv.org/abs/2606.16456) (2026)
+
 ### Other
 
 - **CETNet**: Collaborative ensemble with confidence-based fusion — [[Paper]](https://arxiv.org/abs/2411.13700) (Meta, 2024)
@@ -171,7 +177,7 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 | **LinkedIn** | LiRank, CADET |
 | **NetEase** | Climber, Climber-Pilot |
 | **Kuaishou** | UniMixer, INFNet, CHIME, VQL, OneRec-V2 Quantized, OneReason, OneRetrieval |
-| **Shopee** | OnePiece |
+| **Shopee** | OnePiece, OneRank |
 | **Coupang** | Search CVR Scaling |
 | **Netflix** | Large-Scale Generative Recommenders |
 | **Tubi** | TubiFM |
