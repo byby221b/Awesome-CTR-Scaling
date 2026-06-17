@@ -116,6 +116,7 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 - **HiGR**: Industrial-scale hierarchical generative slate recommendation; structured SIDs via PCRQ-VAE + Hierarchical Slate Decoder for holistic slate quality and latency — [[Paper]](https://arxiv.org/abs/2512.24787) (Tencent, CIKM 2026)
 - **ChronoID**: Time-aware Semantic ID learning for generative recommendation; characterizes the design space of temporal signals along three orthogonal dimensions; new time-explicit generation recommendation benchmark — [[Paper]](https://arxiv.org/abs/2606.14260) (Meta MRS / U. Rochester / MBZUAI, 2026)
 - **PauseRec**: Implicit reasoning paradigm for LLM-based generative recommendation; outperforms explicit CoT by 6.22% while reducing training cost by 65% GPU hours and speeding up inference by 71.3% — [[Paper]](https://arxiv.org/abs/2606.14142) (2026)
+- **On the Memorization Behavior of LLMs in Generative Recommendation**: Investigates one-hop memorization in LLM-based GR and proposes IIRG training strategy to capture multi-hop collaborative and semantic relations — [[Paper]](https://arxiv.org/abs/2606.17276) (KAIST / Snap, 2026)
 
 ### Generative Pre-training for CTR
 
@@ -155,6 +156,7 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 - **Taming Curvature: Architecture Warm-Up for Stable Transformer Training**: Fast online estimator of largest Hessian eigenvalue for per-iteration curvature tracking; enables stable billion-parameter Transformer training — [[Paper]](https://arxiv.org/abs/2606.16768) (2026)
 - **Taylor-Calibrate: Principled Initialization for Hybrid Linear Attention Distillation**: Principled initialization for converting pretrained Transformers to Gated DeltaNet linear attention students; addresses brittleness in hybrid linear attention distillation — [[Paper]](https://arxiv.org/abs/2606.16429) (2026)
 - **SPRI: SVD-Partitioned Residual Initialization for Data-Constrained MoE Upcycling**: SVD-partitioned residual initialization for converting dense models to sparse MoE under data constraints; outperforms existing upcycling methods — [[Paper]](https://arxiv.org/abs/2606.16456) (2026)
+- **SoftMoE: Soft Differentiable Routing for Mixture-of-Experts in LLMs**: Truncated soft top-k LapSum relaxation enabling gradient-based optimization of expert routing; learns layer-wise expert capacity allocation under a global budget constraint — [[Paper]](https://arxiv.org/abs/2606.17952) (ICML 2026)
 
 ### Other
 
