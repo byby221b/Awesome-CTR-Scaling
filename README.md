@@ -147,6 +147,7 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 - **LRanker**: LLM ranker for massive candidate pools; addresses context length and computational cost constraints in real-world ranking — [[Paper]](https://arxiv.org/abs/2605.27810) (UIUC, 2026)
 - **Efficient Retrieval Scaling with Hierarchical Indexing**: Hierarchical index learning over foundational retrieval model memory; deployed at Meta — [[Paper]](https://arxiv.org/abs/2604.12965) (Meta, 2026)
 - **OneRetrieval**: One-model editable generative retrieval for industrial e-commerce search; Keyword-Aligned Encoding (KAE) ties identifier slots to interpretable attribute words; reserved codebook slots enable real-time term injection without retraining; matches strongest GR baseline on 5M real-traffic requests with order-of-magnitude higher intervention hit rate — [[Paper]](https://arxiv.org/abs/2606.13533) (Kuaishou, 2026)
+- **RankGraph-2**: Lifecycle co-design for billion-node graph-based retrieval (U2U2I/U2I2I); co-learns residual-quantization cluster index reducing serving cost 83%; 3.8× recall over GAT+DGI; +0.96% CTR across 20+ retrieval launches at Meta — [[Paper]](https://arxiv.org/abs/2606.18379) (Meta, 2026)
 
 ### Architecture Innovations Beyond Recommendation
 
@@ -170,7 +171,7 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 
 | Company | Papers |
 |:--------|:-------|
-| **Meta** | Understanding Scaling Laws, Wukong, HSTU, InterFormer, ULTRA-HSTU, Foundation-Expert, Kunlun, LLaTTE, DHEN, Principled Synthetic Data Scaling Laws, LoopFM, MoS, Memento, FreeScale, Efficient Retrieval Scaling |
+| **Meta** | Understanding Scaling Laws, Wukong, HSTU, InterFormer, ULTRA-HSTU, Foundation-Expert, Kunlun, LLaTTE, DHEN, Principled Synthetic Data Scaling Laws, LoopFM, MoS, Memento, FreeScale, Efficient Retrieval Scaling, RankGraph-2 |
 | **ByteDance** | RankMixer, OneTrans, HyFormer, Zenith, TokenMixer-Large, MSN, UG-Sep, MixFormer, Rec-Distill, LONGER, Make It Long Keep It Fast |
 | **Alibaba** | GPSD, FAT, HHFT, EST, HeteroMixer, SORT, Beyond Dense Connectivity, LoopCTR, UTTSI, HeteGenCTR, ENCODE, MUSE, SSRLive, LUM |
 | **Meituan** | SUAN, MTFM, MTmixAtt, SparseCTR, Next-Scale Generative Reranking |
