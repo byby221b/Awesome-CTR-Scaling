@@ -69,6 +69,7 @@ This repository focuses on a rapidly emerging research direction: how to effecti
 | **LUM: Unlocking Scaling Law in Industrial Recommendation Systems with a Three-step Paradigm based Large User Model** | Alibaba | WSDM | 2026 | [[Paper]](https://arxiv.org/abs/2502.08309) | Three-step paradigm (pre-training → fine-tuning → distillation) based Large User Model; scales to 7B parameters; unlocks scaling law for industrial recommendation surpassing DLRMs and E2E-GR |
 | **UniPinRec: Unifying Generative Retrieval and Ranking at Pinterest Scale** | Pinterest | arXiv | 2026 | [[Paper]](https://arxiv.org/abs/2606.00422) | Full-stack unification of retrieval and ranking at Pinterest; shared transformer with Masked Action Modeling + blended training + cross-stage KV cache sharing; +1% engagement, -11.1% latency, +63.6% QPS |
 | **OneRank: Unified Transformer-Native Ranking Architecture for Multi-Task Recommendation** | Shopee / RUC | KDD | 2026 | [[Paper]](https://arxiv.org/abs/2606.16838) | Eliminates encoder-predictor separation in multi-task ranking; task-private channels with task-conditioned selection, gradient detachment, and dynamic matching-based scoring |
+| **Token Factory: Efficiently Integrating Diverse Signals into Large Recommendation Models** | Google | arXiv | 2026 | [[Paper]](https://arxiv.org/abs/2606.19635) | Transforms heterogeneous signals into soft tokens for LRMs; prevents prompt length explosion while enabling efficient scaling of signal integration |
 
 ## Related Work
 
@@ -117,6 +118,7 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 - **ChronoID**: Time-aware Semantic ID learning for generative recommendation; characterizes the design space of temporal signals along three orthogonal dimensions; new time-explicit generation recommendation benchmark — [[Paper]](https://arxiv.org/abs/2606.14260) (Meta MRS / U. Rochester / MBZUAI, 2026)
 - **PauseRec**: Implicit reasoning paradigm for LLM-based generative recommendation; outperforms explicit CoT by 6.22% while reducing training cost by 65% GPU hours and speeding up inference by 71.3% — [[Paper]](https://arxiv.org/abs/2606.14142) (2026)
 - **On the Memorization Behavior of LLMs in Generative Recommendation**: Investigates one-hop memorization in LLM-based GR and proposes IIRG training strategy to capture multi-hop collaborative and semantic relations — [[Paper]](https://arxiv.org/abs/2606.17276) (KAIST / Snap, 2026)
+- **G2Rec**: Scalable graph-based user interest tokenization for generative recommendation; unifies holistic co-engagement modeling with semantic tokenization at industrial scale — [[Paper]](https://arxiv.org/abs/2606.20554) (Meta / UIUC, 2026)
 
 ### Generative Pre-training for CTR
 
@@ -171,12 +173,12 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 
 | Company | Papers |
 |:--------|:-------|
-| **Meta** | Understanding Scaling Laws, Wukong, HSTU, InterFormer, ULTRA-HSTU, Foundation-Expert, Kunlun, LLaTTE, DHEN, Principled Synthetic Data Scaling Laws, LoopFM, MoS, Memento, FreeScale, Efficient Retrieval Scaling, RankGraph-2 |
+| **Meta** | Understanding Scaling Laws, Wukong, HSTU, InterFormer, ULTRA-HSTU, Foundation-Expert, Kunlun, LLaTTE, DHEN, Principled Synthetic Data Scaling Laws, LoopFM, MoS, Memento, FreeScale, Efficient Retrieval Scaling, RankGraph-2, G2Rec |
 | **ByteDance** | RankMixer, OneTrans, HyFormer, Zenith, TokenMixer-Large, MSN, UG-Sep, MixFormer, Rec-Distill, LONGER, Make It Long Keep It Fast |
 | **Alibaba** | GPSD, FAT, HHFT, EST, HeteroMixer, SORT, Beyond Dense Connectivity, LoopCTR, UTTSI, HeteGenCTR, ENCODE, MUSE, SSRLive, LUM |
 | **Meituan** | SUAN, MTFM, MTmixAtt, SparseCTR, Next-Scale Generative Reranking |
 | **Tencent** | GE4Rec, TokenFormer, RankUp (Weixin), RankElastor, SIREN (Weixin), HiGR |
-| **Google** | Hiformer, Beyond Item IDs |
+| **Google** | Hiformer, Beyond Item IDs, Token Factory |
 | **LinkedIn** | LiRank, CADET |
 | **NetEase** | Climber, Climber-Pilot |
 | **Kuaishou** | UniMixer, INFNet, CHIME, VQL, OneRec-V2 Quantized, OneReason, OneRetrieval |
