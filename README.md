@@ -70,6 +70,7 @@ This repository focuses on a rapidly emerging research direction: how to effecti
 | **UniPinRec: Unifying Generative Retrieval and Ranking at Pinterest Scale** | Pinterest | arXiv | 2026 | [[Paper]](https://arxiv.org/abs/2606.00422) | Full-stack unification of retrieval and ranking at Pinterest; shared transformer with Masked Action Modeling + blended training + cross-stage KV cache sharing; +1% engagement, -11.1% latency, +63.6% QPS |
 | **OneRank: Unified Transformer-Native Ranking Architecture for Multi-Task Recommendation** | Shopee / RUC | KDD | 2026 | [[Paper]](https://arxiv.org/abs/2606.16838) | Eliminates encoder-predictor separation in multi-task ranking; task-private channels with task-conditioned selection, gradient detachment, and dynamic matching-based scoring |
 | **Token Factory: Efficiently Integrating Diverse Signals into Large Recommendation Models** | Google | arXiv | 2026 | [[Paper]](https://arxiv.org/abs/2606.19635) | Transforms heterogeneous signals into soft tokens for LRMs; prevents prompt length explosion while enabling efficient scaling of signal integration |
+| **SPRINT: The Pitfall of Scaling Up: Uncovering and Mitigating Popularity Bias Amplification in Scaling Transformer-based Recommenders** | Academic | KDD | 2026 | [[Paper]](https://arxiv.org/abs/2606.21911) | Identifies spectral collapse causing popularity bias amplification as a fundamental obstacle to sustainable scaling; SPRINT regularization enables more favorable scaling from 0.05M to 0.34B params |
 
 ## Related Work
 
@@ -160,6 +161,7 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 - **Taylor-Calibrate: Principled Initialization for Hybrid Linear Attention Distillation**: Principled initialization for converting pretrained Transformers to Gated DeltaNet linear attention students; addresses brittleness in hybrid linear attention distillation — [[Paper]](https://arxiv.org/abs/2606.16429) (2026)
 - **SPRI: SVD-Partitioned Residual Initialization for Data-Constrained MoE Upcycling**: SVD-partitioned residual initialization for converting dense models to sparse MoE under data constraints; outperforms existing upcycling methods — [[Paper]](https://arxiv.org/abs/2606.16456) (2026)
 - **SoftMoE: Soft Differentiable Routing for Mixture-of-Experts in LLMs**: Truncated soft top-k LapSum relaxation enabling gradient-based optimization of expert routing; learns layer-wise expert capacity allocation under a global budget constraint — [[Paper]](https://arxiv.org/abs/2606.17952) (ICML 2026)
+- **Tapered Language Models**: Non-uniform parameter allocation across depth via cosine-scheduled MLP width tapering; shows earlier layers benefit from more capacity; works across Transformer, Gated Attention, and Titans architectures — [[Paper]](https://arxiv.org/abs/2606.23670) (Mila, 2026)
 
 ### Other
 
