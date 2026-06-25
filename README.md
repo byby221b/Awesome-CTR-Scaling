@@ -120,6 +120,8 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 - **PauseRec**: Implicit reasoning paradigm for LLM-based generative recommendation; outperforms explicit CoT by 6.22% while reducing training cost by 65% GPU hours and speeding up inference by 71.3% — [[Paper]](https://arxiv.org/abs/2606.14142) (2026)
 - **On the Memorization Behavior of LLMs in Generative Recommendation**: Investigates one-hop memorization in LLM-based GR and proposes IIRG training strategy to capture multi-hop collaborative and semantic relations — [[Paper]](https://arxiv.org/abs/2606.17276) (KAIST / Snap, 2026)
 - **G2Rec**: Scalable graph-based user interest tokenization for generative recommendation; unifies holistic co-engagement modeling with semantic tokenization at industrial scale — [[Paper]](https://arxiv.org/abs/2606.20554) (Meta / UIUC, 2026)
+- **TokenMinds**: Industrial-scale dual-output (discrete SID-based user tokens + dense user embeddings) via encoder-decoder LLM; extends PLUM from item to user modeling; deployed across multiple YouTube surfaces serving billions of users — [[Paper]](https://arxiv.org/abs/2606.25147) (Google / YouTube, 2026)
+- **RaG (Recommendation as Generation)**: Unifies generative recommendation and on-demand personalized video generation via shared semantic IDs (content + style); Video Generation Agents conditioned on inferred SIDs with cross-domain reward learning — [[Paper]](https://arxiv.org/abs/2606.25496) (Kuaishou, 2026)
 
 ### Generative Pre-training for CTR
 
@@ -162,6 +164,8 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 - **SPRI: SVD-Partitioned Residual Initialization for Data-Constrained MoE Upcycling**: SVD-partitioned residual initialization for converting dense models to sparse MoE under data constraints; outperforms existing upcycling methods — [[Paper]](https://arxiv.org/abs/2606.16456) (2026)
 - **SoftMoE: Soft Differentiable Routing for Mixture-of-Experts in LLMs**: Truncated soft top-k LapSum relaxation enabling gradient-based optimization of expert routing; learns layer-wise expert capacity allocation under a global budget constraint — [[Paper]](https://arxiv.org/abs/2606.17952) (ICML 2026)
 - **Tapered Language Models**: Non-uniform parameter allocation across depth via cosine-scheduled MLP width tapering; shows earlier layers benefit from more capacity; works across Transformer, Gated Attention, and Titans architectures — [[Paper]](https://arxiv.org/abs/2606.23670) (Mila, 2026)
+- **Emergent Capabilities Arise Randomly from Learning Sparse Attention Patterns**: Mechanistic study showing emergence corresponds to abrupt learning of task-relevant sparse attention patterns; scaling heads improves learning efficiency while head dimension yields diminishing returns past a minimum; insights for sparse-attention-based ranking architectures — [[Paper]](https://arxiv.org/abs/2606.25010) (2026)
+- **Neural Scaling Universality**: Position paper arguing scaling-law exponents are fixed by generic mechanisms (Softmax nonlinearity, representational superposition, layer ensembling) and coefficients (sensitive to data/architecture) are the lever for practical gains — [[Paper]](https://arxiv.org/abs/2606.25008) (2026)
 
 ### Other
 
@@ -180,10 +184,10 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 | **Alibaba** | GPSD, FAT, HHFT, EST, HeteroMixer, SORT, Beyond Dense Connectivity, LoopCTR, UTTSI, HeteGenCTR, ENCODE, MUSE, SSRLive, LUM |
 | **Meituan** | SUAN, MTFM, MTmixAtt, SparseCTR, Next-Scale Generative Reranking |
 | **Tencent** | GE4Rec, TokenFormer, RankUp (Weixin), RankElastor, SIREN (Weixin), HiGR |
-| **Google** | Hiformer, Beyond Item IDs, Token Factory |
+| **Google** | Hiformer, Beyond Item IDs, Token Factory, TokenMinds |
 | **LinkedIn** | LiRank, CADET |
 | **NetEase** | Climber, Climber-Pilot |
-| **Kuaishou** | UniMixer, INFNet, CHIME, VQL, OneRec-V2 Quantized, OneReason, OneRetrieval |
+| **Kuaishou** | UniMixer, INFNet, CHIME, VQL, OneRec-V2 Quantized, OneReason, OneRetrieval, RaG |
 | **Shopee** | OnePiece, OneRank |
 | **Coupang** | Search CVR Scaling |
 | **Netflix** | Large-Scale Generative Recommenders |
