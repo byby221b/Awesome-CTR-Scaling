@@ -71,6 +71,7 @@ This repository focuses on a rapidly emerging research direction: how to effecti
 | **OneRank: Unified Transformer-Native Ranking Architecture for Multi-Task Recommendation** | Shopee / RUC | KDD | 2026 | [[Paper]](https://arxiv.org/abs/2606.16838) | Eliminates encoder-predictor separation in multi-task ranking; task-private channels with task-conditioned selection, gradient detachment, and dynamic matching-based scoring |
 | **Token Factory: Efficiently Integrating Diverse Signals into Large Recommendation Models** | Google | arXiv | 2026 | [[Paper]](https://arxiv.org/abs/2606.19635) | Transforms heterogeneous signals into soft tokens for LRMs; prevents prompt length explosion while enabling efficient scaling of signal integration |
 | **SPRINT: The Pitfall of Scaling Up: Uncovering and Mitigating Popularity Bias Amplification in Scaling Transformer-based Recommenders** | Academic | KDD | 2026 | [[Paper]](https://arxiv.org/abs/2606.21911) | Identifies spectral collapse causing popularity bias amplification as a fundamental obstacle to sustainable scaling; SPRINT regularization enables more favorable scaling from 0.05M to 0.34B params |
+| **UniFormer: Efficient and Unified Model-Centric Scaling for Industrial Recommendation** | Kuaishou | arXiv | 2026 | [[Paper]](https://arxiv.org/abs/2606.27058) | Unified model-centric scaling framework; decomposes feature-space and task-space interactions; semantic tokenization for user-item decoupling; multi-sequence cross-attention and multi-view FFNs |
 
 ## Related Work
 
@@ -187,7 +188,7 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 | **Google** | Hiformer, Beyond Item IDs, Token Factory, TokenMinds |
 | **LinkedIn** | LiRank, CADET |
 | **NetEase** | Climber, Climber-Pilot |
-| **Kuaishou** | UniMixer, INFNet, CHIME, VQL, OneRec-V2 Quantized, OneReason, OneRetrieval, RaG |
+| **Kuaishou** | UniMixer, INFNet, CHIME, VQL, OneRec-V2 Quantized, OneReason, OneRetrieval, RaG, UniFormer |
 | **Shopee** | OnePiece, OneRank |
 | **Coupang** | Search CVR Scaling |
 | **Netflix** | Large-Scale Generative Recommenders |
