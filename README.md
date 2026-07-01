@@ -123,6 +123,8 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 - **G2Rec**: Scalable graph-based user interest tokenization for generative recommendation; unifies holistic co-engagement modeling with semantic tokenization at industrial scale — [[Paper]](https://arxiv.org/abs/2606.20554) (Meta / UIUC, 2026)
 - **TokenMinds**: Industrial-scale dual-output (discrete SID-based user tokens + dense user embeddings) via encoder-decoder LLM; extends PLUM from item to user modeling; deployed across multiple YouTube surfaces serving billions of users — [[Paper]](https://arxiv.org/abs/2606.25147) (Google / YouTube, 2026)
 - **RaG (Recommendation as Generation)**: Unifies generative recommendation and on-demand personalized video generation via shared semantic IDs (content + style); Video Generation Agents conditioned on inferred SIDs with cross-domain reward learning — [[Paper]](https://arxiv.org/abs/2606.25496) (Kuaishou, 2026)
+- **GR2 Technical Report**: End-to-end generative reasoning re-ranker; semantic ID mid-training + reasoning-trace distillation + RL with conditional verifiable rewards + On-Policy Distillation; +18.7% R@1 on industrial-scale traffic — [[Paper]](https://arxiv.org/abs/2606.31984) (Meta, 2026)
+- **GenPage**: End-to-end generative homepage construction replacing multi-stage rec stack; autoregressive generation of structured multi-row pages; +0.24% engagement with 20% latency reduction in A/B — [[Paper]](https://arxiv.org/abs/2606.31031) (Netflix, 2026)
 
 ### Generative Pre-training for CTR
 
@@ -180,7 +182,7 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 
 | Company | Papers |
 |:--------|:-------|
-| **Meta** | Understanding Scaling Laws, Wukong, HSTU, InterFormer, ULTRA-HSTU, Foundation-Expert, Kunlun, LLaTTE, DHEN, Principled Synthetic Data Scaling Laws, LoopFM, MoS, Memento, FreeScale, Efficient Retrieval Scaling, RankGraph-2, G2Rec |
+| **Meta** | Understanding Scaling Laws, Wukong, HSTU, InterFormer, ULTRA-HSTU, Foundation-Expert, Kunlun, LLaTTE, DHEN, Principled Synthetic Data Scaling Laws, LoopFM, MoS, Memento, FreeScale, Efficient Retrieval Scaling, RankGraph-2, G2Rec, GR2 Technical Report |
 | **ByteDance** | RankMixer, OneTrans, HyFormer, Zenith, TokenMixer-Large, MSN, UG-Sep, MixFormer, Rec-Distill, LONGER, Make It Long Keep It Fast |
 | **Alibaba** | GPSD, FAT, HHFT, EST, HeteroMixer, SORT, Beyond Dense Connectivity, LoopCTR, UTTSI, HeteGenCTR, ENCODE, MUSE, SSRLive, LUM |
 | **Meituan** | SUAN, MTFM, MTmixAtt, SparseCTR, Next-Scale Generative Reranking |
@@ -191,7 +193,7 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 | **Kuaishou** | UniMixer, INFNet, CHIME, VQL, OneRec-V2 Quantized, OneReason, OneRetrieval, RaG, UniFormer |
 | **Shopee** | OnePiece, OneRank |
 | **Coupang** | Search CVR Scaling |
-| **Netflix** | Large-Scale Generative Recommenders |
+| **Netflix** | Large-Scale Generative Recommenders, GenPage |
 | **Tubi** | TubiFM |
 | **Pinterest** | ML-DCN, UniPinRec |
 | **Yandex** | Scaling Recommender Transformers, Gryphon, GBLA |
