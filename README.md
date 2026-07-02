@@ -125,6 +125,7 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 - **RaG (Recommendation as Generation)**: Unifies generative recommendation and on-demand personalized video generation via shared semantic IDs (content + style); Video Generation Agents conditioned on inferred SIDs with cross-domain reward learning — [[Paper]](https://arxiv.org/abs/2606.25496) (Kuaishou, 2026)
 - **GR2 Technical Report**: End-to-end generative reasoning re-ranker; semantic ID mid-training + reasoning-trace distillation + RL with conditional verifiable rewards + On-Policy Distillation; +18.7% R@1 on industrial-scale traffic — [[Paper]](https://arxiv.org/abs/2606.31984) (Meta, 2026)
 - **GenPage**: End-to-end generative homepage construction replacing multi-stage rec stack; autoregressive generation of structured multi-row pages; +0.24% engagement with 20% latency reduction in A/B — [[Paper]](https://arxiv.org/abs/2606.31031) (Netflix, 2026)
+- **Diffusion-GR2**: Block-diffusion conversion of AR reasoning re-ranker (GR2); CFT + on-policy distillation + RL closes structural and distributional gaps; 2.4–3.5× decode throughput with near-parity accuracy — [[Paper]](https://arxiv.org/abs/2607.01170) (Meta, 2026)
 
 ### Generative Pre-training for CTR
 
@@ -182,7 +183,7 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 
 | Company | Papers |
 |:--------|:-------|
-| **Meta** | Understanding Scaling Laws, Wukong, HSTU, InterFormer, ULTRA-HSTU, Foundation-Expert, Kunlun, LLaTTE, DHEN, Principled Synthetic Data Scaling Laws, LoopFM, MoS, Memento, FreeScale, Efficient Retrieval Scaling, RankGraph-2, G2Rec, GR2 Technical Report |
+| **Meta** | Understanding Scaling Laws, Wukong, HSTU, InterFormer, ULTRA-HSTU, Foundation-Expert, Kunlun, LLaTTE, DHEN, Principled Synthetic Data Scaling Laws, LoopFM, MoS, Memento, FreeScale, Efficient Retrieval Scaling, RankGraph-2, G2Rec, GR2 Technical Report, Diffusion-GR2 |
 | **ByteDance** | RankMixer, OneTrans, HyFormer, Zenith, TokenMixer-Large, MSN, UG-Sep, MixFormer, Rec-Distill, LONGER, Make It Long Keep It Fast |
 | **Alibaba** | GPSD, FAT, HHFT, EST, HeteroMixer, SORT, Beyond Dense Connectivity, LoopCTR, UTTSI, HeteGenCTR, ENCODE, MUSE, SSRLive, LUM |
 | **Meituan** | SUAN, MTFM, MTmixAtt, SparseCTR, Next-Scale Generative Reranking |
