@@ -93,6 +93,8 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 - **LENS**: Target-Conditioned Query Gate and Position Bias for restoring target-specific control in latent-query CTR backbones — [[Paper]](https://arxiv.org/abs/2605.25583) (2026)
 - **Beyond Item IDs**: Semantic-native long sequence modeling for short-form-video recommendation; Global-Aware Compression Transformer with non-parametric temporal folding; deployed at billion-user scale — [[Paper]](https://arxiv.org/abs/2606.07546) (Google, SIGIR 2026)
 - **SinkRec**: Mitigates semantic state sink in linear attention for long-sequence recommendation; hybrid memory-transition looped architecture with memory-conditioned Gated Delta Networks — [[Paper]](https://arxiv.org/abs/2606.09888) (2026)
+- **CMSL**: Constructive Multi-Sequence Learning; disentangles user history into thematic strands via learnable Sequence Construction Module with linear attention; deployed across ranking and retrieval on four major surfaces at Meta — [[Paper]](https://arxiv.org/abs/2606.28533) (Meta, 2026)
+- **POEM**: Partial-Order Enhanced Real-Time Sequential Modeling; constructs dynamic partial-order sequences from multi-task ranking scores for fine-grained real-time interest modeling; deployed on Kuaishou — [[Paper]](https://arxiv.org/abs/2606.29946) (Kuaishou, 2026)
 
 ### Sample/Instance Compression for Sequence Modeling
 
@@ -126,6 +128,7 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 - **GR2 Technical Report**: End-to-end generative reasoning re-ranker; semantic ID mid-training + reasoning-trace distillation + RL with conditional verifiable rewards + On-Policy Distillation; +18.7% R@1 on industrial-scale traffic — [[Paper]](https://arxiv.org/abs/2606.31984) (Meta, 2026)
 - **GenPage**: End-to-end generative homepage construction replacing multi-stage rec stack; autoregressive generation of structured multi-row pages; +0.24% engagement with 20% latency reduction in A/B — [[Paper]](https://arxiv.org/abs/2606.31031) (Netflix, 2026)
 - **Diffusion-GR2**: Block-diffusion conversion of AR reasoning re-ranker (GR2); CFT + on-policy distillation + RL closes structural and distributional gaps; 2.4–3.5× decode throughput with near-parity accuracy — [[Paper]](https://arxiv.org/abs/2607.01170) (Meta, 2026)
+- **ShopX**: Foundation model for agentic shopping; unifies intent understanding, execution planning, and SID-native item-space operations into a single model; deployed on Taobao — [[Paper]](https://arxiv.org/abs/2606.31693) (Alibaba, 2026)
 
 ### Generative Pre-training for CTR
 
@@ -170,6 +173,7 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 - **Tapered Language Models**: Non-uniform parameter allocation across depth via cosine-scheduled MLP width tapering; shows earlier layers benefit from more capacity; works across Transformer, Gated Attention, and Titans architectures — [[Paper]](https://arxiv.org/abs/2606.23670) (Mila, 2026)
 - **Emergent Capabilities Arise Randomly from Learning Sparse Attention Patterns**: Mechanistic study showing emergence corresponds to abrupt learning of task-relevant sparse attention patterns; scaling heads improves learning efficiency while head dimension yields diminishing returns past a minimum; insights for sparse-attention-based ranking architectures — [[Paper]](https://arxiv.org/abs/2606.25010) (2026)
 - **Neural Scaling Universality**: Position paper arguing scaling-law exponents are fixed by generic mechanisms (Softmax nonlinearity, representational superposition, layer ensembling) and coefficients (sensitive to data/architecture) are the lever for practical gains — [[Paper]](https://arxiv.org/abs/2606.25008) (2026)
+- **Smooth Scaling Laws Hide Stepwise Token Learning**: Token-level decomposition reveals scaling laws are governed by the distribution of localized token learning times; reshaping training distribution according to token learnability yields 11% faster loss reduction — [[Paper]](https://arxiv.org/abs/2606.29858) (2026)
 
 ### Other
 
@@ -183,15 +187,15 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 
 | Company | Papers |
 |:--------|:-------|
-| **Meta** | Understanding Scaling Laws, Wukong, HSTU, InterFormer, ULTRA-HSTU, Foundation-Expert, Kunlun, LLaTTE, DHEN, Principled Synthetic Data Scaling Laws, LoopFM, MoS, Memento, FreeScale, Efficient Retrieval Scaling, RankGraph-2, G2Rec, GR2 Technical Report, Diffusion-GR2 |
+| **Meta** | Understanding Scaling Laws, Wukong, HSTU, InterFormer, ULTRA-HSTU, Foundation-Expert, Kunlun, LLaTTE, DHEN, Principled Synthetic Data Scaling Laws, LoopFM, MoS, Memento, FreeScale, Efficient Retrieval Scaling, RankGraph-2, G2Rec, GR2 Technical Report, Diffusion-GR2, CMSL |
 | **ByteDance** | RankMixer, OneTrans, HyFormer, Zenith, TokenMixer-Large, MSN, UG-Sep, MixFormer, Rec-Distill, LONGER, Make It Long Keep It Fast |
-| **Alibaba** | GPSD, FAT, HHFT, EST, HeteroMixer, SORT, Beyond Dense Connectivity, LoopCTR, UTTSI, HeteGenCTR, ENCODE, MUSE, SSRLive, LUM |
+| **Alibaba** | GPSD, FAT, HHFT, EST, HeteroMixer, SORT, Beyond Dense Connectivity, LoopCTR, UTTSI, HeteGenCTR, ENCODE, MUSE, SSRLive, LUM, ShopX |
 | **Meituan** | SUAN, MTFM, MTmixAtt, SparseCTR, Next-Scale Generative Reranking |
 | **Tencent** | GE4Rec, TokenFormer, RankUp (Weixin), RankElastor, SIREN (Weixin), HiGR |
 | **Google** | Hiformer, Beyond Item IDs, Token Factory, TokenMinds |
 | **LinkedIn** | LiRank, CADET |
 | **NetEase** | Climber, Climber-Pilot |
-| **Kuaishou** | UniMixer, INFNet, CHIME, VQL, OneRec-V2 Quantized, OneReason, OneRetrieval, RaG, UniFormer |
+| **Kuaishou** | UniMixer, INFNet, CHIME, VQL, OneRec-V2 Quantized, OneReason, OneRetrieval, RaG, UniFormer, POEM |
 | **Shopee** | OnePiece, OneRank |
 | **Coupang** | Search CVR Scaling |
 | **Netflix** | Large-Scale Generative Recommenders, GenPage |
