@@ -131,6 +131,7 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 - **ShopX**: Foundation model for agentic shopping; unifies intent understanding, execution planning, and SID-native item-space operations into a single model; deployed on Taobao — [[Paper]](https://arxiv.org/abs/2606.31693) (Alibaba, 2026)
 - **HGenPush**: Heterogeneous generative recommendation for push notifications; dual-branch video + author generation with Chained-MTP multi-token prediction; +0.181% DAU on Kuaishou — [[Paper]](https://arxiv.org/abs/2607.03362) (Kuaishou, 2026)
 - **UniSGR**: Unified framework for Semantic ID generation and ranking; sparse MoE decoder with Value-Aware Parallel Multi-Token Prediction and STARK inference optimization; deployed on large-scale e-commerce — [[Paper]](https://arxiv.org/abs/2607.04068) (Alibaba, 2026)
+- **PROMISE**: Process Reward Models for test-time scaling in generative recommendation; addresses Semantic Drift in hierarchical Semantic ID generation via step-level reward guidance — [[Paper]](https://arxiv.org/abs/2601.04674) (Kuaishou, 2026)
 
 ### Generative Pre-training for CTR
 
@@ -154,6 +155,7 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 - **Versioned Late Materialization**: Data infrastructure for ultra-long sequence training — [[Paper]](https://arxiv.org/abs/2604.24806) (Meta, 2026)
 - **Intelligent Elastic Feature Fading**: Retrain-free feature efficiency rollouts at scale via elastic feature coverage control at serving time — [[Paper]](https://arxiv.org/abs/2605.00324) (2026)
 - **TurboGR**: Accelerated training system for large-scale generative recommendation on Ascend NPUs; 54.71% MFU with near-linear scalability — [[Paper]](https://arxiv.org/abs/2605.13433) (2026)
+- **RelayGR**: Cross-stage relay-race inference for long-sequence generative recommendation; decouples user-independent tokens from ranking-stage computation; implemented on Huawei Ascend NPUs — [[Paper]](https://arxiv.org/abs/2601.01712) (Huawei, 2026)
 
 ### Retrieval & Reranking Scaling
 
@@ -176,6 +178,10 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 - **Emergent Capabilities Arise Randomly from Learning Sparse Attention Patterns**: Mechanistic study showing emergence corresponds to abrupt learning of task-relevant sparse attention patterns; scaling heads improves learning efficiency while head dimension yields diminishing returns past a minimum; insights for sparse-attention-based ranking architectures — [[Paper]](https://arxiv.org/abs/2606.25010) (2026)
 - **Neural Scaling Universality**: Position paper arguing scaling-law exponents are fixed by generic mechanisms (Softmax nonlinearity, representational superposition, layer ensembling) and coefficients (sensitive to data/architecture) are the lever for practical gains — [[Paper]](https://arxiv.org/abs/2606.25008) (2026)
 - **Smooth Scaling Laws Hide Stepwise Token Learning**: Token-level decomposition reveals scaling laws are governed by the distribution of localized token learning times; reshaping training distribution according to token learnability yields 11% faster loss reduction — [[Paper]](https://arxiv.org/abs/2606.29858) (2026)
+- **MoUE (Mixture of Universal Experts)**: Introduces Virtual Width as a new MoE scaling dimension; reuses a universal layer-agnostic expert pool across layers, converting depth into virtual width under fixed per-token activation budget — [[Paper]](https://arxiv.org/abs/2603.04971) (Baidu, 2026)
+- **Generalization and Scaling Laws for MoE Transformers**: Theory of MoE generalization; sup-norm covering-number bound separating active per-input capacity from routing combinatorics; yields generalization bound under distributional assumptions — [[Paper]](https://arxiv.org/abs/2604.09175) (Academic, 2026)
+- **Holistic MoE Scaling**: Reusable framework for optimal MoE architecture optimization via holistic scaling laws; addresses combinatorially vast MoE design space by jointly considering all architectural variables — [[Paper]](https://arxiv.org/abs/2603.21862) (Academic, 2026)
+- **HOLA (Hippocampal Linear Attention)**: Adds bounded exact KV cache as hippocampal complement to recurrent linear attention state; semiparametric dual-memory architecture achieving 16.1% perplexity reduction while maintaining O(1) memory for inference — [[Paper]](https://arxiv.org/abs/2607.02303) (Academic, 2026)
 
 ### Other
 
@@ -197,7 +203,9 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 | **Google** | Hiformer, Beyond Item IDs, Token Factory, TokenMinds |
 | **LinkedIn** | LiRank, CADET |
 | **NetEase** | Climber, Climber-Pilot |
-| **Kuaishou** | UniMixer, INFNet, CHIME, VQL, OneRec-V2 Quantized, OneReason, OneRetrieval, RaG, UniFormer, POEM, HGenPush |
+| **Kuaishou** | UniMixer, INFNet, CHIME, VQL, OneRec-V2 Quantized, OneReason, OneRetrieval, RaG, UniFormer, POEM, HGenPush, PROMISE |
+| **Huawei** | RelayGR |
+| **Baidu** | MoUE |
 | **Shopee** | OnePiece, OneRank |
 | **Coupang** | Search CVR Scaling |
 | **Netflix** | Large-Scale Generative Recommenders, GenPage |
