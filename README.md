@@ -129,6 +129,8 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 - **GenPage**: End-to-end generative homepage construction replacing multi-stage rec stack; autoregressive generation of structured multi-row pages; +0.24% engagement with 20% latency reduction in A/B — [[Paper]](https://arxiv.org/abs/2606.31031) (Netflix, 2026)
 - **Diffusion-GR2**: Block-diffusion conversion of AR reasoning re-ranker (GR2); CFT + on-policy distillation + RL closes structural and distributional gaps; 2.4–3.5× decode throughput with near-parity accuracy — [[Paper]](https://arxiv.org/abs/2607.01170) (Meta, 2026)
 - **ShopX**: Foundation model for agentic shopping; unifies intent understanding, execution planning, and SID-native item-space operations into a single model; deployed on Taobao — [[Paper]](https://arxiv.org/abs/2606.31693) (Alibaba, 2026)
+- **HGenPush**: Heterogeneous generative recommendation for push notifications; dual-branch video + author generation with Chained-MTP multi-token prediction; +0.181% DAU on Kuaishou — [[Paper]](https://arxiv.org/abs/2607.03362) (Kuaishou, 2026)
+- **UniSGR**: Unified framework for Semantic ID generation and ranking; sparse MoE decoder with Value-Aware Parallel Multi-Token Prediction and STARK inference optimization; deployed on large-scale e-commerce — [[Paper]](https://arxiv.org/abs/2607.04068) (Alibaba, 2026)
 
 ### Generative Pre-training for CTR
 
@@ -189,13 +191,13 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 |:--------|:-------|
 | **Meta** | Understanding Scaling Laws, Wukong, HSTU, InterFormer, ULTRA-HSTU, Foundation-Expert, Kunlun, LLaTTE, DHEN, Principled Synthetic Data Scaling Laws, LoopFM, MoS, Memento, FreeScale, Efficient Retrieval Scaling, RankGraph-2, G2Rec, GR2 Technical Report, Diffusion-GR2, CMSL |
 | **ByteDance** | RankMixer, OneTrans, HyFormer, Zenith, TokenMixer-Large, MSN, UG-Sep, MixFormer, Rec-Distill, LONGER, Make It Long Keep It Fast |
-| **Alibaba** | GPSD, FAT, HHFT, EST, HeteroMixer, SORT, Beyond Dense Connectivity, LoopCTR, UTTSI, HeteGenCTR, ENCODE, MUSE, SSRLive, LUM, ShopX |
+| **Alibaba** | GPSD, FAT, HHFT, EST, HeteroMixer, SORT, Beyond Dense Connectivity, LoopCTR, UTTSI, HeteGenCTR, ENCODE, MUSE, SSRLive, LUM, ShopX, UniSGR |
 | **Meituan** | SUAN, MTFM, MTmixAtt, SparseCTR, Next-Scale Generative Reranking |
 | **Tencent** | GE4Rec, TokenFormer, RankUp (Weixin), RankElastor, SIREN (Weixin), HiGR |
 | **Google** | Hiformer, Beyond Item IDs, Token Factory, TokenMinds |
 | **LinkedIn** | LiRank, CADET |
 | **NetEase** | Climber, Climber-Pilot |
-| **Kuaishou** | UniMixer, INFNet, CHIME, VQL, OneRec-V2 Quantized, OneReason, OneRetrieval, RaG, UniFormer, POEM |
+| **Kuaishou** | UniMixer, INFNet, CHIME, VQL, OneRec-V2 Quantized, OneReason, OneRetrieval, RaG, UniFormer, POEM, HGenPush |
 | **Shopee** | OnePiece, OneRank |
 | **Coupang** | Search CVR Scaling |
 | **Netflix** | Large-Scale Generative Recommenders, GenPage |
