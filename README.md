@@ -183,6 +183,7 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 - **Holistic MoE Scaling**: Reusable framework for optimal MoE architecture optimization via holistic scaling laws; addresses combinatorially vast MoE design space by jointly considering all architectural variables — [[Paper]](https://arxiv.org/abs/2603.21862) (Academic, 2026)
 - **HiLS**: Hierarchical Landmark Sparse Attention; learns chunk selection end-to-end under LM loss; factorizes attention hierarchically for chunk-specific extraction and fusion; extrapolates 64× training context with 90% retrieval accuracy — [[Paper]](https://arxiv.org/abs/2607.02980) (2026)
 - **HOLA (Hippocampal Linear Attention)**: Adds bounded exact KV cache as hippocampal complement to recurrent linear attention state; semiparametric dual-memory architecture achieving 16.1% perplexity reduction while maintaining O(1) memory for inference — [[Paper]](https://arxiv.org/abs/2607.02303) (Academic, 2026)
+- **SDM (Sparse Delta Memory)**: Scales linear RNN hidden state by orders of magnitude via sparse addressing; extends Gated DeltaNet with sparse reads/writes to a large explicit memory; isoFLOP-optimal state capacity significantly improves in-context learning and long-context recall — [[Paper]](https://arxiv.org/abs/2607.07386) (Meta, 2026)
 
 ### Other
 
