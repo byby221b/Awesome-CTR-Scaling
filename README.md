@@ -132,6 +132,7 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 - **HGenPush**: Heterogeneous generative recommendation for push notifications; dual-branch video + author generation with Chained-MTP multi-token prediction; +0.181% DAU on Kuaishou — [[Paper]](https://arxiv.org/abs/2607.03362) (Kuaishou, 2026)
 - **UniSGR**: Unified framework for Semantic ID generation and ranking; sparse MoE decoder with Value-Aware Parallel Multi-Token Prediction and STARK inference optimization; deployed on large-scale e-commerce — [[Paper]](https://arxiv.org/abs/2607.04068) (Alibaba, 2026)
 - **PROMISE**: Process Reward Models for test-time scaling in generative recommendation; addresses Semantic Drift in hierarchical Semantic ID generation via step-level reward guidance — [[Paper]](https://arxiv.org/abs/2601.04674) (Kuaishou, 2026)
+- **Long-Term Optimization for Large-Scale GR**: Off-policy REINFORCE for session-level generative retrieval training; multi-step importance weight approximation and feedback-model-based test-time scaling on Yambda-5B — [[Paper]](https://arxiv.org/abs/2607.02818) (VK, 2026)
 
 ### Generative Pre-training for CTR
 
@@ -156,6 +157,7 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 - **Intelligent Elastic Feature Fading**: Retrain-free feature efficiency rollouts at scale via elastic feature coverage control at serving time — [[Paper]](https://arxiv.org/abs/2605.00324) (2026)
 - **TurboGR**: Accelerated training system for large-scale generative recommendation on Ascend NPUs; 54.71% MFU with near-linear scalability — [[Paper]](https://arxiv.org/abs/2605.13433) (2026)
 - **RelayGR**: Cross-stage relay-race inference for long-sequence generative recommendation; decouples user-independent tokens from ranking-stage computation; implemented on Huawei Ascend NPUs — [[Paper]](https://arxiv.org/abs/2601.01712) (Huawei, 2026)
+- **DPIFrame**: Dual-level parallelism framework for CTR model inference on GPU; intra-module + inter-module parallelism with multi-table lookup and breadth-first stream scheduling; 23× embedding latency reduction vs PyTorch — [[Paper]](https://arxiv.org/abs/2606.21101) (2026)
 
 ### Retrieval & Reranking Scaling
 
@@ -215,6 +217,7 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 | **Pinterest** | ML-DCN, UniPinRec |
 | **Yandex** | Scaling Recommender Transformers, Gryphon, GBLA |
 | **JD** | GenRec, AdaGRPO |
+| **VK** | Long-Term Optimization for Large-Scale GR |
 
 ## Contributing
 
