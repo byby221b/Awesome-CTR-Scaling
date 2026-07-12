@@ -95,6 +95,7 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 - **SinkRec**: Mitigates semantic state sink in linear attention for long-sequence recommendation; hybrid memory-transition looped architecture with memory-conditioned Gated Delta Networks — [[Paper]](https://arxiv.org/abs/2606.09888) (2026)
 - **CMSL**: Constructive Multi-Sequence Learning; disentangles user history into thematic strands via learnable Sequence Construction Module with linear attention; deployed across ranking and retrieval on four major surfaces at Meta — [[Paper]](https://arxiv.org/abs/2606.28533) (Meta, 2026)
 - **POEM**: Partial-Order Enhanced Real-Time Sequential Modeling; constructs dynamic partial-order sequences from multi-task ranking scores for fine-grained real-time interest modeling; deployed on Kuaishou — [[Paper]](https://arxiv.org/abs/2606.29946) (Kuaishou, 2026)
+- **FuXi-Linear**: Linear-complexity model for long-term time-aware sequential recommendation; decouples temporal and semantic signals to avoid mutual interference while capturing behavioral periodicity; designed for deep architectures and long sequences — [[Paper]](https://arxiv.org/abs/2602.23671) (2026)
 
 ### Sample/Instance Compression for Sequence Modeling
 
@@ -187,6 +188,7 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 - **HOLA (Hippocampal Linear Attention)**: Adds bounded exact KV cache as hippocampal complement to recurrent linear attention state; semiparametric dual-memory architecture achieving 16.1% perplexity reduction while maintaining O(1) memory for inference — [[Paper]](https://arxiv.org/abs/2607.02303) (Academic, 2026)
 - **SDM (Sparse Delta Memory)**: Scales linear RNN hidden state by orders of magnitude via sparse addressing; extends Gated DeltaNet with sparse reads/writes to a large explicit memory; isoFLOP-optimal state capacity significantly improves in-context learning and long-context recall — [[Paper]](https://arxiv.org/abs/2607.07386) (Meta, 2026)
 - **Hidden Decoding at Scale**: Sequence-length scaling via Hidden Decoding during continued pretraining; expands each token into n streams with Stream-Factorized Attention (quadratic→linear in n); first demonstrated at 100B+ MoE scale (WeLM-HD4-80B/617B); a fixed-backbone scaling path orthogonal to parameter scaling — [[Paper]](https://arxiv.org/abs/2607.08186) (WeChat AI, 2026)
+- **The Key to Going Linear**: Analysis-driven post-hoc Transformer linearization; reveals softmax relies on key-dependent rank-1 orthogonal projections explaining delta-style linear attention's superiority; introduces sink tokens, short convolutions, and fixed-budget cache routing to close the quality gap; scales to 32B on LLaMA and Qwen — [[Paper]](https://arxiv.org/abs/2607.07706) (Qualcomm AI Research, 2026)
 
 ### Other
 
