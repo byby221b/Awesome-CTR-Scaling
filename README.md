@@ -134,6 +134,7 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 - **UniSGR**: Unified framework for Semantic ID generation and ranking; sparse MoE decoder with Value-Aware Parallel Multi-Token Prediction and STARK inference optimization; deployed on large-scale e-commerce — [[Paper]](https://arxiv.org/abs/2607.04068) (Alibaba, 2026)
 - **PROMISE**: Process Reward Models for test-time scaling in generative recommendation; addresses Semantic Drift in hierarchical Semantic ID generation via step-level reward guidance — [[Paper]](https://arxiv.org/abs/2601.04674) (Kuaishou, 2026)
 - **Long-Term Optimization for Large-Scale GR**: Off-policy REINFORCE for session-level generative retrieval training; multi-step importance weight approximation and feedback-model-based test-time scaling on Yambda-5B — [[Paper]](https://arxiv.org/abs/2607.02818) (VK, 2026)
+- **DaV-Gen**: End-to-end generative retrieval via Draft-and-Verify; speculative-decoding-inspired framework that combines contrastive-learned vector drafting with fused generative verification scoring in a single unified model — [[Paper]](https://arxiv.org/abs/2607.08365) (2026)
 
 ### Generative Pre-training for CTR
 
