@@ -135,6 +135,8 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 - **PROMISE**: Process Reward Models for test-time scaling in generative recommendation; addresses Semantic Drift in hierarchical Semantic ID generation via step-level reward guidance — [[Paper]](https://arxiv.org/abs/2601.04674) (Kuaishou, 2026)
 - **Long-Term Optimization for Large-Scale GR**: Off-policy REINFORCE for session-level generative retrieval training; multi-step importance weight approximation and feedback-model-based test-time scaling on Yambda-5B — [[Paper]](https://arxiv.org/abs/2607.02818) (VK, 2026)
 - **DaV-Gen**: End-to-end generative retrieval via Draft-and-Verify; speculative-decoding-inspired framework that combines contrastive-learned vector drafting with fused generative verification scoring in a single unified model — [[Paper]](https://arxiv.org/abs/2607.08365) (2026)
+- **Not Only NTP**: Extends NTP training signal coverage for generative recommendation; addresses temporal locality and spatial locality limitations of single-step next-token prediction in multi-domain sequences — [[Paper]](https://arxiv.org/abs/2607.12277) (Meituan, 2026)
+- **Where Reasoning Matters**: Rethinks latent reasoning in Semantic ID-based generative recommendation; investigates adaptive allocation of reasoning computation across token positions in SID generation — [[Paper]](https://arxiv.org/abs/2607.12425) (2026)
 
 ### Generative Pre-training for CTR
 
@@ -168,6 +170,7 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 - **Efficient Retrieval Scaling with Hierarchical Indexing**: Hierarchical index learning over foundational retrieval model memory; deployed at Meta — [[Paper]](https://arxiv.org/abs/2604.12965) (Meta, 2026)
 - **OneRetrieval**: One-model editable generative retrieval for industrial e-commerce search; Keyword-Aligned Encoding (KAE) ties identifier slots to interpretable attribute words; reserved codebook slots enable real-time term injection without retraining; matches strongest GR baseline on 5M real-traffic requests with order-of-magnitude higher intervention hit rate — [[Paper]](https://arxiv.org/abs/2606.13533) (Kuaishou, 2026)
 - **RankGraph-2**: Lifecycle co-design for billion-node graph-based retrieval (U2U2I/U2I2I); co-learns residual-quantization cluster index reducing serving cost 83%; 3.8× recall over GAT+DGI; +0.96% CTR across 20+ retrieval launches at Meta — [[Paper]](https://arxiv.org/abs/2606.18379) (Meta, 2026)
+- **MESH**: Unified retrieval scaling framework addressing Scaling Bias of Heterogeneity; modularized architecture with gated bias correction achieves 14× improvement in scaling exponent for fresh items; deployed on Pinterest Related Pins — [[Paper]](https://arxiv.org/abs/2607.12392) (Pinterest, 2026)
 
 ### Architecture Innovations Beyond Recommendation
 
@@ -208,7 +211,7 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 | **Meta** | Understanding Scaling Laws, Wukong, HSTU, InterFormer, ULTRA-HSTU, Foundation-Expert, Kunlun, LLaTTE, DHEN, Principled Synthetic Data Scaling Laws, LoopFM, MoS, Memento, FreeScale, Efficient Retrieval Scaling, RankGraph-2, G2Rec, GR2 Technical Report, Diffusion-GR2, CMSL |
 | **ByteDance** | RankMixer, OneTrans, HyFormer, Zenith, TokenMixer-Large, MSN, UG-Sep, MixFormer, Rec-Distill, LONGER, Make It Long Keep It Fast |
 | **Alibaba** | GPSD, FAT, HHFT, EST, HeteroMixer, SORT, Beyond Dense Connectivity, LoopCTR, UTTSI, HeteGenCTR, ENCODE, MUSE, SSRLive, LUM, ShopX, UniSGR |
-| **Meituan** | SUAN, MTFM, MTmixAtt, SparseCTR, Next-Scale Generative Reranking |
+| **Meituan** | SUAN, MTFM, MTmixAtt, SparseCTR, Next-Scale Generative Reranking, Not Only NTP |
 | **Tencent** | GE4Rec, TokenFormer, RankUp (Weixin), RankElastor, SIREN (Weixin), HiGR |
 | **Google** | Hiformer, Beyond Item IDs, Token Factory, TokenMinds |
 | **LinkedIn** | LiRank, CADET |
@@ -220,7 +223,7 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 | **Coupang** | Search CVR Scaling |
 | **Netflix** | Large-Scale Generative Recommenders, GenPage |
 | **Tubi** | TubiFM |
-| **Pinterest** | ML-DCN, UniPinRec |
+| **Pinterest** | ML-DCN, UniPinRec, MESH |
 | **Yandex** | Scaling Recommender Transformers, Gryphon, GBLA |
 | **JD** | GenRec, AdaGRPO |
 | **VK** | Long-Term Optimization for Large-Scale GR |
