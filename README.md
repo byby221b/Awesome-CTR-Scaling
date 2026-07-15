@@ -189,6 +189,7 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 - **HOLA (Hippocampal Linear Attention)**: Adds bounded exact KV cache as hippocampal complement to recurrent linear attention state; semiparametric dual-memory architecture achieving 16.1% perplexity reduction while maintaining O(1) memory for inference — [[Paper]](https://arxiv.org/abs/2607.02303) (Academic, 2026)
 - **SDM (Sparse Delta Memory)**: Scales linear RNN hidden state by orders of magnitude via sparse addressing; extends Gated DeltaNet with sparse reads/writes to a large explicit memory; isoFLOP-optimal state capacity significantly improves in-context learning and long-context recall — [[Paper]](https://arxiv.org/abs/2607.07386) (Meta, 2026)
 - **Hidden Decoding at Scale**: Sequence-length scaling via Hidden Decoding during continued pretraining; expands each token into n streams with Stream-Factorized Attention (quadratic→linear in n); first demonstrated at 100B+ MoE scale (WeLM-HD4-80B/617B); a fixed-backbone scaling path orthogonal to parameter scaling — [[Paper]](https://arxiv.org/abs/2607.08186) (WeChat AI, 2026)
+- **MLPs are Hebbians**: First Transformer-compatible closed-form MLP construction achieving information-theoretically optimal fact storage scaling; 10–104× fewer parameters than prior constructions at matched fact count; enables modular fact editing by swapping MLP layers — [[Paper]](https://arxiv.org/abs/2607.10034) (Stanford, 2026)
 - **The Key to Going Linear**: Analysis-driven post-hoc Transformer linearization; reveals softmax relies on key-dependent rank-1 orthogonal projections explaining delta-style linear attention's superiority; introduces sink tokens, short convolutions, and fixed-budget cache routing to close the quality gap; scales to 32B on LLaMA and Qwen — [[Paper]](https://arxiv.org/abs/2607.07706) (Qualcomm AI Research, 2026)
 
 ### Other
@@ -196,6 +197,7 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 - **CETNet**: Collaborative ensemble with confidence-based fusion — [[Paper]](https://arxiv.org/abs/2411.13700) (Meta, 2024)
 - **COFFEE**: Enriches embeddings following scaling law principles — [[Paper]](https://arxiv.org/abs/2601.02807) (Meta, 2026)
 - **Understanding DNNs in Feature Interaction Models**: Dimensional collapse perspective on DNN roles in feature interaction models — [[Paper]](https://arxiv.org/abs/2604.26489) (2026)
+- **Mitigating Early Training Collapse in CTR Models**: Analyzes sharp validation performance decline after first epoch in CTR training; shows controlling feature sparsity (removing sparse features + aggregating infrequent values) is far more effective than learning rate tuning for stabilizing multi-epoch training — [[Paper]](https://arxiv.org/abs/2607.09696) (Huawei, 2026)
 
 ---
 
@@ -212,7 +214,7 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 | **LinkedIn** | LiRank, CADET |
 | **NetEase** | Climber, Climber-Pilot |
 | **Kuaishou** | UniMixer, INFNet, CHIME, VQL, OneRec-V2 Quantized, OneReason, OneRetrieval, RaG, UniFormer, POEM, HGenPush, PROMISE |
-| **Huawei** | RelayGR |
+| **Huawei** | RelayGR, Mitigating Early Training Collapse |
 | **Baidu** | MoUE |
 | **Shopee** | OnePiece, OneRank |
 | **Coupang** | Search CVR Scaling |
