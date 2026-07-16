@@ -72,6 +72,7 @@ This repository focuses on a rapidly emerging research direction: how to effecti
 | **Token Factory: Efficiently Integrating Diverse Signals into Large Recommendation Models** | Google | arXiv | 2026 | [[Paper]](https://arxiv.org/abs/2606.19635) | Transforms heterogeneous signals into soft tokens for LRMs; prevents prompt length explosion while enabling efficient scaling of signal integration |
 | **SPRINT: The Pitfall of Scaling Up: Uncovering and Mitigating Popularity Bias Amplification in Scaling Transformer-based Recommenders** | Academic | KDD | 2026 | [[Paper]](https://arxiv.org/abs/2606.21911) | Identifies spectral collapse causing popularity bias amplification as a fundamental obstacle to sustainable scaling; SPRINT regularization enables more favorable scaling from 0.05M to 0.34B params |
 | **UniFormer: Efficient and Unified Model-Centric Scaling for Industrial Recommendation** | Kuaishou | arXiv | 2026 | [[Paper]](https://arxiv.org/abs/2606.27058) | Unified model-centric scaling framework; decomposes feature-space and task-space interactions; semantic tokenization for user-item decoupling; multi-sequence cross-attention and multi-view FFNs |
+| **TMallGS: Scaling Unified Feature and Sequence Modeling for Generative E-commerce Search** | Alibaba (Tmall) | arXiv | 2026 | [[Paper]](https://arxiv.org/abs/2607.13398) | Scalable ranking architecture for Tmall search; Hierarchical Distribution-Calibrated Tokenization + Field-Adaptive Gated Transformer + Decoupled FiLM Late Fusion; addresses heterogeneous feature tokenization |
 
 ## Related Work
 
@@ -137,6 +138,8 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 - **DaV-Gen**: End-to-end generative retrieval via Draft-and-Verify; speculative-decoding-inspired framework that combines contrastive-learned vector drafting with fused generative verification scoring in a single unified model — [[Paper]](https://arxiv.org/abs/2607.08365) (2026)
 - **Not Only NTP**: Extends NTP training signal coverage for generative recommendation; addresses temporal locality and spatial locality limitations of single-step next-token prediction in multi-domain sequences — [[Paper]](https://arxiv.org/abs/2607.12277) (Meituan, 2026)
 - **Where Reasoning Matters**: Rethinks latent reasoning in Semantic ID-based generative recommendation; investigates adaptive allocation of reasoning computation across token positions in SID generation — [[Paper]](https://arxiv.org/abs/2607.12425) (2026)
+- **CRID (Beyond Semantic IDs)**: Cluster-Ranked Identifier decoupling DocID into semantic clustering and business-value ranking for collision-free GR; deployed on 300M-item Taobao corpus with +1.06% GMV — [[Paper]](https://arxiv.org/abs/2607.11392) (Alibaba, 2026)
+- **Prompt Generation Technical Report**: Configuration-driven framework decoupling feature-processing logic from GR model architecture via declarative JSON; accelerates training iteration, deployment, and inference; deployed on Taobao Search with +0.47% transactions, +0.51% GMV — [[Paper]](https://arxiv.org/abs/2607.11326) (Alibaba, 2026)
 
 ### Generative Pre-training for CTR
 
@@ -162,6 +165,7 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 - **TurboGR**: Accelerated training system for large-scale generative recommendation on Ascend NPUs; 54.71% MFU with near-linear scalability — [[Paper]](https://arxiv.org/abs/2605.13433) (2026)
 - **RelayGR**: Cross-stage relay-race inference for long-sequence generative recommendation; decouples user-independent tokens from ranking-stage computation; implemented on Huawei Ascend NPUs — [[Paper]](https://arxiv.org/abs/2601.01712) (Huawei, 2026)
 - **DPIFrame**: Dual-level parallelism framework for CTR model inference on GPU; intra-module + inter-module parallelism with multi-table lookup and breadth-first stream scheduling; 23× embedding latency reduction vs PyTorch — [[Paper]](https://arxiv.org/abs/2606.21101) (2026)
+- **FlashTrie**: GPU-accelerated constrained beam search for generative retrieval; integer-aware succinct trie layout with cooperative CUDA kernel; 24× speedup over CPU on 800M keywords; +0.71% revenue in online A/B on commercial search engine — [[Paper]](https://arxiv.org/abs/2607.10044) (Microsoft, 2026)
 
 ### Retrieval & Reranking Scaling
 
@@ -171,6 +175,7 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 - **OneRetrieval**: One-model editable generative retrieval for industrial e-commerce search; Keyword-Aligned Encoding (KAE) ties identifier slots to interpretable attribute words; reserved codebook slots enable real-time term injection without retraining; matches strongest GR baseline on 5M real-traffic requests with order-of-magnitude higher intervention hit rate — [[Paper]](https://arxiv.org/abs/2606.13533) (Kuaishou, 2026)
 - **RankGraph-2**: Lifecycle co-design for billion-node graph-based retrieval (U2U2I/U2I2I); co-learns residual-quantization cluster index reducing serving cost 83%; 3.8× recall over GAT+DGI; +0.96% CTR across 20+ retrieval launches at Meta — [[Paper]](https://arxiv.org/abs/2606.18379) (Meta, 2026)
 - **MESH**: Unified retrieval scaling framework addressing Scaling Bias of Heterogeneity; modularized architecture with gated bias correction achieves 14× improvement in scaling exponent for fresh items; deployed on Pinterest Related Pins — [[Paper]](https://arxiv.org/abs/2607.12392) (Pinterest, 2026)
+- **Scaling and Stabilizing Large-Scale EBR**: Unified pipeline for scaling embedding-based retrieval at Walmart; Hybrid Hard Negative Mining + Legacy-Aware Distillation for smooth backbone evolution from DistilBERT to GTE-base; +7.34% NDCG@5, +0.50% revenue — [[Paper]](https://arxiv.org/abs/2607.10096) (Walmart, 2026)
 
 ### Architecture Innovations Beyond Recommendation
 
@@ -210,7 +215,7 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 |:--------|:-------|
 | **Meta** | Understanding Scaling Laws, Wukong, HSTU, InterFormer, ULTRA-HSTU, Foundation-Expert, Kunlun, LLaTTE, DHEN, Principled Synthetic Data Scaling Laws, LoopFM, MoS, Memento, FreeScale, Efficient Retrieval Scaling, RankGraph-2, G2Rec, GR2 Technical Report, Diffusion-GR2, CMSL |
 | **ByteDance** | RankMixer, OneTrans, HyFormer, Zenith, TokenMixer-Large, MSN, UG-Sep, MixFormer, Rec-Distill, LONGER, Make It Long Keep It Fast |
-| **Alibaba** | GPSD, FAT, HHFT, EST, HeteroMixer, SORT, Beyond Dense Connectivity, LoopCTR, UTTSI, HeteGenCTR, ENCODE, MUSE, SSRLive, LUM, ShopX, UniSGR |
+| **Alibaba** | GPSD, FAT, HHFT, EST, HeteroMixer, SORT, Beyond Dense Connectivity, LoopCTR, UTTSI, HeteGenCTR, ENCODE, MUSE, SSRLive, LUM, ShopX, UniSGR, TMallGS, CRID, Prompt Generation |
 | **Meituan** | SUAN, MTFM, MTmixAtt, SparseCTR, Next-Scale Generative Reranking, Not Only NTP |
 | **Tencent** | GE4Rec, TokenFormer, RankUp (Weixin), RankElastor, SIREN (Weixin), HiGR |
 | **Google** | Hiformer, Beyond Item IDs, Token Factory, TokenMinds |
@@ -227,6 +232,8 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 | **Yandex** | Scaling Recommender Transformers, Gryphon, GBLA |
 | **JD** | GenRec, AdaGRPO |
 | **VK** | Long-Term Optimization for Large-Scale GR |
+| **Microsoft** | FlashTrie |
+| **Walmart** | Scaling and Stabilizing Large-Scale EBR |
 
 ## Contributing
 
