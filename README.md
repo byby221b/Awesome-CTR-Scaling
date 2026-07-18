@@ -73,6 +73,7 @@ This repository focuses on a rapidly emerging research direction: how to effecti
 | **SPRINT: The Pitfall of Scaling Up: Uncovering and Mitigating Popularity Bias Amplification in Scaling Transformer-based Recommenders** | Academic | KDD | 2026 | [[Paper]](https://arxiv.org/abs/2606.21911) | Identifies spectral collapse causing popularity bias amplification as a fundamental obstacle to sustainable scaling; SPRINT regularization enables more favorable scaling from 0.05M to 0.34B params |
 | **UniFormer: Efficient and Unified Model-Centric Scaling for Industrial Recommendation** | Kuaishou | arXiv | 2026 | [[Paper]](https://arxiv.org/abs/2606.27058) | Unified model-centric scaling framework; decomposes feature-space and task-space interactions; semantic tokenization for user-item decoupling; multi-sequence cross-attention and multi-view FFNs |
 | **TMallGS: Scaling Unified Feature and Sequence Modeling for Generative E-commerce Search** | Alibaba (Tmall) | arXiv | 2026 | [[Paper]](https://arxiv.org/abs/2607.13398) | Scalable ranking architecture for Tmall search; Hierarchical Distribution-Calibrated Tokenization + Field-Adaptive Gated Transformer + Decoupled FiLM Late Fusion; addresses heterogeneous feature tokenization |
+| **SlimPer: Make Personalization Model Slim and Smart** | Meta | arXiv | 2026 | [[Paper]](https://arxiv.org/abs/2607.12281) | O(N) iterative knowledge-base refinement architecture for personalized ranking; depth decoupled from user history length; request-only optimization; deployed on Instagram Reels and Feed with 10K+ user events |
 
 ## Related Work
 
@@ -96,6 +97,7 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 - **SinkRec**: Mitigates semantic state sink in linear attention for long-sequence recommendation; hybrid memory-transition looped architecture with memory-conditioned Gated Delta Networks — [[Paper]](https://arxiv.org/abs/2606.09888) (2026)
 - **CMSL**: Constructive Multi-Sequence Learning; disentangles user history into thematic strands via learnable Sequence Construction Module with linear attention; deployed across ranking and retrieval on four major surfaces at Meta — [[Paper]](https://arxiv.org/abs/2606.28533) (Meta, 2026)
 - **POEM**: Partial-Order Enhanced Real-Time Sequential Modeling; constructs dynamic partial-order sequences from multi-task ranking scores for fine-grained real-time interest modeling; deployed on Kuaishou — [[Paper]](https://arxiv.org/abs/2606.29946) (Kuaishou, 2026)
+- **Long-History User Transformers**: Decoupled offline/online architecture for full cross-surface user history in real-time ad ranking; offline transformer pre-trains on interaction logs with dual objective, cached representation + lightweight runtime model; +2.77% ranking metric, +2.26% revenue at Yandex — [[Paper]](https://arxiv.org/abs/2607.14331) (Yandex, 2026)
 - **FuXi-Linear**: Linear-complexity model for long-term time-aware sequential recommendation; decouples temporal and semantic signals to avoid mutual interference while capturing behavioral periodicity; designed for deep architectures and long sequences — [[Paper]](https://arxiv.org/abs/2602.23671) (2026)
 
 ### Sample/Instance Compression for Sequence Modeling
@@ -199,6 +201,8 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 - **Hidden Decoding at Scale**: Sequence-length scaling via Hidden Decoding during continued pretraining; expands each token into n streams with Stream-Factorized Attention (quadratic→linear in n); first demonstrated at 100B+ MoE scale (WeLM-HD4-80B/617B); a fixed-backbone scaling path orthogonal to parameter scaling — [[Paper]](https://arxiv.org/abs/2607.08186) (WeChat AI, 2026)
 - **MLPs are Hebbians**: First Transformer-compatible closed-form MLP construction achieving information-theoretically optimal fact storage scaling; 10–104× fewer parameters than prior constructions at matched fact count; enables modular fact editing by swapping MLP layers — [[Paper]](https://arxiv.org/abs/2607.10034) (Stanford, 2026)
 - **The Key to Going Linear**: Analysis-driven post-hoc Transformer linearization; reveals softmax relies on key-dependent rank-1 orthogonal projections explaining delta-style linear attention's superiority; introduces sink tokens, short convolutions, and fixed-budget cache routing to close the quality gap; scales to 32B on LLaMA and Qwen — [[Paper]](https://arxiv.org/abs/2607.07706) (Qualcomm AI Research, 2026)
+- **DeepLoop**: Depth scaling for looped Transformers; formalizes tied-depth effect via visit-alignment coefficient; proper residual scaling rules (α, β exponents) for stable recurrent parameter reuse; complements loop scaling paradigm — [[Paper]](https://arxiv.org/abs/2607.13491) (2026)
+- **xHC (Expanded Hyper-Connections)**: First HC-family method to expand residual stream beyond N=4; sparse update of k=4 streams while retaining dense access to N=16; 1.50× compute reduction vs vanilla at same loss on 18B/28B MoE; xHC-Flash reduces memory traffic for practical training — [[Paper]](https://arxiv.org/abs/2607.14530) (2026)
 
 ### Other
 
@@ -213,7 +217,7 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 
 | Company | Papers |
 |:--------|:-------|
-| **Meta** | Understanding Scaling Laws, Wukong, HSTU, InterFormer, ULTRA-HSTU, Foundation-Expert, Kunlun, LLaTTE, DHEN, Principled Synthetic Data Scaling Laws, LoopFM, MoS, Memento, FreeScale, Efficient Retrieval Scaling, RankGraph-2, G2Rec, GR2 Technical Report, Diffusion-GR2, CMSL |
+| **Meta** | Understanding Scaling Laws, Wukong, HSTU, InterFormer, ULTRA-HSTU, Foundation-Expert, Kunlun, LLaTTE, DHEN, Principled Synthetic Data Scaling Laws, LoopFM, MoS, Memento, FreeScale, Efficient Retrieval Scaling, RankGraph-2, G2Rec, GR2 Technical Report, Diffusion-GR2, CMSL, SlimPer |
 | **ByteDance** | RankMixer, OneTrans, HyFormer, Zenith, TokenMixer-Large, MSN, UG-Sep, MixFormer, Rec-Distill, LONGER, Make It Long Keep It Fast |
 | **Alibaba** | GPSD, FAT, HHFT, EST, HeteroMixer, SORT, Beyond Dense Connectivity, LoopCTR, UTTSI, HeteGenCTR, ENCODE, MUSE, SSRLive, LUM, ShopX, UniSGR, TMallGS, CRID, Prompt Generation |
 | **Meituan** | SUAN, MTFM, MTmixAtt, SparseCTR, Next-Scale Generative Reranking, Not Only NTP |
@@ -229,7 +233,7 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 | **Netflix** | Large-Scale Generative Recommenders, GenPage |
 | **Tubi** | TubiFM |
 | **Pinterest** | ML-DCN, UniPinRec, MESH |
-| **Yandex** | Scaling Recommender Transformers, Gryphon, GBLA |
+| **Yandex** | Scaling Recommender Transformers, Gryphon, GBLA, Long-History User Transformers |
 | **JD** | GenRec, AdaGRPO |
 | **VK** | Long-Term Optimization for Large-Scale GR |
 | **Microsoft** | FlashTrie |
