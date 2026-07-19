@@ -103,7 +103,7 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 ### Sample/Instance Compression for Sequence Modeling
 
 - **IAT**: Instance-As-Token compression compresses all features of each historical interaction into a unified instance embedding — [[Paper]](https://arxiv.org/abs/2604.08933) (2026)
-- **SIF**: Encodes historical raw samples directly into sequence tokens via hierarchical group-adaptive quantization (HGAQ); unifies sample information scaling and model capacity scaling — [[Paper]](https://arxiv.org/abs/2604.15650) (Meituan, 2026)
+- **SIF**: Encodes historical raw samples directly into sequence tokens via hierarchical group-adaptive quantization (HGAQ); unifies sample information scaling and model capacity scaling — [[Paper]](https://arxiv.org/abs/2604.15650) (Meituan, RecSys 2026)
 
 ### Generative Recommendation
 
@@ -203,6 +203,7 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 - **The Key to Going Linear**: Analysis-driven post-hoc Transformer linearization; reveals softmax relies on key-dependent rank-1 orthogonal projections explaining delta-style linear attention's superiority; introduces sink tokens, short convolutions, and fixed-budget cache routing to close the quality gap; scales to 32B on LLaMA and Qwen — [[Paper]](https://arxiv.org/abs/2607.07706) (Qualcomm AI Research, 2026)
 - **DeepLoop**: Depth scaling for looped Transformers; formalizes tied-depth effect via visit-alignment coefficient; proper residual scaling rules (α, β exponents) for stable recurrent parameter reuse; complements loop scaling paradigm — [[Paper]](https://arxiv.org/abs/2607.13491) (2026)
 - **xHC (Expanded Hyper-Connections)**: First HC-family method to expand residual stream beyond N=4; sparse update of k=4 streams while retaining dense access to N=16; 1.50× compute reduction vs vanilla at same loss on 18B/28B MoE; xHC-Flash reduces memory traffic for practical training — [[Paper]](https://arxiv.org/abs/2607.14530) (2026)
+- **Transforming Rank**: Analyzes how each Transformer feedforward block component determines rank survival across depth; reinterprets skip connections and normalization as rank-preserving mechanisms; shows skip scale controls rank-collapse vs ensemble behavior trade-off — [[Paper]](https://arxiv.org/abs/2607.14018) (2026)
 
 ### Other
 
