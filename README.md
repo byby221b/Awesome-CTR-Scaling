@@ -142,6 +142,7 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 - **Where Reasoning Matters**: Rethinks latent reasoning in Semantic ID-based generative recommendation; investigates adaptive allocation of reasoning computation across token positions in SID generation — [[Paper]](https://arxiv.org/abs/2607.12425) (2026)
 - **CRID (Beyond Semantic IDs)**: Cluster-Ranked Identifier decoupling DocID into semantic clustering and business-value ranking for collision-free GR; deployed on 300M-item Taobao corpus with +1.06% GMV — [[Paper]](https://arxiv.org/abs/2607.11392) (Alibaba, 2026)
 - **Prompt Generation Technical Report**: Configuration-driven framework decoupling feature-processing logic from GR model architecture via declarative JSON; accelerates training iteration, deployment, and inference; deployed on Taobao Search with +0.47% transactions, +0.51% GMV — [[Paper]](https://arxiv.org/abs/2607.11326) (Alibaba, 2026)
+- **RecGPT-V3**: Stateful hybrid-modal recommender with Memory Hub for condensed user memory (55.8% compute reduction), Hybrid-modal Foundation Model jointly reasoning over text and Semantic IDs, and Latent Intent Reasoning internalizing CoT into learnable latent tokens (200× output token reduction); deployed on Taobao "Guess What You Like" with +1.28% IPV, +3.97% GMV — [[Paper]](https://arxiv.org/abs/2607.15591) (Alibaba, 2026)
 
 ### Generative Pre-training for CTR
 
@@ -220,7 +221,7 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 |:--------|:-------|
 | **Meta** | Understanding Scaling Laws, Wukong, HSTU, InterFormer, ULTRA-HSTU, Foundation-Expert, Kunlun, LLaTTE, DHEN, Principled Synthetic Data Scaling Laws, LoopFM, MoS, Memento, FreeScale, Efficient Retrieval Scaling, RankGraph-2, G2Rec, GR2 Technical Report, Diffusion-GR2, CMSL, SlimPer |
 | **ByteDance** | RankMixer, OneTrans, HyFormer, Zenith, TokenMixer-Large, MSN, UG-Sep, MixFormer, Rec-Distill, LONGER, Make It Long Keep It Fast |
-| **Alibaba** | GPSD, FAT, HHFT, EST, HeteroMixer, SORT, Beyond Dense Connectivity, LoopCTR, UTTSI, HeteGenCTR, ENCODE, MUSE, SSRLive, LUM, ShopX, UniSGR, TMallGS, CRID, Prompt Generation |
+| **Alibaba** | GPSD, FAT, HHFT, EST, HeteroMixer, SORT, Beyond Dense Connectivity, LoopCTR, UTTSI, HeteGenCTR, ENCODE, MUSE, SSRLive, LUM, ShopX, UniSGR, TMallGS, CRID, Prompt Generation, RecGPT-V3 |
 | **Meituan** | SUAN, MTFM, MTmixAtt, SparseCTR, Next-Scale Generative Reranking, Not Only NTP |
 | **Tencent** | GE4Rec, TokenFormer, RankUp (Weixin), RankElastor, SIREN (Weixin), HiGR |
 | **Google** | Hiformer, Beyond Item IDs, Token Factory, TokenMinds |
