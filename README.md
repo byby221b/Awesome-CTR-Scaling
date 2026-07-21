@@ -205,6 +205,7 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 - **DeepLoop**: Depth scaling for looped Transformers; formalizes tied-depth effect via visit-alignment coefficient; proper residual scaling rules (α, β exponents) for stable recurrent parameter reuse; complements loop scaling paradigm — [[Paper]](https://arxiv.org/abs/2607.13491) (2026)
 - **xHC (Expanded Hyper-Connections)**: First HC-family method to expand residual stream beyond N=4; sparse update of k=4 streams while retaining dense access to N=16; 1.50× compute reduction vs vanilla at same loss on 18B/28B MoE; xHC-Flash reduces memory traffic for practical training — [[Paper]](https://arxiv.org/abs/2607.14530) (2026)
 - **Transforming Rank**: Analyzes how each Transformer feedforward block component determines rank survival across depth; reinterprets skip connections and normalization as rank-preserving mechanisms; shows skip scale controls rank-collapse vs ensemble behavior trade-off — [[Paper]](https://arxiv.org/abs/2607.14018) (2026)
+- **Loopie (Loop the Loopies!)**: Looped MoE Transformers resolving the longstanding challenge that parameter scaling outperforms loop scaling; 20B/6B MoE models with 2B/0.6B active params substantially outperform vanilla Transformer baselines at same compute budget; complements loop scaling paradigm for CTR — [[Paper]](https://arxiv.org/abs/2607.16051) (2026)
 
 ### Other
 
