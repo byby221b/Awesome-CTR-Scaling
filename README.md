@@ -74,6 +74,7 @@ This repository focuses on a rapidly emerging research direction: how to effecti
 | **UniFormer: Efficient and Unified Model-Centric Scaling for Industrial Recommendation** | Kuaishou | arXiv | 2026 | [[Paper]](https://arxiv.org/abs/2606.27058) | Unified model-centric scaling framework; decomposes feature-space and task-space interactions; semantic tokenization for user-item decoupling; multi-sequence cross-attention and multi-view FFNs |
 | **TMallGS: Scaling Unified Feature and Sequence Modeling for Generative E-commerce Search** | Alibaba (Tmall) | arXiv | 2026 | [[Paper]](https://arxiv.org/abs/2607.13398) | Scalable ranking architecture for Tmall search; Hierarchical Distribution-Calibrated Tokenization + Field-Adaptive Gated Transformer + Decoupled FiLM Late Fusion; addresses heterogeneous feature tokenization |
 | **SlimPer: Make Personalization Model Slim and Smart** | Meta | arXiv | 2026 | [[Paper]](https://arxiv.org/abs/2607.12281) | O(N) iterative knowledge-base refinement architecture for personalized ranking; depth decoupled from user history length; request-only optimization; deployed on Instagram Reels and Feed with 10K+ user events |
+| **WHALE: A Scalable Unified Model for Recommendation with Wukong-HSTU Architecture** | Meta | arXiv | 2026 | [[Paper]](https://arxiv.org/abs/2607.17017) | Unifies Wukong (non-sequence feature interaction scaling) and HSTU (long sequence scaling) into a single architecture; attention-based fusion with progressive Wukong-HSTU exchange; customized Triton kernels for industrial deployment |
 
 ## Related Work
 
@@ -143,6 +144,7 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 - **CRID (Beyond Semantic IDs)**: Cluster-Ranked Identifier decoupling DocID into semantic clustering and business-value ranking for collision-free GR; deployed on 300M-item Taobao corpus with +1.06% GMV — [[Paper]](https://arxiv.org/abs/2607.11392) (Alibaba, 2026)
 - **Prompt Generation Technical Report**: Configuration-driven framework decoupling feature-processing logic from GR model architecture via declarative JSON; accelerates training iteration, deployment, and inference; deployed on Taobao Search with +0.47% transactions, +0.51% GMV — [[Paper]](https://arxiv.org/abs/2607.11326) (Alibaba, 2026)
 - **RecGPT-V3**: Stateful hybrid-modal recommender with Memory Hub for condensed user memory (55.8% compute reduction), Hybrid-modal Foundation Model jointly reasoning over text and Semantic IDs, and Latent Intent Reasoning internalizing CoT into learnable latent tokens (200× output token reduction); deployed on Taobao "Guess What You Like" with +1.28% IPV, +3.97% GMV — [[Paper]](https://arxiv.org/abs/2607.15591) (Alibaba, 2026)
+- **TSGR**: Taobao Search Generative Retrieval; value-aware GR with Query-aware Parallel SID (QP-SID) encoding business value into SID construction and Value-aware Ranking Module (VRM) unifying retriever and pre-ranker; +0.43% IPV, +1.12% transactions, +1.64% GMV — [[Paper]](https://arxiv.org/abs/2607.18796) (Alibaba, 2026)
 
 ### Generative Pre-training for CTR
 
@@ -169,6 +171,7 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 - **RelayGR**: Cross-stage relay-race inference for long-sequence generative recommendation; decouples user-independent tokens from ranking-stage computation; implemented on Huawei Ascend NPUs — [[Paper]](https://arxiv.org/abs/2601.01712) (Huawei, 2026)
 - **DPIFrame**: Dual-level parallelism framework for CTR model inference on GPU; intra-module + inter-module parallelism with multi-table lookup and breadth-first stream scheduling; 23× embedding latency reduction vs PyTorch — [[Paper]](https://arxiv.org/abs/2606.21101) (2026)
 - **FlashTrie**: GPU-accelerated constrained beam search for generative retrieval; integer-aware succinct trie layout with cooperative CUDA kernel; 24× speedup over CPU on 800M keywords; +0.71% revenue in online A/B on commercial search engine — [[Paper]](https://arxiv.org/abs/2607.10044) (Microsoft, 2026)
+- **STATIC**: Vectorized constrained decoding for LLM-based generative retrieval on TPUs/GPUs; flattens prefix tree into CSR sparse matrix for fully vectorized operations; 948× speedup over CPU trie; first production-scale deployment of strictly constrained GR — [[Paper]](https://arxiv.org/abs/2602.22647) (Google / YouTube, KDD 2026)
 
 ### Retrieval & Reranking Scaling
 
@@ -220,12 +223,12 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 
 | Company | Papers |
 |:--------|:-------|
-| **Meta** | Understanding Scaling Laws, Wukong, HSTU, InterFormer, ULTRA-HSTU, Foundation-Expert, Kunlun, LLaTTE, DHEN, Principled Synthetic Data Scaling Laws, LoopFM, MoS, Memento, FreeScale, Efficient Retrieval Scaling, RankGraph-2, G2Rec, GR2 Technical Report, Diffusion-GR2, CMSL, SlimPer |
+| **Meta** | Understanding Scaling Laws, Wukong, HSTU, InterFormer, ULTRA-HSTU, Foundation-Expert, Kunlun, LLaTTE, DHEN, Principled Synthetic Data Scaling Laws, LoopFM, MoS, Memento, FreeScale, Efficient Retrieval Scaling, RankGraph-2, G2Rec, GR2 Technical Report, Diffusion-GR2, CMSL, SlimPer, WHALE |
 | **ByteDance** | RankMixer, OneTrans, HyFormer, Zenith, TokenMixer-Large, MSN, UG-Sep, MixFormer, Rec-Distill, LONGER, Make It Long Keep It Fast |
-| **Alibaba** | GPSD, FAT, HHFT, EST, HeteroMixer, SORT, Beyond Dense Connectivity, LoopCTR, UTTSI, HeteGenCTR, ENCODE, MUSE, SSRLive, LUM, ShopX, UniSGR, TMallGS, CRID, Prompt Generation, RecGPT-V3 |
+| **Alibaba** | GPSD, FAT, HHFT, EST, HeteroMixer, SORT, Beyond Dense Connectivity, LoopCTR, UTTSI, HeteGenCTR, ENCODE, MUSE, SSRLive, LUM, ShopX, UniSGR, TMallGS, CRID, Prompt Generation, RecGPT-V3, TSGR |
 | **Meituan** | SUAN, MTFM, MTmixAtt, SparseCTR, Next-Scale Generative Reranking, Not Only NTP |
 | **Tencent** | GE4Rec, TokenFormer, RankUp (Weixin), RankElastor, SIREN (Weixin), HiGR |
-| **Google** | Hiformer, Beyond Item IDs, Token Factory, TokenMinds |
+| **Google** | Hiformer, Beyond Item IDs, Token Factory, TokenMinds, STATIC |
 | **LinkedIn** | LiRank, CADET |
 | **NetEase** | Climber, Climber-Pilot |
 | **Kuaishou** | UniMixer, INFNet, CHIME, VQL, OneRec-V2 Quantized, OneReason, OneRetrieval, RaG, UniFormer, POEM, HGenPush, PROMISE |
