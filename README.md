@@ -149,6 +149,10 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 - **BARGE**: Bridges structural gaps in SID-based GR via Item Context-Aware Attention + Hierarchical Path Reranking + Dual-Path Decoding; +0.60% CTR, +1.34% click UV, +1.70% reading time in A/B on Tencent platform — [[Paper]](https://arxiv.org/abs/2607.21028) (Tencent, 2026)
 - **DLMRec**: Discrete diffusion language model for recommendation; replaces autoregressive generation with diffusion-based denoising; collaborative-aware stochastic tokenizer + curriculum-driven training + stability-aware voting — [[Paper]](https://arxiv.org/abs/2607.21519) (Tencent, 2026)
 - **GLASS**: Coarse-to-fine long-term interest integration for generative recommendation; SID-Tier maps long-term interactions into unified interest vectors; semantic hard search extracts relevant behaviors via generated SID keys — [[Paper]](https://arxiv.org/abs/2602.05663) (Kuaishou, 2026)
+- **Multi-Decoder OneRec**: Controllable multi-objective generative retrieval; shared user-context module with isolated LoRA experts per objective + Multi-Decoder Constrained Beam Search; releases Kwai26 benchmark (1.31B records); +0.37% app usage time in A/B — [[Paper]](https://arxiv.org/abs/2607.26500) (Kuaishou, 2026)
+- **WhisperRec**: Latent reasoning for efficient foundation recommendation models; compresses teacher CoT into learnable latent reasoning tokens (Latent-Reason-then-Answer); Multi-View Adaptive CoT + three-stage Latent Reasoning Alignment; 10× inference throughput over explicit CoT — [[Paper]](https://arxiv.org/abs/2607.26621) (Kuaishou, 2026)
+- **UniVA**: Unified Value Alignment for generative advertising recommendation; Commercial SID Tokenization + Generation-as-Ranking decoder fusing generation scores with token-level value estimates + Value-Aware Constrained Serving; +1.5% GMV on Tencent WeChat Channels — [[Paper]](https://arxiv.org/abs/2605.05803) (Tencent, 2026)
+- **Gwhere**: End-to-end industrial generative next-POI recommendation; contrastive residual-quantization SID tokenizer aligning textual/visual/spatial/collaborative signals + Exposure-Aware Kahneman-Tversky Optimization; +5.83% P-CTR deployed on Amap — [[Paper]](https://arxiv.org/abs/2607.26073) (Alibaba, 2026)
 
 ### Generative Pre-training for CTR
 
@@ -229,13 +233,13 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 |:--------|:-------|
 | **Meta** | Understanding Scaling Laws, Wukong, HSTU, InterFormer, ULTRA-HSTU, Foundation-Expert, Kunlun, LLaTTE, DHEN, Principled Synthetic Data Scaling Laws, LoopFM, MoS, Memento, FreeScale, Efficient Retrieval Scaling, RankGraph-2, G2Rec, GR2 Technical Report, Diffusion-GR2, CMSL, SlimPer, WHALE |
 | **ByteDance** | RankMixer, OneTrans, HyFormer, Zenith, TokenMixer-Large, MSN, UG-Sep, MixFormer, Rec-Distill, LONGER, Make It Long Keep It Fast |
-| **Alibaba** | GPSD, FAT, HHFT, EST, HeteroMixer, SORT, Beyond Dense Connectivity, LoopCTR, UTTSI, HeteGenCTR, ENCODE, MUSE, SSRLive, LUM, ShopX, UniSGR, TMallGS, CRID, Prompt Generation, RecGPT-V3, TSGR |
+| **Alibaba** | GPSD, FAT, HHFT, EST, HeteroMixer, SORT, Beyond Dense Connectivity, LoopCTR, UTTSI, HeteGenCTR, ENCODE, MUSE, SSRLive, LUM, ShopX, UniSGR, TMallGS, CRID, Prompt Generation, RecGPT-V3, TSGR, Gwhere |
 | **Meituan** | SUAN, MTFM, MTmixAtt, SparseCTR, Next-Scale Generative Reranking, Not Only NTP |
-| **Tencent** | GE4Rec, TokenFormer, RankUp (Weixin), RankElastor, SIREN (Weixin), HiGR, BARGE, DLMRec |
+| **Tencent** | GE4Rec, TokenFormer, RankUp (Weixin), RankElastor, SIREN (Weixin), HiGR, BARGE, DLMRec, UniVA (Weixin) |
 | **Google** | Hiformer, Beyond Item IDs, Token Factory, TokenMinds, STATIC |
 | **LinkedIn** | LiRank, CADET |
 | **NetEase** | Climber, Climber-Pilot |
-| **Kuaishou** | UniMixer, INFNet, CHIME, VQL, OneRec-V2 Quantized, OneReason, OneRetrieval, RaG, UniFormer, POEM, HGenPush, PROMISE, GLASS |
+| **Kuaishou** | UniMixer, INFNet, CHIME, VQL, OneRec-V2 Quantized, OneReason, OneRetrieval, RaG, UniFormer, POEM, HGenPush, PROMISE, GLASS, Multi-Decoder OneRec, WhisperRec |
 | **Huawei** | RelayGR, Mitigating Early Training Collapse |
 | **Baidu** | MoUE |
 | **Shopee** | OnePiece, OneRank |
