@@ -76,6 +76,8 @@ This repository focuses on a rapidly emerging research direction: how to effecti
 | **SlimPer: Make Personalization Model Slim and Smart** | Meta | arXiv | 2026 | [[Paper]](https://arxiv.org/abs/2607.12281) | O(N) iterative knowledge-base refinement architecture for personalized ranking; depth decoupled from user history length; request-only optimization; deployed on Instagram Reels and Feed with 10K+ user events |
 | **WHALE: A Scalable Unified Model for Recommendation with Wukong-HSTU Architecture** | Meta | arXiv | 2026 | [[Paper]](https://arxiv.org/abs/2607.17017) | Unifies Wukong (non-sequence feature interaction scaling) and HSTU (long sequence scaling) into a single architecture; attention-based fusion with progressive Wukong-HSTU exchange; customized Triton kernels for industrial deployment |
 | **UniRank: Benchmarking Ranking Models for Unified Sequential Modeling and Feature Interaction** | Academic | arXiv | 2026 | [[Paper]](https://arxiv.org/abs/2607.19987) | Open benchmark for unified ranking models; benchmarks 15 models on 5 large-scale datasets (up to 700M instances, 10^5 sequence length); PyTorch toolkit with DDP, operator optimization, and mixed-precision; enables reproducible scaling law study |
+| **CCFormer: Efficient Cross-Field Interaction and Hierarchical Sequence Compression for Industrial Recommendation** | Tencent | arXiv | 2026 | [[Paper]](https://arxiv.org/abs/2607.28070) | Unifies cross-field feature interaction and compressed long-sequence modeling; hierarchical sequence compression with progressively expanded receptive fields; 2.21× training speedup over HSTU; +3.57% CTR deployed at Tencent |
+| **SpecFormer: Mitigating Embedding and Attention Collapse via Spectral-Aware Transformer for Recommendation** | Industry | arXiv | 2026 | [[Paper]](https://arxiv.org/abs/2607.24025) | Reveals embedding/attention collapse as depth-scaling bottleneck in recommendation Transformers; Learnable Spectral Softening + Spectrum-softened Attention + Spectral Residual Position Encoding; unlocks effective depth-scaling; deployed in production |
 
 ## Related Work
 
@@ -153,6 +155,8 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 - **WhisperRec**: Latent reasoning for efficient foundation recommendation models; compresses teacher CoT into learnable latent reasoning tokens (Latent-Reason-then-Answer); Multi-View Adaptive CoT + three-stage Latent Reasoning Alignment; 10× inference throughput over explicit CoT — [[Paper]](https://arxiv.org/abs/2607.26621) (Kuaishou, 2026)
 - **UniVA**: Unified Value Alignment for generative advertising recommendation; Commercial SID Tokenization + Generation-as-Ranking decoder fusing generation scores with token-level value estimates + Value-Aware Constrained Serving; +1.5% GMV on Tencent WeChat Channels — [[Paper]](https://arxiv.org/abs/2605.05803) (Tencent, 2026)
 - **Gwhere**: End-to-end industrial generative next-POI recommendation; contrastive residual-quantization SID tokenizer aligning textual/visual/spatial/collaborative signals + Exposure-Aware Kahneman-Tversky Optimization; +5.83% P-CTR deployed on Amap — [[Paper]](https://arxiv.org/abs/2607.26073) (Alibaba, 2026)
+- **LoopMemGR**: Closed-loop recommendation experience memory for generative recommendation; maintains recommendation–feedback trajectory logs with recency/frequency/global views compressed into fixed experience tokens — [[Paper]](https://arxiv.org/abs/2607.27647) (Alibaba, 2026)
+- **UniR²**: Unified decoder-only Transformer for generative recall and multi-objective ranking in a single sequence; Dual-Query Prefix-Causal Attention + ranking-side LoRA; deployed on Kuaishou — [[Paper]](https://arxiv.org/abs/2607.24439) (Kuaishou, 2026)
 
 ### Generative Pre-training for CTR
 
@@ -180,6 +184,7 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 - **DPIFrame**: Dual-level parallelism framework for CTR model inference on GPU; intra-module + inter-module parallelism with multi-table lookup and breadth-first stream scheduling; 23× embedding latency reduction vs PyTorch — [[Paper]](https://arxiv.org/abs/2606.21101) (2026)
 - **FlashTrie**: GPU-accelerated constrained beam search for generative retrieval; integer-aware succinct trie layout with cooperative CUDA kernel; 24× speedup over CPU on 800M keywords; +0.71% revenue in online A/B on commercial search engine — [[Paper]](https://arxiv.org/abs/2607.10044) (Microsoft, 2026)
 - **STATIC**: Vectorized constrained decoding for LLM-based generative retrieval on TPUs/GPUs; flattens prefix tree into CSR sparse matrix for fully vectorized operations; 948× speedup over CPU trie; first production-scale deployment of strictly constrained GR — [[Paper]](https://arxiv.org/abs/2602.22647) (Google / YouTube, KDD 2026)
+- **ROCS**: Request-Oriented Compute Sharing; defers request-candidate interactions to share substantial model computation once per request; Generalized Layer Masking + Deep Cross Attention + In-Kernel Broadcast Optimization; 3× QPS gain on retrieval, 50% QPS gain on ranking; deployed across ads and organic surfaces — [[Paper]](https://arxiv.org/abs/2607.27744) (Meta, 2026)
 
 ### Retrieval & Reranking Scaling
 
@@ -224,6 +229,8 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 - **COFFEE**: Enriches embeddings following scaling law principles — [[Paper]](https://arxiv.org/abs/2601.02807) (Meta, 2026)
 - **Understanding DNNs in Feature Interaction Models**: Dimensional collapse perspective on DNN roles in feature interaction models — [[Paper]](https://arxiv.org/abs/2604.26489) (2026)
 - **Mitigating Early Training Collapse in CTR Models**: Analyzes sharp validation performance decline after first epoch in CTR training; shows controlling feature sparsity (removing sparse features + aggregating infrequent values) is far more effective than learning rate tuning for stabilizing multi-epoch training — [[Paper]](https://arxiv.org/abs/2607.09696) (Huawei, 2026)
+- **Bumblebee**: Interleaved mixed-layer building blocks for large-scale recommendation; each stackable block combines sequence personalization, attention-based encoding, and feature crossing; cross-modal residual connections; flexible quality-throughput trade-offs via component dropping — [[Paper]](https://arxiv.org/abs/2607.24804) (Industry, 2026)
+- **HA-MoE**: Heterogeneity-Adaptive MoE for industrial-scale heterogeneous ranking at Google Discover; explicit heterogeneity context in gating and expert representations; LENS observability framework; Dual-Level AUC evaluation — [[Paper]](https://arxiv.org/abs/2607.27577) (Google, RecSys 2026)
 
 ---
 
@@ -231,15 +238,15 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 
 | Company | Papers |
 |:--------|:-------|
-| **Meta** | Understanding Scaling Laws, Wukong, HSTU, InterFormer, ULTRA-HSTU, Foundation-Expert, Kunlun, LLaTTE, DHEN, Principled Synthetic Data Scaling Laws, LoopFM, MoS, Memento, FreeScale, Efficient Retrieval Scaling, RankGraph-2, G2Rec, GR2 Technical Report, Diffusion-GR2, CMSL, SlimPer, WHALE |
+| **Meta** | Understanding Scaling Laws, Wukong, HSTU, InterFormer, ULTRA-HSTU, Foundation-Expert, Kunlun, LLaTTE, DHEN, Principled Synthetic Data Scaling Laws, LoopFM, MoS, Memento, FreeScale, Efficient Retrieval Scaling, RankGraph-2, G2Rec, GR2 Technical Report, Diffusion-GR2, CMSL, SlimPer, WHALE, ROCS |
 | **ByteDance** | RankMixer, OneTrans, HyFormer, Zenith, TokenMixer-Large, MSN, UG-Sep, MixFormer, Rec-Distill, LONGER, Make It Long Keep It Fast |
-| **Alibaba** | GPSD, FAT, HHFT, EST, HeteroMixer, SORT, Beyond Dense Connectivity, LoopCTR, UTTSI, HeteGenCTR, ENCODE, MUSE, SSRLive, LUM, ShopX, UniSGR, TMallGS, CRID, Prompt Generation, RecGPT-V3, TSGR, Gwhere |
+| **Alibaba** | GPSD, FAT, HHFT, EST, HeteroMixer, SORT, Beyond Dense Connectivity, LoopCTR, UTTSI, HeteGenCTR, ENCODE, MUSE, SSRLive, LUM, ShopX, UniSGR, TMallGS, CRID, Prompt Generation, RecGPT-V3, TSGR, Gwhere, LoopMemGR |
 | **Meituan** | SUAN, MTFM, MTmixAtt, SparseCTR, Next-Scale Generative Reranking, Not Only NTP |
-| **Tencent** | GE4Rec, TokenFormer, RankUp (Weixin), RankElastor, SIREN (Weixin), HiGR, BARGE, DLMRec, UniVA (Weixin) |
-| **Google** | Hiformer, Beyond Item IDs, Token Factory, TokenMinds, STATIC |
+| **Tencent** | GE4Rec, TokenFormer, RankUp (Weixin), RankElastor, SIREN (Weixin), HiGR, BARGE, DLMRec, UniVA (Weixin), CCFormer |
+| **Google** | Hiformer, Beyond Item IDs, Token Factory, TokenMinds, STATIC, HA-MoE |
 | **LinkedIn** | LiRank, CADET |
 | **NetEase** | Climber, Climber-Pilot |
-| **Kuaishou** | UniMixer, INFNet, CHIME, VQL, OneRec-V2 Quantized, OneReason, OneRetrieval, RaG, UniFormer, POEM, HGenPush, PROMISE, GLASS, Multi-Decoder OneRec, WhisperRec |
+| **Kuaishou** | UniMixer, INFNet, CHIME, VQL, OneRec-V2 Quantized, OneReason, OneRetrieval, RaG, UniFormer, POEM, HGenPush, PROMISE, GLASS, Multi-Decoder OneRec, WhisperRec, UniR² |
 | **Huawei** | RelayGR, Mitigating Early Training Collapse |
 | **Baidu** | MoUE |
 | **Shopee** | OnePiece, OneRank |
