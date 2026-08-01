@@ -157,6 +157,8 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 - **Gwhere**: End-to-end industrial generative next-POI recommendation; contrastive residual-quantization SID tokenizer aligning textual/visual/spatial/collaborative signals + Exposure-Aware Kahneman-Tversky Optimization; +5.83% P-CTR deployed on Amap — [[Paper]](https://arxiv.org/abs/2607.26073) (Alibaba, 2026)
 - **LoopMemGR**: Closed-loop recommendation experience memory for generative recommendation; maintains recommendation–feedback trajectory logs with recency/frequency/global views compressed into fixed experience tokens — [[Paper]](https://arxiv.org/abs/2607.27647) (Alibaba, 2026)
 - **UniR²**: Unified decoder-only Transformer for generative recall and multi-objective ranking in a single sequence; Dual-Query Prefix-Causal Attention + ranking-side LoRA; deployed on Kuaishou — [[Paper]](https://arxiv.org/abs/2607.24439) (Kuaishou, 2026)
+- **LGRID**: Interpretable disentangled SID generation via LLM-driven Encode→Disentangle→Align→Quantize pipeline; separates geographic, brand, and category into attribute-aligned slots to eliminate semantic entanglement and SID collisions; deployed for local-life service recommendation — [[Paper]](https://arxiv.org/abs/2607.27944) (Meituan, 2026)
+- **Feedback-Grounded Policy Discovery**: Bridges Understanding-Action Gap in LLM-enhanced GR; discovers recommendation policies via outcome-derived feedback rather than linguistic plausibility; separates intent knowledge from policy knowledge for effective recommendation direction — [[Paper]](https://arxiv.org/abs/2607.27789) (2026)
 
 ### Generative Pre-training for CTR
 
@@ -195,6 +197,7 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 - **RankGraph-2**: Lifecycle co-design for billion-node graph-based retrieval (U2U2I/U2I2I); co-learns residual-quantization cluster index reducing serving cost 83%; 3.8× recall over GAT+DGI; +0.96% CTR across 20+ retrieval launches at Meta — [[Paper]](https://arxiv.org/abs/2606.18379) (Meta, 2026)
 - **MESH**: Unified retrieval scaling framework addressing Scaling Bias of Heterogeneity; modularized architecture with gated bias correction achieves 14× improvement in scaling exponent for fresh items; deployed on Pinterest Related Pins — [[Paper]](https://arxiv.org/abs/2607.12392) (Pinterest, 2026)
 - **Scaling and Stabilizing Large-Scale EBR**: Unified pipeline for scaling embedding-based retrieval at Walmart; Hybrid Hard Negative Mining + Legacy-Aware Distillation for smooth backbone evolution from DistilBERT to GTE-base; +7.34% NDCG@5, +0.50% revenue — [[Paper]](https://arxiv.org/abs/2607.10096) (Walmart, 2026)
+- **OneShot**: End-to-end in-model index learning framework that natively aligns index building with ranking objectives; resolves structural misalignment between ranking accuracy and indexing efficiency for billion-scale retrieval — [[Paper]](https://arxiv.org/abs/2607.27475) (2026)
 
 ### Architecture Innovations Beyond Recommendation
 
@@ -241,7 +244,7 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 | **Meta** | Understanding Scaling Laws, Wukong, HSTU, InterFormer, ULTRA-HSTU, Foundation-Expert, Kunlun, LLaTTE, DHEN, Principled Synthetic Data Scaling Laws, LoopFM, MoS, Memento, FreeScale, Efficient Retrieval Scaling, RankGraph-2, G2Rec, GR2 Technical Report, Diffusion-GR2, CMSL, SlimPer, WHALE, ROCS |
 | **ByteDance** | RankMixer, OneTrans, HyFormer, Zenith, TokenMixer-Large, MSN, UG-Sep, MixFormer, Rec-Distill, LONGER, Make It Long Keep It Fast |
 | **Alibaba** | GPSD, FAT, HHFT, EST, HeteroMixer, SORT, Beyond Dense Connectivity, LoopCTR, UTTSI, HeteGenCTR, ENCODE, MUSE, SSRLive, LUM, ShopX, UniSGR, TMallGS, CRID, Prompt Generation, RecGPT-V3, TSGR, Gwhere, LoopMemGR |
-| **Meituan** | SUAN, MTFM, MTmixAtt, SparseCTR, Next-Scale Generative Reranking, Not Only NTP |
+| **Meituan** | SUAN, MTFM, MTmixAtt, SparseCTR, Next-Scale Generative Reranking, Not Only NTP, LGRID |
 | **Tencent** | GE4Rec, TokenFormer, RankUp (Weixin), RankElastor, SIREN (Weixin), HiGR, BARGE, DLMRec, UniVA (Weixin), CCFormer |
 | **Google** | Hiformer, Beyond Item IDs, Token Factory, TokenMinds, STATIC, HA-MoE |
 | **LinkedIn** | LiRank, CADET |
