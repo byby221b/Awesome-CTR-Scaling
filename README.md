@@ -78,6 +78,8 @@ This repository focuses on a rapidly emerging research direction: how to effecti
 | **UniRank: Benchmarking Ranking Models for Unified Sequential Modeling and Feature Interaction** | Academic | arXiv | 2026 | [[Paper]](https://arxiv.org/abs/2607.19987) | Open benchmark for unified ranking models; benchmarks 15 models on 5 large-scale datasets (up to 700M instances, 10^5 sequence length); PyTorch toolkit with DDP, operator optimization, and mixed-precision; enables reproducible scaling law study |
 | **CCFormer: Efficient Cross-Field Interaction and Hierarchical Sequence Compression for Industrial Recommendation** | Tencent | arXiv | 2026 | [[Paper]](https://arxiv.org/abs/2607.28070) | Unifies cross-field feature interaction and compressed long-sequence modeling; hierarchical sequence compression with progressively expanded receptive fields; 2.21× training speedup over HSTU; +3.57% CTR deployed at Tencent |
 | **SpecFormer: Mitigating Embedding and Attention Collapse via Spectral-Aware Transformer for Recommendation** | Industry | arXiv | 2026 | [[Paper]](https://arxiv.org/abs/2607.24025) | Reveals embedding/attention collapse as depth-scaling bottleneck in recommendation Transformers; Learnable Spectral Softening + Spectrum-softened Attention + Spectral Residual Position Encoding; unlocks effective depth-scaling; deployed in production |
+| **OCP: Orthogonal Constrained Projection for Sparse Scaling in Industrial Commodity Recommendation** | JD | SIGIR | 2026 | [[Paper]](https://arxiv.org/abs/2603.18697) | Orthogonal constrained projection aligning singular value spectrum for sparse embedding scaling; suppresses low-frequency interference and representation collapse; enables consistent gains when scaling dense layers; +12.97% UCXR, +8.9% GMV on JD.com |
+| **Exploring Test-time Scaling via Prediction Merging on Large-Scale Recommendation** | Academic | SIGIR | 2026 | [[Paper]](https://arxiv.org/abs/2512.07650) | First study of test-time compute scaling for recommendation via prediction merging; scales inference-time compute for improved accuracy without retraining |
 
 ## Related Work
 
@@ -159,6 +161,7 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 - **UniR²**: Unified decoder-only Transformer for generative recall and multi-objective ranking in a single sequence; Dual-Query Prefix-Causal Attention + ranking-side LoRA; deployed on Kuaishou — [[Paper]](https://arxiv.org/abs/2607.24439) (Kuaishou, 2026)
 - **LGRID**: Interpretable disentangled SID generation via LLM-driven Encode→Disentangle→Align→Quantize pipeline; separates geographic, brand, and category into attribute-aligned slots to eliminate semantic entanglement and SID collisions; deployed for local-life service recommendation — [[Paper]](https://arxiv.org/abs/2607.27944) (Meituan, 2026)
 - **Feedback-Grounded Policy Discovery**: Bridges Understanding-Action Gap in LLM-enhanced GR; discovers recommendation policies via outcome-derived feedback rather than linguistic plausibility; separates intent knowledge from policy knowledge for effective recommendation direction — [[Paper]](https://arxiv.org/abs/2607.27789) (2026)
+- **Restoring Collaborative Signals in SID-based GR**: Addresses content–collaborative signal tension in Semantic IDs via personalized natural language; restores collaborative signals without explicit reasoning overhead when text and SID tokens live in misaligned embedding spaces — [[Paper]](https://arxiv.org/abs/2607.27682) (2026)
 
 ### Generative Pre-training for CTR
 
@@ -225,6 +228,7 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 - **xHC (Expanded Hyper-Connections)**: First HC-family method to expand residual stream beyond N=4; sparse update of k=4 streams while retaining dense access to N=16; 1.50× compute reduction vs vanilla at same loss on 18B/28B MoE; xHC-Flash reduces memory traffic for practical training — [[Paper]](https://arxiv.org/abs/2607.14530) (2026)
 - **Transforming Rank**: Analyzes how each Transformer feedforward block component determines rank survival across depth; reinterprets skip connections and normalization as rank-preserving mechanisms; shows skip scale controls rank-collapse vs ensemble behavior trade-off — [[Paper]](https://arxiv.org/abs/2607.14018) (2026)
 - **Loopie (Loop the Loopies!)**: Looped MoE Transformers resolving the longstanding challenge that parameter scaling outperforms loop scaling; 20B/6B MoE models with 2B/0.6B active params substantially outperform vanilla Transformer baselines at same compute budget; complements loop scaling paradigm for CTR — [[Paper]](https://arxiv.org/abs/2607.16051) (2026)
+- **MHAR (Multi-Head Attention Residuals)**: Per-subspace depth routing with zero added parameters; reshapes routing query into H independent heads over depth history removing forced-compromise bottleneck of single-query attention residuals; improves validation loss at 100M/350M/1B scales — [[Paper]](https://arxiv.org/abs/2607.27230) (Academic, 2026)
 
 ### Other
 
@@ -258,7 +262,7 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 | **Tubi** | TubiFM |
 | **Pinterest** | ML-DCN, UniPinRec, MESH |
 | **Yandex** | Scaling Recommender Transformers, Gryphon, GBLA, Long-History User Transformers |
-| **JD** | GenRec, AdaGRPO |
+| **JD** | GenRec, AdaGRPO, OCP |
 | **VK** | Long-Term Optimization for Large-Scale GR |
 | **Microsoft** | FlashTrie |
 | **Walmart** | Scaling and Stabilizing Large-Scale EBR |
