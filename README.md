@@ -79,6 +79,7 @@ This repository focuses on a rapidly emerging research direction: how to effecti
 | **CCFormer: Efficient Cross-Field Interaction and Hierarchical Sequence Compression for Industrial Recommendation** | Tencent | arXiv | 2026 | [[Paper]](https://arxiv.org/abs/2607.28070) | Unifies cross-field feature interaction and compressed long-sequence modeling; hierarchical sequence compression with progressively expanded receptive fields; 2.21× training speedup over HSTU; +3.57% CTR deployed at Tencent |
 | **SpecFormer: Mitigating Embedding and Attention Collapse via Spectral-Aware Transformer for Recommendation** | Industry | arXiv | 2026 | [[Paper]](https://arxiv.org/abs/2607.24025) | Reveals embedding/attention collapse as depth-scaling bottleneck in recommendation Transformers; Learnable Spectral Softening + Spectrum-softened Attention + Spectral Residual Position Encoding; unlocks effective depth-scaling; deployed in production |
 | **OCP: Orthogonal Constrained Projection for Sparse Scaling in Industrial Commodity Recommendation** | JD | SIGIR | 2026 | [[Paper]](https://arxiv.org/abs/2603.18697) | Orthogonal constrained projection aligning singular value spectrum for sparse embedding scaling; suppresses low-frequency interference and representation collapse; enables consistent gains when scaling dense layers; +12.97% UCXR, +8.9% GMV on JD.com |
+| **TransX: Scaling Transformer-based Recommendation via Behavioral and Serving Stream Crossings** | LinkedIn | arXiv | 2026 | [[Paper]](https://arxiv.org/abs/2607.28940) | Encoder-decoder architecture decoupling behavior-stream and serving-event modeling via cross-attention; amortized serving with incremental encoding + per-request KV caching; 80% compute reduction with +6.0% CTR at LinkedIn |
 | **Exploring Test-time Scaling via Prediction Merging on Large-Scale Recommendation** | Academic | SIGIR | 2026 | [[Paper]](https://arxiv.org/abs/2512.07650) | First study of test-time compute scaling for recommendation via prediction merging; scales inference-time compute for improved accuracy without retraining |
 
 ## Related Work
@@ -162,6 +163,8 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 - **LGRID**: Interpretable disentangled SID generation via LLM-driven Encode→Disentangle→Align→Quantize pipeline; separates geographic, brand, and category into attribute-aligned slots to eliminate semantic entanglement and SID collisions; deployed for local-life service recommendation — [[Paper]](https://arxiv.org/abs/2607.27944) (Meituan, 2026)
 - **Feedback-Grounded Policy Discovery**: Bridges Understanding-Action Gap in LLM-enhanced GR; discovers recommendation policies via outcome-derived feedback rather than linguistic plausibility; separates intent knowledge from policy knowledge for effective recommendation direction — [[Paper]](https://arxiv.org/abs/2607.27789) (2026)
 - **Restoring Collaborative Signals in SID-based GR**: Addresses content–collaborative signal tension in Semantic IDs via personalized natural language; restores collaborative signals without explicit reasoning overhead when text and SID tokens live in misaligned embedding spaces — [[Paper]](https://arxiv.org/abs/2607.27682) (2026)
+- **SnapLGR**: Production LLM-based generative retrieval for short-video recommendation at Snapchat; PPR-enhanced SID construction with co-engagement contrastive learning + continued pretraining for vocabulary grounding + TensorRT-LLM beam search; +0.37% View Time over TIGER-style baseline in A/B — [[Paper]](https://arxiv.org/abs/2607.28895) (Snap, 2026)
+- **EvoReason**: Self-evolving latent reasoning for generative recommendation; extracts reusable reasoning primitives from agentic trajectories as pseudo-tools; primitive-guided on-policy distillation with closed-loop co-evolution for better-aligned CoT supervision — [[Paper]](https://arxiv.org/abs/2607.29010) (2026)
 
 ### Generative Pre-training for CTR
 
@@ -251,7 +254,7 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 | **Meituan** | SUAN, MTFM, MTmixAtt, SparseCTR, Next-Scale Generative Reranking, Not Only NTP, LGRID |
 | **Tencent** | GE4Rec, TokenFormer, RankUp (Weixin), RankElastor, SIREN (Weixin), HiGR, BARGE, DLMRec, UniVA (Weixin), CCFormer |
 | **Google** | Hiformer, Beyond Item IDs, Token Factory, TokenMinds, STATIC, HA-MoE |
-| **LinkedIn** | LiRank, CADET |
+| **LinkedIn** | LiRank, CADET, TransX |
 | **NetEase** | Climber, Climber-Pilot |
 | **Kuaishou** | UniMixer, INFNet, CHIME, VQL, OneRec-V2 Quantized, OneReason, OneRetrieval, RaG, UniFormer, POEM, HGenPush, PROMISE, GLASS, Multi-Decoder OneRec, WhisperRec, UniR² |
 | **Huawei** | RelayGR, Mitigating Early Training Collapse |
@@ -266,6 +269,7 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 | **VK** | Long-Term Optimization for Large-Scale GR |
 | **Microsoft** | FlashTrie |
 | **Walmart** | Scaling and Stabilizing Large-Scale EBR |
+| **Snap** | SnapLGR |
 
 ## Contributing
 
