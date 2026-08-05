@@ -106,6 +106,7 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 - **POEM**: Partial-Order Enhanced Real-Time Sequential Modeling; constructs dynamic partial-order sequences from multi-task ranking scores for fine-grained real-time interest modeling; deployed on Kuaishou — [[Paper]](https://arxiv.org/abs/2606.29946) (Kuaishou, 2026)
 - **Long-History User Transformers**: Decoupled offline/online architecture for full cross-surface user history in real-time ad ranking; offline transformer pre-trains on interaction logs with dual objective, cached representation + lightweight runtime model; +2.77% ranking metric, +2.26% revenue at Yandex — [[Paper]](https://arxiv.org/abs/2607.14331) (Yandex, 2026)
 - **FuXi-Linear**: Linear-complexity model for long-term time-aware sequential recommendation; decouples temporal and semantic signals to avoid mutual interference while capturing behavioral periodicity; designed for deep architectures and long sequences — [[Paper]](https://arxiv.org/abs/2602.23671) (KDD 2026)
+- **SITA**: Semantic Interest Tokens for Target-Aware Compression; bridges target-aware retrieval and target-agnostic compression via learnable interest tokens that absorb target-relevant signals during training; achieves target-specific adaptation without target-dependent inference computation — [[Paper]](https://arxiv.org/abs/2608.03692) (Huawei, 2026)
 
 ### Sample/Instance Compression for Sequence Modeling
 
@@ -165,12 +166,16 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 - **Restoring Collaborative Signals in SID-based GR**: Addresses content–collaborative signal tension in Semantic IDs via personalized natural language; restores collaborative signals without explicit reasoning overhead when text and SID tokens live in misaligned embedding spaces — [[Paper]](https://arxiv.org/abs/2607.27682) (2026)
 - **SnapLGR**: Production LLM-based generative retrieval for short-video recommendation at Snapchat; PPR-enhanced SID construction with co-engagement contrastive learning + continued pretraining for vocabulary grounding + TensorRT-LLM beam search; +0.37% View Time over TIGER-style baseline in A/B — [[Paper]](https://arxiv.org/abs/2607.28895) (Snap, 2026)
 - **EvoReason**: Self-evolving latent reasoning for generative recommendation; extracts reusable reasoning primitives from agentic trajectories as pseudo-tools; primitive-guided on-policy distillation with closed-loop co-evolution for better-aligned CoT supervision — [[Paper]](https://arxiv.org/abs/2607.29010) (2026)
+- **SmartGR**: Hierarchy and Beam-Aware Knowledge Distillation for GR; Hierarchy-Aware SID Distillation transfers teacher modeling capability across SID levels + Beam-Aware Ranking Distillation prevents incorrect prefix pruning during beam search — [[Paper]](https://arxiv.org/abs/2608.02048) (2026)
+- **HRPO**: Hierarchical Residual Policy Optimization; decomposes item-level reward into position-specific token credits via Hierarchical Residual Decomposition and optimizes per-position policy with Hierarchical PPO; resolves reward-sparsity and credit-assignment in SID decoding — [[Paper]](https://arxiv.org/abs/2608.00750) (2026)
+- **Exp-RSFT**: Exponential reward-weighted fine-tuning for GR under sparse and noisy feedback; optimizes directly on logged rewards with temperature-regularized exponential weighting; avoids reward over-optimization without requiring a separate reward model — [[Paper]](https://arxiv.org/abs/2608.00816) (Pinterest, 2026)
 
 ### Generative Pre-training for CTR
 
 - **GE4Rec**: Shifts from discriminative feature interaction to supervised feature generation paradigm — [[Paper]](https://arxiv.org/abs/2512.14041) (Tencent, 2025)
 - **GPSD**: Generative pretraining for discriminative downstream tasks (CTR/CVR); bridges generative and discriminative paradigms — [[Paper]](https://arxiv.org/abs/2506.03699) (Alibaba, KDD 2025)
 - **HeteGenCTR**: Per-field learnable difficulty parameters for generative CTR; self-balancing loss and difficulty-guided attention address generative difficulty imbalance — [[Paper]](https://arxiv.org/abs/2605.24986) (Alibaba, 2026)
+- **KGD**: Knowledge-Geometry Decoupling for refreshable pretrained transfer in streaming recommendation; Behavioral Multi-Token Prediction for cleaner supervision + read-only cross-attention with Anchored Calibration Residual decoupling knowledge refresh from task adaptation; +1.75% GMV deployed on Shopee — [[Paper]](https://arxiv.org/abs/2608.02738) (Shopee, 2026)
 
 ### Knowledge Distillation & Compression
 
@@ -193,6 +198,7 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 - **FlashTrie**: GPU-accelerated constrained beam search for generative retrieval; integer-aware succinct trie layout with cooperative CUDA kernel; 24× speedup over CPU on 800M keywords; +0.71% revenue in online A/B on commercial search engine — [[Paper]](https://arxiv.org/abs/2607.10044) (Microsoft, 2026)
 - **STATIC**: Vectorized constrained decoding for LLM-based generative retrieval on TPUs/GPUs; flattens prefix tree into CSR sparse matrix for fully vectorized operations; 948× speedup over CPU trie; first production-scale deployment of strictly constrained GR — [[Paper]](https://arxiv.org/abs/2602.22647) (Google / YouTube, KDD 2026)
 - **ROCS**: Request-Oriented Compute Sharing; defers request-candidate interactions to share substantial model computation once per request; Generalized Layer Masking + Deep Cross Attention + In-Kernel Broadcast Optimization; 3× QPS gain on retrieval, 50% QPS gain on ranking; deployed across ads and organic surfaces — [[Paper]](https://arxiv.org/abs/2607.27744) (Meta, 2026)
+- **GRACE**: Generative Recommender Acceleration Engine for real-time ads retrieval; Generative Target Matching extends constrained decoding with personalized eligibility filtering via bitmask/Bloom-filter over SID prefixes; solves eligibility and latency at wide-beam scale — [[Paper]](https://arxiv.org/abs/2608.00938) (Meta, 2026)
 
 ### Retrieval & Reranking Scaling
 
@@ -248,7 +254,7 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 
 | Company | Papers |
 |:--------|:-------|
-| **Meta** | Understanding Scaling Laws, Wukong, HSTU, InterFormer, ULTRA-HSTU, Foundation-Expert, Kunlun, LLaTTE, DHEN, Principled Synthetic Data Scaling Laws, LoopFM, MoS, Memento, FreeScale, Efficient Retrieval Scaling, RankGraph-2, G2Rec, GR2 Technical Report, Diffusion-GR2, CMSL, SlimPer, WHALE, ROCS |
+| **Meta** | Understanding Scaling Laws, Wukong, HSTU, InterFormer, ULTRA-HSTU, Foundation-Expert, Kunlun, LLaTTE, DHEN, Principled Synthetic Data Scaling Laws, LoopFM, MoS, Memento, FreeScale, Efficient Retrieval Scaling, RankGraph-2, G2Rec, GR2 Technical Report, Diffusion-GR2, CMSL, SlimPer, WHALE, ROCS, GRACE |
 | **ByteDance** | RankMixer, OneTrans, HyFormer, Zenith, TokenMixer-Large, MSN, UG-Sep, MixFormer, Rec-Distill, LONGER, Make It Long Keep It Fast |
 | **Alibaba** | GPSD, FAT, HHFT, EST, HeteroMixer, SORT, Beyond Dense Connectivity, LoopCTR, UTTSI, HeteGenCTR, ENCODE, MUSE, SSRLive, LUM, ShopX, UniSGR, TMallGS, CRID, Prompt Generation, RecGPT-V3, TSGR, Gwhere, LoopMemGR |
 | **Meituan** | SUAN, MTFM, MTmixAtt, SparseCTR, Next-Scale Generative Reranking, Not Only NTP, LGRID |
@@ -257,13 +263,13 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 | **LinkedIn** | LiRank, CADET, TransX |
 | **NetEase** | Climber, Climber-Pilot |
 | **Kuaishou** | UniMixer, INFNet, CHIME, VQL, OneRec-V2 Quantized, OneReason, OneRetrieval, RaG, UniFormer, POEM, HGenPush, PROMISE, GLASS, Multi-Decoder OneRec, WhisperRec, UniR² |
-| **Huawei** | RelayGR, Mitigating Early Training Collapse |
+| **Huawei** | RelayGR, Mitigating Early Training Collapse, SITA |
 | **Baidu** | MoUE |
-| **Shopee** | OnePiece, OneRank |
+| **Shopee** | OnePiece, OneRank, KGD |
 | **Coupang** | Search CVR Scaling |
 | **Netflix** | Large-Scale Generative Recommenders, GenPage |
 | **Tubi** | TubiFM |
-| **Pinterest** | ML-DCN, UniPinRec, MESH |
+| **Pinterest** | ML-DCN, UniPinRec, MESH, Exp-RSFT |
 | **Yandex** | Scaling Recommender Transformers, Gryphon, GBLA, Long-History User Transformers |
 | **JD** | GenRec, AdaGRPO, OCP |
 | **VK** | Long-Term Optimization for Large-Scale GR |
