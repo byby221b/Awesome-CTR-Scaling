@@ -159,6 +159,8 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 - **WhisperRec**: Latent reasoning for efficient foundation recommendation models; compresses teacher CoT into learnable latent reasoning tokens (Latent-Reason-then-Answer); Multi-View Adaptive CoT + three-stage Latent Reasoning Alignment; 10× inference throughput over explicit CoT — [[Paper]](https://arxiv.org/abs/2607.26621) (Kuaishou, 2026)
 - **UniVA**: Unified Value Alignment for generative advertising recommendation; Commercial SID Tokenization + Generation-as-Ranking decoder fusing generation scores with token-level value estimates + Value-Aware Constrained Serving; +1.5% GMV on Tencent WeChat Channels — [[Paper]](https://arxiv.org/abs/2605.05803) (Tencent, 2026)
 - **Gwhere**: End-to-end industrial generative next-POI recommendation; contrastive residual-quantization SID tokenizer aligning textual/visual/spatial/collaborative signals + Exposure-Aware Kahneman-Tversky Optimization; +5.83% P-CTR deployed on Amap — [[Paper]](https://arxiv.org/abs/2607.26073) (Alibaba, 2026)
+- **Gryphon-v2**: Unified generate-and-rank architecture replacing multi-stage cascade; Rollout Distillation from Teacher Ranker over decoder rollouts and logged impressions; single model replaces 15+ candidate generators at Yandex Music with +1.41% active users — [[Paper]](https://arxiv.org/abs/2608.06213) (Yandex, 2026)
+- **UniGD**: Unified Generative-Discriminative framework for industrial search advertising retrieval; Conflict-Aware Gradient Enhancement + Codebook-Anchored Representation Module + Heterogeneous Ad-material Modeling; +5.78% revenue, -33% latency on Kuaishou — [[Paper]](https://arxiv.org/abs/2608.03150) (Kuaishou, 2026)
 - **LoopMemGR**: Closed-loop recommendation experience memory for generative recommendation; maintains recommendation–feedback trajectory logs with recency/frequency/global views compressed into fixed experience tokens — [[Paper]](https://arxiv.org/abs/2607.27647) (Alibaba, 2026)
 - **UniR²**: Unified decoder-only Transformer for generative recall and multi-objective ranking in a single sequence; Dual-Query Prefix-Causal Attention + ranking-side LoRA; deployed on Kuaishou — [[Paper]](https://arxiv.org/abs/2607.24439) (Kuaishou, 2026)
 - **LGRID**: Interpretable disentangled SID generation via LLM-driven Encode→Disentangle→Align→Quantize pipeline; separates geographic, brand, and category into attribute-aligned slots to eliminate semantic entanglement and SID collisions; deployed for local-life service recommendation — [[Paper]](https://arxiv.org/abs/2607.27944) (Meituan, 2026)
@@ -262,7 +264,7 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 | **Google** | Hiformer, Beyond Item IDs, Token Factory, TokenMinds, STATIC, HA-MoE |
 | **LinkedIn** | LiRank, CADET, TransX |
 | **NetEase** | Climber, Climber-Pilot |
-| **Kuaishou** | UniMixer, INFNet, CHIME, VQL, OneRec-V2 Quantized, OneReason, OneRetrieval, RaG, UniFormer, POEM, HGenPush, PROMISE, GLASS, Multi-Decoder OneRec, WhisperRec, UniR² |
+| **Kuaishou** | UniMixer, INFNet, CHIME, VQL, OneRec-V2 Quantized, OneReason, OneRetrieval, RaG, UniFormer, POEM, HGenPush, PROMISE, GLASS, Multi-Decoder OneRec, WhisperRec, UniR², UniGD |
 | **Huawei** | RelayGR, Mitigating Early Training Collapse, SITA |
 | **Baidu** | MoUE |
 | **Shopee** | OnePiece, OneRank, KGD |
@@ -270,7 +272,7 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 | **Netflix** | Large-Scale Generative Recommenders, GenPage |
 | **Tubi** | TubiFM |
 | **Pinterest** | ML-DCN, UniPinRec, MESH, Exp-RSFT |
-| **Yandex** | Scaling Recommender Transformers, Gryphon, GBLA, Long-History User Transformers |
+| **Yandex** | Scaling Recommender Transformers, Gryphon, Gryphon-v2, GBLA, Long-History User Transformers |
 | **JD** | GenRec, AdaGRPO, OCP |
 | **VK** | Long-Term Optimization for Large-Scale GR |
 | **Microsoft** | FlashTrie |
