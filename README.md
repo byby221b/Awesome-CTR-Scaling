@@ -107,6 +107,7 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 - **Long-History User Transformers**: Decoupled offline/online architecture for full cross-surface user history in real-time ad ranking; offline transformer pre-trains on interaction logs with dual objective, cached representation + lightweight runtime model; +2.77% ranking metric, +2.26% revenue at Yandex — [[Paper]](https://arxiv.org/abs/2607.14331) (Yandex, 2026)
 - **FuXi-Linear**: Linear-complexity model for long-term time-aware sequential recommendation; decouples temporal and semantic signals to avoid mutual interference while capturing behavioral periodicity; designed for deep architectures and long sequences — [[Paper]](https://arxiv.org/abs/2602.23671) (KDD 2026)
 - **SITA**: Semantic Interest Tokens for Target-Aware Compression; bridges target-aware retrieval and target-agnostic compression via learnable interest tokens that absorb target-relevant signals during training; achieves target-specific adaptation without target-dependent inference computation — [[Paper]](https://arxiv.org/abs/2608.03692) (Huawei, 2026)
+- **TM20K**: Full transformer + token merge for 20K e-commerce sequence; two-stage KD with full-token teacher boosting merged-token student; deployed in ByteDance advertising with +1.036% ADSS at only +5.6% serving latency — [[Paper]](https://arxiv.org/abs/2608.07055) (ByteDance, 2026)
 
 ### Sample/Instance Compression for Sequence Modeling
 
@@ -257,7 +258,7 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 | Company | Papers |
 |:--------|:-------|
 | **Meta** | Understanding Scaling Laws, Wukong, HSTU, InterFormer, ULTRA-HSTU, Foundation-Expert, Kunlun, LLaTTE, DHEN, Principled Synthetic Data Scaling Laws, LoopFM, MoS, Memento, FreeScale, Efficient Retrieval Scaling, RankGraph-2, G2Rec, GR2 Technical Report, Diffusion-GR2, CMSL, SlimPer, WHALE, ROCS, GRACE |
-| **ByteDance** | RankMixer, OneTrans, HyFormer, Zenith, TokenMixer-Large, MSN, UG-Sep, MixFormer, Rec-Distill, LONGER, Make It Long Keep It Fast |
+| **ByteDance** | RankMixer, OneTrans, HyFormer, Zenith, TokenMixer-Large, MSN, UG-Sep, MixFormer, Rec-Distill, LONGER, Make It Long Keep It Fast, TM20K |
 | **Alibaba** | GPSD, FAT, HHFT, EST, HeteroMixer, SORT, Beyond Dense Connectivity, LoopCTR, UTTSI, HeteGenCTR, ENCODE, MUSE, SSRLive, LUM, ShopX, UniSGR, TMallGS, CRID, Prompt Generation, RecGPT-V3, TSGR, Gwhere, LoopMemGR |
 | **Meituan** | SUAN, MTFM, MTmixAtt, SparseCTR, Next-Scale Generative Reranking, Not Only NTP, LGRID |
 | **Tencent** | GE4Rec, TokenFormer, RankUp (Weixin), RankElastor, SIREN (Weixin), HiGR, BARGE, DLMRec, UniVA (Weixin), CCFormer |
