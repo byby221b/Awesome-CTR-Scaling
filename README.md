@@ -167,6 +167,8 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 - **LGRID**: Interpretable disentangled SID generation via LLM-driven Encode→Disentangle→Align→Quantize pipeline; separates geographic, brand, and category into attribute-aligned slots to eliminate semantic entanglement and SID collisions; deployed for local-life service recommendation — [[Paper]](https://arxiv.org/abs/2607.27944) (Meituan, 2026)
 - **Feedback-Grounded Policy Discovery**: Bridges Understanding-Action Gap in LLM-enhanced GR; discovers recommendation policies via outcome-derived feedback rather than linguistic plausibility; separates intent knowledge from policy knowledge for effective recommendation direction — [[Paper]](https://arxiv.org/abs/2607.27789) (2026)
 - **Restoring Collaborative Signals in SID-based GR**: Addresses content–collaborative signal tension in Semantic IDs via personalized natural language; restores collaborative signals without explicit reasoning overhead when text and SID tokens live in misaligned embedding spaces — [[Paper]](https://arxiv.org/abs/2607.27682) (2026)
+- **HCGRec**: Hint-Conditioned Generative Recommendation with Semantic IDs; addresses structured optimization bottleneck in reward-based post-training via hierarchical hint conditioning when early tokens enter wrong SID branches — [[Paper]](https://arxiv.org/abs/2608.11980) (2026)
+- **IntHQ**: Task-Interactive Hierarchical Query for multi-task generative recommendation; Dual-Stream Decoupling + Task-Interactive Modeling + Hierarchical Querying addressing source/relational/hierarchical collapse; deployed on Amap with +1.60% UVCTR — [[Paper]](https://arxiv.org/abs/2608.09634) (Alibaba, 2026)
 - **SnapLGR**: Production LLM-based generative retrieval for short-video recommendation at Snapchat; PPR-enhanced SID construction with co-engagement contrastive learning + continued pretraining for vocabulary grounding + TensorRT-LLM beam search; +0.37% View Time over TIGER-style baseline in A/B — [[Paper]](https://arxiv.org/abs/2607.28895) (Snap, 2026)
 - **EvoReason**: Self-evolving latent reasoning for generative recommendation; extracts reusable reasoning primitives from agentic trajectories as pseudo-tools; primitive-guided on-policy distillation with closed-loop co-evolution for better-aligned CoT supervision — [[Paper]](https://arxiv.org/abs/2607.29010) (2026)
 - **SmartGR**: Hierarchy and Beam-Aware Knowledge Distillation for GR; Hierarchy-Aware SID Distillation transfers teacher modeling capability across SID levels + Beam-Aware Ranking Distillation prevents incorrect prefix pruning during beam search — [[Paper]](https://arxiv.org/abs/2608.02048) (2026)
@@ -185,6 +187,7 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 - **KDEF**: KD+DML framework enabling CTR models to follow scaling laws — [[Paper]](https://arxiv.org/abs/2411.16122) (2024)
 - **LoopFM**: FM-to-VM knowledge transfer via cached FM intermediate embeddings; bypasses real-time FM serving; ~2× transfer ratio over scalar KD on trillion-param FMs — [[Paper]](https://arxiv.org/abs/2605.29280) (Meta, 2026)
 - **Rec-Distill**: Industrial knowledge distillation pipeline transferring large-scale teacher ranking models into deployable student models — [[Paper]](https://arxiv.org/abs/2605.29755) (ByteDance, 2026)
+- **UniMoMo**: Post-training MoE expert merging for large recommendation models; graph-coarsening formulation grouping experts by functional similarity with layer-adaptive protection for high-traffic experts — [[Paper]](https://arxiv.org/abs/2608.08627) (2026)
 
 ### Engineering & Serving
 
@@ -250,6 +253,7 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 - **Mitigating Early Training Collapse in CTR Models**: Analyzes sharp validation performance decline after first epoch in CTR training; shows controlling feature sparsity (removing sparse features + aggregating infrequent values) is far more effective than learning rate tuning for stabilizing multi-epoch training — [[Paper]](https://arxiv.org/abs/2607.09696) (Huawei, 2026)
 - **Bumblebee**: Interleaved mixed-layer building blocks for large-scale recommendation; each stackable block combines sequence personalization, attention-based encoding, and feature crossing; cross-modal residual connections; flexible quality-throughput trade-offs via component dropping — [[Paper]](https://arxiv.org/abs/2607.24804) (Industry, 2026)
 - **HA-MoE**: Heterogeneity-Adaptive MoE for industrial-scale heterogeneous ranking at Google Discover; explicit heterogeneity context in gating and expert representations; LENS observability framework; Dual-Level AUC evaluation — [[Paper]](https://arxiv.org/abs/2607.27577) (Google, RecSys 2026)
+- **MISO**: Model-Internal-State-Guided Optimization for ranking models; uses parameters, activations, gradients as first-class signals to prioritize scaling and optimization decisions; adaptive workflow tracking model behavior evolution — [[Paper]](https://arxiv.org/abs/2608.07035) (Industry, 2026)
 
 ---
 
@@ -259,7 +263,7 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 |:--------|:-------|
 | **Meta** | Understanding Scaling Laws, Wukong, HSTU, InterFormer, ULTRA-HSTU, Foundation-Expert, Kunlun, LLaTTE, DHEN, Principled Synthetic Data Scaling Laws, LoopFM, MoS, Memento, FreeScale, Efficient Retrieval Scaling, RankGraph-2, G2Rec, GR2 Technical Report, Diffusion-GR2, CMSL, SlimPer, WHALE, ROCS, GRACE |
 | **ByteDance** | RankMixer, OneTrans, HyFormer, Zenith, TokenMixer-Large, MSN, UG-Sep, MixFormer, Rec-Distill, LONGER, Make It Long Keep It Fast, TM20K |
-| **Alibaba** | GPSD, FAT, HHFT, EST, HeteroMixer, SORT, Beyond Dense Connectivity, LoopCTR, UTTSI, HeteGenCTR, ENCODE, MUSE, SSRLive, LUM, ShopX, UniSGR, TMallGS, CRID, Prompt Generation, RecGPT-V3, TSGR, Gwhere, LoopMemGR |
+| **Alibaba** | GPSD, FAT, HHFT, EST, HeteroMixer, SORT, Beyond Dense Connectivity, LoopCTR, UTTSI, HeteGenCTR, ENCODE, MUSE, SSRLive, LUM, ShopX, UniSGR, TMallGS, CRID, Prompt Generation, RecGPT-V3, TSGR, Gwhere, LoopMemGR, IntHQ |
 | **Meituan** | SUAN, MTFM, MTmixAtt, SparseCTR, Next-Scale Generative Reranking, Not Only NTP, LGRID |
 | **Tencent** | GE4Rec, TokenFormer, RankUp (Weixin), RankElastor, SIREN (Weixin), HiGR, BARGE, DLMRec, UniVA (Weixin), CCFormer |
 | **Google** | Hiformer, Beyond Item IDs, Token Factory, TokenMinds, STATIC, HA-MoE |
