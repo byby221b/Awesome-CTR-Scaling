@@ -175,6 +175,7 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 - **SmartGR**: Hierarchy and Beam-Aware Knowledge Distillation for GR; Hierarchy-Aware SID Distillation transfers teacher modeling capability across SID levels + Beam-Aware Ranking Distillation prevents incorrect prefix pruning during beam search — [[Paper]](https://arxiv.org/abs/2608.02048) (2026)
 - **HRPO**: Hierarchical Residual Policy Optimization; decomposes item-level reward into position-specific token credits via Hierarchical Residual Decomposition and optimizes per-position policy with Hierarchical PPO; resolves reward-sparsity and credit-assignment in SID decoding — [[Paper]](https://arxiv.org/abs/2608.00750) (2026)
 - **Exp-RSFT**: Exponential reward-weighted fine-tuning for GR under sparse and noisy feedback; optimizes directly on logged rewards with temperature-regularized exponential weighting; avoids reward over-optimization without requiring a separate reward model — [[Paper]](https://arxiv.org/abs/2608.00816) (Pinterest, 2026)
+- **OGR (Once Generated, Ranked)**: End-to-end generative slate recommendation; TUSID adaptively fuses item-specific semantic and local collaborative signals into hierarchical Semantic IDs; list-wise preference planning + pipelined position-wise SID decoding directly generate ordered slates, unifying generation and ranking — [[Paper]](https://arxiv.org/abs/2608.17613) (Kuaishou, 2026)
 
 ### Generative Pre-training for CTR
 
@@ -270,7 +271,7 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 | **Google** | Hiformer, Beyond Item IDs, Token Factory, TokenMinds, STATIC, HA-MoE |
 | **LinkedIn** | LiRank, CADET, TransX |
 | **NetEase** | Climber, Climber-Pilot |
-| **Kuaishou** | UniMixer, INFNet, CHIME, VQL, OneRec-V2 Quantized, OneReason, OneRetrieval, RaG, UniFormer, POEM, HGenPush, PROMISE, GLASS, Multi-Decoder OneRec, WhisperRec, UniR², UniGD |
+| **Kuaishou** | UniMixer, INFNet, CHIME, VQL, OneRec-V2 Quantized, OneReason, OneRetrieval, RaG, UniFormer, POEM, HGenPush, PROMISE, GLASS, Multi-Decoder OneRec, WhisperRec, UniR², UniGD, OGR |
 | **Huawei** | RelayGR, Mitigating Early Training Collapse, SITA |
 | **Baidu** | MoUE |
 | **Shopee** | OnePiece, OneRank, KGD |
