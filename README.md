@@ -82,6 +82,8 @@ This repository focuses on a rapidly emerging research direction: how to effecti
 | **TransX: Scaling Transformer-based Recommendation via Behavioral and Serving Stream Crossings** | LinkedIn | arXiv | 2026 | [[Paper]](https://arxiv.org/abs/2607.28940) | Encoder-decoder architecture decoupling behavior-stream and serving-event modeling via cross-attention; amortized serving with incremental encoding + per-request KV caching; 80% compute reduction with +6.0% CTR at LinkedIn |
 | **Exploring Test-time Scaling via Prediction Merging on Large-Scale Recommendation** | Academic | SIGIR | 2026 | [[Paper]](https://arxiv.org/abs/2512.07650) | First study of test-time compute scaling for recommendation via prediction merging; scales inference-time compute for improved accuracy without retraining |
 | **UniDot: A Unified Network for Sequence Modeling and Feature Interaction in Large-scale Recommendation** | Industry | arXiv | 2026 | [[Paper]](https://arxiv.org/abs/2608.16797) | Unifies feature interaction and sequence modeling from the FM dot-product perspective; token-mixing bus + sequence-retrieval bus + FM Highway in a single macro-block; KDD Cup 2026 Industrial track runner-up |
+| **OneModel: A Unified Foundation for Platform-Scale Multi-Scenario Ranking** | Xiaohongshu | arXiv | 2026 | [[Paper]](https://arxiv.org/abs/2608.18606) | Unified multi-stream final ranking; maps heterogeneous behaviors into shared event sequences with an action-oriented backbone; Scenario-aware Information Modulation balancing cross-stream transfer and stream-specific specialization; stratified user representation + serving optimizations; scales favorably with context length and model capacity; deployed at Xiaohongshu |
+| **GateDiffInt: Gate-Mediated Controllable Diffusion and Multi-Intent LLM Distillation for User Behavior Modeling** | Xiaohongshu | arXiv | 2026 | [[Paper]](https://arxiv.org/abs/2608.18764) | Controllable forward diffusion with dual gating for behavior sequence denoising; LLM teacher distills four structured intents (long/short/latent/conversion) into a lightweight student for CVR prediction; addresses Noise-Intent Coupling; deployed to primary traffic at hundreds of millions DAU |
 
 ## Related Work
 
@@ -176,6 +178,8 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 - **HRPO**: Hierarchical Residual Policy Optimization; decomposes item-level reward into position-specific token credits via Hierarchical Residual Decomposition and optimizes per-position policy with Hierarchical PPO; resolves reward-sparsity and credit-assignment in SID decoding — [[Paper]](https://arxiv.org/abs/2608.00750) (2026)
 - **Exp-RSFT**: Exponential reward-weighted fine-tuning for GR under sparse and noisy feedback; optimizes directly on logged rewards with temperature-regularized exponential weighting; avoids reward over-optimization without requiring a separate reward model — [[Paper]](https://arxiv.org/abs/2608.00816) (Pinterest, 2026)
 - **OGR (Once Generated, Ranked)**: End-to-end generative slate recommendation; TUSID adaptively fuses item-specific semantic and local collaborative signals into hierarchical Semantic IDs; list-wise preference planning + pipelined position-wise SID decoding directly generate ordered slates, unifying generation and ranking — [[Paper]](https://arxiv.org/abs/2608.17613) (Kuaishou, 2026)
+- **rEDMRec**: Distills teacher LLM reasoning into four typed, editable experience channels (long-term / short-term / item-perception / counterfactual hard-negative) maintained by an LLM memory controller with Add/Delete/Modify/Keep ops refined via K-agent debate; lightweight student ranks purely by retrieving from memory, decoupling inference cost from reasoning depth — [[Paper]](https://arxiv.org/abs/2608.18952) (2026)
+- **Understanding SID-based GR from a Model-scaling View**: Reveals SID-based generative recommendation saturates quickly when scaling each component (modality encoder, quantization tokenizer, recommender); identifies per-component scaling bottlenecks distinguishing SID-GR from established LLM scaling laws — [[Paper]](https://arxiv.org/abs/2509.25522) (Academic, 2025)
 
 ### Generative Pre-training for CTR
 
@@ -207,6 +211,7 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 - **STATIC**: Vectorized constrained decoding for LLM-based generative retrieval on TPUs/GPUs; flattens prefix tree into CSR sparse matrix for fully vectorized operations; 948× speedup over CPU trie; first production-scale deployment of strictly constrained GR — [[Paper]](https://arxiv.org/abs/2602.22647) (Google / YouTube, KDD 2026)
 - **ROCS**: Request-Oriented Compute Sharing; defers request-candidate interactions to share substantial model computation once per request; Generalized Layer Masking + Deep Cross Attention + In-Kernel Broadcast Optimization; 3× QPS gain on retrieval, 50% QPS gain on ranking; deployed across ads and organic surfaces — [[Paper]](https://arxiv.org/abs/2607.27744) (Meta, 2026)
 - **GRACE**: Generative Recommender Acceleration Engine for real-time ads retrieval; Generative Target Matching extends constrained decoding with personalized eligibility filtering via bitmask/Bloom-filter over SID prefixes; solves eligibility and latency at wide-beam scale — [[Paper]](https://arxiv.org/abs/2608.00938) (Meta, 2026)
+- **Context Parallelism for HSTU**: Context parallelism (CP) sharding activation memory along the sequence-length dimension for HSTU; addresses the activation-heavy nature of scaling long user-history sequences in generative recommenders where standard CP breaks down under causal streaming attention — [[Paper]](https://arxiv.org/abs/2508.04711) (Meta, RecSys 2025)
 
 ### Retrieval & Reranking Scaling
 
@@ -263,7 +268,7 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 
 | Company | Papers |
 |:--------|:-------|
-| **Meta** | Understanding Scaling Laws, Wukong, HSTU, InterFormer, ULTRA-HSTU, Foundation-Expert, Kunlun, LLaTTE, DHEN, Principled Synthetic Data Scaling Laws, LoopFM, MoS, Memento, FreeScale, Efficient Retrieval Scaling, RankGraph-2, G2Rec, GR2 Technical Report, Diffusion-GR2, CMSL, SlimPer, WHALE, ROCS, GRACE |
+| **Meta** | Understanding Scaling Laws, Wukong, HSTU, InterFormer, ULTRA-HSTU, Foundation-Expert, Kunlun, LLaTTE, DHEN, Principled Synthetic Data Scaling Laws, LoopFM, MoS, Memento, FreeScale, Efficient Retrieval Scaling, RankGraph-2, G2Rec, GR2 Technical Report, Diffusion-GR2, CMSL, SlimPer, WHALE, ROCS, GRACE, Context Parallelism for HSTU |
 | **ByteDance** | RankMixer, OneTrans, HyFormer, Zenith, TokenMixer-Large, MSN, UG-Sep, MixFormer, Rec-Distill, LONGER, Make It Long Keep It Fast, TM20K |
 | **Alibaba** | GPSD, FAT, HHFT, EST, HeteroMixer, SORT, Beyond Dense Connectivity, LoopCTR, UTTSI, HeteGenCTR, ENCODE, MUSE, SSRLive, LUM, ShopX, UniSGR, TMallGS, CRID, Prompt Generation, RecGPT-V3, TSGR, Gwhere, LoopMemGR, IntHQ |
 | **Meituan** | SUAN, MTFM, MTmixAtt, SparseCTR, Next-Scale Generative Reranking, Not Only NTP, LGRID |
@@ -285,6 +290,7 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 | **Microsoft** | FlashTrie |
 | **Walmart** | Scaling and Stabilizing Large-Scale EBR |
 | **Snap** | SnapLGR |
+| **Xiaohongshu** | OneModel, GateDiffInt |
 
 ## Contributing
 
