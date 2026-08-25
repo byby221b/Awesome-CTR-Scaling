@@ -181,6 +181,7 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 - **rEDMRec**: Distills teacher LLM reasoning into four typed, editable experience channels (long-term / short-term / item-perception / counterfactual hard-negative) maintained by an LLM memory controller with Add/Delete/Modify/Keep ops refined via K-agent debate; lightweight student ranks purely by retrieving from memory, decoupling inference cost from reasoning depth — [[Paper]](https://arxiv.org/abs/2608.18952) (2026)
 - **Understanding SID-based GR from a Model-scaling View**: Reveals SID-based generative recommendation saturates quickly when scaling each component (modality encoder, quantization tokenizer, recommender); identifies per-component scaling bottlenecks distinguishing SID-GR from established LLM scaling laws — [[Paper]](https://arxiv.org/abs/2509.25522) (Academic, 2025)
 - **Beyond Uniform Token Training**: Token-weighted multi-target objectives aligning GR training with Semantic-ID structure; Front-Greater Weighting emphasizes prefix tokens that reduce candidate semantic ambiguity, plus frequency weighting against long-tail popularity bias, integrated via curriculum learning — [[Paper]](https://arxiv.org/abs/2601.17787) (Academic, 2026)
+- **Single-Level Large Semantic Codebook**: Replaces multi-level residual quantization with one semantic token plus a separate collaborative disambiguation token to reduce item collisions; exposure-aware dynamic codebook update (temporal decay + EMA centers + exposure-weighted SID-change penalty) realigns with live traffic; shorter SID cuts autoregressive-decoding FLOPs ~48% and lifts single-card QPS 28–47%; +0.792% primary consumption metric in online A/B — [[Paper]](https://arxiv.org/abs/2608.21012) (Kuaishou, 2026)
 
 ### Generative Pre-training for CTR
 
@@ -277,7 +278,7 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 | **Google** | Hiformer, Beyond Item IDs, Token Factory, TokenMinds, STATIC, HA-MoE |
 | **LinkedIn** | LiRank, CADET, TransX |
 | **NetEase** | Climber, Climber-Pilot |
-| **Kuaishou** | UniMixer, INFNet, CHIME, VQL, OneRec-V2 Quantized, OneReason, OneRetrieval, RaG, UniFormer, POEM, HGenPush, PROMISE, GLASS, Multi-Decoder OneRec, WhisperRec, UniR², UniGD, OGR |
+| **Kuaishou** | UniMixer, INFNet, CHIME, VQL, OneRec-V2 Quantized, OneReason, OneRetrieval, RaG, UniFormer, POEM, HGenPush, PROMISE, GLASS, Multi-Decoder OneRec, WhisperRec, UniR², UniGD, OGR, Single-Level Large Semantic Codebook |
 | **Huawei** | RelayGR, Mitigating Early Training Collapse, SITA |
 | **Baidu** | MoUE |
 | **Shopee** | OnePiece, OneRank, KGD |
