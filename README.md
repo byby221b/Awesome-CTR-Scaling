@@ -253,6 +253,7 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 - **Transforming Rank**: Analyzes how each Transformer feedforward block component determines rank survival across depth; reinterprets skip connections and normalization as rank-preserving mechanisms; shows skip scale controls rank-collapse vs ensemble behavior trade-off — [[Paper]](https://arxiv.org/abs/2607.14018) (2026)
 - **Loopie (Loop the Loopies!)**: Looped MoE Transformers resolving the longstanding challenge that parameter scaling outperforms loop scaling; 20B/6B MoE models with 2B/0.6B active params substantially outperform vanilla Transformer baselines at same compute budget; complements loop scaling paradigm for CTR — [[Paper]](https://arxiv.org/abs/2607.16051) (2026)
 - **MHAR (Multi-Head Attention Residuals)**: Per-subspace depth routing with zero added parameters; reshapes routing query into H independent heads over depth history removing forced-compromise bottleneck of single-query attention residuals; improves validation loss at 100M/350M/1B scales — [[Paper]](https://arxiv.org/abs/2607.27230) (Academic, 2026)
+- **MoSE (Mixture of Slimmable Experts)**: Each MoE expert has a nested slimmable structure executable at variable widths; enables continuous accuracy-compute trade-off spectrum at inference without retraining; lightweight test-time training maps router confidence to expert widths under fixed budget — [[Paper]](https://arxiv.org/abs/2602.06154) (MBZUAI / Amazon, 2026)
 
 ### Other
 
