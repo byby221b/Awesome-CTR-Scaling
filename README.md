@@ -214,6 +214,7 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 - **ROCS**: Request-Oriented Compute Sharing; defers request-candidate interactions to share substantial model computation once per request; Generalized Layer Masking + Deep Cross Attention + In-Kernel Broadcast Optimization; 3× QPS gain on retrieval, 50% QPS gain on ranking; deployed across ads and organic surfaces — [[Paper]](https://arxiv.org/abs/2607.27744) (Meta, 2026)
 - **GRACE**: Generative Recommender Acceleration Engine for real-time ads retrieval; Generative Target Matching extends constrained decoding with personalized eligibility filtering via bitmask/Bloom-filter over SID prefixes; solves eligibility and latency at wide-beam scale — [[Paper]](https://arxiv.org/abs/2608.00938) (Meta, 2026)
 - **Context Parallelism for HSTU**: Context parallelism (CP) sharding activation memory along the sequence-length dimension for HSTU; addresses the activation-heavy nature of scaling long user-history sequences in generative recommenders where standard CP breaks down under causal streaming attention — [[Paper]](https://arxiv.org/abs/2508.04711) (Meta, RecSys 2025)
+- **RACER**: Jointly manages GPU HBM allocation between embedding hot caches and KV caches at runtime for generative recommender serving; addresses workload-dependent optimal EMB-KV ratio shifts (up to 0.35) while avoiding critical-path H2D refill traffic that causes P99 SLO violations; recovers 20-30% serving latency — [[Paper]](https://arxiv.org/abs/2605.04450) (HKBU / Alibaba, 2026)
 
 ### Retrieval & Reranking Scaling
 
@@ -275,7 +276,7 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 |:--------|:-------|
 | **Meta** | Understanding Scaling Laws, Wukong, HSTU, InterFormer, ULTRA-HSTU, Foundation-Expert, Kunlun, LLaTTE, DHEN, Principled Synthetic Data Scaling Laws, LoopFM, MoS, Memento, FreeScale, Efficient Retrieval Scaling, RankGraph-2, G2Rec, GR2 Technical Report, Diffusion-GR2, CMSL, SlimPer, WHALE, ROCS, GRACE, Context Parallelism for HSTU |
 | **ByteDance** | RankMixer, OneTrans, HyFormer, Zenith, TokenMixer-Large, MSN, UG-Sep, MixFormer, Rec-Distill, LONGER, Make It Long Keep It Fast, TM20K |
-| **Alibaba** | GPSD, FAT, HHFT, EST, HeteroMixer, SORT, Beyond Dense Connectivity, LoopCTR, UTTSI, HeteGenCTR, ENCODE, MUSE, SSRLive, LUM, ShopX, UniSGR, TMallGS, CRID, Prompt Generation, RecGPT-V3, TSGR, Gwhere, LoopMemGR, IntHQ |
+| **Alibaba** | GPSD, FAT, HHFT, EST, HeteroMixer, SORT, Beyond Dense Connectivity, LoopCTR, UTTSI, HeteGenCTR, ENCODE, MUSE, SSRLive, LUM, ShopX, UniSGR, TMallGS, CRID, Prompt Generation, RecGPT-V3, TSGR, Gwhere, LoopMemGR, IntHQ, RACER |
 | **Meituan** | SUAN, MTFM, MTmixAtt, SparseCTR, Next-Scale Generative Reranking, Not Only NTP, LGRID |
 | **Tencent** | GE4Rec, TokenFormer, RankUp (Weixin), RankElastor, SIREN (Weixin), HiGR, BARGE, DLMRec, UniVA (Weixin), CCFormer |
 | **Google** | Hiformer, Beyond Item IDs, Token Factory, TokenMinds, STATIC, HA-MoE |
