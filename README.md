@@ -117,6 +117,7 @@ Each paper is tagged with 2–4 labels from this controlled vocabulary. New pape
 | **OneRank: Unified Transformer-Native Ranking Architecture for Multi-Task Recommendation** | Shopee / RUC | KDD | 2026 | `Multi-task` `Architecture` | [[Paper]](https://arxiv.org/abs/2606.16838) | Eliminates encoder-predictor separation in multi-task ranking; task-private channels with dynamic scoring |
 | **Token Factory: Efficiently Integrating Diverse Signals into Large Recommendation Models** | Google | arXiv | 2026 | `Foundation Model` `Tokenization` | [[Paper]](https://arxiv.org/abs/2606.19635) | Transforms heterogeneous signals into soft tokens; prevents prompt length explosion |
 | **OneModel: A Unified Foundation for Platform-Scale Multi-Scenario Ranking** | Xiaohongshu | arXiv | 2026 | `Multi-scenario` `Sequence Modeling` `Foundation Model` | [[Paper]](https://arxiv.org/abs/2608.18606) | Unified multi-stream ranking with Scenario-aware Information Modulation; deployed at Xiaohongshu |
+| **AMBER: An Event is Worth One Token — Event Tokenization for Industrial-scale LLM Recommendation** | Meta | arXiv | 2026 | `Tokenization` `Foundation Model` | [[Paper]](https://arxiv.org/abs/2608.25546) | Compresses each event's full temporal snapshot into a compact Event Token; identifies snapshot resolution as a new scaling dimension; advances the compute-quality Pareto frontier for LLM-based recommendation |
 
 ### Efficiency & Deployment
 
@@ -269,6 +270,7 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 - **MESH**: Unified retrieval scaling framework addressing Scaling Bias of Heterogeneity; modularized architecture with gated bias correction achieves 14× improvement in scaling exponent for fresh items; deployed on Pinterest Related Pins — [[Paper]](https://arxiv.org/abs/2607.12392) (Pinterest, 2026)
 - **Scaling and Stabilizing Large-Scale EBR**: Unified pipeline for scaling embedding-based retrieval at Walmart; Hybrid Hard Negative Mining + Legacy-Aware Distillation for smooth backbone evolution from DistilBERT to GTE-base; +7.34% NDCG@5, +0.50% revenue — [[Paper]](https://arxiv.org/abs/2607.10096) (Walmart, 2026)
 - **OneShot**: End-to-end in-model index learning framework that natively aligns index building with ranking objectives; resolves structural misalignment between ranking accuracy and indexing efficiency for billion-scale retrieval — [[Paper]](https://arxiv.org/abs/2607.27475) (2026)
+- **TransRetrieval**: Scaling up Transformer-based retrieval for industrial recommendation; weighted average aggregation restores the homogeneous-token assumption Transformers rely on, target token compression cuts per-candidate FLOPs by 85%, and position-style domain embeddings turn cross-domain data into a scaling asset; confirms robust log-linear scaling (+19.3/+22.2 pt Recall@2000) and lifts platform revenue +2.53% in online A/B — [[Paper]](https://arxiv.org/abs/2608.25528) (Alibaba, CIKM 2026)
 
 ### Architecture Innovations Beyond Recommendation
 
@@ -317,9 +319,9 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 
 | Company | Papers |
 |:--------|:-------|
-| **Meta** | Understanding Scaling Laws, Wukong, HSTU, InterFormer, ULTRA-HSTU, Foundation-Expert, Kunlun, LLaTTE, DHEN, Principled Synthetic Data Scaling Laws, LoopFM, MoS, Memento, FreeScale, Efficient Retrieval Scaling, RankGraph-2, G2Rec, GR2 Technical Report, Diffusion-GR2, CMSL, SlimPer, WHALE, ROCS, GRACE, Context Parallelism for HSTU |
+| **Meta** | Understanding Scaling Laws, Wukong, HSTU, InterFormer, ULTRA-HSTU, Foundation-Expert, Kunlun, LLaTTE, DHEN, Principled Synthetic Data Scaling Laws, LoopFM, MoS, Memento, FreeScale, Efficient Retrieval Scaling, RankGraph-2, G2Rec, GR2 Technical Report, Diffusion-GR2, CMSL, SlimPer, WHALE, ROCS, GRACE, Context Parallelism for HSTU, AMBER |
 | **ByteDance** | RankMixer, OneTrans, HyFormer, Zenith, TokenMixer-Large, MSN, UG-Sep, MixFormer, Rec-Distill, LONGER, Make It Long Keep It Fast, TM20K |
-| **Alibaba** | GPSD, FAT, HHFT, EST, HeteroMixer, SORT, Beyond Dense Connectivity, LoopCTR, UTTSI, HeteGenCTR, ENCODE, MUSE, SSRLive, LUM, ShopX, UniSGR, TMallGS, CRID, Prompt Generation, RecGPT-V3, TSGR, Gwhere, LoopMemGR, IntHQ, RACER |
+| **Alibaba** | GPSD, FAT, HHFT, EST, HeteroMixer, SORT, Beyond Dense Connectivity, LoopCTR, UTTSI, HeteGenCTR, ENCODE, MUSE, SSRLive, LUM, ShopX, UniSGR, TMallGS, CRID, Prompt Generation, RecGPT-V3, TSGR, Gwhere, LoopMemGR, IntHQ, RACER, TransRetrieval |
 | **Meituan** | SUAN, MTFM, MTmixAtt, SparseCTR, Next-Scale Generative Reranking, Not Only NTP, LGRID |
 | **Tencent** | GE4Rec, TokenFormer, RankUp (Weixin), RankElastor, SIREN (Weixin), HiGR, BARGE, DLMRec, UniVA (Weixin), CCFormer |
 | **Google** | Hiformer, Beyond Item IDs, Token Factory, TokenMinds, STATIC, HA-MoE |
