@@ -135,6 +135,7 @@ Each paper is tagged with 2–4 labels from this controlled vocabulary. New pape
 | **Selective Test-Time Compute Scaling for CTR Prediction via Uncertainty-Triggered Feature Path Exploration** | Alibaba | arXiv | 2026 | `Test-time Compute` `Sparse Activation` | [[Paper]](https://arxiv.org/abs/2605.24989) | Training-free per-instance test-time compute scaling; routes uncertain instances through stochastic paths |
 | **Exploring Test-time Scaling via Prediction Merging on Large-Scale Recommendation** | Academic | SIGIR | 2026 | `Test-time Compute` | [[Paper]](https://arxiv.org/abs/2512.07650) | First study of test-time compute scaling for recommendation via prediction merging |
 | **DS-Frame: Recommender System as Slow and Fast Thinkers** | Academic | arXiv | 2026 | `Test-time Compute` `Sequence Modeling` | [[Paper]](https://arxiv.org/abs/2609.02671) | Adaptive fast–slow inference framework; Fast System for routine prediction + Slow System for iterative latent refinement + learned selector routing each sample under a controllable computation budget; larger gains on challenging user groups with effective accuracy–efficiency trade-offs |
+| **SPD: Single Pass Decoding for Generative Reranking** | Amazon | arXiv | 2026 | `Test-time Compute` `Generative Rec` `Serving` | [[Paper]](https://arxiv.org/abs/2609.01807) | Format-specialized decoding for generative reranking; decodes all N item ordinals in O(1) forward passes via an N×K item-position score matrix read off prefill hidden states and optimal bipartite assignment, replacing autoregressive O(N) per-token decoding |
 
 ## Related Work
 
@@ -316,6 +317,7 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 - **A Survey on Inference Optimization Techniques for Mixture of Experts Models**: Comprehensive survey of MoE inference optimization across the full system stack; taxonomizes model-level (expert design, compression, dynamic routing, expert merging), system-level (distributed computing, load balancing, scheduling), and hardware-level optimizations — [[Paper]](https://arxiv.org/abs/2412.14219) (CUHK / SJTU, ACM Computing Surveys 2025)
 - **SMELT: Scaling Laws for Compute-Matched MoE Looped Transformers**: Studies MoE looping under strict compute-matching (FLOPs, params, KV cache); loop-middle-only with 2 iterations is optimal; scaling to 54B params shows 6.8–18.0% training FLOPs savings on compute-optimal frontier; rigorous scaling law for loop scaling paradigm — [[Paper]](https://arxiv.org/abs/2609.01343) (2026)
 - **Graph Machine: Towards Better Pretraining via Edges**: O(n)-state architecture with dynamic sparse routing via differentiable pointer-like edges and referral mechanism; replaces 75% dense layers in Qwen3-0.6B with sparse layers retrieving only 2-4 of 4096 tokens per KV head at marginal loss degradation — [[Paper]](https://arxiv.org/abs/2609.02881) (2026)
+- **Training-Free Halving of Activated Experts in Fine-Grained MoE**: Reveals that MoE routing renormalization implicitly calibrates expert output gain to the training top-k; separates the gain-calibration effect from expert selection to training-free halve activated experts at inference without retraining — [[Paper]](https://arxiv.org/abs/2609.04575) (University of Alberta, 2026)
 
 ### Other
 
@@ -356,6 +358,7 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 | **Walmart** | Scaling and Stabilizing Large-Scale EBR |
 | **Snap** | SnapLGR |
 | **Xiaohongshu** | OneModel, GateDiffInt |
+| **Amazon** | SPD |
 
 ## Contributing
 
