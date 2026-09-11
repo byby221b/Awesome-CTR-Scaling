@@ -240,6 +240,7 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 - **SelfDR**: Self-distillation from reasoning for LLM-based recommendation; distills an LLM's own reasoning-enhanced predictions into a same-backbone student that produces recommendations directly, improving accuracy while preserving inference efficiency without relying on external models — [[Paper]](https://arxiv.org/abs/2609.03313) (2026)
 - **HypRQ-VAE**: First framework to learn item indexing in hyperbolic space via a Hyperbolic Residual-Quantized VAE; the exponential volume expansion of hyperbolic geometry naturally accommodates the power-law long-tail structure of user-item interactions, preserving representational fidelity of sparse tail items and improving generative recommendation especially for long-tail items — [[Paper]](https://arxiv.org/abs/2609.03369) (2026)
 - **EPIC**: Explicit Posterior Item Conditioning for SID diffusion recommendation; introduces explicit item-level competition into masked-diffusion denoising by constructing a personalized posterior over feasible candidate items from the generation context and recent interactions, then projecting it back to unresolved SID positions to guide token decisions, with a frozen backbone and no extra decoder forward pass — [[Paper]](https://arxiv.org/abs/2609.03522) (2026)
+- **ICEGR**: Intent-Coherent End-to-End Generative Retrieval for e-commerce search; integrates query intent throughout the GR training pipeline via Intent-Aware SID Construction (injects query-intent signals into SIDs beyond static product info) + Synthetic Query-Enhanced Unified SFT (augments sparse online-log supervision for low-exposure products) + Relevance-Calibrated Margin-Adaptive Preference Optimization (preserves query intent while learning business preferences); deployed in Baidu E-commerce Search with +3.52% CTR, +15.96% order volume, +7.53% GMV — [[Paper]](https://arxiv.org/abs/2608.29652) (Baidu, 2026)
 
 ### Generative Pre-training for CTR
 
@@ -348,7 +349,7 @@ Additional papers relevant to the CTR scaling landscape, grouped by sub-topic.
 | **NetEase** | Climber, Climber-Pilot |
 | **Kuaishou** | UniMixer, INFNet, CHIME, VQL, OneRec-V2 Quantized, OneReason, OneRetrieval, RaG, UniFormer, POEM, HGenPush, PROMISE, GLASS, Multi-Decoder OneRec, WhisperRec, UniR², UniGD, OGR, Single-Level Large Semantic Codebook, HubMixer |
 | **Huawei** | RelayGR, Mitigating Early Training Collapse, SITA |
-| **Baidu** | MoUE |
+| **Baidu** | MoUE, ICEGR |
 | **Shopee** | OnePiece, OneRank, KGD |
 | **Coupang** | Search CVR Scaling |
 | **Netflix** | Large-Scale Generative Recommenders, GenPage |
