@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="catalog-sha256" content="0925f3e5daabadcf0ca653f17876d0e297d84f315a0e8453b3d872ef466d9711">
+  <meta name="theme-color" content="#132a32">
+  <meta name="description" content="关于工业级 CTR 与推荐模型的规模规律、架构及部署研究，提供原始摘要和中文总结。">
+  <title>Awesome CTR Scaling · 推荐系统论文库</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#research">跳转到论文列表</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="./zh.html" aria-label="Awesome CTR Scaling 首页">
+        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span>Awesome <strong>CTR Scaling</strong></span>
+      </a>
+      <nav class="header-actions" aria-label="语言与源码"><a id="language-switch" class="language-switch" href="./index.html" lang="en" hreflang="en">English</a><a class="source-link" href="https://github.com/byby221b/Awesome-CTR-Scaling" target="_blank" rel="noopener noreferrer">查看 GitHub <span class="external-arrow" aria-hidden="true"></span></a></nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> 开放的推荐系统研究目录</p>
+        <h1 id="hero-title">理解<em>推荐系统</em><br>如何规模化。</h1>
+        <p class="hero-description">阅读论文原始摘要，理解研究的关键思路。在中英文之间切换，探索规模规律、模型架构与工业推荐系统。</p>
+        <div class="hero-meta"><span class="meta-line" aria-hidden="true"></span><span>原始来源可追溯，论文总结有依据。</span></div>
+      </div>
+      <div class="hero-aside" aria-label="论文库概览">
+        <div class="total-stat"><span id="total-stat">271</span><span>篇论文可供探索</span></div>
+        <div class="stat-pair">
+          <div><strong id="core-stat">77</strong><span>核心论文</span></div>
+          <div><strong id="related-stat">194</strong><span>相关研究</span></div>
+        </div>
+        <p class="updated-label">数据更新于 <time id="updated-at">2026-10-02</time></p>
+      </div>
+    </section>
+
+    <div class="library-shell">
+      <button id="filter-toggle" class="filter-toggle" type="button" aria-expanded="false" aria-controls="filter-panel"><span aria-hidden="true">☷</span> 浏览与筛选 <span id="mobile-filter-count" class="mobile-filter-count" hidden></span></button>
+      <aside class="sidebar" id="filter-panel" aria-label="研究筛选条件">
+        <div class="sidebar-heading"><h2>浏览论文库</h2><button id="reset-sidebar" class="text-button" type="button">重置</button></div>
+        <fieldset class="collection-fieldset">
+          <legend class="filter-label">范围</legend>
+          <div class="collection-options" id="collection-options">
+            <label class="collection-option"><input type="radio" name="collection" value="all" checked><span class="option-name">全部研究</span><span id="all-count" class="option-count">271</span></label>
+            <label class="collection-option"><input type="radio" name="collection" value="core"><span class="option-name">核心论文</span><span id="core-count" class="option-count">77</span></label>
+            <label class="collection-option"><input type="radio" name="collection" value="related"><span class="option-name">相关研究</span><span id="related-count" class="option-count">194</span></label>
+          </div>
+        </fieldset>
+        <fieldset class="category-fieldset">
+          <legend class="filter-label">研究方向</legend>
+          <div id="category-options" class="category-options"><p class="muted">正在加载研究方向…</p></div>
+        </fieldset>
+        <div class="select-filters">
+          <div class="filter-field"><label class="filter-label" for="year-filter">发表年份</label><select id="year-filter"><option value="">全部年份</option></select></div>
+          <div class="filter-field"><label class="filter-label" for="tag-filter">研究标签</label><select id="tag-filter" aria-describedby="tag-help"><option value="">全部标签</option></select><p id="tag-help" class="filter-help">研究标签主要整理于核心论文。</p></div>
+          <div class="filter-field"><label class="filter-label" for="company-filter">公司 / 机构</label><select id="company-filter"><option value="">全部公司</option></select></div>
+        </div>
+        <div class="sidebar-note"><span class="note-symbol" aria-hidden="true">↳</span><p>持续更新的阅读清单，从基础规模规律到线上生产系统。</p></div>
+      </aside>
+
+      <section class="research" id="research" aria-labelledby="results-heading" tabindex="-1">
+        <form class="search-form" role="search" id="search-form">
+          <label class="sr-only" for="search-input">搜索标题、编号、原始摘要、中英文总结、别名、DOI、机构、会议和标签</label>
+          <svg class="search-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8" stroke="currentColor" stroke-width="1.7"/><path d="m16 16 4.5 4.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+          <input id="search-input" type="search" name="q" autocomplete="off" placeholder="搜索论文、研究思路或机构…">
+          <kbd class="search-shortcut" aria-hidden="true">/</kbd>
+        </form>
+        <div class="results-toolbar">
+          <div><p class="section-kicker" id="results-kicker">全部研究</p><h2 id="results-heading">研究论文 <span id="result-count" class="result-count">271</span></h2></div>
+          <div class="sort-field"><label for="sort-select">排序</label><select id="sort-select"><option value="newest">最新优先</option><option value="title">标题 A–Z</option><option value="original">阅读清单原顺序</option></select></div>
+        </div>
+        <p id="coverage-note" class="coverage-note" role="status"></p>
+        <p id="category-description" class="category-description" hidden></p>
+        <div id="active-filters" class="active-filters" aria-label="已选筛选条件" hidden></div>
+        <p class="sr-only" id="results-status" role="status" aria-live="polite" aria-atomic="true">正在加载论文</p>
+        <div id="papers" class="paper-list" aria-busy="true"><div class="loading-state"><span class="loading-orbit" aria-hidden="true"></span><p>正在打开论文库…</p></div></div>
+        <div class="pagination" id="pagination" hidden><p id="showing-count"></p><button id="load-more" class="button button-secondary" type="button">加载更多论文</button></div>
+        <noscript><div class="empty-state"><h3>此论文库使用 JavaScript 提供浏览功能</h3><p>所有论文与原有贡献说明均可在 <a href="https://github.com/byby221b/Awesome-CTR-Scaling">仓库 README</a> 中阅读。</p></div></noscript>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer"><div><a class="footer-brand" href="./zh.html">Awesome CTR Scaling</a><p>同一份目录，中英文阅读，原始来源。</p></div><div class="footer-right"><p>中英文页面和 README 均由同一份数据生成。</p><div><a href="https://github.com/byby221b/Awesome-CTR-Scaling#contributing" target="_blank" rel="noopener noreferrer">贡献论文 <span class="external-arrow" aria-hidden="true"></span></a><a href="./catalog.json">下载数据集</a></div></div></footer>
+</body>
+</html>

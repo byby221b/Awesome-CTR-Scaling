@@ -3,6 +3,26 @@
   'use strict';
 
   const PAGE_SIZE = 30;
+  const LANG = /(?:^|\/)zh(?:\.html|\/)?$/.test(window.location.pathname) ? 'zh' : 'en';
+  const tr = (en, zh) => LANG === 'zh' ? zh : en;
+  const CATEGORY_ZH = {
+    'scaling-law-theory': ['规模规律与理论', '推荐模型的经验规模规律、扩展方法与理论边界。'],
+    'scalable-architecture': ['可扩展架构', '面向工业排序规模化的 Transformer、Mixer 与稀疏架构。'],
+    'unified-feature-sequence-modeling': ['统一特征与序列建模', '联合建模特征交互、用户历史与行为序列。'],
+    'foundation-models-multi-scenario': ['基础模型与多场景', '共享基础模型、多任务学习与跨场景迁移。'],
+    'efficiency-deployment': ['效率与部署', '让模型规模化落地的训练、推理和部署技术。'],
+    'long-sequence-modeling': ['长序列建模', '面向用户行为序列的长历史建模、记忆与压缩。'],
+    'sample-instance-compression-for-sequence-modeling': ['序列样本与实例压缩', '将完整交互和原始样本压缩为序列 token。'],
+    'generative-recommendation': ['生成式推荐', '判别式 CTR 之外的生成式检索、推荐与排序。'],
+    'generative-pre-training-for-ctr': ['CTR 生成式预训练', '服务于判别式 CTR 任务的生成式目标与预训练。'],
+    'knowledge-distillation-compression': ['知识蒸馏与压缩', '通过知识迁移和压缩提高模型效率。'],
+    'retrieval-reranking-scaling': ['检索与重排序扩展', '探索检索及重排序模型的规模化。'],
+    'architecture-innovations-beyond-recommendation': ['推荐之外的架构创新', '可为推荐系统规模化提供启发的模型架构研究。'],
+    'engineering-serving': ['工程与服务', '支撑大规模推荐的系统工程与在线服务。'],
+    'other': ['其他相关研究', '与推荐系统规模化有关的其他研究。']
+  };
+  const TAG_ZH = {'Architecture':'模型架构','Attention':'注意力','Token Mixing':'Token 混合','Sparse Activation':'稀疏激活','Residual/Depth':'残差 / 深度','Embedding Design':'嵌入设计','Tokenization':'Token 化','Knowledge Distillation':'知识蒸馏','Test-time Compute':'推理时计算','Loop Scaling':'循环扩展','Long Sequence':'长序列','Unified FI+Seq':'统一特征交互与序列','Scaling Law':'规模规律','Transformer':'Transformer','Feature Interaction':'特征交互','Sequence Modeling':'序列建模','Sparse Model':'稀疏模型','MoE':'MoE','Multi-task':'多任务','Multi-scenario':'多场景','Foundation Model':'基础模型','User Modeling':'用户建模','Generative Rec':'生成式推荐','Serving':'在线服务','Training Efficiency':'训练效率','Distributed':'分布式','Quantization':'量化','Ads':'广告','E-commerce':'电商','Video/Live':'视频 / 直播','Representation Collapse':'表征坍塌'};
+  const tagLabel = (tag) => LANG === 'zh' ? (TAG_ZH[tag] || tag) : tag;
   const FILTER_KEYS = ['q', 'collection', 'category', 'year', 'tag', 'company', 'sort'];
   const DEFAULTS = { q: '', collection: 'all', category: '', year: '', tag: '', company: '', sort: 'newest' };
   const $ = (id) => document.getElementById(id);
@@ -51,7 +71,7 @@
   }
 
   function categoryLabel(id) {
-    return categories.find((category) => category.id === id)?.title || id;
+    return (LANG === 'zh' && CATEGORY_ZH[id]?.[0]) || categories.find((category) => category.id === id)?.title || id;
   }
 
   function companyMatches(paper, value) {
@@ -92,7 +112,7 @@
     ui.company.value = state.company;
     document.querySelectorAll('input[name="collection"]').forEach((input) => { input.checked = input.value === state.collection; });
     ui.tag.disabled = state.collection === 'related' && !papers.some((paper) => paper.collection === 'related' && paper.tags.length);
-    $('tag-help').textContent = 'Tags are curated for core papers.';
+    $('tag-help').textContent = tr('Tags are curated for core papers.', '研究标签主要整理于核心论文。');
   }
 
   function update(patch, options = {}) {
@@ -125,9 +145,9 @@
   function initializeControls() {
     const years = [...new Set(papers.map((p) => String(p.year)).filter(Boolean))].sort((a, b) => Number(b) - Number(a));
     const tags = [...new Set(papers.flatMap((p) => p.tags))].sort((a, b) => a.localeCompare(b));
-    selectOptions(ui.year, years.map((year) => ({ value: year, label: year })), 'All years');
-    selectOptions(ui.tag, tags.map((tag) => ({ value: tag, label: tag })), 'All tags');
-    selectOptions(ui.company, [...companies].sort((a, b) => a.name.localeCompare(b.name)).map((company) => ({ value: company.id, label: `${company.name} (${company.count})` })), 'All companies');
+    selectOptions(ui.year, years.map((year) => ({ value: year, label: year })), tr('All years', '全部年份'));
+    selectOptions(ui.tag, tags.map((tag) => ({ value: tag, label: tagLabel(tag) })), tr('All tags', '全部标签'));
+    selectOptions(ui.company, [...companies].sort((a, b) => a.name.localeCompare(b.name)).map((company) => ({ value: company.id, label: `${company.name} (${company.count})` })), tr('All companies', '全部公司'));
     ui.search.addEventListener('input', () => {
       clearTimeout(searchTimer);
       searchTimer = setTimeout(() => {
@@ -179,7 +199,7 @@
       render();
       revealHash();
     });
-    window.addEventListener('hashchange', revealHash);
+    window.addEventListener('hashchange', () => { revealHash(); syncLanguageLink(); });
   }
 
   function clearFilters() {
@@ -203,15 +223,15 @@
       ui.categories.append(button);
     }
     const inCollection = papers.filter((paper) => state.collection === 'all' || paper.collection === state.collection);
-    addCategory('', 'All research areas', inCollection.length);
+    addCategory('', tr('All research areas', '全部研究方向'), inCollection.length);
     const shownCategories = categories.filter((category) => state.collection === 'all' || category.collection === state.collection);
     let lastCollection;
     for (const category of shownCategories) {
       if (state.collection === 'all' && lastCollection !== category.collection) {
-        ui.categories.append(element('p', 'category-group', category.collection === 'core' ? 'Core research' : 'Related work'));
+        ui.categories.append(element('p', 'category-group', category.collection === 'core' ? tr('Core research', '核心研究') : tr('Related work', '相关研究')));
         lastCollection = category.collection;
       }
-      addCategory(category.id, category.title, inCollection.filter((paper) => paper.category === category.id).length);
+      addCategory(category.id, categoryLabel(category.id), inCollection.filter((paper) => paper.category === category.id).length);
     }
   }
 
@@ -228,18 +248,18 @@
   function renderActiveFilters() {
     ui.active.replaceChildren();
     const labels = {
-      q: state.q ? `Search: ${state.q}` : '',
-      collection: state.collection !== 'all' ? (state.collection === 'core' ? 'Core papers' : 'Related work') : '',
+      q: state.q ? `${tr('Search', '搜索')}: ${state.q}` : '',
+      collection: state.collection !== 'all' ? (state.collection === 'core' ? tr('Core papers', '核心论文') : tr('Related work', '相关研究')) : '',
       category: state.category ? categoryLabel(state.category) : '',
       year: state.year,
-      tag: state.tag,
+      tag: tagLabel(state.tag),
       company: state.company ? companyLabel(state.company) : ''
     };
     Object.entries(labels).forEach(([key, label]) => {
       if (!label) return;
       const button = element('button', 'active-chip');
       button.type = 'button';
-      button.setAttribute('aria-label', `Remove filter: ${label}`);
+      button.setAttribute('aria-label', `${tr('Remove filter', '移除筛选')}: ${label}`);
       const close = element('span', 'chip-close', '×');
       close.setAttribute('aria-hidden', 'true');
       button.append(element('span', '', label), close);
@@ -255,7 +275,7 @@
     $('mobile-filter-count').hidden = count === 0;
     $('mobile-filter-count').textContent = count;
     if (count > 1) {
-      const clear = element('button', 'text-button clear-all', 'Clear all');
+      const clear = element('button', 'text-button clear-all', tr('Clear all', '清空全部'));
       clear.type = 'button';
       clear.addEventListener('click', () => { clearFilters(); ui.search.focus({ preventScroll: true }); });
       ui.active.append(clear);
@@ -270,6 +290,129 @@
     return link;
   }
 
+  function syncLanguageLink() {
+    const link = $('language-switch');
+    if (!link) return;
+    const url = new URL(LANG === 'zh' ? './index.html' : './zh.html', window.location.href);
+    url.search = window.location.search;
+    url.hash = window.location.hash;
+    link.href = url.pathname + url.search + url.hash;
+  }
+
+  // Small, text-only TeX display layer. The exact author text stays in catalog.json.
+  // It supports the source typography and simple inline formulas without executing markup.
+  // Unknown author macros remain visible as source notation rather than being guessed.
+  function appendSourceText(parent, source) {
+    const symbols = {times: '×', sim: '∼', gg: '≫', star: '⋆', approx: '≈', dagger: '†',
+      alpha: 'α', beta: 'β', gamma: 'γ', delta: 'δ', lambda: 'λ', mu: 'μ', sigma: 'σ', theta: 'θ',
+      leq: '≤', geq: '≥', cdot: '·', infty: '∞', log: 'log', exp: 'exp'};
+    const formats = {textbf: 'strong', textit: 'em', emph: 'em', textsc: 'span',
+      mathbf: 'strong', mathrm: 'span', text: 'span', uline: 'span'};
+    let pos = 0;
+    function appendText(node, text) { if (text) node.append(element('span', '', text)); }
+    function parse(node, stop = '', math = false) {
+      let buffer = '';
+      const flush = () => { appendText(node, buffer); buffer = ''; };
+      while (pos < source.length) {
+        const char = source[pos];
+        if (stop && char === stop) { pos++; break; }
+        if (char === '\\' && pos + 1 < source.length) {
+          flush(); pos++;
+          const command = source.slice(pos).match(/^[A-Za-z]+/);
+          if (!command) {
+            const escaped = source[pos++];
+            appendText(node, escaped === '!' ? '' : escaped === ',' || escaped === ';' ? ' ' : escaped);
+          } else {
+            const name = command[0]; pos += name.length;
+            if (symbols[name]) appendText(node, symbols[name]);
+            else if (formats[name] && source[pos] === '{') {
+              pos++; const formatted = element(formats[name], name === 'textsc' ? 'small-caps' : '');
+              parse(formatted, '}', math); node.append(formatted);
+            } else if (name === 'href' && source[pos] === '{') {
+              pos++; const destination = element('span'); parse(destination, '}', false);
+              if (source[pos] === '{') { pos++; parse(node, '}', math); }
+              else appendText(node, destination.textContent);
+            } else {
+              const macro = element('code', 'source-macro', '\\' + name);
+              macro.title = tr('Unexpanded notation in the author source', '作者原文中未展开的宏');
+              node.append(macro);
+            }
+          }
+        } else if (char === '$') {
+          flush(); pos++;
+          const formula = element('span', 'inline-math');
+          parse(formula, '$', true); node.append(formula);
+        } else if (char === '{') {
+          flush(); pos++; parse(node, '}', math);
+        } else if (math && (char === '^' || char === '_')) {
+          flush(); pos++; const script = element(char === '^' ? 'sup' : 'sub');
+          if (source[pos] === '{') { pos++; parse(script, '}', true); }
+          else if (source[pos] === '\\') {
+            const command = source.slice(pos + 1).match(/^[A-Za-z]+/);
+            if (command) { pos += command[0].length + 1; appendText(script, symbols[command[0]] || '\\' + command[0]); }
+            else appendText(script, source[pos++]);
+          } else if (pos < source.length) appendText(script, source[pos++]);
+          node.append(script);
+        } else { buffer += char; pos++; }
+      }
+      flush();
+    }
+    parse(parent);
+  }
+
+  function appendReadingContent(card, paper) {
+    const summary = paper.summaries?.[LANG];
+    const panel = element('section', 'summary-panel');
+    panel.setAttribute('aria-label', tr('Paper summary', '论文总结'));
+    panel.append(element('h4', 'reading-label', tr('Paper summary', '论文总结')));
+    if (summary?.text) {
+      panel.append(element('p', 'summary-text', summary.text));
+      const basis = summary.basis === 'original_abstract' ? tr('Based on the original abstract', '基于论文原始摘要') : tr('Based on the preserved catalog annotation', '基于原目录贡献说明');
+      panel.append(element('p', 'provenance', `${summary.method === 'ai_assisted' ? tr('AI-assisted summary', 'AI 辅助总结') : tr('Editorial summary', '编者总结')} · ${basis}`));
+    } else {
+      panel.append(element('p', 'missing-content', tr('English summary not yet available.', '中文总结尚未补齐。')));
+    }
+    card.append(panel);
+    const original = element('section', 'abstract-panel');
+    original.setAttribute('aria-label', tr('Original abstract', '原始摘要'));
+    const abstract = paper.original_abstract;
+    original.append(element('h4', 'reading-label', tr('Original abstract', '论文原始摘要') + (abstract?.status === 'verified' ? ` · ${abstract.language.toUpperCase()}` : '')));
+    if (abstract?.status === 'verified' && abstract.text) {
+      if (abstract.source_title && abstract.source_title.toLocaleLowerCase().replace(/[^\p{L}\p{N}]/gu, '') !== paper.title.toLocaleLowerCase().replace(/[^\p{L}\p{N}]/gu, '')) {
+        original.append(element('p', 'source-title', `${tr('Title at source', '来源所载标题')}: ${abstract.source_title}`));
+      }
+      const prose = element('p', 'abstract-text');
+      appendSourceText(prose, abstract.text);
+      prose.lang = abstract.language;
+      original.append(prose);
+      const provenance = element('p', 'provenance');
+      const source = safeURL(abstract.source_url);
+      if (source) provenance.append(createLink(tr('Original source', '原始来源'), source, 'source-citation'));
+      provenance.append(element('span', '', ` · ${tr('Retrieved', '获取于')} ${abstract.retrieved_at.slice(0, 10)}`));
+      if (abstract.source_version) provenance.append(element('span', '', ` · ${abstract.source_version}`));
+      if (abstract.license) provenance.append(element('span', '', ` · ${abstract.license}`));
+      original.append(provenance);
+    } else {
+      original.append(element('p', 'missing-content', abstract?.status === 'unavailable' ? tr('Original abstract unavailable from the verified source. See the paper link.', '暂未从来源获取到可核实的原始摘要，请查阅论文链接。') : tr('Original abstract awaiting source verification.', '原始摘要待来源核实。')));
+      if (abstract?.reason) {
+        const details = element('details', 'source-details');
+        details.append(element('summary', '', tr('Source status details', '查看来源状态')));
+        details.append(element('p', 'provenance', abstract.reason));
+        original.append(details);
+      }
+    }
+    card.append(original);
+    if (paper.contribution) {
+      const legacy = element('details', 'catalog-annotation');
+      legacy.append(element('summary', '', tr('Preserved catalog annotation', '原目录贡献说明（保留原文）')));
+      const prose = element('p', 'paper-contribution', paper.contribution);
+      prose.lang = 'en';
+      legacy.append(element('p', 'provenance annotation-warning', tr('Historical catalog note retained for provenance; it has not been reverified and may differ from the current source above.', '以下为保留的历史目录说明，未重新核实，可能与上方当前来源存在差异。')));
+      legacy.append(prose);
+      card.append(legacy);
+    }
+  }
+
   function paperCard(paper) {
     const card = element('article', 'paper-card');
     card.id = anchorFor(paper);
@@ -278,7 +421,7 @@
     card.setAttribute('aria-labelledby', titleID);
     const eyebrow = element('div', 'paper-eyebrow');
     eyebrow.append(element('span', 'paper-area', categoryLabel(paper.category)));
-    eyebrow.append(element('span', 'paper-collection', paper.collection === 'core' ? 'Core paper' : 'Related work'));
+    eyebrow.append(element('span', 'paper-collection', paper.collection === 'core' ? tr('Core paper', '核心论文') : tr('Related work', '相关研究')));
     if (paper.year) eyebrow.append(element('span', 'paper-year', paper.year));
     card.append(eyebrow);
     const title = element('h3', 'paper-title');
@@ -299,15 +442,15 @@
       if (paper.venue) meta.append(element('span', 'paper-venue', paper.venue));
       card.append(meta);
     }
-    if (paper.contribution) card.append(element('p', 'paper-contribution', paper.contribution));
+    appendReadingContent(card, paper);
     const bottom = element('div', 'paper-bottom');
     const tags = element('div', 'paper-tags');
     if (paper.tags.length) {
-      tags.setAttribute('aria-label', 'Research tags');
+      tags.setAttribute('aria-label', tr('Research tags', '研究标签'));
       paper.tags.forEach((tag) => {
-        const button = element('button', 'tag-button', tag);
+        const button = element('button', 'tag-button', tagLabel(tag));
         button.type = 'button';
-        button.setAttribute('aria-label', `Filter by tag: ${tag}`);
+        button.setAttribute('aria-label', `${tr('Filter by tag', '按标签筛选')}: ${tagLabel(tag)}`);
         button.addEventListener('click', () => {
           update({ tag });
           $('research').focus({ preventScroll: true });
@@ -318,8 +461,10 @@
     }
     const actions = element('div', 'paper-links');
     links.forEach(({ label, url }) => {
-      const link = createLink(String(label || 'Paper').replace(/^\[|\]$/g, ''), url, 'paper-link');
-      const arrow = element('span', 'external-arrow', '↗');
+      const cleanLabel = String(label || 'Paper').replace(/^\[|\]$/g, '');
+      const localizedLabel = LANG === 'zh' ? ({Paper: '论文', Code: '代码', Project: '项目', Website: '网站'}[cleanLabel] || cleanLabel) : cleanLabel;
+      const link = createLink(localizedLabel, url, 'paper-link');
+      const arrow = element('span', 'external-arrow');
       arrow.setAttribute('aria-hidden', 'true');
       link.append(arrow);
       actions.append(link);
@@ -329,8 +474,8 @@
     const linkURL = new URL(window.location.pathname, window.location.origin);
     linkURL.hash = card.id;
     permalink.href = linkURL.pathname + linkURL.hash;
-    permalink.setAttribute('aria-label', `Permanent link to ${paper.title}`);
-    permalink.title = 'Permanent link to this paper';
+    permalink.setAttribute('aria-label', `${tr('Permanent link to', '论文固定链接')} ${paper.title}`);
+    permalink.title = tr('Permanent link to this paper', '此论文的固定链接');
     permalink.addEventListener('click', (event) => {
       if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
       event.preventDefault();
@@ -340,6 +485,7 @@
       syncControls();
       render();
       revealHash();
+      syncLanguageLink();
     });
     actions.append(permalink);
     bottom.append(tags, actions);
@@ -351,8 +497,8 @@
     const empty = element('div', 'empty-state');
     const symbol = element('div', 'empty-symbol', '∅');
     symbol.setAttribute('aria-hidden', 'true');
-    empty.append(symbol, element('h3', '', 'A little too specific?'), element('p', '', 'No papers match these filters. Try a broader search or clear a filter to keep exploring.'));
-    const clear = element('button', 'button button-primary', 'Clear all filters');
+    empty.append(symbol, element('h3', '', tr('A little too specific?', '筛选条件有点严格？')), element('p', '', tr('No papers match these filters. Try a broader search or clear a filter to keep exploring.', '没有符合条件的论文。试试更宽泛的关键词，或移除一项筛选条件。')));
+    const clear = element('button', 'button button-primary', tr('Clear all filters', '清空全部筛选'));
     clear.type = 'button';
     clear.addEventListener('click', () => { clearFilters(); ui.search.focus({ preventScroll: true }); });
     empty.append(clear);
@@ -371,8 +517,8 @@
     ui.papers.setAttribute('aria-busy', 'false');
     ui.pagination.hidden = filtered.length === 0;
     ui.more.hidden = shown.length >= filtered.length;
-    ui.showing.textContent = `Showing ${shown.length} of ${filtered.length} papers`;
-    ui.status.textContent = `${filtered.length} ${filtered.length === 1 ? 'paper matches' : 'papers match'}. Showing ${shown.length}.`;
+    ui.showing.textContent = tr(`Showing ${shown.length} of ${filtered.length} papers`, `已显示 ${shown.length} / ${filtered.length} 篇论文`);
+    ui.status.textContent = tr(`${filtered.length} ${filtered.length === 1 ? 'paper matches' : 'papers match'}. Showing ${shown.length}.`, `找到 ${filtered.length} 篇论文，已显示 ${shown.length} 篇。`);
   }
 
   function render() {
@@ -381,13 +527,14 @@
     else if (state.sort === 'original') filtered.sort((a, b) => a.order - b.order);
     else filtered.sort((a, b) => Number(b.year || 0) - Number(a.year || 0) || arxivID(b).localeCompare(arxivID(a), undefined, { numeric: true }) || a.order - b.order);
     $('result-count').textContent = filtered.length;
-    $('results-kicker').textContent = state.collection === 'core' ? 'CORE RESEARCH' : state.collection === 'related' ? 'RELATED WORK' : 'THE COLLECTION';
+    $('results-kicker').textContent = state.collection === 'core' ? tr('CORE RESEARCH', '核心研究') : state.collection === 'related' ? tr('RELATED WORK', '相关研究') : tr('THE COLLECTION', '全部研究');
     const category = categories.find((item) => item.id === state.category);
-    $('category-description').textContent = category?.description || '';
+    $('category-description').textContent = (LANG === 'zh' && CATEGORY_ZH[category?.id]?.[1]) || category?.description || '';
     $('category-description').hidden = !category?.description;
     renderCategories();
     renderActiveFilters();
     renderPapers();
+    syncLanguageLink();
   }
 
   function revealHash() {
@@ -423,22 +570,23 @@
     ui.papers.replaceChildren();
     ui.papers.setAttribute('aria-busy', 'false');
     const empty = element('div', 'empty-state');
-    empty.append(element('h3', '', 'The library couldn’t be loaded'), element('p', '', 'Please try again, or browse the complete reading list on GitHub.'));
-    const button = element('button', 'button button-secondary', 'Try again');
+    empty.append(element('h3', '', tr('The library couldn’t be loaded', '论文库暂时无法加载')), element('p', '', tr('Please try again, or browse the complete reading list on GitHub.', '请重试，或在 GitHub 查看完整阅读清单。')));
+    const button = element('button', 'button button-secondary', tr('Try again', '重试'));
     button.type = 'button';
     button.addEventListener('click', () => window.location.reload());
-    const link = element('a', 'paper-link', 'Read on GitHub ↗');
+    const link = element('a', 'paper-link', tr('Read on GitHub', '在 GitHub 阅读'));
     link.href = 'https://github.com/byby221b/Awesome-CTR-Scaling';
     const actions = element('div', 'paper-links');
     actions.style.justifyContent = 'center';
     actions.append(button, link);
     empty.append(actions);
     ui.papers.append(empty);
-    ui.status.textContent = 'The catalog could not be loaded. Please retry or use the repository README.';
+    ui.status.textContent = tr('The catalog could not be loaded. Please retry or use the repository README.', '目录无法加载。请重试或查看仓库 README。');
     $('result-count').textContent = '—';
   }
 
   async function start() {
+    syncLanguageLink();
     try {
       const response = await fetch('./catalog.json');
       if (!response.ok) throw new Error('Catalog request failed');
@@ -448,7 +596,7 @@
       companies = Array.isArray(catalog.companies) ? catalog.companies : [];
       papers = catalog.papers.map((paper, index) => {
         const normalized = { ...paper, year: paper.year || '', tags: Array.isArray(paper.tags) ? paper.tags : [], companies: Array.isArray(paper.companies) ? paper.companies : [], links: Array.isArray(paper.links) ? paper.links : [], order: Number.isFinite(paper.order) ? paper.order : index };
-        normalized.searchText = [paper.id, paper.title, ...(Array.isArray(paper.aliases) ? paper.aliases : []), paper.doi, paper.contribution, paper.affiliation, paper.venue, paper.year, categoryLabel(paper.category), ...normalized.tags, ...normalized.companies.map(companyLabel), ...normalized.links.map((link) => link.url)].filter(Boolean).join(' ').toLocaleLowerCase();
+        normalized.searchText = [paper.id, paper.title, ...(Array.isArray(paper.aliases) ? paper.aliases : []), paper.doi, paper.contribution, paper.original_abstract?.text, paper.original_abstract?.source_title, paper.summaries?.en?.text, paper.summaries?.zh?.text, CATEGORY_ZH[paper.category]?.join(' '), paper.affiliation, paper.venue, paper.year, categoryLabel(paper.category), ...normalized.tags, ...normalized.tags.map(tagLabel), ...normalized.companies.map(companyLabel), ...normalized.links.map((link) => link.url)].filter(Boolean).join(' ').toLocaleLowerCase();
         return normalized;
       });
       const coreCount = papers.filter((paper) => paper.collection === 'core').length;
@@ -459,9 +607,13 @@
         const date = new Date(rawDate.length === 10 ? rawDate + 'T00:00:00Z' : rawDate);
         if (!Number.isNaN(date.getTime())) {
           $('updated-at').dateTime = rawDate;
-          $('updated-at').textContent = date.toLocaleDateString('en', { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' });
+          $('updated-at').textContent = date.toLocaleDateString(LANG === 'zh' ? 'zh-CN' : 'en', { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' });
         } else $('updated-at').textContent = rawDate;
       }
+      const coverage = catalog.coverage || {};
+      $('coverage-note').textContent = tr(
+        `Original abstracts: ${coverage.verified_abstracts || 0}/${papers.length} verified · English summaries: ${coverage.english_summaries || 0}/${papers.length} · Chinese summaries: ${coverage.chinese_summaries || 0}/${papers.length}. Gaps are labeled below.`,
+        `原始摘要：已核实 ${coverage.verified_abstracts || 0}/${papers.length} 篇 · 英文总结：${coverage.english_summaries || 0}/${papers.length} · 中文总结：${coverage.chinese_summaries || 0}/${papers.length}。未补齐的内容会明确标注。`);
       initializeControls();
       state = readURL();
       syncControls();

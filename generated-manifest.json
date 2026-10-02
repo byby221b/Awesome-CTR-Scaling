@@ -1,13 +1,20 @@
 {
   "schema_version": 1,
-  "catalog_sha256": "6d81d672e9fd5a8939982eef4063c372794319a2bc6679b2b81f015c16963ce4",
+  "catalog_sha256": "0925f3e5daabadcf0ca653f17876d0e297d84f315a0e8453b3d872ef466d9711",
   "paper_count": 271,
+  "coverage": {
+    "verified_abstracts": 271,
+    "unavailable_abstracts": 0,
+    "pending_abstracts": 0,
+    "english_summaries": 271,
+    "chinese_summaries": 271
+  },
   "collection_counts": {
     "core": 77,
     "related": 194
   },
   "files": {
-    "README.md": "b747baf5f4965c4d2e41d16c59b4c7b543e7cd5cdbec56be144d6d3f4d9c4f5d",
+    "README.md": "604a7539ae05bea249d8cf3dde0b0f2c3c29a2ac53a625170079c781235cd315",
     "docs/README.md": "a8e92a288200c749c2eddb3a62ef7d556afa48111bf62ebc502f67fe8ba40325",
     "docs/companies.md": "0eb4ed38f1c7f82a2052a06ec9060e7c92d07912d6827dc66df31abfab89211f",
     "docs/related/architecture-innovations-beyond-recommendation.md": "a5fb5a81fc88cc5f3b29ada4651f1fd4eace9168824ddfe12a062e824029f548",
@@ -25,9 +32,10 @@
     "docs/topics/scaling-law-theory.md": "db12c8f20b700e4b3a13d2d95418a991d236c342dabba9d0dd242e3de583265a",
     "docs/topics/unified-feature-sequence-modeling.md": "77cc2e4c4a1172809aaec74df214232112064ffab19fa6b43e14cf733966b7d1",
     "site/.nojekyll": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-    "site/app.js": "258569082fe2222b0c53198e52c230fddacb2fb51ab0565916e2590868656e65",
-    "site/catalog.json": "a5aa0dba4ffe37d4e1135321e866c6ef7191f0c804fe8d15c8696a9bc9db6ee4",
-    "site/index.html": "97f553467b5a415e05177e21970d11ae314b79cbdf4bdd1ed8ac3480ada9dab9",
-    "site/styles.css": "806c1bb6a6c67d9e854d4ae8fe58d848aaf454ec038272c13a4b0cd1763cb211"
+    "site/app.js": "1626d15b418b5e7d0734d4490500b5eb48563e5695599cdc25f6c819242915af",
+    "site/catalog.json": "e6352c7ef4286f52339c69e0ad872a7d0d73ec8c1b201bc8e6d2e90c9e5f4748",
+    "site/index.html": "3af7e676089d574da4d4802549f54a04a0a9bc2c3affd649bbc75ed997e0336c",
+    "site/styles.css": "068fcd91e74e84e38608dcf198f8cba6ab286af897c3c172cf39fb487bfde87c",
+    "site/zh.html": "e3ee266ef4aa237388a37770f52bce13340b82598526ecd1609e22d1258fbaed"
   }
 }

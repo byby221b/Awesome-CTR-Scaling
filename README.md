@@ -8,7 +8,7 @@ A curated library of **scaling laws and scalable ranking/CTR models** for indust
 
 <a id="table-of-contents"></a>
 
-[**Search the paper library →**](https://byby221b.github.io/Awesome-CTR-Scaling/) · [All topics](docs/README.md) · [Company index](docs/companies.md) · [Contribute](CONTRIBUTING.md)
+[**Search the paper library →**](https://byby221b.github.io/Awesome-CTR-Scaling/) · [**中文页面**](https://byby221b.github.io/Awesome-CTR-Scaling/zh.html) · [All topics](docs/README.md) · [Company index](docs/companies.md) · [Contribute](CONTRIBUTING.md)
 
 > **Scope:** We cover papers that (1) study scaling laws for recommendation models, (2) propose scalable Transformer-based architectures for CTR/ranking, (3) address efficiency challenges in scaling up industrial ranking systems, or (4) explore novel paradigms (e.g., sparse scaling, generative pre-training, foundation models) for scalable recommendation.
 

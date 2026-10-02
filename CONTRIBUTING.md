@@ -90,3 +90,122 @@ The strict audit compares all original paper fields and order. Normal CI allows 
 ## Deployment
 
 See [GitHub Pages deployment](docs/deployment.md). Pull requests only validate. A successful main-branch build deploys the same generated `site/` artifact; it never rewrites repository content or needs a personal access token.
+
+## Original abstracts and bilingual summaries (schema v2)
+
+The English reader is `site/index.html`; the Chinese reader is `site/zh.html`.
+Both read the same `site/catalog.json`. Switching language retains the current
+search, filters, sort and paper anchor. Paper titles and identifiers are never
+translated or replaced automatically. Search includes both summary languages and
+original abstracts in either interface.
+
+Each paper may carry the following enrichment, in addition to every existing
+field above. `contribution` remains the preserved catalog annotation.
+
+```json
+{
+  "original_abstract": {
+    "status": "verified",
+    "text": "Exact abstract from the primary source, not a translation.",
+    "language": "en",
+    "source_url": "https://arxiv.org/abs/2208.08489v1",
+    "retrieved_at": "2026-10-02T04:49:25Z",
+    "license": "CC0-1.0",
+    "source_title": "Understanding Scaling Laws for Recommendation Models",
+    "source_version": "v1"
+  },
+  "summaries": {
+    "en": {
+      "text": "An evidence-grounded explanation of the problem, method and findings.",
+      "basis": "original_abstract",
+      "method": "ai_assisted",
+      "updated_at": "2026-10-02",
+      "source_urls": ["https://arxiv.org/abs/2208.08489v1"]
+    },
+    "zh": {
+      "text": "基于同一份证据的中文总结，保留结论的范围和限制。",
+      "basis": "original_abstract",
+      "method": "ai_assisted",
+      "updated_at": "2026-10-02",
+      "source_urls": ["https://arxiv.org/abs/2208.08489v1"]
+    }
+  }
+}
+```
+
+- Abstract `status` is `verified`, `unavailable`, or `pending`. Only `verified`
+  can contain nonempty `text`; the other statuses require empty text and an
+  explicit `reason`. `retrieved_at` may be null for unverified records. Do not
+  replace a verified abstract with a transient fetch failure during routine updates
+- Preserve the author text, terms, caveats and formulas. Only boundary whitespace
+  and XML entity decoding are normalized in the stored original. The reader
+  displays common TeX typography, symbols and superscripts/subscripts without
+  executing markup; unresolved source macros remain visibly marked. The exact
+  source text is always available in the downloadable dataset
+- `source_title` and `source_version` are evidence from the retrieved version.
+  Source-title differences are shown beside the abstract; they can reflect a
+  shortened catalog label, an acronym, or a later title revision. Review them
+  before making a separate, evidenced bibliographic correction
+- `license` is the verified metadata license or null, never a guessed paper/PDF
+  license. The [official arXiv API terms](https://info.arxiv.org/help/api/tou.html)
+  explicitly cover descriptive metadata, including abstracts, under CC0 1.0.
+  This does not relicense a paper's PDF, figures, or source files
+- Summary `basis` is `original_abstract` or `catalog_contribution`. The former
+  requires a verified original on the same paper. `method` is `ai_assisted` or
+  `editorial`; both are visibly distinguished from author text. `source_urls`
+  identify the evidence. Translation is a summary, never an original abstract
+- Summaries should explain the question, method and supported result in natural
+  prose. Keep numerical claims, comparison scope and uncertainty aligned across
+  English and Chinese. Do not imply full-paper review from an abstract-only basis
+- Omit a summary language if it is genuinely missing; the page explicitly labels
+  the gap. `coverage` in the public dataset and generated manifest counts verified
+  abstracts and EN/ZH summaries independently
+
+## Validated update interface
+
+Use `scripts/upsert_papers.py` to add papers or apply focused JSON patches. It
+validates the whole candidate catalog and renders every output before changing
+files. It preserves unmentioned paper fields and merges `summaries` by language.
+New IDs require a complete record; unknown fields, duplicate patch IDs, unsafe
+URLs, unsupported labels and unsupported enrichment states are rejected.
+
+```sh
+# A patch is {"papers":[{"id":"2208.08489","summaries":{"zh":{...}}}]}
+SHA=$(python -c 'import hashlib; print(hashlib.sha256(open("data/papers.json","rb").read()).hexdigest())')
+python scripts/upsert_papers.py /tmp/paper-patch.json --expect-sha256 "$SHA" --updated 2026-10-02
+python scripts/upsert_papers.py /tmp/paper-patch.json --expect-sha256 "$SHA" --updated 2026-10-02 --write
+python scripts/generate.py --check
+python -m unittest discover -s tests -v
+node --check web/app.js
+node tests/frontend.test.cjs
+python scripts/verify_migration.py
+```
+
+The default is a dry-run. `--write` replaces canonical data with an atomic local
+rename and regenerates all views; it never commits, pushes, or deploys. The write mode requires an expected canonical SHA and holds a local exclusive
+`.catalog-update.lock` while validating and writing. Serialize callers. If a
+process is interrupted, verify that no updater is running before removing a stale
+lock. Preserve the expected canonical SHA. The generated file set spans
+multiple files, so local filesystem writes are not a publication transaction:
+publish the canonical file and all output changes in one Git commit. CI rejects
+partial or stale output. `--updated` sets only `meta.updated`, not publication,
+retrieval or summary-edit dates. Do not manufacture changes by refreshing dates.
+Top-level taxonomy/company edits remain reviewed edits to the canonical data.
+
+For verified original-abstract collection, use the standard-library helper:
+
+```sh
+python scripts/fetch_arxiv_abstracts.py data/papers.json /tmp/arxiv-enrichment
+# Inspect provenance.json, title differences and exact source identity first
+python scripts/upsert_papers.py /tmp/arxiv-enrichment/patches.json --expect-sha256 "$SHA"
+```
+
+The collector never edits the catalog. It uses one serial official API connection,
+15-ID batches and at least 3.2 seconds between requests; it checkpoints source
+responses, hashes and failure states, honors Retry-After and stops on access
+restrictions. Do not run multiple arXiv requesters at once. On refresh, import only
+meaningful changed verified content, retaining existing verified data if a source
+fails transiently. Recheck official API terms/rate guidance before running.
+
+See [daily update protocol](docs/daily-update.md) for the full scheduled-maintenance
+and deployment verification contract.

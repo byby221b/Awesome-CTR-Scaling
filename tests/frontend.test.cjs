@@ -9,7 +9,7 @@ const catalog = JSON.parse(fs.readFileSync(path.join(ROOT, 'site/catalog.json'),
 const source = fs.readFileSync(path.join(ROOT, 'web/app.js'), 'utf8');
 const template = fs.readFileSync(path.join(ROOT, 'web/index.html'), 'utf8');
 
-async function boot(initialURL = 'https://example.test/Awesome-CTR-Scaling/', failFetch = false) {
+async function boot(initialURL = 'https://example.test/Awesome-CTR-Scaling/', failFetch = false, data = catalog) {
   const roots = new Map(), inputs = [], events = {}, timers = new Map(), logs = [];
   let timerID = 0;
   class Element {
@@ -56,7 +56,7 @@ async function boot(initialURL = 'https://example.test/Awesome-CTR-Scaling/', fa
     replaceState(_, __, url) { window.location = new URL(url, window.location); history[historyIndex] = window.location.href; }
   };
   const context = vm.createContext({ document, window, URL, URLSearchParams,
-    fetch: async () => ({ ok: !failFetch, json: async () => structuredClone(catalog) }),
+    fetch: async () => ({ ok: !failFetch, json: async () => structuredClone(data) }),
     console: { error: (...args) => logs.push(args.join(' ')) },
     setTimeout: fn => { timers.set(++timerID, fn); return timerID; },
     clearTimeout: id => timers.delete(id), requestAnimationFrame: fn => fn()
@@ -64,7 +64,7 @@ async function boot(initialURL = 'https://example.test/Awesome-CTR-Scaling/', fa
   vm.runInContext(source, context);
   await new Promise(resolve => setImmediate(resolve));
   const $ = id => document.getElementById(id);
-  return { $, inputs, window, logs,
+  return { $, inputs, window, logs, walk,
     cards: () => $('papers').children.filter(x => x.tagName === 'ARTICLE'),
     change: (id, value) => { $(id).value = value; $(id).fire('change'); },
     search: text => { $('search-input').value = text; $('search-form').fire('submit'); },
@@ -115,5 +115,45 @@ async function boot(initialURL = 'https://example.test/Awesome-CTR-Scaling/', fa
   assert(app.$('paper-2208-08489').scrolled); assert.equal(app.$('company-filter').value, '');
   app = await boot('https://example.test/Awesome-CTR-Scaling/', true);
   assert.match(app.$('papers').textContent, /couldn’t be loaded/); assert.equal(app.$('papers').getAttribute('aria-busy'), 'false');
-  console.log('PASS: frontend unit flows: pagination, search/aliases/ID, collection/year/tag/company, combined filters, empty/reset, sort, history, deep links, pending input, mobile toggle and fetch failure');
+  // Both languages are real entry points; navigation keeps current filters and anchors.
+  app = await boot('https://example.test/Awesome-CTR-Scaling/zh.html?q=Wukong&collection=core');
+  assert(app.$('language-switch').href.includes('/index.html?q=Wukong&collection=core'));
+  assert(app.$('category-options').textContent.includes('规模规律与理论'));
+  assert(app.$('tag-filter').textContent.includes('多任务'));
+  assert(app.$('showing-count').textContent.includes('篇论文'));
+  const summarized = catalog.papers.find(p => p.summaries?.zh?.text);
+  assert(summarized, 'fixture needs at least one Chinese summary');
+  app.search(summarized.summaries.zh.text.slice(0, 10));
+  assert(app.cards().some(card => card.id === 'paper-' + summarized.id.replace('.', '-')));
+  app.$('reset-sidebar').fire('click');
+  app.search('2602.09387');
+  assert(app.cards()[0].textContent.includes('来源所载标题'));
+  assert(app.cards()[0].textContent.includes('HeMix'));
+  assert(app.cards()[0].textContent.includes('未重新核实'));
+  app = await boot('https://example.test/Awesome-CTR-Scaling/zh.html#paper-2208-08489');
+  assert(app.$('language-switch').href.endsWith('/index.html#paper-2208-08489'));
+  assert(app.$('paper-2208-08489').scrolled);
+  app = await boot('https://example.test/Awesome-CTR-Scaling/?q=HeMix');
+  assert(app.cards().some(card => card.id === 'paper-2602-09387'));
+  app = await boot('https://example.test/Awesome-CTR-Scaling/zh.html', true);
+  assert(app.$('papers').textContent.includes('暂时无法加载'));
+  // Missing content stays explicit. Source formatting uses DOM text, including hostile input.
+  const fixture = structuredClone(catalog);
+  fixture.papers = [fixture.papers[0]];
+  fixture.papers[0].summaries = {};
+  fixture.papers[0].original_abstract = {status:'pending',text:'',language:'en',source_url:fixture.papers[0].links[0].url,retrieved_at:null,license:null,reason:'A source check is pending.'};
+  app = await boot('https://example.test/Awesome-CTR-Scaling/zh.html', false, fixture);
+  assert(app.cards()[0].textContent.includes('中文总结尚未补齐'));
+  assert(app.cards()[0].textContent.includes('原始摘要待来源核实'));
+  fixture.papers[0].original_abstract = {...fixture.papers[0].original_abstract,status:'verified',retrieved_at:'2026-10-02T04:00:00Z',text:String.raw`A \textbf{strong} model has $O(N^2)$ cost and $3\times$ speed. <script>alert(1)</script> \unknownmacro`};
+  app = await boot('https://example.test/Awesome-CTR-Scaling/', false, fixture);
+  const nodes = app.walk(app.cards()[0]);
+  assert(nodes.some(n => n.tagName === 'STRONG' && n.textContent === 'strong'));
+  assert(nodes.some(n => n.tagName === 'SUP' && n.textContent === '2'));
+  assert(app.cards()[0].textContent.includes('3×'));
+  assert(app.cards()[0].textContent.includes('<script>alert(1)</script>'));
+  assert(!nodes.some(n => n.tagName === 'SCRIPT'));
+  assert(nodes.some(n => n.tagName === 'CODE' && n.textContent === String.raw`\unknownmacro`));
+  assert.equal(app.logs.length, 0, app.logs.join('\n'));
+  console.log('PASS: frontend unit flows: pagination, search/aliases/ID, collection/year/tag/company, combined filters, empty/reset, sort, history, deep links, pending input, mobile toggle fetch failure, bilingual routes/search/state, provenance, explicit gaps and safe source formatting');
 })().catch(error => { console.error(error); process.exitCode = 1; });

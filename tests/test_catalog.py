@@ -49,7 +49,7 @@ class CatalogTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
             files = dict(self.outputs)
-            for source in ("scripts/generate.py", "data/papers.json", "web/index.html", "web/styles.css", "web/app.js"):
+            for source in ("scripts/generate.py", "data/papers.json", "web/index.html", "web/zh.html", "web/styles.css", "web/app.js"):
                 files[source] = (ROOT / source).read_text(encoding="utf-8")
             for path, content in files.items():
                 target = root / path
@@ -74,6 +74,8 @@ class CatalogTests(unittest.TestCase):
         new["id"] = "2610.99999"
         new["title"] = "Synthetic fixture for generator testing"
         new["links"] = [{"label": "Paper", "url": "https://arxiv.org/abs/2610.99999"}]
+        new.pop("original_abstract", None)
+        new.pop("summaries", None)
         data["papers"].append(new)
         raw = generate.json_text(data).encode()
         outputs = generate.generate(data, raw)

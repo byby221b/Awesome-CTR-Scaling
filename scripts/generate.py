@@ -7,8 +7,9 @@ import hashlib
 import json
 import re
 import sys
+import unicodedata
 from collections import Counter
-from datetime import date
+from datetime import date, datetime
 from pathlib import Path
 from urllib.parse import urlsplit
 
@@ -48,11 +49,24 @@ def safe_url(value):
         return False
 
 
+def check_source_identity(value, pid, version, errors):
+    """A safe URL alone does not establish that a cited arXiv record is this paper."""
+    if not safe_url(value):
+        return
+    url = urlsplit(value)
+    if url.hostname in ("arxiv.org", "www.arxiv.org", "export.arxiv.org"):
+        match = re.fullmatch(r"/(?:abs|pdf|html)/(\d{4}\.\d{4,5})(v\d+)?(?:\.pdf)?/?", url.path)
+        if not match or match[1] != pid:
+            errors.append(f"{pid}: arXiv source identity mismatch")
+        elif match[2] and version and match[2] != version:
+            errors.append(f"{pid}: arXiv source version mismatch")
+
+
 def validate(data):
     """Reject ambiguous IDs, unsupported tags, malformed fields and unsafe links."""
     errors = []
-    if data.get("schema_version") != 1:
-        errors.append("schema_version must be 1")
+    if data.get("schema_version") not in (1, 2):
+        errors.append("schema_version must be 1 or 2")
     for key in ("meta", "categories", "papers", "companies", "tag_vocabulary"):
         if key not in data:
             errors.append(f"missing {key}")
@@ -85,7 +99,7 @@ def validate(data):
             if not isinstance(item.get(field), str) or not item[field]:
                 errors.append(f"category {cid} missing {field}")
         categories[cid] = item
-    ids, dois = set(), set()
+    ids, dois, titles = set(), set(), set()
     for paper in data["papers"]:
         pid = paper.get("id", "")
         if not isinstance(pid, str) or not ID_PATTERN.fullmatch(pid) or pid in ids:
@@ -98,6 +112,69 @@ def validate(data):
                 errors.append(f"{pid}: {field} cannot be blank")
             elif "\n" in paper[field] or "\r" in paper[field]:
                 errors.append(f"{pid}: {field} must be one line")
+        title_key = "".join(c for c in unicodedata.normalize("NFKC", paper.get("title", "")).casefold() if c.isalnum())
+        if title_key in titles:
+            errors.append(f"{pid}: duplicate normalized title")
+        titles.add(title_key)
+        abstract = paper.get("original_abstract")
+        if abstract is not None:
+            if not isinstance(abstract, dict):
+                errors.append(f"{pid}: original_abstract must be an object")
+            else:
+                status = abstract.get("status")
+                text = abstract.get("text")
+                if status not in ("verified", "unavailable", "pending"):
+                    errors.append(f"{pid}: invalid abstract status")
+                if not isinstance(text, str) or (status == "verified") != bool(text.strip()):
+                    errors.append(f"{pid}: only a verified abstract may have nonempty text")
+                if not isinstance(abstract.get("language"), str) or not re.fullmatch(r"[a-z]{2,3}(?:-[A-Za-z0-9]+)*", abstract["language"]):
+                    errors.append(f"{pid}: invalid abstract language")
+                if not safe_url(abstract.get("source_url")):
+                    errors.append(f"{pid}: abstract requires a safe source_url")
+                check_source_identity(abstract.get("source_url"), pid, abstract.get("source_version"), errors)
+                if abstract.get("source_version") is not None and not re.fullmatch(r"v[1-9]\d*", abstract["source_version"]):
+                    errors.append(f"{pid}: invalid source_version")
+                retrieved = abstract.get("retrieved_at")
+                try:
+                    if retrieved is not None:
+                        stamp = datetime.fromisoformat(retrieved.replace("Z", "+00:00"))
+                        if stamp.tzinfo is None:
+                            raise ValueError("missing timezone")
+                    elif status == "verified":
+                        raise ValueError("missing retrieval timestamp")
+                except (ValueError, TypeError, AttributeError):
+                    errors.append(f"{pid}: verified abstract requires an ISO retrieval timestamp with timezone")
+                for field in ("license", "reason", "source_title", "source_version"):
+                    if abstract.get(field) is not None and not isinstance(abstract[field], str):
+                        errors.append(f"{pid}: abstract {field} must be a string or null")
+                if status != "verified" and not abstract.get("reason"):
+                    errors.append(f"{pid}: missing abstract requires an explicit reason")
+        summaries = paper.get("summaries", {})
+        if not isinstance(summaries, dict) or any(lang not in ("en", "zh") for lang in summaries):
+            errors.append(f"{pid}: summaries must be an object with en/zh keys")
+        else:
+            for lang, summary in summaries.items():
+                if not isinstance(summary, dict):
+                    errors.append(f"{pid}: summary {lang} must be an object")
+                    continue
+                if not isinstance(summary.get("text"), str) or not summary["text"].strip():
+                    errors.append(f"{pid}: summary {lang} text cannot be blank")
+                if summary.get("basis") not in ("original_abstract", "catalog_contribution"):
+                    errors.append(f"{pid}: summary {lang} has invalid basis")
+                if summary.get("basis") == "original_abstract" and (not isinstance(abstract, dict) or abstract.get("status") != "verified"):
+                    errors.append(f"{pid}: abstract-based summary {lang} requires a verified original abstract")
+                if summary.get("method") not in ("ai_assisted", "editorial"):
+                    errors.append(f"{pid}: summary {lang} has invalid method")
+                try:
+                    date.fromisoformat(summary.get("updated_at", ""))
+                except (ValueError, TypeError):
+                    errors.append(f"{pid}: summary {lang} needs an ISO update date")
+                sources = summary.get("source_urls")
+                if not isinstance(sources, list) or not sources or not all(safe_url(x) for x in sources):
+                    errors.append(f"{pid}: summary {lang} needs safe source_urls")
+                elif summary.get("basis") == "original_abstract":
+                    for source in sources:
+                        check_source_identity(source, pid, abstract.get("source_version") if isinstance(abstract, dict) else None, errors)
         category = categories.get(paper.get("category"))
         if category is None or category["collection"] != paper.get("collection"):
             errors.append(f"{pid}: category/collection mismatch")
@@ -193,7 +270,7 @@ def readme(data, counts):
     meta = data["meta"]
     output = NOTICE + f"# {meta['title']}\n\nA curated library of **scaling laws and scalable ranking/CTR models** for industrial recommendation systems.\n\n"
     output += f"**{len(data['papers'])} papers** · **{counts['core']} core** · **{counts['related']} related** · Updated {meta['updated']}\n\n"
-    output += f'<a id="table-of-contents"></a>\n\n[**Search the paper library →**]({meta["site_url"]}) · [All topics](docs/README.md) · [Company index](docs/companies.md) · [Contribute](CONTRIBUTING.md)\n\n'
+    output += f'<a id="table-of-contents"></a>\n\n[**Search the paper library →**]({meta["site_url"]}) · [**中文页面**]({meta["site_url"]}zh.html) · [All topics](docs/README.md) · [Company index](docs/companies.md) · [Contribute](CONTRIBUTING.md)\n\n'
     output += f"> **Scope:** {meta['scope']}\n\n## Papers\n\nFive focused reading paths. Each topic keeps the complete seven-column catalog: paper, affiliation, venue, year, tags, links and key contribution.\n\n"
     for category in data["categories"]:
         if category["collection"] != "core":
@@ -244,11 +321,18 @@ def generate(data, source_bytes, root=ROOT):
             company_output += f"- [{md(paper['title'])}]({path}) · {paper['year']} · {'Core' if paper['collection'] == 'core' else 'Related'}\n"
     outputs["docs/companies.md"] = company_output
     source_hash = digest(source_bytes)
-    public_data = {"schema_version": data["schema_version"], "meta": {**data["meta"], "catalog_sha256": source_hash}, "categories": data["categories"], "companies": public_companies,
+    coverage = {
+        "verified_abstracts": sum(p.get("original_abstract", {}).get("status") == "verified" for p in data["papers"]),
+        "unavailable_abstracts": sum(p.get("original_abstract", {}).get("status") == "unavailable" for p in data["papers"]),
+        "pending_abstracts": sum(p.get("original_abstract", {}).get("status", "pending") == "pending" for p in data["papers"]),
+        "english_summaries": sum(bool(p.get("summaries", {}).get("en", {}).get("text")) for p in data["papers"]),
+        "chinese_summaries": sum(bool(p.get("summaries", {}).get("zh", {}).get("text")) for p in data["papers"]),
+    }
+    public_data = {"coverage": coverage, "schema_version": data["schema_version"], "meta": {**data["meta"], "catalog_sha256": source_hash}, "categories": data["categories"], "companies": public_companies,
                    "papers": [{**paper, "companies": memberships[paper["id"]], "order": i} for i, paper in enumerate(data["papers"])]}
     outputs["site/catalog.json"] = json_text(public_data)
     substitutions = {"TOTAL": len(data["papers"]), "CORE": counts["core"], "RELATED": counts["related"], "UPDATED": data["meta"]["updated"], "CATALOG_SHA256": source_hash}
-    for name in ("index.html", "styles.css", "app.js"):
+    for name in ("index.html", "zh.html", "styles.css", "app.js"):
         content = (root / "web" / name).read_text(encoding="utf-8")
         for key, value in substitutions.items():
             content = content.replace("{{" + key + "}}", str(value))
@@ -257,7 +341,7 @@ def generate(data, source_bytes, root=ROOT):
         outputs["site/" + name] = content
     outputs["site/.nojekyll"] = ""
     manifest = {"schema_version": 1, "catalog_sha256": source_hash, "paper_count": len(data["papers"]),
-                "collection_counts": {key: counts[key] for key in ("core", "related")},
+                "coverage": coverage, "collection_counts": {key: counts[key] for key in ("core", "related")},
                 "files": {path: digest(content.encode()) for path, content in sorted(outputs.items())}}
     outputs["generated-manifest.json"] = json_text(manifest)
     return outputs

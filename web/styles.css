@@ -65,7 +65,6 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   font-size: 14px; font-weight: 600; text-decoration: none;
 }
 .source-link:hover { color: var(--teal); }
-.source-link span { font-size: 20px; font-weight: 400; }
 .hero {
   max-width: 1440px; margin: auto; padding: 60px 56px;
   display: grid; grid-template-columns: minmax(0, 1fr) 240px; gap: 40px; align-items: center;
@@ -230,7 +229,16 @@ select {
 .paper-links { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; justify-content: flex-end; margin-left: auto; }
 .paper-link { min-height: 44px; font-size: 13px; line-height: 1.6; color: var(--teal); font-weight: 650; text-decoration: none; display: inline-flex; align-items: center; gap: 4px; }
 .paper-link:hover { text-decoration: underline; }
-.external-arrow { font-weight: 400; font-size: 17px; }
+/* Draw external-link arrows without relying on Unicode font coverage. */
+.external-arrow {
+  display: inline-block; position: relative; flex: 0 0 9px;
+  width: 9px; height: 9px; margin-left: 3px;
+  border-top: 1.5px solid currentColor; border-right: 1.5px solid currentColor;
+}
+.external-arrow::before {
+  content: ""; position: absolute; width: 11px; height: 1.5px;
+  top: 3px; left: -3px; background: currentColor; transform: rotate(-45deg);
+}
 .permalink {
   min-width: 44px; min-height: 44px; display: inline-flex; align-items: center; justify-content: center;
   font-size: 19px; line-height: 1; text-decoration: none; color: #506f5e;
@@ -357,3 +365,37 @@ select {
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
 }
+
+/* Bilingual reading view: source text and editorial interpretation stay distinct. */
+.header-actions { display: flex; align-items: center; gap: 24px; }
+.language-switch { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 8px 14px; border: 1px solid var(--line); border-radius: 5px; font-size: 14px; font-weight: 600; text-decoration: none; white-space: nowrap; }
+.language-switch:hover { background: var(--teal-wash); color: var(--teal-dark); }
+.coverage-note { font-size: 12px; color: var(--muted); line-height: 1.7; padding: 12px 15px; margin: 0 0 20px; border: 1px solid var(--line); border-radius: 5px; background: #f0f2eb; }
+.summary-panel { border-left: 3px solid var(--teal); border-radius: 0 4px 4px 0; background: var(--teal-wash); padding: 15px 18px; margin: 20px 0; }
+.reading-label { margin: 0 0 9px; color: var(--teal-dark); font-size: 12px; font-weight: 750; letter-spacing: .6px; text-transform: uppercase; }
+.summary-text { font-size: 15px; line-height: 1.85; margin: 0; white-space: pre-line; overflow-wrap: anywhere; }
+.abstract-panel { margin: 19px 0; }
+.abstract-panel .reading-label { color: var(--muted); }
+.abstract-text { font-size: 14px; line-height: 1.85; color: #3f5359; margin: 0; white-space: pre-line; overflow-wrap: anywhere; }
+.provenance { font-size: 11px; line-height: 1.7; color: var(--muted); margin: 9px 0 0; overflow-wrap: anywhere; }
+.source-title { font-size: 12px; line-height: 1.65; margin: 0 0 10px; color: var(--muted); overflow-wrap: anywhere; }
+.missing-content { font-size: 13px; line-height: 1.7; color: var(--muted); margin: 0; }
+.catalog-annotation { border-top: 1px dashed var(--line); padding: 12px 0; margin-top: 12px; }
+.catalog-annotation summary, .source-details summary { cursor: pointer; width: fit-content; min-height: 28px; padding: 4px 0; font-size: 12px; color: var(--muted); }
+.catalog-annotation summary:focus-visible, .source-details summary:focus-visible { outline: 3px solid #409a88; outline-offset: 3px; }
+.catalog-annotation .paper-contribution { font-size: 13px; margin: 8px 0 0; }
+.source-details { margin-top: 5px; }
+html[lang=zh-CN] h1 { font-family: ui-serif, "Noto Serif CJK SC", "Songti SC", "SimSun", serif; letter-spacing: -1px; line-height: 1.3; }
+html[lang=zh-CN] .eyebrow, html[lang=zh-CN] .filter-label, html[lang=zh-CN] .section-kicker { letter-spacing: .6px; }
+@media (max-width: 640px) {
+  .header-actions { gap: 8px; }
+  .header-actions .source-link { display: none; }
+  .language-switch { padding: 7px 10px; font-size: 13px; }
+  .summary-panel { padding: 13px 14px; }
+  .abstract-text { font-size: 14px; line-height: 1.85; }
+}
+.inline-math { font-family: ui-serif, Georgia, serif; white-space: normal; }
+.inline-math sup, .inline-math sub { font-size: .8em; line-height: 0; }
+.small-caps { font-variant: small-caps; }
+.source-macro { font-size: .92em; background: #f0f1eb; border-bottom: 1px dotted var(--muted); padding: 0 2px; overflow-wrap: anywhere; }
+.abstract-text { white-space: normal; }
