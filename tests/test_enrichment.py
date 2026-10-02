@@ -78,7 +78,7 @@ class EnrichmentTests(unittest.TestCase):
         p['summaries'] = {'en':dict(text='Test.',basis='original_abstract',method='editorial',updated_at='2026-10-02',source_urls=[f"https://arxiv.org/abs/{p['id']}"])}
         with self.assertRaisesRegex(ValueError, 'requires a verified'): generate.validate(data)
         p['summaries']['en']['basis'] = 'catalog_contribution'
-        generate.validate(data)
+        with self.assertRaisesRegex(ValueError, 'basis must be original_abstract'): generate.validate(data)
 
     def test_normalized_title_duplicates_rejected(self):
         self.data['papers'][1]['title'] = self.data['papers'][0]['title'].upper() + '!!!'
@@ -146,5 +146,59 @@ class EnrichmentTests(unittest.TestCase):
             for path, expected in outputs.items(): self.assertEqual((root / path).read_text(), expected)
             self.assertIn('site/zh.html', outputs)
             self.assertFalse((root / '.catalog-update.lock').exists())
+
+
+    def test_removed_annotations_cannot_be_reintroduced(self):
+        self.assertEqual(self.data['schema_version'], 3)
+        self.assertTrue(all('contribution' not in paper for paper in self.data['papers']))
+        self.assertFalse((ROOT / 'migration/original-README.md').exists())
+        self.assertFalse((ROOT / 'scripts/legacy.py').exists())
+        pid = self.data['papers'][0]['id']
+        with self.assertRaisesRegex(ValueError, 'unknown patch fields contribution'):
+            upsert_papers.merge_patches(self.data, {'papers':[{'id':pid, 'contribution':'Obsolete annotation fixture.'}]})
+        self.data['papers'][0]['contribution'] = 'Obsolete annotation fixture.'
+        with self.assertRaisesRegex(ValueError, 'contribution was removed'):
+            generate.validate(self.data)
+        del self.data['papers'][0]['contribution']
+        self.data['schema_version'] = 2
+        with self.assertRaisesRegex(ValueError, 'schema_version must be 3'):
+            generate.validate(self.data)
+
+    def test_all_markdown_descriptions_derive_from_english_summaries(self):
+        outputs = generate.generate(self.data, generate.json_text(self.data).encode())
+        categories = {category['id']: category for category in self.data['categories']}
+        public = json.loads(outputs['site/catalog.json'])
+        self.assertTrue(all('contribution' not in paper for paper in public['papers']))
+        for paper in self.data['papers']:
+            page = outputs[generate.category_path(categories[paper['category']])]
+            self.assertIn(generate.english_summary(paper), page)
+        paper = self.data['papers'][0]
+        paper['summaries']['en']['text'] = 'A | B\nSame source, second line.'
+        outputs = generate.generate(self.data, generate.json_text(self.data).encode())
+        page = outputs[generate.category_path(categories[paper['category']])]
+        self.assertIn('A \\| B<br>Same source, second line.', page)
+        del paper['summaries']['en']
+        outputs = generate.generate(self.data, generate.json_text(self.data).encode())
+        self.assertIn('English summary not yet available.', outputs[generate.category_path(categories[paper['category']])])
+
+    def test_strict_audit_preserves_metadata_but_allows_new_papers(self):
+        import verify_migration
+        from unittest.mock import patch
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            shutil.copytree(ROOT / 'migration', root / 'migration')
+            (root / 'data').mkdir()
+            self.data['papers'].append({'id':'2610.99999'})
+            target = root / 'data/papers.json'
+            target.write_text(json.dumps(self.data))
+            with patch.object(verify_migration, 'ROOT', root):
+                report = verify_migration.audit(strict=True)
+                self.assertEqual(report['changed_metadata_fields'], 0)
+                self.assertEqual(report['metadata_fields_compared'], 271 * 9)
+                self.data['papers'][0]['venue'] = 'Verified later correction fixture'
+                target.write_text(json.dumps(self.data))
+                self.assertEqual(verify_migration.audit()['changed_metadata_fields'], 1)
+                with self.assertRaisesRegex(AssertionError, 'baseline metadata differences'):
+                    verify_migration.audit(strict=True)
 
 if __name__ == '__main__': unittest.main()

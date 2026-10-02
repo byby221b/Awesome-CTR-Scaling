@@ -129,7 +129,8 @@ async function boot(initialURL = 'https://example.test/Awesome-CTR-Scaling/', fa
   app.search('2602.09387');
   assert(app.cards()[0].textContent.includes('来源所载标题'));
   assert(app.cards()[0].textContent.includes('HeMix'));
-  assert(app.cards()[0].textContent.includes('未重新核实'));
+  assert(!app.cards()[0].textContent.includes('原目录贡献说明'));
+  assert(!app.walk(app.cards()[0]).some(node => node.className === 'catalog-annotation'));
   app = await boot('https://example.test/Awesome-CTR-Scaling/zh.html#paper-2208-08489');
   assert(app.$('language-switch').href.endsWith('/index.html#paper-2208-08489'));
   assert(app.$('paper-2208-08489').scrolled);
@@ -138,6 +139,26 @@ async function boot(initialURL = 'https://example.test/Awesome-CTR-Scaling/', fa
   app = await boot('https://example.test/Awesome-CTR-Scaling/zh.html', true);
   assert(app.$('papers').textContent.includes('暂时无法加载'));
   // Missing content stays explicit. Source formatting uses DOM text, including hostile input.
+  // Removed annotations never render or affect search, including stale unexpected input.
+  assert(catalog.papers.every(paper => !Object.hasOwn(paper, 'contribution')));
+  const obsoleteFixture = structuredClone(catalog);
+  obsoleteFixture.papers = [obsoleteFixture.papers[0]];
+  obsoleteFixture.papers[0].contribution = 'obsolete-annotation-only-fixture';
+  for (const route of ['', 'zh.html']) {
+    app = await boot('https://example.test/Awesome-CTR-Scaling/' + route, false, obsoleteFixture);
+    assert(!app.cards()[0].textContent.includes('obsolete-annotation-only-fixture'));
+    assert(!app.cards()[0].textContent.includes('Preserved catalog annotation'));
+    assert(!app.cards()[0].textContent.includes('原目录贡献说明'));
+    assert(!app.walk(app.cards()[0]).some(node => node.className === 'catalog-annotation'));
+    app.search('obsolete-annotation-only-fixture');
+    assert.equal(app.cards().length, 0);
+  }
+  obsoleteFixture.papers[0].summaries.en = {...obsoleteFixture.papers[0].summaries.en, basis:'catalog_contribution', text:'Rejected historical summary fixture'};
+  app = await boot('https://example.test/Awesome-CTR-Scaling/', false, obsoleteFixture);
+  assert(app.cards()[0].textContent.includes('English summary not yet available.'));
+  assert(!app.cards()[0].textContent.includes('Rejected historical summary fixture'));
+  app.search('Rejected historical summary fixture');
+  assert.equal(app.cards().length, 0);
   const fixture = structuredClone(catalog);
   fixture.papers = [fixture.papers[0]];
   fixture.papers[0].summaries = {};
@@ -155,5 +176,5 @@ async function boot(initialURL = 'https://example.test/Awesome-CTR-Scaling/', fa
   assert(!nodes.some(n => n.tagName === 'SCRIPT'));
   assert(nodes.some(n => n.tagName === 'CODE' && n.textContent === String.raw`\unknownmacro`));
   assert.equal(app.logs.length, 0, app.logs.join('\n'));
-  console.log('PASS: frontend unit flows: pagination, search/aliases/ID, collection/year/tag/company, combined filters, empty/reset, sort, history, deep links, pending input, mobile toggle fetch failure, bilingual routes/search/state, provenance, explicit gaps and safe source formatting');
+  console.log('PASS: frontend unit flows: pagination, search/aliases/ID, collection/year/tag/company, combined filters, empty/reset, sort, history, deep links, pending input, mobile toggle fetch failure, bilingual routes/search/state, provenance, removed-annotation guards, explicit gaps and safe source formatting');
 })().catch(error => { console.error(error); process.exitCode = 1; });

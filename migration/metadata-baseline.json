@@ -1,0 +1,5057 @@
+{
+  "source_commit": "31ad30becff83ca14a01f37fc99d52ba79f85565",
+  "source_readme_sha256": "3152b05b92299adbc6d09727202233cb3328f14b489aa2dc8540a41c9087825c",
+  "categories": [
+    {
+      "id": "scaling-law-theory",
+      "title": "Scaling Law & Theory",
+      "collection": "core"
+    },
+    {
+      "id": "scalable-architecture",
+      "title": "Scalable Architecture",
+      "collection": "core"
+    },
+    {
+      "id": "unified-feature-sequence-modeling",
+      "title": "Unified Feature & Sequence Modeling",
+      "collection": "core"
+    },
+    {
+      "id": "foundation-models-multi-scenario",
+      "title": "Foundation Models & Multi-Scenario",
+      "collection": "core"
+    },
+    {
+      "id": "efficiency-deployment",
+      "title": "Efficiency & Deployment",
+      "collection": "core"
+    },
+    {
+      "id": "long-sequence-modeling",
+      "title": "Long Sequence Modeling",
+      "collection": "related"
+    },
+    {
+      "id": "sample-instance-compression-for-sequence-modeling",
+      "title": "Sample/Instance Compression for Sequence Modeling",
+      "collection": "related"
+    },
+    {
+      "id": "generative-recommendation",
+      "title": "Generative Recommendation",
+      "collection": "related"
+    },
+    {
+      "id": "generative-pre-training-for-ctr",
+      "title": "Generative Pre-training for CTR",
+      "collection": "related"
+    },
+    {
+      "id": "knowledge-distillation-compression",
+      "title": "Knowledge Distillation & Compression",
+      "collection": "related"
+    },
+    {
+      "id": "engineering-serving",
+      "title": "Engineering & Serving",
+      "collection": "related"
+    },
+    {
+      "id": "retrieval-reranking-scaling",
+      "title": "Retrieval & Reranking Scaling",
+      "collection": "related"
+    },
+    {
+      "id": "architecture-innovations-beyond-recommendation",
+      "title": "Architecture Innovations Beyond Recommendation",
+      "collection": "related"
+    },
+    {
+      "id": "other",
+      "title": "Other",
+      "collection": "related"
+    }
+  ],
+  "papers": [
+    {
+      "id": "2208.08489",
+      "title": "Understanding Scaling Laws for Recommendation Models",
+      "collection": "core",
+      "category": "scaling-law-theory",
+      "affiliation": "Meta",
+      "venue": "arXiv",
+      "year": 2022,
+      "tags": [
+        "Scaling Law"
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2208.08489"
+        }
+      ]
+    },
+    {
+      "id": "2403.02545",
+      "title": "Wukong: Towards a Scaling Law for Large-Scale Recommendation",
+      "collection": "core",
+      "category": "scaling-law-theory",
+      "affiliation": "Meta",
+      "venue": "ICML",
+      "year": 2024,
+      "tags": [
+        "Scaling Law",
+        "Feature Interaction"
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2403.02545"
+        }
+      ]
+    },
+    {
+      "id": "2508.15326",
+      "title": "SUAN: Exploring Scaling Laws of CTR Model for Online Performance Improvement",
+      "collection": "core",
+      "category": "scaling-law-theory",
+      "affiliation": "Meituan",
+      "venue": "RecSys",
+      "year": 2025,
+      "tags": [
+        "Scaling Law"
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2508.15326"
+        }
+      ]
+    },
+    {
+      "id": "2502.09888",
+      "title": "Climber: Toward Efficient Scaling Laws for Large Recommendation Models",
+      "collection": "core",
+      "category": "scaling-law-theory",
+      "affiliation": "NetEase",
+      "venue": "CIKM",
+      "year": 2025,
+      "tags": [
+        "Scaling Law",
+        "Sequence Modeling"
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2502.09888"
+        }
+      ]
+    },
+    {
+      "id": "2511.12081",
+      "title": "FAT: From Scaling to Structured Expressivity: Rethinking Transformers for CTR Prediction",
+      "collection": "core",
+      "category": "scaling-law-theory",
+      "affiliation": "Alibaba",
+      "venue": "KDD",
+      "year": 2026,
+      "tags": [
+        "Scaling Law",
+        "Architecture",
+        "Feature Interaction"
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2511.12081"
+        }
+      ]
+    },
+    {
+      "id": "2602.10016",
+      "title": "Kunlun: Establishing Scaling Laws for Massive-Scale Recommendation Systems Through Unified Architecture Design",
+      "collection": "core",
+      "category": "scaling-law-theory",
+      "affiliation": "Meta",
+      "venue": "KDD",
+      "year": 2026,
+      "tags": [
+        "Scaling Law",
+        "Architecture"
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2602.10016"
+        }
+      ]
+    },
+    {
+      "id": "2601.17836",
+      "title": "SparseCTR: Unleashing the Potential of Sparse Attention on Long-Term Behaviors for CTR Prediction",
+      "collection": "core",
+      "category": "scaling-law-theory",
+      "affiliation": "Meituan",
+      "venue": "WWW",
+      "year": 2026,
+      "tags": [
+        "Scaling Law",
+        "Attention",
+        "Long Sequence"
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2601.17836"
+        }
+      ]
+    },
+    {
+      "id": "2601.20083",
+      "title": "LLaTTE: Scaling Laws for Multi-Stage Sequence Modeling in Large-Scale Ads Recommendation",
+      "collection": "core",
+      "category": "scaling-law-theory",
+      "affiliation": "Meta",
+      "venue": "KDD",
+      "year": 2026,
+      "tags": [
+        "Scaling Law",
+        "Sequence Modeling",
+        "Ads"
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2601.20083"
+        }
+      ]
+    },
+    {
+      "id": "2602.16986",
+      "title": "ULTRA-HSTU: Bending the Scaling Law Curve in Large-Scale Recommendation Systems",
+      "collection": "core",
+      "category": "scaling-law-theory",
+      "affiliation": "Meta",
+      "venue": "KDD",
+      "year": 2026,
+      "tags": [
+        "Scaling Law",
+        "Attention",
+        "Sparse Activation"
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2602.16986"
+        }
+      ]
+    },
+    {
+      "id": "2605.29232",
+      "title": "On the Practice of Scaling Search Conversion Rate Prediction",
+      "collection": "core",
+      "category": "scaling-law-theory",
+      "affiliation": "Coupang",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [
+        "Scaling Law",
+        "E-commerce",
+        "Serving"
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2605.29232"
+        }
+      ]
+    },
+    {
+      "id": "2606.05257",
+      "title": "Scaling Laws for Behavioral Foundation Models over User Event Sequences",
+      "collection": "core",
+      "category": "scaling-law-theory",
+      "affiliation": "Unbox AI",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [
+        "Scaling Law",
+        "Foundation Model"
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2606.05257"
+        }
+      ]
+    },
+    {
+      "id": "2507.15994",
+      "title": "Scaling Recommender Transformers to One Billion Parameters",
+      "collection": "core",
+      "category": "scaling-law-theory",
+      "affiliation": "Yandex",
+      "venue": "KDD",
+      "year": 2026,
+      "tags": [
+        "Scaling Law",
+        "Architecture"
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2507.15994"
+        }
+      ]
+    },
+    {
+      "id": "2602.07298",
+      "title": "Principled Synthetic Data Enables the First Scaling Laws for LLMs in Recommendation",
+      "collection": "core",
+      "category": "scaling-law-theory",
+      "affiliation": "Meta",
+      "venue": "ICML",
+      "year": 2026,
+      "tags": [
+        "Scaling Law",
+        "Foundation Model"
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2602.07298"
+        }
+      ]
+    },
+    {
+      "id": "2606.07980",
+      "title": "DeRes: Decoupling Residual Stability and Adaptivity for Scalable CTR Prediction",
+      "collection": "core",
+      "category": "scaling-law-theory",
+      "affiliation": "Industry",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [
+        "Scaling Law",
+        "Residual/Depth"
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2606.07980"
+        }
+      ]
+    },
+    {
+      "id": "2606.21911",
+      "title": "SPRINT: The Pitfall of Scaling Up: Uncovering and Mitigating Popularity Bias Amplification in Scaling Transformer-based Recommenders",
+      "collection": "core",
+      "category": "scaling-law-theory",
+      "affiliation": "Academic",
+      "venue": "KDD",
+      "year": 2026,
+      "tags": [
+        "Scaling Law",
+        "Representation Collapse"
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2606.21911"
+        }
+      ]
+    },
+    {
+      "id": "2607.19987",
+      "title": "UniRank: Benchmarking Ranking Models for Unified Sequential Modeling and Feature Interaction",
+      "collection": "core",
+      "category": "scaling-law-theory",
+      "affiliation": "Academic",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [
+        "Scaling Law",
+        "Unified FI+Seq"
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2607.19987"
+        }
+      ]
+    },
+    {
+      "id": "2609.37905",
+      "title": "Beyond Interaction Capacity: Estimator Scaling with Recursive Models for CTR Prediction",
+      "collection": "core",
+      "category": "scaling-law-theory",
+      "affiliation": "Google Research / Georgia Institute of Technology",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [
+        "Loop Scaling",
+        "Knowledge Distillation",
+        "Test-time Compute",
+        "Feature Interaction"
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2609.37905"
+        }
+      ]
+    },
+    {
+      "id": "2203.11014",
+      "title": "DHEN: A Deep and Hierarchical Ensemble Network for Large-Scale Click-Through Rate Prediction",
+      "collection": "core",
+      "category": "scalable-architecture",
+      "affiliation": "Meta",
+      "venue": "arXiv",
+      "year": 2022,
+      "tags": [
+        "Architecture",
+        "Feature Interaction"
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2203.11014"
+        }
+      ]
+    },
+    {
+      "id": "2311.05884",
+      "title": "Hiformer: Heterogeneous Feature Interactions Learning with Transformers for Recommender Systems",
+      "collection": "core",
+      "category": "scalable-architecture",
+      "affiliation": "Google",
+      "venue": "PGAI @ CIKM",
+      "year": 2023,
+      "tags": [
+        "Architecture",
+        "Feature Interaction"
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2311.05884"
+        }
+      ]
+    },
+    {
+      "id": "2402.17152",
+      "title": "HSTU: Actions Speak Louder than Words: Trillion-Parameter Sequential Transducers for Generative Recommendations",
+      "collection": "core",
+      "category": "scalable-architecture",
+      "affiliation": "Meta",
+      "venue": "ICML",
+      "year": 2024,
+      "tags": [
+        "Architecture",
+        "Sequence Modeling",
+        "Generative Rec"
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2402.17152"
+        }
+      ]
+    },
+    {
+      "id": "2411.09852",
+      "title": "InterFormer: Effective Heterogeneous Interaction Learning for Click-Through Rate Prediction",
+      "collection": "core",
+      "category": "scalable-architecture",
+      "affiliation": "Meta",
+      "venue": "CIKM",
+      "year": 2025,
+      "tags": [
+        "Architecture",
+        "Feature Interaction"
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2411.09852"
+        }
+      ]
+    },
+    {
+      "id": "2507.15551",
+      "title": "RankMixer: Scaling Up Ranking Models in Industrial Recommenders",
+      "collection": "core",
+      "category": "scalable-architecture",
+      "affiliation": "ByteDance",
+      "venue": "CIKM",
+      "year": 2025,
+      "tags": [
+        "Architecture",
+        "Token Mixing"
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2507.15551"
+        }
+      ]
+    },
+    {
+      "id": "2511.20235",
+      "title": "HHFT: Hierarchical Heterogeneous Feature Transformer for Recommendation Systems",
+      "collection": "core",
+      "category": "scalable-architecture",
+      "affiliation": "Alibaba",
+      "venue": "arXiv",
+      "year": 2025,
+      "tags": [
+        "Architecture",
+        "Feature Interaction",
+        "Attention"
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2511.20235"
+        }
+      ]
+    },
+    {
+      "id": "2510.15286",
+      "title": "MTmixAtt: Integrating Mixture-of-Experts with Multi-Mix Attention for Large-Scale Recommendation",
+      "collection": "core",
+      "category": "scalable-architecture",
+      "affiliation": "Meituan",
+      "venue": "arXiv",
+      "year": 2025,
+      "tags": [
+        "Architecture",
+        "MoE",
+        "Attention"
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2510.15286"
+        }
+      ]
+    },
+    {
+      "id": "2508.11565",
+      "title": "INFNet: Aggregate and Broadcast: Scalable and Efficient Feature Interaction for Recommender Systems",
+      "collection": "core",
+      "category": "scalable-architecture",
+      "affiliation": "Kuaishou",
+      "venue": "arXiv",
+      "year": 2025,
+      "tags": [
+        "Architecture",
+        "Feature Interaction",
+        "Training Efficiency"
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2508.11565"
+        }
+      ]
+    },
+    {
+      "id": "2601.21285",
+      "title": "Zenith: Scaling Up Ranking Models for Billion-Scale Livestreaming Recommendation",
+      "collection": "core",
+      "category": "scalable-architecture",
+      "affiliation": "ByteDance",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [
+        "Architecture",
+        "Feature Interaction",
+        "Video/Live"
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2601.21285"
+        }
+      ]
+    },
+    {
+      "id": "2602.06563",
+      "title": "TokenMixer-Large: Scaling Up Large Ranking Models in Industrial Recommenders",
+      "collection": "core",
+      "category": "scalable-architecture",
+      "affiliation": "ByteDance",
+      "venue": "KDD",
+      "year": 2026,
+      "tags": [
+        "Architecture",
+        "Token Mixing",
+        "Serving"
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2602.06563"
+        }
+      ]
+    },
+    {
+      "id": "2602.07526",
+      "title": "MSN: A Memory-based Sparse Activation Scaling Framework for Large-scale Industrial Recommendation",
+      "collection": "core",
+      "category": "scalable-architecture",
+      "affiliation": "ByteDance",
+      "venue": "KDD",
+      "year": 2026,
+      "tags": [
+        "Architecture",
+        "Sparse Activation"
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2602.07526"
+        }
+      ]
+    },
+    {
+      "id": "2602.09387",
+      "title": "HeteroMixer: Query-Mixed Interest Extraction and Heterogeneous Interaction",
+      "collection": "core",
+      "category": "scalable-architecture",
+      "affiliation": "Alibaba",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [
+        "Architecture",
+        "Feature Interaction",
+        "Long Sequence"
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2602.09387"
+        }
+      ]
+    },
+    {
+      "id": "2602.09194",
+      "title": "ML-DCN: Masked Low-Rank Deep Crossing Network Towards Scalable Ads CTR at Pinterest",
+      "collection": "core",
+      "category": "scalable-architecture",
+      "affiliation": "Pinterest",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [
+        "Architecture",
+        "Feature Interaction",
+        "Ads"
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2602.09194"
+        }
+      ]
+    },
+    {
+      "id": "2602.11410",
+      "title": "CADET: Context-Conditioned Ads CTR Prediction With a Decoder-Only Transformer",
+      "collection": "core",
+      "category": "scalable-architecture",
+      "affiliation": "LinkedIn",
+      "venue": "AdKDD",
+      "year": 2026,
+      "tags": [
+        "Architecture",
+        "Attention",
+        "Ads"
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2602.11410"
+        }
+      ]
+    },
+    {
+      "id": "2603.03988",
+      "title": "SORT: A Systematically Optimized Ranking Transformer for Industrial-Scale Recommenders",
+      "collection": "core",
+      "category": "scalable-architecture",
+      "affiliation": "Alibaba",
+      "venue": "SIGIR",
+      "year": 2026,
+      "tags": [
+        "Architecture",
+        "Attention"
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2603.03988"
+        }
+      ]
+    },
+    {
+      "id": "2604.08011",
+      "title": "Beyond Dense Connectivity: Explicit Sparsity for Scalable Recommendation",
+      "collection": "core",
+      "category": "scalable-architecture",
+      "affiliation": "Alibaba",
+      "venue": "SIGIR",
+      "year": 2026,
+      "tags": [
+        "Architecture",
+        "Sparse Activation"
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2604.08011"
+        }
+      ]
+    },
+    {
+      "id": "2604.17878",
+      "title": "RankUp: Towards High-Rank Representations for Large Scale Advertising Recommender Systems",
+      "collection": "core",
+      "category": "scalable-architecture",
+      "affiliation": "Tencent (Weixin)",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [
+        "Architecture",
+        "Representation Collapse",
+        "Ads"
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2604.17878"
+        }
+      ]
+    },
+    {
+      "id": "2604.19550",
+      "title": "LoopCTR: Unlocking the Loop Scaling Power for Click-Through Rate Prediction",
+      "collection": "core",
+      "category": "scalable-architecture",
+      "affiliation": "Alibaba",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [
+        "Architecture",
+        "Loop Scaling"
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2604.19550"
+        }
+      ]
+    },
+    {
+      "id": "2605.23191",
+      "title": "Expand More, Shrink Less: Shaping Effective-Rank Dynamics for Dense Scaling in Recommendation",
+      "collection": "core",
+      "category": "scalable-architecture",
+      "affiliation": "Tencent",
+      "venue": "KDD",
+      "year": 2026,
+      "tags": [
+        "Architecture",
+        "Token Mixing",
+        "Representation Collapse"
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2605.23191"
+        }
+      ]
+    },
+    {
+      "id": "2607.24025",
+      "title": "SpecFormer: Mitigating Embedding and Attention Collapse via Spectral-Aware Transformer for Recommendation",
+      "collection": "core",
+      "category": "scalable-architecture",
+      "affiliation": "Industry",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [
+        "Architecture",
+        "Attention",
+        "Representation Collapse"
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2607.24025"
+        }
+      ]
+    },
+    {
+      "id": "2603.18697",
+      "title": "OCP: Orthogonal Constrained Projection for Sparse Scaling in Industrial Commodity Recommendation",
+      "collection": "core",
+      "category": "scalable-architecture",
+      "affiliation": "JD",
+      "venue": "SIGIR",
+      "year": 2026,
+      "tags": [
+        "Architecture",
+        "Embedding Design",
+        "Sparse Activation"
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2603.18697"
+        }
+      ]
+    },
+    {
+      "id": "2608.18764",
+      "title": "GateDiffInt: Gate-Mediated Controllable Diffusion and Multi-Intent LLM Distillation for User Behavior Modeling",
+      "collection": "core",
+      "category": "scalable-architecture",
+      "affiliation": "Xiaohongshu",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [
+        "Architecture",
+        "Knowledge Distillation",
+        "User Modeling"
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2608.18764"
+        }
+      ]
+    },
+    {
+      "id": "2608.27991",
+      "title": "HubMixer: Progressive Latent Hub Mixing for Parameter-Efficient Feature Interaction in Recommendation",
+      "collection": "core",
+      "category": "scalable-architecture",
+      "affiliation": "Kuaishou",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [
+        "Architecture",
+        "Feature Interaction",
+        "Token Mixing"
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2608.27991"
+        }
+      ]
+    },
+    {
+      "id": "2608.30449",
+      "title": "PRIME: Mitigating Subgroup Optimization Competition in Shared CTR Top Networks with Plug-in Residual Input-Conditioned Mixture of Expert",
+      "collection": "core",
+      "category": "scalable-architecture",
+      "affiliation": "Alibaba / Henan Polytechnic University",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [
+        "MoE",
+        "Residual/Depth",
+        "Feature Interaction"
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2608.30449"
+        }
+      ]
+    },
+    {
+      "id": "2609.01240",
+      "title": "ReST: From Language to Behavior: Scaling Sequence Transformers for Industrial Recommendation Ranking with Rec-Native Designs",
+      "collection": "core",
+      "category": "scalable-architecture",
+      "affiliation": "ByteDance",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [
+        "Architecture",
+        "Attention",
+        "Sequence Modeling",
+        "Serving"
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2609.01240"
+        }
+      ]
+    },
+    {
+      "id": "2609.08443",
+      "title": "SequenceO1: End-to-End Ultra-Long (100K) Sequence Modeling in Recommendation with Low-Rank Caching",
+      "collection": "core",
+      "category": "scalable-architecture",
+      "affiliation": "ByteDance",
+      "venue": "RecSys (Industry)",
+      "year": 2026,
+      "tags": [
+        "Architecture",
+        "Attention",
+        "Long Sequence",
+        "Serving"
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2609.08443"
+        }
+      ]
+    },
+    {
+      "id": "2603.02561",
+      "title": "SOLAR: SVD-Optimized Lifelong Attention for Recommendation",
+      "collection": "core",
+      "category": "scalable-architecture",
+      "affiliation": "Kuaishou Technology / Unaffiliated",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [
+        "Architecture",
+        "Attention",
+        "Long Sequence",
+        "Serving"
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2603.02561"
+        }
+      ]
+    },
+    {
+      "id": "2510.26104",
+      "title": "OneTrans: Unified Feature Interaction and Sequence Modeling with One Transformer in Industrial Recommender",
+      "collection": "core",
+      "category": "unified-feature-sequence-modeling",
+      "affiliation": "ByteDance",
+      "venue": "WWW",
+      "year": 2026,
+      "tags": [
+        "Unified FI+Seq",
+        "Attention",
+        "Tokenization"
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2510.26104"
+        }
+      ]
+    },
+    {
+      "id": "2601.12681",
+      "title": "HyFormer: Revisiting the Roles of Sequence Modeling and Feature Interaction in CTR Prediction",
+      "collection": "core",
+      "category": "unified-feature-sequence-modeling",
+      "affiliation": "ByteDance",
+      "venue": "SIGIR",
+      "year": 2026,
+      "tags": [
+        "Unified FI+Seq",
+        "Attention"
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2601.12681"
+        }
+      ]
+    },
+    {
+      "id": "2602.10811",
+      "title": "EST: Towards Efficient Scaling Laws in Click-Through Rate Prediction via Unified Modeling",
+      "collection": "core",
+      "category": "unified-feature-sequence-modeling",
+      "affiliation": "Alibaba",
+      "venue": "KDD",
+      "year": 2026,
+      "tags": [
+        "Unified FI+Seq",
+        "Scaling Law"
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2602.10811"
+        }
+      ]
+    },
+    {
+      "id": "2602.14110",
+      "title": "MixFormer: Co-Scaling Up Dense and Sequence in Industrial Recommenders",
+      "collection": "core",
+      "category": "unified-feature-sequence-modeling",
+      "affiliation": "ByteDance",
+      "venue": "KDD",
+      "year": 2026,
+      "tags": [
+        "Unified FI+Seq",
+        "Sequence Modeling"
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2602.14110"
+        }
+      ]
+    },
+    {
+      "id": "2604.13737",
+      "title": "TokenFormer: Unify the Multi-Field and Sequential Recommendation Worlds",
+      "collection": "core",
+      "category": "unified-feature-sequence-modeling",
+      "affiliation": "Tencent",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [
+        "Unified FI+Seq",
+        "Attention"
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2604.13737"
+        }
+      ]
+    },
+    {
+      "id": "2604.00590",
+      "title": "UniMixer: A Unified Architecture for Scaling Laws in Recommendation Systems",
+      "collection": "core",
+      "category": "unified-feature-sequence-modeling",
+      "affiliation": "Kuaishou",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [
+        "Unified FI+Seq",
+        "Scaling Law",
+        "Token Mixing"
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2604.00590"
+        }
+      ]
+    },
+    {
+      "id": "2606.27058",
+      "title": "UniFormer: Efficient and Unified Model-Centric Scaling for Industrial Recommendation",
+      "collection": "core",
+      "category": "unified-feature-sequence-modeling",
+      "affiliation": "Kuaishou",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [
+        "Unified FI+Seq",
+        "Tokenization"
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2606.27058"
+        }
+      ]
+    },
+    {
+      "id": "2607.17017",
+      "title": "WHALE: A Scalable Unified Model for Recommendation with Wukong-HSTU Architecture",
+      "collection": "core",
+      "category": "unified-feature-sequence-modeling",
+      "affiliation": "Meta",
+      "venue": "RecSys (Industry)",
+      "year": 2026,
+      "tags": [
+        "Unified FI+Seq",
+        "Architecture"
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2607.17017"
+        }
+      ]
+    },
+    {
+      "id": "2607.28070",
+      "title": "CCFormer: Efficient Cross-Field Interaction and Hierarchical Sequence Compression for Industrial Recommendation",
+      "collection": "core",
+      "category": "unified-feature-sequence-modeling",
+      "affiliation": "Tencent",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [
+        "Unified FI+Seq",
+        "Attention",
+        "Long Sequence"
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2607.28070"
+        }
+      ]
+    },
+    {
+      "id": "2608.16797",
+      "title": "UniDot: A Unified Network for Sequence Modeling and Feature Interaction in Large-scale Recommendation",
+      "collection": "core",
+      "category": "unified-feature-sequence-modeling",
+      "affiliation": "Industry",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [
+        "Unified FI+Seq",
+        "Token Mixing"
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2608.16797"
+        }
+      ]
+    },
+    {
+      "id": "2607.13398",
+      "title": "TMallGS: Scaling Unified Feature and Sequence Modeling for Generative E-commerce Search",
+      "collection": "core",
+      "category": "unified-feature-sequence-modeling",
+      "affiliation": "Alibaba (Tmall)",
+      "venue": "KDD",
+      "year": 2026,
+      "tags": [
+        "Unified FI+Seq",
+        "Tokenization",
+        "E-commerce"
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2607.13398"
+        }
+      ]
+    },
+    {
+      "id": "2608.27005",
+      "title": "MaskRec: Topology-Masked Unified Backbone for Joint Feature Interaction and Multi-Domain Sequence Modeling",
+      "collection": "core",
+      "category": "unified-feature-sequence-modeling",
+      "affiliation": "Shandong University",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [
+        "Unified FI+Seq",
+        "Attention",
+        "Multi-scenario"
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2608.27005"
+        }
+      ]
+    },
+    {
+      "id": "2609.01655",
+      "title": "CRAFT: From Feature Interaction to Feature Transport — A Unified Block for Scalable Recommendation Models",
+      "collection": "core",
+      "category": "unified-feature-sequence-modeling",
+      "affiliation": "Academic",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [
+        "Unified FI+Seq",
+        "Architecture",
+        "Residual/Depth",
+        "Ads"
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2609.01655"
+        }
+      ]
+    },
+    {
+      "id": "2609.03290",
+      "title": "UniCon: A Unified Context-Centric Modeling Paradigm for CTR Prediction",
+      "collection": "core",
+      "category": "unified-feature-sequence-modeling",
+      "affiliation": "Academic",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [
+        "Unified FI+Seq",
+        "Architecture",
+        "Attention"
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2609.03290"
+        }
+      ]
+    },
+    {
+      "id": "2609.37183",
+      "title": "HELIX: Purified and Unified - Rethinking Feature Interaction and Sequence Modeling for Large-Scale Recommendation",
+      "collection": "core",
+      "category": "unified-feature-sequence-modeling",
+      "affiliation": "TikTok (Global E-Commerce Recommendation Video Team)",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [
+        "Architecture",
+        "Token Mixing",
+        "Unified FI+Seq",
+        "Serving"
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2609.37183"
+        }
+      ]
+    },
+    {
+      "id": "2402.06859",
+      "title": "LiRank: Industrial Large Scale Ranking Models at LinkedIn",
+      "collection": "core",
+      "category": "foundation-models-multi-scenario",
+      "affiliation": "LinkedIn",
+      "venue": "KDD",
+      "year": 2024,
+      "tags": [
+        "Foundation Model",
+        "Multi-task",
+        "Quantization"
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2402.06859"
+        }
+      ]
+    },
+    {
+      "id": "2508.02929",
+      "title": "Realizing Scaling Laws in Recommender Systems: A Foundation-Expert Paradigm for Hyperscale Model Deployment",
+      "collection": "core",
+      "category": "foundation-models-multi-scenario",
+      "affiliation": "Meta",
+      "venue": "arXiv",
+      "year": 2025,
+      "tags": [
+        "Foundation Model",
+        "MoE",
+        "Serving"
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2508.02929"
+        }
+      ]
+    },
+    {
+      "id": "2509.18091",
+      "title": "OnePiece: Bringing Context Engineering and Reasoning to Industrial Cascade Ranking System",
+      "collection": "core",
+      "category": "foundation-models-multi-scenario",
+      "affiliation": "Shopee",
+      "venue": "KDD",
+      "year": 2026,
+      "tags": [
+        "Foundation Model",
+        "Architecture"
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2509.18091"
+        }
+      ]
+    },
+    {
+      "id": "2502.08309",
+      "title": "LUM: Unlocking Scaling Law in Industrial Recommendation Systems with a Three-step Paradigm based Large User Model",
+      "collection": "core",
+      "category": "foundation-models-multi-scenario",
+      "affiliation": "Alibaba",
+      "venue": "WSDM",
+      "year": 2026,
+      "tags": [
+        "Foundation Model",
+        "Scaling Law",
+        "Knowledge Distillation"
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2502.08309"
+        }
+      ]
+    },
+    {
+      "id": "2602.11235",
+      "title": "MTFM: A Scalable and Alignment-Free Foundation Model for Industrial Recommendation in Meituan",
+      "collection": "core",
+      "category": "foundation-models-multi-scenario",
+      "affiliation": "Meituan",
+      "venue": "KDD",
+      "year": 2026,
+      "tags": [
+        "Foundation Model",
+        "Training Efficiency"
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2602.11235"
+        }
+      ]
+    },
+    {
+      "id": "2606.00422",
+      "title": "UniPinRec: Unifying Generative Retrieval and Ranking at Pinterest Scale",
+      "collection": "core",
+      "category": "foundation-models-multi-scenario",
+      "affiliation": "Pinterest",
+      "venue": "RecSys (Industry)",
+      "year": 2026,
+      "tags": [
+        "Foundation Model",
+        "Generative Rec",
+        "Serving"
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2606.00422"
+        }
+      ]
+    },
+    {
+      "id": "2606.16838",
+      "title": "OneRank: Unified Transformer-Native Ranking Architecture for Multi-Task Recommendation",
+      "collection": "core",
+      "category": "foundation-models-multi-scenario",
+      "affiliation": "Shopee / RUC",
+      "venue": "KDD",
+      "year": 2026,
+      "tags": [
+        "Multi-task",
+        "Architecture"
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2606.16838"
+        }
+      ]
+    },
+    {
+      "id": "2606.19635",
+      "title": "Token Factory: Efficiently Integrating Diverse Signals into Large Recommendation Models",
+      "collection": "core",
+      "category": "foundation-models-multi-scenario",
+      "affiliation": "Google",
+      "venue": "RecSys (Industry)",
+      "year": 2026,
+      "tags": [
+        "Foundation Model",
+        "Tokenization"
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2606.19635"
+        }
+      ]
+    },
+    {
+      "id": "2608.18606",
+      "title": "OneModel: A Unified Foundation for Platform-Scale Multi-Scenario Ranking",
+      "collection": "core",
+      "category": "foundation-models-multi-scenario",
+      "affiliation": "Xiaohongshu",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [
+        "Multi-scenario",
+        "Sequence Modeling",
+        "Foundation Model"
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2608.18606"
+        }
+      ]
+    },
+    {
+      "id": "2608.25546",
+      "title": "AMBER: An Event is Worth One Token — Event Tokenization for Industrial-scale LLM Recommendation",
+      "collection": "core",
+      "category": "foundation-models-multi-scenario",
+      "affiliation": "Meta",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [
+        "Tokenization",
+        "Foundation Model"
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2608.25546"
+        }
+      ]
+    },
+    {
+      "id": "2609.28589",
+      "title": "OneTrans-V2: Unifying Retrieval, Pre-rank, and Fine-rank with One Transformer in Industrial Recommender",
+      "collection": "core",
+      "category": "foundation-models-multi-scenario",
+      "affiliation": "ByteDance",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [
+        "Architecture",
+        "MoE",
+        "Foundation Model",
+        "Serving"
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2609.28589"
+        }
+      ]
+    },
+    {
+      "id": "2602.10455",
+      "title": "UG-Sep: Compute Only Once: UG-Separation for Efficient Large Recommendation Models",
+      "collection": "core",
+      "category": "efficiency-deployment",
+      "affiliation": "ByteDance",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [
+        "Serving",
+        "Training Efficiency"
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2602.10455"
+        }
+      ]
+    },
+    {
+      "id": "2607.28940",
+      "title": "TransX: Scaling Transformer-based Recommendation via Behavioral and Serving Stream Crossings",
+      "collection": "core",
+      "category": "efficiency-deployment",
+      "affiliation": "LinkedIn",
+      "venue": "KDD (ADS)",
+      "year": 2026,
+      "tags": [
+        "Serving",
+        "Attention",
+        "Long Sequence"
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2607.28940"
+        }
+      ]
+    },
+    {
+      "id": "2607.12281",
+      "title": "SlimPer: Make Personalization Model Slim and Smart",
+      "collection": "core",
+      "category": "efficiency-deployment",
+      "affiliation": "Meta",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [
+        "Serving",
+        "Long Sequence",
+        "User Modeling"
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2607.12281"
+        }
+      ]
+    },
+    {
+      "id": "2605.24989",
+      "title": "Selective Test-Time Compute Scaling for CTR Prediction via Uncertainty-Triggered Feature Path Exploration",
+      "collection": "core",
+      "category": "efficiency-deployment",
+      "affiliation": "Alibaba",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [
+        "Test-time Compute",
+        "Sparse Activation"
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2605.24989"
+        }
+      ]
+    },
+    {
+      "id": "2512.07650",
+      "title": "Exploring Test-time Scaling via Prediction Merging on Large-Scale Recommendation",
+      "collection": "core",
+      "category": "efficiency-deployment",
+      "affiliation": "Academic",
+      "venue": "SIGIR",
+      "year": 2026,
+      "tags": [
+        "Test-time Compute"
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2512.07650"
+        }
+      ]
+    },
+    {
+      "id": "2609.02671",
+      "title": "DS-Frame: Recommender System as Slow and Fast Thinkers",
+      "collection": "core",
+      "category": "efficiency-deployment",
+      "affiliation": "Academic",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [
+        "Test-time Compute",
+        "Sequence Modeling"
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2609.02671"
+        }
+      ]
+    },
+    {
+      "id": "2609.01807",
+      "title": "SPD: Single Pass Decoding for Generative Reranking",
+      "collection": "core",
+      "category": "efficiency-deployment",
+      "affiliation": "Amazon",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [
+        "Test-time Compute",
+        "Generative Rec",
+        "Serving"
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2609.01807"
+        }
+      ]
+    },
+    {
+      "id": "2504.06780",
+      "title": "CHIME",
+      "collection": "related",
+      "category": "long-sequence-modeling",
+      "affiliation": "Kuaishou",
+      "venue": "",
+      "year": 2025,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2504.06780"
+        }
+      ]
+    },
+    {
+      "id": "2505.04421",
+      "title": "LONGER",
+      "collection": "related",
+      "category": "long-sequence-modeling",
+      "affiliation": "ByteDance",
+      "venue": "RecSys",
+      "year": 2025,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2505.04421"
+        }
+      ]
+    },
+    {
+      "id": "2508.13567",
+      "title": "ENCODE",
+      "collection": "related",
+      "category": "long-sequence-modeling",
+      "affiliation": "Alibaba",
+      "venue": "TKDE",
+      "year": 2025,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2508.13567"
+        }
+      ]
+    },
+    {
+      "id": "2508.17125",
+      "title": "VQL",
+      "collection": "related",
+      "category": "long-sequence-modeling",
+      "affiliation": "Kuaishou",
+      "venue": "",
+      "year": 2025,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2508.17125"
+        }
+      ]
+    },
+    {
+      "id": "2511.06077",
+      "title": "Make It Long, Keep It Fast",
+      "collection": "related",
+      "category": "long-sequence-modeling",
+      "affiliation": "ByteDance",
+      "venue": "WWW",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2511.06077"
+        }
+      ]
+    },
+    {
+      "id": "2512.07216",
+      "title": "MUSE",
+      "collection": "related",
+      "category": "long-sequence-modeling",
+      "affiliation": "Alibaba",
+      "venue": "",
+      "year": 2025,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2512.07216"
+        }
+      ]
+    },
+    {
+      "id": "2601.03479",
+      "title": "PerSRec",
+      "collection": "related",
+      "category": "long-sequence-modeling",
+      "affiliation": "Meta",
+      "venue": "ICDM",
+      "year": 2025,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2601.03479"
+        }
+      ]
+    },
+    {
+      "id": "2601.20234",
+      "title": "MALLOC",
+      "collection": "related",
+      "category": "long-sequence-modeling",
+      "affiliation": "",
+      "venue": "",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2601.20234"
+        }
+      ]
+    },
+    {
+      "id": "2604.20858",
+      "title": "MoS (Mixture of Sequence)",
+      "collection": "related",
+      "category": "long-sequence-modeling",
+      "affiliation": "Meta",
+      "venue": "WWW",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2604.20858"
+        }
+      ]
+    },
+    {
+      "id": "2605.24051",
+      "title": "Memento",
+      "collection": "related",
+      "category": "long-sequence-modeling",
+      "affiliation": "Meta",
+      "venue": "",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2605.24051"
+        }
+      ]
+    },
+    {
+      "id": "2605.25726",
+      "title": "SIREN",
+      "collection": "related",
+      "category": "long-sequence-modeling",
+      "affiliation": "Tencent",
+      "venue": "",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2605.25726"
+        }
+      ]
+    },
+    {
+      "id": "2605.25583",
+      "title": "LENS",
+      "collection": "related",
+      "category": "long-sequence-modeling",
+      "affiliation": "",
+      "venue": "",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2605.25583"
+        }
+      ]
+    },
+    {
+      "id": "2606.07546",
+      "title": "Beyond Item IDs",
+      "collection": "related",
+      "category": "long-sequence-modeling",
+      "affiliation": "Google",
+      "venue": "SIGIR",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2606.07546"
+        }
+      ]
+    },
+    {
+      "id": "2606.09888",
+      "title": "SinkRec",
+      "collection": "related",
+      "category": "long-sequence-modeling",
+      "affiliation": "",
+      "venue": "",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2606.09888"
+        }
+      ]
+    },
+    {
+      "id": "2606.28533",
+      "title": "CMSL",
+      "collection": "related",
+      "category": "long-sequence-modeling",
+      "affiliation": "Meta",
+      "venue": "",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2606.28533"
+        }
+      ]
+    },
+    {
+      "id": "2606.29946",
+      "title": "POEM",
+      "collection": "related",
+      "category": "long-sequence-modeling",
+      "affiliation": "Kuaishou",
+      "venue": "RecSys (Industry)",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2606.29946"
+        }
+      ]
+    },
+    {
+      "id": "2607.14331",
+      "title": "Long-History User Transformers",
+      "collection": "related",
+      "category": "long-sequence-modeling",
+      "affiliation": "Yandex",
+      "venue": "",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2607.14331"
+        }
+      ]
+    },
+    {
+      "id": "2602.23671",
+      "title": "FuXi-Linear",
+      "collection": "related",
+      "category": "long-sequence-modeling",
+      "affiliation": "",
+      "venue": "KDD",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2602.23671"
+        }
+      ]
+    },
+    {
+      "id": "2608.03692",
+      "title": "SITA",
+      "collection": "related",
+      "category": "long-sequence-modeling",
+      "affiliation": "Huawei",
+      "venue": "",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2608.03692"
+        }
+      ]
+    },
+    {
+      "id": "2608.07055",
+      "title": "TM20K",
+      "collection": "related",
+      "category": "long-sequence-modeling",
+      "affiliation": "ByteDance",
+      "venue": "",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2608.07055"
+        }
+      ]
+    },
+    {
+      "id": "2609.31045",
+      "title": "KuaFu: Compressing Long User Behavior into Understanding at Billion Scale",
+      "collection": "related",
+      "category": "long-sequence-modeling",
+      "affiliation": "Tencent",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2609.31045"
+        }
+      ]
+    },
+    {
+      "id": "2609.32215",
+      "title": "DP-Rec: Towards Dynamic Patching for Efficient Long-Sequence Recommendation",
+      "collection": "related",
+      "category": "long-sequence-modeling",
+      "affiliation": "Capital One (AI Foundations)",
+      "venue": "RecSys",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2609.32215"
+        }
+      ]
+    },
+    {
+      "id": "2609.30576",
+      "title": "T-RoPE: Time-Aware Rotary Position Embedding for Sequential Recommendation",
+      "collection": "related",
+      "category": "long-sequence-modeling",
+      "affiliation": "Shopify / MIT / Liquid AI",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2609.30576"
+        }
+      ]
+    },
+    {
+      "id": "2604.08933",
+      "title": "IAT",
+      "collection": "related",
+      "category": "sample-instance-compression-for-sequence-modeling",
+      "affiliation": "",
+      "venue": "",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2604.08933"
+        }
+      ]
+    },
+    {
+      "id": "2604.15650",
+      "title": "SIF",
+      "collection": "related",
+      "category": "sample-instance-compression-for-sequence-modeling",
+      "affiliation": "Meituan",
+      "venue": "RecSys",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2604.15650"
+        }
+      ]
+    },
+    {
+      "id": "2605.12617",
+      "title": "SID-MLP",
+      "collection": "related",
+      "category": "generative-recommendation",
+      "affiliation": "UCSD / Snap",
+      "venue": "",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2605.12617"
+        }
+      ]
+    },
+    {
+      "id": "2605.23312",
+      "title": "Towards Generalizable and Efficient Large-Scale Generative Recommenders",
+      "collection": "related",
+      "category": "generative-recommendation",
+      "affiliation": "Netflix",
+      "venue": "RecSys (Industry)",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2605.23312"
+        }
+      ]
+    },
+    {
+      "id": "2605.23702",
+      "title": "TubiFM",
+      "collection": "related",
+      "category": "generative-recommendation",
+      "affiliation": "Tubi",
+      "venue": "RecSys (Industry)",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2605.23702"
+        }
+      ]
+    },
+    {
+      "id": "2605.25749",
+      "title": "DeGRe",
+      "collection": "related",
+      "category": "generative-recommendation",
+      "affiliation": "Alibaba",
+      "venue": "KDD",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2605.25749"
+        }
+      ]
+    },
+    {
+      "id": "2605.17779",
+      "title": "VarLenRec",
+      "collection": "related",
+      "category": "generative-recommendation",
+      "affiliation": "",
+      "venue": "",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2605.17779"
+        }
+      ]
+    },
+    {
+      "id": "2602.13581",
+      "title": "Climber-Pilot",
+      "collection": "related",
+      "category": "generative-recommendation",
+      "affiliation": "NetEase",
+      "venue": "KDD",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2602.13581"
+        }
+      ]
+    },
+    {
+      "id": "2603.02730",
+      "title": "APAO",
+      "collection": "related",
+      "category": "generative-recommendation",
+      "affiliation": "Tsinghua",
+      "venue": "KDD",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2603.02730"
+        }
+      ]
+    },
+    {
+      "id": "2604.05314",
+      "title": "Next-Scale Generative Reranking",
+      "collection": "related",
+      "category": "generative-recommendation",
+      "affiliation": "Meituan",
+      "venue": "",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2604.05314"
+        }
+      ]
+    },
+    {
+      "id": "2604.05329",
+      "title": "STAMP",
+      "collection": "related",
+      "category": "generative-recommendation",
+      "affiliation": "Zhejiang / Alibaba",
+      "venue": "",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2604.05329"
+        }
+      ]
+    },
+    {
+      "id": "2604.14878",
+      "title": "GenRec",
+      "collection": "related",
+      "category": "generative-recommendation",
+      "affiliation": "JD",
+      "venue": "SIGIR",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2604.14878"
+        }
+      ]
+    },
+    {
+      "id": "2604.11440",
+      "title": "R3-VAE",
+      "collection": "related",
+      "category": "generative-recommendation",
+      "affiliation": "",
+      "venue": "",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2604.11440"
+        }
+      ]
+    },
+    {
+      "id": "2606.06260",
+      "title": "OneReason",
+      "collection": "related",
+      "category": "generative-recommendation",
+      "affiliation": "Kuaishou",
+      "venue": "",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2606.06260"
+        }
+      ]
+    },
+    {
+      "id": "2606.08604",
+      "title": "Gryphon",
+      "collection": "related",
+      "category": "generative-recommendation",
+      "affiliation": "Yandex",
+      "venue": "",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2606.08604"
+        }
+      ]
+    },
+    {
+      "id": "2606.08480",
+      "title": "AdaGRPO",
+      "collection": "related",
+      "category": "generative-recommendation",
+      "affiliation": "JD",
+      "venue": "",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2606.08480"
+        }
+      ]
+    },
+    {
+      "id": "2606.07317",
+      "title": "GBLA",
+      "collection": "related",
+      "category": "generative-recommendation",
+      "affiliation": "Yandex",
+      "venue": "SIGIR",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2606.07317"
+        }
+      ]
+    },
+    {
+      "id": "2606.06970",
+      "title": "SSRLive",
+      "collection": "related",
+      "category": "generative-recommendation",
+      "affiliation": "Alibaba",
+      "venue": "",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2606.06970"
+        }
+      ]
+    },
+    {
+      "id": "2512.24787",
+      "title": "HiGR",
+      "collection": "related",
+      "category": "generative-recommendation",
+      "affiliation": "Tencent",
+      "venue": "CIKM",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2512.24787"
+        }
+      ]
+    },
+    {
+      "id": "2606.14260",
+      "title": "ChronoID",
+      "collection": "related",
+      "category": "generative-recommendation",
+      "affiliation": "Meta MRS / U. Rochester / MBZUAI",
+      "venue": "",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2606.14260"
+        }
+      ]
+    },
+    {
+      "id": "2606.14142",
+      "title": "PauseRec",
+      "collection": "related",
+      "category": "generative-recommendation",
+      "affiliation": "",
+      "venue": "",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2606.14142"
+        }
+      ]
+    },
+    {
+      "id": "2606.17276",
+      "title": "On the Memorization Behavior of LLMs in Generative Recommendation",
+      "collection": "related",
+      "category": "generative-recommendation",
+      "affiliation": "KAIST / Snap",
+      "venue": "",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2606.17276"
+        }
+      ]
+    },
+    {
+      "id": "2606.20554",
+      "title": "G2Rec",
+      "collection": "related",
+      "category": "generative-recommendation",
+      "affiliation": "Meta / UIUC",
+      "venue": "RecSys (Industry)",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2606.20554"
+        }
+      ]
+    },
+    {
+      "id": "2606.25147",
+      "title": "TokenMinds",
+      "collection": "related",
+      "category": "generative-recommendation",
+      "affiliation": "Google / YouTube",
+      "venue": "",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2606.25147"
+        }
+      ]
+    },
+    {
+      "id": "2606.25496",
+      "title": "RaG (Recommendation as Generation)",
+      "collection": "related",
+      "category": "generative-recommendation",
+      "affiliation": "Kuaishou",
+      "venue": "",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2606.25496"
+        }
+      ]
+    },
+    {
+      "id": "2606.31984",
+      "title": "GR2 Technical Report",
+      "collection": "related",
+      "category": "generative-recommendation",
+      "affiliation": "Meta",
+      "venue": "",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2606.31984"
+        }
+      ]
+    },
+    {
+      "id": "2606.31031",
+      "title": "GenPage",
+      "collection": "related",
+      "category": "generative-recommendation",
+      "affiliation": "Netflix",
+      "venue": "RecSys (Industry)",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2606.31031"
+        }
+      ]
+    },
+    {
+      "id": "2607.01170",
+      "title": "Diffusion-GR2",
+      "collection": "related",
+      "category": "generative-recommendation",
+      "affiliation": "Meta",
+      "venue": "",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2607.01170"
+        }
+      ]
+    },
+    {
+      "id": "2606.31693",
+      "title": "ShopX",
+      "collection": "related",
+      "category": "generative-recommendation",
+      "affiliation": "Alibaba",
+      "venue": "",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2606.31693"
+        }
+      ]
+    },
+    {
+      "id": "2607.03362",
+      "title": "HGenPush",
+      "collection": "related",
+      "category": "generative-recommendation",
+      "affiliation": "Kuaishou",
+      "venue": "KDD (ADS)",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2607.03362"
+        }
+      ]
+    },
+    {
+      "id": "2607.04068",
+      "title": "UniSGR",
+      "collection": "related",
+      "category": "generative-recommendation",
+      "affiliation": "Alibaba",
+      "venue": "",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2607.04068"
+        }
+      ]
+    },
+    {
+      "id": "2601.04674",
+      "title": "PROMISE",
+      "collection": "related",
+      "category": "generative-recommendation",
+      "affiliation": "Kuaishou",
+      "venue": "RecSys (Industry)",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2601.04674"
+        }
+      ]
+    },
+    {
+      "id": "2607.02818",
+      "title": "Long-Term Optimization for Large-Scale GR",
+      "collection": "related",
+      "category": "generative-recommendation",
+      "affiliation": "VK",
+      "venue": "",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2607.02818"
+        }
+      ]
+    },
+    {
+      "id": "2607.08365",
+      "title": "DaV-Gen",
+      "collection": "related",
+      "category": "generative-recommendation",
+      "affiliation": "",
+      "venue": "",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2607.08365"
+        }
+      ]
+    },
+    {
+      "id": "2607.12277",
+      "title": "Not Only NTP",
+      "collection": "related",
+      "category": "generative-recommendation",
+      "affiliation": "Meituan",
+      "venue": "",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2607.12277"
+        }
+      ]
+    },
+    {
+      "id": "2607.12425",
+      "title": "Where Reasoning Matters",
+      "collection": "related",
+      "category": "generative-recommendation",
+      "affiliation": "",
+      "venue": "",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2607.12425"
+        }
+      ]
+    },
+    {
+      "id": "2607.11392",
+      "title": "CRID (Beyond Semantic IDs)",
+      "collection": "related",
+      "category": "generative-recommendation",
+      "affiliation": "Alibaba",
+      "venue": "",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2607.11392"
+        }
+      ]
+    },
+    {
+      "id": "2607.11326",
+      "title": "Prompt Generation Technical Report",
+      "collection": "related",
+      "category": "generative-recommendation",
+      "affiliation": "Alibaba",
+      "venue": "",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2607.11326"
+        }
+      ]
+    },
+    {
+      "id": "2607.15591",
+      "title": "RecGPT-V3",
+      "collection": "related",
+      "category": "generative-recommendation",
+      "affiliation": "Alibaba",
+      "venue": "",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2607.15591"
+        }
+      ]
+    },
+    {
+      "id": "2607.18796",
+      "title": "TSGR",
+      "collection": "related",
+      "category": "generative-recommendation",
+      "affiliation": "Alibaba",
+      "venue": "",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2607.18796"
+        }
+      ]
+    },
+    {
+      "id": "2607.21028",
+      "title": "BARGE",
+      "collection": "related",
+      "category": "generative-recommendation",
+      "affiliation": "Tencent",
+      "venue": "",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2607.21028"
+        }
+      ]
+    },
+    {
+      "id": "2607.21519",
+      "title": "DLMRec",
+      "collection": "related",
+      "category": "generative-recommendation",
+      "affiliation": "Tencent",
+      "venue": "",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2607.21519"
+        }
+      ]
+    },
+    {
+      "id": "2602.05663",
+      "title": "GLASS",
+      "collection": "related",
+      "category": "generative-recommendation",
+      "affiliation": "Kuaishou",
+      "venue": "RecSys",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2602.05663"
+        }
+      ]
+    },
+    {
+      "id": "2607.26500",
+      "title": "Multi-Decoder OneRec",
+      "collection": "related",
+      "category": "generative-recommendation",
+      "affiliation": "Kuaishou",
+      "venue": "",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2607.26500"
+        }
+      ]
+    },
+    {
+      "id": "2607.26621",
+      "title": "WhisperRec",
+      "collection": "related",
+      "category": "generative-recommendation",
+      "affiliation": "Kuaishou",
+      "venue": "",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2607.26621"
+        }
+      ]
+    },
+    {
+      "id": "2605.05803",
+      "title": "UniVA",
+      "collection": "related",
+      "category": "generative-recommendation",
+      "affiliation": "Tencent",
+      "venue": "",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2605.05803"
+        }
+      ]
+    },
+    {
+      "id": "2607.26073",
+      "title": "Gwhere",
+      "collection": "related",
+      "category": "generative-recommendation",
+      "affiliation": "Alibaba",
+      "venue": "RecSys (Industry)",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2607.26073"
+        }
+      ]
+    },
+    {
+      "id": "2608.06213",
+      "title": "Gryphon-v2",
+      "collection": "related",
+      "category": "generative-recommendation",
+      "affiliation": "Yandex",
+      "venue": "",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2608.06213"
+        }
+      ]
+    },
+    {
+      "id": "2608.03150",
+      "title": "UniGD",
+      "collection": "related",
+      "category": "generative-recommendation",
+      "affiliation": "Kuaishou",
+      "venue": "",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2608.03150"
+        }
+      ]
+    },
+    {
+      "id": "2607.27647",
+      "title": "LoopMemGR",
+      "collection": "related",
+      "category": "generative-recommendation",
+      "affiliation": "Alibaba",
+      "venue": "",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2607.27647"
+        }
+      ]
+    },
+    {
+      "id": "2607.24439",
+      "title": "UniR²",
+      "collection": "related",
+      "category": "generative-recommendation",
+      "affiliation": "Kuaishou",
+      "venue": "",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2607.24439"
+        }
+      ]
+    },
+    {
+      "id": "2607.27944",
+      "title": "LGRID",
+      "collection": "related",
+      "category": "generative-recommendation",
+      "affiliation": "Meituan",
+      "venue": "",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2607.27944"
+        }
+      ]
+    },
+    {
+      "id": "2607.27789",
+      "title": "Feedback-Grounded Policy Discovery",
+      "collection": "related",
+      "category": "generative-recommendation",
+      "affiliation": "",
+      "venue": "",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2607.27789"
+        }
+      ]
+    },
+    {
+      "id": "2607.27682",
+      "title": "Restoring Collaborative Signals in SID-based GR",
+      "collection": "related",
+      "category": "generative-recommendation",
+      "affiliation": "",
+      "venue": "",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2607.27682"
+        }
+      ]
+    },
+    {
+      "id": "2608.11980",
+      "title": "HCGRec",
+      "collection": "related",
+      "category": "generative-recommendation",
+      "affiliation": "",
+      "venue": "CIKM",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2608.11980"
+        }
+      ]
+    },
+    {
+      "id": "2608.09634",
+      "title": "IntHQ",
+      "collection": "related",
+      "category": "generative-recommendation",
+      "affiliation": "Alibaba",
+      "venue": "",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2608.09634"
+        }
+      ]
+    },
+    {
+      "id": "2607.28895",
+      "title": "SnapLGR",
+      "collection": "related",
+      "category": "generative-recommendation",
+      "affiliation": "Snap",
+      "venue": "",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2607.28895"
+        }
+      ]
+    },
+    {
+      "id": "2607.29010",
+      "title": "EvoReason",
+      "collection": "related",
+      "category": "generative-recommendation",
+      "affiliation": "",
+      "venue": "",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2607.29010"
+        }
+      ]
+    },
+    {
+      "id": "2608.02048",
+      "title": "SmartGR",
+      "collection": "related",
+      "category": "generative-recommendation",
+      "affiliation": "",
+      "venue": "",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2608.02048"
+        }
+      ]
+    },
+    {
+      "id": "2608.00750",
+      "title": "HRPO",
+      "collection": "related",
+      "category": "generative-recommendation",
+      "affiliation": "",
+      "venue": "",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2608.00750"
+        }
+      ]
+    },
+    {
+      "id": "2607.25339",
+      "title": "SPARC",
+      "collection": "related",
+      "category": "generative-recommendation",
+      "affiliation": "Alibaba",
+      "venue": "",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2607.25339"
+        }
+      ]
+    },
+    {
+      "id": "2608.00816",
+      "title": "Exp-RSFT",
+      "collection": "related",
+      "category": "generative-recommendation",
+      "affiliation": "Pinterest",
+      "venue": "",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2608.00816"
+        }
+      ]
+    },
+    {
+      "id": "2608.17613",
+      "title": "OGR (Once Generated, Ranked)",
+      "collection": "related",
+      "category": "generative-recommendation",
+      "affiliation": "Kuaishou",
+      "venue": "",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2608.17613"
+        }
+      ]
+    },
+    {
+      "id": "2608.18952",
+      "title": "rEDMRec",
+      "collection": "related",
+      "category": "generative-recommendation",
+      "affiliation": "",
+      "venue": "",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2608.18952"
+        }
+      ]
+    },
+    {
+      "id": "2509.25522",
+      "title": "Understanding SID-based GR from a Model-scaling View",
+      "collection": "related",
+      "category": "generative-recommendation",
+      "affiliation": "Academic",
+      "venue": "KDD",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2509.25522"
+        }
+      ]
+    },
+    {
+      "id": "2601.17787",
+      "title": "Beyond Uniform Token Training",
+      "collection": "related",
+      "category": "generative-recommendation",
+      "affiliation": "Academic",
+      "venue": "",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2601.17787"
+        }
+      ]
+    },
+    {
+      "id": "2608.21012",
+      "title": "Single-Level Large Semantic Codebook",
+      "collection": "related",
+      "category": "generative-recommendation",
+      "affiliation": "Kuaishou",
+      "venue": "",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2608.21012"
+        }
+      ]
+    },
+    {
+      "id": "2609.03313",
+      "title": "SelfDR",
+      "collection": "related",
+      "category": "generative-recommendation",
+      "affiliation": "",
+      "venue": "",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2609.03313"
+        }
+      ]
+    },
+    {
+      "id": "2609.03369",
+      "title": "HypRQ-VAE",
+      "collection": "related",
+      "category": "generative-recommendation",
+      "affiliation": "",
+      "venue": "",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2609.03369"
+        }
+      ]
+    },
+    {
+      "id": "2609.03522",
+      "title": "EPIC",
+      "collection": "related",
+      "category": "generative-recommendation",
+      "affiliation": "",
+      "venue": "",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2609.03522"
+        }
+      ]
+    },
+    {
+      "id": "2608.29652",
+      "title": "ICEGR",
+      "collection": "related",
+      "category": "generative-recommendation",
+      "affiliation": "Baidu",
+      "venue": "",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2608.29652"
+        }
+      ]
+    },
+    {
+      "id": "2609.36688",
+      "title": "GRP v0.1 Technical Report",
+      "collection": "related",
+      "category": "generative-recommendation",
+      "affiliation": "Snap",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2609.36688"
+        }
+      ]
+    },
+    {
+      "id": "2609.36670",
+      "title": "FineSID: Scalable and Efficient Semantic Identifier Learning for Generative Recommendation",
+      "collection": "related",
+      "category": "generative-recommendation",
+      "affiliation": "Tsinghua University / Huawei Noah’s Ark Lab / University of Science and Technology of China",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2609.36670"
+        }
+      ]
+    },
+    {
+      "id": "2609.34306",
+      "title": "SPRINT: Single-Step Generative Recommendation via Average Probability Velocity",
+      "collection": "related",
+      "category": "generative-recommendation",
+      "affiliation": "University of Technology Sydney / New York University Abu Dhabi / University of California, San Diego",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2609.34306"
+        }
+      ]
+    },
+    {
+      "id": "2512.14041",
+      "title": "GE4Rec",
+      "collection": "related",
+      "category": "generative-pre-training-for-ctr",
+      "affiliation": "Tencent",
+      "venue": "",
+      "year": 2025,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2512.14041"
+        }
+      ]
+    },
+    {
+      "id": "2506.03699",
+      "title": "GPSD",
+      "collection": "related",
+      "category": "generative-pre-training-for-ctr",
+      "affiliation": "Alibaba",
+      "venue": "KDD",
+      "year": 2025,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2506.03699"
+        }
+      ]
+    },
+    {
+      "id": "2605.24986",
+      "title": "HeteGenCTR",
+      "collection": "related",
+      "category": "generative-pre-training-for-ctr",
+      "affiliation": "Alibaba",
+      "venue": "",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2605.24986"
+        }
+      ]
+    },
+    {
+      "id": "2608.02738",
+      "title": "KGD",
+      "collection": "related",
+      "category": "generative-pre-training-for-ctr",
+      "affiliation": "Shopee",
+      "venue": "",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2608.02738"
+        }
+      ]
+    },
+    {
+      "id": "2411.16122",
+      "title": "KDEF",
+      "collection": "related",
+      "category": "knowledge-distillation-compression",
+      "affiliation": "",
+      "venue": "",
+      "year": 2024,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2411.16122"
+        }
+      ]
+    },
+    {
+      "id": "2605.29280",
+      "title": "LoopFM",
+      "collection": "related",
+      "category": "knowledge-distillation-compression",
+      "affiliation": "Meta",
+      "venue": "",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2605.29280"
+        }
+      ]
+    },
+    {
+      "id": "2605.29755",
+      "title": "Rec-Distill",
+      "collection": "related",
+      "category": "knowledge-distillation-compression",
+      "affiliation": "ByteDance",
+      "venue": "",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2605.29755"
+        }
+      ]
+    },
+    {
+      "id": "2608.08627",
+      "title": "UniMoMo",
+      "collection": "related",
+      "category": "knowledge-distillation-compression",
+      "affiliation": "",
+      "venue": "",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2608.08627"
+        }
+      ]
+    },
+    {
+      "id": "2510.18239",
+      "title": "LIME",
+      "collection": "related",
+      "category": "engineering-serving",
+      "affiliation": "",
+      "venue": "",
+      "year": 2025,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2510.18239"
+        }
+      ]
+    },
+    {
+      "id": "2605.27450",
+      "title": "Context Features Are Cheap",
+      "collection": "related",
+      "category": "engineering-serving",
+      "affiliation": "",
+      "venue": "",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2605.27450"
+        }
+      ]
+    },
+    {
+      "id": "2603.11486",
+      "title": "Quantized Inference for OneRec-V2",
+      "collection": "related",
+      "category": "engineering-serving",
+      "affiliation": "Kuaishou",
+      "venue": "",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2603.11486"
+        }
+      ]
+    },
+    {
+      "id": "2604.12110",
+      "title": "SOLARIS",
+      "collection": "related",
+      "category": "engineering-serving",
+      "affiliation": "Meta",
+      "venue": "SIGIR",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2604.12110"
+        }
+      ]
+    },
+    {
+      "id": "2604.24073",
+      "title": "FreeScale",
+      "collection": "related",
+      "category": "engineering-serving",
+      "affiliation": "Meta",
+      "venue": "MLSys",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2604.24073"
+        }
+      ]
+    },
+    {
+      "id": "2604.24806",
+      "title": "Versioned Late Materialization",
+      "collection": "related",
+      "category": "engineering-serving",
+      "affiliation": "Meta",
+      "venue": "RecSys (Industry)",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2604.24806"
+        }
+      ]
+    },
+    {
+      "id": "2605.00324",
+      "title": "Intelligent Elastic Feature Fading",
+      "collection": "related",
+      "category": "engineering-serving",
+      "affiliation": "",
+      "venue": "",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2605.00324"
+        }
+      ]
+    },
+    {
+      "id": "2605.13433",
+      "title": "TurboGR",
+      "collection": "related",
+      "category": "engineering-serving",
+      "affiliation": "",
+      "venue": "",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2605.13433"
+        }
+      ]
+    },
+    {
+      "id": "2601.01712",
+      "title": "RelayGR",
+      "collection": "related",
+      "category": "engineering-serving",
+      "affiliation": "Huawei",
+      "venue": "",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2601.01712"
+        }
+      ]
+    },
+    {
+      "id": "2606.21101",
+      "title": "DPIFrame",
+      "collection": "related",
+      "category": "engineering-serving",
+      "affiliation": "",
+      "venue": "",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2606.21101"
+        }
+      ]
+    },
+    {
+      "id": "2607.10044",
+      "title": "FlashTrie",
+      "collection": "related",
+      "category": "engineering-serving",
+      "affiliation": "Microsoft",
+      "venue": "",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2607.10044"
+        }
+      ]
+    },
+    {
+      "id": "2602.22647",
+      "title": "STATIC",
+      "collection": "related",
+      "category": "engineering-serving",
+      "affiliation": "Google / YouTube",
+      "venue": "KDD",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2602.22647"
+        }
+      ]
+    },
+    {
+      "id": "2607.27744",
+      "title": "ROCS",
+      "collection": "related",
+      "category": "engineering-serving",
+      "affiliation": "Meta",
+      "venue": "",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2607.27744"
+        }
+      ]
+    },
+    {
+      "id": "2608.00938",
+      "title": "GRACE",
+      "collection": "related",
+      "category": "engineering-serving",
+      "affiliation": "Meta",
+      "venue": "",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2608.00938"
+        }
+      ]
+    },
+    {
+      "id": "2508.04711",
+      "title": "Context Parallelism for HSTU",
+      "collection": "related",
+      "category": "engineering-serving",
+      "affiliation": "Meta",
+      "venue": "RecSys",
+      "year": 2025,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2508.04711"
+        }
+      ]
+    },
+    {
+      "id": "2605.04450",
+      "title": "RACER",
+      "collection": "related",
+      "category": "engineering-serving",
+      "affiliation": "HKBU / Alibaba",
+      "venue": "",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2605.04450"
+        }
+      ]
+    },
+    {
+      "id": "2609.30656",
+      "title": "Component Benchmark: Hierarchical Model Profiling for Large-scale Recommendation Systems",
+      "collection": "related",
+      "category": "engineering-serving",
+      "affiliation": "Meta",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2609.30656"
+        }
+      ]
+    },
+    {
+      "id": "2603.04816",
+      "title": "Scaling Laws for Cross-Encoder Reranking",
+      "collection": "related",
+      "category": "retrieval-reranking-scaling",
+      "affiliation": "Academic",
+      "venue": "",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2603.04816"
+        }
+      ]
+    },
+    {
+      "id": "2605.27810",
+      "title": "LRanker",
+      "collection": "related",
+      "category": "retrieval-reranking-scaling",
+      "affiliation": "UIUC",
+      "venue": "",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2605.27810"
+        }
+      ]
+    },
+    {
+      "id": "2604.12965",
+      "title": "Efficient Retrieval Scaling with Hierarchical Indexing",
+      "collection": "related",
+      "category": "retrieval-reranking-scaling",
+      "affiliation": "Meta",
+      "venue": "",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2604.12965"
+        }
+      ]
+    },
+    {
+      "id": "2606.13533",
+      "title": "OneRetrieval",
+      "collection": "related",
+      "category": "retrieval-reranking-scaling",
+      "affiliation": "Kuaishou",
+      "venue": "",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2606.13533"
+        }
+      ]
+    },
+    {
+      "id": "2606.18379",
+      "title": "RankGraph-2",
+      "collection": "related",
+      "category": "retrieval-reranking-scaling",
+      "affiliation": "Meta",
+      "venue": "RecSys (Industry)",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2606.18379"
+        }
+      ]
+    },
+    {
+      "id": "2607.12392",
+      "title": "MESH",
+      "collection": "related",
+      "category": "retrieval-reranking-scaling",
+      "affiliation": "Pinterest",
+      "venue": "RecSys (Industry)",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2607.12392"
+        }
+      ]
+    },
+    {
+      "id": "2607.10096",
+      "title": "Scaling and Stabilizing Large-Scale EBR",
+      "collection": "related",
+      "category": "retrieval-reranking-scaling",
+      "affiliation": "Walmart",
+      "venue": "",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2607.10096"
+        }
+      ]
+    },
+    {
+      "id": "2607.27475",
+      "title": "OneShot",
+      "collection": "related",
+      "category": "retrieval-reranking-scaling",
+      "affiliation": "",
+      "venue": "",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2607.27475"
+        }
+      ]
+    },
+    {
+      "id": "2608.25528",
+      "title": "TransRetrieval",
+      "collection": "related",
+      "category": "retrieval-reranking-scaling",
+      "affiliation": "Alibaba",
+      "venue": "CIKM",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2608.25528"
+        }
+      ]
+    },
+    {
+      "id": "2609.39327",
+      "title": "Generative End-to-end Ad Retrieval at Douyin",
+      "collection": "related",
+      "category": "retrieval-reranking-scaling",
+      "affiliation": "ByteDance",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2609.39327"
+        }
+      ]
+    },
+    {
+      "id": "2609.29180",
+      "title": "X-Rec Technical Report",
+      "collection": "related",
+      "category": "retrieval-reranking-scaling",
+      "affiliation": "ByteDance (TikTok)",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2609.29180"
+        }
+      ]
+    },
+    {
+      "id": "2609.30601",
+      "title": "Embedding Subspace Partitioning for Dynamic Multi-Objective Retrieval",
+      "collection": "related",
+      "category": "retrieval-reranking-scaling",
+      "affiliation": "LinkedIn",
+      "venue": "RecSys (Industry)",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2609.30601"
+        }
+      ]
+    },
+    {
+      "id": "2606.16825",
+      "title": "Tying the Loop -- Tied Expert Layers in Mixture-of-Experts Language Models",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "",
+      "venue": "",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2606.16825"
+        }
+      ]
+    },
+    {
+      "id": "2606.16768",
+      "title": "Taming Curvature: Architecture Warm-Up for Stable Transformer Training",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "",
+      "venue": "",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2606.16768"
+        }
+      ]
+    },
+    {
+      "id": "2606.16429",
+      "title": "Taylor-Calibrate: Principled Initialization for Hybrid Linear Attention Distillation",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "",
+      "venue": "",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2606.16429"
+        }
+      ]
+    },
+    {
+      "id": "2606.16456",
+      "title": "SPRI: SVD-Partitioned Residual Initialization for Data-Constrained MoE Upcycling",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "",
+      "venue": "",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2606.16456"
+        }
+      ]
+    },
+    {
+      "id": "2606.17952",
+      "title": "SoftMoE: Soft Differentiable Routing for Mixture-of-Experts in LLMs",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "",
+      "venue": "ICML",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2606.17952"
+        }
+      ]
+    },
+    {
+      "id": "2606.23670",
+      "title": "Tapered Language Models",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "Mila",
+      "venue": "",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2606.23670"
+        }
+      ]
+    },
+    {
+      "id": "2606.25010",
+      "title": "Emergent Capabilities Arise Randomly from Learning Sparse Attention Patterns",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "",
+      "venue": "",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2606.25010"
+        }
+      ]
+    },
+    {
+      "id": "2606.25008",
+      "title": "Neural Scaling Universality",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "",
+      "venue": "",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2606.25008"
+        }
+      ]
+    },
+    {
+      "id": "2606.29858",
+      "title": "Smooth Scaling Laws Hide Stepwise Token Learning",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "",
+      "venue": "",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2606.29858"
+        }
+      ]
+    },
+    {
+      "id": "2603.04971",
+      "title": "MoUE (Mixture of Universal Experts)",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "Baidu",
+      "venue": "",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2603.04971"
+        }
+      ]
+    },
+    {
+      "id": "2604.09175",
+      "title": "Generalization and Scaling Laws for MoE Transformers",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "Academic",
+      "venue": "",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2604.09175"
+        }
+      ]
+    },
+    {
+      "id": "2603.21862",
+      "title": "Holistic MoE Scaling",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "Academic",
+      "venue": "",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2603.21862"
+        }
+      ]
+    },
+    {
+      "id": "2607.02980",
+      "title": "HiLS",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "",
+      "venue": "",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2607.02980"
+        }
+      ]
+    },
+    {
+      "id": "2607.02303",
+      "title": "HOLA (Hippocampal Linear Attention)",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "Academic",
+      "venue": "",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2607.02303"
+        }
+      ]
+    },
+    {
+      "id": "2607.07386",
+      "title": "SDM (Sparse Delta Memory)",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "Meta",
+      "venue": "",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2607.07386"
+        }
+      ]
+    },
+    {
+      "id": "2607.08186",
+      "title": "Hidden Decoding at Scale",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "WeChat AI",
+      "venue": "",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2607.08186"
+        }
+      ]
+    },
+    {
+      "id": "2607.10034",
+      "title": "MLPs are Hebbians",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "Stanford",
+      "venue": "",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2607.10034"
+        }
+      ]
+    },
+    {
+      "id": "2607.07706",
+      "title": "The Key to Going Linear",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "Qualcomm AI Research",
+      "venue": "NeurIPS",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2607.07706"
+        }
+      ]
+    },
+    {
+      "id": "2607.13491",
+      "title": "DeepLoop",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "",
+      "venue": "",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2607.13491"
+        }
+      ]
+    },
+    {
+      "id": "2607.14530",
+      "title": "xHC (Expanded Hyper-Connections)",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "",
+      "venue": "",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2607.14530"
+        }
+      ]
+    },
+    {
+      "id": "2607.14018",
+      "title": "Transforming Rank",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "",
+      "venue": "",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2607.14018"
+        }
+      ]
+    },
+    {
+      "id": "2607.16051",
+      "title": "Loopie (Loop the Loopies!)",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "",
+      "venue": "",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2607.16051"
+        }
+      ]
+    },
+    {
+      "id": "2603.15031",
+      "title": "Attention Residuals (AttnRes)",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "Kimi",
+      "venue": "",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2603.15031"
+        }
+      ]
+    },
+    {
+      "id": "2607.27230",
+      "title": "MHAR (Multi-Head Attention Residuals)",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "Academic",
+      "venue": "",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2607.27230"
+        }
+      ]
+    },
+    {
+      "id": "2602.06154",
+      "title": "MoSE (Mixture of Slimmable Experts)",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "MBZUAI / Amazon",
+      "venue": "ICML",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2602.06154"
+        }
+      ]
+    },
+    {
+      "id": "2308.00951",
+      "title": "Soft MoE (From Sparse to Soft Mixtures of Experts)",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "Google",
+      "venue": "ICLR",
+      "year": 2024,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2308.00951"
+        }
+      ]
+    },
+    {
+      "id": "2412.14219",
+      "title": "A Survey on Inference Optimization Techniques for Mixture of Experts Models",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "CUHK / SJTU",
+      "venue": "ACM Computing Surveys",
+      "year": 2025,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2412.14219"
+        }
+      ]
+    },
+    {
+      "id": "2609.01343",
+      "title": "SMELT: Scaling Laws for Compute-Matched MoE Looped Transformers",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "",
+      "venue": "",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2609.01343"
+        }
+      ]
+    },
+    {
+      "id": "2609.02881",
+      "title": "Graph Machine: Towards Better Pretraining via Edges",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "",
+      "venue": "",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2609.02881"
+        }
+      ]
+    },
+    {
+      "id": "2608.27763",
+      "title": "Fast Weight Attention for Continual Learning (Falcon)",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "Academic",
+      "venue": "",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2608.27763"
+        }
+      ]
+    },
+    {
+      "id": "2609.04575",
+      "title": "Training-Free Halving of Activated Experts in Fine-Grained MoE",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "University of Alberta",
+      "venue": "",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2609.04575"
+        }
+      ]
+    },
+    {
+      "id": "2609.40316",
+      "title": "Scaling Laws for Looped Mixture of Experts",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "Meta AI",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2609.40316"
+        }
+      ]
+    },
+    {
+      "id": "2609.35751",
+      "title": "How to Loop MoE: Flatten the Experts, Untie the Attention",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "Case Western Reserve University / Kyoto University / NII LLMC",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2609.35751"
+        }
+      ]
+    },
+    {
+      "id": "2609.36301",
+      "title": "MoRE: Scaling mixture of experts with hardware-aware low-rank routing",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "University of Pennsylvania / The Wharton School",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2609.36301"
+        }
+      ]
+    },
+    {
+      "id": "2609.31093",
+      "title": "Block Sparse Attention with Log-Linear Complexity",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "Shanghai Jiao Tong University / Shanghai Innovation Institute / ByteDance Seed",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2609.31093"
+        }
+      ]
+    },
+    {
+      "id": "2609.36529",
+      "title": "Triadic Linear Attention: Three-Dimensional Recurrent States for Long-Context Sequence Modeling",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "Massachusetts Institute of Technology / MIT-IBM Computing Research Lab",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2609.36529"
+        }
+      ]
+    },
+    {
+      "id": "2609.38832",
+      "title": "Scaling Parameter and Context in Attention: Native Sparse Attention from Mixture-of-Head",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "Peking University",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2609.38832"
+        }
+      ]
+    },
+    {
+      "id": "2609.34212",
+      "title": "X-MoD: Practical Scaling Laws for Sparse-Depth Routing Beyond Mixture-of-Depths",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "Tsinghua University / Tianjin University",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2609.34212"
+        }
+      ]
+    },
+    {
+      "id": "2609.32704",
+      "title": "CoWindow Attention: Full Causal Coverage Is a Collective Property",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "HKUST (Guangzhou) / Beijing Academy of Artificial Intelligence / Université Paris Cité",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2609.32704"
+        }
+      ]
+    },
+    {
+      "id": "2609.38166",
+      "title": "LeapQuant: Efficient Linear Attention with Accurate Recurrent State Quantization",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "UC Berkeley / University of Washington / MIT / Perplexity AI / NVIDIA",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2609.38166"
+        }
+      ]
+    },
+    {
+      "id": "2609.39137",
+      "title": "ID Balancing: Stable Training of Extremely Sparse MoE via PID-Based Load Control",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "Qwen Team / Alibaba Token Hub / Alibaba Group",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2609.39137"
+        }
+      ]
+    },
+    {
+      "id": "2609.39034",
+      "title": "Switching Linear Attention",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "Stanford University",
+      "venue": "COLM",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2609.39034"
+        }
+      ]
+    },
+    {
+      "id": "2609.35664",
+      "title": "MS-GLA: Multi-Scale Gated Linear Attention for Addressing Representational Bottlenecks via Multi-Temporal Resolution",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "International Institute of Information Technology Hyderabad",
+      "venue": "COLM",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2609.35664"
+        }
+      ]
+    },
+    {
+      "id": "2609.37379",
+      "title": "Looped Transformers as Optimizers",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "HKUST (Guangzhou) / StepFun / Shanghai Jiao Tong University / University of Chinese Academy of Sciences / Tsinghua University",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2609.37379"
+        }
+      ]
+    },
+    {
+      "id": "2609.29812",
+      "title": "FlashLoop: Fast and Memory-Efficient Looped Transformers via Lazy Updates",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "ELLIS Institute Tübingen / Max Planck Institute for Intelligent Systems / Tübingen AI Center",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2609.29812"
+        }
+      ]
+    },
+    {
+      "id": "2609.36314",
+      "title": "Fractional State Space Transition for Long Sequence Modeling",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "Huawei Noah’s Ark Lab, Montreal Research Center",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2609.36314"
+        }
+      ]
+    },
+    {
+      "id": "2602.04852",
+      "title": "On State Reduction in Linear Attention",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "Max Planck Institute for Intelligent Systems / ETH Zürich / ELLIS Institute Tübingen / Tübingen AI Center / Liquid AI",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2602.04852"
+        }
+      ]
+    },
+    {
+      "id": "2605.23893",
+      "title": "Complete-muE: Optimal Hyperparameter Transfer and Scaling for MoE Models",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "Adobe Research",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2605.23893"
+        }
+      ]
+    },
+    {
+      "id": "2609.30820",
+      "title": "Quantizing Looped Transformers: Feedback Exposure and Calibration Blindness",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "Meta",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2609.30820"
+        }
+      ]
+    },
+    {
+      "id": "2609.07816",
+      "title": "Kalman Delta Networks: Uncertainty-aware Associative Memory",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "Yale University",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2609.07816"
+        }
+      ]
+    },
+    {
+      "id": "2609.32712",
+      "title": "MassAlloc Attention: Let Attention Allocate Its Own Compute",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "HKUST (Guangzhou) / Beijing Academy of Artificial Intelligence / Université Paris Cité",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2609.32712"
+        }
+      ]
+    },
+    {
+      "id": "2609.31947",
+      "title": "On-Policy Attention Linearization",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "Carnegie Mellon University / Cornell University",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2609.31947"
+        }
+      ]
+    },
+    {
+      "id": "2411.13700",
+      "title": "CETNet",
+      "collection": "related",
+      "category": "other",
+      "affiliation": "Meta",
+      "venue": "",
+      "year": 2024,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2411.13700"
+        }
+      ]
+    },
+    {
+      "id": "2601.02807",
+      "title": "COFFEE",
+      "collection": "related",
+      "category": "other",
+      "affiliation": "Meta",
+      "venue": "",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2601.02807"
+        }
+      ]
+    },
+    {
+      "id": "2604.26489",
+      "title": "Understanding DNNs in Feature Interaction Models",
+      "collection": "related",
+      "category": "other",
+      "affiliation": "",
+      "venue": "SIGIR (Short)",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2604.26489"
+        }
+      ]
+    },
+    {
+      "id": "2607.09696",
+      "title": "Mitigating Early Training Collapse in CTR Models",
+      "collection": "related",
+      "category": "other",
+      "affiliation": "Huawei",
+      "venue": "",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2607.09696"
+        }
+      ]
+    },
+    {
+      "id": "2607.24804",
+      "title": "Bumblebee",
+      "collection": "related",
+      "category": "other",
+      "affiliation": "Industry",
+      "venue": "",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2607.24804"
+        }
+      ]
+    },
+    {
+      "id": "2607.27577",
+      "title": "HA-MoE",
+      "collection": "related",
+      "category": "other",
+      "affiliation": "Google",
+      "venue": "RecSys",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2607.27577"
+        }
+      ]
+    },
+    {
+      "id": "2608.07035",
+      "title": "MISO",
+      "collection": "related",
+      "category": "other",
+      "affiliation": "Industry",
+      "venue": "",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2608.07035"
+        }
+      ]
+    },
+    {
+      "id": "2609.34083",
+      "title": "Beyond One Epoch: Uncertainty-Weighted Sensitivity Regularization for Recommendation Models",
+      "collection": "related",
+      "category": "other",
+      "affiliation": "Meta",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2609.34083"
+        }
+      ]
+    }
+  ],
+  "company_overview": [
+    {
+      "id": "meta",
+      "name": "Meta",
+      "legacy_labels": [
+        "Understanding Scaling Laws",
+        "Wukong",
+        "HSTU",
+        "InterFormer",
+        "ULTRA-HSTU",
+        "Foundation-Expert",
+        "Kunlun",
+        "LLaTTE",
+        "DHEN",
+        "Principled Synthetic Data Scaling Laws",
+        "LoopFM",
+        "MoS",
+        "Memento",
+        "FreeScale",
+        "Efficient Retrieval Scaling",
+        "RankGraph-2",
+        "G2Rec",
+        "GR2 Technical Report",
+        "Diffusion-GR2",
+        "CMSL",
+        "SlimPer",
+        "WHALE",
+        "ROCS",
+        "GRACE",
+        "Context Parallelism for HSTU",
+        "AMBER",
+        "Component Benchmark",
+        "UWSR",
+        "Loop Scaling Laws",
+        "Quantizing Looped Transformers"
+      ]
+    },
+    {
+      "id": "bytedance-tiktok",
+      "name": "ByteDance / TikTok",
+      "legacy_labels": [
+        "RankMixer",
+        "OneTrans",
+        "HyFormer",
+        "Zenith",
+        "TokenMixer-Large",
+        "MSN",
+        "UG-Sep",
+        "MixFormer",
+        "Rec-Distill",
+        "LONGER",
+        "Make It Long Keep It Fast",
+        "TM20K",
+        "HELIX (TikTok)",
+        "OneTrans-V2",
+        "GEAR",
+        "X-Rec (TikTok)",
+        "PISA (Seed)"
+      ]
+    },
+    {
+      "id": "alibaba",
+      "name": "Alibaba",
+      "legacy_labels": [
+        "GPSD",
+        "FAT",
+        "HHFT",
+        "EST",
+        "HeteroMixer",
+        "SORT",
+        "Beyond Dense Connectivity",
+        "LoopCTR",
+        "UTTSI",
+        "HeteGenCTR",
+        "ENCODE",
+        "MUSE",
+        "SSRLive",
+        "LUM",
+        "ShopX",
+        "UniSGR",
+        "TMallGS",
+        "CRID",
+        "Prompt Generation",
+        "RecGPT-V3",
+        "TSGR",
+        "Gwhere",
+        "LoopMemGR",
+        "IntHQ",
+        "RACER",
+        "TransRetrieval",
+        "STAMP",
+        "PRIME",
+        "SPARC",
+        "ID Balancing"
+      ]
+    },
+    {
+      "id": "meituan",
+      "name": "Meituan",
+      "legacy_labels": [
+        "SUAN",
+        "MTFM",
+        "MTmixAtt",
+        "SparseCTR",
+        "Next-Scale Generative Reranking",
+        "Not Only NTP",
+        "LGRID"
+      ]
+    },
+    {
+      "id": "tencent",
+      "name": "Tencent",
+      "legacy_labels": [
+        "GE4Rec",
+        "TokenFormer",
+        "RankUp (Weixin)",
+        "RankElastor",
+        "SIREN (Weixin)",
+        "HiGR",
+        "BARGE",
+        "DLMRec",
+        "UniVA (Weixin)",
+        "CCFormer",
+        "KuaFu"
+      ]
+    },
+    {
+      "id": "google",
+      "name": "Google",
+      "legacy_labels": [
+        "Hiformer",
+        "Beyond Item IDs",
+        "Token Factory",
+        "TokenMinds",
+        "STATIC",
+        "HA-MoE",
+        "RECAP"
+      ]
+    },
+    {
+      "id": "linkedin",
+      "name": "LinkedIn",
+      "legacy_labels": [
+        "LiRank",
+        "CADET",
+        "TransX",
+        "ESP"
+      ]
+    },
+    {
+      "id": "netease",
+      "name": "NetEase",
+      "legacy_labels": [
+        "Climber",
+        "Climber-Pilot"
+      ]
+    },
+    {
+      "id": "kuaishou",
+      "name": "Kuaishou",
+      "legacy_labels": [
+        "UniMixer",
+        "INFNet",
+        "CHIME",
+        "VQL",
+        "OneRec-V2 Quantized",
+        "OneReason",
+        "OneRetrieval",
+        "RaG",
+        "UniFormer",
+        "POEM",
+        "HGenPush",
+        "PROMISE",
+        "GLASS",
+        "Multi-Decoder OneRec",
+        "WhisperRec",
+        "UniR²",
+        "UniGD",
+        "OGR",
+        "Single-Level Large Semantic Codebook",
+        "HubMixer",
+        "SOLAR"
+      ]
+    },
+    {
+      "id": "huawei",
+      "name": "Huawei",
+      "legacy_labels": [
+        "RelayGR",
+        "Mitigating Early Training Collapse",
+        "SITA",
+        "FineSID",
+        "FRAC"
+      ]
+    },
+    {
+      "id": "baidu",
+      "name": "Baidu",
+      "legacy_labels": [
+        "MoUE",
+        "ICEGR"
+      ]
+    },
+    {
+      "id": "shopee",
+      "name": "Shopee",
+      "legacy_labels": [
+        "OnePiece",
+        "OneRank",
+        "KGD"
+      ]
+    },
+    {
+      "id": "coupang",
+      "name": "Coupang",
+      "legacy_labels": [
+        "Search CVR Scaling"
+      ]
+    },
+    {
+      "id": "netflix",
+      "name": "Netflix",
+      "legacy_labels": [
+        "Large-Scale Generative Recommenders",
+        "GenPage"
+      ]
+    },
+    {
+      "id": "tubi",
+      "name": "Tubi",
+      "legacy_labels": [
+        "TubiFM"
+      ]
+    },
+    {
+      "id": "pinterest",
+      "name": "Pinterest",
+      "legacy_labels": [
+        "ML-DCN",
+        "UniPinRec",
+        "MESH",
+        "Exp-RSFT"
+      ]
+    },
+    {
+      "id": "yandex",
+      "name": "Yandex",
+      "legacy_labels": [
+        "Scaling Recommender Transformers",
+        "Gryphon",
+        "Gryphon-v2",
+        "GBLA",
+        "Long-History User Transformers"
+      ]
+    },
+    {
+      "id": "jd",
+      "name": "JD",
+      "legacy_labels": [
+        "GenRec",
+        "AdaGRPO",
+        "OCP"
+      ]
+    },
+    {
+      "id": "vk",
+      "name": "VK",
+      "legacy_labels": [
+        "Long-Term Optimization for Large-Scale GR"
+      ]
+    },
+    {
+      "id": "microsoft",
+      "name": "Microsoft",
+      "legacy_labels": [
+        "FlashTrie"
+      ]
+    },
+    {
+      "id": "walmart",
+      "name": "Walmart",
+      "legacy_labels": [
+        "Scaling and Stabilizing Large-Scale EBR"
+      ]
+    },
+    {
+      "id": "snap",
+      "name": "Snap",
+      "legacy_labels": [
+        "SnapLGR",
+        "GRP v0.1"
+      ]
+    },
+    {
+      "id": "xiaohongshu",
+      "name": "Xiaohongshu",
+      "legacy_labels": [
+        "OneModel",
+        "GateDiffInt"
+      ]
+    },
+    {
+      "id": "amazon",
+      "name": "Amazon",
+      "legacy_labels": [
+        "SPD"
+      ]
+    },
+    {
+      "id": "capital-one",
+      "name": "Capital One",
+      "legacy_labels": [
+        "DP-Rec"
+      ]
+    },
+    {
+      "id": "shopify",
+      "name": "Shopify",
+      "legacy_labels": [
+        "T-RoPE"
+      ]
+    },
+    {
+      "id": "liquid-ai",
+      "name": "Liquid AI",
+      "legacy_labels": [
+        "T-RoPE",
+        "State Reduction in Linear Attention"
+      ]
+    },
+    {
+      "id": "ibm-mit-ibm-computing-research-lab",
+      "name": "IBM (MIT-IBM Computing Research Lab)",
+      "legacy_labels": [
+        "Triadic Linear Attention"
+      ]
+    },
+    {
+      "id": "perplexity-ai",
+      "name": "Perplexity AI",
+      "legacy_labels": [
+        "LeapQuant"
+      ]
+    },
+    {
+      "id": "nvidia",
+      "name": "NVIDIA",
+      "legacy_labels": [
+        "LeapQuant"
+      ]
+    },
+    {
+      "id": "stepfun",
+      "name": "StepFun",
+      "legacy_labels": [
+        "OperLoop"
+      ]
+    },
+    {
+      "id": "adobe-research",
+      "name": "Adobe Research",
+      "legacy_labels": [
+        "Complete-muE"
+      ]
+    }
+  ]
+}

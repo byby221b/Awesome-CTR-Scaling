@@ -10,288 +10,288 @@ Generative retrieval, recommendation and ranking beyond discriminative CTR.
 
 <a id="paper-2605-12617"></a>
 
-- **SID-MLP**: MLP-centric distillation of attention-heavy generative recommender decoders; 8.74× inference speedup — [Paper](https://arxiv.org/abs/2605.12617) (UCSD / Snap · 2026)
+- **SID-MLP**: SID-MLP observes that predicting later tokens of a hierarchical semantic identifier often needs less computation than predicting its first token. It encodes global user context once and distills an autoregressive teacher into position-specific MLP heads, preserving prefix dependencies while removing repeated decoder attention; an encoder-replacement variant explores a further speed-accuracy trade-off. — [Paper](https://arxiv.org/abs/2605.12617) (UCSD / Snap · 2026)
 
 <a id="paper-2605-23312"></a>
 
-- **Towards Generalizable and Efficient Large-Scale Generative Recommenders**: Addresses task headroom, repeated-training cost, serving latency, and item freshness for production GR — [Paper](https://arxiv.org/abs/2605.23312) (Netflix · RecSys (Industry) 2026)
+- **Towards Generalizable and Efficient Large-Scale Generative Recommenders**: This study shows that scaling a generative recommender produces task-dependent gains and must be coordinated with production constraints. It uses scaling-law fits to diagnose headroom, multi-token prediction to address cached-serving delays, efficient decoding heads for repeated training, and semantic item towers for new titles whose collaborative embeddings are still unreliable. — [Paper](https://arxiv.org/abs/2605.23312) (Netflix · RecSys (Industry) 2026)
 
 <a id="paper-2605-23702"></a>
 
-- **TubiFM**: Unified foundation model across item / carousel / search ranking for streaming discovery — [Paper](https://arxiv.org/abs/2605.23702) (Tubi · RecSys (Industry) 2026)
+- **TubiFM**: TubiFM serializes cross-surface watches, searches, sessions, and context into a shared 'user story' that mixes language and event tokens. A single prompted model then ranks items, carousels, or search results, using complementary discovery signals across tasks; online tests improved search and carousel viewing while simplifying the ranking stack. — [Paper](https://arxiv.org/abs/2605.23702) (Tubi · RecSys (Industry) 2026)
 
 <a id="paper-2605-25749"></a>
 
-- **DeGRe**: Dense-supervised generative reranking with offline-online decoupled design; deployed on Taobao Flash Shopping — [Paper](https://arxiv.org/abs/2605.25749) (Alibaba · KDD 2026)
+- **DeGRe**: DeGRe addresses biased reranking targets and sparse list-level rewards with offline lookahead supervision. An evaluator explores promising sequences through beam search and supplies step-wise value estimates to a lightweight generator, transferring planning into training so that online reranking can use a single efficient greedy-decoding pass. — [Paper](https://arxiv.org/abs/2605.25749) (Alibaba · KDD 2026)
 
 <a id="paper-2605-17779"></a>
 
-- **VarLenRec**: Variable-length tokenization for generative recommendation via hyperbolic residual quantization; addresses Popularity-Length Paradox — [Paper](https://arxiv.org/abs/2605.17779) (2026)
+- **VarLenRec**: VarLenRec finds that popular items can benefit from short identifiers, while tail items need longer codes to express discriminative content. It combines popularity-aware information allocation, hyperbolic residual quantization, and a differentiable length controller, assigning encoding capacity where it is most useful instead of imposing one fixed identifier length on every item. — [Paper](https://arxiv.org/abs/2605.17779) (2026)
 
 <a id="paper-2602-13581"></a>
 
-- **Climber-Pilot**: Non-myopic generative recommendation model addressing myopia in industrial scenarios via instruction-following; deployed at NetEase Cloud Music — [Paper](https://arxiv.org/abs/2602.13581) (NetEase · KDD 2026)
+- **Climber-Pilot**: Climber-Pilot addresses both short-sighted retrieval and the need to obey explicit business instructions. Time-aware multi-item prediction teaches longer-horizon consumption patterns without adding inference steps, while condition-guided sparse attention incorporates constraints into generation, allowing efficient single-step retrieval to consider broader user intent and controllable recommendation requirements. — [Paper](https://arxiv.org/abs/2602.13581) (NetEase · KDD 2026)
 
 <a id="paper-2603-02730"></a>
 
-- **APAO**: Adaptive prefix-aware optimization framework for generative recommendation with learnable prefix-aware objectives — [Paper](https://arxiv.org/abs/2603.02730) (Tsinghua · KDD 2026)
+- **APAO**: APAO targets the mismatch between teacher-forced token training and beam-search inference, where a useful item can disappear because an early prefix scores poorly. Prefix-level losses and adaptive emphasis on the weakest prefix train the model to preserve promising branches, aligning learning more closely with the pruning decisions made during retrieval. — [Paper](https://arxiv.org/abs/2603.02730) (Tsinghua · KDD 2026)
 
 <a id="paper-2604-05314"></a>
 
-- **Next-Scale Generative Reranking**: Tree-based generative rerank framework for multi-stage recommendation; deployed on Meituan food delivery — [Paper](https://arxiv.org/abs/2604.05314) (Meituan · 2026)
+- **Next-Scale Generative Reranking**: Next-Scale Generative Reranking builds a recommendation list progressively from coarse interests to finer choices using a tree-based generator. A matching multi-scale evaluator and neighbor loss provide guidance at each scale, addressing both local-versus-global planning and inconsistent training signals between generator and evaluator; the framework is deployed in Meituan food delivery. — [Paper](https://arxiv.org/abs/2604.05314) (Meituan · 2026)
 
 <a id="paper-2604-05329"></a>
 
-- **STAMP**: Semantic Trimming and Auxiliary Multi-step Prediction for generative recommendation; Semantic Adaptive Pruning filters redundant SID tokens during the forward pass + Multi-step Auxiliary Prediction densifies supervision; 1.23–1.38× speedup and 17.2–54.7% VRAM reduction across multiple architectures — [Paper](https://arxiv.org/abs/2604.05329) (Zhejiang / Alibaba · 2026)
+- **STAMP**: STAMP attributes costly and unstable semantic-ID learning to redundant input tokens and sparse output supervision. It prunes low-information tokens during the forward pass and adds auxiliary multi-step prediction, pairing compact inputs with denser learning signals; experiments report lower memory use and faster training while maintaining or improving recommendation performance. — [Paper](https://arxiv.org/abs/2604.05329) (Zhejiang / Alibaba · 2026)
 
 <a id="paper-2604-14878"></a>
 
-- **GenRec**: Preference-oriented generative framework for large-scale recommendation via next-token prediction with preference alignment — [Paper](https://arxiv.org/abs/2604.14878) (JD · SIGIR 2026)
+- **GenRec**: GenRec addresses pagination ambiguity, long semantic-ID inputs, and preference alignment within one decoder-only recommender. Page-wise next-token prediction supplies page-level supervision, a token merger compresses the input, and relevance-gated reinforcement learning aligns generation with user satisfaction, connecting training consistency, serving efficiency, and preference optimization in a deployed JD system. — [Paper](https://arxiv.org/abs/2604.14878) (JD · SIGIR 2026)
 
 <a id="paper-2604-11440"></a>
 
-- **R3-VAE**: Reference vector-guided rating residual quantization VAE for generative recommendation; improves semantic identifier quality — [Paper](https://arxiv.org/abs/2604.11440) (2026)
+- **R3-VAE**: R3-VAE improves semantic-ID learning by stabilizing quantization and making identifier quality easier to assess. A reference vector anchors item semantics, a dot-product rating mechanism reduces codebook collapse, and semantic-cohesion plus preference-discrimination metrics serve as regularizers, connecting representation quality to recommendation usefulness before expensive downstream evaluation. — [Paper](https://arxiv.org/abs/2604.11440) (2026)
 
 <a id="paper-2606-06260"></a>
 
-- **OneReason**: Reasoning-enhanced generative recommendation; perception + cognition-enhanced CoT + specialize-then-unify RL training; extends OneRec family — [Paper](https://arxiv.org/abs/2606.06260) (Kuaishou · 2026)
+- **OneReason**: OneReason argues that useful recommendation reasoning requires both understanding item tokens and reorganizing behavior into coherent interests. It grounds item tokens in language semantics during pretraining, introduces a three-level cognition-enhanced chain-of-thought format, and applies specialize-then-unify reinforcement learning, addressing why merely adding a thinking mode may not improve recommendation. — [Paper](https://arxiv.org/abs/2606.06260) (Kuaishou · 2026)
 
 <a id="paper-2606-08604"></a>
 
-- **Gryphon**: Encoder-decoder GR with joint item-level scoring; resolves SID collisions and miscalibrated beam-likelihood; replaces 15+ candidate generators in A/B on Yandex Music — [Paper](https://arxiv.org/abs/2606.08604) (Yandex · 2026)
+- **Gryphon**: Gryphon supplements semantic-ID generation with joint item-level scoring that reuses the encoder's user representation. Resolving generated identifiers to actual items and scoring them directly separates identifier collisions and avoids relying on poorly calibrated beam likelihoods; a production test simplified candidate generation without a statistically significant change in total listening time. — [Paper](https://arxiv.org/abs/2606.08604) (Yandex · 2026)
 
 <a id="paper-2606-08480"></a>
 
-- **AdaGRPO**: Per-sample gated GRPO + NLL for noise-robust RL in generative recommendation; binary clip based on policy difficulty and reward discriminability; A/B CTR+dwell gains — [Paper](https://arxiv.org/abs/2606.08480) (JD · 2026)
+- **AdaGRPO**: AdaGRPO treats reward-guided learning as selective rather than universally useful because production rankers can give unreliable rewards. Supervised negative log-likelihood remains the anchor, while a per-sample gate admits GRPO updates only when policy difficulty and reward discriminability support them, reducing harmful reinforcement-learning gradients from noisy feedback. — [Paper](https://arxiv.org/abs/2606.08480) (JD · 2026)
 
 <a id="paper-2606-07317"></a>
 
-- **GBLA**: Gated Bidirectional Linear Attention encoder for generative retrieval; linear-time with 8.2× speedup at 32K history vs FlashAttention-v3; hybrid SA/GBLA matches full self-attention quality — [Paper](https://arxiv.org/abs/2606.07317) (Yandex · SIGIR 2026)
+- **GBLA**: GBLA introduces bidirectional linear attention for the history encoder in generative retrieval, where long sequences make softmax attention expensive. Local convolution, key gating, and gated normalization augment kernelized attention; interleaving GBLA with ordinary self-attention preserves retrieval quality in the reported experiments while substantially reducing long-history attention cost. — [Paper](https://arxiv.org/abs/2606.07317) (Yandex · SIGIR 2026)
 
 <a id="paper-2606-06970"></a>
 
-- **SSRLive**: Dynamic Semantic ID for live streaming GR; generative + discriminative unified architecture with dynamic SID updates and user–streamer interaction; A/B +3.38% watch time, +0.72% GMV — [Paper](https://arxiv.org/abs/2606.06970) (Alibaba · 2026)
+- **SSRLive**: SSRLive adapts recommendation to changing live-room content by generating both static and dynamic semantic identifiers. A discriminative module combines these identifiers with user features and user-streamer interactions for multi-task prediction, linking fresh content representations with explicit behavioral signals; production tests improved viewing, transactions, and engagement measures. — [Paper](https://arxiv.org/abs/2606.06970) (Alibaba · 2026)
 
 <a id="paper-2512-24787"></a>
 
-- **HiGR**: Industrial-scale hierarchical generative slate recommendation; structured SIDs via PCRQ-VAE + Hierarchical Slate Decoder for holistic slate quality and latency — [Paper](https://arxiv.org/abs/2512.24787) (Tencent · CIKM 2026)
+- **HiGR**: HiGR makes whole-slate planning easier by learning semantic IDs whose prefixes encode shared meaning. A hierarchical decoder plans coarse preference representations before finer generation, and listwise alignment considers ranking fidelity, user interest, and diversity, jointly addressing semantic organization, inference cost, and the gap between token prediction and overall slate quality. — [Paper](https://arxiv.org/abs/2512.24787) (Tencent · CIKM 2026)
 
 <a id="paper-2606-14260"></a>
 
-- **ChronoID**: Time-aware Semantic ID learning for generative recommendation; characterizes the design space of temporal signals along three orthogonal dimensions; new time-explicit generation recommendation benchmark — [Paper](https://arxiv.org/abs/2606.14260) (Meta MRS / U. Rochester / MBZUAI · 2026)
+- **ChronoID**: ChronoID investigates where and how explicit time information should enter semantic-ID learning. It organizes the design space along three independent dimensions and introduces a time-explicit recommendation benchmark, challenging the assumption that the same item representation should remain appropriate across changing temporal contexts and making alternatives systematically comparable. — [Paper](https://arxiv.org/abs/2606.14260) (Meta MRS / U. Rochester / MBZUAI · 2026)
 
 <a id="paper-2606-14142"></a>
 
-- **PauseRec**: Implicit reasoning paradigm for LLM-based generative recommendation; outperforms explicit CoT by 6.22% while reducing training cost by 65% GPU hours and speeding up inference by 71.3% — [Paper](https://arxiv.org/abs/2606.14142) (2026)
+- **PauseRec**: PauseRec examines why explicit reasoning can fail when unfamiliar semantic-ID tokens disrupt an LLM's language-based reasoning interface. Its lightweight implicit-reasoning approach avoids collecting reasoning traces and performing reasoning-alignment training, reducing sensitivity to rationale quality while improving recommendation effectiveness and efficiency over the explicit-chain-of-thought approaches tested. — [Paper](https://arxiv.org/abs/2606.14142) (2026)
 
 <a id="paper-2606-17276"></a>
 
-- **On the Memorization Behavior of LLMs in Generative Recommendation**: Investigates one-hop memorization in LLM-based GR and proposes IIRG training strategy to capture multi-hop collaborative and semantic relations — [Paper](https://arxiv.org/abs/2606.17276) (KAIST / Snap · 2026)
+- **On the Memorization Behavior of LLMs in Generative Recommendation**: This study finds that much of the apparent advantage of LLM-based generative recommendation comes from memorizing one-step item transitions. Its IIRG training strategy adds multi-hop co-occurrence and semantic item relations, improving recommendations especially when the desired item cannot be recovered from a transition already seen during training. — [Paper](https://arxiv.org/abs/2606.17276) (KAIST / Snap · 2026)
 
 <a id="paper-2606-20554"></a>
 
-- **G2Rec**: Scalable graph-based user interest tokenization for generative recommendation; unifies holistic co-engagement modeling with semantic tokenization at industrial scale — [Paper](https://arxiv.org/abs/2606.20554) (Meta / UIUC · RecSys (Industry) 2026)
+- **G2Rec**: G2Rec combines holistic graph-based co-engagement modeling with semantic tokenization to organize distributed user interests. It addresses graph methods that scale poorly or see only local structure, alongside tokenizers lacking explicit guidance, giving the recommendation model semantically grounded interest prototypes without requiring labeled ground-truth user interests. — [Paper](https://arxiv.org/abs/2606.20554) (Meta / UIUC · RecSys (Industry) 2026)
 
 <a id="paper-2606-25147"></a>
 
-- **TokenMinds**: Industrial-scale dual-output (discrete SID-based user tokens + dense user embeddings) via encoder-decoder LLM; extends PLUM from item to user modeling; deployed across multiple YouTube surfaces serving billions of users — [Paper](https://arxiv.org/abs/2606.25147) (Google / YouTube · 2026)
+- **TokenMinds**: TokenMinds produces both discrete semantic-ID user tokens and dense embeddings from a pretrained encoder-decoder model. The shared item-and-user vocabulary supports semantically grounded behavior modeling, while the dense output remains compatible with existing rankers; asynchronous representation generation lets multiple YouTube surfaces reuse these complementary outputs at large scale. — [Paper](https://arxiv.org/abs/2606.25147) (Google / YouTube · 2026)
 
 <a id="paper-2606-25496"></a>
 
-- **RaG (Recommendation as Generation)**: Unifies generative recommendation and on-demand personalized video generation via shared semantic IDs (content + style); Video Generation Agents conditioned on inferred SIDs with cross-domain reward learning — [Paper](https://arxiv.org/abs/2606.25496) (Kuaishou · 2026)
+- **RaG (Recommendation as Generation)**: Recommendation as Generation moves beyond selecting from an existing video catalog to creating personalized videos on demand. Shared semantic IDs separately represent content and creative style, guide video-generation agents, and connect recommendation with creation; cross-domain rewards combine user-interest alignment, feedback, and video quality within an industrial advertising deployment. — [Paper](https://arxiv.org/abs/2606.25496) (Kuaishou · 2026)
 
 <a id="paper-2606-31984"></a>
 
-- **GR2 Technical Report**: End-to-end generative reasoning re-ranker; semantic ID mid-training + reasoning-trace distillation + RL with conditional verifiable rewards + On-Policy Distillation; +18.7% R@1 on industrial-scale traffic — [Paper](https://arxiv.org/abs/2606.31984) (Meta · 2026)
+- **GR2 Technical Report**: GR2 turns final-stage reranking into a reasoning-enabled generation task using semantic-ID mid-training, teacher reasoning traces, and reinforcement learning with verifiable rewards. Context compression and distillation address deployment cost, while conditional reward design counters shortcuts such as copying the incoming order, highlighting that reliable objectives are as important as a stronger model. — [Paper](https://arxiv.org/abs/2606.31984) (Meta · 2026)
 
 <a id="paper-2606-31031"></a>
 
-- **GenPage**: End-to-end generative homepage construction replacing multi-stage rec stack; autoregressive generation of structured multi-row pages; +0.24% engagement with 20% latency reduction in A/B — [Paper](https://arxiv.org/abs/2606.31031) (Netflix · RecSys (Industry) 2026)
+- **GenPage**: GenPage generates an entire structured, multi-row homepage from user and request context using a single Transformer. Pretraining on production pages and subsequent preference-oriented training replace separate construction stages, while deployment mechanisms handle freshness, cold start, and business rules; Netflix A/B tests improved engagement and reduced end-to-end latency. — [Paper](https://arxiv.org/abs/2606.31031) (Netflix · RecSys (Industry) 2026)
 
 <a id="paper-2607-01170"></a>
 
-- **Diffusion-GR2**: Block-diffusion conversion of AR reasoning re-ranker (GR2); CFT + on-policy distillation + RL closes structural and distributional gaps; 2.4–3.5× decode throughput with near-parity accuracy — [Paper](https://arxiv.org/abs/2607.01170) (Meta · 2026)
+- **Diffusion-GR2**: Diffusion-GR2 accelerates a reasoning reranker by converting autoregressive decoding into block-parallel diffusion. Conversion fine-tuning teaches valid permutations, on-policy distillation corrects the mismatch with the model's own trajectories, and reinforcement learning further aligns ranking; Amazon Beauty experiments recover near-autoregressive accuracy while increasing decoding throughput. — [Paper](https://arxiv.org/abs/2607.01170) (Meta · 2026)
 
 <a id="paper-2606-31693"></a>
 
-- **ShopX**: Foundation model for agentic shopping; unifies intent understanding, execution planning, and SID-native item-space operations into a single model; deployed on Taobao — [Paper](https://arxiv.org/abs/2606.31693) (Alibaba · 2026)
+- **ShopX**: ShopX unifies shopping-intent understanding, execution planning, and semantic-ID operations inside one model. It can compose retrieval, listwise ranking, and product bundling through a serving framework with catalog grounding and state management, reducing information loss between an external shopping agent and separate item-selection tools on complex or ambiguous requests. — [Paper](https://arxiv.org/abs/2606.31693) (Alibaba · 2026)
 
 <a id="paper-2607-03362"></a>
 
-- **HGenPush**: Heterogeneous generative recommendation for push notifications; dual-branch video + author generation with Chained-MTP multi-token prediction; +0.181% DAU on Kuaishou — [Paper](https://arxiv.org/abs/2607.03362) (Kuaishou · KDD (ADS) 2026)
+- **HGenPush**: HGenPush jointly generates video and author recommendations for push notifications through two branches sharing a user-understanding framework. It combines behavior from multiple scenarios, parallel multi-token prediction for efficiency, and feedback-based preference alignment, meeting interest in both content and creators; deployment on Kuaishou increased daily active users. — [Paper](https://arxiv.org/abs/2607.03362) (Kuaishou · KDD (ADS) 2026)
 
 <a id="paper-2607-04068"></a>
 
-- **UniSGR**: Unified framework for Semantic ID generation and ranking; sparse MoE decoder with Value-Aware Parallel Multi-Token Prediction and STARK inference optimization; deployed on large-scale e-commerce — [Paper](https://arxiv.org/abs/2607.04068) (Alibaba · 2026)
+- **UniSGR**: UniSGR joins semantic-ID generation with fine-grained multi-objective ranking through shared pretraining and scenario-specific alignment. Value-aware parallel token prediction and task-aware tokens connect generated candidates to downstream goals, while its STARK attention-and-cache strategy targets beam-search inefficiency, addressing both optimization consistency and serving cost within one framework. — [Paper](https://arxiv.org/abs/2607.04068) (Alibaba · 2026)
 
 <a id="paper-2601-04674"></a>
 
-- **PROMISE**: Process Reward Models for test-time scaling in generative recommendation; addresses Semantic Drift in hierarchical Semantic ID generation via step-level reward guidance — [Paper](https://arxiv.org/abs/2601.04674) (Kuaishou · RecSys (Industry) 2026)
+- **PROMISE**: PROMISE addresses semantic drift, where an early identifier error sends generation into the wrong semantic branch. A lightweight process reward model evaluates intermediate steps and guides beam pruning, enabling extra inference computation to improve recommendation quality rather than relying only on a larger model or final-output scoring. — [Paper](https://arxiv.org/abs/2601.04674) (Kuaishou · RecSys (Industry) 2026)
 
 <a id="paper-2607-02818"></a>
 
-- **Long-Term Optimization for Large-Scale GR**: Off-policy REINFORCE for session-level generative retrieval training; multi-step importance weight approximation and feedback-model-based test-time scaling on Yambda-5B — [Paper](https://arxiv.org/abs/2607.02818) (VK · 2026)
+- **Long-Term Optimization for Large-Scale GR**: This work trains a two-tower retriever for session-level reward using autoregressive off-policy REINFORCE and multi-step importance-weight correction. A learned feedback simulator supports sequential offline evaluation and lookahead selection at inference; the reported longer-term gains are model-based and off-policy estimates on Yambda-5B, rather than demonstrated online user outcomes. — [Paper](https://arxiv.org/abs/2607.02818) (VK · 2026)
 
 <a id="paper-2607-08365"></a>
 
-- **DaV-Gen**: End-to-end generative retrieval via Draft-and-Verify; speculative-decoding-inspired framework that combines contrastive-learned vector drafting with fused generative verification scoring in a single unified model — [Paper](https://arxiv.org/abs/2607.08365) (2026)
+- **DaV-Gen**: DaV-Gen combines fast vector-based candidate drafting with generative verification inside a jointly trained model. Contrastive learning shapes the drafting space, while a fused likelihood-and-similarity score verifies candidates, seeking the efficiency of retrieval and the precision of generative scoring without the objective mismatches of separately optimized cascade stages. — [Paper](https://arxiv.org/abs/2607.08365) (2026)
 
 <a id="paper-2607-12277"></a>
 
-- **Not Only NTP**: Extends NTP training signal coverage for generative recommendation; addresses temporal locality and spatial locality limitations of single-step next-token prediction in multi-domain sequences — [Paper](https://arxiv.org/abs/2607.12277) (Meituan · 2026)
+- **Not Only NTP**: NONTP supplements next-token prediction with supervision for future trajectories and cross-domain context. Temporal contrastive learning aligns states with multi-step futures, while trans-domain learning opens another gradient path to item prediction; both auxiliary objectives disappear at inference, expanding what training can teach without adding serving overhead. — [Paper](https://arxiv.org/abs/2607.12277) (Meituan · 2026)
 
 <a id="paper-2607-12425"></a>
 
-- **Where Reasoning Matters**: Rethinks latent reasoning in Semantic ID-based generative recommendation; investigates adaptive allocation of reasoning computation across token positions in SID generation — [Paper](https://arxiv.org/abs/2607.12425) (2026)
+- **Where Reasoning Matters**: Where Reasoning Matters finds that semantic-ID positions differ in how much uncertainty they remove about the target item. Its Information-Gain Budget Allocation framework learns to give more latent refinement steps to informative positions and fewer to others, improving the allocation of a fixed reasoning budget compared with uniform per-token computation. — [Paper](https://arxiv.org/abs/2607.12425) (2026)
 
 <a id="paper-2607-11392"></a>
 
-- **CRID (Beyond Semantic IDs)**: Cluster-Ranked Identifier decoupling DocID into semantic clustering and business-value ranking for collision-free GR; deployed on 300M-item Taobao corpus with +1.06% GMV — [Paper](https://arxiv.org/abs/2607.11392) (Alibaba · 2026)
+- **CRID (Beyond Semantic IDs)**: CRID separates each document identifier into a semantic cluster and a business-value rank within that cluster. This produces collision-free identifiers that can be updated through local reranking, while an analysis of cluster size explains the balance between personalized preferences and statistical priors; large-scale Taobao experiments connect identifier design to retrieval and business outcomes. — [Paper](https://arxiv.org/abs/2607.11392) (Alibaba · 2026)
 
 <a id="paper-2607-11326"></a>
 
-- **Prompt Generation Technical Report**: Configuration-driven framework decoupling feature-processing logic from GR model architecture via declarative JSON; accelerates training iteration, deployment, and inference; deployed on Taobao Search with +0.47% transactions, +0.51% GMV — [Paper](https://arxiv.org/abs/2607.11326) (Alibaba · 2026)
+- **Prompt Generation Technical Report**: Prompt Generation decouples recommendation feature processing from model architecture through shared declarative configurations. The same definitions assemble and compress heterogeneous features for training and serving, reducing feature inconsistency and scenario-specific engineering; its main contribution is a reusable production framework that accelerates experimentation, deployment, and online execution. — [Paper](https://arxiv.org/abs/2607.11326) (Alibaba · 2026)
 
 <a id="paper-2607-15591"></a>
 
-- **RecGPT-V3**: Stateful hybrid-modal recommender with Memory Hub for condensed user memory (55.8% compute reduction), Hybrid-modal Foundation Model jointly reasoning over text and Semantic IDs, and Latent Intent Reasoning internalizing CoT into learnable latent tokens (200× output token reduction); deployed on Taobao "Guess What You Like" with +1.28% IPV, +3.97% GMV — [Paper](https://arxiv.org/abs/2607.15591) (Alibaba · 2026)
+- **RecGPT-V3**: RecGPT-V3 combines persistent user memory, joint text-and-semantic-ID modeling, and latent intent reasoning. The Memory Hub avoids repeatedly analyzing full histories, semantic IDs connect language understanding directly to items, and compact latent tokens replace lengthy explicit rationales, addressing three distinct efficiency and information-loss bottlenecks in a deployed Taobao recommender. — [Paper](https://arxiv.org/abs/2607.15591) (Alibaba · 2026)
 
 <a id="paper-2607-18796"></a>
 
-- **TSGR**: Taobao Search Generative Retrieval; value-aware GR with Query-aware Parallel SID (QP-SID) encoding business value into SID construction and Value-aware Ranking Module (VRM) unifying retriever and pre-ranker; +0.43% IPV, +1.12% transactions, +1.64% GMV — [Paper](https://arxiv.org/abs/2607.18796) (Alibaba · 2026)
+- **TSGR**: TSGR incorporates commercial value into both item identifiers and candidate scoring for e-commerce search. Query-aware parallel codebooks encode query-conditioned value orderings, while a jointly trained ranking module uses the same model for retrieval and preranking, aligning semantic relevance, user preference, and business goals earlier in the recommendation pipeline. — [Paper](https://arxiv.org/abs/2607.18796) (Alibaba · 2026)
 
 <a id="paper-2607-21028"></a>
 
-- **BARGE**: Bridges structural gaps in SID-based GR via Item Context-Aware Attention + Hierarchical Path Reranking + Dual-Path Decoding; +0.60% CTR, +1.34% click UV, +1.70% reading time in A/B on Tencent platform — [Paper](https://arxiv.org/abs/2607.21028) (Tencent · 2026)
+- **BARGE**: BARGE addresses two structural weaknesses of semantic-ID recommendation: flattening identifiers loses item boundaries, and hierarchical decoding can drift away from the correct semantic path. Item-context-aware attention restores item structure, while hierarchical path reranking and dual-path decoding provide complementary controls on generation errors; offline and online evaluations show recommendation improvements. — [Paper](https://arxiv.org/abs/2607.21028) (Tencent · 2026)
 
 <a id="paper-2607-21519"></a>
 
-- **DLMRec**: Discrete diffusion language model for recommendation; replaces autoregressive generation with diffusion-based denoising; collaborative-aware stochastic tokenizer + curriculum-driven training + stability-aware voting — [Paper](https://arxiv.org/abs/2607.21519) (Tencent · 2026)
+- **DLMRec**: DLMRec replaces left-to-right recommendation generation with discrete diffusion, allowing iterative correction and bidirectional context. A collaborative-aware stochastic tokenizer captures multi-hop relations, a curriculum aligns denoising with preference recovery, and stability-aware voting combines iterative predictions, making the diffusion process better suited to recommendation structure and consistent outputs. — [Paper](https://arxiv.org/abs/2607.21519) (Tencent · 2026)
 
 <a id="paper-2602-05663"></a>
 
-- **GLASS**: Coarse-to-fine long-term interest integration for generative recommendation; SID-Tier maps long-term interactions into unified interest vectors; semantic hard search extracts relevant behaviors via generated SID keys — [Paper](https://arxiv.org/abs/2602.05663) (Kuaishou · RecSys 2026)
+- **GLASS**: GLASS injects long-term interests at different stages of semantic-ID generation. SID-Tier guides the initial token using a compact interest representation, then generated coarse identifiers retrieve relevant historical behaviors to refine later tokens; neighbor augmentation and codebook resizing address sparse matches, linking broad preference guidance with more targeted historical evidence. — [Paper](https://arxiv.org/abs/2602.05663) (Kuaishou · RecSys 2026)
 
 <a id="paper-2607-26500"></a>
 
-- **Multi-Decoder OneRec**: Controllable multi-objective generative retrieval; shared user-context module with isolated LoRA experts per objective + Multi-Decoder Constrained Beam Search; releases Kwai26 benchmark (1.31B records); +0.37% app usage time in A/B — [Paper](https://arxiv.org/abs/2607.26500) (Kuaishou · 2026)
+- **Multi-Decoder OneRec**: Multi-Decoder OneRec preserves explicit retrieval quotas while sharing user representations across objectives. Isolated LoRA experts learn objective-specific policies, and coordinated constrained beam search reduces overlap between routes, combining controllability with complementary candidates; the paper also releases the Kwai26 benchmark and evaluates the framework under a fixed total retrieval budget. — [Paper](https://arxiv.org/abs/2607.26500) (Kuaishou · 2026)
 
 <a id="paper-2607-26621"></a>
 
-- **WhisperRec**: Latent reasoning for efficient foundation recommendation models; compresses teacher CoT into learnable latent reasoning tokens (Latent-Reason-then-Answer); Multi-View Adaptive CoT + three-stage Latent Reasoning Alignment; 10× inference throughput over explicit CoT — [Paper](https://arxiv.org/abs/2607.26621) (Kuaishou · 2026)
+- **WhisperRec**: OneLatent compresses teacher-generated reasoning into a small set of learnable latent tokens instead of emitting lengthy chains of thought. Multi-view adaptive reasoning supplies supervision, staged alignment internalizes it, and curriculum post-training activates the latent reasoning for recommendation, improving the quality-efficiency trade-off in public and industrial evaluations. — [Paper](https://arxiv.org/abs/2607.26621) (Kuaishou · 2026)
 
 <a id="paper-2605-05803"></a>
 
-- **UniVA**: Unified Value Alignment for generative advertising recommendation; Commercial SID Tokenization + Generation-as-Ranking decoder fusing generation scores with token-level value estimates + Value-Aware Constrained Serving; +1.5% GMV on Tencent WeChat Channels — [Paper](https://arxiv.org/abs/2605.05803) (Tencent · 2026)
+- **UniVA**: UniVA aligns advertising value across semantic-ID construction, decoding, and serving because high generation probability alone need not mean high ad utility. Business-aware tokenization, value-fused token scores, and request-valid trie constraints help retain valuable eligible ads during limited-beam search, connecting relevance and commercial objectives throughout the generation pipeline. — [Paper](https://arxiv.org/abs/2605.05803) (Tencent · 2026)
 
 <a id="paper-2607-26073"></a>
 
-- **Gwhere**: End-to-end industrial generative next-POI recommendation; contrastive residual-quantization SID tokenizer aligning textual/visual/spatial/collaborative signals + Exposure-Aware Kahneman-Tversky Optimization; +5.83% P-CTR deployed on Amap — [Paper](https://arxiv.org/abs/2607.26073) (Alibaba · RecSys (Industry) 2026)
+- **Gwhere**: Gwhere predicts the next point of interest by generating identifiers that jointly encode text, images, spatial structure, and collaborative behavior. Continued pretraining and supervised learning adapt the language model to mobility, while exposure-aware preference optimization aligns predictions with observed choices; deployment in Amap tests the framework under real-time industrial constraints. — [Paper](https://arxiv.org/abs/2607.26073) (Alibaba · RecSys (Industry) 2026)
 
 <a id="paper-2608-06213"></a>
 
-- **Gryphon-v2**: Unified generate-and-rank architecture replacing multi-stage cascade; Rollout Distillation from Teacher Ranker over decoder rollouts and logged impressions; single model replaces 15+ candidate generators at Yandex Music with +1.41% active users — [Paper](https://arxiv.org/abs/2608.06213) (Yandex · 2026)
+- **Gryphon-v2**: Gryphon-v2 encodes history once, generates semantic-ID candidates, and ranks their resolved items using shared encoder states. A training-only teacher supplies ranking supervision over both current-model rollouts and logged impressions, transferring fine-grained production preferences without another serving model; a Yandex Music test replaced an entire cascade and increased active users. — [Paper](https://arxiv.org/abs/2608.06213) (Yandex · 2026)
 
 <a id="paper-2608-03150"></a>
 
-- **UniGD**: Unified Generative-Discriminative framework for industrial search advertising retrieval; Conflict-Aware Gradient Enhancement + Codebook-Anchored Representation Module + Heterogeneous Ad-material Modeling; +5.78% revenue, -33% latency on Kuaishou — [Paper](https://arxiv.org/abs/2608.03150) (Kuaishou · 2026)
+- **UniGD**: UniGD jointly performs generative retrieval and query-ad relevance scoring to remove a separately served relevance model. Conflict-aware gradient coordination manages competing objectives, frozen multimodal codebooks anchor semantic representations, and type-aware modeling handles heterogeneous ad materials, improving both retrieval quality and serving efficiency in the reported industrial tests. — [Paper](https://arxiv.org/abs/2608.03150) (Kuaishou · 2026)
 
 <a id="paper-2607-27647"></a>
 
-- **LoopMemGR**: Closed-loop recommendation experience memory for generative recommendation; maintains recommendation–feedback trajectory logs with recency/frequency/global views compressed into fixed experience tokens — [Paper](https://arxiv.org/abs/2607.27647) (Alibaba · 2026)
+- **LoopMemGR**: LoopMemGR remembers what a system recommended and the feedback it received, rather than reconstructing preferences only from user behavior logs. Recency, frequency, and global views extract reusable experience from recommendation-feedback trajectories, which are compressed into a fixed token budget to condition future generation without continually expanding the input. — [Paper](https://arxiv.org/abs/2607.27647) (Alibaba · 2026)
 
 <a id="paper-2607-24439"></a>
 
-- **UniR²**: Unified decoder-only Transformer for generative recall and multi-objective ranking in a single sequence; Dual-Query Prefix-Causal Attention + ranking-side LoRA; deployed on Kuaishou — [Paper](https://arxiv.org/abs/2607.24439) (Kuaishou · 2026)
+- **UniR²**: UniR² places user context, generated semantic-ID trajectories, and item features in one decoder-only sequence for recall and ranking. Task-specific attention visibility and ranking-side LoRA preserve different optimization needs while sharing the backbone, reducing duplicated context computation and information loss between independently modeled retrieval and ranking stages. — [Paper](https://arxiv.org/abs/2607.24439) (Kuaishou · 2026)
 
 <a id="paper-2607-27944"></a>
 
-- **LGRID**: Interpretable disentangled SID generation via LLM-driven Encode→Disentangle→Align→Quantize pipeline; separates geographic, brand, and category into attribute-aligned slots to eliminate semantic entanglement and SID collisions; deployed for local-life service recommendation — [Paper](https://arxiv.org/abs/2607.27944) (Meituan · 2026)
+- **LGRID**: LGRID jointly encodes local-service attributes, then separates geographic and semantic factors into aligned slots before quantization. Generative and discriminative alignment make identifier positions interpretable and useful for retrieval, preserving cross-attribute relationships while reducing information mixing; the reported collision reduction is substantial but does not eliminate collisions. — [Paper](https://arxiv.org/abs/2607.27944) (Meituan · 2026)
 
 <a id="paper-2607-27789"></a>
 
-- **Feedback-Grounded Policy Discovery**: Bridges Understanding-Action Gap in LLM-enhanced GR; discovers recommendation policies via outcome-derived feedback rather than linguistic plausibility; separates intent knowledge from policy knowledge for effective recommendation direction — [Paper](https://arxiv.org/abs/2607.27789) (2026)
+- **Feedback-Grounded Policy Discovery**: Feedback-Grounded Policy Discovery separates understanding user intent from choosing an effective recommendation policy. Candidate policies are tested and refined using their incremental outcome value over an intent-only baseline, then distilled with intent knowledge into two latent tokens, bringing feedback-validated guidance to a lightweight generator without an LLM on the serving path. — [Paper](https://arxiv.org/abs/2607.27789) (2026)
 
 <a id="paper-2607-27682"></a>
 
-- **Restoring Collaborative Signals in SID-based GR**: Addresses content–collaborative signal tension in Semantic IDs via personalized natural language; restores collaborative signals without explicit reasoning overhead when text and SID tokens live in misaligned embedding spaces — [Paper](https://arxiv.org/abs/2607.27682) (2026)
+- **Restoring Collaborative Signals in SID-based GR**: This framework restores collaborative information that compact semantic IDs can lose when content and interaction signals compete. Personalized natural language links collaborative patterns to their audiences and supplies hierarchical cues during generation, improving recommendation without changing the backbone or retraining the identifiers, rather than depending on longer explicit reasoning traces. — [Paper](https://arxiv.org/abs/2607.27682) (2026)
 
 <a id="paper-2608-11980"></a>
 
-- **HCGRec**: Hint-Conditioned Generative Recommendation with Semantic IDs; addresses structured optimization bottleneck in reward-based post-training via hierarchical hint conditioning when early tokens enter wrong SID branches — [Paper](https://arxiv.org/abs/2608.11980) (CIKM 2026)
+- **HCGRec**: HCGRec helps reward-based training when wrong early semantic tokens make the target item unreachable and all sampled completions receive zero reward. It selectively supplies a minimal correct-prefix hint, supervises the hinted context, and applies GRPO to the sampled suffix, restoring informative comparisons while distinguishing provided information from actions the model actually chose. — [Paper](https://arxiv.org/abs/2608.11980) (CIKM 2026)
 
 <a id="paper-2608-09634"></a>
 
-- **IntHQ**: Task-Interactive Hierarchical Query for multi-task generative recommendation; Dual-Stream Decoupling + Task-Interactive Modeling + Hierarchical Querying addressing source/relational/hierarchical collapse; deployed on Amap with +1.60% UVCTR — [Paper](https://arxiv.org/abs/2608.09634) (Alibaba · 2026)
+- **IntHQ**: IntHQ addresses the dilution of task-specific signals, fixed task dependencies, and mismatched feature scales in multi-task generative recommendation. Separate context and task streams introduce identity early, learned cross-task interactions replace rigid funnels, and hierarchical queries gather information across layers, allowing each task to use shared information more selectively. — [Paper](https://arxiv.org/abs/2608.09634) (Alibaba · 2026)
 
 <a id="paper-2607-28895"></a>
 
-- **SnapLGR**: Production LLM-based generative retrieval for short-video recommendation at Snapchat; PPR-enhanced SID construction with co-engagement contrastive learning + continued pretraining for vocabulary grounding + TensorRT-LLM beam search; +0.37% View Time over TIGER-style baseline in A/B — [Paper](https://arxiv.org/abs/2607.28895) (Snap · 2026)
+- **SnapLGR**: SnapLGR combines collaborative semantic-ID construction, vocabulary-grounding pretraining, and optimized beam-search serving for Snapchat video retrieval. Personalized PageRank-based co-engagement learning enriches item codes, continued pretraining teaches unfamiliar tokens to the LLM, and GPU-backed inference makes deployment practical, illustrating why model adaptation and systems design must be developed together. — [Paper](https://arxiv.org/abs/2607.28895) (Snap · 2026)
 
 <a id="paper-2607-29010"></a>
 
-- **EvoReason**: Self-evolving latent reasoning for generative recommendation; extracts reusable reasoning primitives from agentic trajectories as pseudo-tools; primitive-guided on-policy distillation with closed-loop co-evolution for better-aligned CoT supervision — [Paper](https://arxiv.org/abs/2607.29010) (2026)
+- **EvoReason**: EvoReason replaces direct imitation of noisy reasoning traces with reusable reasoning primitives extracted from strong recommendation trajectories. These primitives structure teacher supervision, and on-policy distillation adapts the teaching process to the student's latent reasoning outcomes, creating a feedback loop intended to make reasoning transfer less redundant and better aligned. — [Paper](https://arxiv.org/abs/2607.29010) (2026)
 
 <a id="paper-2608-02048"></a>
 
-- **SmartGR**: Hierarchy and Beam-Aware Knowledge Distillation for GR; Hierarchy-Aware SID Distillation transfers teacher modeling capability across SID levels + Beam-Aware Ranking Distillation prevents incorrect prefix pruning during beam search — [Paper](https://arxiv.org/abs/2608.02048) (2026)
+- **SmartGR**: SmartGR adapts knowledge distillation to the hierarchical codes and beam-search behavior of generative recommendation. Hierarchy-aware transfer accounts for uneven learning difficulty across identifier levels, while beam-aware ranking distillation teaches which prefixes should survive pruning, helping a smaller model retain both the teacher's representations and its candidate-selection preferences. — [Paper](https://arxiv.org/abs/2608.02048) (2026)
 
 <a id="paper-2608-00750"></a>
 
-- **HRPO**: Hierarchical Residual Policy Optimization; decomposes item-level reward into position-specific token credits via Hierarchical Residual Decomposition and optimizes per-position policy with Hierarchical PPO; resolves reward-sparsity and credit-assignment in SID decoding — [Paper](https://arxiv.org/abs/2608.00750) (2026)
+- **HRPO**: HRPO converts final item feedback into token-specific learning signals for hierarchical semantic-ID decoding. It smooths prefix utilities over user clusters, decomposes them into residual credits, and applies clipped, regularized policy updates, addressing sparse credit assignment without broadcasting the same terminal reward indiscriminately to every token position. — [Paper](https://arxiv.org/abs/2608.00750) (2026)
 
 <a id="paper-2607-25339"></a>
 
-- **SPARC**: Sequence-aware Progressive Attribute Routing and Compression Framework for generative recommendation; context-dependent routing and compression of heterogeneous behavior attributes (category/brand/price/timestamp) to curb input-length explosion while preserving context-relevant signals — [Paper](https://arxiv.org/abs/2607.25339) (Alibaba · 2026)
+- **SPARC**: SPARC contextualizes behavior attributes before compressing them, avoiding both feature-expansion cost and premature information loss. It models each field's sequence dependencies, routes complementary representations into fixed-capacity slots, and compresses each historical item into one token, enriching the generator's input without increasing its sequence length. — [Paper](https://arxiv.org/abs/2607.25339) (Alibaba · 2026)
 
 <a id="paper-2608-00816"></a>
 
-- **Exp-RSFT**: Exponential reward-weighted fine-tuning for GR under sparse and noisy feedback; optimizes directly on logged rewards with temperature-regularized exponential weighting; avoids reward over-optimization without requiring a separate reward model — [Paper](https://arxiv.org/abs/2608.00816) (Pinterest · 2026)
+- **Exp-RSFT**: Exp-RSFT fine-tunes a generative recommender by exponentially weighting logged interactions according to reward, without training a separate reward model. A temperature controls how strongly high-reward examples dominate, balancing limited data coverage against noisy feedback; the analysis and experiments emphasize that overly aggressive reward emphasis can undermine recommendation quality. — [Paper](https://arxiv.org/abs/2608.00816) (Pinterest · 2026)
 
 <a id="paper-2608-17613"></a>
 
-- **OGR (Once Generated, Ranked)**: End-to-end generative slate recommendation; TUSID adaptively fuses item-specific semantic and local collaborative signals into hierarchical Semantic IDs; list-wise preference planning + pipelined position-wise SID decoding directly generate ordered slates, unifying generation and ranking — [Paper](https://arxiv.org/abs/2608.17613) (Kuaishou · 2026)
+- **OGR (Once Generated, Ranked)**: OGR directly generates ordered recommendation slates using identifiers that fuse item semantics with local collaborative signals. Listwise preference planning and position-wise decoding capture global preferences and inter-item dependencies, while conservative reward-guided optimization aligns the resulting slate with user utility, combining generation and ranking instead of optimizing only a preselected candidate pool. — [Paper](https://arxiv.org/abs/2608.17613) (Kuaishou · 2026)
 
 <a id="paper-2608-18952"></a>
 
-- **rEDMRec**: Distills teacher LLM reasoning into four typed, editable experience channels (long-term / short-term / item-perception / counterfactual hard-negative) maintained by an LLM memory controller with Add/Delete/Modify/Keep ops refined via K-agent debate; lightweight student ranks purely by retrieving from memory, decoupling inference cost from reasoning depth — [Paper](https://arxiv.org/abs/2608.18952) (2026)
+- **rEDMRec**: rEDMRec stores a teacher LLM's reasoning in editable channels for long-term preference, short-term context, item perception, and counterfactual comparisons. A lightweight student retrieves this memory instead of repeating teacher reasoning, reducing online dependence on reasoning depth; ablations show that the usefulness of several channels varies with student capacity. — [Paper](https://arxiv.org/abs/2608.18952) (2026)
 
 <a id="paper-2509-25522"></a>
 
-- **Understanding SID-based GR from a Model-scaling View**: Reveals SID-based generative recommendation saturates quickly when scaling each component (modality encoder, quantization tokenizer, recommender); identifies per-component scaling bottlenecks distinguishing SID-GR from established LLM scaling laws — [Paper](https://arxiv.org/abs/2509.25522) (Academic · KDD 2026)
+- **Understanding SID-based GR from a Model-scaling View**: This scaling study finds that enlarging the modality encoder, quantizer, or recommender can quickly yield diminishing returns in semantic-ID-based systems. It identifies limited identifier capacity as a bottleneck and compares direct LLM recommenders, which scale better in the reported experiments, cautioning against assuming language-model scaling behavior transfers unchanged to compressed item codes. — [Paper](https://arxiv.org/abs/2509.25522) (Academic · KDD 2026)
 
 <a id="paper-2601-17787"></a>
 
-- **Beyond Uniform Token Training**: Token-weighted multi-target objectives aligning GR training with Semantic-ID structure; Front-Greater Weighting emphasizes prefix tokens that reduce candidate semantic ambiguity, plus frequency weighting against long-tail popularity bias, integrated via curriculum learning — [Paper](https://arxiv.org/abs/2601.17787) (Academic · 2026)
+- **Beyond Uniform Token Training**: Beyond Uniform Token Training recognizes that semantic-ID tokens play different roles and occur at different frequencies. Prefix-aware weighting emphasizes ambiguity-reducing decisions, frequency weighting gives rarer tokens more attention, and a curriculum combines both with standard likelihood, aligning training effort with hierarchical structure while addressing popularity imbalance. — [Paper](https://arxiv.org/abs/2601.17787) (Academic · 2026)
 
 <a id="paper-2608-21012"></a>
 
-- **Single-Level Large Semantic Codebook**: Replaces multi-level residual quantization with one semantic token plus a separate collaborative disambiguation token to reduce item collisions; exposure-aware dynamic codebook update (temporal decay + EMA centers + exposure-weighted SID-change penalty) realigns with live traffic; shorter SID cuts autoregressive-decoding FLOPs ~48% and lifts single-card QPS 28–47%; +0.792% primary consumption metric in online A/B — [Paper](https://arxiv.org/abs/2608.21012) (Kuaishou · 2026)
+- **Single-Level Large Semantic Codebook**: This approach shortens item identifiers to one semantic token plus a collaborative disambiguation token, reducing autoregressive decoding work. Exposure-aware updates adjust the large codebook as traffic changes while penalizing disruptive identifier changes, balancing fresher representations with temporal stability; evaluation covers both recommendation quality and serving efficiency. — [Paper](https://arxiv.org/abs/2608.21012) (Kuaishou · 2026)
 
 <a id="paper-2609-03313"></a>
 
-- **SelfDR**: Self-distillation from reasoning for LLM-based recommendation; distills an LLM's own reasoning-enhanced predictions into a same-backbone student that produces recommendations directly, improving accuracy while preserving inference efficiency without relying on external models — [Paper](https://arxiv.org/abs/2609.03313) (2026)
+- **SelfDR**: SelfDR transfers an LLM's own reasoning-enhanced recommendations into a same-backbone student that answers directly. A reward-trained reasoner supplies targeted rationales to the teacher, and dynamically weighted self-distillation teaches the student from its predictions, retaining useful reasoning effects without requiring external models or explicit reasoning generation at serving time. — [Paper](https://arxiv.org/abs/2609.03313) (2026)
 
 <a id="paper-2609-03369"></a>
 
-- **HypRQ-VAE**: First framework to learn item indexing in hyperbolic space via a Hyperbolic Residual-Quantized VAE; the exponential volume expansion of hyperbolic geometry naturally accommodates the power-law long-tail structure of user-item interactions, preserving representational fidelity of sparse tail items and improving generative recommendation especially for long-tail items — [Paper](https://arxiv.org/abs/2609.03369) (2026)
+- **HypRQ-VAE**: HypRQ-VAE learns discrete item identifiers in hyperbolic space, whose expanding geometry can represent hierarchical and long-tail catalog structure more naturally. Its residual-quantized autoencoder combines textual semantics with this geometry, aiming to preserve distinctive information about sparsely observed items; experiments show particular benefits for tail-item recommendation. — [Paper](https://arxiv.org/abs/2609.03369) (2026)
 
 <a id="paper-2609-03522"></a>
 
-- **EPIC**: Explicit Posterior Item Conditioning for SID diffusion recommendation; introduces explicit item-level competition into masked-diffusion denoising by constructing a personalized posterior over feasible candidate items from the generation context and recent interactions, then projecting it back to unresolved SID positions to guide token decisions, with a frozen backbone and no extra decoder forward pass — [Paper](https://arxiv.org/abs/2609.03522) (2026)
+- **EPIC**: EPIC adds explicit competition between complete candidate items to semantic-ID diffusion decoding. It forms a personalized posterior from the current partial identifier and recent interactions, then projects that distribution onto unresolved token positions, preserving promising item hypotheses while leaving the pretrained backbone frozen and adding no extra decoder forward pass. — [Paper](https://arxiv.org/abs/2609.03522) (2026)
 
 <a id="paper-2608-29652"></a>
 
-- **ICEGR**: Intent-Coherent End-to-End Generative Retrieval for e-commerce search; integrates query intent throughout the GR training pipeline via Intent-Aware SID Construction (injects query-intent signals into SIDs beyond static product info) + Synthetic Query-Enhanced Unified SFT (augments sparse online-log supervision for low-exposure products) + Relevance-Calibrated Margin-Adaptive Preference Optimization (preserves query intent while learning business preferences); deployed in Baidu E-commerce Search with +3.52% CTR, +15.96% order volume, +7.53% GMV — [Paper](https://arxiv.org/abs/2608.29652) (Baidu · 2026)
+- **ICEGR**: ICEGR carries query intent through item encoding, supervised training, and preference optimization for e-commerce search. Intent-aware identifiers capture query-product associations, synthetic queries support low-exposure products, and relevance-calibrated preference learning limits business-driven relevance loss, aligning the full retrieval pipeline with what the user is actually searching for. — [Paper](https://arxiv.org/abs/2608.29652) (Baidu · 2026)
 
 <a id="paper-2609-36688"></a>
 
-- **GRP v0.1 Technical Report**: Unifies SID retrieval, detached multi-head ranking and in-model reward reuse in a decoder-heavy encoder–decoder; reference-anchored mGRPO and item-level history fusion support progressive deployment; KV-cached CUDA-graph decoding plus orchestration/lookup changes reduce retrieval-stage p 95 latency 69% — [Paper](https://arxiv.org/abs/2609.36688) (Snap · arXiv 2026)
+- **GRP v0.1 Technical Report**: GRP combines semantic-ID retrieval, candidate ranking, and reward reuse in one encoder-decoder framework. A frozen ranking module supplies reinforcement-learning rewards, with reference-anchored optimization protecting logged targets; progressive online experiments test retrieval and selected cascade replacements, showing deployment gains while explicitly retaining open questions about ranking quality and metric trade-offs. — [Paper](https://arxiv.org/abs/2609.36688) (Snap · arXiv 2026)
 
 <a id="paper-2609-36670"></a>
 
-- **FineSID: Scalable and Efficient Semantic Identifier Learning for Generative Recommendation**: Global–Local Quantization propagates soft gradients through the full codebook while retaining hard semantic IDs; usage-aware balancing and quantization-semantic consistency improve codebook utilization and generative recommendation on three Amazon benchmarks — [Paper](https://arxiv.org/abs/2609.36670) (Tsinghua University / Huawei Noah’s Ark Lab / University of Science and Technology of China · arXiv 2026)
+- **FineSID: Scalable and Efficient Semantic Identifier Learning for Generative Recommendation**: FineSID targets sparse codebook learning caused by assigning each item to only one winning codeword during quantization. Soft, differentiable learning signals reach the full codebook while preserving semantic consistency, improving utilization and reducing collisions without relying on elaborate initialization or post-hoc fixes; experiments connect the better optimization to recommendation gains. — [Paper](https://arxiv.org/abs/2609.36670) (Tsinghua University / Huawei Noah’s Ark Lab / University of Science and Technology of China · arXiv 2026)
 
 <a id="paper-2609-34306"></a>
 
-- **SPRINT: Single-Step Generative Recommendation via Average Probability Velocity**: Predicts all semantic-ID token probabilities in one pass using average probability velocity, with token- and item-level consistency objectives; scores valid ID trajectories for candidate ranking after retrieval — [Paper](https://arxiv.org/abs/2609.34306) (University of Technology Sydney / New York University Abu Dhabi / University of California, San Diego · arXiv 2026)
+- **SPRINT: Single-Step Generative Recommendation via Average Probability Velocity**: SPRINT predicts probabilities for all semantic-ID positions in one bidirectional-Transformer pass instead of repeated decoding or refinement. Its average-probability-velocity formulation motivates this shortcut, while token-level and whole-identifier contrastive objectives restore coherence between independently predicted positions, addressing the risk that fast parallel predictions form an inconsistent item code. — [Paper](https://arxiv.org/abs/2609.34306) (University of Technology Sydney / New York University Abu Dhabi / University of California, San Diego · arXiv 2026)

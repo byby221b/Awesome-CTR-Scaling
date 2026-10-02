@@ -65,8 +65,8 @@ def check_source_identity(value, pid, version, errors):
 def validate(data):
     """Reject ambiguous IDs, unsupported tags, malformed fields and unsafe links."""
     errors = []
-    if data.get("schema_version") not in (1, 2):
-        errors.append("schema_version must be 1 or 2")
+    if data.get("schema_version") != 3:
+        errors.append("schema_version must be 3")
     for key in ("meta", "categories", "papers", "companies", "tag_vocabulary"):
         if key not in data:
             errors.append(f"missing {key}")
@@ -105,10 +105,12 @@ def validate(data):
         if not isinstance(pid, str) or not ID_PATTERN.fullmatch(pid) or pid in ids:
             errors.append(f"invalid or duplicate arXiv id {pid}")
         ids.add(pid)
-        for field in ("title", "affiliation", "venue", "contribution"):
+        if "contribution" in paper:
+            errors.append(f"{pid}: contribution was removed in schema v3; use source-grounded summaries")
+        for field in ("title", "affiliation", "venue"):
             if not isinstance(paper.get(field), str):
                 errors.append(f"{pid}: {field} must be a string")
-            elif field in ("title", "contribution") and not paper[field].strip():
+            elif field == "title" and not paper[field].strip():
                 errors.append(f"{pid}: {field} cannot be blank")
             elif "\n" in paper[field] or "\r" in paper[field]:
                 errors.append(f"{pid}: {field} must be one line")
@@ -159,8 +161,8 @@ def validate(data):
                     continue
                 if not isinstance(summary.get("text"), str) or not summary["text"].strip():
                     errors.append(f"{pid}: summary {lang} text cannot be blank")
-                if summary.get("basis") not in ("original_abstract", "catalog_contribution"):
-                    errors.append(f"{pid}: summary {lang} has invalid basis")
+                if summary.get("basis") != "original_abstract":
+                    errors.append(f"{pid}: summary {lang} basis must be original_abstract")
                 if summary.get("basis") == "original_abstract" and (not isinstance(abstract, dict) or abstract.get("status") != "verified"):
                     errors.append(f"{pid}: abstract-based summary {lang} requires a verified original abstract")
                 if summary.get("method") not in ("ai_assisted", "editorial"):
@@ -243,6 +245,12 @@ def links_md(paper):
     return " · ".join(f"[{md(link['label'])}]({link['url']})" for link in paper["links"])
 
 
+def english_summary(paper):
+    """All Markdown descriptions share the verified English summary source."""
+    text = paper.get("summaries", {}).get("en", {}).get("text")
+    return md(text).replace("\r\n", "\n").replace("\r", "\n").replace("\n", "<br>") if text else "English summary not yet available."
+
+
 def paper_location(paper, categories, prefix=""):
     return prefix + category_path(categories[paper["category"]]) + "#" + anchor(paper["id"])
 
@@ -255,14 +263,14 @@ def topic_page(category, papers, data):
         output += TABLE_HEADER
         for paper in papers:
             cells = [f'<a id="{anchor(paper["id"])}"></a>**{md(paper["title"])}**', md(paper["affiliation"]), md(paper["venue"]), str(paper["year"]),
-                     " ".join(f"`{tag}`" for tag in paper["tags"]), links_md(paper), md(paper["contribution"])]
+                     " ".join(f"`{tag}`" for tag in paper["tags"]), links_md(paper), english_summary(paper)]
             output += "| " + " | ".join(cells) + " |\n"
     else:
         for paper in papers:
             publication = " ".join(str(x) for x in (paper["venue"], paper["year"]) if x)
             metadata = " · ".join(x for x in (paper["affiliation"], publication) if x)
             output += f'<a id="{anchor(paper["id"])}"></a>\n\n'
-            output += f"- **{md(paper['title'])}**: {md(paper['contribution'])} — {links_md(paper)} ({md(metadata)})\n\n"
+            output += f"- **{md(paper['title'])}**: {english_summary(paper)} — {links_md(paper)} ({md(metadata)})\n\n"
     return output.rstrip() + "\n"
 
 
@@ -271,7 +279,7 @@ def readme(data, counts):
     output = NOTICE + f"# {meta['title']}\n\nA curated library of **scaling laws and scalable ranking/CTR models** for industrial recommendation systems.\n\n"
     output += f"**{len(data['papers'])} papers** · **{counts['core']} core** · **{counts['related']} related** · Updated {meta['updated']}\n\n"
     output += f'<a id="table-of-contents"></a>\n\n[**Search the paper library →**]({meta["site_url"]}) · [**中文页面**]({meta["site_url"]}zh.html) · [All topics](docs/README.md) · [Company index](docs/companies.md) · [Contribute](CONTRIBUTING.md)\n\n'
-    output += f"> **Scope:** {meta['scope']}\n\n## Papers\n\nFive focused reading paths. Each topic keeps the complete seven-column catalog: paper, affiliation, venue, year, tags, links and key contribution.\n\n"
+    output += f"> **Scope:** {meta['scope']}\n\n## Papers\n\nFive focused reading paths. Each topic keeps the complete seven-column catalog: paper, affiliation, venue, year, tags, links and key contribution. The last column and related-work descriptions use the same source-grounded English summaries as the website.\n\n"
     for category in data["categories"]:
         if category["collection"] != "core":
             continue
@@ -284,7 +292,7 @@ def readme(data, counts):
     output += "\n## Company Overview\n\n[Browse the linked company index](docs/companies.md). Every entry opens its paper in the relevant topic; the website also filters by company.\n\n"
     output += "## Keeping everything in sync\n\n[The canonical dataset](data/papers.json) generates this README, all topic pages, the company index and the website. Change a paper once, regenerate all views, and let CI reject drift.\n\n"
     output += "```sh\npython scripts/generate.py\npython scripts/generate.py --check\npython -m unittest discover -s tests -v\n```\n\n"
-    output += "See [CONTRIBUTING.md](CONTRIBUTING.md) for the schema, update workflow and local preview; [deployment instructions](docs/deployment.md) cover GitHub Pages.\n\n## Contributing\n\nWe welcome relevant papers, corrections and better source links. Please open an issue or submit a pull request. Preserve verified contribution details and use the [controlled tag vocabulary](docs/README.md#tag-vocabulary).\n\n## Star History\n\nIf you find this repository useful, please consider giving it a star!\n"
+    output += "See [CONTRIBUTING.md](CONTRIBUTING.md) for the schema, update workflow and local preview; [deployment instructions](docs/deployment.md) cover GitHub Pages.\n\n## Contributing\n\nWe welcome relevant papers, corrections and better source links. Please open an issue or submit a pull request. Preserve verified summary details and use the [controlled tag vocabulary](docs/README.md#tag-vocabulary).\n\n## Star History\n\nIf you find this repository useful, please consider giving it a star!\n"
     return output
 
 

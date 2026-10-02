@@ -18,7 +18,11 @@ policy remain unchanged.
    source text, with version, retrieval time and provenance; translations belong
    in summaries. Show missing content truthfully. Both summary languages must
    convey the same evidence and limitations. An abstract-based summary must not
-   claim full-paper validation. Preserve previous verified content during a
+   claim full-paper validation. Schema v3 has no `contribution` field and rejects
+   `catalog_contribution` as a summary basis. Never restore deleted annotations,
+   duplicate them as an alias, or use them as a fallback. Markdown descriptions
+   derive directly from `summaries.en.text`; absent summaries remain explicit
+   gaps. Preserve previous verified content during a
    transient source outage. A title mismatch needs editorial review, not an
    automatic canonical-title rewrite
 4. Prepare focused `{"papers":[...]}` patches using the schema in
@@ -31,8 +35,8 @@ policy remain unchanged.
    bilingual factual consistency, explicit gaps, counts, provenance and safe
    links. A new paper must appear in the catalog, topic view, company membership
    where applicable, and both language readers. The new-paper integration tests
-   exercise the same path. If historical fields are untouched, also run the
-   strict migration audit
+   exercise the same path. If baseline bibliographic fields and relative order are untouched, also run
+   the strict metadata migration audit (which permits newly added paper IDs)
 6. Commit `data/papers.json`, `generated-manifest.json` and all changed generated
    files from the manifest together, plus intentional source/doc/test changes.
    This includes `site/index.html` and `site/zh.html`, which share one dataset.
@@ -60,7 +64,7 @@ python -m unittest discover -s tests -v
 node --check web/app.js
 node tests/frontend.test.cjs
 python scripts/verify_migration.py
-# Only when historical fields and order remain unchanged:
+# Only when baseline bibliographic fields and relative order remain unchanged:
 python scripts/verify_migration.py --strict
 ```
 

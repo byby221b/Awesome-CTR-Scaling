@@ -1,46 +1,45 @@
 #!/usr/bin/env python3
-"""Audit the pinned README migration; --strict also requires unchanged legacy fields.
+"""Audit retained migration metadata; --strict also compares bibliographic fields.
 
-Use --strict for the initial migration only. Later verified metadata corrections
-are allowed; the normal audit still guarantees baseline IDs are retained.
+The prose-free baseline preserves stable IDs, categories and company attribution.
+Obsolete catalog summaries are intentionally excluded from the current repository.
 """
 import argparse
 import hashlib
 import json
 from pathlib import Path
 
-from legacy import parse_source, format_original
-
 ROOT = Path(__file__).resolve().parents[1]
-SOURCE_SHA256 = "3152b05b92299adbc6d09727202233cb3328f14b489aa2dc8540a41c9087825c"
+BASELINE_SHA256 = "0a4b73fad930c22e3c54e6004e75428f0bd70ed5ce656b34be15655df51f659f"
+METADATA_FIELDS = ("id", "title", "collection", "category", "affiliation", "venue", "year", "tags", "links")
 
 
 def audit(strict=False):
-    source_bytes = (ROOT / "migration/original-README.md").read_bytes()
-    assert hashlib.sha256(source_bytes).hexdigest() == SOURCE_SHA256, "migration snapshot was changed"
-    source = source_bytes.decode()
-    categories, original, overview = parse_source(source)
-    expected_lines = [line for line in source.splitlines() if (line.startswith("| **") and "arxiv.org/abs/" in line) or line.startswith("- **")]
-    assert [format_original(p) for p in original] == expected_lines, "source parser is not lossless"
+    baseline_bytes = (ROOT / "migration/metadata-baseline.json").read_bytes()
+    assert hashlib.sha256(baseline_bytes).hexdigest() == BASELINE_SHA256, "metadata baseline was changed"
+    baseline = json.loads(baseline_bytes)
+    original = baseline["papers"]
+    assert all(set(paper) == set(METADATA_FIELDS) for paper in original), "baseline must contain bibliographic metadata only"
     data = json.loads((ROOT / "data/papers.json").read_text(encoding="utf-8"))
     current = {paper["id"]: paper for paper in data["papers"]}
     assert len(current) == len(data["papers"]), "duplicate paper IDs"
-    assert {p["id"] for p in original} <= current.keys(), "baseline paper IDs missing"
-    fields = list(original[0])
-    differences = [(p["id"], field) for p in original for field in fields if current[p["id"]].get(field) != p[field]]
+    baseline_ids = {paper["id"] for paper in original}
+    assert baseline_ids <= current.keys(), "baseline paper IDs missing"
+    differences = [(paper["id"], field) for paper in original for field in METADATA_FIELDS
+                   if current[paper["id"]].get(field) != paper[field]]
     companies = {company["id"]: company for company in data["companies"]}
-    for company in overview:
+    for company in baseline["company_overview"]:
         assert company["name"] == companies[company["id"]]["name"]
         assert company["legacy_labels"] == [entry["label"] for entry in companies[company["id"]]["legacy_entries"]]
     if strict:
-        assert not differences, f"legacy field differences: {differences}"
-        assert len(original) == len(current), "initial migration has unexpected papers"
-        assert [p["id"] for p in original] == [p["id"] for p in data["papers"]], "original reading order changed"
-    return {"source_commit": "31ad30becff83ca14a01f37fc99d52ba79f85565", "source_sha256": SOURCE_SHA256,
+        assert not differences, f"baseline metadata differences: {differences}"
+        assert [paper["id"] for paper in original] == [paper["id"] for paper in data["papers"] if paper["id"] in baseline_ids], "baseline reading order changed"
+    return {"source_commit": baseline["source_commit"], "source_readme_sha256": baseline["source_readme_sha256"],
+            "metadata_baseline_sha256": BASELINE_SHA256,
             "baseline_papers": len(original), "core": sum(p["collection"] == "core" for p in original),
-            "related": sum(p["collection"] == "related" for p in original), "categories": len(categories),
-            "legacy_companies": len(overview), "original_fields_compared": len(original) * len(fields),
-            "changed_legacy_fields": len(differences), "strict": strict}
+            "related": sum(p["collection"] == "related" for p in original), "categories": len(baseline["categories"]),
+            "legacy_companies": len(baseline["company_overview"]), "metadata_fields_compared": len(original) * len(METADATA_FIELDS),
+            "changed_metadata_fields": len(differences), "strict": strict}
 
 
 if __name__ == "__main__":

@@ -13,7 +13,7 @@ from datetime import date
 import generate
 
 ROOT = Path(__file__).resolve().parents[1]
-FIELDS = {"id", "title", "collection", "category", "affiliation", "venue", "year", "tags", "links", "contribution", "aliases", "doi", "original_abstract", "summaries"}
+FIELDS = {"id", "title", "collection", "category", "affiliation", "venue", "year", "tags", "links", "aliases", "doi", "original_abstract", "summaries"}
 
 
 def merge_patches(data, patch):
@@ -44,7 +44,7 @@ def merge_patches(data, patch):
                     target[key] = {**target.get(key, {}), **copy.deepcopy(value)}
                 else:
                     target[key] = copy.deepcopy(value)
-    result["schema_version"] = 2
+    result["schema_version"] = 3
     generate.validate(result)
     return result
 

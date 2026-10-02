@@ -10,208 +10,208 @@ Transferable ideas from general-purpose model architecture research.
 
 <a id="paper-2606-16825"></a>
 
-- **Tying the Loop -- Tied Expert Layers in Mixture-of-Experts Language Models**: Shares expert parameters across consecutive transformer layers while preserving independent routing; reduces memory footprint by ~2× at virtually no quality degradation — [Paper](https://arxiv.org/abs/2606.16825) (2026)
+- **Tying the Loop -- Tied Expert Layers in Mixture-of-Experts Language Models**: Expert Tying reduces the memory cost of mixture-of-experts language models by sharing expert weights across consecutive layers while keeping each layer’s attention and routing independent. Experiments across several MoE families indicate that much of the expert bank is redundant across depth, allowing substantial parameter-memory savings with little change in perplexity or downstream quality. — [Paper](https://arxiv.org/abs/2606.16825) (2026)
 
 <a id="paper-2606-16768"></a>
 
-- **Taming Curvature: Architecture Warm-Up for Stable Transformer Training**: Fast online estimator of largest Hessian eigenvalue for per-iteration curvature tracking; enables stable billion-parameter Transformer training — [Paper](https://arxiv.org/abs/2606.16768) (2026)
+- **Taming Curvature: Architecture Warm-Up for Stable Transformer Training**: This work connects Transformer training instability to sudden increases in optimizer-preconditioned curvature. A warm-started Hessian estimator makes curvature tracking practical at large scale, and the resulting observations motivate architecture warm-up: progressively adding depth to control curvature, reducing loss spikes and divergence without slowing convergence in the reported experiments. — [Paper](https://arxiv.org/abs/2606.16768) (2026)
 
 <a id="paper-2606-16429"></a>
 
-- **Taylor-Calibrate: Principled Initialization for Hybrid Linear Attention Distillation**: Principled initialization for converting pretrained Transformers to Gated DeltaNet linear attention students; addresses brittleness in hybrid linear attention distillation — [Paper](https://arxiv.org/abs/2606.16429) (2026)
+- **Taylor-Calibrate: Principled Initialization for Hybrid Linear Attention Distillation**: Taylor-Calibrate improves the starting point when converting a pretrained Transformer into a hybrid Gated DeltaNet model. Teacher attention statistics initialize the new recurrent memory timescales and gates, followed by brief layerwise output alignment, so distillation spends fewer tokens repairing mismatched dynamics and more efficiently recovers the teacher’s behavior. — [Paper](https://arxiv.org/abs/2606.16429) (2026)
 
 <a id="paper-2606-16456"></a>
 
-- **SPRI: SVD-Partitioned Residual Initialization for Data-Constrained MoE Upcycling**: SVD-partitioned residual initialization for converting dense models to sparse MoE under data constraints; outperforms existing upcycling methods — [Paper](https://arxiv.org/abs/2606.16456) (2026)
+- **SPRI: SVD-Partitioned Residual Initialization for Data-Constrained MoE Upcycling**: SPRI converts a pretrained dense model into a mixture of experts when supervised adaptation data are limited. It partitions residual components of the feed-forward weights through singular-value decomposition to create controlled expert diversity, then uses two-stage training to stabilize adaptation; multilingual speech translation experiments show benefits over dense fine-tuning and prior upcycling approaches. — [Paper](https://arxiv.org/abs/2606.16456) (2026)
 
 <a id="paper-2606-17952"></a>
 
-- **SoftMoE: Soft Differentiable Routing for Mixture-of-Experts in LLMs**: Truncated soft top-k LapSum relaxation enabling gradient-based optimization of expert routing; learns layer-wise expert capacity allocation under a global budget constraint — [Paper](https://arxiv.org/abs/2606.17952) (ICML 2026)
+- **SoftMoE: Soft Differentiable Routing for Mixture-of-Experts in LLMs**: SoftMoE replaces discrete top-k expert selection with a differentiable relaxation and learns how much expert computation each layer should receive under a global budget. The method preserves autoregressive causality and discovers uneven allocations, often using more experts in later layers, achieving competitive language-model quality with fewer activated experts. — [Paper](https://arxiv.org/abs/2606.17952) (ICML 2026)
 
 <a id="paper-2606-23670"></a>
 
-- **Tapered Language Models**: Non-uniform parameter allocation across depth via cosine-scheduled MLP width tapering; shows earlier layers benefit from more capacity; works across Transformer, Gated Attention, and Titans architectures — [Paper](https://arxiv.org/abs/2606.23670) (Mila · 2026)
+- **Tapered Language Models**: Tapered Language Models challenge the convention of giving every layer the same parameter capacity. They gradually narrow feed-forward layers with depth while keeping the total budget fixed, allocating more capacity to earlier transformations; controlled evaluations across several architecture families find better perplexity and downstream performance without extra parameters or computation. — [Paper](https://arxiv.org/abs/2606.23670) (Mila · 2026)
 
 <a id="paper-2606-25010"></a>
 
-- **Emergent Capabilities Arise Randomly from Learning Sparse Attention Patterns**: Mechanistic study showing emergence corresponds to abrupt learning of task-relevant sparse attention patterns; scaling heads improves learning efficiency while head dimension yields diminishing returns past a minimum; insights for sparse-attention-based ranking architectures — [Paper](https://arxiv.org/abs/2606.25010) (2026)
+- **Emergent Capabilities Arise Randomly from Learning Sparse Attention Patterns**: The paper links abrupt capability gains to the sudden discovery of task-relevant sparse attention patterns during training. Synthetic-task experiments show that these learning events are stochastic and depend on context length, pattern sparsity and head count, offering a mechanistic explanation for why smooth aggregate loss improvements can coexist with apparently abrupt downstream emergence. — [Paper](https://arxiv.org/abs/2606.25010) (2026)
 
 <a id="paper-2606-25008"></a>
 
-- **Neural Scaling Universality**: Position paper arguing scaling-law exponents are fixed by generic mechanisms (Softmax nonlinearity, representational superposition, layer ensembling) and coefficients (sensitive to data/architecture) are the lever for practical gains — [Paper](https://arxiv.org/abs/2606.25008) (2026)
+- **Neural Scaling Universality**: This position paper argues that common mechanisms may fix the exponents of language-model scaling laws across many architectures and datasets. It proposes shifting attention to the coefficients, which remain sensitive to design and data choices and determine practical compute-optimal trade-offs; these are theoretical arguments about a universality class rather than a universal empirical guarantee. — [Paper](https://arxiv.org/abs/2606.25008) (2026)
 
 <a id="paper-2606-29858"></a>
 
-- **Smooth Scaling Laws Hide Stepwise Token Learning**: Token-level decomposition reveals scaling laws are governed by the distribution of localized token learning times; reshaping training distribution according to token learnability yields 11% faster loss reduction — [Paper](https://arxiv.org/abs/2606.29858) (2026)
+- **Smooth Scaling Laws Hide Stepwise Token Learning**: This study explains smooth language-model scaling through many localized token-learning transitions occurring at different times. Sigmoid fits to contextualized token losses yield a learning-time distribution that reconstructs aggregate loss trends, and reshaping training data around when tokens become learnable demonstrates that the same microscopic signal can also guide more efficient training. — [Paper](https://arxiv.org/abs/2606.29858) (2026)
 
 <a id="paper-2603-04971"></a>
 
-- **MoUE (Mixture of Universal Experts)**: Introduces Virtual Width as a new MoE scaling dimension; reuses a universal layer-agnostic expert pool across layers, converting depth into virtual width under fixed per-token activation budget — [Paper](https://arxiv.org/abs/2603.04971) (Baidu · 2026)
+- **MoUE (Mixture of Universal Experts)**: Mixture of Universal Experts reuses a layer-independent expert pool across depth to expand the choices available under a fixed per-token activation budget. Structured sharing, exposure-aware load balancing and a router with lightweight trajectory state control the resulting routing complexity, providing an alternative scaling axis through expert reuse rather than simply adding physical depth or width. — [Paper](https://arxiv.org/abs/2603.04971) (Baidu · 2026)
 
 <a id="paper-2604-09175"></a>
 
-- **Generalization and Scaling Laws for MoE Transformers**: Theory of MoE generalization; sup-norm covering-number bound separating active per-input capacity from routing combinatorics; yields generalization bound under distributional assumptions — [Paper](https://arxiv.org/abs/2604.09175) (Academic · 2026)
+- **Generalization and Scaling Laws for MoE Transformers**: This theoretical work separates an MoE Transformer’s active parameter capacity from the complexity of its possible routing patterns. Under specified data and target-function assumptions, it derives generalization, approximation and scaling results, clarifying when extra active capacity or more experts can help and which observed advantages require explanations beyond worst-case statistical bounds. — [Paper](https://arxiv.org/abs/2604.09175) (Academic · 2026)
 
 <a id="paper-2603-21862"></a>
 
-- **Holistic MoE Scaling**: Reusable framework for optimal MoE architecture optimization via holistic scaling laws; addresses combinatorially vast MoE design space by jointly considering all architectural variables — [Paper](https://arxiv.org/abs/2603.21862) (Academic · 2026)
+- **Holistic MoE Scaling**: This framework translates compute budgets into complete MoE architecture configurations instead of fitting isolated expert-count trends. It jointly constrains compute, active parameters and total parameters, then reduces a large design space into two smaller search phases; experiments also show that larger scales permit a wider near-optimal band, leaving room to accommodate infrastructure constraints. — [Paper](https://arxiv.org/abs/2603.21862) (Academic · 2026)
 
 <a id="paper-2607-02980"></a>
 
-- **HiLS**: Hierarchical Landmark Sparse Attention; learns chunk selection end-to-end under LM loss; factorizes attention hierarchically for chunk-specific extraction and fusion; extrapolates 64× training context with 90% retrieval accuracy — [Paper](https://arxiv.org/abs/2607.02980) (2026)
+- **HiLS**: HiLS learns sparse attention chunk selection directly through the language-model objective. Each selected chunk produces its own attention output, and retrieval scores determine how those outputs are combined, making selection trainable end to end; evaluations show strong in-domain quality and substantial context-length extrapolation, including after lightweight conversion of full-attention models. — [Paper](https://arxiv.org/abs/2607.02980) (2026)
 
 <a id="paper-2607-02303"></a>
 
-- **HOLA (Hippocampal Linear Attention)**: Adds bounded exact KV cache as hippocampal complement to recurrent linear attention state; semiparametric dual-memory architecture achieving 16.1% perplexity reduction while maintaining O(1) memory for inference — [Paper](https://arxiv.org/abs/2607.02303) (Academic · 2026)
+- **HOLA (Hippocampal Linear Attention)**: HOLA supplements linear attention’s compressed recurrent state with a bounded cache of exact key–value pairs. It retains associations whose committed prediction residual is large and uses a separate sharp retrieval path, preserving facts that compression might overwrite while keeping the usual recurrent memory for broadly compressible structure. — [Paper](https://arxiv.org/abs/2607.02303) (Academic · 2026)
 
 <a id="paper-2607-07386"></a>
 
-- **SDM (Sparse Delta Memory)**: Scales linear RNN hidden state by orders of magnitude via sparse addressing; extends Gated DeltaNet with sparse reads/writes to a large explicit memory; isoFLOP-optimal state capacity significantly improves in-context learning and long-context recall — [Paper](https://arxiv.org/abs/2607.07386) (Meta · 2026)
+- **SDM (Sparse Delta Memory)**: Sparse Delta Memory expands a linear recurrent model’s state without paying for dense access to every memory location. It replaces Gated DeltaNet’s dense key–value update with sparse reads and writes into a larger explicit memory, improving long-context recall at matched compute and parameter budgets; learning the initial memory also benefits knowledge and reasoning tasks. — [Paper](https://arxiv.org/abs/2607.07386) (Meta · 2026)
 
 <a id="paper-2607-08186"></a>
 
-- **Hidden Decoding at Scale**: Sequence-length scaling via Hidden Decoding during continued pretraining; expands each token into n streams with Stream-Factorized Attention (quadratic→linear in n); first demonstrated at 100B+ MoE scale (WeLM-HD4-80B/617B); a fixed-backbone scaling path orthogonal to parameter scaling — [Paper](https://arxiv.org/abs/2607.08186) (WeChat AI · 2026)
+- **Hidden Decoding at Scale**: Hidden Decoding adds internal computation to a fixed Transformer backbone by expanding each token into multiple embedding streams during continued pretraining. Stream-factorized attention limits most interactions to individual streams, keeping expansion affordable and compatible with standard pipeline parallelism; experiments demonstrate a sequence-length-based scaling route without widening or adding backbone layers. — [Paper](https://arxiv.org/abs/2607.08186) (WeChat AI · 2026)
 
 <a id="paper-2607-10034"></a>
 
-- **MLPs are Hebbians**: First Transformer-compatible closed-form MLP construction achieving information-theoretically optimal fact storage scaling; 10–104× fewer parameters than prior constructions at matched fact count; enables modular fact editing by swapping MLP layers — [Paper](https://arxiv.org/abs/2607.10034) (Stanford · 2026)
+- **MLPs are Hebbians**: This work constructs Transformer-compatible feed-forward networks that store and retrieve factual associations with efficient parameter scaling. By analyzing decoding margins as well as storage, it accounts for embedding geometry and demonstrates near-optimal capacity under its assumptions; a proof of concept also edits facts by replacing the corresponding constructed feed-forward module. — [Paper](https://arxiv.org/abs/2607.10034) (Stanford · 2026)
 
 <a id="paper-2607-07706"></a>
 
-- **The Key to Going Linear**: Analysis-driven post-hoc Transformer linearization; reveals softmax relies on key-dependent rank-1 orthogonal projections explaining delta-style linear attention's superiority; introduces sink tokens, short convolutions, and fixed-budget cache routing to close the quality gap; scales to 32B on LLaMA and Qwen — [Paper](https://arxiv.org/abs/2607.07706) (Qualcomm AI Research · NeurIPS 2026)
+- **The Key to Going Linear**: This study isolates recurrent state-update design when replacing softmax attention while freezing the rest of a Transformer. Its analysis connects softmax to key-dependent rank-one projections, motivating delta-style updates and targeted additions such as sink tokens, short convolutions and bounded cache routing to reduce the quality gap in post-hoc linearization. — [Paper](https://arxiv.org/abs/2607.07706) (Qualcomm AI Research · NeurIPS 2026)
 
 <a id="paper-2607-13491"></a>
 
-- **DeepLoop**: Depth scaling for looped Transformers; formalizes tied-depth effect via visit-alignment coefficient; proper residual scaling rules (α, β exponents) for stable recurrent parameter reuse; complements loop scaling paradigm — [Paper](https://arxiv.org/abs/2607.13491) (2026)
+- **DeepLoop**: DeepLoop adjusts residual scaling for Transformers that revisit shared layers, where gradients from repeated visits contribute to the same parameter update. A perturbation analysis accounts for alignment between those visits and yields a different depth-scaling rule, improving stability and quality once recurrence is introduced rather than treating unrolled depth like independent layers. — [Paper](https://arxiv.org/abs/2607.13491) (2026)
 
 <a id="paper-2607-14530"></a>
 
-- **xHC (Expanded Hyper-Connections)**: First HC-family method to expand residual stream beyond N=4; sparse update of k=4 streams while retaining dense access to N=16; 1.50× compute reduction vs vanilla at same loss on 18B/28B MoE; xHC-Flash reduces memory traffic for practical training — [Paper](https://arxiv.org/abs/2607.14530) (2026)
+- **xHC (Expanded Hyper-Connections)**: xHC expands Transformer residual memory into more parallel streams while addressing the diminishing returns and rising costs of earlier hyper-connections. Richer write-back information and sparse stream updates retain access to the full residual state, while a specialized implementation reduces memory traffic, making residual-stream capacity a more practical language-model scaling dimension. — [Paper](https://arxiv.org/abs/2607.14530) (2026)
 
 <a id="paper-2607-14018"></a>
 
-- **Transforming Rank**: Analyzes how each Transformer feedforward block component determines rank survival across depth; reinterprets skip connections and normalization as rank-preserving mechanisms; shows skip scale controls rank-collapse vs ensemble behavior trade-off — [Paper](https://arxiv.org/abs/2607.14018) (2026)
+- **Transforming Rank**: This paper interprets Transformer block design through the survival of representation and gradient rank across depth at initialization. It shows how residual strength, normalization placement and feed-forward width expansion trade off rank collapse, compositional depth and parameter cost, offering a unifying explanation for architectural choices often discussed only in terms of activation magnitude. — [Paper](https://arxiv.org/abs/2607.14018) (2026)
 
 <a id="paper-2607-16051"></a>
 
-- **Loopie (Loop the Loopies!)**: Looped MoE Transformers resolving the longstanding challenge that parameter scaling outperforms loop scaling; 20B/6B MoE models with 2B/0.6B active params substantially outperform vanilla Transformer baselines at same compute budget; complements loop scaling paradigm for CTR — [Paper](https://arxiv.org/abs/2607.16051) (2026)
+- **Loopie (Loop the Loopies!)**: The Loopie report presents two looped mixture-of-experts language models and examines whether reusing depth can compete with spending the same training compute on a conventional Transformer. Its ablations report gains over compute-matched baselines, and an additional post-training method strengthens reasoning; the abstract does not specify enough detail to reconstruct that training recipe. — [Paper](https://arxiv.org/abs/2607.16051) (2026)
 
 <a id="paper-2603-15031"></a>
 
-- **Attention Residuals (AttnRes)**: Replaces fixed unit-weight PreNorm residual accumulation with softmax attention over preceding layer outputs for input-dependent selective aggregation across depth, countering uncontrolled hidden-state growth that dilutes each layer's contribution; Block AttnRes partitions layers into blocks to bound memory and communication overhead for large-scale training — the residual-aggregation idea later adapted by CTR depth-scaling work (e.g. Pointwise AttnRes in DeRes) — [Paper](https://arxiv.org/abs/2603.15031) (Kimi · 2026)
+- **Attention Residuals (AttnRes)**: Attention Residuals replaces fixed addition of earlier layer outputs with input-dependent attention over depth. This lets layers select useful previous representations instead of diluting them in a growing residual sum, while a blockwise variant and communication optimizations make the approach practical for large-scale training and improve depthwise signal and gradient balance. — [Paper](https://arxiv.org/abs/2603.15031) (Kimi · 2026)
 
 <a id="paper-2607-27230"></a>
 
-- **MHAR (Multi-Head Attention Residuals)**: Per-subspace depth routing with zero added parameters; reshapes routing query into H independent heads over depth history removing forced-compromise bottleneck of single-query attention residuals; improves validation loss at 100M/350M/1B scales — [Paper](https://arxiv.org/abs/2607.27230) (Academic · 2026)
+- **MHAR (Multi-Head Attention Residuals)**: Multi-Head Attention Residuals lets different feature subspaces independently choose which earlier layers to read. Splitting the routing query into heads removes the single-distribution compromise of ordinary attention residuals without adding parameters, although the head count still needs tuning; fused kernels and identity-preserving conversion improve practicality for training and adapting larger models. — [Paper](https://arxiv.org/abs/2607.27230) (Academic · 2026)
 
 <a id="paper-2602-06154"></a>
 
-- **MoSE (Mixture of Slimmable Experts)**: Each MoE expert has a nested slimmable structure executable at variable widths; enables continuous accuracy-compute trade-off spectrum at inference without retraining; lightweight test-time training maps router confidence to expert widths under fixed budget — [Paper](https://arxiv.org/abs/2602.06154) (MBZUAI / Amazon · ICML 2026)
+- **MoSE (Mixture of Slimmable Experts)**: MoSE makes each expert executable at several nested widths, so conditional computation chooses both which experts to use and how much of each to run. Multi-width training and runtime width selection allow one checkpoint to cover a smoother quality–compute frontier, including budget-aware policies that map router confidence to expert width. — [Paper](https://arxiv.org/abs/2602.06154) (MBZUAI / Amazon · ICML 2026)
 
 <a id="paper-2308-00951"></a>
 
-- **Soft MoE (From Sparse to Soft Mixtures of Experts)**: Fully-differentiable sparse Transformer replacing discrete token routing with implicit soft assignment; passes different weighted combinations of all input tokens to each expert; addresses training instability, token dropping, and expert scaling limitations of sparse MoE — [Paper](https://arxiv.org/abs/2308.00951) (Google · ICLR 2024)
+- **Soft MoE (From Sparse to Soft Mixtures of Experts)**: This Soft MoE forms weighted combinations of input tokens and sends those combined tokens to experts, making expert assignment fully differentiable. In visual-recognition experiments, the design addresses issues such as token dropping and unstable routing while expanding parameter capacity with modest inference cost, demonstrating a way to scale expert capacity through soft token assignment. — [Paper](https://arxiv.org/abs/2308.00951) (Google · ICLR 2024)
 
 <a id="paper-2412-14219"></a>
 
-- **A Survey on Inference Optimization Techniques for Mixture of Experts Models**: Comprehensive survey of MoE inference optimization across the full system stack; taxonomizes model-level (expert design, compression, dynamic routing, expert merging), system-level (distributed computing, load balancing, scheduling), and hardware-level optimizations — [Paper](https://arxiv.org/abs/2412.14219) (CUHK / SJTU · ACM Computing Surveys 2025)
+- **A Survey on Inference Optimization Techniques for Mixture of Experts Models**: This survey organizes mixture-of-experts inference optimization across model, system and hardware layers. It connects techniques such as expert compression and routing to distributed scheduling, load balancing and hardware co-design, providing a map of deployment trade-offs and open challenges rather than proposing one universally best acceleration method. — [Paper](https://arxiv.org/abs/2412.14219) (CUHK / SJTU · ACM Computing Surveys 2025)
 
 <a id="paper-2609-01343"></a>
 
-- **SMELT: Scaling Laws for Compute-Matched MoE Looped Transformers**: Studies MoE looping under strict compute-matching (FLOPs, params, KV cache); loop-middle-only with 2 iterations is optimal; scaling to 54B params shows 6.8–18.0% training FLOPs savings on compute-optimal frontier; rigorous scaling law for loop scaling paradigm — [Paper](https://arxiv.org/abs/2609.01343) (2026)
+- **SMELT: Scaling Laws for Compute-Matched MoE Looped Transformers**: SMELT tests looped MoE Transformers while matching per-token computation, non-embedding parameters and key–value cache budgets. Repeating the middle half of the network twice improves the fitted compute–loss frontier and downstream results, with attention analysis suggesting that the second visit reduces sink behavior and focuses more strongly on relevant content. — [Paper](https://arxiv.org/abs/2609.01343) (2026)
 
 <a id="paper-2609-02881"></a>
 
-- **Graph Machine: Towards Better Pretraining via Edges**: O(n)-state architecture with dynamic sparse routing via differentiable pointer-like edges and referral mechanism; replaces 75% dense layers in Qwen3-0.6B with sparse layers retrieving only 2-4 of 4096 tokens per KV head at marginal loss degradation — [Paper](https://arxiv.org/abs/2609.02881) (2026)
+- **Graph Machine: Towards Better Pretraining via Edges**: Graph Machine maintains a memory that grows with context but accesses only a small, dynamically chosen subset through differentiable pointer-like edges. Replacing most dense-attention layers with these sparse layers keeps sparse-layer complexity linear, and pretraining experiments show that a handful of retrieved tokens per head can preserve much of the dense model’s quality. — [Paper](https://arxiv.org/abs/2609.02881) (2026)
 
 <a id="paper-2608-27763"></a>
 
-- **Fast Weight Attention for Continual Learning (Falcon)**: Derives normalized first-order fast-weight updates under read-after-write autoregressive semantics; Falcon-1/2/3 family covers scalar NLMS to sliding-window mini-batch updates with recurrent, masked-parallel, and chunk-parallel forms; separates temporal alignment, plasticity, forgetting, and bounded rehearsal in recurrent models — [Paper](https://arxiv.org/abs/2608.27763) (Academic · 2026)
+- **Fast Weight Attention for Continual Learning (Falcon)**: Falcon treats fast-weight memory updates as online learning and carefully aligns the key–value examples with a prefix-prediction objective. It derives normalized regression and inner-product update families with recurrent and parallel implementations, separating temporal alignment, forgetting and rehearsal; representative variants remain competitive on language modeling and improve arithmetic length extrapolation. — [Paper](https://arxiv.org/abs/2608.27763) (Academic · 2026)
 
 <a id="paper-2609-04575"></a>
 
-- **Training-Free Halving of Activated Experts in Fine-Grained MoE**: Reveals that MoE routing renormalization implicitly calibrates expert output gain to the training top-k; separates the gain-calibration effect from expert selection to training-free halve activated experts at inference without retraining — [Paper](https://arxiv.org/abs/2609.04575) (University of Alberta · 2026)
+- **Training-Free Halving of Activated Experts in Fine-Grained MoE**: The paper shows that reducing activated experts changes both expert selection and the output gain induced by router-probability normalization. Normalizing the selected experts against a separately chosen reference probability mass preserves more quality without retraining, but the best setting differs between perplexity and downstream accuracy, making compression calibration task-dependent. — [Paper](https://arxiv.org/abs/2609.04575) (University of Alberta · 2026)
 
 <a id="paper-2609-40316"></a>
 
-- **Scaling Laws for Looped Mixture of Experts**: Jointly models recurrence, sparsity, model size and data with a bounded sparsity-conditional effective-capacity law; guides looped-MoE designs under compute/memory limits; a 1.3B-total looped MoE matches a 2.9B-total non-looped MoE on reasoning at matched training compute, using more inference compute — [Paper](https://arxiv.org/abs/2609.40316) (Meta AI · arXiv 2026)
+- **Scaling Laws for Looped Mixture of Experts**: Loop Scaling Laws jointly models recurrence, expert sparsity, model size and training data instead of treating looping and MoE as separate scaling mechanisms. A sparsity-dependent mapping estimates the effective capacity gained from reuse, helping choose architectures under compute and memory constraints and explaining how recurrence and sparse capacity can complement each other on reasoning tasks. — [Paper](https://arxiv.org/abs/2609.40316) (Meta AI · arXiv 2026)
 
 <a id="paper-2609-35751"></a>
 
-- **How to Loop MoE: Flatten the Experts, Untie the Attention**: Flattens looped MoE into fewer, wider expert pools with more passes while untying per-pass attention and sharing experts/routers; improves pretraining loss by 0.012 nat at 100B tokens under equal parameters and compute, with matched-or-better downstream accuracy — [Paper](https://arxiv.org/abs/2609.35751) (Case Western Reserve University / Kyoto University / NII LLMC · arXiv 2026)
+- **How to Loop MoE: Flatten the Experts, Untie the Attention**: Foil improves looped MoE design by concentrating experts into fewer, wider expert layers and increasing the number of passes while keeping expert parameters and computation fixed. It also gives each pass separate attention parameters while sharing experts and routers, finding that broader routing choices and pass-specific attention improve pretraining loss and expert utilization. — [Paper](https://arxiv.org/abs/2609.35751) (Case Western Reserve University / Kyoto University / NII LLMC · arXiv 2026)
 
 <a id="paper-2609-36301"></a>
 
-- **MoRE: Scaling mixture of experts with hardware-aware low-rank routing**: Low-rank factorization reduces router cost from O(Mh) to O((h+M)r), with logarithmic-rank expressivity guarantees and fused inference kernels; fits 5–6× more total parameters at matched active FLOPs with similar prefill latency and improved knowledge recall — [Paper](https://arxiv.org/abs/2609.36301) (University of Pennsylvania / The Wharton School · arXiv 2026)
+- **MoRE: Scaling mixture of experts with hardware-aware low-rank routing**: MoRE targets the router itself as a bottleneck when MoE models contain many small experts. A low-rank router factorization reduces scoring cost, with theory supporting compact routing representations under stated assumptions and a fused GPU kernel making the savings practical, allowing more experts within an active-compute budget and improving knowledge-oriented performance. — [Paper](https://arxiv.org/abs/2609.36301) (University of Pennsylvania / The Wharton School · arXiv 2026)
 
 <a id="paper-2609-31093"></a>
 
-- **Block Sparse Attention with Log-Linear Complexity**: Pyramid Top-K routing recursively narrows candidate key blocks using LogSumExp scoring, reducing block-sparse selection plus attention to O(N log N); fused training/inference kernels avoid a full score matrix; evaluated at 418M–2.67B with 100B-token pretraining — [Paper](https://arxiv.org/abs/2609.31093) (Shanghai Jiao Tong University / Shanghai Innovation Institute / ByteDance Seed · arXiv 2026)
+- **Block Sparse Attention with Log-Linear Complexity**: PISA addresses a hidden quadratic cost in sparse attention: choosing relevant blocks can still require scoring every query against every block. It searches a coarse-to-fine key pyramid while keeping the candidate set bounded at each level, achieving log-linear overall complexity with fused routing kernels and competitive language-model quality, particularly on retrieval tasks. — [Paper](https://arxiv.org/abs/2609.31093) (Shanghai Jiao Tong University / Shanghai Innovation Institute / ByteDance Seed · arXiv 2026)
 
 <a id="paper-2609-36529"></a>
 
-- **Triadic Linear Attention: Three-Dimensional Recurrent States for Long-Context Sequence Modeling**: Adds a second key/query axis to lift recurrent memory from a matrix to a third-order tensor; E-fold state expansion needs only two small projections and remains chunk-parallel; improves long-context modeling and recall at 400M/1.3B with ~1.2% parameter overhead for 8× state — [Paper](https://arxiv.org/abs/2609.36529) (Massachusetts Institute of Technology / MIT-IBM Computing Research Lab · arXiv 2026)
+- **Triadic Linear Attention: Three-Dimensional Recurrent States for Long-Context Sequence Modeling**: Triadic linear attention enlarges recurrent memory from a matrix to a three-dimensional tensor using two keys and one value for each write. Two query axes read the resulting state, increasing memory capacity with relatively few additional projections; the construction works with gating, delta updates and chunkwise training and improves long-context modeling and recall. — [Paper](https://arxiv.org/abs/2609.36529) (Massachusetts Institute of Technology / MIT-IBM Computing Research Lab · arXiv 2026)
 
 <a id="paper-2609-38832"></a>
 
-- **Scaling Parameter and Context in Attention: Native Sparse Attention from Mixture-of-Head**: Native head routing activates K of H heads per token and stores only each head’s assigned subsequence, jointly scaling attention parameters and context; top-8-of-32 uses 1/4 KV storage and ~1/16 KV access versus 32-head MHA under balanced routing, with stronger LongBench average — [Paper](https://arxiv.org/abs/2609.38832) (Peking University · arXiv 2026)
+- **Scaling Parameter and Context in Attention: Native Sparse Attention from Mixture-of-Head**: NAMOH routes each token to a subset of attention heads, and each head stores and attends only to its assigned token history. Head selection therefore controls both active parameters and accessible context; balanced routing can shorten per-head histories as total head count grows, making additional attention capacity compatible with more efficient long-context inference. — [Paper](https://arxiv.org/abs/2609.38832) (Peking University · arXiv 2026)
 
 <a id="paper-2609-34212"></a>
 
-- **X-MoD: Practical Scaling Laws for Sparse-Depth Routing Beyond Mixture-of-Depths**: Decouples token sparsity from dense-anchor stride for scalable sparse-depth routing, stabilized by variance-scaled gates and token balancing; a FLOP-matched law predicts capacity/context/stride trade-offs; measured 1.70–1.93× training throughput versus similarly sized MoE at 936M active-equivalent scale — [Paper](https://arxiv.org/abs/2609.34212) (Tsinghua University / Tianjin University · arXiv 2026)
+- **X-MoD: Practical Scaling Laws for Sparse-Depth Routing Beyond Mixture-of-Depths**: X-MoD separates token sparsity from the spacing of dense anchor layers, allowing sparse-depth Transformers to grow total capacity without proportionally increasing active computation. Stabilizing gates and token balancing support training, while a fitted scaling law decomposes capacity gains and context-dependent effects to guide routing choices under a specified compute and context budget. — [Paper](https://arxiv.org/abs/2609.34212) (Tsinghua University / Tianjin University · arXiv 2026)
 
 <a id="paper-2609-32704"></a>
 
-- **CoWindow Attention: Full Causal Coverage Is a Collective Property**: Partitions long-range history into complementary KV-head windows while sharing local/sink windows, preserving collective causal coverage without a router; 0.6B–14B experiments retain comparable quality, with 28.5% total training-FLOP reduction for 14B at 32K context — [Paper](https://arxiv.org/abs/2609.32704) (HKUST (Guangzhou) / Beijing Academy of Artificial Intelligence / Université Paris Cité · arXiv 2026)
+- **CoWindow Attention: Full Causal Coverage Is a Collective Property**: CoWindow Attention distributes distant-history coverage across attention heads instead of making every head revisit the entire past. Heads share local and prefix windows but receive complementary long-range windows, preserving collective causal coverage without a learned router; evaluations show that this structured division can retain strong recall and language-model quality while reducing computation and decoding memory. — [Paper](https://arxiv.org/abs/2609.32704) (HKUST (Guangzhou) / Beijing Academy of Artificial Intelligence / Université Paris Cité · arXiv 2026)
 
 <a id="paper-2609-38166"></a>
 
-- **LeapQuant: Efficient Linear Attention with Accurate Recurrent State Quantization**: Quantizes recurrent states only at window boundaries, buffering updates and retaining outliers as high-precision compensator tokens; near-FP32 accuracy with 8-bit states, 3.4× state compression and 1.47× average end-to-end throughput in evaluated hybrid-LLM serving workloads — [Paper](https://arxiv.org/abs/2609.38166) (UC Berkeley / University of Washington / MIT / Perplexity AI / NVIDIA · arXiv 2026)
+- **LeapQuant: Efficient Linear Attention with Accurate Recurrent State Quantization**: LeapQuant reduces the cost of repeatedly reading and updating linear attention’s recurrent state through training-free low-bit storage. It quantizes only at window boundaries, buffers intervening updates at higher precision and preserves large outliers as compensator tokens, limiting accumulated rounding error while delivering near-baseline quality and faster inference in the evaluated models. — [Paper](https://arxiv.org/abs/2609.38166) (UC Berkeley / University of Washington / MIT / Perplexity AI / NVIDIA · arXiv 2026)
 
 <a id="paper-2609-39137"></a>
 
-- **ID Balancing: Stable Training of Extremely Sparse MoE via PID-Based Load Control**: Integral–derivative routing-bias control scales corrections with expert-load error and reacts when imbalance worsens; stabilizes Top-3-of-768 routing and 18.9B→69.9B MoE scaling while maintaining competitive quality, without adding an auxiliary loss — [Paper](https://arxiv.org/abs/2609.39137) (Qwen Team / Alibaba Token Hub / Alibaba Group · arXiv 2026)
+- **ID Balancing: Stable Training of Extremely Sparse MoE via PID-Based Load Control**: ID Balancing treats expert-load balancing as a feedback-control problem for extremely sparse MoE training. Its integral correction scales with load error and its derivative correction activates when imbalance worsens, applying stronger action when necessary and smaller adjustments near balance, improving stability and utilization while retaining competitive language-model performance. — [Paper](https://arxiv.org/abs/2609.39137) (Qwen Team / Alibaba Token Hub / Alibaba Group · arXiv 2026)
 
 <a id="paper-2609-39034"></a>
 
-- **Switching Linear Attention**: Derives mixture-of-linear-regressors recurrent memory through online EM, with input- and state-dependent responsibilities per output dimension; increases context-sensitive recall capacity while retaining sequence-length-independent state — [Paper](https://arxiv.org/abs/2609.39034) (Stanford University · COLM 2026)
+- **Switching Linear Attention**: Switching Linear Attention increases the expressiveness of fixed-state recurrent attention by letting each output dimension select among multiple linear components. Derived as online expectation-maximization for a mixture of regressions, its update rule retains bounded recurrent memory while improving associative recall, in-context learning and language modeling relative to simpler linear-attention designs. — [Paper](https://arxiv.org/abs/2609.39034) (Stanford University · COLM 2026)
 
 <a id="paper-2609-35664"></a>
 
-- **MS-GLA: Multi-Scale Gated Linear Attention for Addressing Representational Bottlenecks via Multi-Temporal Resolution**: Partitions a fixed GLA head/state budget across causally pooled temporal resolutions, then aligns and fuses outputs; retains chunk-parallel training, with measured throughput and memory overhead in the evaluated multi-scale configuration — [Paper](https://arxiv.org/abs/2609.35664) (International Institute of Information Technology Hyderabad · COLM 2026)
+- **MS-GLA: Multi-Scale Gated Linear Attention for Addressing Representational Bottlenecks via Multi-Temporal Resolution**: MS-GLA assigns gated linear-attention heads to different temporal resolutions so local syntax and long-range structure do not compete entirely within the same memory scale. Coarse heads pool longer spans, fine heads retain local detail, and input-dependent fusion combines them, improving effective representation without enlarging each head’s recurrent state. — [Paper](https://arxiv.org/abs/2609.35664) (International Institute of Information Technology Hyderabad · COLM 2026)
 
 <a id="paper-2609-37379"></a>
 
-- **Looped Transformers as Optimizers**: Treats looped hidden states as fast weights and derives loop transitions from local optimizer updates; OperLoop combines delta-error correction, learned decay and adaptive step sizes for shared-block refinement — [Paper](https://arxiv.org/abs/2609.37379) (HKUST (Guangzhou) / StepFun / Shanghai Jiao Tong University / University of Chinese Academy of Sciences / Tsinghua University · arXiv 2026)
+- **Looped Transformers as Optimizers**: This paper treats a looped Transformer’s hidden state as a fast weight updated by an implicit local optimization process. The framework exposes mismatches in existing loop transitions and derives OperLoop with decay, adaptive step size and a delta objective, showing that optimizer-inspired transition design can improve looped models under matched training computation. — [Paper](https://arxiv.org/abs/2609.37379) (HKUST (Guangzhou) / StepFun / Shanghai Jiao Tong University / University of Chinese Academy of Sciences / Tsinghua University · arXiv 2026)
 
 <a id="paper-2609-29812"></a>
 
-- **FlashLoop: Fast and Memory-Efficient Looped Transformers via Lazy Updates**: Reduces cross-loop redundancy through nested token updates, mass-corrected sparse attention and quantized KV residuals; fused execution lowers inference compute and cache memory with small, task-dependent quality changes — [Paper](https://arxiv.org/abs/2609.29812) (ELLIS Institute Tübingen / Max Planck Institute for Intelligent Systems / Tübingen AI Center · arXiv 2026)
+- **FlashLoop: Fast and Memory-Efficient Looped Transformers via Lazy Updates**: FlashLoop exploits the observation that later loop iterations change only a limited part of a Transformer’s state. Token-sparse updates, sparse attention and quantized differences between successive key–value caches avoid repeated work and storage, translating parameter sharing into practical inference gains while preserving accuracy in the evaluated looped models. — [Paper](https://arxiv.org/abs/2609.29812) (ELLIS Institute Tübingen / Max Planck Institute for Intelligent Systems / Tübingen AI Center · arXiv 2026)
 
 <a id="paper-2609-36314"></a>
 
-- **Fractional State Space Transition for Long Sequence Modeling**: FRAC approximates fractional long-memory dynamics over a finite horizon using log-spaced exponential modes and token-dependent read/write routing; retains chunk-parallel training and bounded-state decoding — [Paper](https://arxiv.org/abs/2609.36314) (Huawei Noah’s Ark Lab, Montreal Research Center · arXiv 2026)
+- **Fractional State Space Transition for Long Sequence Modeling**: FRAC gives state-space models a power-law memory profile rather than relying only on exponential forgetting. It approximates fractional dynamics with a finite collection of log-spaced exponential modes, retaining bounded-state decoding and parallel training while improving retention across broad time ranges and long-context performance in the reported language-model experiments. — [Paper](https://arxiv.org/abs/2609.36314) (Huawei Noah’s Ark Lab, Montreal Research Center · arXiv 2026)
 
 <a id="paper-2602-04852"></a>
 
-- **On State Reduction in Linear Attention**: Uses rank-revealing QR to select matched query/key channels and prune their depthwise-convolution filters, shrinking recurrent state while retaining fast-kernel compatibility; recovery fine-tuning mitigates task-dependent quality loss — [Paper](https://arxiv.org/abs/2602.04852) (Max Planck Institute for Intelligent Systems / ETH Zürich / ELLIS Institute Tübingen / Tübingen AI Center / Liquid AI · arXiv 2026)
+- **On State Reduction in Linear Attention**: This work studies why trained linear-attention states often use only a low-rank portion of their nominal capacity. It connects state rank to key and value structure, then prunes key and query dimensions using hardware-compatible methods, including rank-revealing QR, reducing recurrent memory with modest language-model quality loss in the evaluated settings. — [Paper](https://arxiv.org/abs/2602.04852) (Max Planck Institute for Intelligent Systems / ETH Zürich / ELLIS Institute Tübingen / Tübingen AI Center / Liquid AI · arXiv 2026)
 
 <a id="paper-2605-23893"></a>
 
-- **Complete-muE: Optimal Hyperparameter Transfer and Scaling for MoE Models**: Combines active-width and expert-exposure scaling rules to transfer initialization and AdamW hyperparameters across dense FFN, dense MoE and sparse MoE models; reduces repeated tuning across expert count, granularity and model scale in evaluated settings — [Paper](https://arxiv.org/abs/2605.23893) (Adobe Research · arXiv 2026)
+- **Complete-muE: Optimal Hyperparameter Transfer and Scaling for MoE Models**: Complete-muE transfers hyperparameters between dense Transformers and varied MoE configurations by separating changes in active width from changes in expert sparsity. Its two-bridge scaling framework accounts for architecture and per-expert token changes, aiming to reuse a dense reference’s tuning across expert counts, granularity and broader training scales with only small empirical shifts in the optimum. — [Paper](https://arxiv.org/abs/2605.23893) (Adobe Research · arXiv 2026)
 
 <a id="paper-2609-30820"></a>
 
-- **Quantizing Looped Transformers: Feedback Exposure and Calibration Blindness**: Identifies feedback amplification and step-zero calibration blindness in looped-model quantization; recurrence-aware GPTQ accumulates calibration statistics across loop steps, improving INT4 fake-quantization recovery on evaluated checkpoints — [Paper](https://arxiv.org/abs/2609.30820) (Meta · arXiv 2026)
+- **Quantizing Looped Transformers: Feedback Exposure and Calibration Blindness**: This study identifies two quantization risks in looped models: errors introduced outside residual identity paths can re-enter later iterations, and first-step calibration can miss states used by later loops. Gathering calibration statistics across recurrence steps improves low-bit accuracy, highlighting that both the error entry point and calibration coverage matter for post-training quantization. — [Paper](https://arxiv.org/abs/2609.30820) (Meta · arXiv 2026)
 
 <a id="paper-2609-07816"></a>
 
-- **Kalman Delta Networks: Uncertainty-aware Associative Memory**: Tracks associative-memory uncertainty to adapt delta-rule update gains; diagonal and isotropic Kalman variants retain fixed-size recurrent memory and scan-parallel updates for recall and language modeling — [Paper](https://arxiv.org/abs/2609.07816) (Yale University · arXiv 2026)
+- **Kalman Delta Networks: Uncertainty-aware Associative Memory**: Kalman Delta Networks explicitly track uncertainty in a linear-attention memory and use it to decide how strongly new information should modify stored associations. A linear-Gaussian formulation yields Kalman-gain updates, while diagonal and isotropic approximations keep the extra state small and training parallelizable, improving quality over the tested linear-attention baselines. — [Paper](https://arxiv.org/abs/2609.07816) (Yale University · arXiv 2026)
 
 <a id="paper-2609-32712"></a>
 
-- **MassAlloc Attention: Let Attention Allocate Its Own Compute**: Allocates post-score attention computation by normalized probability mass in a fused operator; retains full causal QK discovery while skipping low-contribution work, with approximate backward gradients and quadratic score computation — [Paper](https://arxiv.org/abs/2609.32712) (HKUST (Guangzhou) / Beijing Academy of Artificial Intelligence / Université Paris Cité · arXiv 2026)
+- **MassAlloc Attention: Let Attention Allocate Its Own Compute**: MassAlloc Attention still scores every legal causal interaction but skips much of the subsequent work for interactions with negligible normalized attention mass. A shared tolerance guides adaptive retention during training and inference, reducing post-score computation while keeping output and gradient errors small and preserving the evaluated full-attention capabilities. — [Paper](https://arxiv.org/abs/2609.32712) (HKUST (Guangzhou) / Beijing Academy of Artificial Intelligence / Université Paris Cité · arXiv 2026)
 
 <a id="paper-2609-31947"></a>
 
-- **On-Policy Attention Linearization**: Distills hybrid linear-attention students on their own long-context trajectories using a frozen dense-attention teacher; targets recurrent-state drift and improves evaluated retrieval and reasoning tasks without fully recovering every long-context result — [Paper](https://arxiv.org/abs/2609.31947) (Carnegie Mellon University / Cornell University · arXiv 2026)
+- **On-Policy Attention Linearization**: OPAL trains a linear-attention student on long trajectories generated by the student itself, with dense feedback from a frozen full-attention teacher. This exposes the student to its own accumulating memory errors rather than only clean teacher trajectories, helping recover long-context retrieval and reasoning after attention conversion without additional supervised fine-tuning or reward-based training. — [Paper](https://arxiv.org/abs/2609.31947) (Carnegie Mellon University / Cornell University · arXiv 2026)

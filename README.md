@@ -14,7 +14,7 @@ A curated library of **scaling laws and scalable ranking/CTR models** for indust
 
 ## Papers
 
-Five focused reading paths. Each topic keeps the complete seven-column catalog: paper, affiliation, venue, year, tags, links and key contribution.
+Five focused reading paths. Each topic keeps the complete seven-column catalog: paper, affiliation, venue, year, tags, links and key contribution. The last column and related-work descriptions use the same source-grounded English summaries as the website.
 
 <a id="scaling-law--theory"></a>
 
@@ -78,7 +78,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for the schema, update workflow and local
 
 ## Contributing
 
-We welcome relevant papers, corrections and better source links. Please open an issue or submit a pull request. Preserve verified contribution details and use the [controlled tag vocabulary](docs/README.md#tag-vocabulary).
+We welcome relevant papers, corrections and better source links. Please open an issue or submit a pull request. Preserve verified summary details and use the [controlled tag vocabulary](docs/README.md#tag-vocabulary).
 
 ## Star History
 

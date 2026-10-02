@@ -10,68 +10,68 @@ Systems, serving infrastructure and hardware-aware optimization.
 
 <a id="paper-2510-18239"></a>
 
-- **LIME**: Linear attention (O(N)) for efficient scaling — [Paper](https://arxiv.org/abs/2510.18239) (2025)
+- **LIME**: LIME targets the cost of scoring many candidates against long user histories. Low-rank link embeddings separate user-side and candidate-side interactions so attention can be precomputed, while LIME-XOR makes history processing linear in sequence length; together they make larger candidate sets and longer histories more practical without giving up most of a Transformer’s recommendation quality. — [Paper](https://arxiv.org/abs/2510.18239) (2025)
 
 <a id="paper-2605-27450"></a>
 
-- **Context Features Are Cheap**: Rank-Aware Decomposition for Efficient Feature Interaction in Recommender Systems — [Paper](https://arxiv.org/abs/2605.27450) (2026)
+- **Context Features Are Cheap**: This work removes repeated user-and-context computation when a ranker scores many candidates for the same request. Exact block decompositions reuse context-only terms in common interaction operators without changing predictions, while a separate rDCN architecture preserves this separation across layers; the distinction matters because exact reuse in ordinary cross networks and self-attention is limited to their first layer. — [Paper](https://arxiv.org/abs/2605.27450) (2026)
 
 <a id="paper-2603-11486"></a>
 
-- **Quantized Inference for OneRec-V2**: Low-precision quantization for industrial recommender deployment; OneRec follow-up — [Paper](https://arxiv.org/abs/2603.11486) (Kuaishou · 2026)
+- **Quantized Inference for OneRec-V2**: The paper investigates why low-precision inference is more workable for OneRec-V2 than for traditional recommenders. Its more controlled weight and activation distributions, together with a compute-intensive workload, motivate an FP8 post-training quantization pipeline co-optimized with serving infrastructure; deployment evaluations report better latency and throughput without degradation in the measured core online metrics. — [Paper](https://arxiv.org/abs/2603.11486) (Kuaishou · 2026)
 
 <a id="paper-2604-12110"></a>
 
-- **SOLARIS**: Speculative offloading for serving large rec foundation models — [Paper](https://arxiv.org/abs/2604.12110) (Meta · SIGIR 2026)
+- **SOLARIS**: SOLARIS makes expensive recommendation foundation-model representations usable within real-time serving budgets. It predicts user–item pairs likely to occur in future requests and asynchronously computes their interaction embeddings ahead of time, moving heavy inference away from the critical path; production results show that this speculative preparation can improve advertising outcomes at large scale. — [Paper](https://arxiv.org/abs/2604.12110) (Meta · SIGIR 2026)
 
 <a id="paper-2604-24073"></a>
 
-- **FreeScale**: Distributed training system; load-balanced samples + prioritized embedding updates + SM-free communication; up to 90.3% bubble reduction on 256 H100s — [Paper](https://arxiv.org/abs/2604.24073) (Meta · MLSys 2026)
+- **FreeScale**: FreeScale addresses wasted GPU time in distributed sequence-recommendation training, where uneven examples create stragglers and embedding communication stalls computation. It balances input workloads, prioritizes and overlaps embedding communication, and uses communication techniques that avoid competing for GPU streaming multiprocessors, reducing idle bubbles in large production-scale training jobs. — [Paper](https://arxiv.org/abs/2604.24073) (Meta · MLSys 2026)
 
 <a id="paper-2604-24806"></a>
 
-- **Versioned Late Materialization**: Data infrastructure for ultra-long sequence training — [Paper](https://arxiv.org/abs/2604.24806) (Meta · RecSys (Industry) 2026)
+- **Versioned Late Materialization**: This system avoids storing a full user-history sequence in every training example, a redundancy that becomes costly for ultra-long histories and shared datasets. It stores histories once and reconstructs each example through versioned pointers at training time, combining leakage-prevention protocols with prefetching and locality optimizations to preserve consistency without turning data loading into the bottleneck. — [Paper](https://arxiv.org/abs/2604.24806) (Meta · RecSys (Industry) 2026)
 
 <a id="paper-2605-00324"></a>
 
-- **Intelligent Elastic Feature Fading**: Retrain-free feature efficiency rollouts at scale via elastic feature coverage control at serving time — [Paper](https://arxiv.org/abs/2605.00324) (2026)
+- **Intelligent Elastic Feature Fading**: Intelligent Elastic Feature Fading reduces the operational cost of retiring expensive ranking features. Instead of waiting for a dedicated retraining rollout, it gradually changes serving-time feature coverage while routine training adapts the model, with monitoring, rollback and safety controls; production evaluations find this gradual transition less disruptive than removing features abruptly. — [Paper](https://arxiv.org/abs/2605.00324) (2026)
 
 <a id="paper-2605-13433"></a>
 
-- **TurboGR**: Accelerated training system for large-scale generative recommendation on Ascend NPUs; 54.71% MFU with near-linear scalability — [Paper](https://arxiv.org/abs/2605.13433) (2026)
+- **TurboGR**: TurboGR adapts generative-recommendation training to Ascend NPUs, whose dense-compute design struggles with irregular sequence and sparse operations. It combines jagged-operator acceleration and load balancing with communication overlap and cheaper negative sampling, improving device utilization and scaling efficiency while expanding the useful negative-sample space without extra embedding lookups. — [Paper](https://arxiv.org/abs/2605.13433) (2026)
 
 <a id="paper-2601-01712"></a>
 
-- **RelayGR**: Cross-stage relay-race inference for long-sequence generative recommendation; decouples user-independent tokens from ranking-stage computation; implemented on Huawei Ascend NPUs — [Paper](https://arxiv.org/abs/2601.01712) (Huawei · 2026)
+- **RelayGR**: RelayGR moves candidate-independent user-history computation earlier in a multi-stage recommendation pipeline. It selectively precomputes prefixes, keeps their key–value caches in accelerator memory and routes later ranking requests to the same instance, using admission control and local-memory reuse to support longer histories while respecting tail-latency and memory budgets. — [Paper](https://arxiv.org/abs/2601.01712) (Huawei · 2026)
 
 <a id="paper-2606-21101"></a>
 
-- **DPIFrame**: Dual-level parallelism framework for CTR model inference on GPU; intra-module + inter-module parallelism with multi-table lookup and breadth-first stream scheduling; 23× embedding latency reduction vs PyTorch — [Paper](https://arxiv.org/abs/2606.21101) (2026)
+- **DPIFrame**: DPIFrame accelerates click-through-rate model inference by exposing parallelism both within modules and between modules. A workload-aware multi-table embedding lookup and breadth-first GPU stream scheduler reduce serialized work, showing that adapting execution to the model’s parallel structure can substantially cut inference latency relative to conventional frameworks. — [Paper](https://arxiv.org/abs/2606.21101) (2026)
 
 <a id="paper-2607-10044"></a>
 
-- **FlashTrie**: GPU-accelerated constrained beam search for generative retrieval; integer-aware succinct trie layout with cooperative CUDA kernel; 24× speedup over CPU on 800M keywords; +0.71% revenue in online A/B on commercial search engine — [Paper](https://arxiv.org/abs/2607.10044) (Microsoft · 2026)
+- **FlashTrie**: FlashTrie removes the CPU bottleneck in trie-constrained beam search for generative retrieval. A compressed, integer-oriented trie stays in GPU memory while cooperative kernels expand, validate and prune beams on-device, allowing wider searches over very large valid-identifier catalogs without the latency of repeated CPU traversal and host coordination. — [Paper](https://arxiv.org/abs/2607.10044) (Microsoft · 2026)
 
 <a id="paper-2602-22647"></a>
 
-- **STATIC**: Vectorized constrained decoding for LLM-based generative retrieval on TPUs/GPUs; flattens prefix tree into CSR sparse matrix for fully vectorized operations; 948× speedup over CPU trie; first production-scale deployment of strictly constrained GR — [Paper](https://arxiv.org/abs/2602.22647) (Google / YouTube · KDD 2026)
+- **STATIC**: STATIC makes strict output constraints affordable for accelerator-based generative retrieval. It converts a trie of allowed item identifiers into a compressed sparse-row transition matrix, replacing irregular tree traversal with vectorized sparse operations; this supports business-rule filtering with little decoding overhead and also improves cold-start retrieval in the reported benchmark evaluations. — [Paper](https://arxiv.org/abs/2602.22647) (Google / YouTube · KDD 2026)
 
 <a id="paper-2607-27744"></a>
 
-- **ROCS**: Request-Oriented Compute Sharing; defers request-candidate interactions to share substantial model computation once per request; Generalized Layer Masking + Deep Cross Attention + In-Kernel Broadcast Optimization; 3× QPS gain on retrieval, 50% QPS gain on ranking; deployed across ads and organic surfaces — [Paper](https://arxiv.org/abs/2607.27744) (Meta · 2026)
+- **ROCS**: ROCS avoids repeatedly processing shared request features for every candidate by delaying request–candidate interaction and keeping candidate-dependent representations separate. It introduces masking and cross-attention designs for different recommendation backbones, plus a GPU broadcast optimization, turning request-level reuse into better serving efficiency while maintaining or improving prediction quality. — [Paper](https://arxiv.org/abs/2607.27744) (Meta · 2026)
 
 <a id="paper-2608-00938"></a>
 
-- **GRACE**: Generative Recommender Acceleration Engine for real-time ads retrieval; Generative Target Matching extends constrained decoding with personalized eligibility filtering via bitmask/Bloom-filter over SID prefixes; solves eligibility and latency at wide-beam scale — [Paper](https://arxiv.org/abs/2608.00938) (Meta · 2026)
+- **GRACE**: GRACE tackles both ad eligibility and wide-beam decoding cost in real-time generative retrieval. It filters semantic-ID prefixes using targeting-derived bitmasks and Bloom filters, then optimizes attention, key–value caches and beam search for short output sequences with many beams, improving the fraction of eligible generated ads while bringing decoder cost within serving budgets. — [Paper](https://arxiv.org/abs/2608.00938) (Meta · 2026)
 
 <a id="paper-2508-04711"></a>
 
-- **Context Parallelism for HSTU**: Context parallelism (CP) sharding activation memory along the sequence-length dimension for HSTU; addresses the activation-heavy nature of scaling long user-history sequences in generative recommenders where standard CP breaks down under causal streaming attention — [Paper](https://arxiv.org/abs/2508.04711) (Meta · RecSys 2025)
+- **Context Parallelism for HSTU**: This work extends context parallelism to HSTU recommendation models with variable-length, jagged user histories. By distributing sequence-dimension computation and activation storage across GPUs, it addresses the memory pressure of longer histories while handling the irregular inputs that make language-model implementations unsuitable without adaptation. — [Paper](https://arxiv.org/abs/2508.04711) (Meta · RecSys 2025)
 
 <a id="paper-2605-04450"></a>
 
-- **RACER**: Jointly manages GPU HBM allocation between embedding hot caches and KV caches at runtime for generative recommender serving; addresses workload-dependent optimal EMB-KV ratio shifts (up to 0.35) while avoiding critical-path H2D refill traffic that causes P99 SLO violations; recovers 20-30% serving latency — [Paper](https://arxiv.org/abs/2605.04450) (HKBU / Alibaba · 2026)
+- **RACER**: RACER jointly manages the GPU memory used by embedding caches and key–value caches, whose competing needs change with the workload. An adaptive controller adjusts their allocation while a cache-aware scheduler routes requests using both kinds of locality and node load, reducing tail latency without the critical-path refill penalties of naive reallocation. — [Paper](https://arxiv.org/abs/2605.04450) (HKBU / Alibaba · 2026)
 
 <a id="paper-2609-30656"></a>
 
-- **Component Benchmark: Hierarchical Model Profiling for Large-scale Recommendation Systems**: Hierarchical PyTorch submodule profiling captures real runtime inputs and decomposes latency, memory, FLOPs and utilization via extensible plugins; production case studies connect local diagnostics to compiler/fusion opportunities, a 34% QPS improvement and a separate 10% QPS/22% memory recovery — [Paper](https://arxiv.org/abs/2609.30656) (Meta · arXiv 2026)
+- **Component Benchmark: Hierarchical Model Profiling for Large-scale Recommendation Systems**: Component Benchmark fills the gap between whole-model throughput measurements and low-level operator traces for heterogeneous recommendation models. It independently benchmarks submodules and presents their performance in an interactive hierarchy, helping practitioners locate costs at the architectural level where they actually make modeling and optimization decisions. — [Paper](https://arxiv.org/abs/2609.30656) (Meta · arXiv 2026)

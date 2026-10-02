@@ -360,14 +360,19 @@
     parse(parent);
   }
 
+  function verifiedSummary(paper, language) {
+    const summary = paper.summaries?.[language];
+    return summary?.basis === 'original_abstract' && paper.original_abstract?.status === 'verified' ? summary : null;
+  }
+
   function appendReadingContent(card, paper) {
-    const summary = paper.summaries?.[LANG];
+    const summary = verifiedSummary(paper, LANG);
     const panel = element('section', 'summary-panel');
     panel.setAttribute('aria-label', tr('Paper summary', '论文总结'));
     panel.append(element('h4', 'reading-label', tr('Paper summary', '论文总结')));
     if (summary?.text) {
       panel.append(element('p', 'summary-text', summary.text));
-      const basis = summary.basis === 'original_abstract' ? tr('Based on the original abstract', '基于论文原始摘要') : tr('Based on the preserved catalog annotation', '基于原目录贡献说明');
+      const basis = tr('Based on the original abstract', '基于论文原始摘要');
       panel.append(element('p', 'provenance', `${summary.method === 'ai_assisted' ? tr('AI-assisted summary', 'AI 辅助总结') : tr('Editorial summary', '编者总结')} · ${basis}`));
     } else {
       panel.append(element('p', 'missing-content', tr('English summary not yet available.', '中文总结尚未补齐。')));
@@ -402,15 +407,7 @@
       }
     }
     card.append(original);
-    if (paper.contribution) {
-      const legacy = element('details', 'catalog-annotation');
-      legacy.append(element('summary', '', tr('Preserved catalog annotation', '原目录贡献说明（保留原文）')));
-      const prose = element('p', 'paper-contribution', paper.contribution);
-      prose.lang = 'en';
-      legacy.append(element('p', 'provenance annotation-warning', tr('Historical catalog note retained for provenance; it has not been reverified and may differ from the current source above.', '以下为保留的历史目录说明，未重新核实，可能与上方当前来源存在差异。')));
-      legacy.append(prose);
-      card.append(legacy);
-    }
+
   }
 
   function paperCard(paper) {
@@ -596,7 +593,7 @@
       companies = Array.isArray(catalog.companies) ? catalog.companies : [];
       papers = catalog.papers.map((paper, index) => {
         const normalized = { ...paper, year: paper.year || '', tags: Array.isArray(paper.tags) ? paper.tags : [], companies: Array.isArray(paper.companies) ? paper.companies : [], links: Array.isArray(paper.links) ? paper.links : [], order: Number.isFinite(paper.order) ? paper.order : index };
-        normalized.searchText = [paper.id, paper.title, ...(Array.isArray(paper.aliases) ? paper.aliases : []), paper.doi, paper.contribution, paper.original_abstract?.text, paper.original_abstract?.source_title, paper.summaries?.en?.text, paper.summaries?.zh?.text, CATEGORY_ZH[paper.category]?.join(' '), paper.affiliation, paper.venue, paper.year, categoryLabel(paper.category), ...normalized.tags, ...normalized.tags.map(tagLabel), ...normalized.companies.map(companyLabel), ...normalized.links.map((link) => link.url)].filter(Boolean).join(' ').toLocaleLowerCase();
+        normalized.searchText = [paper.id, paper.title, ...(Array.isArray(paper.aliases) ? paper.aliases : []), paper.doi, paper.original_abstract?.text, paper.original_abstract?.source_title, verifiedSummary(paper, 'en')?.text, verifiedSummary(paper, 'zh')?.text, CATEGORY_ZH[paper.category]?.join(' '), paper.affiliation, paper.venue, paper.year, categoryLabel(paper.category), ...normalized.tags, ...normalized.tags.map(tagLabel), ...normalized.companies.map(companyLabel), ...normalized.links.map((link) => link.url)].filter(Boolean).join(' ').toLocaleLowerCase();
         return normalized;
       });
       const coreCount = papers.filter((paper) => paper.collection === 'core').length;

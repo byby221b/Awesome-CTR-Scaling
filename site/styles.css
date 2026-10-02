@@ -41,7 +41,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 }
 .skip-link:focus { top: 16px; }
 
-/* Masthead and editorial introduction */
+/* Masthead and collection overview */
 .site-header { border-bottom: 1px solid var(--line); }
 .header-inner {
   max-width: 1440px; margin: auto; padding: 20px 56px;
@@ -69,19 +69,13 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   max-width: 1440px; margin: auto; padding: 60px 56px;
   display: grid; grid-template-columns: minmax(0, 1fr) 240px; gap: 40px; align-items: center;
 }
-.eyebrow, .section-kicker {
+.section-kicker {
   font-size: 12px; letter-spacing: 1.5px; font-weight: 700; text-transform: uppercase;
 }
-.eyebrow { display: flex; align-items: center; gap: 9px; margin: 0 0 23px; color: var(--teal); }
-.status-dot { height: 6px; width: 6px; border-radius: 100%; background: var(--teal); }
 h1 {
   font-family: Georgia, "Times New Roman", serif; font-size: clamp(44px, 4.1vw, 60px);
-  font-weight: 400; line-height: 1.1; letter-spacing: -2.2px; margin: 0 0 23px;
+  font-weight: 400; line-height: 1.1; letter-spacing: -2.2px; margin: 0;
 }
-h1 em { font-weight: 400; color: var(--teal); }
-.hero-description { max-width: 650px; margin: 0; font-size: 16px; line-height: 1.8; color: var(--muted); }
-.hero-meta { display: flex; align-items: center; gap: 10px; margin-top: 24px; font-size: 12px; color: var(--muted); }
-.meta-line { width: 24px; height: 1px; background: var(--teal); }
 .hero-aside { border-left: 1px solid var(--line); padding: 8px 0 8px 32px; }
 .total-stat { display: flex; flex-direction: column; gap: 8px; }
 .total-stat > span:first-child { font-family: Georgia, "Times New Roman", serif; line-height: 1; font-size: 70px; letter-spacing: -3px; }
@@ -217,7 +211,6 @@ select {
 .paper-meta { display: flex; align-items: center; flex-wrap: wrap; gap: 6px 11px; font-size: 13px; line-height: 1.6; color: var(--muted); margin-bottom: 16px; overflow-wrap: anywhere; }
 .meta-divider { width: 3px; height: 3px; border-radius: 50%; background: #82958c; flex-shrink: 0; }
 .paper-venue { color: #506260; }
-.paper-contribution { font-size: 15px; line-height: 1.8; margin: 0 0 19px; color: var(--muted); overflow-wrap: anywhere; }
 .paper-bottom { display: flex; justify-content: space-between; align-items: flex-end; gap: 15px; flex-wrap: wrap; }
 .paper-tags { display: flex; flex-wrap: wrap; gap: 6px; flex: 1 1 230px; }
 .tag-button {
@@ -313,8 +306,6 @@ select {
   .source-link { font-size: 13px; gap: 5px; }
   .hero { display: block; padding: 35px 20px 30px; }
   h1 { font-size: clamp(36px, 7.2vw, 49px); letter-spacing: -1.5px; }
-  .hero-description { font-size: 15px; }
-  .hero-meta { margin-top: 20px; }
   .hero-aside { margin-top: 26px; padding: 22px 0 0; border-left: 0; border-top: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; gap: 18px; flex-wrap: wrap; }
   .total-stat { flex-direction: row; align-items: baseline; gap: 9px; }
   .total-stat > span:first-child { font-size: 43px; letter-spacing: -1.5px; }
@@ -349,7 +340,6 @@ select {
   .header-inner { gap: 12px; }
   .brand { font-size: 14px; gap: 7px; }
   .source-link { font-size: 12px; }
-  .eyebrow { letter-spacing: 1px; }
   .hero-aside { align-items: flex-start; }
   .total-stat { flex-direction: column; gap: 5px; }
   .stat-pair { gap: 19px; }
@@ -380,13 +370,10 @@ select {
 .provenance { font-size: 11px; line-height: 1.7; color: var(--muted); margin: 9px 0 0; overflow-wrap: anywhere; }
 .source-title { font-size: 12px; line-height: 1.65; margin: 0 0 10px; color: var(--muted); overflow-wrap: anywhere; }
 .missing-content { font-size: 13px; line-height: 1.7; color: var(--muted); margin: 0; }
-.catalog-annotation { border-top: 1px dashed var(--line); padding: 12px 0; margin-top: 12px; }
-.catalog-annotation summary, .source-details summary { cursor: pointer; width: fit-content; min-height: 28px; padding: 4px 0; font-size: 12px; color: var(--muted); }
-.catalog-annotation summary:focus-visible, .source-details summary:focus-visible { outline: 3px solid #409a88; outline-offset: 3px; }
-.catalog-annotation .paper-contribution { font-size: 13px; margin: 8px 0 0; }
+.source-details summary { cursor: pointer; width: fit-content; min-height: 28px; padding: 4px 0; font-size: 12px; color: var(--muted); }
+.source-details summary:focus-visible { outline: 3px solid #409a88; outline-offset: 3px; }
 .source-details { margin-top: 5px; }
-html[lang=zh-CN] h1 { font-family: ui-serif, "Noto Serif CJK SC", "Songti SC", "SimSun", serif; letter-spacing: -1px; line-height: 1.3; }
-html[lang=zh-CN] .eyebrow, html[lang=zh-CN] .filter-label, html[lang=zh-CN] .section-kicker { letter-spacing: .6px; }
+html[lang=zh-CN] .filter-label, html[lang=zh-CN] .section-kicker { letter-spacing: .6px; }
 @media (max-width: 640px) {
   .header-actions { gap: 8px; }
   .header-actions .source-link { display: none; }

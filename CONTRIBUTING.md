@@ -6,7 +6,7 @@ The README, topic pages, company index and static website are deterministic gene
 ## Add or correct a paper
 
 1. Verify the paper against primary sources. Search **all** records for the unversioned arXiv ID, title and aliases before adding anything; a paper belongs to one primary category, even if it is relevant elsewhere.
-2. Edit `data/papers.json`. Keep the stable `id` for venue, title, affiliation and contribution corrections. Do not invent missing venue, affiliation, year or performance claims. Preserve important qualifications in contribution prose.
+2. Edit `data/papers.json`. Keep the stable `id` for venue, title, affiliation and summary corrections. Do not invent missing venue, affiliation, year or performance claims. Preserve important qualifications in summary prose.
 3. Use an existing category ID and matching `collection` (`core` or `related`). Core papers use 1–4 controlled tags; prefer 2–4 for new entries. Related papers may stay untagged. Add a tag to `tag_vocabulary` only as an intentional taxonomy change.
 4. Update `meta.updated` to the date of the content update. Keep `meta.source_commit` unchanged: it records the historical migration source, not the latest deployment.
 5. Regenerate, check and test. Commit the canonical data and **all** generated changes together.
@@ -25,6 +25,14 @@ Keep text files UTF-8 with LF line endings (`.gitattributes` enforces LF in Git)
 
 ## Paper schema
 
+The canonical dataset uses `schema_version: 3`. The removed `contribution` field
+and `catalog_contribution` summary basis are rejected, including in updater
+patches. Keep summaries only in `summaries.en` and `summaries.zh`; do not create a
+duplicate contribution alias or restore old annotations. Core Markdown tables
+retain seven columns, with Key Contribution derived from `summaries.en.text`.
+Related-work descriptions use that same English summary. If it is missing, the
+view displays an explicit gap rather than falling back to old prose.
+
 ```json
 {
   "id": "2609.37905",
@@ -36,13 +44,12 @@ Keep text files UTF-8 with LF line endings (`.gitattributes` enforces LF in Git)
   "year": 2026,
   "tags": ["Scaling Law"],
   "links": [{"label": "Paper", "url": "https://arxiv.org/abs/2609.37905"}],
-  "contribution": "A precise, source-grounded description with the relevant limitations.",
   "aliases": ["Optional known acronym"]
 }
 ```
 
 - `id`: unique, unversioned arXiv identifier. The matching canonical HTTPS arXiv abstract URL is required in `links`
-- `title`, `affiliation`, `venue`, `contribution`: original strings; blank affiliation/venue means unspecified, not a guessed value
+- `title`, `affiliation`, `venue`: recorded strings; blank affiliation/venue means unspecified, not a guessed value
 - `year`: the catalog's recorded publication year, which can differ from the arXiv-ID year
 - `tags`: distinct values from `tag_vocabulary`; do not infer missing legacy tags during structural edits
 - `aliases` (optional): established acronyms or former display labels used by full-catalog search
@@ -77,21 +84,21 @@ For a project-prefix smoke test, copy `site/` into a temporary directory named `
 
 ## Migration provenance
 
-The immutable [migration snapshot](migration/original-README.md) contains the previous README at commit `31ad30becff83ca14a01f37fc99d52ba79f85565`. It is an audit fixture, not an editable content source. The migration retained 271 unique papers (77 core, 194 related), all original columns, every contribution sentence, 14 categories, and 32 company-overview rows.
+The prose-free [metadata baseline](migration/metadata-baseline.json) preserves the original bibliographic fields of 271 unique papers (77 core, 194 related), 14 categories and 32 company-overview rows from commit `31ad30becff83ca14a01f37fc99d52ba79f85565`. The obsolete contribution prose and full README snapshot have been removed from the current repository. Historical commits are unchanged. See [migration provenance](migration/README.md) for the retained evidence.
 
 ```sh
 python scripts/verify_migration.py
-# Initial migration audit only, before later content corrections:
+# When baseline bibliographic metadata and relative order are unchanged:
 python scripts/verify_migration.py --strict
 ```
 
-The strict audit compares all original paper fields and order. Normal CI allows later verified metadata corrections while protecting the complete baseline ID set and original company mentions. External paper URLs are syntax/identity checked offline; availability and scientific claims require primary-source verification when editing.
+The strict audit compares the nine original bibliographic fields and relative order of baseline papers. New IDs are allowed. Normal CI allows later verified metadata corrections while protecting the complete baseline ID set and original company mentions. Neither audit retains or compares deleted summary prose. External paper URLs are syntax/identity checked offline; availability and scientific claims require primary-source verification when editing.
 
 ## Deployment
 
 See [GitHub Pages deployment](docs/deployment.md). Pull requests only validate. A successful main-branch build deploys the same generated `site/` artifact; it never rewrites repository content or needs a personal access token.
 
-## Original abstracts and bilingual summaries (schema v2)
+## Original abstracts and bilingual summaries (schema v3)
 
 The English reader is `site/index.html`; the Chinese reader is `site/zh.html`.
 Both read the same `site/catalog.json`. Switching language retains the current
@@ -99,8 +106,8 @@ search, filters, sort and paper anchor. Paper titles and identifiers are never
 translated or replaced automatically. Search includes both summary languages and
 original abstracts in either interface.
 
-Each paper may carry the following enrichment, in addition to every existing
-field above. `contribution` remains the preserved catalog annotation.
+Each paper may carry the following enrichment in addition to the bibliographic
+fields above. These are the only paper-summary and original-abstract sources.
 
 ```json
 {
@@ -150,8 +157,8 @@ field above. `contribution` remains the preserved catalog annotation.
   license. The [official arXiv API terms](https://info.arxiv.org/help/api/tou.html)
   explicitly cover descriptive metadata, including abstracts, under CC0 1.0.
   This does not relicense a paper's PDF, figures, or source files
-- Summary `basis` is `original_abstract` or `catalog_contribution`. The former
-  requires a verified original on the same paper. `method` is `ai_assisted` or
+- Summary `basis` must be `original_abstract` and requires a verified original
+  on the same paper. Old catalog annotations cannot serve as a source or fallback. `method` is `ai_assisted` or
   `editorial`; both are visibly distinguished from author text. `source_urls`
   identify the evidence. Translation is a summary, never an original abstract
 - Summaries should explain the question, method and supported result in natural

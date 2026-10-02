@@ -10,48 +10,48 @@ Scaling retrieval and reranking stages of recommendation pipelines.
 
 <a id="paper-2603-04816"></a>
 
-- **Scaling Laws for Cross-Encoder Reranking**: First systematic study of scaling laws for cross-encoder rerankers across pointwise / pairwise / listwise objectives — [Paper](https://arxiv.org/abs/2603.04816) (Academic · 2026)
+- **Scaling Laws for Cross-Encoder Reranking**: This study finds predictable scaling relationships for cross-encoder reranking across model size, training exposure and pointwise, pairwise or listwise objectives. Fits from smaller runs forecast larger rerankers and guide compute allocation, with results often favoring more training data but also showing that the preferred allocation depends on the chosen ranking objective. — [Paper](https://arxiv.org/abs/2603.04816) (Academic · 2026)
 
 <a id="paper-2605-27810"></a>
 
-- **LRanker**: LLM ranker for massive candidate pools; addresses context length and computational cost constraints in real-world ranking — [Paper](https://arxiv.org/abs/2605.27810) (UIUC · 2026)
+- **LRanker**: LRanker adapts language-model ranking to candidate pools too large to fit into a single context. It summarizes candidate structure through clustering and uses a graph-based test-time procedure to build and ensemble multiple query embeddings, improving the coverage and robustness of ranking across massive pools rather than relying on one query representation. — [Paper](https://arxiv.org/abs/2605.27810) (UIUC · 2026)
 
 <a id="paper-2604-12965"></a>
 
-- **Efficient Retrieval Scaling with Hierarchical Indexing**: Hierarchical index learning over foundational retrieval model memory; deployed at Meta — [Paper](https://arxiv.org/abs/2604.12965) (Meta · 2026)
+- **Efficient Retrieval Scaling with Hierarchical Indexing**: The paper jointly learns a hierarchical retrieval index with cross-attention and residual quantization so larger recommendation models can search efficiently. Instead of treating indexing as a detached serving step, the learned hierarchy organizes model memory; the authors also find that its intermediate nodes identify useful data for further fine-tuning, improving deployed retrieval performance. — [Paper](https://arxiv.org/abs/2604.12965) (Meta · 2026)
 
 <a id="paper-2606-13533"></a>
 
-- **OneRetrieval**: One-model editable generative retrieval for industrial e-commerce search; Keyword-Aligned Encoding (KAE) ties identifier slots to interpretable attribute words; reserved codebook slots enable real-time term injection without retraining; matches strongest GR baseline on 5M real-traffic requests with order-of-magnitude higher intervention hit rate — [Paper](https://arxiv.org/abs/2606.13533) (Kuaishou · 2026)
+- **OneRetrieval**: OneRetrieval aims to replace fragmented e-commerce retrieval branches while preserving operators’ ability to add new search terms quickly. Its keyword-aligned item codes reserve positions that can be bound to new words after deployment, combining generative retrieval quality with index-like editability and reducing reliance on hand-tuned merging across separate retrieval systems. — [Paper](https://arxiv.org/abs/2606.13533) (Kuaishou · 2026)
 
 <a id="paper-2606-18379"></a>
 
-- **RankGraph-2**: Lifecycle co-design for billion-node graph-based retrieval (U2U2I/U2I2I); co-learns residual-quantization cluster index reducing serving cost 83%; 3.8× recall over GAT+DGI; +0.96% CTR across 20+ retrieval launches at Meta — [Paper](https://arxiv.org/abs/2606.18379) (Meta · RecSys (Industry) 2026)
+- **RankGraph-2**: RankGraph-2 co-designs graph construction, representation learning and serving for billion-node recommendation retrieval. Bias-corrected edge sampling and precomputed neighborhoods create self-contained training data, while a jointly learned residual-quantization cluster index avoids expensive online nearest-neighbor computation, showing how lifecycle-wide decisions can simplify infrastructure and improve retrieval quality together. — [Paper](https://arxiv.org/abs/2606.18379) (Meta · RecSys (Industry) 2026)
 
 <a id="paper-2607-12392"></a>
 
-- **MESH**: Unified retrieval scaling framework addressing Scaling Bias of Heterogeneity; modularized architecture with gated bias correction achieves 14× improvement in scaling exponent for fresh items; deployed on Pinterest Related Pins — [Paper](https://arxiv.org/abs/2607.12392) (Pinterest · RecSys (Industry) 2026)
+- **MESH**: MESH addresses a scaling imbalance in retrieval: more model capacity often benefits popular content more than fresh or sparse items. It separates feature domains and uses gated bias correction to protect weak signals from dominant engagement features, combining a unified model with asynchronous serving to improve sparse-content retrieval without maintaining many specialized retrievers. — [Paper](https://arxiv.org/abs/2607.12392) (Pinterest · RecSys (Industry) 2026)
 
 <a id="paper-2607-10096"></a>
 
-- **Scaling and Stabilizing Large-Scale EBR**: Unified pipeline for scaling embedding-based retrieval at Walmart; Hybrid Hard Negative Mining + Legacy-Aware Distillation for smooth backbone evolution from DistilBERT to GTE-base; +7.34% NDCG@5, +0.50% revenue — [Paper](https://arxiv.org/abs/2607.10096) (Walmart · 2026)
+- **Scaling and Stabilizing Large-Scale EBR**: This production retrieval pipeline improves both training signals and the transition to a stronger encoder. It combines diverse online cross-batch negatives with offline hard negatives selected using cross-encoder scores and metadata, then warm-starts the larger backbone through legacy-model distillation, preserving established domain knowledge while improving large-catalog discrimination. — [Paper](https://arxiv.org/abs/2607.10096) (Walmart · 2026)
 
 <a id="paper-2607-27475"></a>
 
-- **OneShot**: End-to-end in-model index learning framework that natively aligns index building with ranking objectives; resolves structural misalignment between ranking accuracy and indexing efficiency for billion-scale retrieval — [Paper](https://arxiv.org/abs/2607.27475) (2026)
+- **OneShot**: OneShot aligns retrieval indexing directly with the ranking objective rather than learning an index from embedding proximity alone. Its end-to-end, in-model index supports richer neural user–item scoring beyond dot products, reducing the mismatch between fast candidate search and accurate relevance estimation and improving the recall–efficiency trade-off in production recommendation. — [Paper](https://arxiv.org/abs/2607.27475) (2026)
 
 <a id="paper-2608-25528"></a>
 
-- **TransRetrieval**: Scaling up Transformer-based retrieval for industrial recommendation; weighted average aggregation restores the homogeneous-token assumption Transformers rely on, target token compression cuts per-candidate FLOPs by 85%, and position-style domain embeddings turn cross-domain data into a scaling asset; confirms robust log-linear scaling (+19.3/+22.2 pt Recall@2000) and lifts platform revenue +2.53% in online A/B — [Paper](https://arxiv.org/abs/2608.25528) (Alibaba · CIKM 2026)
+- **TransRetrieval**: TransRetrieval diagnoses heterogeneous feature-token norms as a reason that deeper Transformers can scale poorly in recommendation retrieval. Weighted aggregation stabilizes the token representation, target-token compression reduces candidate-side computation, and lightweight domain embeddings incorporate cross-domain data, enabling more effective scaling of retrieval quality under practical latency constraints. — [Paper](https://arxiv.org/abs/2608.25528) (Alibaba · CIKM 2026)
 
 <a id="paper-2609-39327"></a>
 
-- **Generative End-to-end Ad Retrieval at Douyin**: Jointly trains the item tokenizer, generator and reranker; orthogonal-basis BasisVQ and prefix-aware BasisRQ stabilize codebook updates, while a context-conditioned head resolves SID collisions; minute-refreshed indexing and packed-INT4 scoring support a new Douyin Ads retrieval channel with +0.563% ADSS and +0.658% ADVV — [Paper](https://arxiv.org/abs/2609.39327) (ByteDance · arXiv 2026)
+- **Generative End-to-end Ad Retrieval at Douyin**: GEAR jointly trains the tokenizer, generator and reranker for advertising retrieval, addressing the linked problems of collapsed codebooks and items sharing the same code. Orthogonal-basis parameterization stabilizes codebook learning, a prefix-aware extension increases expressiveness, and context-conditioned reranking disambiguates collisions, making end-to-end generative retrieval more robust at large catalog scale. — [Paper](https://arxiv.org/abs/2609.39327) (ByteDance · arXiv 2026)
 
 <a id="paper-2609-29180"></a>
 
-- **X-Rec Technical Report**: Anchor-conditioned Riemannian flow matching generates continuous embedding triggers for ANN retrieval; a late-interaction diffusion Transformer confines repeated velocity evaluation to its final layer, delivering 3.46× trigger-generation throughput over the SID-AR comparator; deployed as a TikTok vertical-content retrieval source — [Paper](https://arxiv.org/abs/2609.29180) (ByteDance (TikTok) · arXiv 2026)
+- **X-Rec Technical Report**: X-Rec learns a recommendation distribution directly in continuous item-embedding space and generates vectors for approximate nearest-neighbor retrieval. Anchor conditioning separates coarse interest selection from refinement, geometry-aware flow matching respects the embedding sphere, and late interaction reduces repeated computation, offering diverse retrieval without discrete-code quantization and sequential token-generation overhead. — [Paper](https://arxiv.org/abs/2609.29180) (ByteDance (TikTok) · arXiv 2026)
 
 <a id="paper-2609-30601"></a>
 
-- **Embedding Subspace Partitioning for Dynamic Multi-Objective Retrieval**: Task-isolated embedding subspaces allow serving-time objective reweighting without retraining; Transformer variant uses segment-aware masking and position resets in one pass, while single-index GPU exhaustive kNN supports production DNN-ESP at LinkedIn; selected operating point improves revenue 4.01% and job applications 3.95% — [Paper](https://arxiv.org/abs/2609.30601) (LinkedIn · RecSys (Industry) 2026)
+- **Embedding Subspace Partitioning for Dynamic Multi-Objective Retrieval**: Embedding Subspace Partitioning separates retrieval objectives into isolated portions of an embedding and scores candidates through a weighted sum of their similarities. Serving-time weights can change the objective balance without retraining, while segment-aware attention produces the subspaces in one pass and a shared GPU search index avoids maintaining separate retrieval infrastructure for each objective. — [Paper](https://arxiv.org/abs/2609.30601) (LinkedIn · RecSys (Industry) 2026)

@@ -1,4 +1,4 @@
-"""Offline validation, lossless-baseline, link, determinism and drift checks."""
+"""Offline validation, metadata-baseline, link, determinism and drift checks."""
 import copy
 import hashlib
 import json
@@ -86,11 +86,11 @@ class CatalogTests(unittest.TestCase):
 
     def test_metadata_correction_updates_both_views(self):
         data = copy.deepcopy(self.data)
-        data["papers"][0]["contribution"] = "Corrected contribution for test coverage."
+        data["papers"][0]["summaries"]["en"]["text"] = "Corrected summary for test coverage."
         data["papers"][0]["venue"] = "Verified venue fixture"
         raw = generate.json_text(data).encode()
         outputs = generate.generate(data, raw)
-        self.assertIn("Corrected contribution for test coverage.", outputs["docs/topics/scaling-law-theory.md"])
+        self.assertIn("Corrected summary for test coverage.", outputs["docs/topics/scaling-law-theory.md"])
         self.assertEqual(json.loads(outputs["site/catalog.json"])["papers"][0]["venue"], "Verified venue fixture")
 
     def test_unknown_tags_rejected(self):
@@ -122,8 +122,8 @@ class CatalogTests(unittest.TestCase):
 
     def test_missing_fields_rejected(self):
         data = copy.deepcopy(self.data)
-        del data["papers"][0]["contribution"]
-        with self.assertRaisesRegex(ValueError, "contribution"):
+        del data["papers"][0]["title"]
+        with self.assertRaisesRegex(ValueError, "title"):
             generate.validate(data)
 
     def test_every_record_in_topic_and_site(self):
@@ -134,7 +134,7 @@ class CatalogTests(unittest.TestCase):
             with self.subTest(paper=paper["id"]):
                 page = self.outputs[generate.category_path(categories[paper["category"]])]
                 self.assertIn(f'id="{generate.anchor(paper["id"])}"', page)
-                self.assertIn(generate.md(paper["contribution"]), page)
+                self.assertIn(generate.english_summary(paper), page)
                 for key, value in paper.items():
                     self.assertEqual(public_papers[paper["id"]][key], value)
 
@@ -186,9 +186,9 @@ class CatalogTests(unittest.TestCase):
                         self.assertIn(unquote(url.fragment), anchors)
 
     def test_previous_readme_category_anchors_retained(self):
-        original = (ROOT / "migration/original-README.md").read_text(encoding="utf-8")
-        for heading in re.findall(r"^### (.+)$", original, re.M):
-            self.assertIn(f'id="{generate.legacy_anchor(heading)}"', self.outputs["README.md"])
+        baseline = json.loads((ROOT / "migration/metadata-baseline.json").read_text(encoding="utf-8"))
+        for category in baseline["categories"]:
+            self.assertIn(f'id="{generate.legacy_anchor(category["title"])}"', self.outputs["README.md"])
 
     def test_site_relative_assets_and_no_external_dependencies(self):
         class Assets(HTMLParser):
@@ -207,6 +207,19 @@ class CatalogTests(unittest.TestCase):
         self.assertNotIn("@import", self.outputs["site/styles.css"])
         self.assertNotIn("innerHTML", self.outputs["site/app.js"])
         self.assertNotRegex(self.outputs["site/index.html"], r"\{\{[A-Z_]+\}\}")
+
+    def test_homepage_hero_only_contains_project_name(self):
+        for language in ("index.html", "zh.html"):
+            for path, content in (
+                (f"web/{language}", (ROOT / "web" / language).read_text(encoding="utf-8")),
+                (f"site/{language}", self.outputs[f"site/{language}"]),
+            ):
+                with self.subTest(path=path):
+                    hero = re.search(r'<div class="hero-copy">(.*?)</div>', content, re.S)
+                    self.assertIsNotNone(hero)
+                    self.assertEqual(hero.group(1).strip(), '<h1 id="hero-title">Awesome CTR Scaling</h1>')
+                    for element_id in ("language-switch", "total-stat", "core-stat", "related-stat", "updated-at", "filter-toggle", "search-input"):
+                        self.assertIn(f'id="{element_id}"', content)
 
 
 if __name__ == "__main__":
