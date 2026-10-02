@@ -178,7 +178,10 @@ def save(output, papers, records, requests, input_sha):
             patch["source_title"] = record["title"]
         if record.get("version"):
             patch["source_version"] = record["version"]
-        patches.append({"id": paper["id"], "original_abstract": patch})
+        update = {"id": paper["id"], "original_abstract": patch, "change_source_url": record["source_url"]}
+        if all(record.get(key) for key in ("published", "updated", "version", "retrieved_at")):
+            update["source_dates"] = {"published_at": record["published"], "updated_at": record["updated"], "source_version": record["version"], "source_url": record["source_url"], "verified_at": record["retrieved_at"]}
+        patches.append(update)
     write_json(output / "patches.json", {"papers": patches})
     verified = sum(record["status"] == "verified" for record in records.values())
     write_json(output / "provenance.json", {"updated_at": now(), "input_sha256": input_sha, "expected_ids": len(papers), "records": len(records), "verified": verified, "unavailable": len(records) - verified, "metadata_license": "CC0-1.0", "metadata_license_url": CC0_URL, "policy_url": POLICY_URL, "policy_checked_at": "2026-10-02T04:46:56Z", "policy_summary": "arXiv API terms explicitly include abstract, title and authors in descriptive metadata licensed under CC0 and allow retrieval, storage, transformation and sharing. Full paper content is outside this permission.", "requests": requests})

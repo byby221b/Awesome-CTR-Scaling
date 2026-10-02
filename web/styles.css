@@ -252,3 +252,21 @@ select { max-width: 100%; min-height: 44px; border: 1px solid var(--line); backg
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
 }
+
+/* Compact activity controls retain the technical-index grid and reading typography. */
+.recent-toolbar { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px 16px; padding: 14px 0 0; }
+.recent-tabs { display: flex; flex-wrap: wrap; gap: 0; border: 1px solid var(--line); }
+.recent-tabs button { min-height: 44px; padding: 9px 13px; border: 0; background: none; font-size: 14px; color: var(--muted); }
+.recent-tabs button[aria-pressed=true] { background: var(--wash); color: var(--accent); box-shadow: inset 0 -2px var(--accent); }
+.recent-tabs button:hover { color: var(--accent); }
+.recent-options { display: flex; flex-wrap: wrap; gap: 8px; }
+.recent-options select { font-size: 14px; }
+.recent-note { font-size: 14px; line-height: 1.65; color: var(--muted); margin: 10px 0 0; }
+.paper-dates { margin-top: 18px; font-size: 14px; line-height: 1.7; color: var(--muted); }
+.paper-dates > p { margin: 0 0 7px; }
+.change-details summary { cursor: pointer; color: var(--accent); padding: 5px 0; min-height: 36px; }
+.change-history { padding-left: 17px; margin: 6px 0; }
+.change-history li { margin-bottom: 12px; overflow-wrap: anywhere; }
+.change-fields { display: block; }
+.history-source { display: block; color: var(--accent); }
+@media (max-width: 440px) { .recent-tabs { width: 100%; } .recent-tabs button { flex: 1; padding: 9px 7px; } .recent-options { width: 100%; } .recent-options select { flex: 1; min-width: 0; } }

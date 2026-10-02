@@ -76,6 +76,8 @@ class CatalogTests(unittest.TestCase):
         new["links"] = [{"label": "Paper", "url": "https://arxiv.org/abs/2610.99999"}]
         new.pop("original_abstract", None)
         new.pop("summaries", None)
+        new.pop("source_dates", None)
+        new.update(added_at=None, added_provenance=None, change_history=[])
         data["papers"].append(new)
         raw = generate.json_text(data).encode()
         outputs = generate.generate(data, raw)

@@ -23,11 +23,11 @@
   };
   const TAG_ZH = {'Architecture':'模型架构','Attention':'注意力','Token Mixing':'Token 混合','Sparse Activation':'稀疏激活','Residual/Depth':'残差 / 深度','Embedding Design':'嵌入设计','Tokenization':'Token 化','Knowledge Distillation':'知识蒸馏','Test-time Compute':'推理时计算','Loop Scaling':'循环扩展','Long Sequence':'长序列','Unified FI+Seq':'统一特征交互与序列','Scaling Law':'规模规律','Transformer':'Transformer','Feature Interaction':'特征交互','Sequence Modeling':'序列建模','Sparse Model':'稀疏模型','MoE':'MoE','Multi-task':'多任务','Multi-scenario':'多场景','Foundation Model':'基础模型','User Modeling':'用户建模','Generative Rec':'生成式推荐','Serving':'在线服务','Training Efficiency':'训练效率','Distributed':'分布式','Quantization':'量化','Ads':'广告','E-commerce':'电商','Video/Live':'视频 / 直播','Representation Collapse':'表征坍塌'};
   const tagLabel = (tag) => LANG === 'zh' ? (TAG_ZH[tag] || tag) : tag;
-  const FILTER_KEYS = ['q', 'collection', 'category', 'year', 'tag', 'company', 'sort'];
-  const DEFAULTS = { q: '', collection: 'all', category: '', year: '', tag: '', company: '', sort: 'newest' };
+  const FILTER_KEYS = ['q', 'collection', 'category', 'year', 'tag', 'company', 'sort', 'recent', 'days', 'kind'];
+  const DEFAULTS = { q: '', collection: 'all', category: '', year: '', tag: '', company: '', sort: 'relevance', recent: '', days: '7', kind: 'substantive' };
   const $ = (id) => document.getElementById(id);
   const ui = {
-    search: $('search-input'), sort: $('sort-select'), year: $('year-filter'),
+    recentWindow: $('recent-window'), changeKind: $('change-kind'), search: $('search-input'), sort: $('sort-select'), year: $('year-filter'),
     tag: $('tag-filter'), company: $('company-filter'), categories: $('category-options'),
     papers: $('papers'), active: $('active-filters'), status: $('results-status'),
     pagination: $('pagination'), showing: $('showing-count'), more: $('load-more'),
@@ -86,7 +86,11 @@
     const next = { ...DEFAULTS };
     for (const key of FILTER_KEYS) if (params.has(key)) next[key] = params.get(key) || DEFAULTS[key];
     if (!['all', 'core', 'related'].includes(next.collection)) next.collection = 'all';
-    if (!['newest', 'title', 'original'].includes(next.sort)) next.sort = 'newest';
+    if (!['relevance', 'newest', 'title', 'original', 'added', 'updated'].includes(next.sort)) next.sort = DEFAULTS.sort;
+    if (!['', 'added', 'updated'].includes(next.recent)) next.recent = '';
+    if (!['7', '30', 'all'].includes(next.days)) next.days = '7';
+    if (!['all', 'substantive', 'paper_revision', 'venue_update', 'metadata_enrichment'].includes(next.kind) || next.recent !== 'updated') next.kind = 'substantive';
+    if (next.recent && !params.has('sort')) next.sort = next.recent;
     // Keep valid filter values, even when a combination has no results.
     if (!categories.some((c) => c.id === next.category)) next.category = '';
     if (!papers.some((p) => String(p.year) === next.year)) next.year = '';
@@ -98,7 +102,7 @@
   function writeURL(mode = 'push') {
     const url = new URL(window.location.href);
     for (const key of FILTER_KEYS) {
-      if (state[key] && state[key] !== DEFAULTS[key]) url.searchParams.set(key, state[key]);
+      if (state[key] && (state[key] !== DEFAULTS[key] || (key === 'sort' && state.recent))) url.searchParams.set(key, state[key]);
       else url.searchParams.delete(key);
     }
     // A paper anchor belongs to the old result set after filters change.
@@ -108,6 +112,11 @@
 
   function syncControls() {
     ui.search.value = state.q;
+    ui.recentWindow.value = state.days;
+    ui.changeKind.value = state.kind;
+    $('recent-options').hidden = !state.recent;
+    ui.changeKind.hidden = state.recent !== 'updated';
+    for (const mode of ['', 'added', 'updated']) $('recent-' + (mode || 'all')).setAttribute('aria-pressed', String(state.recent === mode));
     ui.sort.value = state.sort;
     ui.year.value = state.year;
     ui.tag.value = state.tag;
@@ -120,6 +129,10 @@
   function update(patch, options = {}) {
     clearTimeout(searchTimer);
     state = { ...state, q: ui.search.value, ...patch };
+    if (Object.hasOwn(patch, 'recent')) {
+      if (!Object.hasOwn(patch, 'kind')) state.kind = DEFAULTS.kind;
+      if (!Object.hasOwn(patch, 'sort') && ['relevance', 'added', 'updated'].includes(state.sort)) state.sort = state.recent || DEFAULTS.sort;
+    }
     if (Object.hasOwn(patch, 'collection')) {
       if (state.category && !categories.some((c) => c.id === state.category && (state.collection === 'all' || c.collection === state.collection))) state.category = '';
       if (state.collection === 'related' && !papers.some((paper) => paper.collection === 'related' && paper.tags.length)) state.tag = '';
@@ -163,7 +176,8 @@
       update({ q: ui.search.value }, { replace: !initialSearchEntry });
       initialSearchEntry = false;
     });
-    [['sort', ui.sort], ['year', ui.year], ['tag', ui.tag], ['company', ui.company]].forEach(([key, node]) => {
+    for (const mode of ['', 'added', 'updated']) $('recent-' + (mode || 'all')).addEventListener('click', () => update({ recent: mode }));
+    [['days', ui.recentWindow], ['kind', ui.changeKind], ['sort', ui.sort], ['year', ui.year], ['tag', ui.tag], ['company', ui.company]].forEach(([key, node]) => {
       node.addEventListener('change', () => update({ [key]: node.value }));
     });
     document.querySelectorAll('input[name="collection"]').forEach((input) => input.addEventListener('change', () => update({ collection: input.value })));
@@ -237,14 +251,70 @@
     }
   }
 
-  function matches(paper) {
+  function normalizeSearch(value) {
+    return String(value || '').normalize('NFKC').toLowerCase()
+      .replace(/[()[\]{}:：,，;；!?！？"“”‘’]/g, ' ').replace(/\s+/g, ' ').trim();
+  }
+
+  function includesSearchTerm(text, term) {
+    // Short Latin queries are usually acronyms. EST must not match test or interest.
+    // Longer words, identifiers and Chinese retain substring/full-text search.
+    return /^[a-z]{1,4}$/.test(term)
+      ? new RegExp(`(^|[^a-z0-9])${term}(?=$|[^a-z0-9])`).test(text)
+      : text.includes(term);
+  }
+
+  function searchRank(paper, query, words) {
+    if (!query) return 0;
+    if (paper.searchIDs.includes(query)) return 100;
+    if (paper.searchTitles.includes(query)) return 90;
+    if (paper.searchTitles.some((title) => includesSearchTerm(title, query))) return 80;
+    const titleMatches = words.filter((word) => paper.searchTitles.some((title) => includesSearchTerm(title, word))).length;
+    if (titleMatches === words.length) return 60;
+    return titleMatches ? 40 + titleMatches / words.length : 0;
+  }
+
+  function newestFirst(a, b) {
+    return Number(b.year || 0) - Number(a.year || 0)
+      || arxivID(b).localeCompare(arxivID(a), undefined, { numeric: true })
+      || a.order - b.order || String(a.id).localeCompare(String(b.id));
+  }
+
+  const CHANGE_LABELS = {paper_revision: ['Paper revision', '论文修订'], venue_update: ['Venue update', 'Venue 更新'], metadata_enrichment: ['Metadata enrichment', '资料补全']};
+  const changeLabel = kind => kind === 'substantive' ? tr('Paper information updates', '论文信息更新') : kind === 'all' ? tr('All update types', '全部更新类型') : CHANGE_LABELS[kind] ? tr(...CHANGE_LABELS[kind]) : '';
+  function validInstant(value) {
+    if (typeof value !== 'string' || !/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z$/.test(value)) return NaN;
+    return Date.parse(value);
+  }
+  function matchingEvents(paper) {
+    return (Array.isArray(paper.change_history) ? paper.change_history : []).filter(event => event && CHANGE_LABELS[event.kind] && (state.recent !== 'updated' || state.kind === 'all' || (state.kind === 'substantive' ? event.kind !== 'metadata_enrichment' || (event.fields || []).some(field => !['summaries', 'original_abstract', 'source_dates'].includes(field)) : event.kind === state.kind)) && Number.isFinite(validInstant(event.at)) && validInstant(event.at) <= Date.now());
+  }
+  function latestChange(paper) {
+    return matchingEvents(paper).reduce((latest, event) => !latest || event.at > latest.at ? event : latest, null);
+  }
+  function activityInstant(paper, mode) {
+    const value = validInstant(mode === 'added' ? paper.added_at : latestChange(paper)?.at);
+    return Number.isFinite(value) && value <= Date.now() ? value : -Infinity;
+  }
+  function inRecentWindow(value) {
+    const now = Date.now(), day = 86400000, offset = 8 * 3600000;
+    if (!Number.isFinite(value) || value > now) return false;
+    const start = Math.floor((now + offset) / day) * day - offset - (Number(state.days) - 1) * day;
+    return state.days === 'all' || value >= start;
+  }
+  function displayDate(value) {
+    const stamp = validInstant(value);
+    return Number.isFinite(stamp) ? new Date(stamp + 8 * 3600000).toISOString().slice(0, 10) : tr('Unknown', '未知');
+  }
+
+  function matches(paper, words) {
+    if (state.recent && !inRecentWindow(activityInstant(paper, state.recent))) return false;
     if (state.collection !== 'all' && paper.collection !== state.collection) return false;
     if (state.category && paper.category !== state.category) return false;
     if (state.year && String(paper.year) !== state.year) return false;
     if (state.tag && !paper.tags.includes(state.tag)) return false;
     if (state.company && !companyMatches(paper, state.company)) return false;
-    const words = state.q.toLocaleLowerCase().split(/\s+/).filter(Boolean);
-    return words.every((word) => paper.searchText.includes(word));
+    return words.every((word) => includesSearchTerm(paper.searchText, word));
   }
 
   function renderActiveFilters() {
@@ -255,7 +325,9 @@
       category: state.category ? categoryLabel(state.category) : '',
       year: state.year,
       tag: tagLabel(state.tag),
-      company: state.company ? companyLabel(state.company) : ''
+      company: state.company ? companyLabel(state.company) : '',
+      recent: state.recent ? `${state.recent === 'added' ? tr('Recently added', '最近新增') : tr('Recently updated', '最近更新')} · ${state.days === 'all' ? tr('All time', '全部时间') : tr(`Past ${state.days} days`, `近 ${state.days} 天`)}` : '',
+      kind: state.recent === 'updated' && state.kind !== 'all' ? changeLabel(state.kind) : ''
     };
     Object.entries(labels).forEach(([key, label]) => {
       if (!label) return;
@@ -266,7 +338,7 @@
       close.setAttribute('aria-hidden', 'true');
       button.append(element('span', '', label), close);
       button.addEventListener('click', () => {
-        update({ [key]: DEFAULTS[key] });
+        update({ [key]: key === 'kind' ? 'all' : DEFAULTS[key] });
         if (ui.active.firstElementChild) ui.active.firstElementChild.focus();
         else ui.search.focus({ preventScroll: true });
       });
@@ -463,6 +535,7 @@
       if (abstract.source_version) provenance.append(element('span', '', ` · ${abstract.source_version}`));
       if (abstract.license) provenance.append(element('span', '', ` · ${abstract.license}`));
       original.append(provenance);
+      if (paper.source_dates) original.append(element('p', 'provenance source-dates', `${tr('Source first published', '来源首次发表')} ${displayDate(paper.source_dates.published_at)} · ${tr('Source latest version', '来源最新版本')} ${paper.source_dates.source_version || ''} · ${displayDate(paper.source_dates.updated_at)} (Asia/Shanghai)`));
     } else {
       original.append(element('p', 'missing-content', abstract?.status === 'unavailable' ? tr('Original abstract unavailable from the verified source. See the paper link.', '暂未从来源获取到可核实的原始摘要，请查阅论文链接。') : tr('Original abstract awaiting source verification.', '原始摘要待来源核实。')));
       if (abstract?.reason) {
@@ -512,6 +585,29 @@
       if (paper.venue) meta.append(element('span', 'paper-venue', paper.venue));
       metadata.append(meta);
     }
+    const dates = element('div', 'paper-dates');
+    dates.append(element('p', '', `${tr('Added to catalog', '收录于')} ${displayDate(paper.added_at)}`));
+    const latest = latestChange(paper);
+    if (latest) dates.append(element('p', '', `${changeLabel(latest.kind)} · ${displayDate(latest.at)}`));
+    const allEvents = (paper.change_history || []).filter(event => event && CHANGE_LABELS[event.kind] && Number.isFinite(validInstant(event.at))).slice().reverse();
+    if (paper.added_provenance?.source_url || allEvents.length) {
+      const history = element('details', 'change-details');
+      history.append(element('summary', '', tr('Catalog history', '查看目录历史')));
+      const entries = element('ul', 'change-history');
+      function addHistory(label, at, sourceURL, fields = []) {
+        const item = element('li', '', `${label} · ${displayDate(at)}`);
+        const names = {venue: tr('venue', '会议'), affiliation: tr('affiliation', '机构'), title: tr('title', '标题'), original_abstract: tr('original abstract', '原始摘要'), summaries: tr('summaries', '总结'), source_dates: tr('source dates', '来源日期')};
+        if (fields.length) item.append(element('span', 'change-fields', fields.map(field => names[field] || field).join(' / ')));
+        const url = safeURL(sourceURL);
+        if (url) item.append(createLink(tr('Evidence', '记录来源'), url, 'history-source'));
+        entries.append(item);
+      }
+      allEvents.forEach(event => addHistory(changeLabel(event.kind), event.at, event.source_url, event.fields || []));
+      if (paper.added_at) addHistory(tr('New catalog entry', '新增论文'), paper.added_at, paper.added_provenance?.source_url);
+      history.append(entries);
+      dates.append(history);
+    }
+    metadata.append(dates);
     appendReadingContent(body, paper, card.id);
     const tags = element('div', 'paper-tags');
     if (paper.tags.length) {
@@ -594,10 +690,21 @@
   }
 
   function render() {
-    filtered = papers.filter(matches);
+    const query = normalizeSearch(state.q);
+    const words = query.split(/\s+/).filter(Boolean);
+    filtered = papers.filter((paper) => matches(paper, words));
     if (state.sort === 'title') filtered.sort((a, b) => a.title.localeCompare(b.title));
+    else if (['added', 'updated'].includes(state.sort)) filtered.sort((a, b) => {
+      const left = activityInstant(a, state.sort), right = activityInstant(b, state.sort);
+      return (left === right ? 0 : left < right ? 1 : -1) || newestFirst(a, b);
+    });
     else if (state.sort === 'original') filtered.sort((a, b) => a.order - b.order);
-    else filtered.sort((a, b) => Number(b.year || 0) - Number(a.year || 0) || arxivID(b).localeCompare(arxivID(a), undefined, { numeric: true }) || a.order - b.order);
+    else if (state.sort === 'relevance' && words.length) {
+      const ranks = new Map(filtered.map((paper) => [paper.id, searchRank(paper, query, words)]));
+      filtered.sort((a, b) => ranks.get(b.id) - ranks.get(a.id) || newestFirst(a, b));
+    } else filtered.sort(newestFirst);
+    $('recent-note').hidden = !state.recent;
+    $('recent-note').textContent = tr('Dates use Asia/Shanghai calendar days. Added means first recorded in this repository, not publication. Paper information updates exclude abstract/translation-only backfills; select Metadata enrichment or All update types to see those. Unknown dates are excluded.', '按 Asia/Shanghai 自然日筛选。新增指仓库首次收录，并非论文发表；更新默认显示论文信息变化；摘要与翻译补全可在“资料补全”或“全部更新类型”查看。日期未知的记录不进入时间筛选。');
     $('result-count').textContent = filtered.length;
     $('results-kicker').textContent = state.collection === 'core' ? tr('CORE RESEARCH', '核心研究') : state.collection === 'related' ? tr('RELATED WORK', '相关研究') : tr('THE COLLECTION', '全部研究');
     const category = categories.find((item) => item.id === state.category);
@@ -669,7 +776,9 @@
       companies = Array.isArray(catalog.companies) ? catalog.companies : [];
       papers = catalog.papers.map((paper, index) => {
         const normalized = { ...paper, year: paper.year || '', tags: Array.isArray(paper.tags) ? paper.tags : [], companies: Array.isArray(paper.companies) ? paper.companies : [], links: Array.isArray(paper.links) ? paper.links : [], order: Number.isFinite(paper.order) ? paper.order : index };
-        normalized.searchText = [paper.id, paper.title, ...(Array.isArray(paper.aliases) ? paper.aliases : []), paper.doi, paper.original_abstract?.text, paper.original_abstract?.source_title, verifiedSummary(paper, 'en')?.text, verifiedSummary(paper, 'zh')?.text, CATEGORY_ZH[paper.category]?.join(' '), paper.affiliation, paper.venue, paper.year, categoryLabel(paper.category), ...normalized.tags, ...normalized.tags.map(tagLabel), ...normalized.companies.map(companyLabel), ...normalized.links.map((link) => link.url)].filter(Boolean).join(' ').toLocaleLowerCase();
+        normalized.searchIDs = [paper.id, arxivID(paper), paper.doi].filter(Boolean).map(normalizeSearch);
+        normalized.searchTitles = [paper.title, paper.original_abstract?.source_title, ...(Array.isArray(paper.aliases) ? paper.aliases : [])].filter(Boolean).map(normalizeSearch);
+        normalized.searchText = normalizeSearch([paper.id, paper.title, ...(Array.isArray(paper.aliases) ? paper.aliases : []), paper.doi, paper.original_abstract?.text, paper.original_abstract?.source_title, verifiedSummary(paper, 'en')?.text, verifiedSummary(paper, 'zh')?.text, CATEGORY_ZH[paper.category]?.join(' '), paper.affiliation, paper.venue, paper.year, categoryLabel(paper.category), ...normalized.tags, ...normalized.tags.map(tagLabel), ...normalized.companies.map(companyLabel), ...normalized.links.map((link) => link.url)].filter(Boolean).join(' '));
         return normalized;
       });
       const coreCount = papers.filter((paper) => paper.collection === 'core').length;

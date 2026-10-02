@@ -67,7 +67,11 @@ async function boot(initialURL = 'https://example.test/Awesome-CTR-Scaling/', fa
     pushState(_, __, url) { window.location = new URL(url, window.location); history.splice(++historyIndex); history.push(window.location.href); },
     replaceState(_, __, url) { window.location = new URL(url, window.location); history[historyIndex] = window.location.href; }
   };
-  const context = vm.createContext({ document, window, URL, URLSearchParams,
+  const TestDate = options.now === undefined ? Date : class extends Date {
+    constructor(...args) { super(...(args.length ? args : [options.now])); }
+    static now() { return options.now; }
+  };
+  const context = vm.createContext({ document, window, URL, URLSearchParams, Date: TestDate,
     fetch: async () => ({ ok: !failFetch, json: async () => structuredClone(data) }),
     console: { error: (...args) => logs.push(args.join(' ')) },
     setTimeout: fn => { timers.set(++timerID, fn); return timerID; },
@@ -114,6 +118,62 @@ async function boot(initialURL = 'https://example.test/Awesome-CTR-Scaling/', fa
   for (const query of ['2609.37905', 'UTTSI', 'PISA']) {
     app.search(query); assert(app.cards().length > 0, `no results for ${query}`);
   }
+  // Acronym lookup must not be buried among test/best/interest substring hits.
+  for (const route of ['', 'zh.html']) {
+    const searchApp = await boot('https://example.test/Awesome-CTR-Scaling/' + route + '?q=EST');
+    assert.equal(searchApp.$('sort-select').value, 'relevance');
+    for (const query of ['EST', 'est', '  eSt  ', 'ＥＳＴ', 'EST KDD', 'EST(KDD)', '2602.10811']) {
+      searchApp.search(query);
+      assert(Number(searchApp.$('result-count').textContent) >= 1, query);
+      assert.equal(searchApp.cards()[0].id, 'paper-2602-10811', query);
+    }
+    searchApp.search('EST');
+    searchApp.change('company-filter', 'meta');
+    assert(!searchApp.cards().some(card => card.id === 'paper-2602-10811'), 'search keeps an incompatible company filter');
+    searchApp.change('company-filter', 'alibaba');
+    assert.equal(searchApp.cards()[0].id, 'paper-2602-10811');
+    searchApp.inputs[2].fire('change');
+    assert(!searchApp.cards().some(card => card.id === 'paper-2602-10811'), 'search keeps an incompatible collection filter');
+  }
+  const searchFixture = structuredClone(catalog);
+  const searchPaper = (id, title, order, extra = {}) => ({
+    ...structuredClone(catalog.papers[0]), id, title, order, year: 2026, aliases: [],
+    links: [{label: 'Paper', url: 'https://arxiv.org/abs/' + id}],
+    summaries: {}, ...extra,
+    original_abstract: {...structuredClone(catalog.papers[0].original_abstract), text: 'Unrelated scientific content.', source_title: title, ...(extra.original_abstract || {})}
+  });
+  searchFixture.papers = [
+    searchPaper('2601.00001', 'Exact Sequence Transformer', 0, {year: 2025, aliases: ['EST']}),
+    searchPaper('2609.00002', 'A newer paper', 1, {original_abstract: {status: 'verified', text: 'We compare EST in this work.'}}),
+    searchPaper('2608.00003', 'EST: A title match', 2),
+    searchPaper('2607.00004', 'Interest, best, test, estimation', 3),
+    searchPaper('2606.00005', 'Alias-only result', 4, {aliases: ['HeMix'], original_abstract: {status: 'verified', source_title: 'Original Source Name: Efficient Mixture', text: 'Hiddenfulltexttoken is searchable.'}}),
+    searchPaper('2605.00006', 'Chinese-only text', 5, {summaries: {zh: {basis: 'original_abstract', text: '目标感知压缩保留长期兴趣'}}}),
+    searchPaper('2604.00007', 'EST: Another title match', 6)
+  ];
+  const searchApp = await boot('https://example.test/Awesome-CTR-Scaling/?q=EST', false, searchFixture);
+  assert.deepEqual(searchApp.cards().map(card => card.id), ['paper-2601-00001', 'paper-2608-00003', 'paper-2604-00007', 'paper-2609-00002'], 'exact alias, title, then full-text; deterministic newest ties');
+  searchApp.change('sort-select', 'newest');
+  assert.equal(searchApp.cards()[0].id, 'paper-2609-00002', 'explicit newest takes priority over relevance');
+  assert(searchApp.window.location.search.includes('sort=newest'));
+  assert(searchApp.$('language-switch').href.includes('sort=newest'), 'explicit sort survives language switch');
+  searchApp.back();
+  assert.equal(searchApp.$('sort-select').value, 'relevance');
+  assert.equal(searchApp.cards()[0].id, 'paper-2601-00001');
+  searchApp.forward();
+  assert.equal(searchApp.cards()[0].id, 'paper-2609-00002');
+  searchApp.change('sort-select', 'original');
+  assert.equal(searchApp.cards()[0].id, 'paper-2601-00001');
+  searchApp.change('sort-select', 'title');
+  assert.equal(searchApp.cards()[0].id, 'paper-2609-00002');
+  searchApp.change('sort-select', 'relevance');
+  for (const [query, id] of [['Exact  Sequence\tTransformer', '2601.00001'], ['HeMix', '2606.00005'], ['Original Source Name', '2606.00005'], ['fulltexttoken', '2606.00005'], ['感知压缩保留', '2605.00006'], ['interest', '2607.00004']]) {
+    searchApp.search(query);
+    assert.equal(searchApp.cards()[0].id, 'paper-' + id.replace('.', '-'), query);
+  }
+  searchApp.search('   ');
+  assert.equal(searchApp.$('result-count').textContent, String(searchFixture.papers.length));
+  assert.equal(searchApp.cards()[0].id, 'paper-2609-00002', 'empty search falls back to newest');
   app.$('reset-sidebar').fire('click'); app.change('sort-select', 'original');
   assert.equal(app.cards()[0].id, 'paper-' + catalog.papers[0].id.replace('.', '-'));
   app.change('sort-select', 'title');
@@ -328,6 +388,87 @@ async function boot(initialURL = 'https://example.test/Awesome-CTR-Scaling/', fa
   app = await boot('https://example.test/Awesome-CTR-Scaling/', true);
   app.scroll(1600); app.$('back-to-top').fire('click');
   assert.equal(app.scrollCalls.at(-1).top, 0, 'back to top also works if catalog loading fails');
+  // Recent activity is a catalog timeline, with explicit source dates and Shanghai calendar boundaries.
+  const activity = structuredClone(catalog);
+  activity.papers = activity.papers.slice(0, 8);
+  const now = Date.parse('2026-10-02T12:00:00Z');
+  const addedDates = ['2026-10-02T10:00:00Z','2026-09-25T16:00:00Z','2026-09-25T15:59:59Z','2026-10-02T12:00:01Z',null,'2026-08-01T00:00:00Z','2026-10-01T18:00:00Z',null];
+  const makeEvent = (kind, at, fields) => ({kind,at,fields,source_url:'https://example.test/evidence'});
+  activity.papers.forEach((paper, i) => { paper.added_at=addedDates[i]; paper.change_history=[]; });
+  activity.papers[0].change_history=[makeEvent('venue_update','2026-10-02T11:00:00Z',['venue'])];
+  activity.papers[1].change_history=[makeEvent('venue_update','2026-09-25T16:00:00Z',['venue'])];
+  activity.papers[2].change_history=[makeEvent('venue_update','2026-09-25T15:59:59Z',['venue'])];
+  activity.papers[3].change_history=[makeEvent('venue_update','2026-10-02T12:00:01Z',['venue'])];
+  activity.papers[4].change_history=[makeEvent('metadata_enrichment','2026-10-02T11:30:00Z',['original_abstract','summaries'])];
+  activity.papers[5].change_history=[makeEvent('paper_revision','2026-10-01T00:00:00Z',['source_dates'])];
+  activity.papers[6].change_history=[makeEvent('metadata_enrichment','2026-10-02T11:00:00Z',['affiliation'])];
+  const ids = indices => indices.map(i => 'paper-' + activity.papers[i].id.replace('.', '-')).sort();
+  const resultIDs = app => app.cards().map(card=>card.id).sort();
+  for (const route of ['', 'zh.html']) {
+    const base = 'https://example.test/Awesome-CTR-Scaling/' + route;
+    app = await boot(base, false, activity, {now});
+    app.$('recent-added').fire('click');
+    assert.deepEqual(resultIDs(app), ids([0,1,6]), '7 Shanghai days include midnight boundary, exclude future/unknown');
+    assert.equal(app.cards()[0].id, ids([0])[0]);
+    assert.equal(app.$('recent-added').getAttribute('aria-pressed'),'true');
+    assert.equal(app.$('sort-select').value,'added');
+    assert.equal(app.$('change-kind').hidden,true);
+    assert(app.$('recent-note').textContent.includes('Asia/Shanghai'));
+    app.change('recent-window','30'); assert.deepEqual(resultIDs(app),ids([0,1,2,6]));
+    app.change('recent-window','all'); assert.deepEqual(resultIDs(app),ids([0,1,2,5,6]));
+    app.change('recent-window','7');
+    app.$('recent-updated').fire('click');
+    assert.deepEqual(resultIDs(app),ids([0,1,5,6]), 'default updates exclude abstract/translation-only enrichment');
+    assert.equal(app.$('change-kind').value,'substantive');
+    assert.equal(app.$('change-kind').hidden,false);
+    assert.equal(app.$('sort-select').value,'updated');
+    app.change('change-kind','metadata_enrichment'); assert.deepEqual(resultIDs(app),ids([4,6]));
+    app.change('change-kind','paper_revision'); assert.deepEqual(resultIDs(app),ids([5]));
+    app.change('change-kind','venue_update'); assert.deepEqual(resultIDs(app),ids([0,1]));
+    app.change('change-kind','all'); assert.deepEqual(resultIDs(app),ids([0,1,4,5,6]));
+    app.change('sort-select','relevance');
+    assert(new URL(app.window.location).searchParams.get('sort') === 'relevance', 'explicit relevance survives recent URL serialization');
+    const saved = app.window.location.href;
+    const languageURL = new URL(app.$('language-switch').href, app.window.location).href;
+    const reopened = await boot(saved, false, activity, {now});
+    const switched = await boot(languageURL, false, activity, {now});
+    for (const restored of [reopened,switched]) {
+      assert.equal(restored.$('sort-select').value,'relevance');
+      assert.equal(restored.$('change-kind').value,'all');
+      assert.deepEqual(resultIDs(restored),ids([0,1,4,5,6]));
+    }
+    app.change('recent-window','30');app.back();assert.equal(app.$('recent-window').value,'7');app.forward();assert.equal(app.$('recent-window').value,'30');
+    app.change('sort-select','title');app.$('recent-added').fire('click');
+    assert.equal(app.$('sort-select').value,'title','explicit sorting survives switching recent view');
+    assert.equal(app.$('recent-window').value,'30','explicit window survives view switching');
+    app.search(activity.papers[0].id); assert.deepEqual(resultIDs(app),ids([0]));
+    assert(app.cards()[0].textContent.includes('2026-10-02'));
+    assert(app.walk(app.cards()[0]).some(node=>node.classList.contains('source-dates')));
+    app.search('qzx-no-results');assert.equal(app.cards().length,0);
+    app.$('reset-sidebar').fire('click');assert.equal(app.cards().length,8);
+    assert.equal(app.$('recent-all').getAttribute('aria-pressed'),'true');
+    assert.equal(app.$('recent-options').hidden,true);
+    assert.equal(app.$('recent-note').hidden,true);
+    assert.equal(app.logs.length,0,app.logs.join('\n'));
+  }
+  const thirtyBoundary = structuredClone(activity);
+  thirtyBoundary.papers = thirtyBoundary.papers.slice(0,2);
+  thirtyBoundary.papers[0].added_at = '2026-09-02T16:00:00Z';
+  thirtyBoundary.papers[1].added_at = '2026-09-02T15:59:59Z';
+  for (const route of ['', 'zh.html']) {
+    app = await boot('https://example.test/Awesome-CTR-Scaling/' + route + '?recent=added&days=30',false,thirtyBoundary,{now});
+    assert.deepEqual(resultIDs(app),ids([0]), '30 Shanghai calendar days include exact midnight, exclude preceding second');
+  }
+  app = await boot('https://example.test/Awesome-CTR-Scaling/?recent=added',false,activity,{now:Date.parse('2026-10-02T17:00:00Z')});
+  assert(!resultIDs(app).includes(ids([1])[0]), 'Shanghai day advances at UTC 16:00');
+  app = await boot('https://example.test/Awesome-CTR-Scaling/?recent=invalid&days=8&kind=invalid&sort=bad',false,activity,{now});
+  assert.equal(app.cards().length,8);assert.equal(app.$('recent-window').value,'7');assert.equal(app.$('sort-select').value,'relevance');
+  app = await boot('https://example.test/Awesome-CTR-Scaling/?recent=updated&kind=paper_revision&days=all&sort=updated#' + ids([7])[0],false,activity,{now});
+  assert.equal(app.$(ids([7])[0]).scrolled,true,'deep link to excluded record resets incompatible recent filters');
+  assert.equal(app.$('recent-all').getAttribute('aria-pressed'),'true');
+  app = await boot('https://example.test/Awesome-CTR-Scaling/?sort=added',false,activity,{now});
+  assert.equal(app.cards()[0].id,ids([0])[0]);
+  assert(resultIDs({cards:()=>app.cards().slice(-3)}).includes(ids([7])[0]),'unknown/future additions sort at the end');
   const css = fs.readFileSync(path.join(ROOT, 'web/styles.css'), 'utf8');
   assert(![...css.matchAll(/font-size:\s*([\d.]+)px/g)].some(match => Number(match[1]) < 14), 'labels and metadata must stay at least 14px');
   assert.match(css, /\.paper-card\s*\{[^}]*grid-template-columns:\s*var\(--year-column\) minmax\(0, 1fr\) var\(--metadata-column\)/);
@@ -342,5 +483,5 @@ async function boot(initialURL = 'https://example.test/Awesome-CTR-Scaling/', fa
     assert.match(html, new RegExp('id="back-to-top"[^>]*type="button"[^>]*aria-label="' + label + '"[^>]*hidden'));
     assert.match(html, /id="hero-title" tabindex="-1"/);
   }
-  console.log('PASS: frontend unit flows: pagination, search/aliases/ID, collection/year/tag/company, combined filters, empty/reset, sort, history, deep links, pending input, mobile toggle, fetch failure, bilingual routes/search/state, provenance, removed-annotation guards, explicit gaps, safe source formatting, measured reading previews, repeated expand/collapse, resize, retained expansion, back to top, reduced motion, technical grid structure, complete metadata, category/tag/chip clicks, clicked permalinks and language round trips');
+  console.log('PASS: frontend unit flows: pagination, search/aliases/ID, collection/year/tag/company, combined filters, empty/reset, sort, history, deep links, pending input, mobile toggle, fetch failure, bilingual routes/search/state, provenance, removed-annotation guards, explicit gaps, safe source formatting, measured reading previews, repeated expand/collapse, resize, retained expansion, back to top, reduced motion, technical grid structure, complete metadata, category/tag/chip clicks, clicked permalinks, language round trips, recent activity windows/types, immutable timeline display, UTC/Shanghai boundaries, unknown/future exclusions and explicit recent sort serialization');
 })().catch(error => { console.error(error); process.exitCode = 1; });

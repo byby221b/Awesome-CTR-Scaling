@@ -53,9 +53,14 @@
           <kbd class="search-shortcut" aria-hidden="true">/</kbd>
         </form>
         </div>
+        <div class="recent-toolbar" aria-label="目录动态">
+          <div class="recent-tabs" role="group" aria-label="目录视图"><button id="recent-all" type="button" aria-pressed="true">全部论文</button><button id="recent-added" type="button" aria-pressed="false">最近新增</button><button id="recent-updated" type="button" aria-pressed="false">最近更新</button></div>
+          <div id="recent-options" class="recent-options" hidden><label class="sr-only" for="recent-window">时间范围</label><select id="recent-window"><option value="7">近 7 天</option><option value="30">近 30 天</option><option value="all">全部时间</option></select><label class="sr-only" for="change-kind">更新类型</label><select id="change-kind" hidden><option value="substantive">论文信息更新</option><option value="all">全部更新类型</option><option value="paper_revision">论文修订</option><option value="venue_update">Venue 更新</option><option value="metadata_enrichment">资料补全</option></select></div>
+        </div>
+        <p id="recent-note" class="recent-note" hidden></p>
         <div class="results-toolbar">
           <p class="updated-label">数据更新于 <time id="updated-at">{{UPDATED}}</time></p>
-          <div class="sort-field"><label for="sort-select">排序</label><select id="sort-select"><option value="newest">最新优先</option><option value="title">标题 A–Z</option><option value="original">阅读清单原顺序</option></select></div>
+          <div class="sort-field"><label for="sort-select">排序</label><select id="sort-select"><option value="relevance">相关性优先（无搜索时按最新）</option><option value="newest">发表年份最新</option><option value="added">收录时间最新</option><option value="updated">目录更新最新</option><option value="title">标题 A–Z</option><option value="original">阅读清单原顺序</option></select></div>
         </div>
         <p id="coverage-note" class="coverage-note" role="status"></p>
         <p id="category-description" class="category-description" hidden></p>

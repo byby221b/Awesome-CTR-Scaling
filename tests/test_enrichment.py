@@ -16,6 +16,9 @@ import upsert_papers
 class EnrichmentTests(unittest.TestCase):
     def setUp(self):
         self.data = json.loads((ROOT / "data/papers.json").read_bytes())
+        # Updater tests use a fixed clock, independent of later production events.
+        self.data['papers'][0]['change_history'] = []
+        self.data['papers'][0]['added_at'] = '2026-01-01T00:00:00Z'
 
     def test_bilingual_pages_share_fingerprint_and_assets(self):
         raw = generate.json_text(self.data).encode()
@@ -87,22 +90,23 @@ class EnrichmentTests(unittest.TestCase):
     def test_partial_patch_preserves_every_unmentioned_field(self):
         p = self.data['papers'][0]
         summary = dict(text='定点更新中文总结。',basis='original_abstract',method='editorial',updated_at='2026-10-02',source_urls=[p['original_abstract']['source_url']])
-        merged = upsert_papers.merge_patches(self.data, {'papers':[{'id':p['id'],'summaries':{'zh':summary}}]})
+        merged = upsert_papers.merge_patches(self.data, {'papers':[{'id':p['id'],'summaries':{'zh':summary},'change_source_url':p['original_abstract']['source_url']}]}, changed_at='2026-10-02T11:20:00Z')
         for key, value in p.items():
-            if key != 'summaries': self.assertEqual(merged['papers'][0][key], value)
+            if key not in ('summaries', 'change_history'): self.assertEqual(merged['papers'][0][key], value)
         self.assertEqual(merged['papers'][0]['summaries'].get('en'), p.get('summaries', {}).get('en'))
         self.assertEqual(merged['papers'][0]['summaries']['zh'], summary)
         self.assertEqual(merged['papers'][1:], self.data['papers'][1:])
 
     def test_new_enriched_paper_updates_every_view(self):
         paper = copy.deepcopy(self.data['papers'][0])
+        for key in ('added_at', 'added_provenance', 'change_history', 'source_dates'): paper.pop(key, None)
         paper['id'] = '2610.99999'
         paper['title'] = 'Synthetic bilingual enrichment test fixture'
         source = 'https://arxiv.org/abs/2610.99999v1'
         paper['links'] = [{'label':'Paper','url':'https://arxiv.org/abs/2610.99999'}]
         paper['original_abstract'] = dict(status='verified',text='A genuine-source fixture for tests only.',language='en',source_url=source,retrieved_at='2026-10-02T04:00:00Z',license=None,source_version='v1',source_title=paper['title'])
         paper['summaries'] = {lang:dict(text=text,basis='original_abstract',method='editorial',updated_at='2026-10-02',source_urls=[source]) for lang,text in [('en','English fixture summary.'),('zh','中文测试总结。')]}
-        data = upsert_papers.merge_patches(self.data, {'papers':[paper]})
+        data = upsert_papers.merge_patches(self.data, {'papers':[paper]}, changed_at='2026-10-02T11:20:00Z')
         outputs = generate.generate(data, generate.json_text(data).encode())
         public = json.loads(outputs['site/catalog.json'])
         self.assertEqual(public['papers'][-1]['summaries']['zh']['text'], '中文测试总结。')
@@ -122,13 +126,14 @@ class EnrichmentTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
             shutil.copytree(ROOT / 'web', root / 'web')
-            shutil.copytree(ROOT / 'data', root / 'data')
+            (root/'data').mkdir()
+            (root/'data/papers.json').write_text(generate.json_text(self.data))
             patch = root / 'patch.json'
             paper = self.data['papers'][0]
-            patch.write_text(json.dumps({'papers':[{'id':paper['id'], 'aliases':paper.get('aliases', []) + ['Safe update fixture']}]}))
+            patch.write_text(json.dumps({'papers':[{'id':paper['id'], 'aliases':paper.get('aliases', []) + ['Safe update fixture'], 'change_source_url':paper['links'][0]['url']}]}))
             before = (root / 'data/papers.json').read_bytes()
             sha = hashlib.sha256(before).hexdigest()
-            preview = upsert_papers.apply_patch_file(patch, root, sha, '2026-10-02')
+            preview = upsert_papers.apply_patch_file(patch, root, sha, '2026-10-02', changed_at='2026-10-02T11:20:00Z')
             self.assertEqual(preview['mode'], 'dry-run')
             self.assertEqual((root / 'data/papers.json').read_bytes(), before)
             self.assertFalse((root / 'site').exists())
@@ -139,7 +144,7 @@ class EnrichmentTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, 'another catalog writer'): upsert_papers.apply_patch_file(patch, root, sha, write=True)
             self.assertEqual((root / 'data/papers.json').read_bytes(), before)
             (root / '.catalog-update.lock').unlink()
-            result = upsert_papers.apply_patch_file(patch, root, sha, '2026-10-02', True)
+            result = upsert_papers.apply_patch_file(patch, root, sha, '2026-10-02', True, changed_at='2026-10-02T11:20:00Z')
             self.assertEqual(result['mode'], 'written')
             final = (root / 'data/papers.json').read_bytes()
             outputs = generate.generate(json.loads(final), final, root)
@@ -149,7 +154,7 @@ class EnrichmentTests(unittest.TestCase):
 
 
     def test_removed_annotations_cannot_be_reintroduced(self):
-        self.assertEqual(self.data['schema_version'], 3)
+        self.assertEqual(self.data['schema_version'], 4)
         self.assertTrue(all('contribution' not in paper for paper in self.data['papers']))
         self.assertFalse((ROOT / 'migration/original-README.md').exists())
         self.assertFalse((ROOT / 'scripts/legacy.py').exists())
@@ -161,7 +166,7 @@ class EnrichmentTests(unittest.TestCase):
             generate.validate(self.data)
         del self.data['papers'][0]['contribution']
         self.data['schema_version'] = 2
-        with self.assertRaisesRegex(ValueError, 'schema_version must be 3'):
+        with self.assertRaisesRegex(ValueError, 'schema_version must be 4'):
             generate.validate(self.data)
 
     def test_all_markdown_descriptions_derive_from_english_summaries(self):
@@ -188,6 +193,9 @@ class EnrichmentTests(unittest.TestCase):
             root = Path(directory)
             shutil.copytree(ROOT / 'migration', root / 'migration')
             (root / 'data').mkdir()
+            baseline = json.loads((ROOT/'migration/metadata-baseline.json').read_bytes())
+            for paper, original in zip(self.data['papers'], baseline['papers']):
+                if paper['id'] == original['id']: paper.update(original)
             self.data['papers'].append({'id':'2610.99999'})
             target = root / 'data/papers.json'
             target.write_text(json.dumps(self.data))

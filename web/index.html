@@ -53,9 +53,14 @@
           <kbd class="search-shortcut" aria-hidden="true">/</kbd>
         </form>
         </div>
+        <div class="recent-toolbar" aria-label="Catalog activity">
+          <div class="recent-tabs" role="group" aria-label="Catalog view"><button id="recent-all" type="button" aria-pressed="true">All papers</button><button id="recent-added" type="button" aria-pressed="false">Recently added</button><button id="recent-updated" type="button" aria-pressed="false">Recently updated</button></div>
+          <div id="recent-options" class="recent-options" hidden><label class="sr-only" for="recent-window">Time window</label><select id="recent-window"><option value="7">Past 7 days</option><option value="30">Past 30 days</option><option value="all">All time</option></select><label class="sr-only" for="change-kind">Update type</label><select id="change-kind" hidden><option value="substantive">Paper information updates</option><option value="all">All update types</option><option value="paper_revision">Paper revision</option><option value="venue_update">Venue update</option><option value="metadata_enrichment">Metadata enrichment</option></select></div>
+        </div>
+        <p id="recent-note" class="recent-note" hidden></p>
         <div class="results-toolbar">
           <p class="updated-label">Updated <time id="updated-at">{{UPDATED}}</time></p>
-          <div class="sort-field"><label for="sort-select">Sort by</label><select id="sort-select"><option value="newest">Newest first</option><option value="title">Title A–Z</option><option value="original">Reading-list order</option></select></div>
+          <div class="sort-field"><label for="sort-select">Sort by</label><select id="sort-select"><option value="relevance">Best match (newest when browsing)</option><option value="newest">Publication newest</option><option value="added">Latest catalog addition</option><option value="updated">Latest catalog update</option><option value="title">Title A–Z</option><option value="original">Reading-list order</option></select></div>
         </div>
         <p id="coverage-note" class="coverage-note" role="status"></p>
         <p id="category-description" class="category-description" hidden></p>

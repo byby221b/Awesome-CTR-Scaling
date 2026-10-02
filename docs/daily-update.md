@@ -18,7 +18,7 @@ policy remain unchanged.
    source text, with version, retrieval time and provenance; translations belong
    in summaries. Show missing content truthfully. Both summary languages must
    convey the same evidence and limitations. An abstract-based summary must not
-   claim full-paper validation. Schema v3 has no `contribution` field and rejects
+   claim full-paper validation. Schema v4 has no `contribution` field and rejects
    `catalog_contribution` as a summary basis. Never restore deleted annotations,
    duplicate them as an alias, or use them as a fallback. Markdown descriptions
    derive directly from `summaries.en.text`; absent summaries remain explicit
@@ -27,10 +27,14 @@ policy remain unchanged.
    automatic canonical-title rewrite
 4. Prepare focused `{"papers":[...]}` patches using the schema in
    `CONTRIBUTING.md`. Dry-run `python scripts/upsert_papers.py PATCH.json
-   --expect-sha256 SHA --updated YYYY-MM-DD`, then use the same command with
+   --expect-sha256 SHA --changed-at YYYY-MM-DDTHH:MM:SSZ --updated YYYY-MM-DD`, then use the same command with
    `--write`. A stale fingerprint requires a fresh read and merge, never removal
    of the guard. Serialize local writers. Only real content changes warrant a
-   new maintenance date or commit
+   new maintenance date or commit. Existing content changes must include a
+   per-record `change_source_url`; new records omit updater-owned history fields.
+   Reuse the same actual UTC `--changed-at` for dry-run and write; `--updated`, if
+   supplied, is its Asia/Shanghai date. The updater sets `added_at` once and
+   appends typed events. Never edit or reset existing entry dates/history
 5. Run every check below. Examine the diff for intended IDs, source identity,
    bilingual factual consistency, explicit gaps, counts, provenance and safe
    links. A new paper must appear in the catalog, topic view, company membership
@@ -80,3 +84,19 @@ The page shows independently counted coverage and explicit per-record gaps.
 The original migration `meta.source_commit` is historical provenance, not the
 current deployment SHA. Do not overwrite it. The canonical byte fingerprint is
 the content synchronization contract across all generated views.
+
+
+## Activity and date semantics
+
+Follow schema v4's [recent-activity contract](../CONTRIBUTING.md#recent-additions-and-updates-schema-v4).
+Preserve source publication/latest-version dates separately from catalog-entry
+and maintenance instants. Import `source_dates` only with primary-source version
+and verification evidence. For a verified replacement, advance its existing ID's
+source metadata; the updater emits a `paper_revision` event only when both version
+and source update time advance. Venue changes produce `venue_update`; genuine
+metadata/summary additions produce `metadata_enrichment`. Re-fetching unchanged
+content, refreshing retrieval/edit timestamps or regenerating views produces no
+new event and no fresh addition. The default Recent updates view excludes
+abstract/translation-only backfills; the explicit metadata filter retains them.
+These events do not change the discovery thresholds, timing, recipients or
+notification policy. Never re-email a paper for backfill-only events or retries.

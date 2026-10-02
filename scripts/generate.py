@@ -62,11 +62,99 @@ def check_source_identity(value, pid, version, errors):
             errors.append(f"{pid}: arXiv source version mismatch")
 
 
+def utc_timestamp(value):
+    """Canonical instants are UTC seconds, never inferred from a date-only field."""
+    if not isinstance(value, str) or not re.fullmatch(r"\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z", value):
+        raise ValueError("expected UTC timestamp YYYY-MM-DDTHH:MM:SSZ")
+    return datetime.fromisoformat(value.replace("Z", "+00:00"))
+
+
+CHANGE_KINDS = {"paper_revision", "venue_update", "metadata_enrichment"}
+CHANGE_FIELDS = {"title", "collection", "category", "affiliation", "venue", "year", "tags", "links", "aliases", "doi", "original_abstract", "summaries", "source_dates"}
+
+
+def validate_history(paper, errors):
+    pid = paper.get("id", "")
+    added = paper.get("added_at")
+    provenance = paper.get("added_provenance")
+    if "added_at" not in paper or "added_provenance" not in paper:
+        errors.append(f"{pid}: added_at and added_provenance are required (null when unknown)")
+    if added is not None:
+        try:
+            utc_timestamp(added)
+        except ValueError:
+            errors.append(f"{pid}: added_at requires a UTC timestamp")
+        if not isinstance(provenance, dict) or provenance.get("kind") not in ("repository_history", "catalog_entry") or not safe_url(provenance.get("source_url")):
+            errors.append(f"{pid}: known added_at requires verifiable added_provenance")
+        elif provenance["kind"] == "repository_history" and (not re.fullmatch(r"[0-9a-f]{40}", str(provenance.get("commit_sha", ""))) or not provenance["source_url"].endswith("/commit/" + provenance["commit_sha"])):
+            errors.append(f"{pid}: history provenance requires a matching commit URL and SHA")
+    elif provenance is not None:
+        errors.append(f"{pid}: unknown added_at must have null added_provenance")
+    events = paper.get("change_history")
+    if not isinstance(events, list):
+        errors.append(f"{pid}: change_history must be a list")
+        events = []
+    seen = set()
+    previous = ""
+    for event in events:
+        if not isinstance(event, dict):
+            errors.append(f"{pid}: invalid change event")
+            continue
+        try:
+            utc_timestamp(event.get("at"))
+        except ValueError:
+            errors.append(f"{pid}: change event requires a UTC timestamp")
+        at = event.get("at") or ""
+        if not isinstance(at, str):
+            at = ""
+        if at < previous or (isinstance(added, str) and at < added):
+            errors.append(f"{pid}: change_history must be chronological and not predate addition")
+        previous = at
+        kind, fields = event.get("kind"), event.get("fields")
+        if kind not in CHANGE_KINDS:
+            errors.append(f"{pid}: unsupported change kind")
+        if not isinstance(fields, list) or not fields or any(not isinstance(f, str) or f not in CHANGE_FIELDS for f in fields) or len(fields) != len(set(fields)):
+            errors.append(f"{pid}: change event requires unique content fields")
+        elif kind == "venue_update" and fields != ["venue"]:
+            errors.append(f"{pid}: venue_update must describe venue only")
+        elif kind == "paper_revision" and "source_dates" not in fields:
+            errors.append(f"{pid}: paper_revision requires verified source_dates")
+        if kind == "paper_revision":
+            if not re.fullmatch(r"v[1-9]\d*", str(event.get("source_version", ""))):
+                errors.append(f"{pid}: paper_revision requires its verified source_version")
+            check_source_identity(event.get("source_url"), pid, event.get("source_version"), errors)
+        if not safe_url(event.get("source_url")):
+            errors.append(f"{pid}: change event requires a safe source_url")
+        key = json_text(event)
+        if key in seen:
+            errors.append(f"{pid}: duplicate change event")
+        seen.add(key)
+    source = paper.get("source_dates")
+    if source is not None:
+        if not isinstance(source, dict):
+            errors.append(f"{pid}: source_dates must be an object")
+            return
+        for field in ("published_at", "updated_at", "verified_at"):
+            try:
+                utc_timestamp(source.get(field))
+            except ValueError:
+                errors.append(f"{pid}: source_dates.{field} requires a UTC timestamp")
+        if not safe_url(source.get("source_url")):
+            errors.append(f"{pid}: source_dates requires a safe source_url")
+        if not re.fullmatch(r"v[1-9]\d*", str(source.get("source_version", ""))):
+            errors.append(f"{pid}: source_dates requires a source_version")
+        check_source_identity(source.get("source_url"), pid, source.get("source_version"), errors)
+        if source.get("source_version") and (paper.get("original_abstract") or {}).get("source_version") and source["source_version"] != paper["original_abstract"]["source_version"]:
+            errors.append(f"{pid}: source_dates and original abstract version mismatch")
+        if isinstance(source.get("published_at"), str) and isinstance(source.get("updated_at"), str) and source["published_at"] > source["updated_at"]:
+            errors.append(f"{pid}: source publication must not follow source update")
+
+
 def validate(data):
     """Reject ambiguous IDs, unsupported tags, malformed fields and unsafe links."""
     errors = []
-    if data.get("schema_version") != 3:
-        errors.append("schema_version must be 3")
+    if data.get("schema_version") != 4:
+        errors.append("schema_version must be 4")
     for key in ("meta", "categories", "papers", "companies", "tag_vocabulary"):
         if key not in data:
             errors.append(f"missing {key}")
@@ -105,6 +193,7 @@ def validate(data):
         if not isinstance(pid, str) or not ID_PATTERN.fullmatch(pid) or pid in ids:
             errors.append(f"invalid or duplicate arXiv id {pid}")
         ids.add(pid)
+        validate_history(paper, errors)
         if "contribution" in paper:
             errors.append(f"{pid}: contribution was removed in schema v3; use source-grounded summaries")
         for field in ("title", "affiliation", "venue"):
@@ -330,6 +419,9 @@ def generate(data, source_bytes, root=ROOT):
     outputs["docs/companies.md"] = company_output
     source_hash = digest(source_bytes)
     coverage = {
+        "known_added_dates": sum(p.get("added_at") is not None for p in data["papers"]),
+        "papers_with_updates": sum(bool(p.get("change_history")) for p in data["papers"]),
+        "verified_source_dates": sum(bool(p.get("source_dates")) for p in data["papers"]),
         "verified_abstracts": sum(p.get("original_abstract", {}).get("status") == "verified" for p in data["papers"]),
         "unavailable_abstracts": sum(p.get("original_abstract", {}).get("status") == "unavailable" for p in data["papers"]),
         "pending_abstracts": sum(p.get("original_abstract", {}).get("status", "pending") == "pending" for p in data["papers"]),

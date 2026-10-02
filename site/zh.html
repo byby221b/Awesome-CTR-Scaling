@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="catalog-sha256" content="c6a80ca81260ce48fde88d7c34f73fa8cd6944394ccf8f868f7fe1121a368be5">
+  <meta name="catalog-sha256" content="f754c8a82e105d8ad5a6b0c673d194ca47fa4b2cbab8baa7ead5f2b33769de3b">
   <meta name="theme-color" content="#15222d">
   <meta name="description" content="关于工业级 CTR 与推荐模型的规模规律、架构及部署研究，提供原始摘要和中文总结。">
   <title>Awesome CTR Scaling · 推荐系统论文库</title>
@@ -53,9 +53,14 @@
           <kbd class="search-shortcut" aria-hidden="true">/</kbd>
         </form>
         </div>
+        <div class="recent-toolbar" aria-label="目录动态">
+          <div class="recent-tabs" role="group" aria-label="目录视图"><button id="recent-all" type="button" aria-pressed="true">全部论文</button><button id="recent-added" type="button" aria-pressed="false">最近新增</button><button id="recent-updated" type="button" aria-pressed="false">最近更新</button></div>
+          <div id="recent-options" class="recent-options" hidden><label class="sr-only" for="recent-window">时间范围</label><select id="recent-window"><option value="7">近 7 天</option><option value="30">近 30 天</option><option value="all">全部时间</option></select><label class="sr-only" for="change-kind">更新类型</label><select id="change-kind" hidden><option value="substantive">论文信息更新</option><option value="all">全部更新类型</option><option value="paper_revision">论文修订</option><option value="venue_update">Venue 更新</option><option value="metadata_enrichment">资料补全</option></select></div>
+        </div>
+        <p id="recent-note" class="recent-note" hidden></p>
         <div class="results-toolbar">
           <p class="updated-label">数据更新于 <time id="updated-at">2026-10-02</time></p>
-          <div class="sort-field"><label for="sort-select">排序</label><select id="sort-select"><option value="newest">最新优先</option><option value="title">标题 A–Z</option><option value="original">阅读清单原顺序</option></select></div>
+          <div class="sort-field"><label for="sort-select">排序</label><select id="sort-select"><option value="relevance">相关性优先（无搜索时按最新）</option><option value="newest">发表年份最新</option><option value="added">收录时间最新</option><option value="updated">目录更新最新</option><option value="title">标题 A–Z</option><option value="original">阅读清单原顺序</option></select></div>
         </div>
         <p id="coverage-note" class="coverage-note" role="status"></p>
         <p id="category-description" class="category-description" hidden></p>

@@ -1,8 +1,11 @@
 {
   "schema_version": 1,
-  "catalog_sha256": "c6a80ca81260ce48fde88d7c34f73fa8cd6944394ccf8f868f7fe1121a368be5",
+  "catalog_sha256": "f754c8a82e105d8ad5a6b0c673d194ca47fa4b2cbab8baa7ead5f2b33769de3b",
   "paper_count": 271,
   "coverage": {
+    "known_added_dates": 271,
+    "papers_with_updates": 271,
+    "verified_source_dates": 271,
     "verified_abstracts": 271,
     "unavailable_abstracts": 0,
     "pending_abstracts": 0,
@@ -32,11 +35,11 @@
     "docs/topics/scaling-law-theory.md": "c56096ca18ace83af30a00c1c98d6f5114c0c3cd6a4ffa838cc19bcf0d6920f5",
     "docs/topics/unified-feature-sequence-modeling.md": "b9b7fd06563f29a321e2a68ac6cb2f9cb5fa317bb2160bfcfd54bad975b6042d",
     "site/.nojekyll": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-    "site/app.js": "20dc8b0593fc4719c7e94be779fe5ca56f441164117fb6b6cb300b15551cef28",
-    "site/catalog.json": "2291b52916e537db213f36213d6f388acdd2941cd60c27df3194ffeea4fd41bd",
+    "site/app.js": "5e13ecb1aade2b5880884ef0f8e8a757223c0d07c9e716c75b3af298eb413b44",
+    "site/catalog.json": "8d60ca5387b570d0a6ead08fbb72fee39b4ed9f0ca068531e40aa78d46d31c7c",
     "site/favicon.svg": "3f54fc261cc3c1f995dc5daba017f021138d20858005fa65ce6b2ae5113854af",
-    "site/index.html": "d318990a1638e4213f164221253fb4277e55dea689351d27e46423a6bdac5279",
-    "site/styles.css": "9be6b895be68c45d626cbffedcd34563e9247a4617bbe5f517f836e2bb64569a",
-    "site/zh.html": "84480a31c8a1e5a88b466265357e2ed008ff922fe00089de51176f370bc2e73f"
+    "site/index.html": "5b0ec0a7af3dec668b11b07f7241b7375011a524ccfcb7f9297d4b4b470c56c8",
+    "site/styles.css": "bcb597dd7094bc44820a56ac53827822cbfa926b1e1e13a951b0be698a96a5e7",
+    "site/zh.html": "32e8c8a6bbb28faba103dc0e93adc86104feebb79a651a5ccb9313375dd487a9"
   }
 }
