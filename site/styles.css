@@ -363,10 +363,20 @@ select {
 .coverage-note { font-size: 12px; color: var(--muted); line-height: 1.7; padding: 12px 15px; margin: 0 0 20px; border: 1px solid var(--line); border-radius: 5px; background: #f0f2eb; }
 .summary-panel { border-left: 3px solid var(--teal); border-radius: 0 4px 4px 0; background: var(--teal-wash); padding: 15px 18px; margin: 20px 0; }
 .reading-label { margin: 0 0 9px; color: var(--teal-dark); font-size: 12px; font-weight: 750; letter-spacing: .6px; text-transform: uppercase; }
-.summary-text { font-size: 15px; line-height: 1.85; margin: 0; white-space: pre-line; overflow-wrap: anywhere; }
+.summary-text { font-size: 18px; line-height: 1.85; margin: 0; white-space: pre-line; overflow-wrap: anywhere; }
 .abstract-panel { margin: 19px 0; }
 .abstract-panel .reading-label { color: var(--muted); }
-.abstract-text { font-size: 14px; line-height: 1.85; color: #3f5359; margin: 0; white-space: pre-line; overflow-wrap: anywhere; }
+.abstract-text { font-size: 18px; line-height: 1.85; color: #3f5359; margin: 0; white-space: pre-line; overflow-wrap: anywhere; }
+.reading-preview.is-collapsed {
+  display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 4;
+  line-clamp: 4; overflow: hidden;
+}
+.reading-toggle {
+  display: inline-flex; align-items: center; min-height: 44px; margin-top: 4px;
+  padding: 8px 0; border: 0; background: transparent; color: var(--teal-dark);
+  font-size: 15px; font-weight: 650; text-decoration: underline; text-underline-offset: 4px;
+}
+.reading-toggle:hover { color: var(--ink); }
 .provenance { font-size: 11px; line-height: 1.7; color: var(--muted); margin: 9px 0 0; overflow-wrap: anywhere; }
 .source-title { font-size: 12px; line-height: 1.65; margin: 0 0 10px; color: var(--muted); overflow-wrap: anywhere; }
 .missing-content { font-size: 13px; line-height: 1.7; color: var(--muted); margin: 0; }
@@ -379,10 +389,24 @@ html[lang=zh-CN] .filter-label, html[lang=zh-CN] .section-kicker { letter-spacin
   .header-actions .source-link { display: none; }
   .language-switch { padding: 7px 10px; font-size: 13px; }
   .summary-panel { padding: 13px 14px; }
-  .abstract-text { font-size: 14px; line-height: 1.85; }
 }
 .inline-math { font-family: ui-serif, Georgia, serif; white-space: normal; }
 .inline-math sup, .inline-math sub { font-size: .8em; line-height: 0; }
 .small-caps { font-variant: small-caps; }
 .source-macro { font-size: .92em; background: #f0f1eb; border-bottom: 1px dotted var(--muted); padding: 0 2px; overflow-wrap: anywhere; }
 .abstract-text { white-space: normal; }
+
+/* A compact corner control, with room below the footer and safe-area insets. */
+.back-to-top {
+  position: fixed; right: max(16px, env(safe-area-inset-right)); bottom: max(20px, env(safe-area-inset-bottom));
+  z-index: 10; display: inline-flex; align-items: center; justify-content: center;
+  width: 48px; height: 48px; padding: 0; border: 1px solid var(--teal-dark);
+  border-radius: 50%; background: var(--teal-dark); color: var(--surface);
+  box-shadow: 0 3px 14px rgb(20 45 53 / 20%);
+}
+.back-to-top:hover { background: var(--navy); border-color: var(--navy); }
+.back-to-top svg { width: 22px; height: 22px; }
+.pagination { padding-left: 52px; padding-right: 52px; }
+.pagination .button { max-width: 100%; }
+.site-footer { padding-bottom: 90px; }
+#hero-title:focus-visible { outline: 3px solid #409a88; outline-offset: 6px; }

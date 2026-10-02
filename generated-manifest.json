@@ -32,10 +32,11 @@
     "docs/topics/scaling-law-theory.md": "c56096ca18ace83af30a00c1c98d6f5114c0c3cd6a4ffa838cc19bcf0d6920f5",
     "docs/topics/unified-feature-sequence-modeling.md": "b9b7fd06563f29a321e2a68ac6cb2f9cb5fa317bb2160bfcfd54bad975b6042d",
     "site/.nojekyll": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-    "site/app.js": "4a356f081f35160ce16b89ef9add21181edfdea7afd756568b53ff5c6a1542a4",
+    "site/app.js": "a06af0dcba5501b7ceee0523735dc328ebb4a4f902dc314669708778da4fa83e",
     "site/catalog.json": "2291b52916e537db213f36213d6f388acdd2941cd60c27df3194ffeea4fd41bd",
-    "site/index.html": "d2ac3132777afe8494b218a8c2b44465348135d81ddbcce03167cfb251447aa9",
-    "site/styles.css": "bfaee9883270617b8f81737b9eed27de30ffd16135e564fb408779ae38dd2e11",
-    "site/zh.html": "e6e66455c1c06ed9a2cb00a3975c9dcb51b2622e63e22547656f60aa33dc7495"
+    "site/favicon.svg": "3f54fc261cc3c1f995dc5daba017f021138d20858005fa65ce6b2ae5113854af",
+    "site/index.html": "218c000f324eaa72a896cfe16cff2ff2f2b9b2e165885c1d2b6011d074c9d11a",
+    "site/styles.css": "f83ac56881154197f01d9242c890eba1839da14df30486854f78ae67f755eb86",
+    "site/zh.html": "a28af770a97142622efc90948dafea3c51405bff0bb385cbd4788dbce20bb42b"
   }
 }

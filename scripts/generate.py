@@ -340,7 +340,7 @@ def generate(data, source_bytes, root=ROOT):
                    "papers": [{**paper, "companies": memberships[paper["id"]], "order": i} for i, paper in enumerate(data["papers"])]}
     outputs["site/catalog.json"] = json_text(public_data)
     substitutions = {"TOTAL": len(data["papers"]), "CORE": counts["core"], "RELATED": counts["related"], "UPDATED": data["meta"]["updated"], "CATALOG_SHA256": source_hash}
-    for name in ("index.html", "zh.html", "styles.css", "app.js"):
+    for name in ("index.html", "zh.html", "styles.css", "app.js", "favicon.svg"):
         content = (root / "web" / name).read_text(encoding="utf-8")
         for key, value in substitutions.items():
             content = content.replace("{{" + key + "}}", str(value))

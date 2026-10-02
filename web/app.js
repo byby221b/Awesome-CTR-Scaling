@@ -31,11 +31,13 @@
     tag: $('tag-filter'), company: $('company-filter'), categories: $('category-options'),
     papers: $('papers'), active: $('active-filters'), status: $('results-status'),
     pagination: $('pagination'), showing: $('showing-count'), more: $('load-more'),
-    filterToggle: $('filter-toggle'), sidebar: $('filter-panel')
+    filterToggle: $('filter-toggle'), sidebar: $('filter-panel'), backToTop: $('back-to-top')
   };
   let catalog, papers = [], categories = [], companies = [], filtered = [];
   let state = { ...DEFAULTS }, visibleCount = PAGE_SIZE, searchTimer;
   let initialSearchEntry = true;
+  let readingPreviews = [], readingLayoutPending = false;
+  const expandedReadings = new Set();
 
   function element(tag, className, text) {
     const node = document.createElement(tag);
@@ -365,13 +367,77 @@
     return summary?.basis === 'original_abstract' && paper.original_abstract?.status === 'verified' ? summary : null;
   }
 
+  function appendReadingPreview(parent, prose, id, label) {
+    prose.id = id;
+    prose.classList.add('reading-preview');
+    prose.classList.add('is-collapsed');
+    const button = element('button', 'reading-toggle');
+    button.type = 'button';
+    button.hidden = true;
+    button.setAttribute('aria-controls', id);
+    button.setAttribute('aria-expanded', 'false');
+    const preview = { prose, button, id, label, overflowing: false };
+    readingPreviews.push(preview);
+    button.addEventListener('click', () => {
+      if (!preview.overflowing) return;
+      const expanded = !expandedReadings.has(id);
+      if (expanded) expandedReadings.add(id);
+      else expandedReadings.delete(id);
+      syncReadingPreview(preview);
+      // Keep the control reachable when a long passage collapses above it.
+      if (!expanded) button.scrollIntoView({ behavior: 'auto', block: 'nearest' });
+    });
+    parent.append(prose, button);
+  }
+
+  function syncReadingPreview(preview) {
+    const { prose, button, id, label, overflowing } = preview;
+    const expanded = overflowing && expandedReadings.has(id);
+    prose.classList.toggle('is-collapsed', overflowing && !expanded);
+    button.hidden = !overflowing;
+    button.setAttribute('aria-expanded', String(expanded));
+    button.textContent = expanded ? tr('Show less', '收起全文') : tr('Show full text', '展开全文');
+    button.setAttribute('aria-label', `${button.textContent} · ${label}`);
+  }
+
+  function refreshReadingPreviews() {
+    // Measure real wrapping at the current width, including formatted source text.
+    // Batch the writes and reads so large result sets need only one layout pass.
+    readingPreviews.forEach(({ prose }) => prose.classList.add('is-collapsed'));
+    readingPreviews.forEach((preview) => {
+      preview.overflowing = preview.prose.scrollHeight > preview.prose.clientHeight + 1;
+    });
+    readingPreviews.forEach(syncReadingPreview);
+  }
+
+  function initializeReadingControls() {
+    const updateBackToTop = () => {
+      ui.backToTop.hidden = window.scrollY < Math.max(400, window.innerHeight * .75);
+    };
+    ui.backToTop.addEventListener('click', () => {
+      $('hero-title').focus({ preventScroll: true });
+      window.scrollTo({ top: 0, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+    });
+    window.addEventListener('scroll', updateBackToTop, { passive: true });
+    window.addEventListener('resize', () => {
+      if (readingLayoutPending) return;
+      readingLayoutPending = true;
+      requestAnimationFrame(() => {
+        readingLayoutPending = false;
+        refreshReadingPreviews();
+        updateBackToTop();
+      });
+    });
+    updateBackToTop();
+  }
+
   function appendReadingContent(card, paper) {
     const summary = verifiedSummary(paper, LANG);
     const panel = element('section', 'summary-panel');
     panel.setAttribute('aria-label', tr('Paper summary', '论文总结'));
     panel.append(element('h4', 'reading-label', tr('Paper summary', '论文总结')));
     if (summary?.text) {
-      panel.append(element('p', 'summary-text', summary.text));
+      appendReadingPreview(panel, element('p', 'summary-text', summary.text), `${card.id}-summary`, tr('Paper summary', '论文总结'));
       const basis = tr('Based on the original abstract', '基于论文原始摘要');
       panel.append(element('p', 'provenance', `${summary.method === 'ai_assisted' ? tr('AI-assisted summary', 'AI 辅助总结') : tr('Editorial summary', '编者总结')} · ${basis}`));
     } else {
@@ -389,7 +455,7 @@
       const prose = element('p', 'abstract-text');
       appendSourceText(prose, abstract.text);
       prose.lang = abstract.language;
-      original.append(prose);
+      appendReadingPreview(original, prose, `${card.id}-abstract`, tr('Original abstract', '原始摘要'));
       const provenance = element('p', 'provenance');
       const source = safeURL(abstract.source_url);
       if (source) provenance.append(createLink(tr('Original source', '原始来源'), source, 'source-citation'));
@@ -504,6 +570,7 @@
 
   function renderPapers() {
     const shown = filtered.slice(0, visibleCount);
+    readingPreviews = [];
     ui.papers.replaceChildren();
     if (!shown.length) renderEmpty();
     else {
@@ -511,6 +578,7 @@
       shown.forEach((paper) => fragment.append(paperCard(paper)));
       ui.papers.append(fragment);
     }
+    refreshReadingPreviews();
     ui.papers.setAttribute('aria-busy', 'false');
     ui.pagination.hidden = filtered.length === 0;
     ui.more.hidden = shown.length >= filtered.length;
@@ -583,6 +651,7 @@
   }
 
   async function start() {
+    initializeReadingControls();
     syncLanguageLink();
     try {
       const response = await fetch('./catalog.json');

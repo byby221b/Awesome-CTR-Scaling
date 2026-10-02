@@ -49,7 +49,7 @@ class CatalogTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
             files = dict(self.outputs)
-            for source in ("scripts/generate.py", "data/papers.json", "web/index.html", "web/zh.html", "web/styles.css", "web/app.js"):
+            for source in ("scripts/generate.py", "data/papers.json", "web/index.html", "web/zh.html", "web/styles.css", "web/app.js", "web/favicon.svg"):
                 files[source] = (ROOT / source).read_text(encoding="utf-8")
             for path, content in files.items():
                 target = root / path
@@ -217,7 +217,7 @@ class CatalogTests(unittest.TestCase):
                 with self.subTest(path=path):
                     hero = re.search(r'<div class="hero-copy">(.*?)</div>', content, re.S)
                     self.assertIsNotNone(hero)
-                    self.assertEqual(hero.group(1).strip(), '<h1 id="hero-title">Awesome CTR Scaling</h1>')
+                    self.assertEqual(hero.group(1).strip(), '<h1 id="hero-title" tabindex="-1">Awesome CTR Scaling</h1>')
                     for element_id in ("language-switch", "total-stat", "core-stat", "related-stat", "updated-at", "filter-toggle", "search-input"):
                         self.assertIn(f'id="{element_id}"', content)
 
