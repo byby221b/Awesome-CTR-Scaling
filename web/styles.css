@@ -274,6 +274,7 @@ select {
   .results-toolbar { align-items: flex-start; flex-wrap: wrap; gap: 12px; }
   .sort-field { padding-top: 0; }
   .paper-card { padding: 23px; }
+  .paper-card .paper-links { margin-right: 24px; }
   .site-footer { margin-left: 32px; margin-right: 32px; }
 }
 @media (max-width: 980px) {
@@ -331,6 +332,7 @@ select {
   .paper-bottom { flex-wrap: wrap; }
   .paper-tags { flex-basis: 100%; }
   .paper-links { gap: 18px; }
+  .paper-card .paper-links { margin-right: 40px; }
   .site-footer { margin: 0 20px; padding: 22px 0 28px; display: block; }
   .footer-right { text-align: left; padding-top: 20px; }
   .footer-right div { justify-content: flex-start; }
