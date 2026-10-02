@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "catalog_sha256": "6d81d672e9fd5a8939982eef4063c372794319a2bc6679b2b81f015c16963ce4",
+  "paper_count": 271,
+  "collection_counts": {
+    "core": 77,
+    "related": 194
+  },
+  "files": {
+    "README.md": "b747baf5f4965c4d2e41d16c59b4c7b543e7cd5cdbec56be144d6d3f4d9c4f5d",
+    "docs/README.md": "a8e92a288200c749c2eddb3a62ef7d556afa48111bf62ebc502f67fe8ba40325",
+    "docs/companies.md": "0eb4ed38f1c7f82a2052a06ec9060e7c92d07912d6827dc66df31abfab89211f",
+    "docs/related/architecture-innovations-beyond-recommendation.md": "a5fb5a81fc88cc5f3b29ada4651f1fd4eace9168824ddfe12a062e824029f548",
+    "docs/related/engineering-serving.md": "f547cc7438fba829582babe45647f4f517982aef5460c3642850046e12d98f51",
+    "docs/related/generative-pre-training-for-ctr.md": "c835ef96359a49ec95facca6373c558685477ae6b637430aa27d8438442c4e22",
+    "docs/related/generative-recommendation.md": "39087ce1109baaac1088c078940a454f3d8610cd4f90514c93fee57c6b677ff7",
+    "docs/related/knowledge-distillation-compression.md": "e1b490f24094a80a0759dfe401ad85b99a0d8c6a715f061d69c855c9dc18817d",
+    "docs/related/long-sequence-modeling.md": "2a7804dd28b2a54cf057876dc52eae143128befff85a7fa1a11feccfe304db30",
+    "docs/related/other.md": "988a7647e9e5560ed56b9e728715246df02107e3cdb1ba6e67ab86e96ad502ba",
+    "docs/related/retrieval-reranking-scaling.md": "e31de58fee1cc1268b7cf238e0e2090ebedc8175455a15013d3ce4e7564234a5",
+    "docs/related/sample-instance-compression-for-sequence-modeling.md": "73ed15b5d543dc58edc0d481182d378a4320a6308ff739518f8732f187a74105",
+    "docs/topics/efficiency-deployment.md": "87c3b0f9f3c1bd82ac38f591fb9893bdc923aad593a4e1ab6188e246bb3ce330",
+    "docs/topics/foundation-models-multi-scenario.md": "20030fbc19f8e7266fa551d8d4801e486e152ef567c26c46cb60dca58ba4e280",
+    "docs/topics/scalable-architecture.md": "4d84af69015c0ce0f614ca5fbe8e1447f1186dbd54e63350aff9b758acd0c342",
+    "docs/topics/scaling-law-theory.md": "db12c8f20b700e4b3a13d2d95418a991d236c342dabba9d0dd242e3de583265a",
+    "docs/topics/unified-feature-sequence-modeling.md": "77cc2e4c4a1172809aaec74df214232112064ffab19fa6b43e14cf733966b7d1",
+    "site/.nojekyll": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "site/app.js": "258569082fe2222b0c53198e52c230fddacb2fb51ab0565916e2590868656e65",
+    "site/catalog.json": "a5aa0dba4ffe37d4e1135321e866c6ef7191f0c804fe8d15c8696a9bc9db6ee4",
+    "site/index.html": "97f553467b5a415e05177e21970d11ae314b79cbdf4bdd1ed8ac3480ada9dab9",
+    "site/styles.css": "806c1bb6a6c67d9e854d4ae8fe58d848aaf454ec038272c13a4b0cd1763cb211"
+  }
+}

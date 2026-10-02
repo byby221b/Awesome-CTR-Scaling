@@ -1,0 +1,23 @@
+<!-- Generated from data/papers.json. Do not edit by hand; run python scripts/generate.py. -->
+
+# Foundation Models & Multi-Scenario
+
+[← Catalog](../../README.md) · [All topics](../README.md) · [Search website](https://byby221b.github.io/Awesome-CTR-Scaling/?category=foundation-models-multi-scenario)
+
+Shared foundations, multi-task learning and transfer across scenarios.
+
+11 papers · Updated 2026-10-02
+
+| Paper | Affiliation | Venue | Year | Tags | Links | Key Contribution |
+|:------|:------------|:------|:-----|:-----|:------|:-----------------|
+| <a id="paper-2402-06859"></a>**LiRank: Industrial Large Scale Ranking Models at LinkedIn** | LinkedIn | KDD | 2024 | `Foundation Model` `Multi-task` `Quantization` | [Paper](https://arxiv.org/abs/2402.06859) | Residual DCN + Transformer + Dense Gating; quantization and compression for serving |
+| <a id="paper-2508-02929"></a>**Realizing Scaling Laws in Recommender Systems: A Foundation-Expert Paradigm for Hyperscale Model Deployment** | Meta | arXiv | 2025 | `Foundation Model` `MoE` `Serving` | [Paper](https://arxiv.org/abs/2508.02929) | Foundation model + surface-specific experts; HyperCast infrastructure; first Foundation-Expert deployment at scale |
+| <a id="paper-2509-18091"></a>**OnePiece: Bringing Context Engineering and Reasoning to Industrial Cascade Ranking System** | Shopee | KDD | 2026 | `Foundation Model` `Architecture` | [Paper](https://arxiv.org/abs/2509.18091) | LLM-style context engineering + block-wise latent reasoning in cascade ranking |
+| <a id="paper-2502-08309"></a>**LUM: Unlocking Scaling Law in Industrial Recommendation Systems with a Three-step Paradigm based Large User Model** | Alibaba | WSDM | 2026 | `Foundation Model` `Scaling Law` `Knowledge Distillation` | [Paper](https://arxiv.org/abs/2502.08309) | Three-step paradigm (pre-training → fine-tuning → distillation) based Large User Model; scales to 7B parameters |
+| <a id="paper-2602-11235"></a>**MTFM: A Scalable and Alignment-Free Foundation Model for Industrial Recommendation in Meituan** | Meituan | KDD | 2026 | `Foundation Model` `Training Efficiency` | [Paper](https://arxiv.org/abs/2602.11235) | Full Attn / Target Attn alternation; CPU-GPU pipeline optimization; custom Triton kernels |
+| <a id="paper-2606-00422"></a>**UniPinRec: Unifying Generative Retrieval and Ranking at Pinterest Scale** | Pinterest | RecSys (Industry) | 2026 | `Foundation Model` `Generative Rec` `Serving` | [Paper](https://arxiv.org/abs/2606.00422) | Full-stack unification of retrieval and ranking; cross-stage KV cache sharing; +1% engagement, +63.6% QPS |
+| <a id="paper-2606-16838"></a>**OneRank: Unified Transformer-Native Ranking Architecture for Multi-Task Recommendation** | Shopee / RUC | KDD | 2026 | `Multi-task` `Architecture` | [Paper](https://arxiv.org/abs/2606.16838) | Eliminates encoder-predictor separation in multi-task ranking; task-private channels with dynamic scoring |
+| <a id="paper-2606-19635"></a>**Token Factory: Efficiently Integrating Diverse Signals into Large Recommendation Models** | Google | RecSys (Industry) | 2026 | `Foundation Model` `Tokenization` | [Paper](https://arxiv.org/abs/2606.19635) | Transforms heterogeneous signals into soft tokens; prevents prompt length explosion |
+| <a id="paper-2608-18606"></a>**OneModel: A Unified Foundation for Platform-Scale Multi-Scenario Ranking** | Xiaohongshu | arXiv | 2026 | `Multi-scenario` `Sequence Modeling` `Foundation Model` | [Paper](https://arxiv.org/abs/2608.18606) | Unified multi-stream ranking with Scenario-aware Information Modulation; deployed at Xiaohongshu |
+| <a id="paper-2608-25546"></a>**AMBER: An Event is Worth One Token — Event Tokenization for Industrial-scale LLM Recommendation** | Meta | arXiv | 2026 | `Tokenization` `Foundation Model` | [Paper](https://arxiv.org/abs/2608.25546) | Compresses each event's full temporal snapshot into a compact Event Token; identifies snapshot resolution as a new scaling dimension; advances the compute-quality Pareto frontier for LLM-based recommendation |
+| <a id="paper-2609-28589"></a>**OneTrans-V2: Unifying Retrieval, Pre-rank, and Fine-rank with One Transformer in Industrial Recommender** | ByteDance | arXiv | 2026 | `Architecture` `MoE` `Foundation Model` `Serving` | [Paper](https://arxiv.org/abs/2609.28589) | Unifies retrieval, pre-rank, and fine-rank in one sparse-MoE Transformer with shared user context, in-model distillation, μP-style scaling and sequence-native training; decision-conditioned generative retrieval consolidates objectives; co-designed deployment lifts GMV/user 9.74% and cascade QPS 3.2× at the same hardware budget |
