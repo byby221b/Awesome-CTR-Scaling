@@ -7,9 +7,10 @@ const vm = require('node:vm');
 const ROOT = path.resolve(__dirname, '..');
 const catalog = JSON.parse(fs.readFileSync(path.join(ROOT, 'site/catalog.json'), 'utf8'));
 const source = fs.readFileSync(path.join(ROOT, 'web/app.js'), 'utf8');
-const template = fs.readFileSync(path.join(ROOT, 'web/index.html'), 'utf8');
 
 async function boot(initialURL = 'https://example.test/Awesome-CTR-Scaling/', failFetch = false, data = catalog, options = {}) {
+  const route = new URL(initialURL).pathname;
+  const template = fs.readFileSync(path.join(ROOT, 'web', /(?:^|\/)zh(?:\.html|\/)?$/.test(route) ? 'zh.html' : 'index.html'), 'utf8');
   const roots = new Map(), inputs = [], events = {}, timers = new Map(), logs = [];
   // Synthetic line metrics exercise overflow decisions; actual wrapping/ellipsis needs browser QA.
   const layout = { charsPerLine: 80, reducedMotion: false, ...options };
@@ -93,6 +94,7 @@ async function boot(initialURL = 'https://example.test/Awesome-CTR-Scaling/', fa
   assert.equal(app.$('result-count').textContent, String(catalog.papers.length));
   assert.equal(app.cards().length, 30);
   app.$('load-more').fire('click'); assert.equal(app.cards().length, 60);
+  assert.equal(app.active(), app.cards()[30], 'paging focuses the first new article');
   app.inputs[1].fire('change');
   assert.equal(app.$('result-count').textContent, String(catalog.papers.filter(p => p.collection === 'core').length));
   app.search('Wukong'); assert(app.cards().length > 0); assert(app.window.location.search.includes('q=Wukong'));
@@ -152,6 +154,58 @@ async function boot(initialURL = 'https://example.test/Awesome-CTR-Scaling/', fa
   assert(app.cards().some(card => card.id === 'paper-2602-09387'));
   app = await boot('https://example.test/Awesome-CTR-Scaling/zh.html', true);
   assert(app.$('papers').textContent.includes('暂时无法加载'));
+  // The technical grid keeps complete records, stable anchors and controls in both templates.
+  for (const route of ['', 'zh.html']) {
+    app = await boot('https://example.test/Awesome-CTR-Scaling/' + route + '?sort=original');
+    for (const [index, card] of app.cards().entries()) {
+      const paper = catalog.papers[index];
+      assert.deepEqual(card.children.map(node => node.className), ['paper-rail', 'paper-body', 'paper-metadata']);
+      const [rail, body, metadata] = card.children;
+      assert.equal(rail.children.find(node => node.className === 'paper-year').textContent, String(paper.year));
+      assert.equal(rail.children.find(node => node.className === 'paper-number').textContent, String(index + 1).padStart(3, '0'));
+      assert.equal(card.getAttribute('aria-labelledby'), card.id + '-title');
+      assert(app.walk(body).some(node => node.id === card.id + '-title' && node.textContent === paper.title));
+      assert(app.walk(body).some(node => node.id === card.id + '-summary'));
+      assert(app.walk(body).some(node => node.id === card.id + '-abstract'));
+      if (paper.affiliation) assert(metadata.textContent.includes(paper.affiliation));
+      if (paper.venue) assert(metadata.textContent.includes(paper.venue));
+      assert(app.walk(metadata).some(node => node.className === 'paper-area' && node.textContent));
+      assert.equal(app.walk(metadata).filter(node => node.className === 'tag-button').length, paper.tags.length);
+    }
+    const ids = app.walk(app.$('papers')).map(node => node.id).filter(Boolean);
+    assert.equal(new Set(ids).size, ids.length, 'all card, title and reading IDs stay unique');
+    const categoryButton = app.$('category-options').children.find(node => node.className === 'category-button' && node.getAttribute('aria-pressed') === 'false');
+    categoryButton.fire('click');
+    const category = new URL(app.window.location).searchParams.get('category');
+    assert(category);
+    assert.equal(app.$('result-count').textContent, String(catalog.papers.filter(paper => paper.category === category).length));
+    assert.equal(app.active().getAttribute('aria-pressed'), 'true', 'recreated selected category restores focus');
+    app.$('reset-sidebar').fire('click');
+    app.search(catalog.papers.find(paper => paper.tags.length).id);
+    const tagButton = app.walk(app.cards()[0]).find(node => node.className === 'tag-button');
+    tagButton.fire('click');
+    assert(new URL(app.window.location).searchParams.has('tag'));
+    const searchChip = app.$('active-filters').children.find(node => node.className === 'active-chip' && (node.textContent.includes('搜索') || node.textContent.includes('Search:')));
+    assert(searchChip); searchChip.fire('click');
+    assert(!new URL(app.window.location).searchParams.has('q'));
+    assert(new URL(app.window.location).searchParams.has('tag'));
+    const targetCard = app.cards()[0];
+    app.walk(targetCard).find(node => node.className === 'permalink').fire('click');
+    assert.equal(app.window.location.search, '');
+    assert.equal(app.window.location.hash, '#' + targetCard.id);
+    assert.equal(app.$(targetCard.id).scrolled, true);
+    assert.equal(app.logs.length, 0, app.logs.join('\n'));
+  }
+  const roundTripID = catalog.papers[0].id;
+  const roundTripHash = '#paper-' + roundTripID.replace('.', '-');
+  app = await boot('https://example.test/Awesome-CTR-Scaling/?q=' + roundTripID + '&sort=original' + roundTripHash);
+  const initialSearch = app.window.location.search;
+  const zhLink = new URL(app.$('language-switch').href, app.window.location);
+  assert.equal(zhLink.search, initialSearch); assert.equal(zhLink.hash, roundTripHash);
+  app = await boot(zhLink.href);
+  const enLink = new URL(app.$('language-switch').href, app.window.location);
+  assert(enLink.pathname.endsWith('/index.html'));
+  assert.equal(enLink.search, initialSearch); assert.equal(enLink.hash, roundTripHash);
   // Missing content stays explicit. Source formatting uses DOM text, including hostile input.
   // Removed annotations never render or affect search, including stale unexpected input.
   assert(catalog.papers.every(paper => !Object.hasOwn(paper, 'contribution')));
@@ -275,6 +329,8 @@ async function boot(initialURL = 'https://example.test/Awesome-CTR-Scaling/', fa
   app.scroll(1600); app.$('back-to-top').fire('click');
   assert.equal(app.scrollCalls.at(-1).top, 0, 'back to top also works if catalog loading fails');
   const css = fs.readFileSync(path.join(ROOT, 'web/styles.css'), 'utf8');
+  assert(![...css.matchAll(/font-size:\s*([\d.]+)px/g)].some(match => Number(match[1]) < 14), 'labels and metadata must stay at least 14px');
+  assert.match(css, /\.paper-card\s*\{[^}]*grid-template-columns:\s*var\(--year-column\) minmax\(0, 1fr\) var\(--metadata-column\)/);
   assert.match(css, /\.reading-preview\.is-collapsed\s*\{[^}]*-webkit-line-clamp:\s*4;[^}]*overflow:\s*hidden;/);
   for (const className of ['summary-text', 'abstract-text']) {
     const rules = [...css.matchAll(new RegExp('\\.' + className + '\\s*\\{([^}]+)\\}', 'g'))];
@@ -286,5 +342,5 @@ async function boot(initialURL = 'https://example.test/Awesome-CTR-Scaling/', fa
     assert.match(html, new RegExp('id="back-to-top"[^>]*type="button"[^>]*aria-label="' + label + '"[^>]*hidden'));
     assert.match(html, /id="hero-title" tabindex="-1"/);
   }
-  console.log('PASS: frontend unit flows: pagination, search/aliases/ID, collection/year/tag/company, combined filters, empty/reset, sort, history, deep links, pending input, mobile toggle, fetch failure, bilingual routes/search/state, provenance, removed-annotation guards, explicit gaps, safe source formatting, measured reading previews, repeated expand/collapse, resize, retained expansion, back to top and reduced motion');
+  console.log('PASS: frontend unit flows: pagination, search/aliases/ID, collection/year/tag/company, combined filters, empty/reset, sort, history, deep links, pending input, mobile toggle, fetch failure, bilingual routes/search/state, provenance, removed-annotation guards, explicit gaps, safe source formatting, measured reading previews, repeated expand/collapse, resize, retained expansion, back to top, reduced motion, technical grid structure, complete metadata, category/tag/chip clicks, clicked permalinks and language round trips');
 })().catch(error => { console.error(error); process.exitCode = 1; });

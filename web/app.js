@@ -431,19 +431,19 @@
     updateBackToTop();
   }
 
-  function appendReadingContent(card, paper) {
+  function appendReadingContent(parent, paper, cardID) {
     const summary = verifiedSummary(paper, LANG);
     const panel = element('section', 'summary-panel');
     panel.setAttribute('aria-label', tr('Paper summary', '论文总结'));
     panel.append(element('h4', 'reading-label', tr('Paper summary', '论文总结')));
     if (summary?.text) {
-      appendReadingPreview(panel, element('p', 'summary-text', summary.text), `${card.id}-summary`, tr('Paper summary', '论文总结'));
+      appendReadingPreview(panel, element('p', 'summary-text', summary.text), `${cardID}-summary`, tr('Paper summary', '论文总结'));
       const basis = tr('Based on the original abstract', '基于论文原始摘要');
       panel.append(element('p', 'provenance', `${summary.method === 'ai_assisted' ? tr('AI-assisted summary', 'AI 辅助总结') : tr('Editorial summary', '编者总结')} · ${basis}`));
     } else {
       panel.append(element('p', 'missing-content', tr('English summary not yet available.', '中文总结尚未补齐。')));
     }
-    card.append(panel);
+    parent.append(panel);
     const original = element('section', 'abstract-panel');
     original.setAttribute('aria-label', tr('Original abstract', '原始摘要'));
     const abstract = paper.original_abstract;
@@ -455,7 +455,7 @@
       const prose = element('p', 'abstract-text');
       appendSourceText(prose, abstract.text);
       prose.lang = abstract.language;
-      appendReadingPreview(original, prose, `${card.id}-abstract`, tr('Original abstract', '原始摘要'));
+      appendReadingPreview(original, prose, `${cardID}-abstract`, tr('Original abstract', '原始摘要'));
       const provenance = element('p', 'provenance');
       const source = safeURL(abstract.source_url);
       if (source) provenance.append(createLink(tr('Original source', '原始来源'), source, 'source-citation'));
@@ -472,7 +472,7 @@
         original.append(details);
       }
     }
-    card.append(original);
+    parent.append(original);
 
   }
 
@@ -482,18 +482,25 @@
     card.tabIndex = -1;
     const titleID = `${card.id}-title`;
     card.setAttribute('aria-labelledby', titleID);
+    const rail = element('div', 'paper-rail');
+    const number = element('span', 'paper-number', String(paper.order + 1).padStart(3, '0'));
+    number.setAttribute('aria-label', `${tr('Catalog record', '目录序号')} ${paper.order + 1}`);
+    rail.append(number);
+    if (paper.year) rail.append(element('span', 'paper-year', paper.year));
+    const body = element('div', 'paper-body');
+    const metadata = element('div', 'paper-metadata');
+    metadata.setAttribute('aria-label', tr('Paper metadata', '论文元信息'));
     const eyebrow = element('div', 'paper-eyebrow');
-    eyebrow.append(element('span', 'paper-area', categoryLabel(paper.category)));
     eyebrow.append(element('span', 'paper-collection', paper.collection === 'core' ? tr('Core paper', '核心论文') : tr('Related work', '相关研究')));
-    if (paper.year) eyebrow.append(element('span', 'paper-year', paper.year));
-    card.append(eyebrow);
+    eyebrow.append(element('span', 'paper-area', categoryLabel(paper.category)));
+    metadata.append(eyebrow);
     const title = element('h3', 'paper-title');
     title.id = titleID;
     const links = paper.links.map((link) => ({ ...link, url: safeURL(link.url) })).filter((link) => link.url);
     const primaryLink = links.find((link) => /paper|arxiv/i.test(link.label)) || links[0];
     if (primaryLink) title.append(createLink(paper.title, primaryLink.url, ''));
     else title.textContent = paper.title;
-    card.append(title);
+    body.append(title);
     if (paper.affiliation || paper.venue) {
       const meta = element('div', 'paper-meta');
       if (paper.affiliation) meta.append(element('span', 'paper-affiliation', paper.affiliation));
@@ -503,10 +510,9 @@
         meta.append(divider);
       }
       if (paper.venue) meta.append(element('span', 'paper-venue', paper.venue));
-      card.append(meta);
+      metadata.append(meta);
     }
-    appendReadingContent(card, paper);
-    const bottom = element('div', 'paper-bottom');
+    appendReadingContent(body, paper, card.id);
     const tags = element('div', 'paper-tags');
     if (paper.tags.length) {
       tags.setAttribute('aria-label', tr('Research tags', '研究标签'));
@@ -551,8 +557,9 @@
       syncLanguageLink();
     });
     actions.append(permalink);
-    bottom.append(tags, actions);
-    card.append(bottom);
+    metadata.append(tags);
+    body.append(actions);
+    card.append(rail, body, metadata);
     return card;
   }
 

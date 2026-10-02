@@ -208,16 +208,26 @@ class CatalogTests(unittest.TestCase):
         self.assertNotIn("innerHTML", self.outputs["site/app.js"])
         self.assertNotRegex(self.outputs["site/index.html"], r"\{\{[A-Z_]+\}\}")
 
-    def test_homepage_hero_only_contains_project_name(self):
+    def test_technical_index_has_one_compact_project_heading(self):
         for language in ("index.html", "zh.html"):
             for path, content in (
                 (f"web/{language}", (ROOT / "web" / language).read_text(encoding="utf-8")),
                 (f"site/{language}", self.outputs[f"site/{language}"]),
             ):
                 with self.subTest(path=path):
-                    hero = re.search(r'<div class="hero-copy">(.*?)</div>', content, re.S)
-                    self.assertIsNotNone(hero)
-                    self.assertEqual(hero.group(1).strip(), '<h1 id="hero-title" tabindex="-1">Awesome CTR Scaling</h1>')
+                    body = content.split("<body>", 1)[1].split("</body>", 1)[0]
+                    visible_text = re.sub(r"<[^>]*>", "", body)
+                    self.assertEqual(visible_text.count("Awesome CTR Scaling"), 1)
+                    self.assertEqual(re.findall(r"<h1[^>]*>.*?</h1>", body),
+                                     ['<h1 id="hero-title" tabindex="-1">Awesome CTR Scaling</h1>'])
+                    self.assertIn('<main class="workspace">', body)
+                    self.assertIn('<header class="masthead">', body)
+                    self.assertIn('<div class="grid-head" aria-hidden="true">', body)
+                    self.assertNotIn('class="hero"', body)
+                    self.assertNotIn('class="sidebar-note"', body)
+                    self.assertNotIn('class="footer-brand"', body)
+                    ids = re.findall(r'\bid="([^"]+)"', body)
+                    self.assertEqual(len(ids), len(set(ids)))
                     for element_id in ("language-switch", "total-stat", "core-stat", "related-stat", "updated-at", "filter-toggle", "search-input"):
                         self.assertIn(f'id="{element_id}"', content)
 

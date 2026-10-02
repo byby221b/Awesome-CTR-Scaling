@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="catalog-sha256" content="{{CATALOG_SHA256}}">
-  <meta name="theme-color" content="#132a32">
+  <meta name="theme-color" content="#15222d">
   <meta name="description" content="A curated research library on scaling laws, architectures, and deployment for industrial CTR and recommendation models.">
   <title>Awesome CTR Scaling · Research Library</title>
   <link rel="icon" type="image/svg+xml" sizes="any" href="./favicon.svg">
@@ -13,35 +13,18 @@
 </head>
 <body>
   <a class="skip-link" href="#research">Skip to research papers</a>
-  <header class="site-header">
-    <div class="header-inner">
-      <a class="brand" href="./" aria-label="Awesome CTR Scaling home">
-        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
-        <span>Awesome <strong>CTR Scaling</strong></span>
-      </a>
-      <nav class="header-actions" aria-label="Language and source"><a id="language-switch" class="language-switch" href="./zh.html" lang="zh-CN" hreflang="zh-CN">中文</a><a class="source-link" href="https://github.com/byby221b/Awesome-CTR-Scaling" target="_blank" rel="noopener noreferrer">View on GitHub <span class="external-arrow" aria-hidden="true"></span></a></nav>
-    </div>
-  </header>
-
-  <main>
-    <section class="hero" aria-labelledby="hero-title">
+  <main class="workspace">
+    <header class="masthead">
+      <a class="brand-mark" href="./" aria-label="Home"><img src="./favicon.svg" alt="" width="32" height="32"></a>
       <div class="hero-copy">
         <h1 id="hero-title" tabindex="-1">Awesome CTR Scaling</h1>
       </div>
-      <div class="hero-aside" aria-label="Collection overview">
-        <div class="total-stat"><span id="total-stat">{{TOTAL}}</span><span>papers to explore</span></div>
-        <div class="stat-pair">
-          <div><strong id="core-stat">{{CORE}}</strong><span>Core papers</span></div>
-          <div><strong id="related-stat">{{RELATED}}</strong><span>Related work</span></div>
-        </div>
-        <p class="updated-label">Dataset updated <time id="updated-at">{{UPDATED}}</time></p>
-      </div>
-    </section>
-
-    <div class="library-shell">
+      <nav class="header-actions" aria-label="Language and source"><a id="language-switch" class="language-switch" href="./zh.html" lang="zh-CN" hreflang="zh-CN">中文</a><a class="source-link" href="https://github.com/byby221b/Awesome-CTR-Scaling" target="_blank" rel="noopener noreferrer">GitHub <span class="external-arrow" aria-hidden="true"></span></a></nav>
+      <p class="collection-overview"><span><strong id="total-stat">{{TOTAL}}</strong> papers</span><span><b id="core-stat">{{CORE}}</b> core / <b id="related-stat">{{RELATED}}</b> related</span></p>
+    </header>
       <button id="filter-toggle" class="filter-toggle" type="button" aria-expanded="false" aria-controls="filter-panel"><span aria-hidden="true">☷</span> Browse & filter <span id="mobile-filter-count" class="mobile-filter-count" hidden></span></button>
       <aside class="sidebar" id="filter-panel" aria-label="Research filters">
-        <div class="sidebar-heading"><h2>Browse the library</h2><button id="reset-sidebar" class="text-button" type="button">Reset</button></div>
+        <div class="sidebar-heading"><h2>PAPER INDEX</h2><button id="reset-sidebar" class="text-button" type="button">Reset</button></div>
         <fieldset class="collection-fieldset">
           <legend class="filter-label">Collection</legend>
           <div class="collection-options" id="collection-options">
@@ -59,32 +42,32 @@
           <div class="filter-field"><label class="filter-label" for="tag-filter">Research tag</label><select id="tag-filter" aria-describedby="tag-help"><option value="">All tags</option></select><p id="tag-help" class="filter-help">Tags are curated for core papers.</p></div>
           <div class="filter-field"><label class="filter-label" for="company-filter">Company / affiliation</label><select id="company-filter"><option value="">All companies</option></select></div>
         </div>
-        <div class="sidebar-note"><span class="note-symbol" aria-hidden="true">↳</span><p>A living reading list, from fundamental scaling laws to production systems.</p></div>
       </aside>
-
       <section class="research" id="research" aria-labelledby="results-heading" tabindex="-1">
+        <div class="catalog-toolbar">
+          <div class="results-title"><p class="section-kicker" id="results-kicker">THE COLLECTION</p><h2 id="results-heading">Research papers <span id="result-count" class="result-count">{{TOTAL}}</span></h2></div>
         <form class="search-form" role="search" id="search-form">
           <label class="sr-only" for="search-input">Search paper titles, IDs, abstracts, English or Chinese summaries, aliases, DOIs, affiliations, venues, and tags</label>
           <svg class="search-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8" stroke="currentColor" stroke-width="1.7"/><path d="m16 16 4.5 4.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
           <input id="search-input" type="search" name="q" autocomplete="off" placeholder="Search papers, ideas, or organizations…">
           <kbd class="search-shortcut" aria-hidden="true">/</kbd>
         </form>
+        </div>
         <div class="results-toolbar">
-          <div><p class="section-kicker" id="results-kicker">THE COLLECTION</p><h2 id="results-heading">Research papers <span id="result-count" class="result-count">{{TOTAL}}</span></h2></div>
+          <p class="updated-label">Updated <time id="updated-at">{{UPDATED}}</time></p>
           <div class="sort-field"><label for="sort-select">Sort by</label><select id="sort-select"><option value="newest">Newest first</option><option value="title">Title A–Z</option><option value="original">Reading-list order</option></select></div>
         </div>
         <p id="coverage-note" class="coverage-note" role="status"></p>
         <p id="category-description" class="category-description" hidden></p>
         <div id="active-filters" class="active-filters" aria-label="Active filters" hidden></div>
         <p class="sr-only" id="results-status" role="status" aria-live="polite" aria-atomic="true">Loading papers</p>
+        <div class="grid-head" aria-hidden="true"><span>YEAR</span><span>PAPER / ABSTRACT</span><span>METADATA</span></div>
         <div id="papers" class="paper-list" aria-busy="true"><div class="loading-state"><span class="loading-orbit" aria-hidden="true"></span><p>Opening the library…</p></div></div>
         <div class="pagination" id="pagination" hidden><p id="showing-count"></p><button id="load-more" class="button button-secondary" type="button">Load more papers</button></div>
         <noscript><div class="empty-state"><h3>This library uses JavaScript for browsing</h3><p>You can read every paper and summary in the <a href="https://github.com/byby221b/Awesome-CTR-Scaling">repository README</a>.</p></div></noscript>
       </section>
-    </div>
+    <footer class="site-footer"><p>English / 中文</p><div><a href="https://github.com/byby221b/Awesome-CTR-Scaling#contributing" target="_blank" rel="noopener noreferrer">Contribute a paper <span class="external-arrow" aria-hidden="true"></span></a><a href="./catalog.json">Download dataset</a></div></footer>
   </main>
-
-  <footer class="site-footer"><div><a class="footer-brand" href="./">Awesome CTR Scaling</a><p>One collection. Two languages. Original sources.</p></div><div class="footer-right"><p>English, Chinese, and the README are generated from the same dataset.</p><div><a href="https://github.com/byby221b/Awesome-CTR-Scaling#contributing" target="_blank" rel="noopener noreferrer">Contribute a paper <span class="external-arrow" aria-hidden="true"></span></a><a href="./catalog.json">Download dataset</a></div></div></footer>
   <button id="back-to-top" class="back-to-top" type="button" aria-label="Back to top" title="Back to top" hidden><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m6 11 6-6 6 6M12 5v14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
 </body>
 </html>
