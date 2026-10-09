@@ -47,7 +47,7 @@ def merge_patches(data, patch, changed_at=None):
         seen.add(pid)
         unknown = set(item) - FIELDS
         if unknown:
-            raise ValueError(f"{pid}: unknown patch fields {', '.join(sorted(unknown))}")
+            raise ValueError(f"{pid}: unknown patch fields")
         values = {key: copy.deepcopy(value) for key, value in item.items() if key != "change_source_url"}
         if pid not in by_id:
             generate.utc_timestamp(changed_at)
@@ -56,6 +56,7 @@ def merge_patches(data, patch, changed_at=None):
             if not generate.safe_url(source):
                 raise ValueError(f"{pid}: invalid change_source_url")
             new.update(added_at=changed_at, added_provenance={"kind": "catalog_entry", "source_url": source}, change_history=[])
+            new["reading_tier"] = None
             result["papers"].append(new)
             by_id[pid] = new
         else:

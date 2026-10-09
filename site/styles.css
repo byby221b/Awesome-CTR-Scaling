@@ -72,6 +72,7 @@ fieldset { border: 0; padding: 0; margin: 0; min-width: 0; }
 .category-button:focus-visible { outline-offset: -3px; }
 .category-group { margin: 19px 0 6px 14px; font-size: 14px; font-weight: 600; color: var(--ink); }
 .select-filters { display: grid; gap: 21px; padding-top: 24px; }
+.reading-tier-field { grid-column: 1 / -1; }
 select { max-width: 100%; min-height: 44px; border: 1px solid var(--line); background-color: var(--surface); border-radius: 0; color: var(--ink); font-size: 14px; padding: 10px 32px 10px 11px; appearance: none; cursor: pointer; background-image: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 12 12' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m3 4.5 3 3 3-3' stroke='%23526270' stroke-width='1.2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-position: right 11px center; background-repeat: no-repeat; }
 .filter-field select { width: 100%; }
 .filter-help { font-size: 14px; color: var(--muted); line-height: 1.6; margin: 8px 0 0; }
@@ -98,6 +99,7 @@ select { max-width: 100%; min-height: 44px; border: 1px solid var(--line); backg
 .sort-field label { font-size: 14px; color: var(--muted); white-space: nowrap; }
 .sort-field select { max-width: 200px; }
 .coverage-note { font-size: 14px; color: var(--muted); line-height: 1.65; padding: 0 0 16px; margin: 0; }
+.reading-tier-note, .reading-sort-note { font-size: 14px; color: var(--muted); line-height: 1.65; margin: 0 0 12px; overflow-wrap: anywhere; }
 .category-description { font-size: 16px; line-height: 1.7; color: var(--muted); margin: 0 0 18px; }
 .active-filters { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; padding: 0 0 18px; }
 .active-chip { display: inline-flex; align-items: center; gap: 10px; min-height: 44px; border: 1px solid var(--line); background: var(--wash); color: var(--ink); padding: 8px 11px; max-width: 100%; font-size: 14px; text-align: left; overflow-wrap: anywhere; }
@@ -125,6 +127,10 @@ select { max-width: 100%; min-height: 44px; border: 1px solid var(--line); backg
 .paper-eyebrow, .paper-meta { display: flex; flex-direction: column; gap: 9px; }
 .paper-collection { color: var(--accent); font-weight: 600; }
 .paper-area { color: var(--muted); }
+.paper-reading-tier { display: flex; flex-wrap: wrap; align-items: baseline; gap: 5px 9px; margin-top: 16px; }
+.reading-tier-label { color: var(--muted); font-size: 14px; }
+.reading-tier { display: inline-block; max-width: 100%; padding: 2px 7px; border: 1px solid var(--line); color: var(--accent); background: var(--wash); font-size: 14px; overflow-wrap: anywhere; }
+.reading-tier--unrated { color: var(--muted); background: transparent; }
 .paper-meta { margin-top: 16px; padding-top: 15px; border-top: 1px solid var(--line); }
 .paper-affiliation { font-weight: 600; }
 .paper-venue { color: var(--muted); }

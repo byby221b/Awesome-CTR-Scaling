@@ -23,12 +23,16 @@
   };
   const TAG_ZH = {'Architecture':'模型架构','Attention':'注意力','Token Mixing':'Token 混合','Sparse Activation':'稀疏激活','Residual/Depth':'残差 / 深度','Embedding Design':'嵌入设计','Tokenization':'Token 化','Knowledge Distillation':'知识蒸馏','Test-time Compute':'推理时计算','Loop Scaling':'循环扩展','Long Sequence':'长序列','Unified FI+Seq':'统一特征交互与序列','Scaling Law':'规模规律','Transformer':'Transformer','Feature Interaction':'特征交互','Sequence Modeling':'序列建模','Sparse Model':'稀疏模型','MoE':'MoE','Multi-task':'多任务','Multi-scenario':'多场景','Foundation Model':'基础模型','User Modeling':'用户建模','Generative Rec':'生成式推荐','Serving':'在线服务','Training Efficiency':'训练效率','Distributed':'分布式','Quantization':'量化','Ads':'广告','E-commerce':'电商','Video/Live':'视频 / 直播','Representation Collapse':'表征坍塌'};
   const tagLabel = (tag) => LANG === 'zh' ? (TAG_ZH[tag] || tag) : tag;
-  const FILTER_KEYS = ['q', 'collection', 'category', 'year', 'tag', 'company', 'sort', 'recent', 'days', 'kind'];
-  const DEFAULTS = { q: '', collection: 'all', category: '', year: '', tag: '', company: '', sort: 'relevance', recent: '', days: '7', kind: 'substantive' };
+  const READING_TIERS = ['prioritize', 'consider', 'as_needed', 'unrated'];
+  const TIER_LABELS = { prioritize: ['Read first', '优先读'], consider: ['Worth reading', '值得读'], as_needed: ['Read as needed', '按需读'], unrated: ['Unrated', '未分级'] };
+  const readingTier = value => typeof value === 'string' && READING_TIERS.includes(value) ? value : 'unrated';
+  const tierLabel = value => tr(...TIER_LABELS[readingTier(value)]);
+  const FILTER_KEYS = ['q', 'collection', 'category', 'year', 'tag', 'company', 'tier', 'sort', 'recent', 'days', 'kind'];
+  const DEFAULTS = { q: '', collection: 'all', category: '', year: '', tag: '', company: '', tier: '', sort: 'relevance', recent: '', days: '7', kind: 'substantive' };
   const $ = (id) => document.getElementById(id);
   const ui = {
     recentWindow: $('recent-window'), changeKind: $('change-kind'), search: $('search-input'), sort: $('sort-select'), year: $('year-filter'),
-    tag: $('tag-filter'), company: $('company-filter'), categories: $('category-options'),
+    tag: $('tag-filter'), company: $('company-filter'), tier: $('reading-tier-filter'), categories: $('category-options'),
     papers: $('papers'), active: $('active-filters'), status: $('results-status'),
     pagination: $('pagination'), showing: $('showing-count'), more: $('load-more'),
     filterToggle: $('filter-toggle'), sidebar: $('filter-panel'), backToTop: $('back-to-top')
@@ -86,7 +90,8 @@
     const next = { ...DEFAULTS };
     for (const key of FILTER_KEYS) if (params.has(key)) next[key] = params.get(key) || DEFAULTS[key];
     if (!['all', 'core', 'related'].includes(next.collection)) next.collection = 'all';
-    if (!['relevance', 'newest', 'title', 'original', 'added', 'updated'].includes(next.sort)) next.sort = DEFAULTS.sort;
+    if (!['relevance', 'newest', 'title', 'original', 'added', 'updated', 'reading_priority'].includes(next.sort)) next.sort = DEFAULTS.sort;
+    if (!READING_TIERS.includes(next.tier)) next.tier = '';
     if (!['', 'added', 'updated'].includes(next.recent)) next.recent = '';
     if (!['7', '30', 'all'].includes(next.days)) next.days = '7';
     if (!['all', 'substantive', 'paper_revision', 'venue_update', 'metadata_enrichment'].includes(next.kind) || next.recent !== 'updated') next.kind = 'substantive';
@@ -118,9 +123,11 @@
     ui.changeKind.hidden = state.recent !== 'updated';
     for (const mode of ['', 'added', 'updated']) $('recent-' + (mode || 'all')).setAttribute('aria-pressed', String(state.recent === mode));
     ui.sort.value = state.sort;
+    ui.sort.setAttribute('aria-describedby', state.sort === 'reading_priority' ? 'reading-sort-note' : '');
     ui.year.value = state.year;
     ui.tag.value = state.tag;
     ui.company.value = state.company;
+    ui.tier.value = state.tier;
     document.querySelectorAll('input[name="collection"]').forEach((input) => { input.checked = input.value === state.collection; });
     ui.tag.disabled = state.collection === 'related' && !papers.some((paper) => paper.collection === 'related' && paper.tags.length);
     $('tag-help').textContent = tr('Tags are curated for core papers.', '研究标签主要整理于核心论文。');
@@ -163,6 +170,7 @@
     selectOptions(ui.year, years.map((year) => ({ value: year, label: year })), tr('All years', '全部年份'));
     selectOptions(ui.tag, tags.map((tag) => ({ value: tag, label: tagLabel(tag) })), tr('All tags', '全部标签'));
     selectOptions(ui.company, [...companies].sort((a, b) => a.name.localeCompare(b.name)).map((company) => ({ value: company.id, label: `${company.name} (${company.count})` })), tr('All companies', '全部公司'));
+    selectOptions(ui.tier, READING_TIERS.map(tier => ({ value: tier, label: tierLabel(tier) })), tr('All reading priorities', '全部阅读优先级'));
     ui.search.addEventListener('input', () => {
       clearTimeout(searchTimer);
       searchTimer = setTimeout(() => {
@@ -177,7 +185,7 @@
       initialSearchEntry = false;
     });
     for (const mode of ['', 'added', 'updated']) $('recent-' + (mode || 'all')).addEventListener('click', () => update({ recent: mode }));
-    [['days', ui.recentWindow], ['kind', ui.changeKind], ['sort', ui.sort], ['year', ui.year], ['tag', ui.tag], ['company', ui.company]].forEach(([key, node]) => {
+    [['days', ui.recentWindow], ['kind', ui.changeKind], ['sort', ui.sort], ['year', ui.year], ['tag', ui.tag], ['company', ui.company], ['tier', ui.tier]].forEach(([key, node]) => {
       node.addEventListener('change', () => update({ [key]: node.value }));
     });
     document.querySelectorAll('input[name="collection"]').forEach((input) => input.addEventListener('change', () => update({ collection: input.value })));
@@ -314,6 +322,7 @@
     if (state.year && String(paper.year) !== state.year) return false;
     if (state.tag && !paper.tags.includes(state.tag)) return false;
     if (state.company && !companyMatches(paper, state.company)) return false;
+    if (state.tier && paper.reading_tier !== state.tier) return false;
     return words.every((word) => includesSearchTerm(paper.searchText, word));
   }
 
@@ -326,6 +335,7 @@
       year: state.year,
       tag: tagLabel(state.tag),
       company: state.company ? companyLabel(state.company) : '',
+      tier: state.tier ? `${tr('Reading priority', '阅读优先级')}: ${tierLabel(state.tier)}` : '',
       recent: state.recent ? `${state.recent === 'added' ? tr('Recently added', '最近新增') : tr('Recently updated', '最近更新')} · ${state.days === 'all' ? tr('All time', '全部时间') : tr(`Past ${state.days} days`, `近 ${state.days} 天`)}` : '',
       kind: state.recent === 'updated' && state.kind !== 'all' ? changeLabel(state.kind) : ''
     };
@@ -567,6 +577,13 @@
     eyebrow.append(element('span', 'paper-collection', paper.collection === 'core' ? tr('Core paper', '核心论文') : tr('Related work', '相关研究')));
     eyebrow.append(element('span', 'paper-area', categoryLabel(paper.category)));
     metadata.append(eyebrow);
+    const priority = element('div', 'paper-reading-tier');
+    priority.append(element('span', 'reading-tier-label', tr('Reading priority', '阅读优先级')));
+    const badge = element('span', 'reading-tier reading-tier--' + paper.reading_tier, tierLabel(paper.reading_tier));
+    badge.setAttribute('aria-label', `${tr('Reading priority', '阅读优先级')}: ${tierLabel(paper.reading_tier)}`);
+    badge.setAttribute('aria-describedby', 'reading-tier-note');
+    priority.append(badge);
+    metadata.append(priority);
     const title = element('h3', 'paper-title');
     title.id = titleID;
     const links = paper.links.map((link) => ({ ...link, url: safeURL(link.url) })).filter((link) => link.url);
@@ -694,6 +711,7 @@
     const words = query.split(/\s+/).filter(Boolean);
     filtered = papers.filter((paper) => matches(paper, words));
     if (state.sort === 'title') filtered.sort((a, b) => a.title.localeCompare(b.title));
+    else if (state.sort === 'reading_priority') filtered.sort((a, b) => READING_TIERS.indexOf(a.reading_tier) - READING_TIERS.indexOf(b.reading_tier) || newestFirst(a, b));
     else if (['added', 'updated'].includes(state.sort)) filtered.sort((a, b) => {
       const left = activityInstant(a, state.sort), right = activityInstant(b, state.sort);
       return (left === right ? 0 : left < right ? 1 : -1) || newestFirst(a, b);
@@ -703,6 +721,8 @@
       const ranks = new Map(filtered.map((paper) => [paper.id, searchRank(paper, query, words)]));
       filtered.sort((a, b) => ranks.get(b.id) - ranks.get(a.id) || newestFirst(a, b));
     } else filtered.sort(newestFirst);
+    $('reading-sort-note').hidden = state.sort !== 'reading_priority';
+    $('reading-sort-note').textContent = tr('Read first → Worth reading → Read as needed → Unrated. Within each group: recorded year, then arXiv ID, newest first.', '优先读 → 值得读 → 按需读 → 未分级。同组内按发表年份与 arXiv 编号从新到旧排序。');
     $('recent-note').hidden = !state.recent;
     $('recent-note').textContent = tr('Dates use Asia/Shanghai calendar days. Added means first recorded in this repository, not publication. Paper information updates exclude abstract/translation-only backfills; select Metadata enrichment or All update types to see those. Unknown dates are excluded.', '按 Asia/Shanghai 自然日筛选。新增指仓库首次收录，并非论文发表；更新默认显示论文信息变化；摘要与翻译补全可在“资料补全”或“全部更新类型”查看。日期未知的记录不进入时间筛选。');
     $('result-count').textContent = filtered.length;
@@ -775,7 +795,7 @@
       categories = catalog.categories;
       companies = Array.isArray(catalog.companies) ? catalog.companies : [];
       papers = catalog.papers.map((paper, index) => {
-        const normalized = { ...paper, year: paper.year || '', tags: Array.isArray(paper.tags) ? paper.tags : [], companies: Array.isArray(paper.companies) ? paper.companies : [], links: Array.isArray(paper.links) ? paper.links : [], order: Number.isFinite(paper.order) ? paper.order : index };
+        const normalized = { ...paper, reading_tier: readingTier(paper.reading_tier), year: paper.year || '', tags: Array.isArray(paper.tags) ? paper.tags : [], companies: Array.isArray(paper.companies) ? paper.companies : [], links: Array.isArray(paper.links) ? paper.links : [], order: Number.isFinite(paper.order) ? paper.order : index };
         normalized.searchIDs = [paper.id, arxivID(paper), paper.doi].filter(Boolean).map(normalizeSearch);
         normalized.searchTitles = [paper.title, paper.original_abstract?.source_title, ...(Array.isArray(paper.aliases) ? paper.aliases : [])].filter(Boolean).map(normalizeSearch);
         normalized.searchText = normalizeSearch([paper.id, paper.title, ...(Array.isArray(paper.aliases) ? paper.aliases : []), paper.doi, paper.original_abstract?.text, paper.original_abstract?.source_title, verifiedSummary(paper, 'en')?.text, verifiedSummary(paper, 'zh')?.text, CATEGORY_ZH[paper.category]?.join(' '), paper.affiliation, paper.venue, paper.year, categoryLabel(paper.category), ...normalized.tags, ...normalized.tags.map(tagLabel), ...normalized.companies.map(companyLabel), ...normalized.links.map((link) => link.url)].filter(Boolean).join(' '));

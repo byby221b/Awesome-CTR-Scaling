@@ -469,6 +469,132 @@ async function boot(initialURL = 'https://example.test/Awesome-CTR-Scaling/', fa
   app = await boot('https://example.test/Awesome-CTR-Scaling/?sort=added',false,activity,{now});
   assert.equal(app.cards()[0].id,ids([0])[0]);
   assert(resultIDs({cards:()=>app.cards().slice(-3)}).includes(ids([7])[0]),'unknown/future additions sort at the end');
+  // Reading priority is an explicit, public tier, independent of search relevance and quality.
+  const tierFixture = structuredClone(catalog);
+  tierFixture.papers = [
+    searchPaper('2610.00001', 'Reading candidate A', 0, {year: 2026, aliases: ['PriorityMatch']}),
+    searchPaper('2601.00002', 'Reading candidate B', 1, {year: 2026, reading_tier: null}),
+    searchPaper('2608.00003', 'Reading candidate C', 2, {year: 2026, reading_tier: 'as_needed'}),
+    searchPaper('2501.00004', 'Reading candidate D', 3, {year: 2025, reading_tier: 'consider'}),
+    searchPaper('2401.00005', 'Reading candidate E', 4, {year: 2024, reading_tier: 'prioritize'}),
+    searchPaper('2411.00006', 'Reading candidate F', 5, {year: 2024, reading_tier: 'prioritize'}),
+    searchPaper('2607.00007', 'Reading candidate G', 6, {year: 2026, reading_tier: '<script>invalid-enum-canary</script>'}),
+    searchPaper('2606.00008', 'Reading candidate H', 7, {year: 2026, reading_tier: 'consider'}),
+    searchPaper('2701.00009', 'Reading candidate I', 8, {year: 2027, reading_tier: {prioritize: true}})
+  ];
+  delete tierFixture.papers[0].reading_tier; // Exercise a genuinely absent field regardless of catalog data.
+  tierFixture.papers.forEach((paper, index) => {
+    paper.original_abstract.text = 'PriorityMatch shared searchable text.';
+    paper.tags = ['Scaling Law']; paper.companies = ['meta'];
+    paper.added_at = '2026-10-02T10:00:00Z'; paper.change_history = [];
+    // Unexpected fields are neither visible nor part of the search index.
+    paper.unknown_field_a = 'unknown-field-canary-a'; paper.unknown_field_b = 'unknown-field-canary-b';
+    paper.unknown_field_c = 'unknown-field-canary-c'; paper.unknown_field_d = 'unknown-field-canary-d';
+    if (index === 5) paper.companies = ['alibaba'];
+  });
+  const tierIDs = indices => indices.map(index => 'paper-' + tierFixture.papers[index].id.replace('.', '-'));
+  const orderedIDs = app => app.cards().map(card => card.id);
+  const tierOrder = [5, 4, 7, 3, 2, 8, 0, 6, 1];
+  const unratedFixture = structuredClone(tierFixture);
+  unratedFixture.papers.forEach(paper => { delete paper.reading_tier; });
+  for (const route of ['', 'zh.html']) {
+    const base = 'https://example.test/Awesome-CTR-Scaling/' + route;
+    const zh = route === 'zh.html';
+    const labels = zh ? ['优先读', '值得读', '按需读', '未分级'] : ['Read first', 'Worth reading', 'Read as needed', 'Unrated'];
+    app = await boot(base, false, tierFixture, {now});
+    const unassigned = await boot(base, false, unratedFixture, {now});
+    assert.deepEqual(orderedIDs(app), orderedIDs(unassigned), 'tier assignments never change the default browsing order');
+    assert.equal(app.$('sort-select').value, 'relevance');
+    assert.equal(app.$('reading-sort-note').hidden, true);
+    assert.equal(app.$('sort-select').getAttribute('aria-describedby'), '');
+    assert.deepEqual(app.$('reading-tier-filter').children.map(option => option.value), ['', 'prioritize', 'consider', 'as_needed', 'unrated']);
+    assert.deepEqual(app.$('reading-tier-filter').children.slice(1).map(option => option.textContent), labels);
+    for (const [index, tierIndex] of [[0,3], [1,3], [2,2], [3,1], [4,0], [5,0], [6,3], [7,1], [8,3]]) {
+      const badge = app.walk(app.$(tierIDs([index])[0])).find(node => node.classList.contains('reading-tier'));
+      assert.equal(badge.textContent, labels[tierIndex]);
+      assert.equal(badge.getAttribute('aria-describedby'), 'reading-tier-note');
+      assert(badge.getAttribute('aria-label').endsWith(': ' + labels[tierIndex]));
+      assert.equal(badge.classList.contains('reading-tier--unrated'), tierIndex === 3, 'unassigned and malformed values stay visibly neutral');
+    }
+    app.search('PriorityMatch'); unassigned.search('PriorityMatch');
+    assert.deepEqual(orderedIDs(app), orderedIDs(unassigned), 'tiers never override default relevance');
+    assert.equal(app.cards()[0].id, tierIDs([0])[0], 'exact alias still ranks first even when unrated');
+    app.change('sort-select', 'reading_priority');
+    assert.deepEqual(orderedIDs(app), tierIDs(tierOrder), 'explicit priority groups tiers with deterministic newest ties');
+    assert.equal(app.$('reading-sort-note').hidden, false);
+    assert.equal(app.$('sort-select').getAttribute('aria-describedby'), 'reading-sort-note');
+    labels.forEach(label => assert(app.$('reading-sort-note').textContent.includes(label)));
+    assert.equal(new URL(app.window.location).searchParams.get('sort'), 'reading_priority');
+    for (const [tier, indices] of [['prioritize',[5,4]], ['consider',[7,3]], ['as_needed',[2]], ['unrated',[8,0,6,1]]]) {
+      app.change('reading-tier-filter', tier);
+      assert.deepEqual(orderedIDs(app), tierIDs(indices));
+      assert.equal(new URL(app.window.location).searchParams.get('tier'), tier);
+    }
+    app.back(); assert.equal(app.$('reading-tier-filter').value, 'as_needed'); assert.deepEqual(orderedIDs(app),tierIDs([2]));
+    app.forward(); assert.equal(app.$('reading-tier-filter').value, 'unrated'); assert.deepEqual(orderedIDs(app),tierIDs([8,0,6,1]));
+    const savedURL = app.window.location.href;
+    const languageURL = new URL(app.$('language-switch').href, app.window.location);
+    assert.equal(languageURL.search, app.window.location.search);
+    for (const restored of [await boot(savedURL, false, tierFixture, {now}), await boot(languageURL.href, false, tierFixture, {now})]) {
+      assert.equal(restored.$('reading-tier-filter').value, 'unrated');
+      assert.equal(restored.$('sort-select').value, 'reading_priority');
+      assert.deepEqual(orderedIDs(restored), tierIDs([8,0,6,1]));
+    }
+    app.change('reading-tier-filter', 'prioritize');
+    app.change('company-filter', 'meta'); app.change('tag-filter', 'Scaling Law'); app.change('year-filter', '2024');
+    assert.deepEqual(orderedIDs(app), tierIDs([4]), 'tier composes with search, company, tag and year');
+    app.inputs[2].fire('change'); assert.equal(app.cards().length, 0, 'incompatible collection does not drop priority');
+    assert.equal(app.$('reading-tier-filter').value, 'prioritize');
+    app.$('reset-sidebar').fire('click');
+    assert.equal(app.$('reading-tier-filter').value, ''); assert.equal(app.$('sort-select').value, 'relevance');
+    assert.equal(new URL(app.window.location).search, '');
+    app.change('reading-tier-filter', 'consider');
+    const tierChip = app.$('active-filters').children.find(node => node.className === 'active-chip' && node.textContent.includes(labels[1]));
+    assert(tierChip); assert.equal(tierChip.type, 'button');
+    assert(tierChip.getAttribute('aria-label').includes(labels[1]));
+    assert.equal(app.$('mobile-filter-count').textContent, '1');
+    app.$('filter-toggle').fire('click'); assert.equal(app.$('filter-toggle').getAttribute('aria-expanded'), 'true');
+    tierChip.fire('click');
+    assert.equal(app.$('reading-tier-filter').value, ''); assert.equal(app.$('mobile-filter-count').hidden, true);
+    assert.equal(app.active(), app.$('search-input'), 'removing the final chip restores focus');
+    app.$('filter-toggle').fire('click'); assert.equal(app.$('filter-toggle').getAttribute('aria-expanded'), 'false');
+    app.change('sort-select', 'reading_priority'); app.change('reading-tier-filter', 'as_needed');
+    app.$('recent-added').fire('click');
+    assert.equal(app.$('sort-select').value, 'reading_priority', 'explicit tier order survives recent-view navigation');
+    assert.deepEqual(orderedIDs(app), tierIDs([2]));
+    app.$('reset-sidebar').fire('click');
+    for (const token of ['invalid-enum-canary', 'unknown-field-canary-a', 'unknown-field-canary-b', 'unknown-field-canary-c', 'unknown-field-canary-d']) {
+      assert(!app.$('papers').textContent.includes(token), 'unrecognized fields must not render');
+      app.search(token); assert.equal(app.cards().length, 0, 'unrecognized fields must not be searchable');
+      app.$('reset-sidebar').fire('click');
+    }
+    app.$('search-input').value = tierFixture.papers[4].id; app.$('search-input').fire('input');
+    app.change('reading-tier-filter', 'prioritize'); app.flush();
+    assert.deepEqual(orderedIDs(app), tierIDs([4]), 'pending search is preserved when changing tiers');
+    assert.equal(app.logs.length,0,app.logs.join('\n'));
+    app = await boot(base + '?tier=bad&sort=reading_priority', false, tierFixture, {now});
+    assert.equal(app.$('reading-tier-filter').value, ''); assert.deepEqual(orderedIDs(app), tierIDs(tierOrder));
+    app = await boot(base + '?tier=prioritize&sort=reading_priority#' + tierIDs([4])[0], false, tierFixture, {now});
+    assert.equal(app.$('reading-tier-filter').value, 'prioritize');
+    assert.equal(new URL(app.$('language-switch').href, app.window.location).hash, '#' + tierIDs([4])[0]);
+    app = await boot(base + '?tier=prioritize&sort=reading_priority#' + tierIDs([0])[0], false, tierFixture, {now});
+    assert.equal(app.$(tierIDs([0])[0]).scrolled, true, 'deep links reveal papers excluded by tier filters');
+    assert.equal(app.$('reading-tier-filter').value, '');
+    app = await boot(base + '?tier=prioritize&sort=reading_priority', false, unratedFixture, {now});
+    assert.equal(app.cards().length, 0, 'valid tier filters remain selected even without rated papers');
+    assert.equal(app.$('reading-tier-filter').value, 'prioritize');
+    app.change('reading-tier-filter', 'unrated'); assert.equal(app.cards().length, tierFixture.papers.length);
+    const html = fs.readFileSync(path.join(ROOT, 'web', route || 'index.html'), 'utf8');
+    assert.match(html, /<label[^>]*for="reading-tier-filter">[^<]+<\/label><select id="reading-tier-filter" aria-describedby="reading-tier-note">/);
+    assert.match(html, /<select id="sort-select" aria-describedby="reading-sort-note">.*<option value="reading_priority">/);
+    assert(html.includes(zh ? '并非论文客观质量评价' : 'not objective paper quality'));
+  }
+  const pagedTiers = structuredClone(catalog);
+  pagedTiers.papers.forEach((paper, index) => { paper.reading_tier = index % 2 ? 'prioritize' : null; });
+  app = await boot('https://example.test/Awesome-CTR-Scaling/?tier=prioritize&sort=reading_priority', false, pagedTiers);
+  assert.equal(app.cards().length, 30); app.$('load-more').fire('click'); assert.equal(app.cards().length, 60);
+  assert(app.cards().every(card => app.walk(card).some(node => node.classList.contains('reading-tier--prioritize'))));
+  app.change('reading-tier-filter', 'unrated'); assert.equal(app.cards().length, 30, 'tier changes reset pagination');
   const css = fs.readFileSync(path.join(ROOT, 'web/styles.css'), 'utf8');
   assert(![...css.matchAll(/font-size:\s*([\d.]+)px/g)].some(match => Number(match[1]) < 14), 'labels and metadata must stay at least 14px');
   assert.match(css, /\.paper-card\s*\{[^}]*grid-template-columns:\s*var\(--year-column\) minmax\(0, 1fr\) var\(--metadata-column\)/);
@@ -483,5 +609,5 @@ async function boot(initialURL = 'https://example.test/Awesome-CTR-Scaling/', fa
     assert.match(html, new RegExp('id="back-to-top"[^>]*type="button"[^>]*aria-label="' + label + '"[^>]*hidden'));
     assert.match(html, /id="hero-title" tabindex="-1"/);
   }
-  console.log('PASS: frontend unit flows: pagination, search/aliases/ID, collection/year/tag/company, combined filters, empty/reset, sort, history, deep links, pending input, mobile toggle, fetch failure, bilingual routes/search/state, provenance, removed-annotation guards, explicit gaps, safe source formatting, measured reading previews, repeated expand/collapse, resize, retained expansion, back to top, reduced motion, technical grid structure, complete metadata, category/tag/chip clicks, clicked permalinks, language round trips, recent activity windows/types, immutable timeline display, UTC/Shanghai boundaries, unknown/future exclusions and explicit recent sort serialization');
+  console.log('PASS: frontend unit flows: pagination, search/aliases/ID, collection/year/tag/company, combined filters, empty/reset, sort, history, deep links, pending input, mobile toggle, fetch failure, bilingual routes/search/state, provenance, removed-annotation guards, explicit gaps, safe source formatting, measured reading previews, repeated expand/collapse, resize, retained expansion, back to top, reduced motion, technical grid structure, complete metadata, category/tag/chip clicks, clicked permalinks, language round trips, recent activity windows/types, immutable timeline display, UTC/Shanghai boundaries, unknown/future exclusions, explicit recent sort serialization, bilingual reading tiers, neutral unrated states, stable default ordering, explicit tier sorting/filtering, tier URL/history/language/recent/mobile flows, pagination and unknown-field guards');
 })().catch(error => { console.error(error); process.exitCode = 1; });

@@ -57,6 +57,7 @@ view displays an explicit gap rather than falling back to old prose.
 - `tags`: distinct values from `tag_vocabulary`; do not infer missing legacy tags during structural edits
 - `aliases` (optional): established acronyms or former display labels used by full-catalog search
 - `doi` (optional): verified DOI without a URL prefix; case-insensitive duplicates are rejected
+- `reading_tier` (optional): `prioritize` (Read first), `consider` (Worth reading), `as_needed` (Read as needed), or `null` (Unrated). Missing values also mean Unrated. These are reading suggestions, not objective paper-quality ratings. Ordinary paper updates preserve this field; newly added papers start unrated. Only final values belong in this field.
 - `links`: one or more labeled HTTP(S) URLs, including Paper; Code and other official sources may be added
 
 Top-level `categories` define stable IDs, titles, collections and descriptions. Array order preserves the original reading-list order. New entries can be appended to the paper array; the website's default sort ranks searches by relevance (exact IDs/acronyms/titles before body text), falling back to recorded year and arXiv ID with no query. Short Latin terms such as EST match token boundaries instead of substrings inside interest/test. Explicit publication, title, original, catalog-addition and catalog-update sorts are preserved.
@@ -71,6 +72,8 @@ Top-level `companies` define IDs, display names and recorded `affiliation_aliase
 - `generated-manifest.json`: canonical data SHA256, counts and hashes of every generated file
 
 Website source lives in `web/`. Edit it there, then regenerate. Paper anchors use `paper-` plus the arXiv ID with `.` replaced by `-`. The renderer escapes Markdown and the website inserts catalog values as text.
+
+To apply final reading tiers, use `scripts/import_reading_tiers.py` with an object containing only a `papers` array of `{ "id": "...", "reading_tier": "..." }` records. It accepts existing IDs only, preserves unmentioned papers, and validates all records before writing. Run without `--write` first; writing requires `--expect-sha256` from the dry run. Commit all generated changes together. The ordinary paper updater does not accept tier changes.
 
 `--check` fails for a missing/changed generated output or an unexpected file under a generated topic/site directory. The generator never silently deletes unexpected files; explicitly remove obsolete generated files when renaming a category. Hand-authored maintenance docs remain outside generated directories.
 

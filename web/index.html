@@ -38,6 +38,7 @@
           <div id="category-options" class="category-options"><p class="muted">Loading research areas…</p></div>
         </fieldset>
         <div class="select-filters">
+          <div class="filter-field reading-tier-field"><label class="filter-label" for="reading-tier-filter">Reading priority</label><select id="reading-tier-filter" aria-describedby="reading-tier-note"><option value="">All reading priorities</option></select></div>
           <div class="filter-field"><label class="filter-label" for="year-filter">Publication year</label><select id="year-filter"><option value="">All years</option></select></div>
           <div class="filter-field"><label class="filter-label" for="tag-filter">Research tag</label><select id="tag-filter" aria-describedby="tag-help"><option value="">All tags</option></select><p id="tag-help" class="filter-help">Tags are curated for core papers.</p></div>
           <div class="filter-field"><label class="filter-label" for="company-filter">Company / affiliation</label><select id="company-filter"><option value="">All companies</option></select></div>
@@ -60,8 +61,10 @@
         <p id="recent-note" class="recent-note" hidden></p>
         <div class="results-toolbar">
           <p class="updated-label">Updated <time id="updated-at">{{UPDATED}}</time></p>
-          <div class="sort-field"><label for="sort-select">Sort by</label><select id="sort-select"><option value="relevance">Best match (newest when browsing)</option><option value="newest">Publication newest</option><option value="added">Latest catalog addition</option><option value="updated">Latest catalog update</option><option value="title">Title A–Z</option><option value="original">Reading-list order</option></select></div>
+          <div class="sort-field"><label for="sort-select">Sort by</label><select id="sort-select" aria-describedby="reading-sort-note"><option value="relevance">Best match (newest when browsing)</option><option value="newest">Publication newest</option><option value="reading_priority">Reading priority</option><option value="added">Latest catalog addition</option><option value="updated">Latest catalog update</option><option value="title">Title A–Z</option><option value="original">Reading-list order</option></select></div>
         </div>
+        <p id="reading-tier-note" class="reading-tier-note">Reading priorities guide what to read next, not objective paper quality. Unrated means no reading priority has been assigned.</p>
+        <p id="reading-sort-note" class="reading-sort-note" hidden></p>
         <p id="coverage-note" class="coverage-note" role="status"></p>
         <p id="category-description" class="category-description" hidden></p>
         <div id="active-filters" class="active-filters" aria-label="Active filters" hidden></div>

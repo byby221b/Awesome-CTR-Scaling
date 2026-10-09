@@ -17,7 +17,68 @@ ROOT = Path(__file__).resolve().parents[1]
 NOTICE = "<!-- Generated from data/papers.json. Do not edit by hand; run python scripts/generate.py. -->\n\n"
 ID_PATTERN = re.compile(r"\d{4}\.\d{4,5}")
 SLUG_PATTERN = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*")
+READING_TIERS = {"prioritize": "Read first", "consider": "Worth reading", "as_needed": "Read as needed"}
+
+
+def scalar_fields(*names):
+    return dict.fromkeys(names)
+
+
+# Every object has an explicit field boundary. None denotes a JSON scalar,
+# a one-element list an array, and a mapping an object (nullable where the
+# semantic validators permit it). Keep optional public provenance fields here.
+ABSTRACT_SCHEMA = scalar_fields("status", "text", "language", "source_url", "source_version", "retrieved_at", "license", "reason", "source_title")
+SUMMARY_SCHEMA = {**scalar_fields("text", "basis", "method", "updated_at"), "source_urls": [None]}
+PAPER_SCHEMA = {
+    **scalar_fields("id", "title", "collection", "category", "affiliation", "venue", "year", "doi", "added_at", "reading_tier"),
+    "tags": [None], "aliases": [None], "links": [scalar_fields("label", "url")],
+    "original_abstract": ABSTRACT_SCHEMA,
+    "summaries": {"en": SUMMARY_SCHEMA, "zh": SUMMARY_SCHEMA},
+    "source_dates": scalar_fields("published_at", "updated_at", "verified_at", "source_url", "source_version"),
+    "added_provenance": scalar_fields("kind", "source_url", "commit_sha"),
+    "change_history": [{**scalar_fields("at", "kind", "source_url", "source_version", "commit_sha"), "fields": [None]}],
+}
+PAPER_FIELDS = set(PAPER_SCHEMA)
+CATALOG_SCHEMA = {
+    "schema_version": None,
+    "meta": {
+        **scalar_fields("title", "description", "updated", "source_commit", "scope", "repository_url", "site_url"),
+        "history": scalar_fields("added_at_basis", "audited_through_commit", "backfill_policy", "time_zone"),
+    },
+    "categories": [scalar_fields("id", "collection", "title", "description")],
+    "companies": [{**scalar_fields("id", "name"), "affiliation_aliases": [None],
+                   "legacy_entries": [scalar_fields("label", "paper_id")]}],
+    "tag_vocabulary": [None],
+    "papers": [PAPER_SCHEMA],
+}
 TABLE_HEADER = "| Paper | Affiliation | Venue | Year | Tags | Links | Key Contribution |\n|:------|:------------|:------|:-----|:-----|:------|:-----------------|\n"
+
+
+def project_public_fields(value, schema=CATALOG_SCHEMA, path="catalog", reject_unknown=False):
+    """Copy only declared fields, rejecting undeclared canonical data on request.
+
+    This projection is also used at the output boundary so newly added internal
+    fields cannot silently become public through dictionary unpacking.
+    """
+    if value is None:
+        return None
+    if isinstance(schema, dict):
+        if not isinstance(value, dict):
+            raise ValueError(f"{path}: must be an object")
+        if reject_unknown and set(value) - set(schema):
+            kind = "paper " if schema is PAPER_SCHEMA else ""
+            # Do not echo the unexpected keys or their values into build logs.
+            raise ValueError(f"{path}: unsupported {kind}fields")
+        return {key: project_public_fields(item, schema[key], f"{path}.{key}", reject_unknown)
+                for key, item in value.items() if key in schema}
+    if isinstance(schema, list):
+        if not isinstance(value, list):
+            raise ValueError(f"{path}: must be an array")
+        return [project_public_fields(item, schema[0], f"{path}[{index}]", reject_unknown)
+                for index, item in enumerate(value)]
+    if isinstance(value, (dict, list)):
+        raise ValueError(f"{path}: must be a scalar")
+    return value
 
 
 def json_text(value):
@@ -152,6 +213,11 @@ def validate_history(paper, errors):
 
 def validate(data):
     """Reject ambiguous IDs, unsupported tags, malformed fields and unsafe links."""
+    if not isinstance(data, dict):
+        raise ValueError("catalog must be an object")
+    if isinstance(data.get("papers"), list) and any(isinstance(paper, dict) and "contribution" in paper for paper in data["papers"]):
+        raise ValueError("contribution was removed in schema v3; use source-grounded summaries")
+    project_public_fields(data, reject_unknown=True)
     errors = []
     if data.get("schema_version") != 4:
         errors.append("schema_version must be 4")
@@ -196,6 +262,11 @@ def validate(data):
         validate_history(paper, errors)
         if "contribution" in paper:
             errors.append(f"{pid}: contribution was removed in schema v3; use source-grounded summaries")
+        if set(paper) - PAPER_FIELDS:
+            errors.append(f"{pid}: unsupported paper fields")
+        tier = paper.get("reading_tier")
+        if tier is not None and (not isinstance(tier, str) or tier not in READING_TIERS):
+            errors.append(f"{pid}: reading_tier must be null or a supported tier")
         for field in ("title", "affiliation", "venue"):
             if not isinstance(paper.get(field), str):
                 errors.append(f"{pid}: {field} must be a string")
@@ -340,6 +411,10 @@ def english_summary(paper):
     return md(text).replace("\r\n", "\n").replace("\r", "\n").replace("\n", "<br>") if text else "English summary not yet available."
 
 
+def reading_label(paper):
+    return READING_TIERS.get(paper.get("reading_tier"), "Unrated")
+
+
 def paper_location(paper, categories, prefix=""):
     return prefix + category_path(categories[paper["category"]]) + "#" + anchor(paper["id"])
 
@@ -351,7 +426,7 @@ def topic_page(category, papers, data):
     if category["collection"] == "core":
         output += TABLE_HEADER
         for paper in papers:
-            cells = [f'<a id="{anchor(paper["id"])}"></a>**{md(paper["title"])}**', md(paper["affiliation"]), md(paper["venue"]), str(paper["year"]),
+            cells = [f'<a id="{anchor(paper["id"])}"></a>**{md(paper["title"])}**<br>Reading priority: {reading_label(paper)}', md(paper["affiliation"]), md(paper["venue"]), str(paper["year"]),
                      " ".join(f"`{tag}`" for tag in paper["tags"]), links_md(paper), english_summary(paper)]
             output += "| " + " | ".join(cells) + " |\n"
     else:
@@ -359,7 +434,7 @@ def topic_page(category, papers, data):
             publication = " ".join(str(x) for x in (paper["venue"], paper["year"]) if x)
             metadata = " · ".join(x for x in (paper["affiliation"], publication) if x)
             output += f'<a id="{anchor(paper["id"])}"></a>\n\n'
-            output += f"- **{md(paper['title'])}**: {english_summary(paper)} — {links_md(paper)} ({md(metadata)})\n\n"
+            output += f"- **{md(paper['title'])}**: {english_summary(paper)} — {links_md(paper)} ({md(metadata)}). Reading priority: {reading_label(paper)}.\n\n"
     return output.rstrip() + "\n"
 
 
@@ -368,6 +443,8 @@ def readme(data, counts):
     output = NOTICE + f"# {meta['title']}\n\nA curated library of **scaling laws and scalable ranking/CTR models** for industrial recommendation systems.\n\n"
     output += f"**{len(data['papers'])} papers** · **{counts['core']} core** · **{counts['related']} related** · Updated {meta['updated']}\n\n"
     output += f'<a id="table-of-contents"></a>\n\n[**Search the paper library →**]({meta["site_url"]}) · [**中文页面**]({meta["site_url"]}zh.html) · [All topics](docs/README.md) · [Company index](docs/companies.md) · [Contribute](CONTRIBUTING.md)\n\n'
+    rated = sum(p.get("reading_tier") is not None for p in data["papers"])
+    output += f"Reading priority: **{rated} assigned** · **{len(data['papers']) - rated} unrated**. Filter or sort by Read first, Worth reading, or Read as needed on the website. These are reading suggestions, not objective quality ratings; unrated papers have not been assigned a tier.\n\n"
     output += f"> **Scope:** {meta['scope']}\n\n## Papers\n\nFive focused reading paths. Each topic keeps the complete seven-column catalog: paper, affiliation, venue, year, tags, links and key contribution. The last column and related-work descriptions use the same source-grounded English summaries as the website.\n\n"
     for category in data["categories"]:
         if category["collection"] != "core":
@@ -419,6 +496,8 @@ def generate(data, source_bytes, root=ROOT):
     outputs["docs/companies.md"] = company_output
     source_hash = digest(source_bytes)
     coverage = {
+        "reading_tiers_assigned": sum(p.get("reading_tier") is not None for p in data["papers"]),
+        "reading_tiers_unrated": sum(p.get("reading_tier") is None for p in data["papers"]),
         "known_added_dates": sum(p.get("added_at") is not None for p in data["papers"]),
         "papers_with_updates": sum(bool(p.get("change_history")) for p in data["papers"]),
         "verified_source_dates": sum(bool(p.get("source_dates")) for p in data["papers"]),
@@ -428,8 +507,9 @@ def generate(data, source_bytes, root=ROOT):
         "english_summaries": sum(bool(p.get("summaries", {}).get("en", {}).get("text")) for p in data["papers"]),
         "chinese_summaries": sum(bool(p.get("summaries", {}).get("zh", {}).get("text")) for p in data["papers"]),
     }
-    public_data = {"coverage": coverage, "schema_version": data["schema_version"], "meta": {**data["meta"], "catalog_sha256": source_hash}, "categories": data["categories"], "companies": public_companies,
-                   "papers": [{**paper, "companies": memberships[paper["id"]], "order": i} for i, paper in enumerate(data["papers"])]}
+    public_fields = project_public_fields(data)
+    public_data = {"coverage": coverage, "schema_version": public_fields["schema_version"], "meta": {**public_fields["meta"], "catalog_sha256": source_hash}, "categories": public_fields["categories"], "companies": public_companies,
+                   "papers": [{**paper, "companies": memberships[paper["id"]], "order": i} for i, paper in enumerate(public_fields["papers"])]}
     outputs["site/catalog.json"] = json_text(public_data)
     substitutions = {"TOTAL": len(data["papers"]), "CORE": counts["core"], "RELATED": counts["related"], "UPDATED": data["meta"]["updated"], "CATALOG_SHA256": source_hash}
     for name in ("index.html", "zh.html", "styles.css", "app.js", "favicon.svg"):

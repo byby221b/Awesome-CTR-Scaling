@@ -109,7 +109,7 @@ class HistoryTests(unittest.TestCase):
 
     def test_new_paper_added_once_without_duplicate_update(self):
         paper = copy.deepcopy(self.paper)
-        for key in ('added_at','added_provenance','change_history','source_dates','original_abstract','summaries'): paper.pop(key,None)
+        for key in ('added_at','added_provenance','change_history','source_dates','original_abstract','summaries','reading_tier'): paper.pop(key,None)
         paper.update(id='2610.99999',title='New paper entry fixture', links=[{'label':'Paper','url':'https://arxiv.org/abs/2610.99999'}])
         result = upsert_papers.merge_patches(self.data, {'papers':[paper]}, changed_at=STAMP)
         added = result['papers'][-1]

@@ -99,7 +99,7 @@ class EnrichmentTests(unittest.TestCase):
 
     def test_new_enriched_paper_updates_every_view(self):
         paper = copy.deepcopy(self.data['papers'][0])
-        for key in ('added_at', 'added_provenance', 'change_history', 'source_dates'): paper.pop(key, None)
+        for key in ('added_at', 'added_provenance', 'change_history', 'source_dates', 'reading_tier'): paper.pop(key, None)
         paper['id'] = '2610.99999'
         paper['title'] = 'Synthetic bilingual enrichment test fixture'
         source = 'https://arxiv.org/abs/2610.99999v1'
@@ -159,7 +159,7 @@ class EnrichmentTests(unittest.TestCase):
         self.assertFalse((ROOT / 'migration/original-README.md').exists())
         self.assertFalse((ROOT / 'scripts/legacy.py').exists())
         pid = self.data['papers'][0]['id']
-        with self.assertRaisesRegex(ValueError, 'unknown patch fields contribution'):
+        with self.assertRaisesRegex(ValueError, 'unknown patch fields'):
             upsert_papers.merge_patches(self.data, {'papers':[{'id':pid, 'contribution':'Obsolete annotation fixture.'}]})
         self.data['papers'][0]['contribution'] = 'Obsolete annotation fixture.'
         with self.assertRaisesRegex(ValueError, 'contribution was removed'):

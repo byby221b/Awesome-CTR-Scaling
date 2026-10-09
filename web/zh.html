@@ -38,6 +38,7 @@
           <div id="category-options" class="category-options"><p class="muted">正在加载研究方向…</p></div>
         </fieldset>
         <div class="select-filters">
+          <div class="filter-field reading-tier-field"><label class="filter-label" for="reading-tier-filter">阅读优先级</label><select id="reading-tier-filter" aria-describedby="reading-tier-note"><option value="">全部阅读优先级</option></select></div>
           <div class="filter-field"><label class="filter-label" for="year-filter">发表年份</label><select id="year-filter"><option value="">全部年份</option></select></div>
           <div class="filter-field"><label class="filter-label" for="tag-filter">研究标签</label><select id="tag-filter" aria-describedby="tag-help"><option value="">全部标签</option></select><p id="tag-help" class="filter-help">研究标签主要整理于核心论文。</p></div>
           <div class="filter-field"><label class="filter-label" for="company-filter">公司 / 机构</label><select id="company-filter"><option value="">全部公司</option></select></div>
@@ -60,8 +61,10 @@
         <p id="recent-note" class="recent-note" hidden></p>
         <div class="results-toolbar">
           <p class="updated-label">数据更新于 <time id="updated-at">{{UPDATED}}</time></p>
-          <div class="sort-field"><label for="sort-select">排序</label><select id="sort-select"><option value="relevance">相关性优先（无搜索时按最新）</option><option value="newest">发表年份最新</option><option value="added">收录时间最新</option><option value="updated">目录更新最新</option><option value="title">标题 A–Z</option><option value="original">阅读清单原顺序</option></select></div>
+          <div class="sort-field"><label for="sort-select">排序</label><select id="sort-select" aria-describedby="reading-sort-note"><option value="relevance">相关性优先（无搜索时按最新）</option><option value="newest">发表年份最新</option><option value="reading_priority">阅读优先级</option><option value="added">收录时间最新</option><option value="updated">目录更新最新</option><option value="title">标题 A–Z</option><option value="original">阅读清单原顺序</option></select></div>
         </div>
+        <p id="reading-tier-note" class="reading-tier-note">阅读优先级用于安排阅读顺序，并非论文客观质量评价。未分级表示尚未指定阅读优先级。</p>
+        <p id="reading-sort-note" class="reading-sort-note" hidden></p>
         <p id="coverage-note" class="coverage-note" role="status"></p>
         <p id="category-description" class="category-description" hidden></p>
         <div id="active-filters" class="active-filters" aria-label="已选筛选条件" hidden></div>
