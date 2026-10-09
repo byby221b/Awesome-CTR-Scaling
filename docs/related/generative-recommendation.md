@@ -6,7 +6,7 @@
 
 Generative retrieval, recommendation and ranking beyond discriminative CTR.
 
-72 papers · Updated 2026-10-02
+82 papers · Updated 2026-10-09
 
 <a id="paper-2605-12617"></a>
 
@@ -22,7 +22,7 @@ Generative retrieval, recommendation and ranking beyond discriminative CTR.
 
 <a id="paper-2605-25749"></a>
 
-- **DeGRe**: DeGRe addresses biased reranking targets and sparse list-level rewards with offline lookahead supervision. An evaluator explores promising sequences through beam search and supplies step-wise value estimates to a lightweight generator, transferring planning into training so that online reranking can use a single efficient greedy-decoding pass. — [Paper](https://arxiv.org/abs/2605.25749) (Alibaba · KDD 2026)
+- **DeGRe**: DeGRe addresses biased reranking targets and sparse list-level rewards with offline lookahead supervision. An evaluator explores promising sequences through beam search and supplies step-wise value estimates to a lightweight generator, transferring planning into training so that online reranking can use a single efficient greedy-decoding pass. — [Paper](https://arxiv.org/abs/2605.25749) (Alibaba · KDD (ADS) 2026)
 
 <a id="paper-2605-17779"></a>
 
@@ -30,7 +30,7 @@ Generative retrieval, recommendation and ranking beyond discriminative CTR.
 
 <a id="paper-2602-13581"></a>
 
-- **Climber-Pilot**: Climber-Pilot addresses both short-sighted retrieval and the need to obey explicit business instructions. Time-aware multi-item prediction teaches longer-horizon consumption patterns without adding inference steps, while condition-guided sparse attention incorporates constraints into generation, allowing efficient single-step retrieval to consider broader user intent and controllable recommendation requirements. — [Paper](https://arxiv.org/abs/2602.13581) (NetEase · KDD 2026)
+- **Climber-Pilot**: Climber-Pilot addresses both short-sighted retrieval and the need to obey explicit business instructions. Time-aware multi-item prediction teaches longer-horizon consumption patterns without adding inference steps, while condition-guided sparse attention incorporates constraints into generation, allowing efficient single-step retrieval to consider broader user intent and controllable recommendation requirements. — [Paper](https://arxiv.org/abs/2602.13581) (NetEase · KDD (ADS) 2026)
 
 <a id="paper-2603-02730"></a>
 
@@ -238,7 +238,7 @@ Generative retrieval, recommendation and ranking beyond discriminative CTR.
 
 <a id="paper-2608-00750"></a>
 
-- **HRPO**: HRPO converts final item feedback into token-specific learning signals for hierarchical semantic-ID decoding. It smooths prefix utilities over user clusters, decomposes them into residual credits, and applies clipped, regularized policy updates, addressing sparse credit assignment without broadcasting the same terminal reward indiscriminately to every token position. — [Paper](https://arxiv.org/abs/2608.00750) (2026)
+- **HRPO**: HRPO converts final item feedback into token-specific learning signals for hierarchical semantic-ID decoding. It smooths prefix utilities over user clusters, decomposes them into residual credits, and applies clipped, regularized policy updates, addressing sparse credit assignment without broadcasting the same terminal reward indiscriminately to every token position. — [Paper](https://arxiv.org/abs/2608.00750) (KDD 2026)
 
 <a id="paper-2607-25339"></a>
 
@@ -295,3 +295,43 @@ Generative retrieval, recommendation and ranking beyond discriminative CTR.
 <a id="paper-2609-34306"></a>
 
 - **SPRINT: Single-Step Generative Recommendation via Average Probability Velocity**: SPRINT predicts probabilities for all semantic-ID positions in one bidirectional-Transformer pass instead of repeated decoding or refinement. Its average-probability-velocity formulation motivates this shortcut, while token-level and whole-identifier contrastive objectives restore coherence between independently predicted positions, addressing the risk that fast parallel predictions form an inconsistent item code. — [Paper](https://arxiv.org/abs/2609.34306) (University of Technology Sydney / New York University Abu Dhabi / University of California, San Diego · arXiv 2026)
+
+<a id="paper-2610-01533"></a>
+
+- **Neither Black nor White: Balancing Semantic and Collaborative Signals with Graph-Informed Semantic IDs (GrIS)**: GrIS reframes semantic-ID construction for generative recommendation as hierarchical partitioning of a graph whose nodes encode semantic content and edges encode collaborative signals, with content-only quantization recovered as an empty-graph special case. It separates graph construction from recursive partitioning and studies RecDMoN, based on differentiable graph pooling, and RQ-GAE, which adds graph-aware representations and reconstruction to residual quantization. The abstract reports improvements over collaborative-filtering-aware state-of-the-art methods on real-world datasets, with Hit@10 gains of up to 52%. — [Paper](https://arxiv.org/abs/2610.01533) (Huawei Ireland Research Centre · arXiv 2026)
+
+<a id="paper-2609-38646"></a>
+
+- **Exploring Forum Post Retrieval with Generative Modeling**: The paper explores generative retrieval for Facebook Forum by transferring training signals from Facebook Groups and hierarchical semantic IDs learned from Facebook Feed. A 3B instruction-tuned language model generates item IDs from user context, while ablations examine SID construction, history composition and length, and user-profile features. — [Paper](https://arxiv.org/abs/2609.38646) (Meta; William & Mary · arXiv 2026)
+
+<a id="paper-2609-39319"></a>
+
+- **Residual Trajectory Distillation for Generative Retrieval**: ResTD transfers residual-quantization trajectories from a frozen semantic-ID indexer into generative retrieval training. Residual-derived soft targets teach decoder states distinctions hidden by hard SID labels and information about later quantization decisions, while keeping the retrieval index and inference procedure unchanged. Multilingual e-commerce experiments show consistent gains over strong baselines and controlled soft-target alternatives. — [Paper](https://arxiv.org/abs/2609.39319) (Beihang University; Meituan · arXiv 2026)
+
+<a id="paper-2609-18148"></a>
+
+- **LIGE-GR: A Smooth Leap from Ranking to Generative Recommendation in the LLM Era**: LIGE-GR upgrades an existing itemwise recommender into a listwise generation-and-evaluation system while preserving compatibility with its models, value functions and serving infrastructure. It provides an incremental route to sequence-level optimization in mature industrial recommendation systems. In Instagram Reels and Facebook Video experiments, the authors report time-spent gains of 1.14% and 0.72%, respectively, with modest additional inference resources. — [Paper](https://arxiv.org/abs/2609.18148) (Meta Platforms, Inc. · arXiv 2026)
+
+<a id="paper-2610-02600"></a>
+
+- **When History Misleads: Asymmetric Margin Supervision for Instruction-Guided LLM Generative Recommendation**: AIMS converts the effect of deleting misleading user-history events into request-specific ranking-margin targets, then learns them while retaining complete histories as input. An asymmetric auxiliary loss updates only the competitor score, leaving inference unchanged. Tests across six LLM backbones and three datasets report improved Recall and NDCG. — [Paper](https://arxiv.org/abs/2610.02600) (Meta; Duke University · arXiv 2026)
+
+<a id="paper-2610-06590"></a>
+
+- **SPRIG: Semantic-ID-enhanced Paths for Knowledge Graph-based Generative Recommendation**: SPRIG combines content-derived semantic IDs with knowledge-graph path reasoning. It trains a generative recommender on paths that end in quantized item tokens, seeking parameter sharing while retaining relational context. Movie and music experiments report competitive recommendation performance with fewer parameters and lower compute than prior generative models. — [Paper](https://arxiv.org/abs/2610.06590) (Johannes Kepler University Linz; Albatross AI; Criteo AI Lab; Linz Institute of Technology · arXiv 2026)
+
+<a id="paper-2609-15598"></a>
+
+- **Self-Evolving Memory for Generative Recommendation**: LION addresses conflicts between heterogeneous preference changes during continual adaptation of a shared generative recommender. Sparse key-value memory isolates activated behavior patterns, and consolidation loss reinforces underrepresented changes. Experiments evaluate per-period and user/item-group behavior on real-world datasets. The design is useful for sparse adaptation, but the reported Amazon setup uses at most ten history items and does not demonstrate ultra-long-history scaling. — [Paper](https://arxiv.org/abs/2609.15598) (National University of Singapore; Meta AI · arXiv 2026)
+
+<a id="paper-2601-19501"></a>
+
+- **Masked Diffusion Generative Recommendation**: MDGR replaces fixed-order semantic-ID generation with bidirectional masked diffusion. Parallel codebooks, interest-aware masking and a warm-up-to-parallel decoder improve retrieval quality while exposing a measured speed-quality tradeoff. Industrial A/B tests support practical use; the efficiency comparison is against its own serial decoder. — [Paper](https://arxiv.org/abs/2601.19501) (Alibaba International Digital Commerce Group; Wuhan University · RecSys (Industry) 2026)
+
+<a id="paper-2610-10124"></a>
+
+- **Training with Missed Targets in Generative Recommendation: Separating Supervision from Probability Competition**: The paper separates three effects of adding missed targets to generative-reranker training: candidate weighting, added supervision and probability competition. Matched losses show that competition can hurt returned-item ranking, motivating generator-specific validation before enabling candidate completion. — [Paper](https://arxiv.org/abs/2610.10124) (Independent Researcher; Zhejiang University · arXiv 2026)
+
+<a id="paper-2610-07402"></a>
+
+- **Rethinking Semantic ID Construction for Generative Recommendation: SimHash with Parallel Decoding and Semantic Alignment**: FLASH pairs training-free SimHash semantic IDs with parallel decoding and explicit semantic alignment. It argues that decoding mismatch and discretization loss explain hashing’s weakness, and reports competitive recommendation and cold-start performance without training a tokenizer. — [Paper](https://arxiv.org/abs/2610.07402) (University of Illinois Chicago; Amazon · NeurIPS 2026)

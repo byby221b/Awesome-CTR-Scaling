@@ -6,11 +6,11 @@
 
 Systems, serving infrastructure and hardware-aware optimization.
 
-17 papers · Updated 2026-10-02
+33 papers · Updated 2026-10-09
 
 <a id="paper-2510-18239"></a>
 
-- **LIME**: LIME targets the cost of scoring many candidates against long user histories. Low-rank link embeddings separate user-side and candidate-side interactions so attention can be precomputed, while LIME-XOR makes history processing linear in sequence length; together they make larger candidate sets and longer histories more practical without giving up most of a Transformer’s recommendation quality. — [Paper](https://arxiv.org/abs/2510.18239) (2025)
+- **LIME**: LIME targets the cost of scoring many candidates against long user histories. Low-rank link embeddings separate user-side and candidate-side interactions so attention can be precomputed, while LIME-XOR makes history processing linear in sequence length; together they make larger candidate sets and longer histories more practical without giving up most of a Transformer’s recommendation quality. — [Paper](https://arxiv.org/abs/2510.18239) (NeurIPS 2026)
 
 <a id="paper-2605-27450"></a>
 
@@ -54,7 +54,7 @@ Systems, serving infrastructure and hardware-aware optimization.
 
 <a id="paper-2602-22647"></a>
 
-- **STATIC**: STATIC makes strict output constraints affordable for accelerator-based generative retrieval. It converts a trie of allowed item identifiers into a compressed sparse-row transition matrix, replacing irregular tree traversal with vectorized sparse operations; this supports business-rule filtering with little decoding overhead and also improves cold-start retrieval in the reported benchmark evaluations. — [Paper](https://arxiv.org/abs/2602.22647) (Google / YouTube · KDD 2026)
+- **STATIC**: STATIC makes strict output constraints affordable for accelerator-based generative retrieval. It converts a trie of allowed item identifiers into a compressed sparse-row transition matrix, replacing irregular tree traversal with vectorized sparse operations; this supports business-rule filtering with little decoding overhead and also improves cold-start retrieval in the reported benchmark evaluations. — [Paper](https://arxiv.org/abs/2602.22647) (Google / YouTube · KDD (ADS) 2026)
 
 <a id="paper-2607-27744"></a>
 
@@ -66,7 +66,7 @@ Systems, serving infrastructure and hardware-aware optimization.
 
 <a id="paper-2508-04711"></a>
 
-- **Context Parallelism for HSTU**: This work extends context parallelism to HSTU recommendation models with variable-length, jagged user histories. By distributing sequence-dimension computation and activation storage across GPUs, it addresses the memory pressure of longer histories while handling the irregular inputs that make language-model implementations unsuitable without adaptation. — [Paper](https://arxiv.org/abs/2508.04711) (Meta · RecSys 2025)
+- **Context Parallelism for HSTU**: This work extends context parallelism to HSTU recommendation models with variable-length, jagged user histories. By distributing sequence-dimension computation and activation storage across GPUs, it addresses the memory pressure of longer histories while handling the irregular inputs that make language-model implementations unsuitable without adaptation. — [Paper](https://arxiv.org/abs/2508.04711) (Meta · RecSys (Industry) 2025)
 
 <a id="paper-2605-04450"></a>
 
@@ -75,3 +75,67 @@ Systems, serving infrastructure and hardware-aware optimization.
 <a id="paper-2609-30656"></a>
 
 - **Component Benchmark: Hierarchical Model Profiling for Large-scale Recommendation Systems**: Component Benchmark fills the gap between whole-model throughput measurements and low-level operator traces for heterogeneous recommendation models. It independently benchmarks submodules and presents their performance in an interactive hierarchy, helping practitioners locate costs at the architectural level where they actually make modeling and optimization decisions. — [Paper](https://arxiv.org/abs/2609.30656) (Meta · arXiv 2026)
+
+<a id="paper-2610-02057"></a>
+
+- **Optimizing Effective Training Time for Large-Scale Recommendation Systems**: This fleet-scale study uses Effective Training Time (ETT%) to identify lifecycle overhead that prevents large recommendation-training jobs from advancing on new data. The framework guides optimizations to trainer initialization, PyTorch 2 compilation, checkpointing, model publishing and recovery. The abstract reports improved ETT% on every benchmark, reaching 85% on the largest workload, while fleet-wide ETT% rose from about 80% to above 90% after deployment. — [Paper](https://arxiv.org/abs/2610.02057) (Meta Platforms, Inc. · arXiv 2026)
+
+<a id="paper-2609-39350"></a>
+
+- **HAPMoE: Heterogeneity-Aware Automatic Parallelism Planning for Mixture-of-Experts Models Training**: HAPMoE addresses automatic parallelization when mixture-of-experts models and heterogeneous accelerator clusters occur together, using a lightweight MoE-aware cost model and a six-dimensional parallelism search that emits Megatron-LM-deployable plans. The abstract reports end-to-end training throughput up to 3.2× that of baselines across heterogeneous clusters, with up to 78% additional gains from non-uniform pipeline partitioning. Its pruning-enhanced dynamic-programming search completes within one minute in the reported experiments. — [Paper](https://arxiv.org/abs/2609.39350) (Peking University / Infinigence AI / Tsinghua University · arXiv 2026)
+
+<a id="paper-2609-36070"></a>
+
+- **Mixture-of-Kittens: MoE Megakernel for NVL72s**: Mixture-of-Kittens fuses MoE dispatch, expert computation and combine into a deterministic training megakernel tailored to NVL72 scale-up fabrics. Communication direction, overlap granularity and device-side execution yield up to 2.37x layer throughput and 1.41x end-to-end training throughput in a production run on 512 GPUs. — [Paper](https://arxiv.org/abs/2609.36070) (Department of Computer Science, Stanford University; Cursor Research · arXiv 2026)
+
+<a id="paper-2610-00671"></a>
+
+- **MegaFlux: Skew-Resilient MoE Megakernels via Pipelined Expert Replication**: MegaFlux dynamically replicates hot MoE experts and pipelines replica-weight transfers and gradient reductions inside persistent kernels without changing router outputs. Across 147 configurations per direction on eight B200 GPUs, forward/backward geometric-mean speedups over fixed placement are 1.45x/1.28x; DeepSeek-V4-Pro prefill achieves 1.13–1.26x median end-to-end speedups. — [Paper](https://arxiv.org/abs/2610.00671) (Princeton University; NVIDIA · arXiv 2026)
+
+<a id="paper-2609-25433"></a>
+
+- **Lightweight Ranking Heads: Accelerating Multi-Task Experimentation in Production Recommender Systems**: Light Heads adds shallow, stop-gradient task heads to continuously trained ranking models, resets them between training runs, and shares a central configuration across model fleets. The YouTube deployment reduces multi-task experimentation from weeks to days by avoiding backbone cold starts and speeding downstream co-training. The approach targets continuous-learning production systems. — [Paper](https://arxiv.org/abs/2609.25433) (Google LLC (YouTube) · OARS @ RecSys 2026)
+
+<a id="paper-2610-00321"></a>
+
+- **CAST: Cost-Aware Speculative Trees from One-Pass Block Drafters**: CAST reuses alternatives already scored by a one-pass block drafter, packs them into a speculative tree, and verifies them in one target pass without changing the target model, drafter weights, or decoding rule. It chooses tree width by balancing expected gains against measured verification cost, and the authors prove that greedy and sampled decoding preserve the target output distribution. Across five domains, three GPU generations, and two model families, its predicted width outperforms the standard chain in all eight settings by up to 43%, with the best width strongly dependent on the deployment. — [Paper](https://arxiv.org/abs/2610.00321) · [Code](https://github.com/js-lee-AI/CAST) (Korea University / Yonsei University Mirae Campus · arXiv 2026)
+
+<a id="paper-2610-00499"></a>
+
+- **Denoising Surface: Modeling and Predicting Inference Cost for Diffusion LLM Serving**: Denoising Workload Surface (DWS) represents diffusion-LLM inference as a two-dimensional block-by-denoising-step probability surface, preserving workload information discarded by output length or total step count. A coarse-to-fine-trained, prompt-only predictor runs on a single CPU core and separates request behavior from deployment-specific costs, allowing transfer across hardware without retraining. The authors report cost-prediction error up to 2.50 times lower than scalar-based predictors and an end-to-end online-chatbot latency reduction by a factor of up to 1.92 with DWS-guided shortest-job-first scheduling. — [Paper](https://arxiv.org/abs/2610.00499) (Wuhan University / Shanghai Jiao Tong University / The Hong Kong University of Science and Technology / Damen Database Co., Ltd. / Central China Normal University · arXiv 2026)
+
+<a id="paper-2610-05559"></a>
+
+- **Cut Binary Cross Entropy: Efficient Large-Vocabulary Loss and Gradient Kernels for Sequential Recommendation**: CutBCE computes exact full-vocabulary binary cross-entropy for multi-label sequential recommendation without keeping the complete logits or their gradients in accelerator memory. Its JAX/Pallas implementation combines tiled computation, custom gradients, distributed-memory optimizations and count-based training metrics. On an 8-chip TPU SASRec workload with 876k items, it reports 65.7% less peak memory and 225.9% higher training speed with comparable accuracy. — [Paper](https://arxiv.org/abs/2610.05559) (Google Cloud · arXiv 2026)
+
+<a id="paper-2607-20873"></a>
+
+- **LO-FAR: A Cost-Aware Local Filter for Sparse Feature Ranking in Industrial Ad Recommendation**: LO-FAR cheaply filters sparse ID-list features before expensive ranker retraining. Per-feature local estimates run on CPUs and preserve competitive CTR/CVR quality after subset retraining, while reducing sparse storage. Evaluation is limited to short ID-list features on one private dataset; marginal scoring can miss interaction-only signals. — [Paper](https://arxiv.org/abs/2607.20873) (Meta Platforms, Inc. · RecSys (Industry) 2026)
+
+<a id="paper-2610-09424"></a>
+
+- **Democratizing MoE inference on commodity GPUs with CoMoE**: CoMoE reduces expert-parallel communication on PCIe-connected consumer GPUs by using the host for token multicast and fine-grained aggregation. RTX 5090 experiments show higher MoE inference throughput while reducing dependence on expensive peer-to-peer interconnects. — [Paper](https://arxiv.org/abs/2610.09424) (Tsinghua University; Alibaba Cloud Computing · arXiv 2026)
+
+<a id="paper-2610-09372"></a>
+
+- **Expert Coupling in MoE Pretraining: Reducing All-to-All Overhead with Correlated Placement and Token Shuffling**: The work exploits correlated expert selections to colocate experts and shuffle token ownership toward future experts. A deduplicating dispatcher reduces all-to-all traffic without changing model routing or weights, improving MoE training step time on AMD GPU clusters. — [Paper](https://arxiv.org/abs/2610.09372) (Zyphra · arXiv 2026)
+
+<a id="paper-2610-07333"></a>
+
+- **Memory-Efficient Expert Routing for Distributed MoE Training**: RelayMoE replaces top-k-expanded all-to-all dispatch buffers with ring execution that circulates experts or tokens and overlaps transfer with compute. Hop-wise backward recomputation lowers peak memory, enabling larger batches or longer sequences and faster full-model training. — [Paper](https://arxiv.org/abs/2610.07333) (William & Mary; Barcelona Supercomputing Center · arXiv 2026)
+
+<a id="paper-2610-05744"></a>
+
+- **CIPHER-MoE: Balancing Efficiency and Routing Fidelity in Trillion-Scale MoE Training**: CIPHER-MoE uses affinity-aware expert-to-token filtering and explicit capacity control to reduce overloaded experts while preserving token-side top-k selection. Large-model experiments report reduced hot-expert workload and faster training with comparable task quality. — [Paper](https://arxiv.org/abs/2610.05744) (Tongji University; Cornell University; Harbin Institute of Technology, Shenzhen; AI Training Platform Team, Shenzhen Loop Area Institute · arXiv 2026)
+
+<a id="paper-2610-03415"></a>
+
+- **RailWave: Adaptive Spatial and Temporal Scheduling for Expert-Parallel Communication**: RailWave shapes expert-parallel traffic in space and time using rail balancing, reusable permutation schedules and a calibrated path selector. Training-derived communication replays show lower dispatch/combine latency on H800 and H20 clusters. — [Paper](https://arxiv.org/abs/2610.03415) (Sun Yat-sen University; Southeast University; Monash University; National University of Singapore; Shenzhen University of Advanced Technology; Renmin University of China · arXiv 2026)
+
+<a id="paper-2610-03203"></a>
+
+- **AFORE: Attention-FFN Disaggregation with Overlapped Reconfiguration of Experts**: AFORE reconfigures experts in attention–FFN-disaggregated serving using upcoming microbatch demand. Its scheduler overlaps expert migration with in-flight work and uses GPU-to-GPU transfers, improving output throughput and tail token latency on dynamic workloads. — [Paper](https://arxiv.org/abs/2610.03203) (The Hong Kong University of Science and Technology; University of Cambridge; Wuhan University · arXiv 2026)
+
+<a id="paper-2610-07516"></a>
+
+- **NCCL M2N: A Layout- and Topology-Aware Collective for Distributed Tensor Resharding**: NCCL M2N derives tensor-resharding transfers from source/destination layouts and routes one copy across NVLink domains before local replication. It reduces redundant traffic and improves both isolated MoE-layer transfers and weight synchronization in a separate large RL training experiment. — [Paper](https://arxiv.org/abs/2610.07516) (NVIDIA Corporation · arXiv 2026)

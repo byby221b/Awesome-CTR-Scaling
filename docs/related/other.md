@@ -6,7 +6,7 @@
 
 Adjacent research, diagnostics and other relevant recommendation methods.
 
-8 papers · Updated 2026-10-02
+9 papers · Updated 2026-10-09
 
 <a id="paper-2411-13700"></a>
 
@@ -30,12 +30,16 @@ Adjacent research, diagnostics and other relevant recommendation methods.
 
 <a id="paper-2607-27577"></a>
 
-- **HA-MoE**: HA-MoE addresses heterogeneous recommendation feeds by exposing content-type context to both expert gates and expert representations. The case study pairs this specialization mechanism with LENS diagnostics and an evaluation metric covering global and cross-segment ranking, helping monitor negative transfer and majority bias as the production model is continuously retrained. — [Paper](https://arxiv.org/abs/2607.27577) (Google · RecSys 2026)
+- **HA-MoE**: HA-MoE addresses heterogeneous recommendation feeds by exposing content-type context to both expert gates and expert representations. The case study pairs this specialization mechanism with LENS diagnostics and an evaluation metric covering global and cross-segment ranking, helping monitor negative transfer and majority bias as the production model is continuously retrained. — [Paper](https://arxiv.org/abs/2607.27577) (Google · RecSys (Industry) 2026)
 
 <a id="paper-2608-07035"></a>
 
-- **MISO**: MISO uses a trained ranker’s parameters, activations, gradients and normalization statistics to decide which components deserve scaling, replacement or removal. It turns those internal signals into a small set of interpretable edits and refreshes them after retraining, reducing expensive trial-and-error while adapting optimization decisions to changing model behavior. — [Paper](https://arxiv.org/abs/2608.07035) (Industry · 2026)
+- **MISO**: MISO uses a trained ranker’s parameters, activations, gradients and normalization statistics to decide which components deserve scaling, replacement or removal. It turns those internal signals into a small set of interpretable edits and refreshes them after retraining, reducing expensive trial-and-error while adapting optimization decisions to changing model behavior. — [Paper](https://arxiv.org/abs/2608.07035) (Meta · OARS @ RecSys 2026)
 
 <a id="paper-2609-34083"></a>
 
 - **Beyond One Epoch: Uncertainty-Weighted Sensitivity Regularization for Recommendation Models**: This work explains one-epoch overfitting through self-influence: on later passes, an example can be scored using embedding changes caused by its own earlier label. Uncertainty-weighted sensitivity regularization discourages the shared prediction network from exploiting uncertain embeddings, preserving learned representations while making multi-epoch recommendation training generalize better in the reported benchmarks. — [Paper](https://arxiv.org/abs/2609.34083) (Meta · arXiv 2026)
+
+<a id="paper-2609-39007"></a>
+
+- **RouteRec: Behavior-Guided Sparse Routing for Sequential Recommendation**: RouteRec uses interaction tempo, item-group focus, repetition/carryover and popularity cues to guide sparse expert allocation at three history scopes. Cue scores select groups and backbone states refine experts within them. Six public datasets and routing ablations support behavior-aware allocation beyond extra capacity. It offers a routing design for sequential recommenders, but does not establish industrial scaling laws or online throughput gains. — [Paper](https://arxiv.org/abs/2609.39007) (Korea Advanced Institute of Science and Technology; Seoul National University · arXiv 2026)

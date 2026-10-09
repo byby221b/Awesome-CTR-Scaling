@@ -6,7 +6,7 @@
 
 Scaling retrieval and reranking stages of recommendation pipelines.
 
-12 papers · Updated 2026-10-02
+16 papers · Updated 2026-10-09
 
 <a id="paper-2603-04816"></a>
 
@@ -55,3 +55,19 @@ Scaling retrieval and reranking stages of recommendation pipelines.
 <a id="paper-2609-30601"></a>
 
 - **Embedding Subspace Partitioning for Dynamic Multi-Objective Retrieval**: Embedding Subspace Partitioning separates retrieval objectives into isolated portions of an embedding and scores candidates through a weighted sum of their similarities. Serving-time weights can change the objective balance without retraining, while segment-aware attention produces the subspaces in one pass and a shared GPU search index avoids maintaining separate retrieval infrastructure for each objective. — [Paper](https://arxiv.org/abs/2609.30601) (LinkedIn · RecSys (Industry) 2026)
+
+<a id="paper-2609-23718"></a>
+
+- **UNIQUE: A Unified Retrieval and Ranking System for Large-Scale Feed Recommendation**: UNIQUE unifies generative code-based retrieval and target-aware ranking in an early-fusion architecture, using balanced single-layer flat quantization to address unstable code allocation and cross-stage information loss. Offline evaluation examines retrieval, ranking and codebook balance, while Mobile Baidu A/B tests report gains of 0.96% in total watch duration and 1.08% in total distribution volume. The reported production serving configuration achieves 89 ms P99 latency and 44.23% inference MFU. — [Paper](https://arxiv.org/abs/2609.23718) · [Venue](https://recsys.acm.org/recsys26/posters-2/) (Baidu; Beihang University; Hong Kong Institute of AI for Science, City University of Hong Kong · RecSys (Industry) 2026)
+
+<a id="paper-2609-12270"></a>
+
+- **Recommendation Retrievers Need Verifiers: Universal Generative Reranking for Sequential Recommendations**: This work improves coverage within the short prefix passed from a retriever to expensive downstream rankers by adding a post-hoc generative verifier without retraining or replacing the retriever. The verifier scores candidate identifier-token likelihoods, trains with next-token cross entropy without sampled negatives or a training candidate pool, and reranks only the retriever’s top-K candidates at inference. The same training recipe improves Recall@10 for SASRec, GRU4Rec, NextItNet and MiniOneRec across the reported Amazon and YaMBDa recommendation evaluations, with ablations supporting an effect beyond content-feature injection alone. — [Paper](https://arxiv.org/abs/2609.12270) (Meta MRS · arXiv 2026)
+
+<a id="paper-2609-23677"></a>
+
+- **MuSeR: Scalable Long-sequence Recommendation with Multi-interest Modeling**: MuSeR integrates hierarchical temporal compression, disentangled multi-interest queries and LLM-derived semantic features in a long-history retrieval system. Asynchronous user-state refresh, adaptive caching and hierarchical beam search address serving cost. Public and industrial evaluations and Baidu online tests support the integrated system. Its contribution is deployment-oriented integration rather than a new primitive, so gains should not be attributed to compression alone. — [Paper](https://arxiv.org/abs/2609.23677) (Baidu; City University of Hong Kong; Chinese University of Hong Kong · arXiv 2026)
+
+<a id="paper-2610-10483"></a>
+
+- **Two-Level Softmax Sampling Done Right: Correcting Bias from Size Imbalance and Dispersion**: Two-level softmax sampling is biased when cluster sizes and within-cluster similarity dispersion are ignored. Size-only and size-plus-dispersion corrections improve fidelity to exact softmax with little additional computation; experiments cover five large embedding datasets. — [Paper](https://arxiv.org/abs/2610.10483) (Spotify; SJTU Paris Elite Institute of Technology · NeurIPS 2026)

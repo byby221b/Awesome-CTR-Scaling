@@ -6,7 +6,7 @@
 
 Transferring, compressing and deploying larger recommendation models.
 
-4 papers · Updated 2026-10-02
+4 papers · Updated 2026-10-09
 
 <a id="paper-2411-16122"></a>
 
@@ -14,7 +14,7 @@ Transferring, compressing and deploying larger recommendation models.
 
 <a id="paper-2605-29280"></a>
 
-- **LoopFM**: LoopFM transfers foundation-model knowledge through historical intermediate embeddings used as downstream input features, rather than only through a scalar teacher prediction. This richer channel can complement ordinary distillation while avoiding real-time foundation-model inference or tightly coupled architectures, letting compact task models capture more of the benefits of a larger upstream model. — [Paper](https://arxiv.org/abs/2605.29280) (Meta · 2026)
+- **LoopFM**: LoopFM complements scalar distillation by feeding compressed historical foundation-model embeddings into downstream recommenders, avoiding live foundation-model inference at serving. Public and industrial experiments support a richer transfer channel; the revised abstract explicitly reports scaling with sequence length, embedding dimension and upstream model size. Storage, embedding compression and downstream sequence-processing costs remain, and the public-scale evidence is not equivalent to the trillion-parameter production setting. — [Paper](https://arxiv.org/abs/2605.29280) (Meta · 2026)
 
 <a id="paper-2605-29755"></a>
 

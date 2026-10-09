@@ -6,7 +6,7 @@
 
 Transferable ideas from general-purpose model architecture research.
 
-52 papers · Updated 2026-10-02
+75 papers · Updated 2026-10-09
 
 <a id="paper-2606-16825"></a>
 
@@ -50,11 +50,11 @@ Transferable ideas from general-purpose model architecture research.
 
 <a id="paper-2604-09175"></a>
 
-- **Generalization and Scaling Laws for MoE Transformers**: This theoretical work separates an MoE Transformer’s active parameter capacity from the complexity of its possible routing patterns. Under specified data and target-function assumptions, it derives generalization, approximation and scaling results, clarifying when extra active capacity or more experts can help and which observed advantages require explanations beyond worst-case statistical bounds. — [Paper](https://arxiv.org/abs/2604.09175) (Academic · 2026)
+- **Generalization and Scaling Laws for MoE Transformers**: This theoretical work separates an MoE Transformer’s active parameter capacity from the complexity of its possible routing patterns. Under specified data and target-function assumptions, it derives generalization, approximation and scaling results, clarifying when extra active capacity or more experts can help and which observed advantages require explanations beyond worst-case statistical bounds. — [Paper](https://arxiv.org/abs/2604.09175) (Academic · ICML 2026)
 
 <a id="paper-2603-21862"></a>
 
-- **Holistic MoE Scaling**: This framework translates compute budgets into complete MoE architecture configurations instead of fitting isolated expert-count trends. It jointly constrains compute, active parameters and total parameters, then reduces a large design space into two smaller search phases; experiments also show that larger scales permit a wider near-optimal band, leaving room to accommodate infrastructure constraints. — [Paper](https://arxiv.org/abs/2603.21862) (Academic · 2026)
+- **Holistic MoE Scaling**: This framework translates compute budgets into complete MoE architecture configurations instead of fitting isolated expert-count trends. It jointly constrains compute, active parameters and total parameters, then reduces a large design space into two smaller search phases; experiments also show that larger scales permit a wider near-optimal band, leaving room to accommodate infrastructure constraints. — [Paper](https://arxiv.org/abs/2603.21862) (Academic · NeurIPS 2026)
 
 <a id="paper-2607-02980"></a>
 
@@ -66,7 +66,7 @@ Transferable ideas from general-purpose model architecture research.
 
 <a id="paper-2607-07386"></a>
 
-- **SDM (Sparse Delta Memory)**: Sparse Delta Memory expands a linear recurrent model’s state without paying for dense access to every memory location. It replaces Gated DeltaNet’s dense key–value update with sparse reads and writes into a larger explicit memory, improving long-context recall at matched compute and parameter budgets; learning the initial memory also benefits knowledge and reasoning tasks. — [Paper](https://arxiv.org/abs/2607.07386) (Meta · 2026)
+- **SDM (Sparse Delta Memory)**: Sparse Delta Memory expands a linear recurrent model’s state without paying for dense access to every memory location. It replaces Gated DeltaNet’s dense key–value update with sparse reads and writes into a larger explicit memory, improving long-context recall at matched compute and parameter budgets; learning the initial memory also benefits knowledge and reasoning tasks. — [Paper](https://arxiv.org/abs/2607.07386) (Meta · NeurIPS 2026)
 
 <a id="paper-2607-08186"></a>
 
@@ -86,7 +86,7 @@ Transferable ideas from general-purpose model architecture research.
 
 <a id="paper-2607-14530"></a>
 
-- **xHC (Expanded Hyper-Connections)**: xHC expands Transformer residual memory into more parallel streams while addressing the diminishing returns and rising costs of earlier hyper-connections. Richer write-back information and sparse stream updates retain access to the full residual state, while a specialized implementation reduces memory traffic, making residual-stream capacity a more practical language-model scaling dimension. — [Paper](https://arxiv.org/abs/2607.14530) (2026)
+- **xHC (Expanded Hyper-Connections)**: xHC expands Transformer residual memory into more parallel streams while addressing the diminishing returns and rising costs of earlier hyper-connections. Richer write-back information and sparse stream updates retain access to the full residual state, while a specialized implementation reduces memory traffic, making residual-stream capacity a more practical language-model scaling dimension. — [Paper](https://arxiv.org/abs/2607.14530) (NeurIPS 2026)
 
 <a id="paper-2607-14018"></a>
 
@@ -190,7 +190,7 @@ Transferable ideas from general-purpose model architecture research.
 
 <a id="paper-2609-36314"></a>
 
-- **Fractional State Space Transition for Long Sequence Modeling**: FRAC gives state-space models a power-law memory profile rather than relying only on exponential forgetting. It approximates fractional dynamics with a finite collection of log-spaced exponential modes, retaining bounded-state decoding and parallel training while improving retention across broad time ranges and long-context performance in the reported language-model experiments. — [Paper](https://arxiv.org/abs/2609.36314) (Huawei Noah’s Ark Lab, Montreal Research Center · arXiv 2026)
+- **Fractional State Space Transition for Long Sequence Modeling**: FRAC gives state-space models a power-law memory profile rather than relying only on exponential forgetting. It approximates fractional dynamics with a finite collection of log-spaced exponential modes, retaining bounded-state decoding and parallel training while improving retention across broad time ranges and long-context performance in the reported language-model experiments. — [Paper](https://arxiv.org/abs/2609.36314) (Huawei Noah’s Ark Lab, Montreal Research Center · NeurIPS 2026)
 
 <a id="paper-2602-04852"></a>
 
@@ -215,3 +215,95 @@ Transferable ideas from general-purpose model architecture research.
 <a id="paper-2609-31947"></a>
 
 - **On-Policy Attention Linearization**: OPAL trains a linear-attention student on long trajectories generated by the student itself, with dense feedback from a frozen full-attention teacher. This exposes the student to its own accumulating memory errors rather than only clean teacher trajectories, helping recover long-context retrieval and reasoning after attention conversion without additional supervised fine-tuning or reward-based training. — [Paper](https://arxiv.org/abs/2609.31947) (Carnegie Mellon University / Cornell University · arXiv 2026)
+
+<a id="paper-2610-02185"></a>
+
+- **Decoding Looped Transformers Better for (Almost) Free**: LoopCD is a training-free decoding method that contrasts a looped Transformer’s final prediction with an earlier recurrent pass, using either logits with one extra output pass or hidden states with no extra output pass. Across four model families, the abstract reports gains including AIME 2024 pass@1 from 61.88% to 73.33% for Ouro-2.6B-Thinking and HumanEval pass@1 from 22.56% to 31.71% for Huginn. It also reports configurations that halve recurrent loops while matching or exceeding full-depth unguided performance, reducing forward FLOPs by 22.5%–48.2%. — [Paper](https://arxiv.org/abs/2610.02185) (Apple · arXiv 2026)
+
+<a id="paper-2610-01153"></a>
+
+- **Looping Beyond Twice: A Scalable Recipe for Looped Mixture-of-Experts**: LOOM addresses unstable recurrent states and repeated expert selection in looped MoE language models using residual scaling and embedding re-injection for stability, loop-specific routers to diversify expert selection, and a Looping Residual to preserve earlier outputs. Across 100M–1.7B models it reports stable scaling to 9–12 loops; in a near-iso-FLOP 700M comparison, five loops reduce perplexity from 18.36 to 16.54 and raise average zero-shot accuracy from 38.84% to 39.53%. Separately, without FLOP matching, a 1.7B model trained on 60B tokens peaks at nine loops, improving perplexity from 9.62 to 7.77 and accuracy from 42.4% to 47.7%. — [Paper](https://arxiv.org/abs/2610.01153) (Shenzhen Institutes of Advanced Technology, Chinese Academy of Sciences / Peng Cheng Laboratory / University of Chinese Academy of Sciences / The Hong Kong Polytechnic University / University of Surrey / ELLIS Institute Tübingen / Max Planck Institute for Intelligent Systems / Tübingen AI Center · arXiv 2026)
+
+<a id="paper-2609-40127"></a>
+
+- **Learning Functional Subspaces for Neural Network Compression**: LSP jointly learns orthogonal projections against a frozen model’s output distribution or training objective, then exports shared low-rank factors. It improves compression quality across tested language and vision Transformers and reports faster small-batch decoding and lower weight-plus-KV-cache memory use through a shared attention latent. — [Paper](https://arxiv.org/abs/2609.40127) (Helmholtz Munich; Technical University of Munich; MCML; Orbital Industries; LTCI, Télécom Paris, Institut Polytechnique de Paris; Columbia University; University of Copenhagen; Technical University of Denmark; New York University · arXiv 2026)
+
+<a id="paper-2610-01172"></a>
+
+- **Learning Rate Transfer for Hybrid Transformer-SSM Architectures**: For practical Transformer–SSM hybrids with simplified-ZOH Mamba and fixed state size, original muP with AdamW achieves near-zero learning-rate transfer gaps across tested widths and depths despite failed coordinate checks. The paper attributes this empirical behavior to global update-to-weight invariance and local per-parameter normalization, offering a practical scaling recipe rather than a new asymptotic guarantee. — [Paper](https://arxiv.org/abs/2610.01172) (Seoul National University; SB Intuitions; LG AI Research; Hodoo AI · NeurIPS 2026)
+
+<a id="paper-2610-02816"></a>
+
+- **Gated Slot Attention-2: Two-Sided Associative Memory Correction in Linear Attention**: GSA2 improves fixed-size linear-attention memory by combining key-side Gated Oja Rule-2 correction and value-side Gated Delta Rule-2 correction through shared latent slots. A chunkwise training algorithm supports parallel computation while retaining linear-time sequence processing and constant-memory recurrent decoding; the authors report improvements over strong linear-attention baselines. — [Paper](https://arxiv.org/abs/2610.02816) (The Hong Kong University of Science and Technology (Guangzhou); Tencent · arXiv 2026)
+
+<a id="paper-2610-02383"></a>
+
+- **The Surprising Effectiveness of Shared Memory in Looped Transformers**: The Looped Prediction Transformer pretrains looped models so later recursions read the first recursion’s full-context KV cache while retaining only a short local window. Across 150M–1B parameters, its hybrid variant with five recursions reduces context memory by 76–79% and lowers FineWeb-Edu validation perplexity by 1.12–1.82 relative to a same-size standard Transformer. The analysis links shared memory to differentiated representations and a direct gradient path to the first recursion. — [Paper](https://arxiv.org/abs/2610.02383) (IBM Research; Cornell University · arXiv 2026)
+
+<a id="paper-2610-02953"></a>
+
+- **SlimKV: Joint Token-Feature KV Cache Compression with Reconstruction-Free Beacon Attention**: SlimKV jointly compresses context tokens into beacon memories and their KV features into low-rank latent representations, with layer-adaptive rank allocation. Training beacon keys without key-side RoPE enables reconstruction-free latent-space decoding. The authors report stronger high-compression LongBench results and retention of over 96% of the uncompressed score at 4×/8× compression. — [Paper](https://arxiv.org/abs/2610.02953) (University of Science and Technology of China; Nanyang Technological University; Tencent · arXiv 2026)
+
+<a id="paper-2610-04753"></a>
+
+- **More Value per Key: Asymmetric Sparse Attention for Faster LLM Decoding**: SAGA separates key and value head counts in sparse attention, reducing query–key work while preserving more value capacity. Combined with approximate top-N selection, it exceeds 2× end-to-end decoding speedup over the authors’ full-attention GQA baseline at long contexts in models up to 1.5B parameters; the paper also introduces a conversion procedure for pretrained models. — [Paper](https://arxiv.org/abs/2610.04753) (Technion – Haifa, Israel; Crusoe AI; Corma; Stealth Startup · NeurIPS 2026)
+
+<a id="paper-2610-04635"></a>
+
+- **LatentIndex: Cross-Layer Sharing with Layer-Specific Selection for Sparse Attention**: LatentIndex shares continuous latent indexer caches across layers while retaining layer-specific token selection. Four-layer sharing cuts logical indexer-cache storage by 61.1% on DeepSeek-V3.2; hierarchical selection yields 2.30–2.72× decode-indexer speedups across 8K–128K contexts, with long-context evaluation close to native DSA. — [Paper](https://arxiv.org/abs/2610.04635) (Institute for Artificial Intelligence, Peking University; Dots Studio, Xiaohongshu Inc.; Beijing Institute of Technology · arXiv 2026)
+
+<a id="paper-2610-06833"></a>
+
+- **Towards Looped Models Done Right, Part II: Rethinking at Fixed Points**: This paper learns the recurrence-depth prior and orthogonalizes input injection to improve fixed-point behavior in looped language models. Experiments from 100M to 1.6B parameters link this design to lower perplexity, terminal-KV sharing, faster distilled prefill, and rollout-state RL updates; at 1.6B, a 3× smaller KV cache matches the fixed-depth model’s downstream average. — [Paper](https://arxiv.org/abs/2610.06833) (Institute of Foundation Models (Mohamed bin Zayed University of Artificial Intelligence); USC; CMU · arXiv 2026)
+
+<a id="paper-2610-06677"></a>
+
+- **How Sparse Probability Maps Shape Mixture-of-Experts Routing**: Matched 300M and 1B top-2 MoE experiments show that sparse probability maps and learned router scores co-adapt, so a map’s ability to output zeros does not determine expert participation. None improves validation loss over softmax, but sparse maps substantially reduce sensitivity to using more experts at inference. — [Paper](https://arxiv.org/abs/2610.06677) (Técnico, Universidade de Lisboa; INESC-ID; Instituto de Telecomunicações; ELLIS Unit Lisbon; Gandara AI · arXiv 2026)
+
+<a id="paper-2610-05265"></a>
+
+- **Loopy: Low-Bit Quantization Framework for Looped Language Models**: Loopy selects low-bit shared-core representations using final prediction loss at the target recurrent depth, because quantization rankings can change with unrolling depth. It progressively allocates forward-only calibration windows to promising scaling and rotation candidates; on Ouro-1.4B W4A4 it reports 36.5% lower LAMBADA perplexity than SpinQuant. — [Paper](https://arxiv.org/abs/2610.05265) (The Hong Kong University of Science and Technology; Duke Kunshan University · arXiv 2026)
+
+<a id="paper-2610-02815"></a>
+
+- **iS-KV: Online Low-Rank KV Cache Compression via Block-Incremental SVD**: iS-KV retains recent KV states exactly and incrementally compresses older states into bounded-rank representations, updating historical coordinates whenever the basis changes. For long-horizon reasoning, it reports 82.6% accuracy at 4.06× persistent-KV compression on DeepSeek-R1-Distill-Llama-8B and 89.2% at 5.64× on Qwen3-8B, outperforming eviction baselines at matched memory. — [Paper](https://arxiv.org/abs/2610.02815) (The Hong Kong University of Science and Technology (Guangzhou); Guangdong OPPO Mobile Telecommunications Corp., Ltd.; Shenzhen Institutes of Advanced Technology, Chinese Academy of Sciences; University of Macau; Shenzhen University of Advanced Technology · arXiv 2026)
+
+<a id="paper-2609-36636"></a>
+
+- **What Makes Recurrence Effective in Looped Language Models?**: Controlled looped-language-model experiments distinguish the effects of recurrence depth, the allocation of shared versus distinct layers, and state conditioning. Recurrence beyond the training horizon can improve reasoning while hurting knowledge; channel-wise history-state injection with timestep conditioning better preserves knowledge and robustness across inference budgets. — [Paper](https://arxiv.org/abs/2609.36636) (The Chinese University of Hong Kong; MBZUAI · arXiv 2026)
+
+<a id="paper-2610-05842"></a>
+
+- **HLA: Expressive Hybrid Linear Attention via Chunk-Wise Dynamic Mixing**: HLA augments Gated DeltaNet with query-dependent mixing of chunk-wise affine state transitions. Content-based gates select how each chunk changes recurrent memory, with regularization encouraging sparse use. Experiments on Qwen3.5 adaptations and a 1.3B model trained from scratch report improved long-context retrieval, including evaluation beyond the training context length. — [Paper](https://arxiv.org/abs/2610.05842) (Monash University; Zhejiang University · arXiv 2026)
+
+<a id="paper-2609-19107"></a>
+
+- **How Model Growth, Recursion, and Boundary Operators Influence Scaling Exponents**: This study separates model growth, weight sharing and boundary operators when fitting compute–loss scaling laws. Growth during pretraining and normalized reinjection of earlier representations change fitted exponents, while looping also helps in data-limited multi-epoch training. The work offers experimental design ideas for depth scaling, but its roughly 20x GPT-3 compute comparison is explicitly uncontrolled across data and evaluation pipelines and is not a CTR result. — [Paper](https://arxiv.org/abs/2609.19107) (Q Labs; New York University · arXiv 2026)
+
+<a id="paper-2610-10381"></a>
+
+- **ResidualQuant: KV Cache Quantization for Looped Transformers with 2-Bit Residuals**: ResidualQuant stores final-loop KV states as references and encodes other loops with low-precision residuals. Scaling, rotations and loop-wise mixed precision improve the quality–memory trade-off, with measured decoding speedups on looped language models. — [Paper](https://arxiv.org/abs/2610.10381) (KAIST; Yonsei University; Seoul National University · arXiv 2026)
+
+<a id="paper-2610-10135"></a>
+
+- **Attention via Black-Box Vector Search**: The paper casts sparse attention as priority sampling over black-box vector search, derives retrieval/index trade-offs and proposes an augmented-key estimator. An LLM implementation improves attention approximation against top-k and sampling baselines on long contexts. — [Paper](https://arxiv.org/abs/2610.10135) (Columbia University; University of Pennsylvania · arXiv 2026)
+
+<a id="paper-2610-09025"></a>
+
+- **SPIN: Shadow Predictive Indexer for Sparse Attention**: SPIN predicts important KV-cache blocks from recent indexing history, avoiding full-cache scoring at every decoding step. Its block-based indexer accounts for speculative decoding and reduces indexing work while preserving evaluated task quality. vLLM experiments report serving improvements; the transferable lesson is to optimize selection overhead as well as sparse attention itself. — [Paper](https://arxiv.org/abs/2610.09025) (arXiv 2026)
+
+<a id="paper-2610-07207"></a>
+
+- **Distributionally Robust Mixture-of-Experts Training**: DRMoET trains sparse experts for robustness to imperfect routing by emphasizing high-loss expert outcomes with an entropy-regularized, moving-average objective. Two MoE scales show stronger downstream performance and lower expert-loss variance without changing standard sparse computation. — [Paper](https://arxiv.org/abs/2610.07207) (New York University; Center for Data Science, NYU Shanghai · NeurIPS 2026)
+
+<a id="paper-2610-07348"></a>
+
+- **Stepped MoE: Segment-Level Routing with Configurable Inference Complexity**: Stepped MoE combines nested elastic subnetworks with segment-level expert routing so one checkpoint supports several active-parameter budgets. It reports stronger language-model accuracy than matched dense models while targeting flexible memory and compute constraints. — [Paper](https://arxiv.org/abs/2610.07348) (Apple · arXiv 2026)
+
+<a id="paper-2610-10114"></a>
+
+- **Mechanics of Long-Context Hybrid Models Part 1.1: From Hybrid Attention to Hybrid Position**: The paper compares full-attention hybrids using sliding windows or gated linear attention and links their different context-extension behavior to positional biases. It proposes sliding-window linear attention and reports stronger training-free length extrapolation in the tested models. — [Paper](https://arxiv.org/abs/2610.10114) (Fudan University; Shanghai Innovation Institute; OpenMOSS Team · arXiv 2026)
+
+<a id="paper-2610-09342"></a>
+
+- **Shared Low-rank Basis Factorization for Data-free Mixture-of-Experts Compression**: Shared Low-rank Basis Factorization (SLBF) compresses MoE expert weights without calibration data, preserving expert identities and router parameters; compressed hidden states can still change later-layer routing. Shared rank-k bases enable richer cross-expert reconstruction under a fixed parameter budget, and gauge fixing removes redundant factor parameters. Experiments cover five MoE LLM architectures from 16B to 122B parameters and compare pruning, merging, and weight-reconstruction methods. — [Paper](https://arxiv.org/abs/2610.09342) (Kyoto University; The University of Tokyo; RIKEN AIP · arXiv 2026)

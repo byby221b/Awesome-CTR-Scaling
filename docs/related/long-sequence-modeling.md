@@ -6,7 +6,7 @@
 
 Long-history modeling, memory and compression for user behavior sequences.
 
-23 papers · Updated 2026-10-02
+26 papers · Updated 2026-10-09
 
 <a id="paper-2504-06780"></a>
 
@@ -26,7 +26,7 @@ Long-history modeling, memory and compression for user behavior sequences.
 
 <a id="paper-2511-06077"></a>
 
-- **Make It Long, Keep It Fast**: This work uses stacked target-to-history cross-attention to read long user histories without quadratic history self-attention. Request-level batching shares the same user's encoding across candidates, while short-window training is evaluated on longer histories. The model and serving design jointly address attention cost, repeated feature transfer and the expense of training on every long sequence. — [Paper](https://arxiv.org/abs/2511.06077) (ByteDance · WWW 2026)
+- **Make It Long, Keep It Fast**: This work uses stacked target-to-history cross-attention to read long user histories without quadratic history self-attention. Request-level batching shares the same user's encoding across candidates, while short-window training is evaluated on longer histories. The model and serving design jointly address attention cost, repeated feature transfer and the expense of training on every long sequence. — [Paper](https://arxiv.org/abs/2511.06077) (ByteDance · WWW (Industry) 2026)
 
 <a id="paper-2512-07216"></a>
 
@@ -99,3 +99,15 @@ Long-history modeling, memory and compression for user behavior sequences.
 <a id="paper-2609-30576"></a>
 
 - **T-RoPE: Time-Aware Rotary Position Embedding for Sequential Recommendation**: T-RoPE extends rotary position encoding to represent elapsed time and calendar phase rather than only event order. Learnable multiscale temporal frequencies, shifted query alignment, and non-stationary keys let attention distinguish seasonal contexts, while the added encoding cost remains linear in sequence length; experiments include public benchmarks and an online Shop-app test. — [Paper](https://arxiv.org/abs/2609.30576) (Shopify / MIT / Liquid AI · arXiv 2026)
+
+<a id="paper-2609-12375"></a>
+
+- **ChronicleRec: Pre-training Temporally Anchored Tokens for Lifelong User Modeling**: ChronicleRec compresses long user histories into target-independent tokens that preserve chronological anchors and can be cached across candidates. Recency-aware merging, causally interleaved query tokens and multi-horizon reconstruction pretraining organize complementary long-range interests. KuaiRand and Tencent AdLive experiments plus a reported seven-day online test support the design; affiliation and formal venue remain unverified in the rendered source. — [Paper](https://arxiv.org/abs/2609.12375) (arXiv 2026)
+
+<a id="paper-2609-12556"></a>
+
+- **Preference-Drift-Aware Subsequence Learning and Hierarchical Context Fusion for Long-Sequence Generative Recommendation**: This generative recommender learns soft subsequence boundaries from preference drift, aggregates each subsequence with weighted linear attention, then fuses recent-item and global contexts. It reduces long-history attention cost while accounting for changes in user intent. Public-data experiments report accuracy and efficiency gains; the benefit depends on the subsequence count and recent-window size remaining small relative to history length. — [Paper](https://arxiv.org/abs/2609.12556) (Northeastern University; Tencent · arXiv 2026)
+
+<a id="paper-2610-07505"></a>
+
+- **MARS: Multi-resolution Adaptive Routing for Sequential Recommendation**: MARS organizes long histories into recurrent memory tracks with different retention times, then sparsely selects tracks to build reusable user memories. Three public-dataset experiments find gains that grow with history length and support both temporal diversity and selective routing. At 1,000 candidates per user, warm-cache serving latency is about 1.02 times its interface-matched baseline; this is not a latency guarantee for arbitrary candidate counts. — [Paper](https://arxiv.org/abs/2610.07505) (Duke University; Meta; Independent · NeurIPS 2026)

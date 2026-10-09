@@ -4,7 +4,7 @@
 
 A curated library of **scaling laws and scalable ranking/CTR models** for industrial recommendation systems.
 
-**271 papers** · **77 core** · **194 related** · Updated 2026-10-02
+**340 papers** · **89 core** · **251 related** · Updated 2026-10-09
 
 <a id="table-of-contents"></a>
 
@@ -26,7 +26,7 @@ Empirical laws, scaling recipes and theoretical limits for recommendation models
 
 ### Scalable Architecture
 
-Transformer, mixer and sparse architectures built to scale industrial ranking. [Browse 27 papers →](docs/topics/scalable-architecture.md)
+Transformer, mixer and sparse architectures built to scale industrial ranking. [Browse 33 papers →](docs/topics/scalable-architecture.md)
 
 <a id="unified-feature--sequence-modeling"></a>
 
@@ -38,27 +38,27 @@ Joint modeling of feature interactions, user histories and behavioral sequences.
 
 ### Foundation Models & Multi-Scenario
 
-Shared foundations, multi-task learning and transfer across scenarios. [Browse 11 papers →](docs/topics/foundation-models-multi-scenario.md)
+Shared foundations, multi-task learning and transfer across scenarios. [Browse 14 papers →](docs/topics/foundation-models-multi-scenario.md)
 
 <a id="efficiency--deployment"></a>
 
 ### Efficiency & Deployment
 
-Training, inference and deployment techniques that make model scaling practical. [Browse 7 papers →](docs/topics/efficiency-deployment.md)
+Training, inference and deployment techniques that make model scaling practical. [Browse 10 papers →](docs/topics/efficiency-deployment.md)
 
 ## Related Work
 
 Adjacent research is grouped separately to keep the core CTR scaling signal clear.
 
-- <a id="long-sequence-modeling"></a>[Long Sequence Modeling](docs/related/long-sequence-modeling.md) · 23 papers
+- <a id="long-sequence-modeling"></a>[Long Sequence Modeling](docs/related/long-sequence-modeling.md) · 26 papers
 - <a id="sampleinstance-compression-for-sequence-modeling"></a>[Sample/Instance Compression for Sequence Modeling](docs/related/sample-instance-compression-for-sequence-modeling.md) · 2 papers
-- <a id="generative-recommendation"></a>[Generative Recommendation](docs/related/generative-recommendation.md) · 72 papers
+- <a id="generative-recommendation"></a>[Generative Recommendation](docs/related/generative-recommendation.md) · 82 papers
 - <a id="generative-pre-training-for-ctr"></a>[Generative Pre-training for CTR](docs/related/generative-pre-training-for-ctr.md) · 4 papers
 - <a id="knowledge-distillation--compression"></a>[Knowledge Distillation & Compression](docs/related/knowledge-distillation-compression.md) · 4 papers
-- <a id="engineering--serving"></a>[Engineering & Serving](docs/related/engineering-serving.md) · 17 papers
-- <a id="retrieval--reranking-scaling"></a>[Retrieval & Reranking Scaling](docs/related/retrieval-reranking-scaling.md) · 12 papers
-- <a id="architecture-innovations-beyond-recommendation"></a>[Architecture Innovations Beyond Recommendation](docs/related/architecture-innovations-beyond-recommendation.md) · 52 papers
-- <a id="other"></a>[Other](docs/related/other.md) · 8 papers
+- <a id="engineering--serving"></a>[Engineering & Serving](docs/related/engineering-serving.md) · 33 papers
+- <a id="retrieval--reranking-scaling"></a>[Retrieval & Reranking Scaling](docs/related/retrieval-reranking-scaling.md) · 16 papers
+- <a id="architecture-innovations-beyond-recommendation"></a>[Architecture Innovations Beyond Recommendation](docs/related/architecture-innovations-beyond-recommendation.md) · 75 papers
+- <a id="other"></a>[Other](docs/related/other.md) · 9 papers
 
 ## Company Overview
 

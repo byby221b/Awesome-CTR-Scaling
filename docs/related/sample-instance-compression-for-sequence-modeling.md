@@ -6,7 +6,7 @@
 
 Compressing complete interactions and raw samples into sequence tokens.
 
-2 papers · Updated 2026-10-02
+2 papers · Updated 2026-10-09
 
 <a id="paper-2604-08933"></a>
 
@@ -14,4 +14,4 @@ Compressing complete interactions and raw samples into sequence tokens.
 
 <a id="paper-2604-15650"></a>
 
-- **SIF**: SIF treats a complete historical sample as a sequence feature instead of retaining only an item-level subset. Hierarchical group-adaptive quantization creates sample tokens, and SIF-Mixer performs token- and sample-level interactions over homogeneous representations, connecting richer historical context with a unified architecture for model-capacity scaling. — [Paper](https://arxiv.org/abs/2604.15650) (Meituan · RecSys 2026)
+- **SIF**: SIF treats a complete historical sample as a sequence feature instead of retaining only an item-level subset. Hierarchical group-adaptive quantization creates sample tokens, and SIF-Mixer performs token- and sample-level interactions over homogeneous representations, connecting richer historical context with a unified architecture for model-capacity scaling. — [Paper](https://arxiv.org/abs/2604.15650) (Meituan · RecSys (Industry) 2026)
