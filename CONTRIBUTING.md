@@ -73,7 +73,7 @@ Top-level `companies` define IDs, display names and recorded `affiliation_aliase
 
 Website source lives in `web/`. Edit it there, then regenerate. Paper anchors use `paper-` plus the arXiv ID with `.` replaced by `-`. The renderer escapes Markdown and the website inserts catalog values as text.
 
-To apply final reading tiers, use `scripts/import_reading_tiers.py` with an object containing only a `papers` array of `{ "id": "...", "reading_tier": "..." }` records. It accepts existing IDs only, preserves unmentioned papers, and validates all records before writing. Run without `--write` first; writing requires `--expect-sha256` from the dry run. Commit all generated changes together. The ordinary paper updater does not accept tier changes.
+To apply final reading tiers, use `scripts/import_reading_tiers.py` with an object containing only a `papers` array of `{ "id": "...", "reading_tier": "..." }` records. It accepts existing IDs only, preserves unmentioned papers, and validates all records before writing. Run without `--write` first; writing requires `--expect-sha256` from the dry run. Commit all generated changes together. The ordinary paper updater does not accept tier changes. Routine catalog maintenance does not assign or expand reading tiers; leave unassigned papers unrated.
 
 `--check` fails for a missing/changed generated output or an unexpected file under a generated topic/site directory. The generator never silently deletes unexpected files; explicitly remove obsolete generated files when renaming a category. Hand-authored maintenance docs remain outside generated directories.
 
