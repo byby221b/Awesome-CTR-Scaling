@@ -1695,7 +1695,7 @@
         "verified_at": "2026-10-02T04:49:25Z"
       },
       "doi": "10.1145/3770855.3818420",
-      "reading_tier": null
+      "reading_tier": "prioritize"
     },
     {
       "id": "2602.10016",
@@ -1799,7 +1799,7 @@
         "verified_at": "2026-10-02T04:49:25Z"
       },
       "doi": "10.1145/3770855.3818438",
-      "reading_tier": null
+      "reading_tier": "prioritize"
     },
     {
       "id": "2601.17836",
@@ -1895,7 +1895,7 @@
         "verified_at": "2026-10-02T04:49:25Z"
       },
       "doi": "10.1145/3774904.3792808",
-      "reading_tier": null
+      "reading_tier": "prioritize"
     },
     {
       "id": "2601.20083",
@@ -2000,7 +2000,7 @@
         "verified_at": "2026-10-02T04:49:25Z"
       },
       "doi": "10.1145/3770855.3818442",
-      "reading_tier": null
+      "reading_tier": "prioritize"
     },
     {
       "id": "2602.16986",
@@ -2105,7 +2105,7 @@
         "verified_at": "2026-10-02T04:49:25Z"
       },
       "doi": "10.1145/3770855.3818322",
-      "reading_tier": null
+      "reading_tier": "prioritize"
     },
     {
       "id": "2605.29232",
@@ -2184,7 +2184,7 @@
         "source_url": "https://arxiv.org/abs/2605.29232v1",
         "verified_at": "2026-10-02T04:49:25Z"
       },
-      "reading_tier": null
+      "reading_tier": "prioritize"
     },
     {
       "id": "2606.05257",
@@ -2268,7 +2268,7 @@
         "source_url": "https://arxiv.org/abs/2606.05257v1",
         "verified_at": "2026-10-02T04:49:25Z"
       },
-      "reading_tier": null
+      "reading_tier": "prioritize"
     },
     {
       "id": "2507.15994",
@@ -2381,7 +2381,7 @@
         "verified_at": "2026-10-02T04:49:25Z"
       },
       "doi": "10.1145/3770854.3783916",
-      "reading_tier": null
+      "reading_tier": "prioritize"
     },
     {
       "id": "2602.07298",
@@ -2468,7 +2468,7 @@
         "source_url": "https://arxiv.org/abs/2602.07298v3",
         "verified_at": "2026-10-02T04:49:25Z"
       },
-      "reading_tier": null
+      "reading_tier": "prioritize"
     },
     {
       "id": "2606.07980",
@@ -2543,7 +2543,7 @@
         "source_url": "https://arxiv.org/abs/2606.07980v1",
         "verified_at": "2026-10-02T04:49:25Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2606.21911",
@@ -2618,7 +2618,7 @@
         "source_url": "https://arxiv.org/abs/2606.21911v1",
         "verified_at": "2026-10-02T04:49:25Z"
       },
-      "reading_tier": null
+      "reading_tier": "prioritize"
     },
     {
       "id": "2607.19987",
@@ -2693,7 +2693,7 @@
         "source_url": "https://arxiv.org/abs/2607.19987v2",
         "verified_at": "2026-10-02T04:49:36Z"
       },
-      "reading_tier": null
+      "reading_tier": "prioritize"
     },
     {
       "id": "2609.37905",
@@ -2773,7 +2773,7 @@
         "source_url": "https://arxiv.org/abs/2609.37905v1",
         "verified_at": "2026-10-02T04:49:36Z"
       },
-      "reading_tier": null
+      "reading_tier": "prioritize"
     },
     {
       "id": "2203.11014",
@@ -3261,7 +3261,7 @@
         "source_url": "https://arxiv.org/abs/2511.20235v2",
         "verified_at": "2026-10-02T04:49:36Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2510.15286",
@@ -3340,7 +3340,7 @@
         "source_url": "https://arxiv.org/abs/2510.15286v1",
         "verified_at": "2026-10-02T04:49:36Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2508.11565",
@@ -3419,7 +3419,7 @@
         "source_url": "https://arxiv.org/abs/2508.11565v2",
         "verified_at": "2026-10-02T04:49:36Z"
       },
-      "reading_tier": null
+      "reading_tier": "prioritize"
     },
     {
       "id": "2601.21285",
@@ -3498,7 +3498,7 @@
         "source_url": "https://arxiv.org/abs/2601.21285v3",
         "verified_at": "2026-10-02T04:49:36Z"
       },
-      "reading_tier": null
+      "reading_tier": "prioritize"
     },
     {
       "id": "2602.06563",
@@ -3603,7 +3603,7 @@
         "verified_at": "2026-10-02T04:49:36Z"
       },
       "doi": "10.1145/3770855.3818494",
-      "reading_tier": null
+      "reading_tier": "prioritize"
     },
     {
       "id": "2602.07526",
@@ -3707,7 +3707,7 @@
         "verified_at": "2026-10-02T04:49:36Z"
       },
       "doi": "10.1145/3770855.3818451",
-      "reading_tier": null
+      "reading_tier": "prioritize"
     },
     {
       "id": "2602.09387",
@@ -3786,7 +3786,7 @@
         "source_url": "https://arxiv.org/abs/2602.09387v3",
         "verified_at": "2026-10-02T04:49:36Z"
       },
-      "reading_tier": null
+      "reading_tier": "prioritize"
     },
     {
       "id": "2602.09194",
@@ -3865,7 +3865,7 @@
         "source_url": "https://arxiv.org/abs/2602.09194v1",
         "verified_at": "2026-10-02T04:49:36Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2602.11410",
@@ -3953,7 +3953,7 @@
         "source_url": "https://arxiv.org/abs/2602.11410v2",
         "verified_at": "2026-10-02T04:49:43Z"
       },
-      "reading_tier": null
+      "reading_tier": "prioritize"
     },
     {
       "id": "2603.03988",
@@ -4040,7 +4040,7 @@
         "source_url": "https://arxiv.org/abs/2603.03988v3",
         "verified_at": "2026-10-02T04:49:43Z"
       },
-      "reading_tier": null
+      "reading_tier": "prioritize"
     },
     {
       "id": "2604.08011",
@@ -4127,7 +4127,7 @@
         "source_url": "https://arxiv.org/abs/2604.08011v4",
         "verified_at": "2026-10-02T04:49:43Z"
       },
-      "reading_tier": null
+      "reading_tier": "prioritize"
     },
     {
       "id": "2604.17878",
@@ -4206,7 +4206,7 @@
         "source_url": "https://arxiv.org/abs/2604.17878v3",
         "verified_at": "2026-10-02T04:49:43Z"
       },
-      "reading_tier": null
+      "reading_tier": "prioritize"
     },
     {
       "id": "2604.19550",
@@ -4284,7 +4284,7 @@
         "source_url": "https://arxiv.org/abs/2604.19550v1",
         "verified_at": "2026-10-02T04:49:43Z"
       },
-      "reading_tier": null
+      "reading_tier": "prioritize"
     },
     {
       "id": "2605.23191",
@@ -4363,7 +4363,7 @@
         "source_url": "https://arxiv.org/abs/2605.23191v1",
         "verified_at": "2026-10-02T04:49:43Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2607.24025",
@@ -4439,7 +4439,7 @@
         "source_url": "https://arxiv.org/abs/2607.24025v2",
         "verified_at": "2026-10-02T04:49:43Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2603.18697",
@@ -4518,7 +4518,7 @@
         "source_url": "https://arxiv.org/abs/2603.18697v1",
         "verified_at": "2026-10-02T04:49:43Z"
       },
-      "reading_tier": null
+      "reading_tier": "prioritize"
     },
     {
       "id": "2608.18764",
@@ -4597,7 +4597,7 @@
         "source_url": "https://arxiv.org/abs/2608.18764v2",
         "verified_at": "2026-10-02T04:49:43Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2608.27991",
@@ -4676,7 +4676,7 @@
         "source_url": "https://arxiv.org/abs/2608.27991v2",
         "verified_at": "2026-10-02T04:49:43Z"
       },
-      "reading_tier": null
+      "reading_tier": "prioritize"
     },
     {
       "id": "2608.30449",
@@ -4755,7 +4755,7 @@
         "source_url": "https://arxiv.org/abs/2608.30449v1",
         "verified_at": "2026-10-02T04:49:43Z"
       },
-      "reading_tier": null
+      "reading_tier": "prioritize"
     },
     {
       "id": "2609.01240",
@@ -4832,7 +4832,7 @@
         "source_url": "https://arxiv.org/abs/2609.01240v1",
         "verified_at": "2026-10-02T04:49:43Z"
       },
-      "reading_tier": null
+      "reading_tier": "prioritize"
     },
     {
       "id": "2609.08443",
@@ -4918,7 +4918,7 @@
         "source_url": "https://arxiv.org/abs/2609.08443v1",
         "verified_at": "2026-10-02T04:49:43Z"
       },
-      "reading_tier": null
+      "reading_tier": "prioritize"
     },
     {
       "id": "2603.02561",
@@ -4998,7 +4998,7 @@
         "source_url": "https://arxiv.org/abs/2603.02561v2",
         "verified_at": "2026-10-02T04:49:43Z"
       },
-      "reading_tier": null
+      "reading_tier": "prioritize"
     },
     {
       "id": "2510.26104",
@@ -5181,7 +5181,7 @@
         "source_url": "https://arxiv.org/abs/2601.12681v2",
         "verified_at": "2026-10-02T04:49:51Z"
       },
-      "reading_tier": null
+      "reading_tier": "prioritize"
     },
     {
       "id": "2602.10811",
@@ -5285,7 +5285,7 @@
         "verified_at": "2026-10-02T04:49:51Z"
       },
       "doi": "10.1145/3770855.3818400",
-      "reading_tier": null
+      "reading_tier": "prioritize"
     },
     {
       "id": "2602.14110",
@@ -5407,7 +5407,7 @@
         "verified_at": "2026-10-02T04:49:51Z"
       },
       "doi": "10.1145/3770855.3818447",
-      "reading_tier": null
+      "reading_tier": "prioritize"
     },
     {
       "id": "2604.13737",
@@ -5485,7 +5485,7 @@
         "source_url": "https://arxiv.org/abs/2604.13737v1",
         "verified_at": "2026-10-02T04:49:51Z"
       },
-      "reading_tier": null
+      "reading_tier": "prioritize"
     },
     {
       "id": "2604.00590",
@@ -5564,7 +5564,7 @@
         "source_url": "https://arxiv.org/abs/2604.00590v2",
         "verified_at": "2026-10-02T04:49:51Z"
       },
-      "reading_tier": null
+      "reading_tier": "prioritize"
     },
     {
       "id": "2606.27058",
@@ -5642,7 +5642,7 @@
         "source_url": "https://arxiv.org/abs/2606.27058v1",
         "verified_at": "2026-10-02T04:49:51Z"
       },
-      "reading_tier": null
+      "reading_tier": "prioritize"
     },
     {
       "id": "2607.17017",
@@ -5729,7 +5729,7 @@
         "source_url": "https://arxiv.org/abs/2607.17017v2",
         "verified_at": "2026-10-02T04:49:51Z"
       },
-      "reading_tier": null
+      "reading_tier": "prioritize"
     },
     {
       "id": "2607.28070",
@@ -5808,7 +5808,7 @@
         "source_url": "https://arxiv.org/abs/2607.28070v1",
         "verified_at": "2026-10-02T04:49:51Z"
       },
-      "reading_tier": null
+      "reading_tier": "prioritize"
     },
     {
       "id": "2608.16797",
@@ -5883,7 +5883,7 @@
         "source_url": "https://arxiv.org/abs/2608.16797v1",
         "verified_at": "2026-10-02T04:49:51Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2607.13398",
@@ -5988,7 +5988,7 @@
         "verified_at": "2026-10-02T04:49:51Z"
       },
       "doi": "10.1145/3770855.3818493",
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2608.27005",
@@ -6064,7 +6064,7 @@
         "source_url": "https://arxiv.org/abs/2608.27005v1",
         "verified_at": "2026-10-02T04:49:51Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2609.01655",
@@ -6141,7 +6141,7 @@
         "source_url": "https://arxiv.org/abs/2609.01655v1",
         "verified_at": "2026-10-02T04:49:51Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2609.03290",
@@ -6217,7 +6217,7 @@
         "source_url": "https://arxiv.org/abs/2609.03290v2",
         "verified_at": "2026-10-02T04:49:51Z"
       },
-      "reading_tier": null
+      "reading_tier": "prioritize"
     },
     {
       "id": "2609.37183",
@@ -6297,7 +6297,7 @@
         "source_url": "https://arxiv.org/abs/2609.37183v2",
         "verified_at": "2026-10-02T04:49:51Z"
       },
-      "reading_tier": null
+      "reading_tier": "prioritize"
     },
     {
       "id": "2402.06859",
@@ -6464,7 +6464,7 @@
         "source_url": "https://arxiv.org/abs/2508.02929v3",
         "verified_at": "2026-10-02T04:49:59Z"
       },
-      "reading_tier": null
+      "reading_tier": "prioritize"
     },
     {
       "id": "2509.18091",
@@ -6568,7 +6568,7 @@
         "verified_at": "2026-10-02T04:49:59Z"
       },
       "doi": "10.1145/3770855.3818456",
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2502.08309",
@@ -6751,7 +6751,7 @@
         "verified_at": "2026-10-02T04:49:59Z"
       },
       "doi": "10.1145/3770855.3818452",
-      "reading_tier": null
+      "reading_tier": "prioritize"
     },
     {
       "id": "2606.00422",
@@ -6839,7 +6839,7 @@
         "source_url": "https://arxiv.org/abs/2606.00422v1",
         "verified_at": "2026-10-02T04:49:59Z"
       },
-      "reading_tier": null
+      "reading_tier": "prioritize"
     },
     {
       "id": "2606.16838",
@@ -6934,7 +6934,7 @@
         "verified_at": "2026-10-02T04:49:59Z"
       },
       "doi": "10.1145/3770855.3818457",
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2606.19635",
@@ -7021,7 +7021,7 @@
         "source_url": "https://arxiv.org/abs/2606.19635v3",
         "verified_at": "2026-10-02T04:49:59Z"
       },
-      "reading_tier": null
+      "reading_tier": "prioritize"
     },
     {
       "id": "2608.18606",
@@ -7100,7 +7100,7 @@
         "source_url": "https://arxiv.org/abs/2608.18606v2",
         "verified_at": "2026-10-02T04:49:59Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2608.25546",
@@ -7178,7 +7178,7 @@
         "source_url": "https://arxiv.org/abs/2608.25546v3",
         "verified_at": "2026-10-02T04:49:59Z"
       },
-      "reading_tier": null
+      "reading_tier": "prioritize"
     },
     {
       "id": "2609.28589",
@@ -7258,7 +7258,7 @@
         "source_url": "https://arxiv.org/abs/2609.28589v1",
         "verified_at": "2026-10-02T04:49:59Z"
       },
-      "reading_tier": null
+      "reading_tier": "prioritize"
     },
     {
       "id": "2602.10455",
@@ -7424,7 +7424,7 @@
         "source_url": "https://arxiv.org/abs/2607.28940v1",
         "verified_at": "2026-10-02T04:49:59Z"
       },
-      "reading_tier": null
+      "reading_tier": "prioritize"
     },
     {
       "id": "2607.12281",
@@ -7503,7 +7503,7 @@
         "source_url": "https://arxiv.org/abs/2607.12281v1",
         "verified_at": "2026-10-02T04:49:59Z"
       },
-      "reading_tier": null
+      "reading_tier": "prioritize"
     },
     {
       "id": "2605.24989",
@@ -7581,7 +7581,7 @@
         "source_url": "https://arxiv.org/abs/2605.24989v1",
         "verified_at": "2026-10-02T04:49:59Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2512.07650",
@@ -7655,7 +7655,7 @@
         "source_url": "https://arxiv.org/abs/2512.07650v1",
         "verified_at": "2026-10-02T04:49:59Z"
       },
-      "reading_tier": null
+      "reading_tier": "prioritize"
     },
     {
       "id": "2609.02671",
@@ -7730,7 +7730,7 @@
         "source_url": "https://arxiv.org/abs/2609.02671v1",
         "verified_at": "2026-10-02T04:50:08Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2609.01807",
@@ -7809,7 +7809,7 @@
         "source_url": "https://arxiv.org/abs/2609.01807v2",
         "verified_at": "2026-10-02T04:50:08Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2504.06780",
@@ -8025,7 +8025,7 @@
         "source_url": "https://arxiv.org/abs/2508.13567v1",
         "verified_at": "2026-10-02T04:50:08Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2508.17125",
@@ -8097,7 +8097,7 @@
         "source_url": "https://arxiv.org/abs/2508.17125v1",
         "verified_at": "2026-10-02T04:50:08Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2511.06077",
@@ -8189,7 +8189,7 @@
         "source_url": "https://arxiv.org/abs/2511.06077v3",
         "verified_at": "2026-10-02T04:50:08Z"
       },
-      "reading_tier": null
+      "reading_tier": "prioritize"
     },
     {
       "id": "2512.07216",
@@ -8261,7 +8261,7 @@
         "source_url": "https://arxiv.org/abs/2512.07216v1",
         "verified_at": "2026-10-02T04:50:08Z"
       },
-      "reading_tier": null
+      "reading_tier": "prioritize"
     },
     {
       "id": "2601.03479",
@@ -8342,7 +8342,7 @@
         "source_url": "https://arxiv.org/abs/2601.03479v1",
         "verified_at": "2026-10-02T04:50:08Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2601.20234",
@@ -8414,7 +8414,7 @@
         "source_url": "https://arxiv.org/abs/2601.20234v2",
         "verified_at": "2026-10-02T04:50:08Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2604.20858",
@@ -8489,7 +8489,7 @@
         "source_url": "https://arxiv.org/abs/2604.20858v1",
         "verified_at": "2026-10-02T04:50:08Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2605.24051",
@@ -8561,7 +8561,7 @@
         "source_url": "https://arxiv.org/abs/2605.24051v1",
         "verified_at": "2026-10-02T04:50:08Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2605.25726",
@@ -8636,7 +8636,7 @@
         "source_url": "https://arxiv.org/abs/2605.25726v1",
         "verified_at": "2026-10-02T04:50:08Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2605.25583",
@@ -8708,7 +8708,7 @@
         "source_url": "https://arxiv.org/abs/2605.25583v2",
         "verified_at": "2026-10-02T04:50:08Z"
       },
-      "reading_tier": null
+      "reading_tier": "prioritize"
     },
     {
       "id": "2606.07546",
@@ -8780,7 +8780,7 @@
         "source_url": "https://arxiv.org/abs/2606.07546v1",
         "verified_at": "2026-10-02T04:50:08Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2606.09888",
@@ -8852,7 +8852,7 @@
         "source_url": "https://arxiv.org/abs/2606.09888v1",
         "verified_at": "2026-10-02T04:50:17Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2606.28533",
@@ -8924,7 +8924,7 @@
         "source_url": "https://arxiv.org/abs/2606.28533v2",
         "verified_at": "2026-10-02T04:50:17Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2606.29946",
@@ -9005,7 +9005,7 @@
         "source_url": "https://arxiv.org/abs/2606.29946v1",
         "verified_at": "2026-10-02T04:50:17Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2607.14331",
@@ -9077,7 +9077,7 @@
         "source_url": "https://arxiv.org/abs/2607.14331v1",
         "verified_at": "2026-10-02T04:50:17Z"
       },
-      "reading_tier": null
+      "reading_tier": "prioritize"
     },
     {
       "id": "2602.23671",
@@ -9158,7 +9158,7 @@
         "source_url": "https://arxiv.org/abs/2602.23671v1",
         "verified_at": "2026-10-02T04:50:17Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2608.03692",
@@ -9230,7 +9230,7 @@
         "source_url": "https://arxiv.org/abs/2608.03692v1",
         "verified_at": "2026-10-02T04:50:17Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2608.07055",
@@ -9302,7 +9302,7 @@
         "source_url": "https://arxiv.org/abs/2608.07055v2",
         "verified_at": "2026-10-02T04:50:17Z"
       },
-      "reading_tier": null
+      "reading_tier": "prioritize"
     },
     {
       "id": "2609.31045",
@@ -9377,7 +9377,7 @@
         "source_url": "https://arxiv.org/abs/2609.31045v1",
         "verified_at": "2026-10-02T04:50:17Z"
       },
-      "reading_tier": null
+      "reading_tier": "prioritize"
     },
     {
       "id": "2609.32215",
@@ -9452,7 +9452,7 @@
         "source_url": "https://arxiv.org/abs/2609.32215v1",
         "verified_at": "2026-10-02T04:50:17Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2609.30576",
@@ -9527,7 +9527,7 @@
         "source_url": "https://arxiv.org/abs/2609.30576v1",
         "verified_at": "2026-10-02T04:50:17Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2604.08933",
@@ -9599,7 +9599,7 @@
         "source_url": "https://arxiv.org/abs/2604.08933v1",
         "verified_at": "2026-10-02T04:50:17Z"
       },
-      "reading_tier": null
+      "reading_tier": "prioritize"
     },
     {
       "id": "2604.15650",
@@ -9688,7 +9688,7 @@
         "source_url": "https://arxiv.org/abs/2604.15650v3",
         "verified_at": "2026-10-02T04:50:17Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2605.12617",
@@ -9760,7 +9760,7 @@
         "source_url": "https://arxiv.org/abs/2605.12617v1",
         "verified_at": "2026-10-02T04:50:17Z"
       },
-      "reading_tier": null
+      "reading_tier": "prioritize"
     },
     {
       "id": "2605.23312",
@@ -9844,7 +9844,7 @@
         "source_url": "https://arxiv.org/abs/2605.23312v2",
         "verified_at": "2026-10-02T04:50:17Z"
       },
-      "reading_tier": null
+      "reading_tier": "prioritize"
     },
     {
       "id": "2605.23702",
@@ -9925,7 +9925,7 @@
         "source_url": "https://arxiv.org/abs/2605.23702v1",
         "verified_at": "2026-10-02T04:50:17Z"
       },
-      "reading_tier": null
+      "reading_tier": "prioritize"
     },
     {
       "id": "2605.25749",
@@ -10014,7 +10014,7 @@
         "verified_at": "2026-10-02T04:50:24Z"
       },
       "doi": "10.1145/3770855.3818363",
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2605.17779",
@@ -10086,7 +10086,7 @@
         "source_url": "https://arxiv.org/abs/2605.17779v2",
         "verified_at": "2026-10-02T04:50:24Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2602.13581",
@@ -10184,7 +10184,7 @@
         "verified_at": "2026-10-02T04:50:24Z"
       },
       "doi": "10.1145/3770855.3818340",
-      "reading_tier": null
+      "reading_tier": "prioritize"
     },
     {
       "id": "2603.02730",
@@ -10256,7 +10256,7 @@
         "source_url": "https://arxiv.org/abs/2603.02730v4",
         "verified_at": "2026-10-02T04:50:24Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2604.05314",
@@ -10328,7 +10328,7 @@
         "source_url": "https://arxiv.org/abs/2604.05314v1",
         "verified_at": "2026-10-02T04:50:24Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2604.05329",
@@ -10400,7 +10400,7 @@
         "source_url": "https://arxiv.org/abs/2604.05329v3",
         "verified_at": "2026-10-02T04:50:24Z"
       },
-      "reading_tier": null
+      "reading_tier": "prioritize"
     },
     {
       "id": "2604.14878",
@@ -10481,7 +10481,7 @@
         "source_url": "https://arxiv.org/abs/2604.14878v1",
         "verified_at": "2026-10-02T04:50:24Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2604.11440",
@@ -10553,7 +10553,7 @@
         "source_url": "https://arxiv.org/abs/2604.11440v3",
         "verified_at": "2026-10-02T04:50:24Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2606.06260",
@@ -10625,7 +10625,7 @@
         "source_url": "https://arxiv.org/abs/2606.06260v1",
         "verified_at": "2026-10-02T04:50:24Z"
       },
-      "reading_tier": null
+      "reading_tier": "prioritize"
     },
     {
       "id": "2606.08604",
@@ -10697,7 +10697,7 @@
         "source_url": "https://arxiv.org/abs/2606.08604v2",
         "verified_at": "2026-10-02T04:50:24Z"
       },
-      "reading_tier": null
+      "reading_tier": "prioritize"
     },
     {
       "id": "2606.08480",
@@ -10769,7 +10769,7 @@
         "source_url": "https://arxiv.org/abs/2606.08480v1",
         "verified_at": "2026-10-02T04:50:24Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2606.07317",
@@ -10841,7 +10841,7 @@
         "source_url": "https://arxiv.org/abs/2606.07317v2",
         "verified_at": "2026-10-02T04:50:24Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2606.06970",
@@ -10913,7 +10913,7 @@
         "source_url": "https://arxiv.org/abs/2606.06970v1",
         "verified_at": "2026-10-02T04:50:24Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2512.24787",
@@ -10985,7 +10985,7 @@
         "source_url": "https://arxiv.org/abs/2512.24787v5",
         "verified_at": "2026-10-02T04:50:24Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2606.14260",
@@ -11057,7 +11057,7 @@
         "source_url": "https://arxiv.org/abs/2606.14260v1",
         "verified_at": "2026-10-02T04:50:24Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2606.14142",
@@ -11129,7 +11129,7 @@
         "source_url": "https://arxiv.org/abs/2606.14142v3",
         "verified_at": "2026-10-02T04:50:32Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2606.17276",
@@ -11201,7 +11201,7 @@
         "source_url": "https://arxiv.org/abs/2606.17276v3",
         "verified_at": "2026-10-02T04:50:32Z"
       },
-      "reading_tier": null
+      "reading_tier": "prioritize"
     },
     {
       "id": "2606.20554",
@@ -11282,7 +11282,7 @@
         "source_url": "https://arxiv.org/abs/2606.20554v1",
         "verified_at": "2026-10-02T04:50:32Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2606.25147",
@@ -11354,7 +11354,7 @@
         "source_url": "https://arxiv.org/abs/2606.25147v1",
         "verified_at": "2026-10-02T04:50:32Z"
       },
-      "reading_tier": null
+      "reading_tier": "prioritize"
     },
     {
       "id": "2606.25496",
@@ -11429,7 +11429,7 @@
         "source_url": "https://arxiv.org/abs/2606.25496v1",
         "verified_at": "2026-10-02T04:50:32Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2606.31984",
@@ -11501,7 +11501,7 @@
         "source_url": "https://arxiv.org/abs/2606.31984v3",
         "verified_at": "2026-10-02T04:50:32Z"
       },
-      "reading_tier": null
+      "reading_tier": "prioritize"
     },
     {
       "id": "2606.31031",
@@ -11582,7 +11582,7 @@
         "source_url": "https://arxiv.org/abs/2606.31031v2",
         "verified_at": "2026-10-02T04:50:32Z"
       },
-      "reading_tier": null
+      "reading_tier": "prioritize"
     },
     {
       "id": "2607.01170",
@@ -11654,7 +11654,7 @@
         "source_url": "https://arxiv.org/abs/2607.01170v4",
         "verified_at": "2026-10-02T04:50:32Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2606.31693",
@@ -11726,7 +11726,7 @@
         "source_url": "https://arxiv.org/abs/2606.31693v2",
         "verified_at": "2026-10-02T04:50:32Z"
       },
-      "reading_tier": null
+      "reading_tier": "prioritize"
     },
     {
       "id": "2607.03362",
@@ -11816,7 +11816,7 @@
         "source_url": "https://arxiv.org/abs/2607.03362v1",
         "verified_at": "2026-10-02T04:50:32Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2607.04068",
@@ -11888,7 +11888,7 @@
         "source_url": "https://arxiv.org/abs/2607.04068v1",
         "verified_at": "2026-10-02T04:50:32Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2601.04674",
@@ -11969,7 +11969,7 @@
         "source_url": "https://arxiv.org/abs/2601.04674v1",
         "verified_at": "2026-10-02T04:50:32Z"
       },
-      "reading_tier": null
+      "reading_tier": "prioritize"
     },
     {
       "id": "2607.02818",
@@ -12041,7 +12041,7 @@
         "source_url": "https://arxiv.org/abs/2607.02818v2",
         "verified_at": "2026-10-02T04:50:32Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2607.08365",
@@ -12113,7 +12113,7 @@
         "source_url": "https://arxiv.org/abs/2607.08365v1",
         "verified_at": "2026-10-02T04:50:32Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2607.12277",
@@ -12185,7 +12185,7 @@
         "source_url": "https://arxiv.org/abs/2607.12277v1",
         "verified_at": "2026-10-02T04:50:32Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2607.12425",
@@ -12257,7 +12257,7 @@
         "source_url": "https://arxiv.org/abs/2607.12425v1",
         "verified_at": "2026-10-02T04:50:41Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2607.11392",
@@ -12332,7 +12332,7 @@
         "source_url": "https://arxiv.org/abs/2607.11392v2",
         "verified_at": "2026-10-02T04:50:41Z"
       },
-      "reading_tier": null
+      "reading_tier": "prioritize"
     },
     {
       "id": "2607.11326",
@@ -12407,7 +12407,7 @@
         "source_url": "https://arxiv.org/abs/2607.11326v1",
         "verified_at": "2026-10-02T04:50:41Z"
       },
-      "reading_tier": null
+      "reading_tier": "prioritize"
     },
     {
       "id": "2607.15591",
@@ -12479,7 +12479,7 @@
         "source_url": "https://arxiv.org/abs/2607.15591v2",
         "verified_at": "2026-10-02T04:50:41Z"
       },
-      "reading_tier": null
+      "reading_tier": "prioritize"
     },
     {
       "id": "2607.18796",
@@ -12551,7 +12551,7 @@
         "source_url": "https://arxiv.org/abs/2607.18796v2",
         "verified_at": "2026-10-02T04:50:41Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2607.21028",
@@ -12623,7 +12623,7 @@
         "source_url": "https://arxiv.org/abs/2607.21028v3",
         "verified_at": "2026-10-02T04:50:41Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2607.21519",
@@ -12695,7 +12695,7 @@
         "source_url": "https://arxiv.org/abs/2607.21519v1",
         "verified_at": "2026-10-02T04:50:41Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2602.05663",
@@ -12776,7 +12776,7 @@
         "source_url": "https://arxiv.org/abs/2602.05663v2",
         "verified_at": "2026-10-02T04:50:41Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2607.26500",
@@ -12848,7 +12848,7 @@
         "source_url": "https://arxiv.org/abs/2607.26500v1",
         "verified_at": "2026-10-02T04:50:41Z"
       },
-      "reading_tier": null
+      "reading_tier": "prioritize"
     },
     {
       "id": "2607.26621",
@@ -12920,7 +12920,7 @@
         "source_url": "https://arxiv.org/abs/2607.26621v3",
         "verified_at": "2026-10-02T04:50:41Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2605.05803",
@@ -12995,7 +12995,7 @@
         "source_url": "https://arxiv.org/abs/2605.05803v2",
         "verified_at": "2026-10-02T04:50:41Z"
       },
-      "reading_tier": null
+      "reading_tier": "prioritize"
     },
     {
       "id": "2607.26073",
@@ -13076,7 +13076,7 @@
         "source_url": "https://arxiv.org/abs/2607.26073v1",
         "verified_at": "2026-10-02T04:50:41Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2608.06213",
@@ -13148,7 +13148,7 @@
         "source_url": "https://arxiv.org/abs/2608.06213v1",
         "verified_at": "2026-10-02T04:50:41Z"
       },
-      "reading_tier": null
+      "reading_tier": "prioritize"
     },
     {
       "id": "2608.03150",
@@ -13220,7 +13220,7 @@
         "source_url": "https://arxiv.org/abs/2608.03150v1",
         "verified_at": "2026-10-02T04:50:41Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2607.27647",
@@ -13292,7 +13292,7 @@
         "source_url": "https://arxiv.org/abs/2607.27647v2",
         "verified_at": "2026-10-02T04:50:41Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2607.24439",
@@ -13364,7 +13364,7 @@
         "source_url": "https://arxiv.org/abs/2607.24439v1",
         "verified_at": "2026-10-02T04:50:53Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2607.27944",
@@ -13436,7 +13436,7 @@
         "source_url": "https://arxiv.org/abs/2607.27944v1",
         "verified_at": "2026-10-02T04:50:53Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2607.27789",
@@ -13508,7 +13508,7 @@
         "source_url": "https://arxiv.org/abs/2607.27789v1",
         "verified_at": "2026-10-02T04:50:53Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2607.27682",
@@ -13580,7 +13580,7 @@
         "source_url": "https://arxiv.org/abs/2607.27682v1",
         "verified_at": "2026-10-02T04:50:53Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2608.11980",
@@ -13661,7 +13661,7 @@
         "source_url": "https://arxiv.org/abs/2608.11980v2",
         "verified_at": "2026-10-02T04:50:53Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2608.09634",
@@ -13733,7 +13733,7 @@
         "source_url": "https://arxiv.org/abs/2608.09634v2",
         "verified_at": "2026-10-02T04:50:53Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2607.28895",
@@ -13805,7 +13805,7 @@
         "source_url": "https://arxiv.org/abs/2607.28895v4",
         "verified_at": "2026-10-02T04:50:53Z"
       },
-      "reading_tier": null
+      "reading_tier": "prioritize"
     },
     {
       "id": "2607.29010",
@@ -13877,7 +13877,7 @@
         "source_url": "https://arxiv.org/abs/2607.29010v1",
         "verified_at": "2026-10-02T04:50:53Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2608.02048",
@@ -13949,7 +13949,7 @@
         "source_url": "https://arxiv.org/abs/2608.02048v1",
         "verified_at": "2026-10-02T04:50:53Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2608.00750",
@@ -14038,7 +14038,7 @@
         "verified_at": "2026-10-02T04:50:53Z"
       },
       "doi": "10.1145/3770855.3818206",
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2607.25339",
@@ -14110,7 +14110,7 @@
         "source_url": "https://arxiv.org/abs/2607.25339v2",
         "verified_at": "2026-10-02T04:50:53Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2608.00816",
@@ -14182,7 +14182,7 @@
         "source_url": "https://arxiv.org/abs/2608.00816v1",
         "verified_at": "2026-10-02T04:50:53Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2608.17613",
@@ -14257,7 +14257,7 @@
         "source_url": "https://arxiv.org/abs/2608.17613v1",
         "verified_at": "2026-10-02T04:50:53Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2608.18952",
@@ -14329,7 +14329,7 @@
         "source_url": "https://arxiv.org/abs/2608.18952v1",
         "verified_at": "2026-10-02T04:50:53Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2509.25522",
@@ -14410,7 +14410,7 @@
         "source_url": "https://arxiv.org/abs/2509.25522v3",
         "verified_at": "2026-10-02T04:50:53Z"
       },
-      "reading_tier": null
+      "reading_tier": "prioritize"
     },
     {
       "id": "2601.17787",
@@ -14482,7 +14482,7 @@
         "source_url": "https://arxiv.org/abs/2601.17787v2",
         "verified_at": "2026-10-02T04:51:02Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2608.21012",
@@ -14554,7 +14554,7 @@
         "source_url": "https://arxiv.org/abs/2608.21012v1",
         "verified_at": "2026-10-02T04:51:02Z"
       },
-      "reading_tier": null
+      "reading_tier": "prioritize"
     },
     {
       "id": "2609.03313",
@@ -14626,7 +14626,7 @@
         "source_url": "https://arxiv.org/abs/2609.03313v1",
         "verified_at": "2026-10-02T04:51:02Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2609.03369",
@@ -14698,7 +14698,7 @@
         "source_url": "https://arxiv.org/abs/2609.03369v1",
         "verified_at": "2026-10-02T04:51:02Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2609.03522",
@@ -14770,7 +14770,7 @@
         "source_url": "https://arxiv.org/abs/2609.03522v1",
         "verified_at": "2026-10-02T04:51:02Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2608.29652",
@@ -14842,7 +14842,7 @@
         "source_url": "https://arxiv.org/abs/2608.29652v3",
         "verified_at": "2026-10-02T04:51:02Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2609.36688",
@@ -14917,7 +14917,7 @@
         "source_url": "https://arxiv.org/abs/2609.36688v1",
         "verified_at": "2026-10-02T04:51:02Z"
       },
-      "reading_tier": null
+      "reading_tier": "prioritize"
     },
     {
       "id": "2609.36670",
@@ -14992,7 +14992,7 @@
         "source_url": "https://arxiv.org/abs/2609.36670v1",
         "verified_at": "2026-10-02T04:51:02Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2609.34306",
@@ -15064,7 +15064,7 @@
         "source_url": "https://arxiv.org/abs/2609.34306v1",
         "verified_at": "2026-10-02T04:51:02Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2512.14041",
@@ -15136,7 +15136,7 @@
         "source_url": "https://arxiv.org/abs/2512.14041v1",
         "verified_at": "2026-10-02T04:51:02Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2506.03699",
@@ -15280,7 +15280,7 @@
         "source_url": "https://arxiv.org/abs/2605.24986v1",
         "verified_at": "2026-10-02T04:51:02Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2608.02738",
@@ -15507,7 +15507,7 @@
         "source_url": "https://arxiv.org/abs/2605.29280v3",
         "verified_at": "2026-10-09T12:26:46Z"
       },
-      "reading_tier": null
+      "reading_tier": "prioritize"
     },
     {
       "id": "2605.29755",
@@ -15579,7 +15579,7 @@
         "source_url": "https://arxiv.org/abs/2605.29755v2",
         "verified_at": "2026-10-02T04:51:14Z"
       },
-      "reading_tier": null
+      "reading_tier": "prioritize"
     },
     {
       "id": "2608.08627",
@@ -15651,7 +15651,7 @@
         "source_url": "https://arxiv.org/abs/2608.08627v2",
         "verified_at": "2026-10-02T04:51:14Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2510.18239",
@@ -15750,7 +15750,7 @@
         "source_url": "https://arxiv.org/abs/2510.18239v4",
         "verified_at": "2026-10-09T12:26:39Z"
       },
-      "reading_tier": null
+      "reading_tier": "prioritize"
     },
     {
       "id": "2605.27450",
@@ -15822,7 +15822,7 @@
         "source_url": "https://arxiv.org/abs/2605.27450v1",
         "verified_at": "2026-10-02T04:51:14Z"
       },
-      "reading_tier": null
+      "reading_tier": "prioritize"
     },
     {
       "id": "2603.11486",
@@ -15897,7 +15897,7 @@
         "source_url": "https://arxiv.org/abs/2603.11486v1",
         "verified_at": "2026-10-02T04:51:14Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2604.12110",
@@ -15978,7 +15978,7 @@
         "source_url": "https://arxiv.org/abs/2604.12110v2",
         "verified_at": "2026-10-02T04:51:14Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2604.24073",
@@ -16050,7 +16050,7 @@
         "source_url": "https://arxiv.org/abs/2604.24073v1",
         "verified_at": "2026-10-02T04:51:14Z"
       },
-      "reading_tier": null
+      "reading_tier": "prioritize"
     },
     {
       "id": "2604.24806",
@@ -16131,7 +16131,7 @@
         "source_url": "https://arxiv.org/abs/2604.24806v2",
         "verified_at": "2026-10-02T04:51:14Z"
       },
-      "reading_tier": null
+      "reading_tier": "prioritize"
     },
     {
       "id": "2605.00324",
@@ -16203,7 +16203,7 @@
         "source_url": "https://arxiv.org/abs/2605.00324v1",
         "verified_at": "2026-10-02T04:51:14Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2605.13433",
@@ -16275,7 +16275,7 @@
         "source_url": "https://arxiv.org/abs/2605.13433v1",
         "verified_at": "2026-10-02T04:51:14Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2601.01712",
@@ -16347,7 +16347,7 @@
         "source_url": "https://arxiv.org/abs/2601.01712v1",
         "verified_at": "2026-10-02T04:51:14Z"
       },
-      "reading_tier": null
+      "reading_tier": "prioritize"
     },
     {
       "id": "2606.21101",
@@ -16419,7 +16419,7 @@
         "source_url": "https://arxiv.org/abs/2606.21101v1",
         "verified_at": "2026-10-02T04:51:14Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2607.10044",
@@ -16491,7 +16491,7 @@
         "source_url": "https://arxiv.org/abs/2607.10044v1",
         "verified_at": "2026-10-02T04:51:14Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2602.22647",
@@ -16591,7 +16591,7 @@
         "verified_at": "2026-10-09T12:26:46Z"
       },
       "doi": "10.1145/3770855.3818506",
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2607.27744",
@@ -16663,7 +16663,7 @@
         "source_url": "https://arxiv.org/abs/2607.27744v1",
         "verified_at": "2026-10-02T04:51:14Z"
       },
-      "reading_tier": null
+      "reading_tier": "prioritize"
     },
     {
       "id": "2608.00938",
@@ -16735,7 +16735,7 @@
         "source_url": "https://arxiv.org/abs/2608.00938v2",
         "verified_at": "2026-10-02T04:51:26Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2508.04711",
@@ -16887,7 +16887,7 @@
         "source_url": "https://arxiv.org/abs/2605.04450v2",
         "verified_at": "2026-10-02T04:51:26Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2609.30656",
@@ -16962,7 +16962,7 @@
         "source_url": "https://arxiv.org/abs/2609.30656v1",
         "verified_at": "2026-10-02T04:51:26Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2603.04816",
@@ -17034,7 +17034,7 @@
         "source_url": "https://arxiv.org/abs/2603.04816v2",
         "verified_at": "2026-10-02T04:51:26Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2605.27810",
@@ -17106,7 +17106,7 @@
         "source_url": "https://arxiv.org/abs/2605.27810v1",
         "verified_at": "2026-10-02T04:51:26Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2604.12965",
@@ -17181,7 +17181,7 @@
         "source_url": "https://arxiv.org/abs/2604.12965v1",
         "verified_at": "2026-10-02T04:51:26Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2606.13533",
@@ -17253,7 +17253,7 @@
         "source_url": "https://arxiv.org/abs/2606.13533v2",
         "verified_at": "2026-10-02T04:51:26Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2606.18379",
@@ -17334,7 +17334,7 @@
         "source_url": "https://arxiv.org/abs/2606.18379v4",
         "verified_at": "2026-10-02T04:51:26Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2607.12392",
@@ -17415,7 +17415,7 @@
         "source_url": "https://arxiv.org/abs/2607.12392v1",
         "verified_at": "2026-10-02T04:51:26Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2607.10096",
@@ -17487,7 +17487,7 @@
         "source_url": "https://arxiv.org/abs/2607.10096v1",
         "verified_at": "2026-10-02T04:51:26Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2607.27475",
@@ -17559,7 +17559,7 @@
         "source_url": "https://arxiv.org/abs/2607.27475v2",
         "verified_at": "2026-10-02T04:51:26Z"
       },
-      "reading_tier": null
+      "reading_tier": "prioritize"
     },
     {
       "id": "2608.25528",
@@ -17631,7 +17631,7 @@
         "source_url": "https://arxiv.org/abs/2608.25528v1",
         "verified_at": "2026-10-02T04:51:26Z"
       },
-      "reading_tier": null
+      "reading_tier": "prioritize"
     },
     {
       "id": "2609.39327",
@@ -17706,7 +17706,7 @@
         "source_url": "https://arxiv.org/abs/2609.39327v1",
         "verified_at": "2026-10-02T04:51:26Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2609.29180",
@@ -17781,7 +17781,7 @@
         "source_url": "https://arxiv.org/abs/2609.29180v1",
         "verified_at": "2026-10-02T04:51:26Z"
       },
-      "reading_tier": null
+      "reading_tier": "prioritize"
     },
     {
       "id": "2609.30601",
@@ -17856,7 +17856,7 @@
         "source_url": "https://arxiv.org/abs/2609.30601v1",
         "verified_at": "2026-10-02T04:51:34Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2606.16825",
@@ -17928,7 +17928,7 @@
         "source_url": "https://arxiv.org/abs/2606.16825v1",
         "verified_at": "2026-10-02T04:51:34Z"
       },
-      "reading_tier": null
+      "reading_tier": "as_needed"
     },
     {
       "id": "2606.16768",
@@ -18000,7 +18000,7 @@
         "source_url": "https://arxiv.org/abs/2606.16768v1",
         "verified_at": "2026-10-02T04:51:34Z"
       },
-      "reading_tier": null
+      "reading_tier": "as_needed"
     },
     {
       "id": "2606.16429",
@@ -18072,7 +18072,7 @@
         "source_url": "https://arxiv.org/abs/2606.16429v1",
         "verified_at": "2026-10-02T04:51:34Z"
       },
-      "reading_tier": null
+      "reading_tier": "as_needed"
     },
     {
       "id": "2606.16456",
@@ -18144,7 +18144,7 @@
         "source_url": "https://arxiv.org/abs/2606.16456v1",
         "verified_at": "2026-10-02T04:51:34Z"
       },
-      "reading_tier": null
+      "reading_tier": "as_needed"
     },
     {
       "id": "2606.17952",
@@ -18216,7 +18216,7 @@
         "source_url": "https://arxiv.org/abs/2606.17952v1",
         "verified_at": "2026-10-02T04:51:34Z"
       },
-      "reading_tier": null
+      "reading_tier": "as_needed"
     },
     {
       "id": "2606.23670",
@@ -18288,7 +18288,7 @@
         "source_url": "https://arxiv.org/abs/2606.23670v1",
         "verified_at": "2026-10-02T04:51:34Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2606.25010",
@@ -18360,7 +18360,7 @@
         "source_url": "https://arxiv.org/abs/2606.25010v1",
         "verified_at": "2026-10-02T04:51:34Z"
       },
-      "reading_tier": null
+      "reading_tier": "as_needed"
     },
     {
       "id": "2606.25008",
@@ -18432,7 +18432,7 @@
         "source_url": "https://arxiv.org/abs/2606.25008v1",
         "verified_at": "2026-10-02T04:51:34Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2606.29858",
@@ -18504,7 +18504,7 @@
         "source_url": "https://arxiv.org/abs/2606.29858v2",
         "verified_at": "2026-10-02T04:51:34Z"
       },
-      "reading_tier": null
+      "reading_tier": "as_needed"
     },
     {
       "id": "2603.04971",
@@ -18579,7 +18579,7 @@
         "source_url": "https://arxiv.org/abs/2603.04971v1",
         "verified_at": "2026-10-02T04:51:34Z"
       },
-      "reading_tier": null
+      "reading_tier": "as_needed"
     },
     {
       "id": "2604.09175",
@@ -18659,7 +18659,7 @@
         "source_url": "https://arxiv.org/abs/2604.09175v1",
         "verified_at": "2026-10-02T04:51:34Z"
       },
-      "reading_tier": null
+      "reading_tier": "as_needed"
     },
     {
       "id": "2603.21862",
@@ -18739,7 +18739,7 @@
         "source_url": "https://arxiv.org/abs/2603.21862v1",
         "verified_at": "2026-10-02T04:51:34Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2607.02980",
@@ -18811,7 +18811,7 @@
         "source_url": "https://arxiv.org/abs/2607.02980v1",
         "verified_at": "2026-10-02T04:51:34Z"
       },
-      "reading_tier": null
+      "reading_tier": "as_needed"
     },
     {
       "id": "2607.02303",
@@ -18883,7 +18883,7 @@
         "source_url": "https://arxiv.org/abs/2607.02303v1",
         "verified_at": "2026-10-02T04:51:34Z"
       },
-      "reading_tier": null
+      "reading_tier": "as_needed"
     },
     {
       "id": "2607.07386",
@@ -18963,7 +18963,7 @@
         "source_url": "https://arxiv.org/abs/2607.07386v1",
         "verified_at": "2026-10-02T04:51:42Z"
       },
-      "reading_tier": null
+      "reading_tier": "as_needed"
     },
     {
       "id": "2607.08186",
@@ -19035,7 +19035,7 @@
         "source_url": "https://arxiv.org/abs/2607.08186v1",
         "verified_at": "2026-10-02T04:51:42Z"
       },
-      "reading_tier": null
+      "reading_tier": "as_needed"
     },
     {
       "id": "2607.10034",
@@ -19107,7 +19107,7 @@
         "source_url": "https://arxiv.org/abs/2607.10034v1",
         "verified_at": "2026-10-02T04:51:42Z"
       },
-      "reading_tier": null
+      "reading_tier": "as_needed"
     },
     {
       "id": "2607.07706",
@@ -19188,7 +19188,7 @@
         "source_url": "https://arxiv.org/abs/2607.07706v1",
         "verified_at": "2026-10-02T04:51:42Z"
       },
-      "reading_tier": null
+      "reading_tier": "as_needed"
     },
     {
       "id": "2607.13491",
@@ -19260,7 +19260,7 @@
         "source_url": "https://arxiv.org/abs/2607.13491v2",
         "verified_at": "2026-10-02T04:51:42Z"
       },
-      "reading_tier": null
+      "reading_tier": "as_needed"
     },
     {
       "id": "2607.14530",
@@ -19340,7 +19340,7 @@
         "source_url": "https://arxiv.org/abs/2607.14530v1",
         "verified_at": "2026-10-02T04:51:42Z"
       },
-      "reading_tier": null
+      "reading_tier": "as_needed"
     },
     {
       "id": "2607.14018",
@@ -19412,7 +19412,7 @@
         "source_url": "https://arxiv.org/abs/2607.14018v1",
         "verified_at": "2026-10-02T04:51:42Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2607.16051",
@@ -19484,7 +19484,7 @@
         "source_url": "https://arxiv.org/abs/2607.16051v2",
         "verified_at": "2026-10-02T04:51:42Z"
       },
-      "reading_tier": null
+      "reading_tier": "as_needed"
     },
     {
       "id": "2603.15031",
@@ -19556,7 +19556,7 @@
         "source_url": "https://arxiv.org/abs/2603.15031v1",
         "verified_at": "2026-10-02T04:51:42Z"
       },
-      "reading_tier": null
+      "reading_tier": "as_needed"
     },
     {
       "id": "2607.27230",
@@ -19628,7 +19628,7 @@
         "source_url": "https://arxiv.org/abs/2607.27230v2",
         "verified_at": "2026-10-02T04:51:42Z"
       },
-      "reading_tier": null
+      "reading_tier": "as_needed"
     },
     {
       "id": "2602.06154",
@@ -19709,7 +19709,7 @@
         "source_url": "https://arxiv.org/abs/2602.06154v2",
         "verified_at": "2026-10-02T04:51:42Z"
       },
-      "reading_tier": null
+      "reading_tier": "as_needed"
     },
     {
       "id": "2308.00951",
@@ -19925,7 +19925,7 @@
         "source_url": "https://arxiv.org/abs/2609.01343v3",
         "verified_at": "2026-10-02T04:51:42Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2609.02881",
@@ -19997,7 +19997,7 @@
         "source_url": "https://arxiv.org/abs/2609.02881v1",
         "verified_at": "2026-10-02T04:51:42Z"
       },
-      "reading_tier": null
+      "reading_tier": "as_needed"
     },
     {
       "id": "2608.27763",
@@ -20069,7 +20069,7 @@
         "source_url": "https://arxiv.org/abs/2608.27763v1",
         "verified_at": "2026-10-02T04:51:50Z"
       },
-      "reading_tier": null
+      "reading_tier": "as_needed"
     },
     {
       "id": "2609.04575",
@@ -20141,7 +20141,7 @@
         "source_url": "https://arxiv.org/abs/2609.04575v1",
         "verified_at": "2026-10-02T04:51:50Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2609.40316",
@@ -20216,7 +20216,7 @@
         "source_url": "https://arxiv.org/abs/2609.40316v1",
         "verified_at": "2026-10-02T04:51:50Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2609.35751",
@@ -20288,7 +20288,7 @@
         "source_url": "https://arxiv.org/abs/2609.35751v1",
         "verified_at": "2026-10-02T04:51:50Z"
       },
-      "reading_tier": null
+      "reading_tier": "as_needed"
     },
     {
       "id": "2609.36301",
@@ -20360,7 +20360,7 @@
         "source_url": "https://arxiv.org/abs/2609.36301v1",
         "verified_at": "2026-10-02T04:51:50Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2609.31093",
@@ -20435,7 +20435,7 @@
         "source_url": "https://arxiv.org/abs/2609.31093v1",
         "verified_at": "2026-10-02T04:51:50Z"
       },
-      "reading_tier": null
+      "reading_tier": "as_needed"
     },
     {
       "id": "2609.36529",
@@ -20510,7 +20510,7 @@
         "source_url": "https://arxiv.org/abs/2609.36529v1",
         "verified_at": "2026-10-02T04:51:50Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2609.38832",
@@ -20582,7 +20582,7 @@
         "source_url": "https://arxiv.org/abs/2609.38832v1",
         "verified_at": "2026-10-02T04:51:50Z"
       },
-      "reading_tier": null
+      "reading_tier": "as_needed"
     },
     {
       "id": "2609.34212",
@@ -20654,7 +20654,7 @@
         "source_url": "https://arxiv.org/abs/2609.34212v1",
         "verified_at": "2026-10-02T04:51:50Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2609.32704",
@@ -20726,7 +20726,7 @@
         "source_url": "https://arxiv.org/abs/2609.32704v1",
         "verified_at": "2026-10-02T04:51:50Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2609.38166",
@@ -20801,7 +20801,7 @@
         "source_url": "https://arxiv.org/abs/2609.38166v1",
         "verified_at": "2026-10-02T04:51:50Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2609.39137",
@@ -20876,7 +20876,7 @@
         "source_url": "https://arxiv.org/abs/2609.39137v1",
         "verified_at": "2026-10-02T04:51:50Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2609.39034",
@@ -20948,7 +20948,7 @@
         "source_url": "https://arxiv.org/abs/2609.39034v1",
         "verified_at": "2026-10-02T04:51:50Z"
       },
-      "reading_tier": null
+      "reading_tier": "as_needed"
     },
     {
       "id": "2609.35664",
@@ -21020,7 +21020,7 @@
         "source_url": "https://arxiv.org/abs/2609.35664v1",
         "verified_at": "2026-10-02T04:51:50Z"
       },
-      "reading_tier": null
+      "reading_tier": "as_needed"
     },
     {
       "id": "2609.37379",
@@ -21095,7 +21095,7 @@
         "source_url": "https://arxiv.org/abs/2609.37379v1",
         "verified_at": "2026-10-02T04:51:50Z"
       },
-      "reading_tier": null
+      "reading_tier": "as_needed"
     },
     {
       "id": "2609.29812",
@@ -21167,7 +21167,7 @@
         "source_url": "https://arxiv.org/abs/2609.29812v2",
         "verified_at": "2026-10-02T04:52:00Z"
       },
-      "reading_tier": null
+      "reading_tier": "as_needed"
     },
     {
       "id": "2609.36314",
@@ -21250,7 +21250,7 @@
         "source_url": "https://arxiv.org/abs/2609.36314v1",
         "verified_at": "2026-10-02T04:52:00Z"
       },
-      "reading_tier": null
+      "reading_tier": "as_needed"
     },
     {
       "id": "2602.04852",
@@ -21325,7 +21325,7 @@
         "source_url": "https://arxiv.org/abs/2602.04852v3",
         "verified_at": "2026-10-02T04:52:00Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2605.23893",
@@ -21400,7 +21400,7 @@
         "source_url": "https://arxiv.org/abs/2605.23893v2",
         "verified_at": "2026-10-02T04:52:00Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2609.30820",
@@ -21475,7 +21475,7 @@
         "source_url": "https://arxiv.org/abs/2609.30820v1",
         "verified_at": "2026-10-02T04:52:00Z"
       },
-      "reading_tier": null
+      "reading_tier": "as_needed"
     },
     {
       "id": "2609.07816",
@@ -21547,7 +21547,7 @@
         "source_url": "https://arxiv.org/abs/2609.07816v2",
         "verified_at": "2026-10-02T04:52:00Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2609.32712",
@@ -21619,7 +21619,7 @@
         "source_url": "https://arxiv.org/abs/2609.32712v1",
         "verified_at": "2026-10-02T04:52:00Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2609.31947",
@@ -21691,7 +21691,7 @@
         "source_url": "https://arxiv.org/abs/2609.31947v1",
         "verified_at": "2026-10-02T04:52:00Z"
       },
-      "reading_tier": null
+      "reading_tier": "as_needed"
     },
     {
       "id": "2411.13700",
@@ -21763,7 +21763,7 @@
         "source_url": "https://arxiv.org/abs/2411.13700v1",
         "verified_at": "2026-10-02T04:52:00Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2601.02807",
@@ -21835,7 +21835,7 @@
         "source_url": "https://arxiv.org/abs/2601.02807v1",
         "verified_at": "2026-10-02T04:52:00Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2604.26489",
@@ -21916,7 +21916,7 @@
         "source_url": "https://arxiv.org/abs/2604.26489v1",
         "verified_at": "2026-10-02T04:52:00Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2607.09696",
@@ -21991,7 +21991,7 @@
         "source_url": "https://arxiv.org/abs/2607.09696v1",
         "verified_at": "2026-10-02T04:52:00Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2607.24804",
@@ -22063,7 +22063,7 @@
         "source_url": "https://arxiv.org/abs/2607.24804v3",
         "verified_at": "2026-10-02T04:52:00Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2607.27577",
@@ -22143,7 +22143,7 @@
         "source_url": "https://arxiv.org/abs/2607.27577v1",
         "verified_at": "2026-10-02T04:52:00Z"
       },
-      "reading_tier": null
+      "reading_tier": "prioritize"
     },
     {
       "id": "2608.07035",
@@ -22231,7 +22231,7 @@
         "source_url": "https://arxiv.org/abs/2608.07035v4",
         "verified_at": "2026-10-02T04:52:00Z"
       },
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2609.34083",
@@ -22306,7 +22306,7 @@
         "source_url": "https://arxiv.org/abs/2609.34083v1",
         "verified_at": "2026-10-02T04:52:09Z"
       },
-      "reading_tier": null
+      "reading_tier": "prioritize"
     },
     {
       "id": "2610.02057",
@@ -22369,7 +22369,7 @@
         "source_url": "https://arxiv.org/abs/2610.02057"
       },
       "change_history": [],
-      "reading_tier": null
+      "reading_tier": "prioritize"
     },
     {
       "id": "2610.02185",
@@ -22434,7 +22434,7 @@
         "source_url": "https://arxiv.org/abs/2610.02185"
       },
       "change_history": [],
-      "reading_tier": null
+      "reading_tier": "as_needed"
     },
     {
       "id": "2610.01533",
@@ -22498,7 +22498,7 @@
         "source_url": "https://arxiv.org/abs/2610.01533"
       },
       "change_history": [],
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2610.01153",
@@ -22561,7 +22561,7 @@
         "source_url": "https://arxiv.org/abs/2610.01153"
       },
       "change_history": [],
-      "reading_tier": null
+      "reading_tier": "as_needed"
     },
     {
       "id": "2609.39350",
@@ -22624,7 +22624,7 @@
         "source_url": "https://arxiv.org/abs/2609.39350"
       },
       "change_history": [],
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2609.38646",
@@ -22684,7 +22684,7 @@
         "source_url": "https://arxiv.org/abs/2609.38646"
       },
       "change_history": [],
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2609.39319",
@@ -22744,7 +22744,7 @@
         "source_url": "https://arxiv.org/abs/2609.39319"
       },
       "change_history": [],
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2609.40127",
@@ -22808,7 +22808,7 @@
         "source_url": "https://arxiv.org/abs/2609.40127"
       },
       "change_history": [],
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2609.36070",
@@ -22872,7 +22872,7 @@
         "source_url": "https://arxiv.org/abs/2609.36070"
       },
       "change_history": [],
-      "reading_tier": null
+      "reading_tier": "as_needed"
     },
     {
       "id": "2610.00671",
@@ -22935,7 +22935,7 @@
         "source_url": "https://arxiv.org/abs/2610.00671"
       },
       "change_history": [],
-      "reading_tier": null
+      "reading_tier": "as_needed"
     },
     {
       "id": "2610.01172",
@@ -22996,7 +22996,7 @@
         "source_url": "https://arxiv.org/abs/2610.01172"
       },
       "change_history": [],
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2609.25433",
@@ -23060,7 +23060,7 @@
         "source_url": "https://arxiv.org/abs/2609.25433"
       },
       "change_history": [],
-      "reading_tier": null
+      "reading_tier": "prioritize"
     },
     {
       "id": "2609.14978",
@@ -23128,7 +23128,7 @@
         "source_url": "https://arxiv.org/abs/2609.14978"
       },
       "change_history": [],
-      "reading_tier": null
+      "reading_tier": "prioritize"
     },
     {
       "id": "2609.18148",
@@ -23191,7 +23191,7 @@
         "source_url": "https://arxiv.org/abs/2609.18148"
       },
       "change_history": [],
-      "reading_tier": null
+      "reading_tier": "prioritize"
     },
     {
       "id": "2609.23718",
@@ -23258,7 +23258,7 @@
         "source_url": "https://arxiv.org/abs/2609.23718"
       },
       "change_history": [],
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2609.12270",
@@ -23319,7 +23319,7 @@
         "source_url": "https://arxiv.org/abs/2609.12270"
       },
       "change_history": [],
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2610.00321",
@@ -23386,7 +23386,7 @@
         "source_url": "https://arxiv.org/abs/2610.00321"
       },
       "change_history": [],
-      "reading_tier": null
+      "reading_tier": "as_needed"
     },
     {
       "id": "2610.00499",
@@ -23450,7 +23450,7 @@
         "source_url": "https://arxiv.org/abs/2610.00499"
       },
       "change_history": [],
-      "reading_tier": null
+      "reading_tier": "as_needed"
     },
     {
       "id": "2610.02816",
@@ -23510,7 +23510,7 @@
         "source_url": "https://arxiv.org/abs/2610.02816"
       },
       "change_history": [],
-      "reading_tier": null
+      "reading_tier": "as_needed"
     },
     {
       "id": "2610.02383",
@@ -23570,7 +23570,7 @@
         "source_url": "https://arxiv.org/abs/2610.02383"
       },
       "change_history": [],
-      "reading_tier": null
+      "reading_tier": "as_needed"
     },
     {
       "id": "2610.02953",
@@ -23630,7 +23630,7 @@
         "source_url": "https://arxiv.org/abs/2610.02953"
       },
       "change_history": [],
-      "reading_tier": null
+      "reading_tier": "as_needed"
     },
     {
       "id": "2610.02600",
@@ -23690,7 +23690,7 @@
         "source_url": "https://arxiv.org/abs/2610.02600"
       },
       "change_history": [],
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2607.28019",
@@ -23755,7 +23755,7 @@
         "source_url": "https://arxiv.org/abs/2607.28019"
       },
       "change_history": [],
-      "reading_tier": null
+      "reading_tier": "prioritize"
     },
     {
       "id": "2610.05559",
@@ -23818,7 +23818,7 @@
         "source_url": "https://arxiv.org/abs/2610.05559"
       },
       "change_history": [],
-      "reading_tier": null
+      "reading_tier": "prioritize"
     },
     {
       "id": "2608.11015",
@@ -23886,7 +23886,7 @@
         "source_url": "https://arxiv.org/abs/2608.11015"
       },
       "change_history": [],
-      "reading_tier": null
+      "reading_tier": "prioritize"
     },
     {
       "id": "2511.10138",
@@ -23959,7 +23959,7 @@
         "source_url": "https://arxiv.org/abs/2511.10138"
       },
       "change_history": [],
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2602.09386",
@@ -24031,7 +24031,7 @@
         "source_url": "https://arxiv.org/abs/2602.09386"
       },
       "change_history": [],
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2602.07520",
@@ -24104,7 +24104,7 @@
         "source_url": "https://arxiv.org/abs/2602.07520"
       },
       "change_history": [],
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2512.09200",
@@ -24177,7 +24177,7 @@
         "source_url": "https://arxiv.org/abs/2512.09200"
       },
       "change_history": [],
-      "reading_tier": null
+      "reading_tier": "prioritize"
     },
     {
       "id": "2610.04753",
@@ -24240,7 +24240,7 @@
         "source_url": "https://arxiv.org/abs/2610.04753"
       },
       "change_history": [],
-      "reading_tier": null
+      "reading_tier": "as_needed"
     },
     {
       "id": "2610.04635",
@@ -24303,7 +24303,7 @@
         "source_url": "https://arxiv.org/abs/2610.04635"
       },
       "change_history": [],
-      "reading_tier": null
+      "reading_tier": "as_needed"
     },
     {
       "id": "2610.06833",
@@ -24366,7 +24366,7 @@
         "source_url": "https://arxiv.org/abs/2610.06833"
       },
       "change_history": [],
-      "reading_tier": null
+      "reading_tier": "as_needed"
     },
     {
       "id": "2610.06677",
@@ -24426,7 +24426,7 @@
         "source_url": "https://arxiv.org/abs/2610.06677"
       },
       "change_history": [],
-      "reading_tier": null
+      "reading_tier": "as_needed"
     },
     {
       "id": "2610.05265",
@@ -24489,7 +24489,7 @@
         "source_url": "https://arxiv.org/abs/2610.05265"
       },
       "change_history": [],
-      "reading_tier": null
+      "reading_tier": "as_needed"
     },
     {
       "id": "2610.02815",
@@ -24552,7 +24552,7 @@
         "source_url": "https://arxiv.org/abs/2610.02815"
       },
       "change_history": [],
-      "reading_tier": null
+      "reading_tier": "as_needed"
     },
     {
       "id": "2609.36636",
@@ -24612,7 +24612,7 @@
         "source_url": "https://arxiv.org/abs/2609.36636"
       },
       "change_history": [],
-      "reading_tier": null
+      "reading_tier": "as_needed"
     },
     {
       "id": "2610.06590",
@@ -24672,7 +24672,7 @@
         "source_url": "https://arxiv.org/abs/2610.06590"
       },
       "change_history": [],
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2607.24865",
@@ -24741,7 +24741,7 @@
         "source_url": "https://arxiv.org/abs/2607.24865"
       },
       "change_history": [],
-      "reading_tier": null
+      "reading_tier": "prioritize"
     },
     {
       "id": "2610.05842",
@@ -24804,7 +24804,7 @@
         "source_url": "https://arxiv.org/abs/2610.05842"
       },
       "change_history": [],
-      "reading_tier": null
+      "reading_tier": "as_needed"
     },
     {
       "id": "2609.23111",
@@ -24868,7 +24868,7 @@
         "source_url": "https://arxiv.org/abs/2609.23111"
       },
       "change_history": [],
-      "reading_tier": null
+      "reading_tier": "prioritize"
     },
     {
       "id": "2609.12375",
@@ -24928,7 +24928,7 @@
         "source_url": "https://arxiv.org/abs/2609.12375"
       },
       "change_history": [],
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2609.12399",
@@ -24992,7 +24992,7 @@
         "source_url": "https://arxiv.org/abs/2609.12399"
       },
       "change_history": [],
-      "reading_tier": null
+      "reading_tier": "prioritize"
     },
     {
       "id": "2609.21346",
@@ -25056,7 +25056,7 @@
         "source_url": "https://arxiv.org/abs/2609.21346"
       },
       "change_history": [],
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2609.39007",
@@ -25116,7 +25116,7 @@
         "source_url": "https://arxiv.org/abs/2609.39007"
       },
       "change_history": [],
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2609.23677",
@@ -25176,7 +25176,7 @@
         "source_url": "https://arxiv.org/abs/2609.23677"
       },
       "change_history": [],
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2609.12556",
@@ -25236,7 +25236,7 @@
         "source_url": "https://arxiv.org/abs/2609.12556"
       },
       "change_history": [],
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2609.19107",
@@ -25296,7 +25296,7 @@
         "source_url": "https://arxiv.org/abs/2609.19107"
       },
       "change_history": [],
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2609.15598",
@@ -25356,7 +25356,7 @@
         "source_url": "https://arxiv.org/abs/2609.15598"
       },
       "change_history": [],
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2601.19501",
@@ -25416,7 +25416,7 @@
         "source_url": "https://arxiv.org/abs/2601.19501"
       },
       "change_history": [],
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2607.20873",
@@ -25476,7 +25476,7 @@
         "source_url": "https://arxiv.org/abs/2607.20873"
       },
       "change_history": [],
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2610.10483",
@@ -25536,7 +25536,7 @@
         "source_url": "https://arxiv.org/abs/2610.10483"
       },
       "change_history": [],
-      "reading_tier": null
+      "reading_tier": "prioritize"
     },
     {
       "id": "2610.10124",
@@ -25596,7 +25596,7 @@
         "source_url": "https://arxiv.org/abs/2610.10124"
       },
       "change_history": [],
-      "reading_tier": null
+      "reading_tier": "prioritize"
     },
     {
       "id": "2610.07402",
@@ -25656,7 +25656,7 @@
         "source_url": "https://arxiv.org/abs/2610.07402"
       },
       "change_history": [],
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2610.10381",
@@ -25716,7 +25716,7 @@
         "source_url": "https://arxiv.org/abs/2610.10381"
       },
       "change_history": [],
-      "reading_tier": null
+      "reading_tier": "as_needed"
     },
     {
       "id": "2610.10135",
@@ -25776,7 +25776,7 @@
         "source_url": "https://arxiv.org/abs/2610.10135"
       },
       "change_history": [],
-      "reading_tier": null
+      "reading_tier": "as_needed"
     },
     {
       "id": "2610.09424",
@@ -25836,7 +25836,7 @@
         "source_url": "https://arxiv.org/abs/2610.09424"
       },
       "change_history": [],
-      "reading_tier": null
+      "reading_tier": "as_needed"
     },
     {
       "id": "2610.09372",
@@ -25896,7 +25896,7 @@
         "source_url": "https://arxiv.org/abs/2610.09372"
       },
       "change_history": [],
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2610.09025",
@@ -25956,7 +25956,7 @@
         "source_url": "https://arxiv.org/abs/2610.09025"
       },
       "change_history": [],
-      "reading_tier": null
+      "reading_tier": "as_needed"
     },
     {
       "id": "2610.07333",
@@ -26016,7 +26016,7 @@
         "source_url": "https://arxiv.org/abs/2610.07333"
       },
       "change_history": [],
-      "reading_tier": null
+      "reading_tier": "as_needed"
     },
     {
       "id": "2610.07207",
@@ -26076,7 +26076,7 @@
         "source_url": "https://arxiv.org/abs/2610.07207"
       },
       "change_history": [],
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2610.05744",
@@ -26136,7 +26136,7 @@
         "source_url": "https://arxiv.org/abs/2610.05744"
       },
       "change_history": [],
-      "reading_tier": null
+      "reading_tier": "as_needed"
     },
     {
       "id": "2610.03415",
@@ -26196,7 +26196,7 @@
         "source_url": "https://arxiv.org/abs/2610.03415"
       },
       "change_history": [],
-      "reading_tier": null
+      "reading_tier": "as_needed"
     },
     {
       "id": "2610.03203",
@@ -26256,7 +26256,7 @@
         "source_url": "https://arxiv.org/abs/2610.03203"
       },
       "change_history": [],
-      "reading_tier": null
+      "reading_tier": "as_needed"
     },
     {
       "id": "2610.07348",
@@ -26316,7 +26316,7 @@
         "source_url": "https://arxiv.org/abs/2610.07348"
       },
       "change_history": [],
-      "reading_tier": null
+      "reading_tier": "as_needed"
     },
     {
       "id": "2610.07516",
@@ -26376,7 +26376,7 @@
         "source_url": "https://arxiv.org/abs/2610.07516"
       },
       "change_history": [],
-      "reading_tier": null
+      "reading_tier": "as_needed"
     },
     {
       "id": "2610.10114",
@@ -26436,7 +26436,7 @@
         "source_url": "https://arxiv.org/abs/2610.10114"
       },
       "change_history": [],
-      "reading_tier": null
+      "reading_tier": "as_needed"
     },
     {
       "id": "2610.07505",
@@ -26496,7 +26496,7 @@
         "source_url": "https://arxiv.org/abs/2610.07505"
       },
       "change_history": [],
-      "reading_tier": null
+      "reading_tier": "prioritize"
     },
     {
       "id": "2610.06725",
@@ -26560,7 +26560,7 @@
         "source_url": "https://arxiv.org/abs/2610.06725"
       },
       "change_history": [],
-      "reading_tier": null
+      "reading_tier": "consider"
     },
     {
       "id": "2610.09342",
@@ -26620,7 +26620,7 @@
         "source_url": "https://arxiv.org/abs/2610.09342"
       },
       "change_history": [],
-      "reading_tier": null
+      "reading_tier": "as_needed"
     }
   ]
 }

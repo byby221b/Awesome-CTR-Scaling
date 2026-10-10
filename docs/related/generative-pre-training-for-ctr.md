@@ -10,7 +10,7 @@ Generative objectives and pre-training for discriminative CTR tasks.
 
 <a id="paper-2512-14041"></a>
 
-- **GE4Rec**: GE4Rec introduces supervised feature generation for click prediction, addressing collapse and redundancy in raw-ID feature interactions. An encoder forms hidden feature representations and a decoder regenerates feature embeddings under click-label supervision, allowing existing CTR architectures to adopt richer generative learning rather than relying solely on interactions among their original embeddings. — [Paper](https://arxiv.org/abs/2512.14041) (Tencent · 2025). Reading priority: Unrated.
+- **GE4Rec**: GE4Rec introduces supervised feature generation for click prediction, addressing collapse and redundancy in raw-ID feature interactions. An encoder forms hidden feature representations and a decoder regenerates feature embeddings under click-label supervision, allowing existing CTR architectures to adopt richer generative learning rather than relying solely on interactions among their original embeddings. — [Paper](https://arxiv.org/abs/2512.14041) (Tencent · 2025). Reading priority: Worth reading.
 
 <a id="paper-2506-03699"></a>
 
@@ -18,7 +18,7 @@ Generative objectives and pre-training for discriminative CTR tasks.
 
 <a id="paper-2605-24986"></a>
 
-- **HeteGenCTR**: HeteGenCTR addresses unequal reconstruction difficulty across heterogeneous CTR feature fields, where easy fields can dominate generative training. Learned per-field difficulty controls both loss weighting and attention, directing gradients and cross-field information toward underfit fields through a shared signal; experiments report particularly strong benefits for cold-start and long-tail users. — [Paper](https://arxiv.org/abs/2605.24986) (Alibaba · 2026). Reading priority: Unrated.
+- **HeteGenCTR**: HeteGenCTR addresses unequal reconstruction difficulty across heterogeneous CTR feature fields, where easy fields can dominate generative training. Learned per-field difficulty controls both loss weighting and attention, directing gradients and cross-field information toward underfit fields through a shared signal; experiments report particularly strong benefits for cold-start and long-tail users. — [Paper](https://arxiv.org/abs/2605.24986) (Alibaba · 2026). Reading priority: Worth reading.
 
 <a id="paper-2608-02738"></a>
 
