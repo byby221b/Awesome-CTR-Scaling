@@ -5,7 +5,7 @@
     "description": "Scaling laws and scalable ranking models for industrial recommendation.",
     "repository_url": "https://github.com/byby221b/Awesome-CTR-Scaling",
     "site_url": "https://byby221b.github.io/Awesome-CTR-Scaling/",
-    "updated": "2026-10-09",
+    "updated": "2026-10-10",
     "source_commit": "31ad30becff83ca14a01f37fc99d52ba79f85565",
     "scope": "We cover papers that (1) study scaling laws for recommendation models, (2) propose scalable Transformer-based architectures for CTR/ranking, (3) address efficiency challenges in scaling up industrial ranking systems, or (4) explore novel paradigms (e.g., sparse scaling, generative pre-training, foundation models) for scalable recommendation.",
     "history": {
@@ -1268,6 +1268,30 @@
       "name": "Zyphra",
       "affiliation_aliases": [
         "Zyphra"
+      ],
+      "legacy_entries": []
+    },
+    {
+      "id": "airbnb",
+      "name": "Airbnb",
+      "affiliation_aliases": [
+        "Airbnb"
+      ],
+      "legacy_entries": []
+    },
+    {
+      "id": "sensetime",
+      "name": "SenseTime",
+      "affiliation_aliases": [
+        "SenseTime"
+      ],
+      "legacy_entries": []
+    },
+    {
+      "id": "linkup",
+      "name": "Linkup",
+      "affiliation_aliases": [
+        "Linkup"
       ],
       "legacy_entries": []
     }
@@ -26621,6 +26645,992 @@
       },
       "change_history": [],
       "reading_tier": "as_needed"
+    },
+    {
+      "id": "2610.10556",
+      "title": "LIFT: A Lifecycle-aware Interaction Factorization Transformer for Unified Retrieval and Ranking",
+      "collection": "core",
+      "category": "foundation-models-multi-scenario",
+      "affiliation": "Beijing University of Post and Telecommunications; Southeast University; Xiaohongshu; Independent",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [
+        "Architecture",
+        "Multi-task",
+        "Sequence Modeling"
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.10556"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Cascaded recommender systems use the same user history for retrieval and ranking, while the two stages have access to different information at different points of an interaction. We propose the Lifecycle-aware Interaction Factorization Transformer (LIFT), which decomposes each interaction into ordered Request, Item, Context, and Action states and models them as a causal sequence. Retrieval reads the Request state, while ranking reads the Context state, allowing both tasks to share history modeling while preserving stage-specific information. LIFT instantiates this representation with Role-Conditioned Attention and a lightweight Pre-LN Bias. On ML-20M and Taobao, LIFT achieves the highest Joint Score among the evaluated joint models, improving over the strongest baselines by 4.9% and 3.6%, respectively. Loss-weight sweeps show favorable retrieval--ranking trade-offs, while ablations and scaling analyses further examine lifecycle sequence construction, model components, and capacity settings.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.10556v1",
+        "retrieved_at": "2026-10-09T23:08:07Z",
+        "license": "CC0-1.0",
+        "source_title": "LIFT: A Lifecycle-aware Interaction Factorization Transformer for Unified Retrieval and Ranking",
+        "source_version": "v1"
+      },
+      "summaries": {
+        "en": {
+          "text": "LIFT represents each interaction as a causal sequence of Request, Item, Context, and Action states, sharing history modeling while giving retrieval and ranking different information-appropriate readouts. Role-Conditioned Attention and a lightweight Pre-LN Bias implement this design. On ML-20M and Taobao, its Joint Score improves over the strongest evaluated joint baselines by 4.9% and 3.6%, with loss-weight sweeps examining retrieval–ranking trade-offs. These are offline recommendation results rather than online CTR gains, and its verified first-submission date is September 29, 2026.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-10",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.10556v1"
+          ]
+        },
+        "zh": {
+          "text": "LIFT 将每次交互拆成按因果顺序排列的 Request、Item、Context 和 Action 状态，在共享历史建模的同时，为召回和排序提供符合各自信息可用性的读出位置。模型使用角色条件注意力和轻量 Pre-LN Bias 实现这一设计。在 ML-20M 和 Taobao 上，其 Joint Score 相对所评估的最强联合基线分别提升 4.9% 和 3.6%，并通过损失权重扫描分析召回与排序的权衡。这些是离线推荐结果，并非线上 CTR 提升；核验后的首次提交日期为 2026 年 9 月 29 日。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-10",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.10556v1"
+          ]
+        }
+      },
+      "source_dates": {
+        "published_at": "2026-09-29T05:50:33Z",
+        "updated_at": "2026-09-29T05:50:33Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.10556v1",
+        "verified_at": "2026-10-09T23:08:07Z"
+      },
+      "added_at": "2026-10-10T07:50:10Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.10556"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2610.11317",
+      "title": "DivMoE: Fine-Grained MoE Upcycling via Cross-Domain Expert Composition",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "School of Computing, National University of Singapore, Singapore; Department of Computer Science and Engineering, Shanghai Jiao Tong University, Shanghai, China",
+      "venue": "NeurIPS",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.11317"
+        },
+        {
+          "label": "Publication",
+          "url": "https://neurips.cc/virtual/2026/poster/153517"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Mixture-of-Experts (MoE) architectures have become essential for scaling large language models, with recent work demonstrating the benefits of fine-grained expert designs. Training such models from scratch is expensive, and sparse upcycling from pre-trained dense models is an attractive alternative. However, we identify a structural pathology of fine-grained upcycling: when fine-grained experts are derived from a single source model, naive routing collapses and downstream accuracy drops to near-random (e.g., on Qwen3-1.7B, Drop-Upcycling-fine-grained reaches only 23.2% average accuracy across 15 benchmarks, essentially matching from-scratch training at 22.2%, while the same method's coarse-grained variant reaches 50.2%). We propose DivMoE, the first framework achieving fine-grained MoE Upcycling with structurally-balanced routing. DivMoE introduces domain-specialized fine-grained expert initialization, deriving experts from dense models that have undergone domain-adaptive continual pre-training, and diversity-constrained routing, a hard structural constraint guaranteeing that each token activates experts from distinct domain groups. Across two base models and 15 benchmarks, DivMoE consistently outperforms six upcycling baselines (55.6% vs. 51.6% for the strongest baseline on Qwen3-1.7B) and strictly improves over the dense base model on every benchmark after Stage 2 continual pre-training -- closing the regression gap that has plagued prior fine-grained upcycling. After supervised fine-tuning on a public reasoning mixture, our 12B-parameter DivMoE model matches Moonlight-MoE (16B) at 64.5% average accuracy while outperforming a controlled NVIDIA-Upcycling baseline by 6.1 percentage points.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.11317v1",
+        "retrieved_at": "2026-10-09T23:08:22Z",
+        "license": "CC0-1.0",
+        "source_title": "DivMoE: Fine-Grained MoE Upcycling via Cross-Domain Expert Composition",
+        "source_version": "v1"
+      },
+      "summaries": {
+        "en": {
+          "text": "DivMoE addresses routing collapse when fine-grained MoE experts are upcycled from a single dense model. It initializes experts from domain-specialized dense models and constrains each token to select experts from distinct domain groups. Across two base models and 15 language-model benchmarks, it reports 55.6% versus 51.6% average accuracy for the strongest baseline on Qwen3-1.7B; a 12B variant reaches 64.5% after supervised fine-tuning. Applying this expert-diversity design to recommendation is a transfer hypothesis, not demonstrated CTR evidence.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-10",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.11317v1"
+          ]
+        },
+        "zh": {
+          "text": "DivMoE 针对从单一稠密模型构造细粒度 MoE 专家时出现的路由塌缩问题。它从领域专门化的稠密模型初始化专家，并强制每个 token 激活来自不同领域组的专家。在两个基础模型、15 项语言模型基准上，Qwen3-1.7B 设置的平均准确率为 55.6%，最强基线为 51.6%；12B 版本经过监督微调后达到 64.5%。将专家多样性设计迁移到推荐系统属于方法推断，论文未提供 CTR 实验证据。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-10",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.11317v1"
+          ]
+        }
+      },
+      "source_dates": {
+        "published_at": "2026-10-08T06:23:01Z",
+        "updated_at": "2026-10-08T06:23:01Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.11317v1",
+        "verified_at": "2026-10-09T23:08:22Z"
+      },
+      "added_at": "2026-10-10T07:50:10Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.11317"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2610.11575",
+      "title": "Smoothing the Top-k Exposure Boundary for Sparse Mixture-of-Experts",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "Shanghai AI Laboratory, Shanghai, China; Shanghai Jiao Tong University, Shanghai, China; Nanyang Technological University, Singapore",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.11575"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Sparse Mixture-of-Experts models scale parameter capacity efficiently while maintaining a fixed compute budget per token. However, traditional training paradigms enforce a static choice of top-$k$ experts, which converts a continuous routing distribution into a rigid step function. This constraint introduces a brittle boundary where highly competitive experts are arbitrarily separated into full-supervision and zero-feedback zones based on minor score fluctuations. To address this issue, we propose Elastic Expert Routing, which stochastically samples the active expert budget from a localized discrete distribution centered at $k$. Over multiple training iterations, this mechanism softens the sharp threshold into a gradual probability distribution. Because the sampling neighborhood remains symmetric, this approach matches the expected computational cost of deterministic training, while preserving the inference budget. Extensive experiments demonstrate the efficacy of our method on both supervised fine-tuning and from-scratch pretraining settings. During supervised fine-tuning, elastic routing improves downstream macro-averages on OLMoE-1B-7B and Qwen3-30B-A3B by $+0.84$ and $+2.02$ points, respectively. In addition, in from-scratch pretraining, it outperforms the static top-$k$ baseline by $1.6$ points on average across downstream tasks.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.11575v1",
+        "retrieved_at": "2026-10-09T23:08:37Z",
+        "license": "CC0-1.0",
+        "source_title": "Smoothing the Top-k Exposure Boundary for Sparse Mixture-of-Experts",
+        "source_version": "v1"
+      },
+      "summaries": {
+        "en": {
+          "text": "Elastic Expert Routing softens the training-time top-k boundary by sampling the active expert count from a local symmetric distribution around k. This matches the expected expert-compute budget while retaining a fixed inference budget. The paper reports supervised-fine-tuning macro-average gains of 0.84 and 2.02 points on OLMoE-1B-7B and Qwen3-30B-A3B, plus a 1.6-point gain in from-scratch pretraining. Its relevance to recommendation MoE training is inferred; the evaluations do not establish CTR gains.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-10",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.11575v1"
+          ]
+        },
+        "zh": {
+          "text": "Elastic Expert Routing 在训练时从以 k 为中心的局部对称分布中采样激活专家数量，缓和固定 top-k 边界带来的监督突变。该设计匹配期望专家计算预算，同时保持固定的推理预算。论文报告 OLMoE-1B-7B 和 Qwen3-30B-A3B 监督微调后的下游宏平均分别提升 0.84 和 2.02 个点，从头预训练提升 1.6 个点。它对推荐 MoE 训练的借鉴价值属于推断，实验没有验证 CTR 提升。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-10",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.11575v1"
+          ]
+        }
+      },
+      "source_dates": {
+        "published_at": "2026-10-08T09:31:19Z",
+        "updated_at": "2026-10-08T09:31:19Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.11575v1",
+        "verified_at": "2026-10-09T23:08:37Z"
+      },
+      "added_at": "2026-10-10T07:50:10Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.11575"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2610.11214",
+      "title": "Bridging KV-Cache Quantization and Linear Attention: From Theory to Pretrained Weight Migration",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "The Chinese University of Hong Kong",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.11214"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "KV-cache quantization and linear attention are two representative approaches to tackling the storage and computational costs of Transformers. KV-cache quantization compresses individual KV entries into discrete codes but retains all entries, whereas linear attention recurrently aggregates multiple historical KV contributions into a fixed-size continuous state but can introduce interference. This contrast raises the question of whether per-KV compression and multi-KV aggregation can be bridged within a single mechanism for efficient attention. We identify RAM-Net as such a bridge through soft assignments over a discrete address space. These assignments determine recurrent updates to the continuous slot state associated with each address. Under a restricted RAM-Net construction, we prove that soft address assignments extend hard quantized matching to a separable read-write overlap that locally approximates full-attention similarity and supports recurrent aggregation. These connections further enable Transformer-to-RAM-Net weight migration through a new path based on a soft-quantized intermediate construction. Across nine pretrained Transformer models from 0.3B to 7B parameters, RAM-Net recovers an average of 87.1% of the teachers' accuracy gains over random guessing across six commonsense and knowledge tasks using only a 500M-token budget per model.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.11214v1",
+        "retrieved_at": "2026-10-09T23:08:51Z",
+        "license": "CC0-1.0",
+        "source_title": "Bridging KV-Cache Quantization and Linear Attention: From Theory to Pretrained Weight Migration",
+        "source_version": "v1"
+      },
+      "summaries": {
+        "en": {
+          "text": "This work connects KV-cache quantization and linear attention through RAM-Net soft assignments over discrete addresses with recurrent continuous slot states. Under a restricted construction, the read–write overlap locally approximates full-attention similarity and enables a soft-quantized intermediate path for pretrained-weight migration. Across nine 0.3B–7B teachers and six commonsense/knowledge tasks, migration with 500M tokens per model recovers 87.1% of teacher accuracy gains above random guessing on average. Reusing the mechanism for long recommendation histories is an inference, not CTR evidence.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-10",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.11214v1"
+          ]
+        },
+        "zh": {
+          "text": "该工作通过 RAM-Net 的离散地址软分配与连续槽位状态递归更新，连接 KV-cache 量化和线性注意力。在受限构造下，读写分配的重叠可以局部近似完整注意力相似度，并支持经由软量化中间结构迁移预训练权重。对 9 个规模为 0.3B–7B 的教师模型，每个使用 500M token 迁移，在 6 项常识与知识任务上平均恢复教师相对随机猜测准确率增益的 87.1%。将其用于推荐长历史建模属于迁移推断，并非 CTR 实验证据。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-10",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.11214v1"
+          ]
+        }
+      },
+      "source_dates": {
+        "published_at": "2026-10-08T04:12:49Z",
+        "updated_at": "2026-10-08T04:12:49Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.11214v1",
+        "verified_at": "2026-10-09T23:08:51Z"
+      },
+      "added_at": "2026-10-10T07:50:10Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.11214"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2610.11201",
+      "title": "PageWeaver: KV-Guided Query Unions for Sparse Attention",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "SenseTime",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.11201"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Dynamic sparse attention limits the KV pages selected by each query, but a small support does not necessarily yield efficient GPU work. Query unions share page loads and populate Tensor Core tiles; their cost depends on which queries are grouped together. We present PageWeaver, an execution design that uses selected-page affinity to assemble query groups while preserving each query's original support and complete output ownership. A bounded GPU search produces query IDs, and an ID-aware two-CTA kernel consumes them without materializing reordered Q tensors or cross-page partial outputs. A direct KV-page union implementation provides a complementary design study of nonlocal reuse and reduction cost. With FP8 KV throughout, the H200 Union8 implementation achieves a 1.70x geometric-mean complete-call speedup over the measured FlashInfer path on six captures. Online regrouping further lowers latency by 3.26-7.66% on five selected 64K-context captures. Whole-model prefill throughput is 7.88-14.36% above the tested native path; the incremental regrouping benefit is smaller, with observed median gains of 0.47-0.73% at 32K/64K and regressions at 8K. A B300 comparison identifies cases where preparation cost and a stronger native kernel remove the advantage. These results separate execution-group reuse from the complete cost of exploiting it online.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.11201v1",
+        "retrieved_at": "2026-10-09T23:09:10Z",
+        "license": "CC0-1.0",
+        "source_title": "PageWeaver: KV-Guided Query Unions for Sparse Attention",
+        "source_version": "v1"
+      },
+      "summaries": {
+        "en": {
+          "text": "PageWeaver groups sparse-attention queries by selected-KV-page affinity while preserving each query’s original support and output ownership. On H200 with FP8 KV, its Union8 implementation reports a 1.70× geometric-mean complete-call speedup over the measured FlashInfer path across six captures. Whole-model prefill throughput is 7.88–14.36% above the tested native path, but incremental regrouping adds only 0.47–0.73% median throughput at 32K/64K and regresses at 8K; B300 results also show limits. Recommendation-serving applicability is an inference, not measured CTR or recommendation-system evidence.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-10",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.11201v1"
+          ]
+        },
+        "zh": {
+          "text": "PageWeaver 按所选 KV 页面之间的亲和性对稀疏注意力查询分组，同时保留每个查询原有的注意力支持集与输出归属。在 H200、FP8 KV 设置下，Union8 相对所测 FlashInfer 路径在 6 个捕获输入上的完整算子调用几何平均加速为 1.70 倍。全模型 prefill 吞吐量比所测原生路径高 7.88%–14.36%，但额外在线重分组在 32K/64K 下仅增加 0.47%–0.73% 的吞吐量中位数，8K 下反而退化，B300 实验也显示局限。它对推荐服务的价值属于推断，没有 CTR 或推荐系统实验证据。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-10",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.11201v1"
+          ]
+        }
+      },
+      "source_dates": {
+        "published_at": "2026-10-08T04:04:52Z",
+        "updated_at": "2026-10-08T04:04:52Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.11201v1",
+        "verified_at": "2026-10-09T23:09:10Z"
+      },
+      "added_at": "2026-10-10T07:50:10Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.11201"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2610.11158",
+      "title": "Zepp: Accelerating Distributed MoE Serving under Relaxed Balance Constraints",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "UCSD; Stanford University; ETH Zürich; NVIDIA",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.11158"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "As Mixture-of-Experts (MoE) models continue to scale, serving them increasingly relies on expert parallelism (EP) across a growing number of devices. Yet skewed expert workloads create imbalance across computation, communication, and memory, making load balancing a central optimization objective in distributed MoE serving. We observe that balance is not free: operations introduced to balance one dimension can themselves be expensive or imbalanced. This motivates us to rethink balance as a constraint rather than an optimization objective. We present Zepp, which directly optimizes the bottleneck communication in distributed MoE serving subject to simplified balance constraints on physical resources, i.e., GPUs and NICs. Zepp progressively optimizes inter-node communication across placement, routing, and execution. It first places expert replicas to reduce token communication under GPU constraints, then reshapes communication flows through split and merge primitives under NIC constraints, and finally partitions and schedules ex- pert computation to overlap the resulting communication. To adapt to dynamic workloads, Zepp jointly coordinates computation, token communication, and expert-weight movement at each iteration. Together, these designs allow Zepp to pursue the most efficient execution rather than a single-dimension balanced one. We implement Zepp and evaluate it against 7 state-of-the-art MoE serving systems, achieving up to 6.68$\\times$ MoE layer speedup and a geometric mean speedup of 1.86$\\times$ over the fastest competing baseline.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.11158v1",
+        "retrieved_at": "2026-10-09T23:09:25Z",
+        "license": "CC0-1.0",
+        "source_title": "Zepp: Accelerating Distributed MoE Serving under Relaxed Balance Constraints",
+        "source_version": "v1"
+      },
+      "summaries": {
+        "en": {
+          "text": "Zepp treats load balance as a resource constraint and directly optimizes bottleneck communication in distributed MoE serving. It coordinates expert-replica placement, split/merge communication, execution scheduling, and dynamic intra-node expert movement. Against seven systems it reports up to 6.68× MoE-layer speedup and 1.86× geometric-mean speedup over the fastest competitor; the maximum 6.68× is specifically against A2AV+GEMM, not the fastest competing baseline. Transfer to distributed recommendation MoEs is a systems hypothesis, with no CTR evaluation.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-10",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.11158v1"
+          ]
+        },
+        "zh": {
+          "text": "Zepp 将负载均衡视为资源约束，直接优化分布式 MoE 服务中的通信瓶颈。它协同设计专家副本放置、split/merge 通信、执行调度及动态节点内专家移动。相对 7 种系统，论文报告最高 6.68 倍的 MoE 层加速，以及相对最快竞争基线 1.86 倍的几何平均加速；其中 6.68 倍的比较对象具体是 A2AV+GEMM，而非最快竞争基线。将其用于分布式推荐 MoE 属于系统层面的迁移设想，论文未开展 CTR 评测。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-10",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.11158v1"
+          ]
+        }
+      },
+      "source_dates": {
+        "published_at": "2026-10-08T03:19:33Z",
+        "updated_at": "2026-10-08T03:19:33Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.11158v1",
+        "verified_at": "2026-10-09T23:09:25Z"
+      },
+      "added_at": "2026-10-10T07:50:10Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.11158"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2610.11501",
+      "title": "Beyond Sequences: Distilling Structured Decision Memory for LLM Recommendation",
+      "collection": "related",
+      "category": "long-sequence-modeling",
+      "affiliation": "Alibaba Group, Hangzhou, China",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.11501"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Despite the adoption of large language models (LLMs) in recommendation systems, prevailing approaches mostly model single-type behaviors (e.g., views or purchases). Even when incorporating multiple behaviors, existing methods flatten heterogeneous actions into homogeneous token sequences, ignoring their distinct decision-making roles. This flattening fails to capture semantic hierarchies and contextual nuances in complex decision-making, such as trade-offs between price and quality. Consequently, performance degrades in critical ``difficult-choice'' scenarios involving highly similar items. To bridge this gap, we propose MARI (Memory-Augmented Recommendation with Interpretability), which grounds predictions in explicit, structured decision evidence. MARI maintains a Decision Memory Bank (DMB) that archives users' past rationales as Structured Decision Memories (SDMs): concise records of goals, constraints, and trade-offs. These SDMs are generated offline via Post-Hoc Decision Distillation from heterogeneous behaviors and user-generated content. By retrieving relevant SDMs to augment LLM reasoning, MARI achieves interpretability and scalability without the prohibitive cost of processing long raw sequences. Extensive experiments show MARI significantly outperforms state-of-the-art baselines on standard next-item prediction and a newly introduced Difficult Choice Prediction task, incurring low latency overhead by decoupling memory construction from online inference. Qualitative analyses reveal actionable, human-readable insights into user decision-making, marking a concrete step toward reasoning-aware recommendation systems.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.11501v1",
+        "retrieved_at": "2026-10-09T23:09:39Z",
+        "license": "CC0-1.0",
+        "source_title": "Beyond Sequences: Distilling Structured Decision Memory for LLM Recommendation",
+        "source_version": "v1"
+      },
+      "summaries": {
+        "en": {
+          "text": "MARI builds a Decision Memory Bank of structured user goals, constraints, and trade-offs distilled offline from heterogeneous behaviors and user-generated content. Retrieved memories then augment LLM recommendation without repeatedly processing full raw histories. The paper reports improvements in offline next-item prediction and its newly introduced Difficult Choice Prediction task, with interpretable memory records and low reported latency overhead. This is direct recommendation research, but its purchase-target Hit@1 evidence should not be described as online CTR improvement.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-10",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.11501v1"
+          ]
+        },
+        "zh": {
+          "text": "MARI 从异构行为与用户生成内容中离线蒸馏用户目标、约束和权衡，构建结构化决策记忆库。在线检索相关记忆增强 LLM 推荐，减少反复处理完整原始历史的需求。论文报告其在离线下一物品预测及新提出的 Difficult Choice Prediction 任务上取得提升，并强调记忆的可读性和较低延迟开销。这是直接的推荐研究，但以购买为目标的 Hit@1 结果不能表述为线上 CTR 提升。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-10",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.11501v1"
+          ]
+        }
+      },
+      "source_dates": {
+        "published_at": "2026-10-08T08:40:35Z",
+        "updated_at": "2026-10-08T08:40:35Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.11501v1",
+        "verified_at": "2026-10-09T23:09:39Z"
+      },
+      "added_at": "2026-10-10T07:50:10Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.11501"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2610.10871",
+      "title": "Sparse Attention Is Matrix Approximation, Not Choosing from a Bag of Values",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "Stony Brook University; Duke University",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.10871"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Large Language Models (LLMs) achieve strong performance across many domains, but their efficiency is limited by the quadratic cost of attention with respect to prompt length. Sparse attention reduces this cost by retaining only a small fraction of query-key interactions to approximate the full attention matrix. However, existing methods are trapped in a mathematically wrong view: they simply keep large scalar entries or high-mass regions of the attention matrix. This treats the attention matrix as a bag of values, ignoring that it is used as a structured matrix whose entries jointly determine the attention output through multiplication with value vectors. We argue that this is the core conceptual issue: sparse attention should be formulated as matrix approximation, not as blindly choosing the largest values from a bag of entries. Based on this view, we propose Matrix Approximation Sparse Attention (MASA). MASA replaces raw attention-mass ranking with a closed-form score that measures how much each sparse unit reduces matrix-product approximation error. As a theory-grounded plug-in correction, MASA can be added to existing sparse attention frameworks without changing their sparse kernels or budgets. Extensive experiments across multiple sparse attention methods, benchmarks, and LLM backbones show consistent accuracy gains, supporting both MASA and the matrix-approximation view of sparse attention.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.10871v1",
+        "retrieved_at": "2026-10-09T23:09:58Z",
+        "license": "CC0-1.0",
+        "source_title": "Sparse Attention Is Matrix Approximation, Not Choosing from a Bag of Values",
+        "source_version": "v1"
+      },
+      "summaries": {
+        "en": {
+          "text": "MASA reframes sparse-attention selection as preserving a matrix–value product rather than selecting entries solely by attention magnitude. It replaces sparse-unit ranking with a closed-form approximation-error reduction score while retaining existing sparse kernels and budget rules. Experiments across multiple sparse-attention methods, LLM backbones, and long-context benchmarks report consistent average-score gains with negligible measured scoring overhead. Using this selection criterion for long recommendation histories remains a transfer inference, not demonstrated CTR evidence.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-10",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.10871v1"
+          ]
+        },
+        "zh": {
+          "text": "MASA 将稀疏注意力选择重新表述为保持矩阵与值向量乘积，而非仅按注意力数值大小筛选。它用闭式的近似误差下降分数替换稀疏单元排序，同时保持原有稀疏内核和预算规则。多个稀疏注意力方法、LLM 骨干及长上下文基准的实验显示平均分数持续改善，实测新增打分开销可忽略。将该准则迁移到推荐长历史建模仍属方法推断，论文没有 CTR 实验证据。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-10",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.10871v1"
+          ]
+        }
+      },
+      "source_dates": {
+        "published_at": "2026-10-07T20:17:13Z",
+        "updated_at": "2026-10-07T20:17:13Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.10871v1",
+        "verified_at": "2026-10-09T23:09:58Z"
+      },
+      "added_at": "2026-10-10T07:50:10Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.10871"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2610.07940",
+      "title": "Hybrid Latent Attention for Looped Language Models",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "Virginia Tech; Independent Researcher",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.07940"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Looped language models apply the same stack of layers T times to each token, which deepens the model without adding parameters but multiplies its key-value (KV) cache by T. The larger cache limits how many sequences a GPU can decode at once and slows each decoding step, which reads the whole cache. We propose Hybrid Latent Attention (HLA), which keeps exact keys and values within a sliding window of W recent tokens and stores each older token as a compact latent that the query of each loop reads directly, without reconstructing keys and values. We uptrain HLA on Ouro looped models (T=4) with 1.4B and 2.6B parameters, keeping the pretrained weights frozen and training only the added parameters to reproduce the original attention. The cache shrinks by 10.7x per token, fitting 4.0-8.8x as many concurrent sequences per GPU, and decoding throughput improves by 2.5x at 1K-token contexts and by up to 7.4x at 16K. HLA retains over 97% of the original accuracy on math, knowledge and reasoning benchmarks, and 96-100% on long-context retrieval up to 16K tokens. After supervised fine-tuning, it performs on par with the fine-tuned original model on competition-level math.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.07940v1",
+        "retrieved_at": "2026-10-09T23:10:13Z",
+        "license": "CC0-1.0",
+        "source_title": "Hybrid Latent Attention for Looped Language Models",
+        "source_version": "v1"
+      },
+      "summaries": {
+        "en": {
+          "text": "Hybrid Latent Attention reduces the KV-cache multiplication caused by reusing Transformer layers across loops. It retains exact recent keys and values in a sliding window and stores older tokens as directly readable compact latents. On frozen 1.4B and 2.6B Ouro backbones with four loops, the authors report a 10.7× cache reduction per token and retention of over 97% of original accuracy on their math, knowledge, and reasoning benchmarks. The design suggests a cache-sharing direction for recurrent recommendation architectures; no CTR experiment is reported.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-10",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.07940v1"
+          ]
+        },
+        "zh": {
+          "text": "循环复用Transformer层会按循环次数扩大键值缓存。HLA保留窗口内的精确键值，把更早的token存成可直接读取的紧凑隐表示；在四轮循环的1.4B/2.6B Ouro模型上，作者报告每token缓存缩小10.7倍，数学、知识与推理基准保留原模型97%以上准确率。可借鉴其循环架构的缓存压缩方法，但论文未验证CTR任务。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-10",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.07940v1"
+          ]
+        }
+      },
+      "source_dates": {
+        "published_at": "2026-10-06T08:14:07Z",
+        "updated_at": "2026-10-06T08:14:07Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.07940v1",
+        "verified_at": "2026-10-09T23:10:13Z"
+      },
+      "added_at": "2026-10-10T07:50:10Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.07940"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2610.10623",
+      "title": "Recurrent Self-Improvement: Dynamic Cross-Loop On-Policy Distillation for Looped Language Models",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "ShanghaiTech University; Fudan University; Southeast University; Peking University",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.10623"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Looped Language Models (LoopLMs) offer a parameter efficient approach to scaling reasoning by reusing shared parameters across recurrent computation steps. Despite their promise, effective post-training of LoopLMs remains challenging. Existing approaches either provide reward based supervision that is sparse or costly to extend across loops, or rely on external teachers or privileged information, leading to limited teacher availability or teacher-student context mismatch. To address these limitations, we introduce LoopOPD, a cross-loop on-policy distillation framework that uses additional recurrent computation within a LoopLM as its own source of supervision. LoopOPD uses a frozen terminal loop policy as a compute privileged teacher for an intermediate loop student on student generated rollouts, providing dense supervision without an external teacher or privileged information. We further propose Dynamic LoopOPD (D-LoopOPD), which continually refreshes the terminal loop teacher as the shared model parameters are updated, enabling recurrent self-improvement. We characterize how distillation updates propagate across loop depths and derive sufficient conditions under which a single update yields simultaneous local improvement at both loop depths. Experiments on Ouro-Thinking models show that LoopOPD improves mathematical reasoning, while D-LoopOPD yields further gains through dynamic teacher updates. Despite being trained only on mathematical data, the resulting models also improve on general reasoning and code generation benchmarks, demonstrating that recurrent computation can serve as an effective source of supervision for LoopLMs. Our code and model checkpoints will be released upon acceptance.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.10623v1",
+        "retrieved_at": "2026-10-09T23:10:30Z",
+        "license": "CC0-1.0",
+        "source_title": "Recurrent Self-Improvement: Dynamic Cross-Loop On-Policy Distillation for Looped Language Models",
+        "source_version": "v1"
+      },
+      "summaries": {
+        "en": {
+          "text": "LoopOPD trains an intermediate loop of a shared-parameter language model from a terminal-loop teacher using student-generated rollouts. Its dynamic variant refreshes the teacher as the shared model changes, turning extra recurrent computation into a source of dense distillation supervision. Experiments on Ouro-Thinking models report gains in mathematical reasoning and transfer to general reasoning and code tasks. This offers a possible training-compute versus inference-depth trade-off for recurrent ranking models, but that recommendation application remains untested.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-10",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.10623v1"
+          ]
+        },
+        "zh": {
+          "text": "LoopOPD让共享参数模型的较浅循环向终端循环学习，用学生自己生成的轨迹获得密集蒸馏信号；动态版本随模型更新刷新教师。Ouro-Thinking实验报告数学推理改善，并迁移到一般推理和代码任务。它提供了用额外训练计算改善较浅推理路径的思路，应用于循环排序模型仍需验证。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-10",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.10623v1"
+          ]
+        }
+      },
+      "source_dates": {
+        "published_at": "2026-10-07T08:54:30Z",
+        "updated_at": "2026-10-07T08:54:30Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.10623v1",
+        "verified_at": "2026-10-09T23:10:30Z"
+      },
+      "added_at": "2026-10-10T07:50:10Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.10623"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2610.07809",
+      "title": "MASKerade: Token-Routed Mask Experts for Dense-to-MoE Upcycling",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "Northeastern University",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.07809"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Sparsely activated Mixture-of-Experts (MoE) models increase model capacity without a proportional increase in per-token computation. Dense-to-MoE upcycling reuses pretrained dense models to construct such systems, commonly by copying feed-forward networks (FFNs) into independently trained experts. We introduce MASKerade, a dense-to-MoE training method that instead learns experts as sparse subnetworks of a frozen pretrained FFN. Each expert is defined by a learned binary mask, and a token-level router selects which masked FFNs to execute and combine. The router and mask scores are optimized jointly, while the underlying FFN weight values remain unchanged. This formulation supports neuron-structured, semi-structured, and unstructured experts within the same routing architecture. Our main configuration uses four 2:4 experts with top-2 routing, where two half-dense expert passes have the nominal FFN arithmetic of one dense pass, without requiring independent expert weight matrices. On five vision-language benchmarks with Qwen and Gemma backbones, this configuration achieves the highest performance among the compared baselines. Comparisons across mask granularities, routing interventions, and compute-matched controls distinguish the effects of learned connectivity from expert activation count. These results establish mask learning over frozen weights as a practical alternative for constructing token-routed MoE experts.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.07809v1",
+        "retrieved_at": "2026-10-09T23:10:44Z",
+        "license": "CC0-1.0",
+        "source_title": "MASKerade: Token-Routed Mask Experts for Dense-to-MoE Upcycling",
+        "source_version": "v1"
+      },
+      "summaries": {
+        "en": {
+          "text": "MASKerade constructs token-routed experts as learned sparse masks over a frozen dense feed-forward network, rather than storing independent expert weight matrices. Jointly trained routing and binary-mask scores support several sparsity granularities; the main setup selects two of four half-dense 2:4 experts. Five vision-language benchmarks and compute-matched controls examine the benefit of learned connectivity. The method is relevant to memory-conscious MoE expansion in ranking, but nominal arithmetic equivalence does not establish equal serving latency or CTR gains.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-10",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.07809v1"
+          ]
+        },
+        "zh": {
+          "text": "MASKerade在冻结的稠密前馈网络上学习二值掩码，用不同稀疏子网充当专家，并联合训练token路由。主配置从四个2:4半稠密专家中激活两个，无需分别保存专家权重；论文用五个视觉语言基准和计算量匹配对照检验方法。可用于思考排序MoE的存储开销，但名义运算量相同不等于实际延迟相同，也没有CTR收益证据。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-10",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.07809v1"
+          ]
+        }
+      },
+      "source_dates": {
+        "published_at": "2026-10-06T06:04:38Z",
+        "updated_at": "2026-10-06T06:04:38Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.07809v1",
+        "verified_at": "2026-10-09T23:10:44Z"
+      },
+      "added_at": "2026-10-10T07:50:10Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.07809"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2610.07810",
+      "title": "SIFT: Search Intent-to-Filter Transformer for Multi-Task Personalized Filter Ranking at Airbnb",
+      "collection": "core",
+      "category": "foundation-models-multi-scenario",
+      "affiliation": "Airbnb",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [
+        "Architecture",
+        "Multi-task",
+        "User Modeling",
+        "Serving"
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.07810"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Search filters help guests navigate vast catalogs in two-sided marketplaces like Airbnb, and recommending the right filters can meaningfully lift booking conversion. Many such production filter-ranking systems, however, represent the guest through hand-engineered, pre-aggregated features generated by ETL pipelines. This makes it expensive to maintain and difficult to extend for new filter types or contextual dimensions (trip length, group size). We present SIFT (Search Intent-to-Filter Transformer), a ranking model built on transformers that learns guest preferences directly from raw behavioral sequences. SIFT replaces manual feature engineering with a unified guest representation that feeds multiple prediction tasks, including booking likelihood, filter engagement, and ordinal capacity thresholds (e.g., 2+ bedrooms) -- a general framework for filter ranking in two-sided marketplaces that accommodates both boolean and numeric-range filter types. Extending SIFT to new filters requires only adding a new head, not a new feature pipeline. To keep serving fast, this guest representation is computed offline on a daily cadence rather than at request time. Offline, SIFT improves booking and amenity-engagement PR-AUC by +51.9% and +62.8% respectively over the production baseline. In online A/B testing, SIFT increased engagement with recommended filters by +20.0%, overall filter usage among searchers by +0.72%, and usage of the newly-supported bedroom, bathroom, and bed filters by +3.9%, +10.7%, and +0.52% respectively. Demonstrating the system's extensibility, we rapidly integrated a novel hotel-intent filter using the same shared representation, driving a +3.8% lift in uncancelled hotel bookings and a +0.76% lift in overall marketplace bookings. SIFT is now fully deployed in production, serving scalable personalization to millions of guests.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.07810v1",
+        "retrieved_at": "2026-10-09T23:10:59Z",
+        "license": "CC0-1.0",
+        "source_title": "SIFT: Search Intent-to-Filter Transformer for Multi-Task Personalized Filter Ranking at Airbnb",
+        "source_version": "v1"
+      },
+      "summaries": {
+        "en": {
+          "text": "SIFT learns a shared guest representation directly from behavioral sequences for multi-task filter ranking at Airbnb. Booking, engagement, and ordinal-capacity prediction heads reuse this representation; adding filter types does not require a new hand-engineered feature pipeline. Daily offline user encoding keeps representation computation off the request path, and the authors report deployed online gains in filter engagement and a separate hotel-intent extension. It is a concrete example of scaling shared user modeling while controlling serving cost, with freshness limited by the daily encoding cadence.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-10",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.07810v1"
+          ]
+        },
+        "zh": {
+          "text": "Airbnb的SIFT直接从行为序列学习共享用户表示，供预订、筛选项互动和容量阈值等任务使用，扩展筛选项时只需增加预测头。用户编码每天离线计算，避免把重模型放到请求路径；作者报告了已部署系统的线上筛选互动收益及酒店意图扩展实验。可借鉴共享表征与多任务扩展方式，同时注意每日更新带来的新鲜度限制。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-10",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.07810v1"
+          ]
+        }
+      },
+      "source_dates": {
+        "published_at": "2026-10-06T06:05:45Z",
+        "updated_at": "2026-10-06T06:05:45Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.07810v1",
+        "verified_at": "2026-10-09T23:10:59Z"
+      },
+      "added_at": "2026-10-10T07:50:10Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.07810"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2610.04140",
+      "title": "ExpertMuon-Compass: Alignment-Guided Step Sizes for Mixture-of-Experts Training",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "University of Texas at Austin",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.04140"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Mixture-of-experts (MoE) language models send each token to a few experts, so each expert is trained on a different part of the data, and this part changes during training. With a shared learning rate, Muon applies updates of roughly the same size to expert matrices of the same shape, even when an expert's update is poorly aligned with its current gradient. We here propose ExpertMuon-Compass (Compass), which multiplies the Muon step of each expert by two factors. A family factor compares the cosine between the expert's orthogonalized update and its gradient with the same cosine for the other experts in its layer. A scalar radius aggregates the alignment between corresponding rows of the update and gradient into one step-length multiplier. Compass keeps the update direction and the momentum buffer of Muon. In pretraining on FineWeb-Edu, Compass with Nesterov momentum on all matrices performs as well as or better than Muon, NorMuon, and other optimizers, with weight decay matched to NorMuon in the longer runs. Adding its factors to NorMuon gives the same or a lower loss than NorMuon. Compass is the most effective when the data seen by each expert varies during training, for example, as when the languages of a multilingual corpus arrive in separate blocks. With Compass, the expert load stays balanced, and the router assigns tokens to experts more decisively. We also prove a perturbation bound for the two factors.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.04140v1",
+        "retrieved_at": "2026-10-09T23:11:14Z",
+        "license": "CC0-1.0",
+        "source_title": "ExpertMuon-Compass: Alignment-Guided Step Sizes for Mixture-of-Experts Training",
+        "source_version": "v1"
+      },
+      "summaries": {
+        "en": {
+          "text": "ExpertMuon-Compass adapts Muon step lengths separately for MoE experts whose token distributions change during training. It combines layer-relative gradient/update alignment with a row-alignment radius while retaining Muon's update direction and momentum state. FineWeb-Edu and changing multilingual-data experiments compare it with Muon, NorMuon, and other optimizers. It suggests an optimization control for heterogeneous routed training in recommendation, although the reported evidence is from language models rather than CTR systems.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-10",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.04140v1"
+          ]
+        },
+        "zh": {
+          "text": "不同专家接收的数据随路由变化，共用学习率未必适合每个专家。Compass依据梯度与更新方向的对齐程度调整专家步长，同时保留Muon的更新方向和动量；论文在FineWeb-Edu及语言分布变化的训练中比较多个优化器。其专家级步长控制可为推荐MoE训练提供参考，现有实验证据来自语言模型。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-10",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.04140v1"
+          ]
+        }
+      },
+      "source_dates": {
+        "published_at": "2026-10-02T23:27:50Z",
+        "updated_at": "2026-10-02T23:27:50Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.04140v1",
+        "verified_at": "2026-10-09T23:11:14Z"
+      },
+      "added_at": "2026-10-10T07:50:10Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.04140"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2607.24015",
+      "title": "Mosaic: A Fleet of User Embedding Specialists for Recommendation at Meta",
+      "collection": "core",
+      "category": "foundation-models-multi-scenario",
+      "affiliation": "Meta",
+      "venue": "RecSys (Industry)",
+      "year": 2026,
+      "tags": [
+        "Architecture",
+        "Foundation Model",
+        "User Modeling",
+        "Serving"
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2607.24015"
+        },
+        {
+          "label": "Publication",
+          "url": "https://recsys.acm.org/recsys26/posters-2/"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "User representation is one of the highest-leverage modeling problems in industrial recommendation systems: a single advancement in how users are encoded can propagate across retrieval, ranking, and integrity tasks at platform scale. Prior industrial user representation work builds either a single user model that emits one or more embedding vectors or a shared backbone with task-specific adaptation. In this paper, we present Mosaic, a foundational user modeling platform that employs a fleet of specialists to learn user embeddings. The fleet comprises four architecturally diverse model families - memorization-driven, dense-heavy, sequential-based, and CoTrain models - each focusing on a distinct facet of user behavior. We developed MRM (Multi-task Relations Mining) and CRL (Cosine Redundancy Loss) techniques to maximize the marginal information contribution of each new specialist. We also introduce CoEval and User Tower Zero-Out, new logging-free embedding evaluation framework that improves development velocity while preserving downstream-aligned accuracy. Our hybrid CPU/GPU, online-and-offline serving stack allows each specialist to choose the adequate serving strategy to meet the freshness, latency, and computational requirements. Mosaic delivers consistent and significant offline NE improvements in addition to online gains.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2607.24015v1",
+        "retrieved_at": "2026-10-09T23:11:43Z",
+        "license": "CC0-1.0",
+        "source_title": "Mosaic: A Fleet of User Embedding Specialists for Recommendation at Meta",
+        "source_version": "v1"
+      },
+      "summaries": {
+        "en": {
+          "text": "Mosaic is Meta's user-modeling platform built from four complementary specialist families rather than a single shared user backbone. Multi-task relation mining and cosine redundancy loss aim to increase each specialist's marginal information, while logging-free evaluation and mixed CPU/GPU online/offline serving support downstream deployment. The authors report offline normalized-entropy improvements and online gains. This industrial architecture illustrates how to expand reusable user representations under distinct freshness, latency, and compute constraints; the original preprint dates to July 2026.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-10",
+          "source_urls": [
+            "https://arxiv.org/abs/2607.24015v1"
+          ]
+        },
+        "zh": {
+          "text": "Meta的Mosaic用四类互补模型学习用户表示，通过多任务关系挖掘和余弦冗余损失提高新增专家的信息贡献。平台配套无需新增日志的评估方式，并按新鲜度、延迟和计算需求选择CPU/GPU及在线或离线服务；作者报告离线归一化熵改善和线上收益。它展示了可复用用户表征的工业扩展路径，原预印本发表于2026年7月。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-10",
+          "source_urls": [
+            "https://arxiv.org/abs/2607.24015v1"
+          ]
+        }
+      },
+      "source_dates": {
+        "published_at": "2026-07-27T05:25:50Z",
+        "updated_at": "2026-07-27T05:25:50Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2607.24015v1",
+        "verified_at": "2026-10-09T23:11:43Z"
+      },
+      "added_at": "2026-10-10T07:50:10Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2607.24015"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2610.12300",
+      "title": "Compact and Efficient Indexes for Learned Sparse Retrieval",
+      "collection": "related",
+      "category": "retrieval-reranking-scaling",
+      "affiliation": "ISTI–CNR; University of Pisa; Linkup",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.12300"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "This paper investigates how to substantially reduce the memory footprint of learned sparse retrieval indexes without sacrificing the efficiency of state-of-the-art retrieval data structures. Building on SEISMIC, we revisit both levels of its design: the inverted index used to select candidates and the forward index used to score them. For the inverted index, we replace costly per-block summaries with medoids, namely existing documents elected as block representatives, collapsing the per-block metadata from a sparse vector to a single document identifier. For the forward index, we compress both components and values. We reorder the vocabulary to place co-occurring components closer together and encode the resulting $Δ$-gaps with DOTPACKING8, a SIMD-friendly bit-packing scheme that fuses decompression with dot-product evaluation; values are quantized with compact per-component 4-bit codebooks fitted to each component's distribution. We further introduce JUMPDOT, a blocked dot-product kernel tailored for queries that contain only a few non-zero entries. Our forward-index compression is independent of SEISMIC and can be plugged into any system relying on forward-index-based scoring, as we demonstrate by integrating it into KANNOLO. A comprehensive evaluation on MS MARCO with three state-of-the-art learned sparse encoders shows that our solutions markedly improve the speed-space trade-off of learned sparse retrieval: at equal accuracy, our indexes answer queries up to 5.3x faster than the best competitor while using about 3x less memory, and in the most memory-constrained regime, they remain up to 1.9x faster while using up to 3.9x less memory.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.12300v1",
+        "retrieved_at": "2026-10-09T23:12:13Z",
+        "license": "CC0-1.0",
+        "source_title": "Compact and Efficient Indexes for Learned Sparse Retrieval",
+        "source_version": "v1"
+      },
+      "summaries": {
+        "en": {
+          "text": "This work compresses learned sparse-retrieval indexes at both candidate-selection and scoring stages. It replaces block summaries with document medoids and combines vocabulary reordering, fused decompression/dot products, and per-component 4-bit value codebooks. On MS MARCO with three sparse encoders, experiments compare speed and memory at matched retrieval accuracy. The techniques offer a systems-level reference for scaling sparse candidate retrieval; they do not establish gains in downstream CTR ranking.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-10",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.12300v1"
+          ]
+        },
+        "zh": {
+          "text": "这项工作同时压缩稀疏检索的候选索引与打分索引：用代表文档替代块摘要，并结合词表重排、解压与点积融合、逐分量4bit码本。作者在MS MARCO上以三个稀疏编码器比较相同检索精度下的速度和内存。可借鉴其大规模稀疏召回索引设计，不能将检索结果直接解释为CTR排序收益。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-10",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.12300v1"
+          ]
+        }
+      },
+      "source_dates": {
+        "published_at": "2026-10-08T16:50:18Z",
+        "updated_at": "2026-10-08T16:50:18Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.12300v1",
+        "verified_at": "2026-10-09T23:12:13Z"
+      },
+      "added_at": "2026-10-10T07:50:10Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.12300"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2610.11775",
+      "title": "RouterInterp: Understanding Superposed Specialisation in Mixture of Experts Routing",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "TU Wien; Independent; UK AI Security Institute",
+      "venue": "ICML",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.11775"
+        },
+        {
+          "label": "Publication",
+          "url": "https://proceedings.mlr.press/v306/lasy26a.html"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Sparse Mixture of Experts (MoE) models scale more efficiently than dense models by routing tokens to modular expert networks that are only active for processing a fraction of tokens. A leading hypothesis for the performance of MoE models is that each expert specialises in a single, coherent domain. However, interpretability efforts that assume this hypothesis have generally been unsuccessful. We propose and present evidence for an alternative account that we call the Superposed Specialisation Hypothesis (SSH): experts specialise in a disjoint union of fine-grained features rather than one broad domain. Leveraging the SSH, we introduce RouterInterp, a method for interpreting expert routing that identifies Sparse Autoencoder features most predictive of routing decisions and produces unified natural language explanations. On gpt-oss-20b, RouterInterp explains expert routing with ${\\sim}65\\%$ higher detection accuracy than prior token statistics based methods. This work provides a scalable method for generating more accurate explanations of expert routing and increases our understanding of a previously uninterpretable component of foundation models.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.11775v1",
+        "retrieved_at": "2026-10-09T23:12:27Z",
+        "license": "CC0-1.0",
+        "source_title": "RouterInterp: Understanding Superposed Specialisation in Mixture of Experts Routing",
+        "source_version": "v1"
+      },
+      "summaries": {
+        "en": {
+          "text": "RouterInterp examines whether MoE experts specialize in combinations of fine-grained features rather than one coherent domain. It identifies sparse-autoencoder features predictive of routing and uses them to form natural-language explanations. Experiments on gpt-oss-20b compare explanation detection accuracy with token-statistics methods. This is a diagnostic reference for interpreting expert specialization in recommendation MoE, not evidence that a particular routing design improves CTR.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-10",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.11775v1"
+          ]
+        },
+        "zh": {
+          "text": "RouterInterp研究专家是否同时承担多组细粒度特征，而非只对应一个宽泛领域。它寻找能预测路由决策的稀疏自编码器特征，再生成解释，并在gpt-oss-20b上与token统计方法比较。可借鉴其推荐MoE专家分工诊断思路，但它不是CTR路由收益实验。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-10",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.11775v1"
+          ]
+        }
+      },
+      "source_dates": {
+        "published_at": "2026-10-08T11:55:25Z",
+        "updated_at": "2026-10-08T11:55:25Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.11775v1",
+        "verified_at": "2026-10-09T23:12:27Z"
+      },
+      "added_at": "2026-10-10T07:50:10Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.11775"
+      },
+      "change_history": [],
+      "reading_tier": null
     }
   ]
 }

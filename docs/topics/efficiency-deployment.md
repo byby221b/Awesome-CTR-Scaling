@@ -6,7 +6,7 @@
 
 Training, inference and deployment techniques that make model scaling practical.
 
-10 papers · Updated 2026-10-09
+10 papers · Updated 2026-10-10
 
 | Paper | Affiliation | Venue | Year | Tags | Links | Key Contribution |
 |:------|:------------|:------|:-----|:-----|:------|:-----------------|

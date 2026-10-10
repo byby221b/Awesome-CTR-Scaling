@@ -6,7 +6,7 @@
 
 Transferable ideas from general-purpose model architecture research.
 
-75 papers · Updated 2026-10-09
+86 papers · Updated 2026-10-10
 
 <a id="paper-2606-16825"></a>
 
@@ -307,3 +307,47 @@ Transferable ideas from general-purpose model architecture research.
 <a id="paper-2610-09342"></a>
 
 - **Shared Low-rank Basis Factorization for Data-free Mixture-of-Experts Compression**: Shared Low-rank Basis Factorization (SLBF) compresses MoE expert weights without calibration data, preserving expert identities and router parameters; compressed hidden states can still change later-layer routing. Shared rank-k bases enable richer cross-expert reconstruction under a fixed parameter budget, and gauge fixing removes redundant factor parameters. Experiments cover five MoE LLM architectures from 16B to 122B parameters and compare pruning, merging, and weight-reconstruction methods. — [Paper](https://arxiv.org/abs/2610.09342) (Kyoto University; The University of Tokyo; RIKEN AIP · arXiv 2026). Reading priority: Read as needed.
+
+<a id="paper-2610-11317"></a>
+
+- **DivMoE: Fine-Grained MoE Upcycling via Cross-Domain Expert Composition**: DivMoE addresses routing collapse when fine-grained MoE experts are upcycled from a single dense model. It initializes experts from domain-specialized dense models and constrains each token to select experts from distinct domain groups. Across two base models and 15 language-model benchmarks, it reports 55.6% versus 51.6% average accuracy for the strongest baseline on Qwen3-1.7B; a 12B variant reaches 64.5% after supervised fine-tuning. Applying this expert-diversity design to recommendation is a transfer hypothesis, not demonstrated CTR evidence. — [Paper](https://arxiv.org/abs/2610.11317) · [Publication](https://neurips.cc/virtual/2026/poster/153517) (School of Computing, National University of Singapore, Singapore; Department of Computer Science and Engineering, Shanghai Jiao Tong University, Shanghai, China · NeurIPS 2026). Reading priority: Unrated.
+
+<a id="paper-2610-11575"></a>
+
+- **Smoothing the Top-k Exposure Boundary for Sparse Mixture-of-Experts**: Elastic Expert Routing softens the training-time top-k boundary by sampling the active expert count from a local symmetric distribution around k. This matches the expected expert-compute budget while retaining a fixed inference budget. The paper reports supervised-fine-tuning macro-average gains of 0.84 and 2.02 points on OLMoE-1B-7B and Qwen3-30B-A3B, plus a 1.6-point gain in from-scratch pretraining. Its relevance to recommendation MoE training is inferred; the evaluations do not establish CTR gains. — [Paper](https://arxiv.org/abs/2610.11575) (Shanghai AI Laboratory, Shanghai, China; Shanghai Jiao Tong University, Shanghai, China; Nanyang Technological University, Singapore · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-11214"></a>
+
+- **Bridging KV-Cache Quantization and Linear Attention: From Theory to Pretrained Weight Migration**: This work connects KV-cache quantization and linear attention through RAM-Net soft assignments over discrete addresses with recurrent continuous slot states. Under a restricted construction, the read–write overlap locally approximates full-attention similarity and enables a soft-quantized intermediate path for pretrained-weight migration. Across nine 0.3B–7B teachers and six commonsense/knowledge tasks, migration with 500M tokens per model recovers 87.1% of teacher accuracy gains above random guessing on average. Reusing the mechanism for long recommendation histories is an inference, not CTR evidence. — [Paper](https://arxiv.org/abs/2610.11214) (The Chinese University of Hong Kong · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-11201"></a>
+
+- **PageWeaver: KV-Guided Query Unions for Sparse Attention**: PageWeaver groups sparse-attention queries by selected-KV-page affinity while preserving each query’s original support and output ownership. On H200 with FP8 KV, its Union8 implementation reports a 1.70× geometric-mean complete-call speedup over the measured FlashInfer path across six captures. Whole-model prefill throughput is 7.88–14.36% above the tested native path, but incremental regrouping adds only 0.47–0.73% median throughput at 32K/64K and regresses at 8K; B300 results also show limits. Recommendation-serving applicability is an inference, not measured CTR or recommendation-system evidence. — [Paper](https://arxiv.org/abs/2610.11201) (SenseTime · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-11158"></a>
+
+- **Zepp: Accelerating Distributed MoE Serving under Relaxed Balance Constraints**: Zepp treats load balance as a resource constraint and directly optimizes bottleneck communication in distributed MoE serving. It coordinates expert-replica placement, split/merge communication, execution scheduling, and dynamic intra-node expert movement. Against seven systems it reports up to 6.68× MoE-layer speedup and 1.86× geometric-mean speedup over the fastest competitor; the maximum 6.68× is specifically against A2AV+GEMM, not the fastest competing baseline. Transfer to distributed recommendation MoEs is a systems hypothesis, with no CTR evaluation. — [Paper](https://arxiv.org/abs/2610.11158) (UCSD; Stanford University; ETH Zürich; NVIDIA · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-10871"></a>
+
+- **Sparse Attention Is Matrix Approximation, Not Choosing from a Bag of Values**: MASA reframes sparse-attention selection as preserving a matrix–value product rather than selecting entries solely by attention magnitude. It replaces sparse-unit ranking with a closed-form approximation-error reduction score while retaining existing sparse kernels and budget rules. Experiments across multiple sparse-attention methods, LLM backbones, and long-context benchmarks report consistent average-score gains with negligible measured scoring overhead. Using this selection criterion for long recommendation histories remains a transfer inference, not demonstrated CTR evidence. — [Paper](https://arxiv.org/abs/2610.10871) (Stony Brook University; Duke University · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-07940"></a>
+
+- **Hybrid Latent Attention for Looped Language Models**: Hybrid Latent Attention reduces the KV-cache multiplication caused by reusing Transformer layers across loops. It retains exact recent keys and values in a sliding window and stores older tokens as directly readable compact latents. On frozen 1.4B and 2.6B Ouro backbones with four loops, the authors report a 10.7× cache reduction per token and retention of over 97% of original accuracy on their math, knowledge, and reasoning benchmarks. The design suggests a cache-sharing direction for recurrent recommendation architectures; no CTR experiment is reported. — [Paper](https://arxiv.org/abs/2610.07940) (Virginia Tech; Independent Researcher · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-10623"></a>
+
+- **Recurrent Self-Improvement: Dynamic Cross-Loop On-Policy Distillation for Looped Language Models**: LoopOPD trains an intermediate loop of a shared-parameter language model from a terminal-loop teacher using student-generated rollouts. Its dynamic variant refreshes the teacher as the shared model changes, turning extra recurrent computation into a source of dense distillation supervision. Experiments on Ouro-Thinking models report gains in mathematical reasoning and transfer to general reasoning and code tasks. This offers a possible training-compute versus inference-depth trade-off for recurrent ranking models, but that recommendation application remains untested. — [Paper](https://arxiv.org/abs/2610.10623) (ShanghaiTech University; Fudan University; Southeast University; Peking University · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-07809"></a>
+
+- **MASKerade: Token-Routed Mask Experts for Dense-to-MoE Upcycling**: MASKerade constructs token-routed experts as learned sparse masks over a frozen dense feed-forward network, rather than storing independent expert weight matrices. Jointly trained routing and binary-mask scores support several sparsity granularities; the main setup selects two of four half-dense 2:4 experts. Five vision-language benchmarks and compute-matched controls examine the benefit of learned connectivity. The method is relevant to memory-conscious MoE expansion in ranking, but nominal arithmetic equivalence does not establish equal serving latency or CTR gains. — [Paper](https://arxiv.org/abs/2610.07809) (Northeastern University · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-04140"></a>
+
+- **ExpertMuon-Compass: Alignment-Guided Step Sizes for Mixture-of-Experts Training**: ExpertMuon-Compass adapts Muon step lengths separately for MoE experts whose token distributions change during training. It combines layer-relative gradient/update alignment with a row-alignment radius while retaining Muon's update direction and momentum state. FineWeb-Edu and changing multilingual-data experiments compare it with Muon, NorMuon, and other optimizers. It suggests an optimization control for heterogeneous routed training in recommendation, although the reported evidence is from language models rather than CTR systems. — [Paper](https://arxiv.org/abs/2610.04140) (University of Texas at Austin · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-11775"></a>
+
+- **RouterInterp: Understanding Superposed Specialisation in Mixture of Experts Routing**: RouterInterp examines whether MoE experts specialize in combinations of fine-grained features rather than one coherent domain. It identifies sparse-autoencoder features predictive of routing and uses them to form natural-language explanations. Experiments on gpt-oss-20b compare explanation detection accuracy with token-statistics methods. This is a diagnostic reference for interpreting expert specialization in recommendation MoE, not evidence that a particular routing design improves CTR. — [Paper](https://arxiv.org/abs/2610.11775) · [Publication](https://proceedings.mlr.press/v306/lasy26a.html) (TU Wien; Independent; UK AI Security Institute · ICML 2026). Reading priority: Unrated.

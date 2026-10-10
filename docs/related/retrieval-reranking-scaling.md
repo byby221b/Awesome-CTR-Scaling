@@ -6,7 +6,7 @@
 
 Scaling retrieval and reranking stages of recommendation pipelines.
 
-16 papers · Updated 2026-10-09
+17 papers · Updated 2026-10-10
 
 <a id="paper-2603-04816"></a>
 
@@ -71,3 +71,7 @@ Scaling retrieval and reranking stages of recommendation pipelines.
 <a id="paper-2610-10483"></a>
 
 - **Two-Level Softmax Sampling Done Right: Correcting Bias from Size Imbalance and Dispersion**: Two-level softmax sampling is biased when cluster sizes and within-cluster similarity dispersion are ignored. Size-only and size-plus-dispersion corrections improve fidelity to exact softmax with little additional computation; experiments cover five large embedding datasets. — [Paper](https://arxiv.org/abs/2610.10483) (Spotify; SJTU Paris Elite Institute of Technology · NeurIPS 2026). Reading priority: Read first.
+
+<a id="paper-2610-12300"></a>
+
+- **Compact and Efficient Indexes for Learned Sparse Retrieval**: This work compresses learned sparse-retrieval indexes at both candidate-selection and scoring stages. It replaces block summaries with document medoids and combines vocabulary reordering, fused decompression/dot products, and per-component 4-bit value codebooks. On MS MARCO with three sparse encoders, experiments compare speed and memory at matched retrieval accuracy. The techniques offer a systems-level reference for scaling sparse candidate retrieval; they do not establish gains in downstream CTR ranking. — [Paper](https://arxiv.org/abs/2610.12300) (ISTI–CNR; University of Pisa; Linkup · arXiv 2026). Reading priority: Unrated.

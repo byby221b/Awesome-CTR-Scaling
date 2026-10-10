@@ -6,7 +6,7 @@
 
 Long-history modeling, memory and compression for user behavior sequences.
 
-26 papers · Updated 2026-10-09
+27 papers · Updated 2026-10-10
 
 <a id="paper-2504-06780"></a>
 
@@ -111,3 +111,7 @@ Long-history modeling, memory and compression for user behavior sequences.
 <a id="paper-2610-07505"></a>
 
 - **MARS: Multi-resolution Adaptive Routing for Sequential Recommendation**: MARS organizes long histories into recurrent memory tracks with different retention times, then sparsely selects tracks to build reusable user memories. Three public-dataset experiments find gains that grow with history length and support both temporal diversity and selective routing. At 1,000 candidates per user, warm-cache serving latency is about 1.02 times its interface-matched baseline; this is not a latency guarantee for arbitrary candidate counts. — [Paper](https://arxiv.org/abs/2610.07505) (Duke University; Meta; Independent · NeurIPS 2026). Reading priority: Read first.
+
+<a id="paper-2610-11501"></a>
+
+- **Beyond Sequences: Distilling Structured Decision Memory for LLM Recommendation**: MARI builds a Decision Memory Bank of structured user goals, constraints, and trade-offs distilled offline from heterogeneous behaviors and user-generated content. Retrieved memories then augment LLM recommendation without repeatedly processing full raw histories. The paper reports improvements in offline next-item prediction and its newly introduced Difficult Choice Prediction task, with interpretable memory records and low reported latency overhead. This is direct recommendation research, but its purchase-target Hit@1 evidence should not be described as online CTR improvement. — [Paper](https://arxiv.org/abs/2610.11501) (Alibaba Group, Hangzhou, China · arXiv 2026). Reading priority: Unrated.
