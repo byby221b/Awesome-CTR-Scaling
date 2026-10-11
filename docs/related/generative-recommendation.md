@@ -6,7 +6,7 @@
 
 Generative retrieval, recommendation and ranking beyond discriminative CTR.
 
-82 papers · Updated 2026-10-10
+84 papers · Updated 2026-10-11
 
 <a id="paper-2605-12617"></a>
 
@@ -335,3 +335,11 @@ Generative retrieval, recommendation and ranking beyond discriminative CTR.
 <a id="paper-2610-07402"></a>
 
 - **Rethinking Semantic ID Construction for Generative Recommendation: SimHash with Parallel Decoding and Semantic Alignment**: FLASH pairs training-free SimHash semantic IDs with parallel decoding and explicit semantic alignment. It argues that decoding mismatch and discretization loss explain hashing’s weakness, and reports competitive recommendation and cold-start performance without training a tokenizer. — [Paper](https://arxiv.org/abs/2610.07402) (University of Illinois Chicago; Amazon · NeurIPS 2026). Reading priority: Worth reading.
+
+<a id="paper-2605-28888"></a>
+
+- **Generative Spatiotemporal Intent Sequence Recommendation via Implicit Reasoning in Amap**: GPlan generates spatiotemporally feasible sequences of service intents. It distills explicit reasoning into reserved latent tokens and uses counterfactual preference optimization to make plans respond to changes in time and location. The paper reports offline evaluation and an Amap homepage A/B test. It offers a concrete route for compressing planning into a smaller serving model; this is intent-sequence recommendation, not a general CTR scaling law. — [Paper](https://arxiv.org/abs/2605.28888) (AMAP, Alibaba Group · RecSys (Industry) 2026). Reading priority: Unrated.
+
+<a id="paper-2610-08136"></a>
+
+- **Adapting Generative Recommenders for Multi-Turn Interaction**: INTEGER adapts a generative recommender to multi-turn feedback using a learned recommendation-routing token, history re-anchoring, and behavioral replay with instruction rehearsal. Experiments on Amazon Beauty and Toys support retaining recommendation accuracy while adding dialogue. The conversational data are synthetic; real-user interaction and attribute-aware rejection feedback remain limitations. The transferable question is how to add interaction without overwriting a learned history-to-item mapping. — [Paper](https://arxiv.org/abs/2610.08136) (National Taiwan University; Johns Hopkins University · arXiv 2026). Reading priority: Unrated.

@@ -6,7 +6,7 @@
 
 Systems, serving infrastructure and hardware-aware optimization.
 
-33 papers · Updated 2026-10-10
+34 papers · Updated 2026-10-11
 
 <a id="paper-2510-18239"></a>
 
@@ -139,3 +139,7 @@ Systems, serving infrastructure and hardware-aware optimization.
 <a id="paper-2610-07516"></a>
 
 - **NCCL M2N: A Layout- and Topology-Aware Collective for Distributed Tensor Resharding**: NCCL M2N derives tensor-resharding transfers from source/destination layouts and routes one copy across NVLink domains before local replication. It reduces redundant traffic and improves both isolated MoE-layer transfers and weight synchronization in a separate large RL training experiment. — [Paper](https://arxiv.org/abs/2610.07516) (NVIDIA Corporation · arXiv 2026). Reading priority: Read as needed.
+
+<a id="paper-2610-05619"></a>
+
+- **SCOUT: Supply-Aware Cold-Start Proactive Query Suggestion for Travel Search**: SCOUT trains proactive travel-query suggestions against supply-side feedback from a production reranker, using GRPO to internalize inventory compatibility instead of paying for best-of-N search at serving time. Offline, destination-disjoint Qwen3-8B experiments compare inventory match and diversity. The engineering lesson is to move expensive selection into training; online CTR and booking improvements are not established, and the reward measures fulfillability rather than user appeal. — [Paper](https://arxiv.org/abs/2610.05619) (Airbnb, Inc. · GRAIL @ CIKM (non-archival workshop) 2026). Reading priority: Unrated.

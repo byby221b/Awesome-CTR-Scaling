@@ -14,14 +14,14 @@
 
 ## Related work
 
-- [Long Sequence Modeling](related/long-sequence-modeling.md) (27) — Long-history modeling, memory and compression for user behavior sequences.
+- [Long Sequence Modeling](related/long-sequence-modeling.md) (28) — Long-history modeling, memory and compression for user behavior sequences.
 - [Sample/Instance Compression for Sequence Modeling](related/sample-instance-compression-for-sequence-modeling.md) (2) — Compressing complete interactions and raw samples into sequence tokens.
-- [Generative Recommendation](related/generative-recommendation.md) (82) — Generative retrieval, recommendation and ranking beyond discriminative CTR.
+- [Generative Recommendation](related/generative-recommendation.md) (84) — Generative retrieval, recommendation and ranking beyond discriminative CTR.
 - [Generative Pre-training for CTR](related/generative-pre-training-for-ctr.md) (4) — Generative objectives and pre-training for discriminative CTR tasks.
 - [Knowledge Distillation & Compression](related/knowledge-distillation-compression.md) (4) — Transferring, compressing and deploying larger recommendation models.
-- [Engineering & Serving](related/engineering-serving.md) (33) — Systems, serving infrastructure and hardware-aware optimization.
+- [Engineering & Serving](related/engineering-serving.md) (34) — Systems, serving infrastructure and hardware-aware optimization.
 - [Retrieval & Reranking Scaling](related/retrieval-reranking-scaling.md) (17) — Scaling retrieval and reranking stages of recommendation pipelines.
-- [Architecture Innovations Beyond Recommendation](related/architecture-innovations-beyond-recommendation.md) (86) — Transferable ideas from general-purpose model architecture research.
+- [Architecture Innovations Beyond Recommendation](related/architecture-innovations-beyond-recommendation.md) (93) — Transferable ideas from general-purpose model architecture research.
 - [Other](related/other.md) (9) — Adjacent research, diagnostics and other relevant recommendation methods.
 
 ## Tag vocabulary

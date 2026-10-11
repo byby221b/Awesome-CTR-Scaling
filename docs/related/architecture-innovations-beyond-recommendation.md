@@ -6,7 +6,7 @@
 
 Transferable ideas from general-purpose model architecture research.
 
-86 papers · Updated 2026-10-10
+93 papers · Updated 2026-10-11
 
 <a id="paper-2606-16825"></a>
 
@@ -351,3 +351,31 @@ Transferable ideas from general-purpose model architecture research.
 <a id="paper-2610-11775"></a>
 
 - **RouterInterp: Understanding Superposed Specialisation in Mixture of Experts Routing**: RouterInterp examines whether MoE experts specialize in combinations of fine-grained features rather than one coherent domain. It identifies sparse-autoencoder features predictive of routing and uses them to form natural-language explanations. Experiments on gpt-oss-20b compare explanation detection accuracy with token-statistics methods. This is a diagnostic reference for interpreting expert specialization in recommendation MoE, not evidence that a particular routing design improves CTR. — [Paper](https://arxiv.org/abs/2610.11775) · [Publication](https://proceedings.mlr.press/v306/lasy26a.html) (TU Wien; Independent; UK AI Security Institute · ICML 2026). Reading priority: Unrated.
+
+<a id="paper-2610-06116"></a>
+
+- **ORCA: The Annealed Spectral Conditioning Optimizer for Faster, Better LLM Training**: ORCA adds temporary soft orthogonality regularization to Muon early in training and removes it later, aiming to broaden useful weight directions without constraining the final solution. The authors report lower validation loss across LLaMA, Qwen3 and fine-grained MoE models from 130M to 8B parameters. This suggests an optimizer intervention for dense ranking projections, not verified CTR gains; embeddings and one-dimensional parameters retain their original AdamW updates. — [Paper](https://arxiv.org/abs/2610.06116) (Peking University; Kling Team · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-11134"></a>
+
+- **QUILT: Rethinking Sparse-Attention Prefill through Shared Query Execution**: QUILT shares overlapping KV entries across neighboring sparse-attention queries, using regular set decomposition, pipelining and hierarchical reuse to reduce redundant memory traffic. Evaluation uses GLM-5.3 and DeepSeek-3.2 on LongBench with 16 Ascend 910C NPUs. The transferable idea is cross-query reuse in sparse long-history computation; benefits depend on overlap and hardware layout, and tile-aware tail pruning means the complete method is not purely lossless reuse. — [Paper](https://arxiv.org/abs/2610.11134) (Huawei Technologies Co., Ltd. · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-11570"></a>
+
+- **Scaling to Tens of Thousands of Test-Time Iterations with Loop-Native Attention Residuals**: InfiLoop adds loop-native attention residuals that combine content-dependent weights and temporal decay to retain useful recurrent states. An exact streaming update keeps aggregation memory constant as loop count grows. A 7M-parameter model is evaluated on algorithmic reasoning tasks including Sudoku and ARC-AGI-2. It is a mechanism reference for recurrent-depth stability, not evidence that thousands of iterations are practical or beneficial for latency-constrained ranking. — [Paper](https://arxiv.org/abs/2610.11570) (The Hong Kong Polytechnic University; Independent Researcher; Shenzhen Institutes of Advanced Technology, Chinese Academy of Sciences; Peng Cheng Laboratory; University of Chinese Academy of Sciences; ELLIS Institute Tübingen; Max Planck Institute for Intelligent Systems; Tübingen AI Center; Shenzhen University of Advanced Technology · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-09179"></a>
+
+- **LayerRoPE: Dynamic Depth-wise Magnitude & Angular Superposition**: LayerRoPE replaces layer-specific normalization gains with a shared vector and depth-conditioned magnitude and rotation, regulating what Transformer blocks read and write along depth. Language-model scaling experiments and transfers to looped models and vision Transformers report improved convergence; its relevance to deeper CTR models is a transfer hypothesis, not a demonstrated ranking result. — [Paper](https://arxiv.org/abs/2610.09179) (University of Rochester · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-06750"></a>
+
+- **Balancing Memory Pathways: Analyzing and Improving Memory Utilization in Hybrid LMs**: The paper finds that recurrent–attention hybrid language models underuse their recurrent state, and adds an auxiliary supervised pass that masks attention to earlier context while preserving recurrent access to the full sequence. Experiments on long-context question answering and agentic tasks report better memory coordination and overall performance; applying this objective to hybrid user-history rankers remains untested. — [Paper](https://arxiv.org/abs/2610.06750) (UNC Chapel Hill; The University of Texas at Austin; Mila; Yale University · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-09051"></a>
+
+- **A Self-Pruning Transformer: Extreme KV-Cache Compression with Universal Attention**: Universal Attention combines learned decay mechanisms with RoPE and softmax attention to adaptively evict low-contributing KV entries. Language and synthetic-task experiments report strong cache compression and competitive performance, but aggregation tasks, additional mask computation, and incomplete inference optimization limit direct deployment claims; transfer to compressed user-history attention is unverified. — [Paper](https://arxiv.org/abs/2610.09051) (IBM Research; SSAIL Lab, University of Illinois Urbana-Champaign · COLM 2026). Reading priority: Unrated.
+
+<a id="paper-2610-12448"></a>
+
+- **One Block, Multiple Depths: Recurrent Vision Transformers with Depth-Programmed Experts**: reViT recurrently applies one Transformer block and uses normalized depth to merge a shared FFN expert bank into one dense FFN per step. ImageNet training and DINOv2 distillation show substantial parameter-storage savings at comparable inference FLOPs, while fixed-depth materialization trades compact storage for ordinary dense execution; CTR transfer and inference acceleration are not established. — [Paper](https://arxiv.org/abs/2610.12448) (Samsung AI Cambridge; Technical University of Iasi; Queen Mary University of London · arXiv 2026). Reading priority: Unrated.

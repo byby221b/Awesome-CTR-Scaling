@@ -4,13 +4,13 @@
 
 A curated library of **scaling laws and scalable ranking/CTR models** for industrial recommendation systems.
 
-**356 papers** · **92 core** · **264 related** · Updated 2026-10-10
+**367 papers** · **92 core** · **275 related** · Updated 2026-10-11
 
 <a id="table-of-contents"></a>
 
 [**Search the paper library →**](https://byby221b.github.io/Awesome-CTR-Scaling/) · [**中文页面**](https://byby221b.github.io/Awesome-CTR-Scaling/zh.html) · [All topics](docs/README.md) · [Company index](docs/companies.md) · [Contribute](CONTRIBUTING.md)
 
-Reading priority: **339 assigned** · **17 unrated**. Filter or sort by Read first, Worth reading, or Read as needed on the website. These are reading suggestions, not objective quality ratings; unrated papers have not been assigned a tier.
+Reading priority: **339 assigned** · **28 unrated**. Filter or sort by Read first, Worth reading, or Read as needed on the website. These are reading suggestions, not objective quality ratings; unrated papers have not been assigned a tier.
 
 > **Scope:** We cover papers that (1) study scaling laws for recommendation models, (2) propose scalable Transformer-based architectures for CTR/ranking, (3) address efficiency challenges in scaling up industrial ranking systems, or (4) explore novel paradigms (e.g., sparse scaling, generative pre-training, foundation models) for scalable recommendation.
 
@@ -52,14 +52,14 @@ Training, inference and deployment techniques that make model scaling practical.
 
 Adjacent research is grouped separately to keep the core CTR scaling signal clear.
 
-- <a id="long-sequence-modeling"></a>[Long Sequence Modeling](docs/related/long-sequence-modeling.md) · 27 papers
+- <a id="long-sequence-modeling"></a>[Long Sequence Modeling](docs/related/long-sequence-modeling.md) · 28 papers
 - <a id="sampleinstance-compression-for-sequence-modeling"></a>[Sample/Instance Compression for Sequence Modeling](docs/related/sample-instance-compression-for-sequence-modeling.md) · 2 papers
-- <a id="generative-recommendation"></a>[Generative Recommendation](docs/related/generative-recommendation.md) · 82 papers
+- <a id="generative-recommendation"></a>[Generative Recommendation](docs/related/generative-recommendation.md) · 84 papers
 - <a id="generative-pre-training-for-ctr"></a>[Generative Pre-training for CTR](docs/related/generative-pre-training-for-ctr.md) · 4 papers
 - <a id="knowledge-distillation--compression"></a>[Knowledge Distillation & Compression](docs/related/knowledge-distillation-compression.md) · 4 papers
-- <a id="engineering--serving"></a>[Engineering & Serving](docs/related/engineering-serving.md) · 33 papers
+- <a id="engineering--serving"></a>[Engineering & Serving](docs/related/engineering-serving.md) · 34 papers
 - <a id="retrieval--reranking-scaling"></a>[Retrieval & Reranking Scaling](docs/related/retrieval-reranking-scaling.md) · 17 papers
-- <a id="architecture-innovations-beyond-recommendation"></a>[Architecture Innovations Beyond Recommendation](docs/related/architecture-innovations-beyond-recommendation.md) · 86 papers
+- <a id="architecture-innovations-beyond-recommendation"></a>[Architecture Innovations Beyond Recommendation](docs/related/architecture-innovations-beyond-recommendation.md) · 93 papers
 - <a id="other"></a>[Other](docs/related/other.md) · 9 papers
 
 ## Company Overview

@@ -1,15 +1,15 @@
 {
   "coverage": {
     "reading_tiers_assigned": 339,
-    "reading_tiers_unrated": 17,
-    "known_added_dates": 356,
-    "papers_with_updates": 271,
-    "verified_source_dates": 356,
-    "verified_abstracts": 356,
+    "reading_tiers_unrated": 28,
+    "known_added_dates": 367,
+    "papers_with_updates": 272,
+    "verified_source_dates": 367,
+    "verified_abstracts": 367,
     "unavailable_abstracts": 0,
     "pending_abstracts": 0,
-    "english_summaries": 356,
-    "chinese_summaries": 356
+    "english_summaries": 367,
+    "chinese_summaries": 367
   },
   "schema_version": 4,
   "meta": {
@@ -17,7 +17,7 @@
     "description": "Scaling laws and scalable ranking models for industrial recommendation.",
     "repository_url": "https://github.com/byby221b/Awesome-CTR-Scaling",
     "site_url": "https://byby221b.github.io/Awesome-CTR-Scaling/",
-    "updated": "2026-10-10",
+    "updated": "2026-10-11",
     "source_commit": "31ad30becff83ca14a01f37fc99d52ba79f85565",
     "scope": "We cover papers that (1) study scaling laws for recommendation models, (2) propose scalable Transformer-based architectures for CTR/ranking, (3) address efficiency challenges in scaling up industrial ranking systems, or (4) explore novel paradigms (e.g., sparse scaling, generative pre-training, foundation models) for scalable recommendation.",
     "history": {
@@ -26,7 +26,7 @@
       "added_at_basis": "Earliest recorded inclusion in reachable repository main history; 50 records were present at its root commit. This is not the source publication date.",
       "backfill_policy": "Unknown historical instants remain null. Source-date imports and structural/UI migrations do not invent catalog change events."
     },
-    "catalog_sha256": "362e7df2f6b7e6d2edb2c3ef46d81d5a22be6b8be31c8d584dbcaa8e19e42288"
+    "catalog_sha256": "376334134af3a75e001ee7d290aade0b342d37add6da6a81d801b5dd78a671f6"
   },
   "categories": [
     {
@@ -128,7 +128,7 @@
     {
       "id": "alibaba",
       "name": "Alibaba",
-      "count": 36
+      "count": 37
     },
     {
       "id": "meituan",
@@ -163,7 +163,7 @@
     {
       "id": "huawei",
       "name": "Huawei",
-      "count": 6
+      "count": 7
     },
     {
       "id": "baidu",
@@ -253,7 +253,7 @@
     {
       "id": "ibm-mit-ibm-computing-research-lab",
       "name": "IBM (MIT-IBM Computing Research Lab)",
-      "count": 2
+      "count": 3
     },
     {
       "id": "perplexity-ai",
@@ -378,7 +378,7 @@
     {
       "id": "airbnb",
       "name": "Airbnb",
-      "count": 1
+      "count": 2
     },
     {
       "id": "sensetime",
@@ -388,6 +388,16 @@
     {
       "id": "linkup",
       "name": "Linkup",
+      "count": 1
+    },
+    {
+      "id": "kling-team",
+      "name": "Kling Team",
+      "count": 1
+    },
+    {
+      "id": "samsung-ai-cambridge",
+      "name": "Samsung AI Cambridge",
       "count": 1
     }
   ],
@@ -27609,7 +27619,7 @@
       "collection": "core",
       "category": "foundation-models-multi-scenario",
       "affiliation": "Airbnb",
-      "venue": "arXiv",
+      "venue": "GRAIL @ CIKM (non-archival workshop)",
       "year": 2026,
       "tags": [
         "Architecture",
@@ -27665,7 +27675,16 @@
         "kind": "catalog_entry",
         "source_url": "https://arxiv.org/abs/2610.07810"
       },
-      "change_history": [],
+      "change_history": [
+        {
+          "at": "2026-10-10T23:13:01Z",
+          "kind": "venue_update",
+          "fields": [
+            "venue"
+          ],
+          "source_url": "https://grail2026.github.io/"
+        }
+      ],
       "reading_tier": null,
       "companies": [
         "airbnb"
@@ -27936,6 +27955,756 @@
       "reading_tier": null,
       "companies": [],
       "order": 355
+    },
+    {
+      "id": "2605.28888",
+      "title": "Generative Spatiotemporal Intent Sequence Recommendation via Implicit Reasoning in Amap",
+      "collection": "related",
+      "category": "generative-recommendation",
+      "affiliation": "AMAP, Alibaba Group",
+      "venue": "RecSys (Industry)",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2605.28888"
+        }
+      ],
+      "aliases": [
+        "GPlan"
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Real-world user behavior rarely consists of isolated actions; instead, it often forms intent flows governed by spatiotemporal dependencies. To provide integrated service recommendations, we focus on the task of Generative Spatiotemporal Intent Sequence Recommendation (GSISR), which aims to generate intent sequences that are logically coherent and physically executable within complex spatiotemporal contexts. While LLMs offer strong reasoning potential for GSISR, direct industrial deployment is limited by high inference latency and context-mismatched or physically infeasible plans. To address these challenges, we propose a generative framework, GPlan, that internalizes LLM reasoning into lightweight models through two components. First, to enable reasoning under strict latency constraints, we introduce Progressive Implicit CoT Distillation, which compresses explicit reasoning processes into reserved latent tokens, allowing small models to inherit complex planning logic without generating long reasoning text. Second, to address the disconnect between general knowledge and real-world constraints, we design Spatiotemporal Counterfactual DPO. By aligning the model with counterfactual context-plan pairs, we improve sensitivity to spatiotemporal context and reduce context-mismatched plans. Offline experiments and online A/B testing demonstrate that our approach improves sequence coherence and context responsiveness. Our implementation and the anonymized GSISR dataset are available at https://github.com/alibaba/GPlan.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2605.28888v2",
+        "retrieved_at": "2026-10-10T23:05:59Z",
+        "license": "CC0-1.0",
+        "source_title": "Generative Spatiotemporal Intent Sequence Recommendation via Implicit Reasoning in Amap",
+        "source_version": "v2"
+      },
+      "source_dates": {
+        "published_at": "2026-05-27T07:27:32Z",
+        "updated_at": "2026-10-08T06:19:54Z",
+        "source_version": "v2",
+        "source_url": "https://arxiv.org/abs/2605.28888v2",
+        "verified_at": "2026-10-10T23:05:59Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "GPlan generates spatiotemporally feasible sequences of service intents. It distills explicit reasoning into reserved latent tokens and uses counterfactual preference optimization to make plans respond to changes in time and location. The paper reports offline evaluation and an Amap homepage A/B test. It offers a concrete route for compressing planning into a smaller serving model; this is intent-sequence recommendation, not a general CTR scaling law.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-11",
+          "source_urls": [
+            "https://arxiv.org/abs/2605.28888v2",
+            "https://arxiv.org/pdf/2605.28888v2"
+          ]
+        },
+        "zh": {
+          "text": "GPlan生成符合时间、地点约束的服务意图序列，将显式推理压缩到保留的隐式标记，再用反事实偏好训练让计划随情境变化。论文报告了离线评估与高德首页A/B测试。可借鉴的是把复杂规划蒸馏到较小线上模型；任务是意图序列推荐，不能当作通用CTR扩容规律。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-11",
+          "source_urls": [
+            "https://arxiv.org/abs/2605.28888v2",
+            "https://arxiv.org/pdf/2605.28888v2"
+          ]
+        }
+      },
+      "doi": "10.1145/3773078.3831861",
+      "added_at": "2026-10-10T23:13:01Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2605.28888"
+      },
+      "change_history": [],
+      "reading_tier": null,
+      "companies": [
+        "alibaba"
+      ],
+      "order": 356
+    },
+    {
+      "id": "2610.08136",
+      "title": "Adapting Generative Recommenders for Multi-Turn Interaction",
+      "collection": "related",
+      "category": "generative-recommendation",
+      "affiliation": "National Taiwan University; Johns Hopkins University",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.08136"
+        }
+      ],
+      "aliases": [
+        "INTEGER"
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Generative recommenders decode items from a user's interaction history, but offer no way for users to correct a recommendation that misses their current intent. Adding conversation is natural since items and words share same output space, yet training the model to converse may overwrite the history-to-item mapping it relies on. We introduce INTEGER (**INTE**ractive **GE**nerative **R**ecommendation), which extends generative recommendation to multi-turn interaction with a learned routing token that lets the model decide when to recommend, history re-anchoring that conditions each item on both past behavior and the dialogue, and behavioral replay with instruction-data rehearsal that prevents forgetting during adaptation. Users can thus give feedback on recommendations within the dialogue, while recommendations stay grounded in behavioral history and accuracy is not traded for fluency. On Amazon Beauty and Toys, INTEGER matches or exceeds the strongest baselines in accuracy with competitive conversation quality, improving Hit@10 by 13.3% on Amazon Beauty, and significantly outperforms the generative recommender it starts from. Our analyses show that INTEGER learns behaviors that naive adaptation fails to acquire, recommending once the user's intent is clear and staying attentive to behavioral history at the moment of recommendation. INTEGER also learns an intent-agnostic replacement over the item space, which suppresses rejected items but points to attribute-aware feedback as the next step.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.08136v1",
+        "retrieved_at": "2026-10-10T23:06:16Z",
+        "license": "CC0-1.0",
+        "source_title": "Adapting Generative Recommenders for Multi-Turn Interaction",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-10-06T10:51:53Z",
+        "updated_at": "2026-10-06T10:51:53Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.08136v1",
+        "verified_at": "2026-10-10T23:06:16Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "INTEGER adapts a generative recommender to multi-turn feedback using a learned recommendation-routing token, history re-anchoring, and behavioral replay with instruction rehearsal. Experiments on Amazon Beauty and Toys support retaining recommendation accuracy while adding dialogue. The conversational data are synthetic; real-user interaction and attribute-aware rejection feedback remain limitations. The transferable question is how to add interaction without overwriting a learned history-to-item mapping.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-11",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.08136v1",
+            "https://arxiv.org/pdf/2610.08136v1"
+          ]
+        },
+        "zh": {
+          "text": "INTEGER通过推荐路由标记、历史重新注入、行为回放与指令数据复习，让生成式推荐器接收多轮反馈，同时保留历史到物品的映射。Amazon Beauty与Toys实验支持其推荐准确率和对话能力。对话数据由模型合成，真实用户交互与属性级拒绝反馈仍待验证；适合参考推荐能力如何在对话适配中避免遗忘。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-11",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.08136v1",
+            "https://arxiv.org/pdf/2610.08136v1"
+          ]
+        }
+      },
+      "added_at": "2026-10-10T23:13:01Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.08136"
+      },
+      "change_history": [],
+      "reading_tier": null,
+      "companies": [],
+      "order": 357
+    },
+    {
+      "id": "2610.06050",
+      "title": "MATE: Adaptive Long- and Short-Term User Memory for LLM-Based Recommendation",
+      "collection": "related",
+      "category": "long-sequence-modeling",
+      "affiliation": "Yonsei University",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.06050"
+        }
+      ],
+      "aliases": [
+        "MATE",
+        "Remembering What Lasts, Adapting to What Changes: Better User Understanding for LLM-Enhanced Sequential Recommendation"
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Large language model (LLM)-enhanced recommender systems leverage rich item semantics to support personalized recommendation. However, semantic representations alone do not determine which historical behaviors reflect persistent preferences and which mainly indicate recent interests, leaving an important aspect of user understanding unresolved. Recent advances in LLM inference show that newly available information can be used to refine the internal state during inference, thereby improving subsequent predictions. Inspired by this principle, we propose MATE (Memory Adaptation with Temporal Evidence), an adaptive user modeling framework for LLM-enhanced sequential recommendation. MATE first evaluates each newly observed interaction from two temporal perspectives: whether it is repeatedly supported by historical behaviors and whether it is consistent with recent interactions. The resulting temporal evidence controls the updates of two user-specific memories, where the long-term memory conservatively preserves persistent preferences while the short-term memory rapidly adapts to recent interests. For each recommendation, a recent-context representation dynamically determines how strongly the two memories contribute to the current user representation. During offline training, next-item prediction is jointly optimized with temporal supervision, while during online adaptation, the shared model remains fixed and only the two user memories are updated from newly observed interactions. Experiments on MovieLens-10M, Amazon Luxury Beauty, and KuaiRec show that MATE improves mean NDCG@10 over the strongest external baseline by 7.0--13.2%. Further analyses support its ability to adapt to recent interests while retaining useful information about recurring earlier preferences.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.06050v1",
+        "retrieved_at": "2026-10-10T23:06:29Z",
+        "license": "CC0-1.0",
+        "source_title": "MATE: Adaptive Long- and Short-Term User Memory for LLM-Based Recommendation",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-10-05T09:44:24Z",
+        "updated_at": "2026-10-05T09:44:24Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.06050v1",
+        "verified_at": "2026-10-10T23:06:29Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "MATE uses temporal evidence to update separate long- and short-term user memories, then reads them according to recent context while keeping shared model parameters fixed during adaptation. Experiments on filtered MovieLens-10M, Luxury Beauty, and KuaiRec user cohorts support the memory design. However, freezing further online writes matches its aggregate accuracy, so incremental test-time adaptation is not established; user-state storage and update computation also increase.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-11",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.06050v1",
+            "https://arxiv.org/pdf/2610.06050v1"
+          ]
+        },
+        "zh": {
+          "text": "MATE根据行为的重复支持与近期一致性，分别更新长期、短期用户记忆，再按最近情境读取两者；适配时共享模型参数保持固定。筛选后的MovieLens-10M、Luxury Beauty和KuaiRec用户集实验支持这种记忆设计。不过，冻结后续在线写入也能达到相近总体准确率，持续测试时适配的额外收益尚未成立，用户状态存储和更新计算也会增加。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-11",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.06050v1",
+            "https://arxiv.org/pdf/2610.06050v1"
+          ]
+        }
+      },
+      "added_at": "2026-10-10T23:13:01Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.06050"
+      },
+      "change_history": [],
+      "reading_tier": null,
+      "companies": [],
+      "order": 358
+    },
+    {
+      "id": "2610.06116",
+      "title": "ORCA: The Annealed Spectral Conditioning Optimizer for Faster, Better LLM Training",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "Peking University; Kling Team",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.06116"
+        }
+      ],
+      "aliases": [
+        "ORCA"
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Modern LLM optimizers such as Muon often produce weight matrices with higher effective rank than Adam, yet further spectral control has delivered only modest gains. We identify a tension behind this result: concentrated spectra can suppress gradient directions in coupled weight matrices and slow optimization, while constraints maintained throughout training can limit task-specific adaptation and raise the attainable loss floor. We introduce ORCA (Orthogonal Regularization, Cooled After), a minimal optimizer intervention that applies strong but temporary soft orthogonality regularization early in training, then removes it. This allows the weights to benefit from a broader spectrum early on and adapt freely afterward. Across LLaMA, Qwen3, and fine-grained mixture-of-experts models ranging from 130M to 8B parameters, ORCA achieves lower final validation loss than Muon. Its loss reduction relative to Muon matches or exceeds Muon's reduction relative to Adam. Ablations support the early-shaping, later-release design. Further, ORCA requires no architectural changes and adds minimal overhead.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.06116v1",
+        "retrieved_at": "2026-10-10T23:06:45Z",
+        "license": "CC0-1.0",
+        "source_title": "ORCA: The Annealed Spectral Conditioning Optimizer for Faster, Better LLM Training",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-10-05T10:47:59Z",
+        "updated_at": "2026-10-05T10:47:59Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.06116v1",
+        "verified_at": "2026-10-10T23:06:45Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "ORCA adds temporary soft orthogonality regularization to Muon early in training and removes it later, aiming to broaden useful weight directions without constraining the final solution. The authors report lower validation loss across LLaMA, Qwen3 and fine-grained MoE models from 130M to 8B parameters. This suggests an optimizer intervention for dense ranking projections, not verified CTR gains; embeddings and one-dimensional parameters retain their original AdamW updates.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-11",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.06116v1",
+            "https://arxiv.org/pdf/2610.06116v1"
+          ]
+        },
+        "zh": {
+          "text": "ORCA在训练早期为Muon加入软正交约束，随后移除，让权重先保留较多有效方向，再自由适应任务。作者在130M至8B的LLaMA、Qwen3与细粒度MoE模型上报告更低验证损失。可作为排序模型稠密投影层的优化思路，但尚无CTR验证；嵌入层及一维参数仍使用原有AdamW更新。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-11",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.06116v1",
+            "https://arxiv.org/pdf/2610.06116v1"
+          ]
+        }
+      },
+      "added_at": "2026-10-10T23:13:01Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.06116"
+      },
+      "change_history": [],
+      "reading_tier": null,
+      "companies": [
+        "kling-team"
+      ],
+      "order": 359
+    },
+    {
+      "id": "2610.11134",
+      "title": "QUILT: Rethinking Sparse-Attention Prefill through Shared Query Execution",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "Huawei Technologies Co., Ltd.",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.11134"
+        }
+      ],
+      "aliases": [
+        "QUILT"
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Sparse attention reduces the cost of long-context attention, but existing kernels typically process queries independently, repeatedly loading and dequantizing KV entries shared across queries. We observe substantial overlap in the KV entries selected by neighboring queries, creating opportunities for cross-query reuse. We present QUILT, a workload-aware sparse-attention execution mechanism that jointly processes neighboring queries and reuses shared KV entries to reduce redundant memory traffic and computation. QUILT introduces Shift-and-Compare Set Decomposition (SCSD), which transforms irregular set operations into regular data-parallel primitives suitable for modern accelerators, and pipelines SCSD with attention computation to hide its overhead. Cascaded sharing captures reuse hierarchically at multiple granularities. A tile-aware execution strategy balances sharing granularity with hardware tile utilization and selectively removes low-importance query-specific tails to eliminate underutilized tiles. We evaluate QUILT on LongBench using GLM-5.3 and DeepSeek-3.2 under both tensor and sequence parallelism. Compared with the state-of-the-art sparse-attention kernel, QUILT reduces average kernel latency by up to 55.1% and processed KV data by up to 55.9%, while reducing time-to-first-token (TTFT) latency by up to 36.8% with negligible accuracy degradation.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.11134v1",
+        "retrieved_at": "2026-10-10T23:07:16Z",
+        "license": "CC0-1.0",
+        "source_title": "QUILT: Rethinking Sparse-Attention Prefill through Shared Query Execution",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-10-08T02:58:29Z",
+        "updated_at": "2026-10-08T02:58:29Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.11134v1",
+        "verified_at": "2026-10-10T23:07:16Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "QUILT shares overlapping KV entries across neighboring sparse-attention queries, using regular set decomposition, pipelining and hierarchical reuse to reduce redundant memory traffic. Evaluation uses GLM-5.3 and DeepSeek-3.2 on LongBench with 16 Ascend 910C NPUs. The transferable idea is cross-query reuse in sparse long-history computation; benefits depend on overlap and hardware layout, and tile-aware tail pruning means the complete method is not purely lossless reuse.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-11",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.11134v1",
+            "https://arxiv.org/pdf/2610.11134v1"
+          ]
+        },
+        "zh": {
+          "text": "QUILT把相邻稀疏注意力查询共同访问的键值缓存合并处理，通过集合分解、流水线和分层复用减少重复搬运。实验采用16块Ascend 910C，在LongBench上测试GLM-5.3与DeepSeek-3.2。可借鉴长历史计算中的跨查询复用，但收益依赖访问重叠与硬件布局，完整方法还包含面向计算块的尾部裁剪。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-11",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.11134v1",
+            "https://arxiv.org/pdf/2610.11134v1"
+          ]
+        }
+      },
+      "added_at": "2026-10-10T23:13:01Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.11134"
+      },
+      "change_history": [],
+      "reading_tier": null,
+      "companies": [
+        "huawei"
+      ],
+      "order": 360
+    },
+    {
+      "id": "2610.11570",
+      "title": "Scaling to Tens of Thousands of Test-Time Iterations with Loop-Native Attention Residuals",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "The Hong Kong Polytechnic University; Independent Researcher; Shenzhen Institutes of Advanced Technology, Chinese Academy of Sciences; Peng Cheng Laboratory; University of Chinese Academy of Sciences; ELLIS Institute Tübingen; Max Planck Institute for Intelligent Systems; Tübingen AI Center; Shenzhen University of Advanced Technology",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.11570"
+        }
+      ],
+      "aliases": [
+        "InfiLoop"
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "In this paper, we argue that looped Transformers need their own residual connections to prevent performance degradation as the number of iterations grows. We observe that increasing loop iterations can reduce reasoning accuracy: noisy state updates overwrite correct intermediate deductions and even undo completed solutions. This leaves subsequent iterations to recover lost information from an already degraded representation: once an error arises in an earlier loop, often as a result of long-range propagation through the recurrence, later loops find it difficult to correct. In this paper, we introduce InfiLoop, a loop-native residual connection that learns which past computations to retain and how much to accept from each new update. InfiLoop combines content-based weighting with learned temporal decay to maintain a running summary of recurrent states. An exact streaming recurrence keeps its persistent aggregation memory constant as the loop count grows. The resulting adaptive update suppresses unreliable proposals and preserves useful intermediate states. Across extensive reasoning tasks, a 7M-parameter InfiLoop model outperforms existing recursive architectures, reaching 97.9% exact accuracy on Sudoku-Extreme, and 13.6% pass@2 on ARC-AGI-2. Notably, on Sudoku-Extreme, InfiLoop continues to improve with test-time looping beyond 20,000 effective steps, showing that added depth translates directly into stronger reasoning. Our code is available at https://github.com/pixeli99/InfiLoop.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.11570v1",
+        "retrieved_at": "2026-10-10T23:07:01Z",
+        "license": "CC0-1.0",
+        "source_title": "Scaling to Tens of Thousands of Test-Time Iterations with Loop-Native Attention Residuals",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-10-08T09:26:21Z",
+        "updated_at": "2026-10-08T09:26:21Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.11570v1",
+        "verified_at": "2026-10-10T23:07:01Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "InfiLoop adds loop-native attention residuals that combine content-dependent weights and temporal decay to retain useful recurrent states. An exact streaming update keeps aggregation memory constant as loop count grows. A 7M-parameter model is evaluated on algorithmic reasoning tasks including Sudoku and ARC-AGI-2. It is a mechanism reference for recurrent-depth stability, not evidence that thousands of iterations are practical or beneficial for latency-constrained ranking.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-11",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.11570v1",
+            "https://arxiv.org/pdf/2610.11570v1"
+          ]
+        },
+        "zh": {
+          "text": "InfiLoop用内容相关权重与时间衰减，汇总循环模型过去的有效状态，并通过精确流式递推保持聚合记忆大小不随循环次数增长。论文评估的是7M模型在数独、ARC-AGI-2等算法推理任务上的表现。可参考其循环深度稳定机制，但不能据此认为数千次迭代适合低延迟排序。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-11",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.11570v1",
+            "https://arxiv.org/pdf/2610.11570v1"
+          ]
+        }
+      },
+      "added_at": "2026-10-10T23:13:01Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.11570"
+      },
+      "change_history": [],
+      "reading_tier": null,
+      "companies": [],
+      "order": 361
+    },
+    {
+      "id": "2610.09179",
+      "title": "LayerRoPE: Dynamic Depth-wise Magnitude & Angular Superposition",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "University of Rochester",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.09179"
+        }
+      ],
+      "aliases": [
+        "LayerRoPE"
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "As data propagates through a Transformer, the norm of its hidden states grows by orders of magnitude with depth, a phenomenon framed as 'curse of depth' and nearly universally treated as a pathology to be suppressed. We take the opposite view. Across 16 pre-trained LLMs from 9 families, spanning dense, mixture-of-experts and hybrid architectures and Pre-, Peri- and Post-Norm designs, we find that this growth reflects an emergent depth-positional encoding, carried by the only learned per-layer gain on the residual stream, the normalization weight $γ$: with depth, $γ$ grows in magnitude and rotates in direction, jointly encoding the layer index. We make this depth-conditioned encoding explicit with LayerRoPE, an implicit analog of RoPE along the depth axis, which replaces all layerwise $γ$ vectors with a single shared vector and depth-conditioned scalars, at a net reduction in parameters and $<0.02\\%$ change in FLOPs. Across a model ladder scaled up to $100$B+ tokens, LayerRoPE consistently outperforms Pre-, Post- and Peri-Norm and Layer-Norm Scaling, reaching Pre-Norm's 1.3B loss with $3.4\\times$ less compute; LayerRoPE is the only approach that shows strong convergence and improves near monotonically as depth scales to 512 layers. It improves learning-rate sensitivity by $3$-$10\\times$, and transfers naively to and consistently improves looped latent models and Vision Transformers. Inspecting its learned schedule inverts the prevailing premise: LayerRoPE does not shrink the residual stream but widens it, damping what each block reads while amplifying what it writes. Depth stability, our results suggest, calls not for suppressing the residual stream, but for depth-conditioned regulation of the computational blocks it feeds.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.09179v1",
+        "retrieved_at": "2026-10-10T23:07:30Z",
+        "license": "CC0-1.0",
+        "source_title": "LayerRoPE: Dynamic Depth-wise Magnitude & Angular Superposition",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-10-06T22:30:58Z",
+        "updated_at": "2026-10-06T22:30:58Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.09179v1",
+        "verified_at": "2026-10-10T23:07:30Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "LayerRoPE replaces layer-specific normalization gains with a shared vector and depth-conditioned magnitude and rotation, regulating what Transformer blocks read and write along depth. Language-model scaling experiments and transfers to looped models and vision Transformers report improved convergence; its relevance to deeper CTR models is a transfer hypothesis, not a demonstrated ranking result.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-11",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.09179v1",
+            "https://arxiv.org/pdf/2610.09179v1"
+          ]
+        },
+        "zh": {
+          "text": "LayerRoPE 用共享向量及依深度变化的幅度与旋转替代各层独立的归一化增益，调节 Transformer 模块沿深度的读取与写入。语言模型扩展实验及向循环模型、视觉 Transformer 的迁移报告了收敛改善；对更深 CTR 模型的价值属于待验证的迁移假设，并非已证实的排序结果。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-11",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.09179v1",
+            "https://arxiv.org/pdf/2610.09179v1"
+          ]
+        }
+      },
+      "added_at": "2026-10-10T23:13:01Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.09179"
+      },
+      "change_history": [],
+      "reading_tier": null,
+      "companies": [],
+      "order": 362
+    },
+    {
+      "id": "2610.06750",
+      "title": "Balancing Memory Pathways: Analyzing and Improving Memory Utilization in Hybrid LMs",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "UNC Chapel Hill; The University of Texas at Austin; Mila; Yale University",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.06750"
+        }
+      ],
+      "aliases": [],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Recurrent-attention hybrid language models (LMs), which interleave attention and recurrent layers, are increasingly used to combine the efficiency of the recurrent layers with the strong performance of attention layers. Prior work suggests that attention and recurrent layers offer complementary pathways to use past information: attention supports precise memory recall from earlier tokens, while recurrent layers support consolidation of disparate information over long contexts. However, we observe that simply having access to both pathways does not mean that hybrid LMs are effectively using them. We find that they rely substantially more on attention than on the recurrent state. Standard supervised fine-tuning improves overall performance but does not improve how the two memory pathways are coordinated: the model becomes more reliant on information propagated by attention layers, while its use of information propagated by recurrent layers remains limited. To encourage better coordination between the two memory pathways, we add an auxiliary loss that limits attention's access to earlier context while the recurrent state propagates through the full sequence. This objective encourages the model to retain and use information through the recurrent pathway alongside attention. It improves overall performance, with particularly strong gains on tasks involving longer contexts or requiring information aggregation, consistent with the strengths of recurrent layers observed in analysis. Crucially, this imbalance and the benefit of our auxiliary loss generalize: they apply to multiple recurrent-attention LMs in question-answering and agentic tasks, as well as to attention-based LMs that combine different forms of memory. Together, our findings show that simply providing multiple memory pathways does not ensure their effective use, and that targeted supervision is needed to better coordinate them.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.06750v1",
+        "retrieved_at": "2026-10-10T23:07:45Z",
+        "license": "CC0-1.0",
+        "source_title": "Balancing Memory Pathways: Analyzing and Improving Memory Utilization in Hybrid LMs",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-10-05T17:27:30Z",
+        "updated_at": "2026-10-05T17:27:30Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.06750v1",
+        "verified_at": "2026-10-10T23:07:45Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "The paper finds that recurrent–attention hybrid language models underuse their recurrent state, and adds an auxiliary supervised pass that masks attention to earlier context while preserving recurrent access to the full sequence. Experiments on long-context question answering and agentic tasks report better memory coordination and overall performance; applying this objective to hybrid user-history rankers remains untested.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-11",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.06750v1",
+            "https://arxiv.org/pdf/2610.06750v1"
+          ]
+        },
+        "zh": {
+          "text": "论文发现循环—注意力混合语言模型对循环状态利用不足，并增加辅助监督前向计算：屏蔽注意力对此前上下文的访问，同时保留循环路径对完整序列的访问。长上下文问答和智能体任务实验报告了记忆协同及整体表现改善；将这一目标用于混合式用户历史排序模型仍待验证。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-11",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.06750v1",
+            "https://arxiv.org/pdf/2610.06750v1"
+          ]
+        }
+      },
+      "added_at": "2026-10-10T23:13:01Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.06750"
+      },
+      "change_history": [],
+      "reading_tier": null,
+      "companies": [],
+      "order": 363
+    },
+    {
+      "id": "2610.09051",
+      "title": "A Self-Pruning Transformer: Extreme KV-Cache Compression with Universal Attention",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "IBM Research; SSAIL Lab, University of Illinois Urbana-Champaign",
+      "venue": "COLM",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.09051"
+        }
+      ],
+      "aliases": [
+        "Universal Attention",
+        "UA"
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "The large KV-cache size of modern LLMs creates a barrier to efficient deployment. Recent work has explored replacing attention layers' RoPE positional embeddings with alternative decay-based mechanisms, which can then be used to prune KV-cache during inference. However, these decay functions have limited expressivity, and in practice devolve into sliding-window-like eviction patterns. In this work, we propose a unifying framework for complementary and novel decay mechanisms, capturing complex key statistics and interactions while preserving expressive RoPE embeddings and Softmax attention. The resulting Universal Attention is a highly expressive and end-to-end trainable architecture, whose composite decay mechanism acts as a natural, $\\textit{adaptive}$ pruning criterion, removing tokens that contribute least to attention computation. Experimentally, Universal Attention achieves state-of-the-art $10\\times$ compression on natural language and synthetic task data, while $\\textit{improving}$ downstream performance compared to both state-of-the-art baselines and unpruned oracles. It further demonstrates superior long-context generalization with unprecedented $25\\times$ compression at length 16k.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.09051v1",
+        "retrieved_at": "2026-10-10T23:08:00Z",
+        "license": "CC0-1.0",
+        "source_title": "A Self-Pruning Transformer: Extreme KV-Cache Compression with Universal Attention",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-10-06T20:00:04Z",
+        "updated_at": "2026-10-06T20:00:04Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.09051v1",
+        "verified_at": "2026-10-10T23:08:00Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "Universal Attention combines learned decay mechanisms with RoPE and softmax attention to adaptively evict low-contributing KV entries. Language and synthetic-task experiments report strong cache compression and competitive performance, but aggregation tasks, additional mask computation, and incomplete inference optimization limit direct deployment claims; transfer to compressed user-history attention is unverified.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-11",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.09051v1",
+            "https://arxiv.org/pdf/2610.09051v1"
+          ]
+        },
+        "zh": {
+          "text": "Universal Attention 将可学习的衰减机制与 RoPE、softmax 注意力结合，自适应移除贡献较低的 KV 条目。语言与合成任务实验报告了较强的缓存压缩能力和有竞争力的表现，但聚合任务、额外掩码计算及尚未完成的推理优化限制了直接部署结论；向压缩用户历史注意力的迁移尚未验证。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-11",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.09051v1",
+            "https://arxiv.org/pdf/2610.09051v1"
+          ]
+        }
+      },
+      "added_at": "2026-10-10T23:13:01Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.09051"
+      },
+      "change_history": [],
+      "reading_tier": null,
+      "companies": [
+        "ibm-mit-ibm-computing-research-lab"
+      ],
+      "order": 364
+    },
+    {
+      "id": "2610.12448",
+      "title": "One Block, Multiple Depths: Recurrent Vision Transformers with Depth-Programmed Experts",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "Samsung AI Cambridge; Technical University of Iasi; Queen Mary University of London",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.12448"
+        }
+      ],
+      "aliases": [
+        "reViT"
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "In this work, we show that a single Transformer block, applied recurrently, can match the accuracy of a full-depth vision encoder at comparable inference FLOPs without intermediate feature distillation. reViT restores depth-specific transformations by representing the FFN at each recurrent depth as a convex combination of a small shared expert bank. A continuous normalized-depth coordinate programs this mixture, defining a resampleable trajectory through FFN parameter space. We evaluate this design in two regimes: supervised ImageNet-1k training and distillation from a DINOv2 teacher. Across both regimes, controlled adaptations identify weight-space merging as the strongest tested MoE family at a matching one-FFN budget, ahead of the token-dispatch and output-mixture alternatives. Trained from scratch, reViT-B/16 attains DeiT III accuracy with about 70\\% fewer stored parameters. An 8-experts model distilled using only the teacher's output features retains nearly all of its DINOv2 teacher's linear-probe accuracy and transfers across classification, segmentation, and depth prediction. Elastic-depth training allows one checkpoint (trained model) to operate at multiple tested depths by resampling the same normalized coordinate interval. For fixed-depth deployment, the recurrent block can be materialized as a conventional dense graph, removing online routing and merging without changing the one-FFN-per-depth compute but expanding deployment storage.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.12448v1",
+        "retrieved_at": "2026-10-10T23:08:28Z",
+        "license": "CC0-1.0",
+        "source_title": "One Block, Multiple Depths: Recurrent Vision Transformers with Depth-Programmed Experts",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-10-08T17:58:36Z",
+        "updated_at": "2026-10-08T17:58:36Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.12448v1",
+        "verified_at": "2026-10-10T23:08:28Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "reViT recurrently applies one Transformer block and uses normalized depth to merge a shared FFN expert bank into one dense FFN per step. ImageNet training and DINOv2 distillation show substantial parameter-storage savings at comparable inference FLOPs, while fixed-depth materialization trades compact storage for ordinary dense execution; CTR transfer and inference acceleration are not established.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-11",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.12448v1",
+            "https://arxiv.org/pdf/2610.12448v1"
+          ]
+        },
+        "zh": {
+          "text": "reViT 循环使用同一个 Transformer 模块，并以归一化深度将共享 FFN 专家库合成为每步一个稠密 FFN。ImageNet 训练和 DINOv2 蒸馏显示，在相近推理 FLOPs 下可显著节省参数存储；固定深度展开则以增加存储换取常规稠密执行。论文尚未验证 CTR 迁移或推理加速。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-11",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.12448v1",
+            "https://arxiv.org/pdf/2610.12448v1"
+          ]
+        }
+      },
+      "added_at": "2026-10-10T23:13:01Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.12448"
+      },
+      "change_history": [],
+      "reading_tier": null,
+      "companies": [
+        "samsung-ai-cambridge"
+      ],
+      "order": 365
+    },
+    {
+      "id": "2610.05619",
+      "title": "SCOUT: Supply-Aware Cold-Start Proactive Query Suggestion for Travel Search",
+      "collection": "related",
+      "category": "engineering-serving",
+      "affiliation": "Airbnb, Inc.",
+      "venue": "GRAIL @ CIKM (non-archival workshop)",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.05619"
+        }
+      ],
+      "aliases": [
+        "SCOUT"
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Generative query suggestion, powered by Large Language Models (LLMs), has become increasingly popular in search and conversational systems to reduce user friction and guide intent formulation. Existing approaches align suggestions with user preferences (e.g., clicks or conversions). This works for open-ended applications like chatbots and personal assistants, where the result space is unconstrained or historical user free-text queries are abundant.\n  However, applying these methods to travel search presents two limitations. First, travel search is fundamentally constrained by physical inventory; a query (e.g., \"romantic beachfront villa\") may yield abundant results in Bali but few in Tokyo, so aligning with user preferences is not by itself grounded in what can be offered. Second, travel platforms traditionally rely on faceted search interfaces with no free-text queries. This creates a cold-start problem: without historical query logs there is no demand-side data for alignment, and without a seed query at request time, suggestions must be generated proactively from structured context alone.\n  To address these challenges, we propose SCOUT, a bootstrapping framework for supply-aware proactive query suggestion. SCOUT overcomes the data gap by substituting missing demand-side user feedback with supply-side system feedback. It treats the search engine as a reinforcement learning environment, deriving a dense reward from the production reranker's query-listing match scores, and optimizes the policy with Group Relative Policy Optimization (GRPO). SCOUT improves inventory match rate (IMR@18) by 12.3% while preserving diversity, matching a compute-intensive best-of-8 policy at zero marginal inference cost and making supply-aware suggestion deployable on a real-time travel search path.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.05619v1",
+        "retrieved_at": "2026-10-10T23:10:07Z",
+        "license": "CC0-1.0",
+        "source_title": "SCOUT: Supply-Aware Cold-Start Proactive Query Suggestion for Travel Search",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-10-04T23:30:41Z",
+        "updated_at": "2026-10-04T23:30:41Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.05619v1",
+        "verified_at": "2026-10-10T23:10:07Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "SCOUT trains proactive travel-query suggestions against supply-side feedback from a production reranker, using GRPO to internalize inventory compatibility instead of paying for best-of-N search at serving time. Offline, destination-disjoint Qwen3-8B experiments compare inventory match and diversity. The engineering lesson is to move expensive selection into training; online CTR and booking improvements are not established, and the reward measures fulfillability rather than user appeal.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-11",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.05619v1",
+            "https://arxiv.org/pdf/2610.05619v1"
+          ]
+        },
+        "zh": {
+          "text": "SCOUT把生产重排器的供给匹配反馈用作GRPO奖励，让旅行查询建议模型在训练中学习库存约束，减少线上多候选搜索筛选的需求。Qwen3-8B实验按目的地隔离训练与测试，比较库存匹配和多样性。可借鉴把昂贵筛选前移到训练；目前仍是离线证据，未证明线上CTR或预订收益，奖励也不代表用户吸引力。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-11",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.05619v1",
+            "https://arxiv.org/pdf/2610.05619v1"
+          ]
+        }
+      },
+      "added_at": "2026-10-10T23:13:01Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.05619"
+      },
+      "change_history": [],
+      "reading_tier": null,
+      "companies": [
+        "airbnb"
+      ],
+      "order": 366
     }
   ]
 }

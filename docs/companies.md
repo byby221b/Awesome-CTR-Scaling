@@ -8,14 +8,14 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 
 - [Meta](#company-meta) (48)
 - [ByteDance / TikTok](#company-bytedance-tiktok) (20)
-- [Alibaba](#company-alibaba) (36)
+- [Alibaba](#company-alibaba) (37)
 - [Meituan](#company-meituan) (9)
 - [Tencent](#company-tencent) (16)
 - [Google](#company-google) (12)
 - [LinkedIn](#company-linkedin) (4)
 - [NetEase](#company-netease) (2)
 - [Kuaishou](#company-kuaishou) (24)
-- [Huawei](#company-huawei) (6)
+- [Huawei](#company-huawei) (7)
 - [Baidu](#company-baidu) (4)
 - [Shopee](#company-shopee) (3)
 - [Coupang](#company-coupang) (1)
@@ -33,7 +33,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [Capital One](#company-capital-one) (1)
 - [Shopify](#company-shopify) (1)
 - [Liquid AI](#company-liquid-ai) (2)
-- [IBM (MIT-IBM Computing Research Lab)](#company-ibm-mit-ibm-computing-research-lab) (2)
+- [IBM (MIT-IBM Computing Research Lab)](#company-ibm-mit-ibm-computing-research-lab) (3)
 - [Perplexity AI](#company-perplexity-ai) (1)
 - [NVIDIA](#company-nvidia) (4)
 - [StepFun](#company-stepfun) (1)
@@ -58,9 +58,11 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [Q Labs](#company-q-labs) (1)
 - [Spotify](#company-spotify) (1)
 - [Zyphra](#company-zyphra) (1)
-- [Airbnb](#company-airbnb) (1)
+- [Airbnb](#company-airbnb) (2)
 - [SenseTime](#company-sensetime) (1)
 - [Linkup](#company-linkup) (1)
+- [Kling Team](#company-kling-team) (1)
+- [Samsung AI Cambridge](#company-samsung-ai-cambridge) (1)
 
 <a id="company-meta"></a>
 
@@ -180,6 +182,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [Masked Diffusion Generative Recommendation](related/generative-recommendation.md#paper-2601-19501) · 2026 · Related
 - [Democratizing MoE inference on commodity GPUs with CoMoE](related/engineering-serving.md#paper-2610-09424) · 2026 · Related
 - [Beyond Sequences: Distilling Structured Decision Memory for LLM Recommendation](related/long-sequence-modeling.md#paper-2610-11501) · 2026 · Related
+- [Generative Spatiotemporal Intent Sequence Recommendation via Implicit Reasoning in Amap](related/generative-recommendation.md#paper-2605-28888) · 2026 · Related
 
 <a id="company-meituan"></a>
 
@@ -288,6 +291,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [Fractional State Space Transition for Long Sequence Modeling](related/architecture-innovations-beyond-recommendation.md#paper-2609-36314) · 2026 · Related
 - [Mitigating Early Training Collapse in CTR Models](related/other.md#paper-2607-09696) · 2026 · Related
 - [Neither Black nor White: Balancing Semantic and Collaborative Signals with Graph-Informed Semantic IDs (GrIS)](related/generative-recommendation.md#paper-2610-01533) · 2026 · Related
+- [QUILT: Rethinking Sparse-Attention Prefill through Shared Query Execution](related/architecture-innovations-beyond-recommendation.md#paper-2610-11134) · 2026 · Related
 
 <a id="company-baidu"></a>
 
@@ -422,6 +426,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 
 - [Triadic Linear Attention: Three-Dimensional Recurrent States for Long-Context Sequence Modeling](related/architecture-innovations-beyond-recommendation.md#paper-2609-36529) · 2026 · Related
 - [The Surprising Effectiveness of Shared Memory in Looped Transformers](related/architecture-innovations-beyond-recommendation.md#paper-2610-02383) · 2026 · Related
+- [A Self-Pruning Transformer: Extreme KV-Cache Compression with Universal Attention](related/architecture-innovations-beyond-recommendation.md#paper-2610-09051) · 2026 · Related
 
 <a id="company-perplexity-ai"></a>
 
@@ -576,6 +581,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 ## Airbnb
 
 - [SIFT: Search Intent-to-Filter Transformer for Multi-Task Personalized Filter Ranking at Airbnb](topics/foundation-models-multi-scenario.md#paper-2610-07810) · 2026 · Core
+- [SCOUT: Supply-Aware Cold-Start Proactive Query Suggestion for Travel Search](related/engineering-serving.md#paper-2610-05619) · 2026 · Related
 
 <a id="company-sensetime"></a>
 
@@ -588,3 +594,15 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 ## Linkup
 
 - [Compact and Efficient Indexes for Learned Sparse Retrieval](related/retrieval-reranking-scaling.md#paper-2610-12300) · 2026 · Related
+
+<a id="company-kling-team"></a>
+
+## Kling Team
+
+- [ORCA: The Annealed Spectral Conditioning Optimizer for Faster, Better LLM Training](related/architecture-innovations-beyond-recommendation.md#paper-2610-06116) · 2026 · Related
+
+<a id="company-samsung-ai-cambridge"></a>
+
+## Samsung AI Cambridge
+
+- [One Block, Multiple Depths: Recurrent Vision Transformers with Depth-Programmed Experts](related/architecture-innovations-beyond-recommendation.md#paper-2610-12448) · 2026 · Related

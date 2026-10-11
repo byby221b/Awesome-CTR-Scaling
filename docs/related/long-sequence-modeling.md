@@ -6,7 +6,7 @@
 
 Long-history modeling, memory and compression for user behavior sequences.
 
-27 papers · Updated 2026-10-10
+28 papers · Updated 2026-10-11
 
 <a id="paper-2504-06780"></a>
 
@@ -115,3 +115,7 @@ Long-history modeling, memory and compression for user behavior sequences.
 <a id="paper-2610-11501"></a>
 
 - **Beyond Sequences: Distilling Structured Decision Memory for LLM Recommendation**: MARI builds a Decision Memory Bank of structured user goals, constraints, and trade-offs distilled offline from heterogeneous behaviors and user-generated content. Retrieved memories then augment LLM recommendation without repeatedly processing full raw histories. The paper reports improvements in offline next-item prediction and its newly introduced Difficult Choice Prediction task, with interpretable memory records and low reported latency overhead. This is direct recommendation research, but its purchase-target Hit@1 evidence should not be described as online CTR improvement. — [Paper](https://arxiv.org/abs/2610.11501) (Alibaba Group, Hangzhou, China · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-06050"></a>
+
+- **MATE: Adaptive Long- and Short-Term User Memory for LLM-Based Recommendation**: MATE uses temporal evidence to update separate long- and short-term user memories, then reads them according to recent context while keeping shared model parameters fixed during adaptation. Experiments on filtered MovieLens-10M, Luxury Beauty, and KuaiRec user cohorts support the memory design. However, freezing further online writes matches its aggregate accuracy, so incremental test-time adaptation is not established; user-state storage and update computation also increase. — [Paper](https://arxiv.org/abs/2610.06050) (Yonsei University · arXiv 2026). Reading priority: Unrated.
