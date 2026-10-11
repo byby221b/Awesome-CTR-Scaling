@@ -6,7 +6,7 @@
 
 Generative objectives and pre-training for discriminative CTR tasks.
 
-4 papers · Updated 2026-10-11
+4 papers · Updated 2026-10-12
 
 <a id="paper-2512-14041"></a>
 

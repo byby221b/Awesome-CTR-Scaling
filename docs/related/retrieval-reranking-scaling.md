@@ -6,7 +6,7 @@
 
 Scaling retrieval and reranking stages of recommendation pipelines.
 
-17 papers · Updated 2026-10-11
+20 papers · Updated 2026-10-12
 
 <a id="paper-2603-04816"></a>
 
@@ -75,3 +75,15 @@ Scaling retrieval and reranking stages of recommendation pipelines.
 <a id="paper-2610-12300"></a>
 
 - **Compact and Efficient Indexes for Learned Sparse Retrieval**: This work compresses learned sparse-retrieval indexes at both candidate-selection and scoring stages. It replaces block summaries with document medoids and combines vocabulary reordering, fused decompression/dot products, and per-component 4-bit value codebooks. On MS MARCO with three sparse encoders, experiments compare speed and memory at matched retrieval accuracy. The techniques offer a systems-level reference for scaling sparse candidate retrieval; they do not establish gains in downstream CTR ranking. — [Paper](https://arxiv.org/abs/2610.12300) (ISTI–CNR; University of Pisa; Linkup · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-08716"></a>
+
+- **Disentangling Paradigm, Identifier, and Decoding in Generative Retrieval**: This study varies document identifiers and decoding across autoregressive, masked-diffusion, and block-diffusion retrieval on NQ320K and MS300K. Changing decoding alone moves diffusion Hit@1 by 6.6–13.7 points; one fully masked forward pass followed by corpus-code probability scoring matches or beats generate-and-match in 11 of 12 settings. Backbone sizes, pretraining data, and training recipes remain different, so cross-paradigm gaps do not isolate architecture alone. It informs controlled evaluation of generative retrieval rather than establishing CTR or serving gains. — [Paper](https://arxiv.org/abs/2610.08716) (Artefact Research Center · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-08732"></a>
+
+- **A Systematic Study of Semantic ID Spaces for Generative Information Retrieval**: The study puts product quantization, residual quantization, and hybrid document identifiers in one design space, varying code length and codebook size on MS MARCO 300K and NQ320K. Training-free metrics diagnose collisions and structural properties, but do not reliably rank the downstream quality of otherwise usable identifier spaces. The practical lesson for semantic-ID scaling is to use intrinsic checks for screening, then validate retrieval performance; fixed encoders, model size, and decoding limit generalization, and recommendation transfer is untested. — [Paper](https://arxiv.org/abs/2610.08732) (Artefact Research Center; LERIA, Angers University · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2606-01782"></a>
+
+- **More Efficient LLM Reranking with Whole-Pool, Setwise, Long-Context Language Models**: When all retrieved candidates fit the context window, DualEnd Setwise selects the most and least relevant candidates together and fills a complete ranking from both ends. It ranks 100 candidates in 50 comparisons; experiments with nine open-weight LLMs and six BEIR datasets approximately halve tokens and ranking time versus single-end whole-pool ranking. This is an output-depth-specific efficiency tradeoff: top-10 quality can decline and main timings omit retry generations. It offers a test-time-compute design for reranking, not an established online CTR improvement. — [Paper](https://arxiv.org/abs/2606.01782) (The University of Queensland · arXiv 2026). Reading priority: Unrated.

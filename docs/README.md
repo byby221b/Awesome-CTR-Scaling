@@ -20,8 +20,8 @@
 - [Generative Pre-training for CTR](related/generative-pre-training-for-ctr.md) (4) — Generative objectives and pre-training for discriminative CTR tasks.
 - [Knowledge Distillation & Compression](related/knowledge-distillation-compression.md) (4) — Transferring, compressing and deploying larger recommendation models.
 - [Engineering & Serving](related/engineering-serving.md) (34) — Systems, serving infrastructure and hardware-aware optimization.
-- [Retrieval & Reranking Scaling](related/retrieval-reranking-scaling.md) (17) — Scaling retrieval and reranking stages of recommendation pipelines.
-- [Architecture Innovations Beyond Recommendation](related/architecture-innovations-beyond-recommendation.md) (93) — Transferable ideas from general-purpose model architecture research.
+- [Retrieval & Reranking Scaling](related/retrieval-reranking-scaling.md) (20) — Scaling retrieval and reranking stages of recommendation pipelines.
+- [Architecture Innovations Beyond Recommendation](related/architecture-innovations-beyond-recommendation.md) (96) — Transferable ideas from general-purpose model architecture research.
 - [Other](related/other.md) (9) — Adjacent research, diagnostics and other relevant recommendation methods.
 
 ## Tag vocabulary

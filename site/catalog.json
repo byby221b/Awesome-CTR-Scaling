@@ -1,15 +1,15 @@
 {
   "coverage": {
     "reading_tiers_assigned": 339,
-    "reading_tiers_unrated": 28,
-    "known_added_dates": 367,
+    "reading_tiers_unrated": 34,
+    "known_added_dates": 373,
     "papers_with_updates": 272,
-    "verified_source_dates": 367,
-    "verified_abstracts": 367,
+    "verified_source_dates": 373,
+    "verified_abstracts": 373,
     "unavailable_abstracts": 0,
     "pending_abstracts": 0,
-    "english_summaries": 367,
-    "chinese_summaries": 367
+    "english_summaries": 373,
+    "chinese_summaries": 373
   },
   "schema_version": 4,
   "meta": {
@@ -17,7 +17,7 @@
     "description": "Scaling laws and scalable ranking models for industrial recommendation.",
     "repository_url": "https://github.com/byby221b/Awesome-CTR-Scaling",
     "site_url": "https://byby221b.github.io/Awesome-CTR-Scaling/",
-    "updated": "2026-10-11",
+    "updated": "2026-10-12",
     "source_commit": "31ad30becff83ca14a01f37fc99d52ba79f85565",
     "scope": "We cover papers that (1) study scaling laws for recommendation models, (2) propose scalable Transformer-based architectures for CTR/ranking, (3) address efficiency challenges in scaling up industrial ranking systems, or (4) explore novel paradigms (e.g., sparse scaling, generative pre-training, foundation models) for scalable recommendation.",
     "history": {
@@ -26,7 +26,7 @@
       "added_at_basis": "Earliest recorded inclusion in reachable repository main history; 50 records were present at its root commit. This is not the source publication date.",
       "backfill_policy": "Unknown historical instants remain null. Source-date imports and structural/UI migrations do not invent catalog change events."
     },
-    "catalog_sha256": "376334134af3a75e001ee7d290aade0b342d37add6da6a81d801b5dd78a671f6"
+    "catalog_sha256": "a0340a10810eeb9835e0965ae1ddfea83637c02bf566bb91b2ff9cda6bba1206"
   },
   "categories": [
     {
@@ -138,7 +138,7 @@
     {
       "id": "tencent",
       "name": "Tencent",
-      "count": 16
+      "count": 17
     },
     {
       "id": "google",
@@ -203,7 +203,7 @@
     {
       "id": "jd",
       "name": "JD",
-      "count": 3
+      "count": 4
     },
     {
       "id": "vk",
@@ -399,6 +399,11 @@
       "id": "samsung-ai-cambridge",
       "name": "Samsung AI Cambridge",
       "count": 1
+    },
+    {
+      "id": "artefact",
+      "name": "Artefact Research Center",
+      "count": 2
     }
   ],
   "papers": [
@@ -28705,6 +28710,410 @@
         "airbnb"
       ],
       "order": 366
+    },
+    {
+      "id": "2609.13205",
+      "title": "Self-Indexing Attention for Compression-Compatible Sparse Long-Context LLM Inference",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "Hunan University; Tencent",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2609.13205"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Sparse long-context inference requires efficient token retrieval in both prefill and decode. Existing methods often use different retrieval strategies for the two stages, preventing one retrieval representation from being reused throughout inference. We propose Self-Indexing Attention, a training-free framework built on a shared transform-domain sign-magnitude representation. The key signs provide a reusable token-level index for grouped prefill selection and decode retrieval, while the same representation remains compatible with external KV-cache compression without separate indexer metadata. This 1-bit index enables efficient retrieval through bitwise operations widely supported by modern accelerators. At 5% attention density, Self-Indexing Attention remains close to dense attention on LongBench and RULER and achieves up to 6.1x prefill and 10.3x decode attention-operator speedups. Experiments with TurboQuant and DeepSeekV4-Flash further demonstrate compatibility with low-bit KV-cache compression and pretrained sparse-attention indexers.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2609.13205v2",
+        "retrieved_at": "2026-10-11T23:02:14Z",
+        "license": "CC0-1.0",
+        "source_title": "Self-Indexing Attention for Compression-Compatible Sparse Long-Context LLM Inference",
+        "source_version": "v2"
+      },
+      "source_dates": {
+        "published_at": "2026-08-16T03:41:37Z",
+        "updated_at": "2026-10-07T07:41:29Z",
+        "source_version": "v2",
+        "source_url": "https://arxiv.org/abs/2609.13205v2",
+        "verified_at": "2026-10-11T23:10:45Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "Self-Indexing Attention reuses transformed key-sign bits as a token-retrieval index for both prefill and decoding, while remaining compatible with separate low-bit KV compression. At 5% attention density, LongBench and RULER results remain close to dense attention; the reported operator speedups are not end-to-end gains. A Qwen3.5-9B 64K-context test instead reports a 1.35× time-to-first-token speedup and 1.23× higher steady decoding throughput. The reusable-index design may inform long-history serving, but recommendation transfer is untested.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-12",
+          "source_urls": [
+            "https://arxiv.org/abs/2609.13205v2",
+            "https://arxiv.org/html/2609.13205v2"
+          ]
+        },
+        "zh": {
+          "text": "Self-Indexing Attention 将变换后 key 的符号位作为预填充和解码共用的 token 检索索引，并兼容独立的低比特 KV 压缩。在 5% 注意力密度下，LongBench 与 RULER 表现接近稠密注意力；较大的算子加速并非端到端收益。Qwen3.5-9B 的 64K 上下文测试中，首 token 时间加速 1.35 倍、稳定解码吞吐提高至 1.23 倍。共享索引设计可供长历史服务参考，但尚未验证推荐迁移。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-12",
+          "source_urls": [
+            "https://arxiv.org/abs/2609.13205v2",
+            "https://arxiv.org/html/2609.13205v2"
+          ]
+        }
+      },
+      "added_at": "2026-10-11T23:17:35Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2609.13205"
+      },
+      "change_history": [],
+      "reading_tier": null,
+      "companies": [
+        "tencent"
+      ],
+      "order": 367
+    },
+    {
+      "id": "2610.08716",
+      "title": "Disentangling Paradigm, Identifier, and Decoding in Generative Retrieval",
+      "collection": "related",
+      "category": "retrieval-reranking-scaling",
+      "affiliation": "Artefact Research Center",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.08716"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Generative retrieval trains a language model to generate the identifier of a relevant document. Recent work replaces the autoregressive decoder with diffusion, but changes identifiers, training recipe and decoding at once, so differences cannot be credited to the paradigm. On NQ320K and MS300K, we train autoregressive, masked-diffusion and block-diffusion models with residual-quantised, product-quantised and random identifiers. With identifier length and training budget fixed, we decode each model in several ways. Decoding alone moves a diffusion model's Hit@1 by 6.6 to 13.7 points. Our reference diffusion decoding, generate-and-match, generates an identifier, then retrieves the closest corpus identifiers. The generated identifier is right for 14-21% of NQ320K queries. We test one-pass scoring to decode diffusion retrievers: the model reads a fully masked identifier once, and each document is scored by its codes' probabilities. It matches or beats generate-and-match in 11 of 12 settings. Autoregressive models still lead in Hit@1; on NQ320K, the lead comes from the model, not beam search. Starting from one sampled identifier, one-pass scoring removes 46-83% of masked diffusion's deficit to beam search; from generate-and-match, at most a quarter. On NQ320K, every paradigm largely memorises which identifier answers which query: random identifiers keep 83-90% of the Hit@1 of residual-quantised ones. There, product-quantised identifiers lead residual-quantised ones by 3.4 points in the autoregressive model and by -0.7 to +3.6 in diffusion models; across decodings, AR's gap exceeds diffusion's by 1.5-2.3 points, around our 2-point threshold. Paradigm comparisons must report each paradigm at its own recipe and best decoding.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.08716v1",
+        "retrieved_at": "2026-10-11T23:02:28Z",
+        "license": "CC0-1.0",
+        "source_title": "Disentangling Paradigm, Identifier, and Decoding in Generative Retrieval",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-10-06T17:23:47Z",
+        "updated_at": "2026-10-06T17:23:47Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.08716v1",
+        "verified_at": "2026-10-11T23:10:45Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "This study varies document identifiers and decoding across autoregressive, masked-diffusion, and block-diffusion retrieval on NQ320K and MS300K. Changing decoding alone moves diffusion Hit@1 by 6.6–13.7 points; one fully masked forward pass followed by corpus-code probability scoring matches or beats generate-and-match in 11 of 12 settings. Backbone sizes, pretraining data, and training recipes remain different, so cross-paradigm gaps do not isolate architecture alone. It informs controlled evaluation of generative retrieval rather than establishing CTR or serving gains.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-12",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.08716v1",
+            "https://arxiv.org/html/2610.08716v1"
+          ]
+        },
+        "zh": {
+          "text": "研究在 NQ320K 和 MS300K 上组合文档标识与解码方法，比较自回归、掩码扩散和分块扩散检索。仅改变解码就使扩散模型的 Hit@1 相差 6.6–13.7 个百分点；一次全掩码前向后按语料编码概率打分，在 12 种设置中的 11 种追平或超过生成后匹配。模型大小、预训练数据和训练配方仍不同，跨范式差距不能单独归因于架构。可借鉴其生成式检索评估方法，不能据此推断 CTR 或服务收益。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-12",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.08716v1",
+            "https://arxiv.org/html/2610.08716v1"
+          ]
+        }
+      },
+      "added_at": "2026-10-11T23:17:35Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.08716"
+      },
+      "change_history": [],
+      "reading_tier": null,
+      "companies": [
+        "artefact"
+      ],
+      "order": 368
+    },
+    {
+      "id": "2610.08732",
+      "title": "A Systematic Study of Semantic ID Spaces for Generative Information Retrieval",
+      "collection": "related",
+      "category": "retrieval-reranking-scaling",
+      "affiliation": "Artefact Research Center; LERIA, Angers University",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.08732"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Generative Information Retrieval (GIR) has emerged as a transformative paradigm, shifting document retrieval from a traditional \"retrieve-and-rank\" workflow to sequence-to-sequence generation, where a model directly predicts document identifiers (DocIDs). While the semantic design of these DocIDs is known to be critical for performance, a fundamental question remains under-explored: what makes a good DocID? Current approaches rely heavily on computationally expensive downstream evaluations, hindering systematic analysis and rapid iteration. In this work, we address this challenge by presenting a comprehensive study on the properties, metrics, and trade-offs that define effective numerical DocIDs. Specifically, our contributions are threefold: First, we propose a unified framework that unifies Product Quantization (PQ) and Residual Quantization (RQ), and their hybrid variants within a single design space. This enables us to systematically study key DocID properties, such as hierarchy versus parallelism, as well as the impact of hyperparameters like DocID length and codebook size. Second, we define a suite of training-free, intrinsic metrics, to quantify DocID quality and evaluate structural fidelity without the overhead of full model training. Through extensive experiments on MS MARCO 300K and NQ320K, we analyze how these structural properties influence retrieval effectiveness.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.08732v1",
+        "retrieved_at": "2026-10-11T23:02:44Z",
+        "license": "CC0-1.0",
+        "source_title": "A Systematic Study of Semantic ID Spaces for Generative Information Retrieval",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-10-06T17:33:32Z",
+        "updated_at": "2026-10-06T17:33:32Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.08732v1",
+        "verified_at": "2026-10-11T23:10:45Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "The study puts product quantization, residual quantization, and hybrid document identifiers in one design space, varying code length and codebook size on MS MARCO 300K and NQ320K. Training-free metrics diagnose collisions and structural properties, but do not reliably rank the downstream quality of otherwise usable identifier spaces. The practical lesson for semantic-ID scaling is to use intrinsic checks for screening, then validate retrieval performance; fixed encoders, model size, and decoding limit generalization, and recommendation transfer is untested.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-12",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.08732v1",
+            "https://arxiv.org/html/2610.08732v1"
+          ]
+        },
+        "zh": {
+          "text": "研究将乘积量化、残差量化及混合文档标识放进同一设计空间，在 MS MARCO 300K 和 NQ320K 上比较编码长度与码本大小。免训练指标能检查碰撞和结构特征，却不能可靠排序其余可用编码空间的下游效果。对语义 ID 扩展的启示是先用内在指标筛查，再验证检索表现；固定编码器、模型规模和解码设置限制了结论外推，推荐迁移仍未验证。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-12",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.08732v1",
+            "https://arxiv.org/html/2610.08732v1"
+          ]
+        }
+      },
+      "added_at": "2026-10-11T23:17:35Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.08732"
+      },
+      "change_history": [],
+      "reading_tier": null,
+      "companies": [
+        "artefact"
+      ],
+      "order": 369
+    },
+    {
+      "id": "2606.01782",
+      "title": "More Efficient LLM Reranking with Whole-Pool, Setwise, Long-Context Language Models",
+      "collection": "related",
+      "category": "retrieval-reranking-scaling",
+      "affiliation": "The University of Queensland",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2606.01782"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "LLM-based re-rankers produce rankings through repeated local comparisons (listwise, pairwise or pointwise), requiring many sequential model calls. We study how long-context LLMs can drastically reduce this computation when the entire retrieved candidate pool fits within the context window. We introduce Whole-Pool Setwise re-ranking, where each comparison ranks all the entire candidate pool, and propose DualEnd Setwise, which jointly selects the candidates predicted to be most and least relevant. By filling the ranking from both ends, DualEnd constructs a complete ranking of 100 candidates in 50 LLM comparisons. Experiments with nine open-weight LLMs on TREC DL19 and DL20 show that this requires 59.4\\% fewer comparisons than previous top-oriented windowed Setwise with heapsort and 88.8\\% fewer than top-oriented windowed Setwise with bubblesort, even though those baselines target only the top-10 rankings while DualEnd targets the full ranking. DualEnd's nDCG@100 is within 0.008 of the single-end whole-pool top-oriented approach, while approximately halving its token consumption and ranking time. Across six BEIR datasets, DualEnd reduces mean token consumption and ranking time by 49.4\\% and 50.8\\%, respectively, relative to single-end whole-pool top-oriented approach. These results demonstrate that DualEnd Setwise enables complete re-ranking with substantially fewer LLM comparisons and competitive effectiveness across several backbones. Implementation, results, and prompt templates available at https://github.com/hanglics/Whole-Pool-Setwise.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2606.01782v3",
+        "retrieved_at": "2026-10-11T23:03:00Z",
+        "license": "CC0-1.0",
+        "source_title": "More Efficient LLM Reranking with Whole-Pool, Setwise, Long-Context Language Models",
+        "source_version": "v3"
+      },
+      "source_dates": {
+        "published_at": "2026-06-01T07:03:51Z",
+        "updated_at": "2026-10-06T11:00:33Z",
+        "source_version": "v3",
+        "source_url": "https://arxiv.org/abs/2606.01782v3",
+        "verified_at": "2026-10-11T23:10:45Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "When all retrieved candidates fit the context window, DualEnd Setwise selects the most and least relevant candidates together and fills a complete ranking from both ends. It ranks 100 candidates in 50 comparisons; experiments with nine open-weight LLMs and six BEIR datasets approximately halve tokens and ranking time versus single-end whole-pool ranking. This is an output-depth-specific efficiency tradeoff: top-10 quality can decline and main timings omit retry generations. It offers a test-time-compute design for reranking, not an established online CTR improvement.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-12",
+          "source_urls": [
+            "https://arxiv.org/abs/2606.01782v3",
+            "https://arxiv.org/html/2606.01782v3"
+          ]
+        },
+        "zh": {
+          "text": "在全部候选能放入上下文窗口时，DualEnd Setwise 同时选出最相关和最不相关的候选，从两端填充完整排名，100 个候选需 50 次比较。九个开放权重模型及六个 BEIR 数据集实验中，相较单端 whole-pool 排序，token 消耗和排序时间约减半。这是与输出深度有关的效率取舍：前十名质量可能下降，主要计时未计重试生成。可借鉴其重排计算分配方法，尚非线上 CTR 收益证据。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-12",
+          "source_urls": [
+            "https://arxiv.org/abs/2606.01782v3",
+            "https://arxiv.org/html/2606.01782v3"
+          ]
+        }
+      },
+      "aliases": [
+        "DualEnd Setwise",
+        "Whole-Pool Setwise"
+      ],
+      "added_at": "2026-10-11T23:17:35Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2606.01782"
+      },
+      "change_history": [],
+      "reading_tier": null,
+      "companies": [],
+      "order": 370
+    },
+    {
+      "id": "2610.11784",
+      "title": "Compile the Table: Query-Calibrated Operator Compression for Tabular In-Context Learning",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "JD.COM",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.11784"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Tabular in-context learning (ICL) has emerged as a training-free and accurate paradigm for tabular prediction, but current approaches to compressing its in-context examples face an accuracy-throughput tradeoff: fixed subsets can sacrifice accuracy, while query-specific retrieval limits cache reuse and batching across queries, reducing throughput. We propose QCOC (Query-Calibrated Operator Compression), which exploits the exchangeability and repeated use of in-context examples by compiling their full KV cache once into compact memory shared across subsequent queries. Instead of retaining raw examples, QCOC clusters their states into joint-KV prototypes, preserves per-cluster multiplicities and the original example count, and calibrates prototype values against attention query vectors produced by the in-context examples through an anchored closed-form solution. Prototype compression drives the speedup, while value fitting helps preserve accuracy. On 64 held-out OpenML-CC18 datasets, QCOC achieves the highest mean accuracy among the compared compression and retrieval methods at both retained counts. Across 12 configurations on seven long tables, it ranks first among compressed methods in ten and averages 0.23 percentage points below full context. Compressing 8,192 in-context examples to 512 memory slots yields a 10.5x cache compression ratio; excluding one-time compilation, in a single-core CPU online-serving comparison over 1,000 queries, QCOC is up to 508x faster than dynamic retrieval baselines and 1.98x faster than full-context inference. These results show that QCOC enables compact-memory reuse and efficient inference across queries while retaining accuracy close to full context.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.11784v1",
+        "retrieved_at": "2026-10-11T23:04:33Z",
+        "license": "CC0-1.0",
+        "source_title": "Compile the Table: Query-Calibrated Operator Compression for Tabular In-Context Learning",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-10-08T12:00:43Z",
+        "updated_at": "2026-10-08T12:00:43Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.11784v1",
+        "verified_at": "2026-10-11T23:10:45Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "QCOC compiles fixed tabular in-context examples into reusable joint-KV prototypes, preserves cluster multiplicities, and calibrates values with a closed-form fit. Compressing 8,192 examples to 512 slots yields 10.5× cache compression and 1.98× faster online single-core CPU inference than full context over 1,000 queries, excluding compilation. A separate adult-dataset measurement takes 283.4 seconds to compile, and Covertype loses 4.27 accuracy points. The reusable-memory design is relevant to serving economics; transfer from exchangeable examples to ordered recommendation histories is untested.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-12",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.11784v1",
+            "https://arxiv.org/html/2610.11784v1",
+            "https://arxiv.org/pdf/2610.11784v1"
+          ]
+        },
+        "zh": {
+          "text": "QCOC 将固定表格上下文编译为可重复使用的联合 KV 原型，保留簇内样本数，并用闭式拟合校准 value。8192 个样本压至 512 个槽位时，缓存压缩 10.5 倍；1000 次查询的单核 CPU 在线测试较完整上下文快 1.98 倍，但不含编译成本。另测 adult 数据集编译需 283.4 秒，Covertype 准确率损失 4.27 个百分点。可借鉴其复用内存的服务设计；从可交换样本迁移到有序推荐历史尚未验证。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-12",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.11784v1",
+            "https://arxiv.org/html/2610.11784v1",
+            "https://arxiv.org/pdf/2610.11784v1"
+          ]
+        }
+      },
+      "aliases": [
+        "QCOC"
+      ],
+      "added_at": "2026-10-11T23:17:35Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.11784"
+      },
+      "change_history": [],
+      "reading_tier": null,
+      "companies": [
+        "jd"
+      ],
+      "order": 371
+    },
+    {
+      "id": "2610.12338",
+      "title": "VFold: Symmetry-Aware Cross-Layer Value Cache Compression",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "Johns Hopkins University; George Mason University",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.12338"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "While caching key-value (KV) states accelerates Large Language Model (LLM) decoding, this cache can dominate memory usage at long context lengths. One solution is to compress this memory by exploiting inter-layer cache similarities. However, most existing techniques necessitate architectural changes to LLMs and incur substantial overhead. In this work, we propose a symmetry-aware value cache merging strategy that reduces cache memory while avoiding both harmful performance degradation and architectural overhead during decoding. Furthermore, we show that this approach can be exploited alongside existing cache compression techniques, composing with high-ratio quantization or key cache pruning to reach compression ratios that neither method reaches alone, with minimal additional cost. Ultimately, our findings reveal a major source of underutilized capacity in the value cache, offering a simple yet highly effective direction for scaling context windows under memory constraints.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.12338v1",
+        "retrieved_at": "2026-10-11T23:04:48Z",
+        "license": "CC0-1.0",
+        "source_title": "VFold: Symmetry-Aware Cross-Layer Value Cache Compression",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-10-08T17:14:28Z",
+        "updated_at": "2026-10-08T17:14:28Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.12338v1",
+        "verified_at": "2026-10-11T23:10:45Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "VFold uses calibration to align adjacent layers’ value representations, folds the maps into attention weights, and then approximately merges value caches. Halving value storage reduces total KV memory by 25%, retaining over 98% of aggregate LongBench and RULER scores on three tested models. In an A100 test, capacity rises from 33 to 38 sequences, but batch-one decoding slows from 21.0 to 27.8 ms per token. It provides a memory-capacity tradeoff for long-context serving, rather than guaranteed latency or recommendation gains.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-12",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.12338v1",
+            "https://arxiv.org/html/2610.12338v1"
+          ]
+        },
+        "zh": {
+          "text": "VFold 通过校准对齐相邻层的 value 表示，将映射吸收进注意力权重，再近似合并 value 缓存。value 存储减半对应总 KV 内存减少 25%，三个测试模型的 LongBench 与 RULER 聚合分数保留超过 98%。A100 测试中可容纳序列数从 33 增至 38，但 batch 1 解码从每 token 21.0 增至 27.8 毫秒。它提供长上下文服务的容量取舍，不保证延迟或推荐效果改善。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-12",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.12338v1",
+            "https://arxiv.org/html/2610.12338v1"
+          ]
+        }
+      },
+      "aliases": [
+        "VFold"
+      ],
+      "added_at": "2026-10-11T23:17:35Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.12338"
+      },
+      "change_history": [],
+      "reading_tier": null,
+      "companies": [],
+      "order": 372
     }
   ]
 }

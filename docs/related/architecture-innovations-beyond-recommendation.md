@@ -6,7 +6,7 @@
 
 Transferable ideas from general-purpose model architecture research.
 
-93 papers · Updated 2026-10-11
+96 papers · Updated 2026-10-12
 
 <a id="paper-2606-16825"></a>
 
@@ -379,3 +379,15 @@ Transferable ideas from general-purpose model architecture research.
 <a id="paper-2610-12448"></a>
 
 - **One Block, Multiple Depths: Recurrent Vision Transformers with Depth-Programmed Experts**: reViT recurrently applies one Transformer block and uses normalized depth to merge a shared FFN expert bank into one dense FFN per step. ImageNet training and DINOv2 distillation show substantial parameter-storage savings at comparable inference FLOPs, while fixed-depth materialization trades compact storage for ordinary dense execution; CTR transfer and inference acceleration are not established. — [Paper](https://arxiv.org/abs/2610.12448) (Samsung AI Cambridge; Technical University of Iasi; Queen Mary University of London · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2609-13205"></a>
+
+- **Self-Indexing Attention for Compression-Compatible Sparse Long-Context LLM Inference**: Self-Indexing Attention reuses transformed key-sign bits as a token-retrieval index for both prefill and decoding, while remaining compatible with separate low-bit KV compression. At 5% attention density, LongBench and RULER results remain close to dense attention; the reported operator speedups are not end-to-end gains. A Qwen3.5-9B 64K-context test instead reports a 1.35× time-to-first-token speedup and 1.23× higher steady decoding throughput. The reusable-index design may inform long-history serving, but recommendation transfer is untested. — [Paper](https://arxiv.org/abs/2609.13205) (Hunan University; Tencent · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-11784"></a>
+
+- **Compile the Table: Query-Calibrated Operator Compression for Tabular In-Context Learning**: QCOC compiles fixed tabular in-context examples into reusable joint-KV prototypes, preserves cluster multiplicities, and calibrates values with a closed-form fit. Compressing 8,192 examples to 512 slots yields 10.5× cache compression and 1.98× faster online single-core CPU inference than full context over 1,000 queries, excluding compilation. A separate adult-dataset measurement takes 283.4 seconds to compile, and Covertype loses 4.27 accuracy points. The reusable-memory design is relevant to serving economics; transfer from exchangeable examples to ordered recommendation histories is untested. — [Paper](https://arxiv.org/abs/2610.11784) (JD.COM · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-12338"></a>
+
+- **VFold: Symmetry-Aware Cross-Layer Value Cache Compression**: VFold uses calibration to align adjacent layers’ value representations, folds the maps into attention weights, and then approximately merges value caches. Halving value storage reduces total KV memory by 25%, retaining over 98% of aggregate LongBench and RULER scores on three tested models. In an A100 test, capacity rises from 33 to 38 sequences, but batch-one decoding slows from 21.0 to 27.8 ms per token. It provides a memory-capacity tradeoff for long-context serving, rather than guaranteed latency or recommendation gains. — [Paper](https://arxiv.org/abs/2610.12338) (Johns Hopkins University; George Mason University · arXiv 2026). Reading priority: Unrated.

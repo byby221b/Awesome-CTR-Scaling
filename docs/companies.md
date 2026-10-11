@@ -10,7 +10,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [ByteDance / TikTok](#company-bytedance-tiktok) (20)
 - [Alibaba](#company-alibaba) (37)
 - [Meituan](#company-meituan) (9)
-- [Tencent](#company-tencent) (16)
+- [Tencent](#company-tencent) (17)
 - [Google](#company-google) (12)
 - [LinkedIn](#company-linkedin) (4)
 - [NetEase](#company-netease) (2)
@@ -23,7 +23,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [Tubi](#company-tubi) (1)
 - [Pinterest](#company-pinterest) (4)
 - [Yandex](#company-yandex) (6)
-- [JD](#company-jd) (3)
+- [JD](#company-jd) (4)
 - [VK](#company-vk) (1)
 - [Microsoft](#company-microsoft) (1)
 - [Walmart](#company-walmart) (1)
@@ -63,6 +63,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [Linkup](#company-linkup) (1)
 - [Kling Team](#company-kling-team) (1)
 - [Samsung AI Cambridge](#company-samsung-ai-cambridge) (1)
+- [Artefact Research Center](#company-artefact) (2)
 
 <a id="company-meta"></a>
 
@@ -218,6 +219,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [SlimKV: Joint Token-Feature KV Cache Compression with Reconstruction-Free Beacon Attention](related/architecture-innovations-beyond-recommendation.md#paper-2610-02953) · 2026 · Related
 - [GPR: Towards a Generative Pre-trained One-Model Paradigm for Large-Scale Advertising Recommendation](topics/scalable-architecture.md#paper-2511-10138) · 2026 · Core
 - [Preference-Drift-Aware Subsequence Learning and Hierarchical Context Fusion for Long-Sequence Generative Recommendation](related/long-sequence-modeling.md#paper-2609-12556) · 2026 · Related
+- [Self-Indexing Attention for Compression-Compatible Sparse Long-Context LLM Inference](related/architecture-innovations-beyond-recommendation.md#paper-2609-13205) · 2026 · Related
 
 <a id="company-google"></a>
 
@@ -356,6 +358,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [OCP: Orthogonal Constrained Projection for Sparse Scaling in Industrial Commodity Recommendation](topics/scalable-architecture.md#paper-2603-18697) · 2026 · Core
 - [GenRec](related/generative-recommendation.md#paper-2604-14878) · 2026 · Related
 - [AdaGRPO](related/generative-recommendation.md#paper-2606-08480) · 2026 · Related
+- [Compile the Table: Query-Calibrated Operator Compression for Tabular In-Context Learning](related/architecture-innovations-beyond-recommendation.md#paper-2610-11784) · 2026 · Related
 
 <a id="company-vk"></a>
 
@@ -606,3 +609,10 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 ## Samsung AI Cambridge
 
 - [One Block, Multiple Depths: Recurrent Vision Transformers with Depth-Programmed Experts](related/architecture-innovations-beyond-recommendation.md#paper-2610-12448) · 2026 · Related
+
+<a id="company-artefact"></a>
+
+## Artefact Research Center
+
+- [Disentangling Paradigm, Identifier, and Decoding in Generative Retrieval](related/retrieval-reranking-scaling.md#paper-2610-08716) · 2026 · Related
+- [A Systematic Study of Semantic ID Spaces for Generative Information Retrieval](related/retrieval-reranking-scaling.md#paper-2610-08732) · 2026 · Related
