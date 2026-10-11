@@ -100,3 +100,10 @@ new event and no fresh addition. The default Recent updates view excludes
 abstract/translation-only backfills; the explicit metadata filter retains them.
 These events do not change the discovery thresholds, timing, recipients or
 notification policy. Never re-email a paper for backfill-only events or retries.
+
+## Standard Git transport
+
+Use the [standard Git release procedure](git-release.md) for a pinned main base,
+reviewed path allowlist, read-only release guard, single commit, conflict recovery
+and separate remote/CI/Pages verification. It preserves the update and notification
+policy above.
