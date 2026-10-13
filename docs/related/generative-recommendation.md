@@ -6,7 +6,7 @@
 
 Generative retrieval, recommendation and ranking beyond discriminative CTR.
 
-84 papers · Updated 2026-10-12
+85 papers · Updated 2026-10-13
 
 <a id="paper-2605-12617"></a>
 
@@ -343,3 +343,7 @@ Generative retrieval, recommendation and ranking beyond discriminative CTR.
 <a id="paper-2610-08136"></a>
 
 - **Adapting Generative Recommenders for Multi-Turn Interaction**: INTEGER adapts a generative recommender to multi-turn feedback using a learned recommendation-routing token, history re-anchoring, and behavioral replay with instruction rehearsal. Experiments on Amazon Beauty and Toys support retaining recommendation accuracy while adding dialogue. The conversational data are synthetic; real-user interaction and attribute-aware rejection feedback remain limitations. The transferable question is how to add interaction without overwriting a learned history-to-item mapping. — [Paper](https://arxiv.org/abs/2610.08136) (National Taiwan University; Johns Hopkins University · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-12977"></a>
+
+- **Beyond Semantic IDs: Finite-Beam Reachability and Continuous-Query Generation in Generative Recommendation**: CQG replaces discrete semantic-ID beam expansion with a generated continuous retrieval query, either in one pass or through autoregressive residual refinement. On MovieLens-1M, Beauty, and Sports, it separates finite-beam target reachability from the ability to score every indexed item. CQG-Single beats the TIGER-style baseline in all seven MovieLens runs with 55.3% as many trainable parameters; stronger continuous-query expressiveness does not guarantee higher top-K recall, and full-rank SASRec remains strongest on Sports. Production latency and index-update costs are unmeasured. — [Paper](https://arxiv.org/abs/2610.12977) (arXiv 2026). Reading priority: Unrated.

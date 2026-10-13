@@ -6,7 +6,7 @@
 
 Transferable ideas from general-purpose model architecture research.
 
-96 papers · Updated 2026-10-12
+102 papers · Updated 2026-10-13
 
 <a id="paper-2606-16825"></a>
 
@@ -314,7 +314,7 @@ Transferable ideas from general-purpose model architecture research.
 
 <a id="paper-2610-11575"></a>
 
-- **Smoothing the Top-k Exposure Boundary for Sparse Mixture-of-Experts**: Elastic Expert Routing softens the training-time top-k boundary by sampling the active expert count from a local symmetric distribution around k. This matches the expected expert-compute budget while retaining a fixed inference budget. The paper reports supervised-fine-tuning macro-average gains of 0.84 and 2.02 points on OLMoE-1B-7B and Qwen3-30B-A3B, plus a 1.6-point gain in from-scratch pretraining. Its relevance to recommendation MoE training is inferred; the evaluations do not establish CTR gains. — [Paper](https://arxiv.org/abs/2610.11575) (Shanghai AI Laboratory, Shanghai, China; Shanghai Jiao Tong University, Shanghai, China; Nanyang Technological University, Singapore · arXiv 2026). Reading priority: Unrated.
+- **Smoothing the Top-k Exposure Boundary for Sparse Mixture-of-Experts**: Elastic Expert Routing softens the training-time top-k boundary by sampling the active expert count from a local symmetric distribution around k. This matches the expected expert-compute budget while retaining a fixed inference budget. The paper reports supervised-fine-tuning macro-average gains of 0.84 and 2.02 points on OLMoE-1B-7B and Qwen3-30B-A3B, plus a 1.6-point gain in from-scratch pretraining. Its relevance to recommendation MoE training is inferred; the evaluations do not establish CTR gains. Version 2 adds comparisons against Noisy top-k, expert FFN dropout, and DefaultMoE under static top-8 inference, reporting the best average scores in the tested Qwen3 fine-tuning and pretraining settings and up to 0.04 lower validation LM loss than static routing. — [Paper](https://arxiv.org/abs/2610.11575) (Shanghai AI Laboratory, Shanghai, China; Shanghai Jiao Tong University, Shanghai, China; Nanyang Technological University, Singapore · arXiv 2026). Reading priority: Unrated.
 
 <a id="paper-2610-11214"></a>
 
@@ -391,3 +391,27 @@ Transferable ideas from general-purpose model architecture research.
 <a id="paper-2610-12338"></a>
 
 - **VFold: Symmetry-Aware Cross-Layer Value Cache Compression**: VFold uses calibration to align adjacent layers’ value representations, folds the maps into attention weights, and then approximately merges value caches. Halving value storage reduces total KV memory by 25%, retaining over 98% of aggregate LongBench and RULER scores on three tested models. In an A100 test, capacity rises from 33 to 38 sequences, but batch-one decoding slows from 21.0 to 27.8 ms per token. It provides a memory-capacity tradeoff for long-context serving, rather than guaranteed latency or recommendation gains. — [Paper](https://arxiv.org/abs/2610.12338) (Johns Hopkins University; George Mason University · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-13735"></a>
+
+- **Orthros: Phase-Aware Heterogeneous Attention for Efficient Transformers**: Orthros changes attention computation by phase: linear-complexity prefill is paired with full-attention decoding. Language-model pretraining, conversion, and recall evaluations support the design for long prompts with comparatively short generation; the reported 21.9× prefill speedup occurs at one-million-token length and is not a universal end-to-end gain. Its phase-aware design may inform long-history processing, but CTR transfer has not been demonstrated. — [Paper](https://arxiv.org/abs/2610.13735) (The Hong Kong Polytechnic University; University of Chinese Academy of Sciences; Independent Researcher; University of Sydney · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-13674"></a>
+
+- **Not All Dimensions Are Equal: Outlier-Aware Attention Linearization with Grouped Quadratic Kernels**: OAL approximates pretrained attention with a positive quadratic kernel whose coefficients distinguish outlier dimensions and share parameters within contribution-scale groups. On Qwen2.5-0.5B, frozen-attention relative MSE falls about 8.9% versus DiJiang; matched middle-layer conversion with LoRA lowers WikiText-103 perplexity from 31.71 to 27.50 versus a learned global quadratic, while retaining a gap to adapted softmax. Linear sequence-length complexity assumes fixed head dimensions; recommendation and production speed gains remain untested. — [Paper](https://arxiv.org/abs/2610.13674) (The Chinese University of Hong Kong, Shenzhen; Beijing Normal University, Zhuhai; National University of Singapore · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-13630"></a>
+
+- **Multi-Stream Attention Residuals**: MSAR extends Attention Residuals to multiple depth-attention streams, deriving contextual views with multi-scale causal convolutions and mixing their retrieved representations. It retains single-stream stored sources and expands them on demand. In 18B and 28B MoE pretraining, it improves all 12 reported downstream benchmarks over the compared residual variants; scaling fits imply 1.58× iso-loss compute efficiency versus standard residuals. This is a depth-scaling design reference, not measured CTR improvement or 1.58× wall-clock training acceleration. — [Paper](https://arxiv.org/abs/2610.13630) (Shanghai Jiao Tong University; Shanghai Innovation Institute; Xiaohongshu; Peking University; Independent Researcher · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-13474"></a>
+
+- **CompileMask: Bridging the Gap Between Expressiveness and Efficiency in Attention Masking**: CompileMask compiles region-based visibility rules into metadata-driven preprocessing kernels and compact endpoint descriptors, reducing custom attention-mask overhead. It tests HSTU, shared-prompt, local multimodal, and causal patterns on Blackwell GPUs. Qwen3-8B training with packed KuaiRand length traces and HSTU masks reaches 1.33× the throughput of FlexAttention with the FA4 backend. This directly informs custom-mask implementation for recommendation, but does not measure recommendation accuracy gains. — [Paper](https://arxiv.org/abs/2610.13474) (Beijing University of Posts and Telecommunications; JD; Peking University · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-13708"></a>
+
+- **Adaptive DHiSparse: Speculative Decoding over a Load-Adaptive KV Hierarchy**: Adaptive DHiSparse combines load-adaptive GPU/host KV residency with draft-model speculative decoding, sharing missing-row retrieval while preserving the draft and acceptance rules. On B300 hardware with GLM-5.3, 100K context, and concurrency 128, it reports 793 output tokens/s per decode GPU, 1.45× HiSparse; prepared prefixes are reused in these workloads. It offers a memory-admission and serving co-design reference for long histories, while transfer to ranking workloads and broader request distributions remains unverified. — [Paper](https://arxiv.org/abs/2610.13708) (Umans AI · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-11730"></a>
+
+- **Spectral Weight Decay: Inducing Low-Rank Structure in Neural Network Weights**: Spectral weight decay applies additive shrinkage to singular values after each optimizer step, encouraging weights that tolerate later low-rank factorization. Across 124M–500M LLaMA models, it improves SVD-LLM compression at matched validation loss. The 500M model reaches 1.89× compression and 1.18× GPU forward-pass speedup at a 4% validation-loss distortion budget; the latency test uses batch size 256. It suggests co-designing training regularization and serving compression, without establishing low-batch or recommendation gains. — [Paper](https://arxiv.org/abs/2610.11730) (Basic Research of Artificial Intelligence Laboratory (BRAIn Lab); SB AI Lab; Innopolis University · arXiv 2026). Reading priority: Unrated.

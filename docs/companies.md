@@ -14,21 +14,21 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [Google](#company-google) (12)
 - [LinkedIn](#company-linkedin) (4)
 - [NetEase](#company-netease) (2)
-- [Kuaishou](#company-kuaishou) (24)
+- [Kuaishou](#company-kuaishou) (25)
 - [Huawei](#company-huawei) (7)
 - [Baidu](#company-baidu) (4)
 - [Shopee](#company-shopee) (3)
 - [Coupang](#company-coupang) (1)
 - [Netflix](#company-netflix) (2)
 - [Tubi](#company-tubi) (1)
-- [Pinterest](#company-pinterest) (4)
+- [Pinterest](#company-pinterest) (5)
 - [Yandex](#company-yandex) (6)
-- [JD](#company-jd) (4)
+- [JD](#company-jd) (5)
 - [VK](#company-vk) (1)
 - [Microsoft](#company-microsoft) (1)
 - [Walmart](#company-walmart) (1)
 - [Snap](#company-snap) (4)
-- [Xiaohongshu](#company-xiaohongshu) (4)
+- [Xiaohongshu](#company-xiaohongshu) (5)
 - [Amazon](#company-amazon) (3)
 - [Capital One](#company-capital-one) (1)
 - [Shopify](#company-shopify) (1)
@@ -64,6 +64,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [Kling Team](#company-kling-team) (1)
 - [Samsung AI Cambridge](#company-samsung-ai-cambridge) (1)
 - [Artefact Research Center](#company-artefact) (2)
+- [Umans AI](#company-umans-ai) (1)
 
 <a id="company-meta"></a>
 
@@ -282,6 +283,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [SMES: Towards Scalable Multi-Task Recommendation via Expert Sparsity](topics/scalable-architecture.md#paper-2602-09386) · 2026 · Core
 - [Inherit4Rec: Parameter Inheritance for Efficient Scaling of Recommendation Models](topics/efficiency-deployment.md#paper-2609-23111) · 2026 · Core
 - [OneLA: Scaling Linear-Attention Decoding to Large Beams in Generative Recommendation](topics/efficiency-deployment.md#paper-2609-12399) · 2026 · Core
+- [UxSID: Semantic-Aware User Interests Modeling for Ultra-Long Sequence](topics/efficiency-deployment.md#paper-2605-09040) · 2026 · Core
 
 <a id="company-huawei"></a>
 
@@ -339,6 +341,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [UniPinRec: Unifying Generative Retrieval and Ranking at Pinterest Scale](topics/foundation-models-multi-scenario.md#paper-2606-00422) · 2026 · Core
 - [Exp-RSFT](related/generative-recommendation.md#paper-2608-00816) · 2026 · Related
 - [MESH](related/retrieval-reranking-scaling.md#paper-2607-12392) · 2026 · Related
+- [FORTE: A Production Framework for Feature Evaluation and Deprecation in Industrial Recommender Systems](related/engineering-serving.md#paper-2610-13806) · 2026 · Related
 
 <a id="company-yandex"></a>
 
@@ -359,6 +362,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [GenRec](related/generative-recommendation.md#paper-2604-14878) · 2026 · Related
 - [AdaGRPO](related/generative-recommendation.md#paper-2606-08480) · 2026 · Related
 - [Compile the Table: Query-Calibrated Operator Compression for Tabular In-Context Learning](related/architecture-innovations-beyond-recommendation.md#paper-2610-11784) · 2026 · Related
+- [CompileMask: Bridging the Gap Between Expressiveness and Efficiency in Attention Masking](related/architecture-innovations-beyond-recommendation.md#paper-2610-13474) · 2026 · Related
 
 <a id="company-vk"></a>
 
@@ -395,6 +399,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [OneModel: A Unified Foundation for Platform-Scale Multi-Scenario Ranking](topics/foundation-models-multi-scenario.md#paper-2608-18606) · 2026 · Core
 - [LatentIndex: Cross-Layer Sharing with Layer-Specific Selection for Sparse Attention](related/architecture-innovations-beyond-recommendation.md#paper-2610-04635) · 2026 · Related
 - [LIFT: A Lifecycle-aware Interaction Factorization Transformer for Unified Retrieval and Ranking](topics/foundation-models-multi-scenario.md#paper-2610-10556) · 2026 · Core
+- [Multi-Stream Attention Residuals](related/architecture-innovations-beyond-recommendation.md#paper-2610-13630) · 2026 · Related
 
 <a id="company-amazon"></a>
 
@@ -616,3 +621,9 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 
 - [Disentangling Paradigm, Identifier, and Decoding in Generative Retrieval](related/retrieval-reranking-scaling.md#paper-2610-08716) · 2026 · Related
 - [A Systematic Study of Semantic ID Spaces for Generative Information Retrieval](related/retrieval-reranking-scaling.md#paper-2610-08732) · 2026 · Related
+
+<a id="company-umans-ai"></a>
+
+## Umans AI
+
+- [Adaptive DHiSparse: Speculative Decoding over a Load-Adaptive KV Hierarchy](related/architecture-innovations-beyond-recommendation.md#paper-2610-13708) · 2026 · Related

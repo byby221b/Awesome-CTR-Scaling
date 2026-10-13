@@ -6,7 +6,7 @@
 
 Systems, serving infrastructure and hardware-aware optimization.
 
-34 papers · Updated 2026-10-12
+35 papers · Updated 2026-10-13
 
 <a id="paper-2510-18239"></a>
 
@@ -143,3 +143,7 @@ Systems, serving infrastructure and hardware-aware optimization.
 <a id="paper-2610-05619"></a>
 
 - **SCOUT: Supply-Aware Cold-Start Proactive Query Suggestion for Travel Search**: SCOUT trains proactive travel-query suggestions against supply-side feedback from a production reranker, using GRPO to internalize inventory compatibility instead of paying for best-of-N search at serving time. Offline, destination-disjoint Qwen3-8B experiments compare inventory match and diversity. The engineering lesson is to move expensive selection into training; online CTR and booking improvements are not established, and the reward measures fulfillability rather than user appeal. — [Paper](https://arxiv.org/abs/2610.05619) (Airbnb, Inc. · GRAIL @ CIKM (non-archival workshop) 2026). Reading priority: Unrated.
+
+<a id="paper-2610-13806"></a>
+
+- **FORTE: A Production Framework for Feature Evaluation and Deprecation in Industrial Recommender Systems**: FORTE screens feature-removal candidates with repeated perturbation measurements, grouped ablations, retraining, online guardrails, and downstream lineage tracing. In two Pinterest recommender systems, the largest search-model removal set failed online guardrails, while removing eight features from a separate ranking model reduced trainable parameters by 29.9% and raised serving throughput by 19.8–25.5%. It offers a production process for reclaiming ranking-system capacity, not a guarantee that low individual importance makes a feature safe to remove. — [Paper](https://arxiv.org/abs/2610.13806) (Pinterest · arXiv 2026). Reading priority: Unrated.
