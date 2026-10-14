@@ -6,7 +6,7 @@
 
 Systems, serving infrastructure and hardware-aware optimization.
 
-35 papers · Updated 2026-10-13
+36 papers · Updated 2026-10-14
 
 <a id="paper-2510-18239"></a>
 
@@ -114,7 +114,7 @@ Systems, serving infrastructure and hardware-aware optimization.
 
 <a id="paper-2610-09424"></a>
 
-- **Democratizing MoE inference on commodity GPUs with CoMoE**: CoMoE reduces expert-parallel communication on PCIe-connected consumer GPUs by using the host for token multicast and fine-grained aggregation. RTX 5090 experiments show higher MoE inference throughput while reducing dependence on expensive peer-to-peer interconnects. — [Paper](https://arxiv.org/abs/2610.09424) (Tsinghua University; Alibaba Cloud Computing · arXiv 2026). Reading priority: Read as needed.
+- **Democratizing MoE inference on commodity GPUs with CoMoE**: CoMoE reduces expert-parallel communication on PCIe-connected consumer GPUs by using the host for token multicast and fine-grained aggregation. RTX 5090 experiments show higher MoE inference throughput while reducing dependence on expensive peer-to-peer interconnects. — [Paper](https://arxiv.org/abs/2610.09424) (Tsinghua University; Nanjing University; Alibaba Cloud Computing · arXiv 2026). Reading priority: Read as needed.
 
 <a id="paper-2610-09372"></a>
 
@@ -147,3 +147,7 @@ Systems, serving infrastructure and hardware-aware optimization.
 <a id="paper-2610-13806"></a>
 
 - **FORTE: A Production Framework for Feature Evaluation and Deprecation in Industrial Recommender Systems**: FORTE screens feature-removal candidates with repeated perturbation measurements, grouped ablations, retraining, online guardrails, and downstream lineage tracing. In two Pinterest recommender systems, the largest search-model removal set failed online guardrails, while removing eight features from a separate ranking model reduced trainable parameters by 29.9% and raised serving throughput by 19.8–25.5%. It offers a production process for reclaiming ranking-system capacity, not a guarantee that low individual importance makes a feature safe to remove. — [Paper](https://arxiv.org/abs/2610.13806) (Pinterest · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-12815"></a>
+
+- **Deploying RDMA for Large-Scale Inference and Training Workloads**: ByteExpress is a software communication layer for RDMA in ByteDance parameter-server-based inference and training. It combines buffer management, zero-copy transfers, connection multiplexing, flow control, and recovery above the transport layer. Production inference reports 35.7% lower mean and 43.7% lower P99 parameter-fetch latency, plus 10.69% lower total CPU use versus kernel TCP. It directly informs recommendation parameter-serving infrastructure; these are communication and system metrics, not ranking-quality gains. — [Paper](https://arxiv.org/abs/2610.12815) (Fudan University; ByteDance · arXiv 2026). Reading priority: Unrated.

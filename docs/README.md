@@ -19,9 +19,9 @@
 - [Generative Recommendation](related/generative-recommendation.md) (85) — Generative retrieval, recommendation and ranking beyond discriminative CTR.
 - [Generative Pre-training for CTR](related/generative-pre-training-for-ctr.md) (4) — Generative objectives and pre-training for discriminative CTR tasks.
 - [Knowledge Distillation & Compression](related/knowledge-distillation-compression.md) (4) — Transferring, compressing and deploying larger recommendation models.
-- [Engineering & Serving](related/engineering-serving.md) (35) — Systems, serving infrastructure and hardware-aware optimization.
+- [Engineering & Serving](related/engineering-serving.md) (36) — Systems, serving infrastructure and hardware-aware optimization.
 - [Retrieval & Reranking Scaling](related/retrieval-reranking-scaling.md) (20) — Scaling retrieval and reranking stages of recommendation pipelines.
-- [Architecture Innovations Beyond Recommendation](related/architecture-innovations-beyond-recommendation.md) (102) — Transferable ideas from general-purpose model architecture research.
+- [Architecture Innovations Beyond Recommendation](related/architecture-innovations-beyond-recommendation.md) (110) — Transferable ideas from general-purpose model architecture research.
 - [Other](related/other.md) (9) — Adjacent research, diagnostics and other relevant recommendation methods.
 
 ## Tag vocabulary

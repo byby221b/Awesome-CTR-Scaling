@@ -6,7 +6,7 @@
 
 Transferable ideas from general-purpose model architecture research.
 
-102 papers · Updated 2026-10-13
+110 papers · Updated 2026-10-14
 
 <a id="paper-2606-16825"></a>
 
@@ -178,7 +178,7 @@ Transferable ideas from general-purpose model architecture research.
 
 <a id="paper-2609-35664"></a>
 
-- **MS-GLA: Multi-Scale Gated Linear Attention for Addressing Representational Bottlenecks via Multi-Temporal Resolution**: MS-GLA assigns gated linear-attention heads to different temporal resolutions so local syntax and long-range structure do not compete entirely within the same memory scale. Coarse heads pool longer spans, fine heads retain local detail, and input-dependent fusion combines them, improving effective representation without enlarging each head’s recurrent state. — [Paper](https://arxiv.org/abs/2609.35664) (International Institute of Information Technology Hyderabad · COLM 2026). Reading priority: Read as needed.
+- **MS-GLA: Multi-Scale Gated Linear Attention for Addressing Representational Bottlenecks via Multi-Temporal Resolution**: MS-GLA assigns gated linear-attention heads to different temporal resolutions so local syntax and long-range structure do not compete entirely within the same memory scale. Coarse heads pool longer spans, fine heads retain local detail, and input-dependent fusion combines them, improving effective representation without enlarging each head’s recurrent state. Version 2 corrects the training-budget description to 106,813 steps for all compared models; version 1 listed 68,664 steps for GLA and 106,813 for MS-GLA. The reported abstract and result tables are unchanged, so this is a protocol-description correction rather than a newly demonstrated gain. — [Paper](https://arxiv.org/abs/2609.35664) (International Institute of Information Technology Hyderabad · COLM 2026). Reading priority: Read as needed.
 
 <a id="paper-2609-37379"></a>
 
@@ -326,7 +326,7 @@ Transferable ideas from general-purpose model architecture research.
 
 <a id="paper-2610-11158"></a>
 
-- **Zepp: Accelerating Distributed MoE Serving under Relaxed Balance Constraints**: Zepp treats load balance as a resource constraint and directly optimizes bottleneck communication in distributed MoE serving. It coordinates expert-replica placement, split/merge communication, execution scheduling, and dynamic intra-node expert movement. Against seven systems it reports up to 6.68× MoE-layer speedup and 1.86× geometric-mean speedup over the fastest competitor; the maximum 6.68× is specifically against A2AV+GEMM, not the fastest competing baseline. Transfer to distributed recommendation MoEs is a systems hypothesis, with no CTR evaluation. — [Paper](https://arxiv.org/abs/2610.11158) (UCSD; Stanford University; ETH Zürich; NVIDIA · arXiv 2026). Reading priority: Unrated.
+- **Zepp: Accelerating Distributed MoE Serving under Relaxed Balance Constraints**: Zepp treats load balance as a resource constraint and directly optimizes bottleneck communication in distributed MoE serving. It coordinates expert-replica placement, split/merge communication, execution scheduling, and dynamic intra-node expert movement. Against seven systems it reports up to 6.68× MoE-layer speedup and 1.86× geometric-mean speedup over the fastest competitor; the maximum 6.68× is specifically against A2AV+GEMM, not the fastest competing baseline. Transfer to distributed recommendation MoEs is a systems hypothesis, with no CTR evaluation. — [Paper](https://arxiv.org/abs/2610.11158) (UCSD; Stanford University; ETH Zürich; Independent Researcher · arXiv 2026). Reading priority: Unrated.
 
 <a id="paper-2610-10871"></a>
 
@@ -415,3 +415,35 @@ Transferable ideas from general-purpose model architecture research.
 <a id="paper-2610-11730"></a>
 
 - **Spectral Weight Decay: Inducing Low-Rank Structure in Neural Network Weights**: Spectral weight decay applies additive shrinkage to singular values after each optimizer step, encouraging weights that tolerate later low-rank factorization. Across 124M–500M LLaMA models, it improves SVD-LLM compression at matched validation loss. The 500M model reaches 1.89× compression and 1.18× GPU forward-pass speedup at a 4% validation-loss distortion budget; the latency test uses batch size 256. It suggests co-designing training regularization and serving compression, without establishing low-batch or recommendation gains. — [Paper](https://arxiv.org/abs/2610.11730) (Basic Research of Artificial Intelligence Laboratory (BRAIn Lab); SB AI Lab; Innopolis University · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-12599"></a>
+
+- **STAPLE: Static Sparse Upcycling of Pretrained Checkpoints via Embedding Modules**: STAPLE adds token-indexed embedding memory as a residual path while retaining pretrained feed-forward computation, expanding sparse capacity without starting pretraining over. OLMo-2 1B and 7B experiments support gains over continued dense training. In its throughput-oriented setup, host offloading and caching roughly the most frequent 5% of embeddings keep generation throughput within 1.5% of the dense baseline. Token-specific memory offers a possible recommendation-scaling design; host memory and transfer costs remain, and no CTR gains are established. — [Paper](https://arxiv.org/abs/2610.12599) (Carnegie Mellon University; D. E. Shaw Research; Meta AI; Amazon Research · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-13370"></a>
+
+- **Overcoming Data Imbalances with Expert Selection Biases**: Category-conditioned expert-selection biases steer low-resource categories toward dedicated expert subsets while permitting cross-category sharing. The study evaluates multimodal, multilingual, and multi-domain MoEs up to 10.6B total parameters and finds benefits for scarce categories. It suggests a controllable way to allocate sparse capacity across recommendation domains, but that transfer is untested. Training requires category labels and allocation choices; the bias can be removed at inference, avoiding inference-time category labels. Strong load-balancing regularization can suppress the effect. — [Paper](https://arxiv.org/abs/2610.13370) (EPFL · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-12657"></a>
+
+- **Kronecker Product Attention: Memory-Efficient KV Compression via Structured Factorization**: KPA represents keys and values as sums of Kronecker products of compact token-dependent matrix factors and applies compatible rotary position transformations directly to those factors. Across four language-model scales and nine benchmarks, the paper reports competitive accuracy with up to 10x KV-cache compression. Its structured factorization may inform memory-efficient long-sequence recommendation architectures; these language-model results do not establish CTR improvements or equivalent end-to-end serving speedups. — [Paper](https://arxiv.org/abs/2610.12657) (Huawei; University of Waterloo · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-13778"></a>
+
+- **ReplaySSM: Cache SSM Inputs, Not State**: ReplaySSM represents recurrent state with a checkpoint plus recent inputs, deferring checkpoint writes and supporting cheap speculative rollback. Separate state precisions prevent low-precision output reads from feeding rounding error back into recurrent updates. At batch size 256, four hybrid language models obtain 1.20–1.47x standard-decoding speedups over tuned vLLM. It informs memory-traffic optimization for recurrent sequence models; batch-one results are below parity, and recommendation benefits remain untested. — [Paper](https://arxiv.org/abs/2610.13778) (Princeton University; NVIDIA · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-13328"></a>
+
+- **DuoRate: Two-Rate Per-Expert Precision Allocation for Mixture-of-Experts Serving**: DuoRate separates precision budgets for storing all MoE experts and reading selected experts during batch-one decoding. Label-free prefill profiles drive workload-specific per-expert allocation. On Qwen3-30B-A3B, quality matches evaluated 4-bit formats at a layout-derived read budget of 2.9 bits per weight. The prefix-read kernel and end-to-end traffic/latency measurements remain future work. This allocation principle may inform recommendation MoEs, but that transfer is untested; larger batches narrow the store-read distinction. — [Paper](https://arxiv.org/abs/2610.13328) (Huawei Technologies · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-12327"></a>
+
+- **SparseDecoding: Decoding-Aware Pruning for Accurate and Efficient LLM Inference**: SparseDecoding calibrates pruning on activations from dense-model autoregressive generation rather than fixed natural text, then pairs it with an N:M sparse matrix-vector kernel suited to decoding. Llama and Qwen experiments on A100 GPUs report up to 1.48x end-to-end decoding speedup versus dense execution. It offers a workload-matched calibration and sparse-kernel design for efficient models; long-output generation is the evaluated setting, so ranking-serving gains require separate validation. — [Paper](https://arxiv.org/abs/2610.12327) (Westlake University; Ant Group · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-13767"></a>
+
+- **DualQuant: Dual-scale Calibration-free Weight-and-Activation Quantization for LLMs**: DualQuant jointly optimizes weight-reconstruction scales and obtains per-channel activation rescaling without calibration data, supporting MX and NVFP4 formats. Llama and Qwen evaluations compare accuracy across formats; a packed W4A4 path for Llama-3.1-8B on RTX 4090 reports up to 2.61x memory reduction and 2.46x throughput speedup over BF16. It suggests a calibration-free compression route for scalable models, but recommendation transfer and hardware-specific efficiency need separate measurement. — [Paper](https://arxiv.org/abs/2610.13767) (d-Matrix · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-08527"></a>
+
+- **PHBA: Prefix-State Hybrid Block Attention**: PHBA couples top-k block-sparse token retrieval with a compact recurrent prefix state for each retrieved block, combining precise long-range evidence and compressed preceding context. A streaming Triton implementation avoids large intermediates; 760M and 1.3B language-model experiments compare long-context and retrieval performance with linear and hybrid baselines. The architecture suggests a way to combine search and compressed history for recommendation, but the paper does not evaluate CTR tasks. — [Paper](https://arxiv.org/abs/2610.08527) (The Hong Kong University of Science and Technology (Guangzhou); Independent researcher · arXiv 2026). Reading priority: Unrated.

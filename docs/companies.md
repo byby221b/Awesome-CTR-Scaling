@@ -6,8 +6,8 @@
 
 Company membership follows recorded affiliation aliases and preserved company-overview mentions. A paper may appear under multiple companies. This structural migration does not independently reverify affiliations or publication claims.
 
-- [Meta](#company-meta) (48)
-- [ByteDance / TikTok](#company-bytedance-tiktok) (20)
+- [Meta](#company-meta) (49)
+- [ByteDance / TikTok](#company-bytedance-tiktok) (21)
 - [Alibaba](#company-alibaba) (37)
 - [Meituan](#company-meituan) (9)
 - [Tencent](#company-tencent) (17)
@@ -15,7 +15,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [LinkedIn](#company-linkedin) (4)
 - [NetEase](#company-netease) (2)
 - [Kuaishou](#company-kuaishou) (25)
-- [Huawei](#company-huawei) (7)
+- [Huawei](#company-huawei) (9)
 - [Baidu](#company-baidu) (4)
 - [Shopee](#company-shopee) (3)
 - [Coupang](#company-coupang) (1)
@@ -29,7 +29,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [Walmart](#company-walmart) (1)
 - [Snap](#company-snap) (4)
 - [Xiaohongshu](#company-xiaohongshu) (5)
-- [Amazon](#company-amazon) (3)
+- [Amazon](#company-amazon) (4)
 - [Capital One](#company-capital-one) (1)
 - [Shopify](#company-shopify) (1)
 - [Liquid AI](#company-liquid-ai) (2)
@@ -65,6 +65,9 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [Samsung AI Cambridge](#company-samsung-ai-cambridge) (1)
 - [Artefact Research Center](#company-artefact) (2)
 - [Umans AI](#company-umans-ai) (1)
+- [D. E. Shaw Research](#company-de-shaw-research) (1)
+- [Ant Group](#company-ant-group) (1)
+- [d-Matrix](#company-d-matrix) (1)
 
 <a id="company-meta"></a>
 
@@ -118,6 +121,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [LO-FAR: A Cost-Aware Local Filter for Sparse Feature Ranking in Industrial Ad Recommendation](related/engineering-serving.md#paper-2607-20873) · 2026 · Related
 - [MARS: Multi-resolution Adaptive Routing for Sequential Recommendation](related/long-sequence-modeling.md#paper-2610-07505) · 2026 · Related
 - [Mosaic: A Fleet of User Embedding Specialists for Recommendation at Meta](topics/foundation-models-multi-scenario.md#paper-2607-24015) · 2026 · Core
+- [STAPLE: Static Sparse Upcycling of Pretrained Checkpoints via Embedding Modules](related/architecture-innovations-beyond-recommendation.md#paper-2610-12599) · 2026 · Related
 
 <a id="company-bytedance-tiktok"></a>
 
@@ -143,6 +147,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [X-Rec Technical Report](related/retrieval-reranking-scaling.md#paper-2609-29180) · 2026 · Related
 - [Block Sparse Attention with Log-Linear Complexity](related/architecture-innovations-beyond-recommendation.md#paper-2609-31093) · 2026 · Related
 - [MDL: A Unified Multi-Distribution Learner in Large-scale Industrial Recommendation through Tokenization](topics/foundation-models-multi-scenario.md#paper-2602-07520) · 2026 · Core
+- [Deploying RDMA for Large-Scale Inference and Training Workloads](related/engineering-serving.md#paper-2610-12815) · 2026 · Related
 
 <a id="company-alibaba"></a>
 
@@ -296,6 +301,8 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [Mitigating Early Training Collapse in CTR Models](related/other.md#paper-2607-09696) · 2026 · Related
 - [Neither Black nor White: Balancing Semantic and Collaborative Signals with Graph-Informed Semantic IDs (GrIS)](related/generative-recommendation.md#paper-2610-01533) · 2026 · Related
 - [QUILT: Rethinking Sparse-Attention Prefill through Shared Query Execution](related/architecture-innovations-beyond-recommendation.md#paper-2610-11134) · 2026 · Related
+- [Kronecker Product Attention: Memory-Efficient KV Compression via Structured Factorization](related/architecture-innovations-beyond-recommendation.md#paper-2610-12657) · 2026 · Related
+- [DuoRate: Two-Rate Per-Expert Precision Allocation for Mixture-of-Experts Serving](related/architecture-innovations-beyond-recommendation.md#paper-2610-13328) · 2026 · Related
 
 <a id="company-baidu"></a>
 
@@ -408,6 +415,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [SPD: Single Pass Decoding for Generative Reranking](topics/efficiency-deployment.md#paper-2609-01807) · 2026 · Core
 - [MoSE (Mixture of Slimmable Experts)](related/architecture-innovations-beyond-recommendation.md#paper-2602-06154) · 2026 · Related
 - [Rethinking Semantic ID Construction for Generative Recommendation: SimHash with Parallel Decoding and Semantic Alignment](related/generative-recommendation.md#paper-2610-07402) · 2026 · Related
+- [STAPLE: Static Sparse Upcycling of Pretrained Checkpoints via Embedding Modules](related/architecture-innovations-beyond-recommendation.md#paper-2610-12599) · 2026 · Related
 
 <a id="company-capital-one"></a>
 
@@ -449,7 +457,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [LeapQuant: Efficient Linear Attention with Accurate Recurrent State Quantization](related/architecture-innovations-beyond-recommendation.md#paper-2609-38166) · 2026 · Related
 - [MegaFlux: Skew-Resilient MoE Megakernels via Pipelined Expert Replication](related/engineering-serving.md#paper-2610-00671) · 2026 · Related
 - [NCCL M2N: A Layout- and Topology-Aware Collective for Distributed Tensor Resharding](related/engineering-serving.md#paper-2610-07516) · 2026 · Related
-- [Zepp: Accelerating Distributed MoE Serving under Relaxed Balance Constraints](related/architecture-innovations-beyond-recommendation.md#paper-2610-11158) · 2026 · Related
+- [ReplaySSM: Cache SSM Inputs, Not State](related/architecture-innovations-beyond-recommendation.md#paper-2610-13778) · 2026 · Related
 
 <a id="company-stepfun"></a>
 
@@ -627,3 +635,21 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 ## Umans AI
 
 - [Adaptive DHiSparse: Speculative Decoding over a Load-Adaptive KV Hierarchy](related/architecture-innovations-beyond-recommendation.md#paper-2610-13708) · 2026 · Related
+
+<a id="company-de-shaw-research"></a>
+
+## D. E. Shaw Research
+
+- [STAPLE: Static Sparse Upcycling of Pretrained Checkpoints via Embedding Modules](related/architecture-innovations-beyond-recommendation.md#paper-2610-12599) · 2026 · Related
+
+<a id="company-ant-group"></a>
+
+## Ant Group
+
+- [SparseDecoding: Decoding-Aware Pruning for Accurate and Efficient LLM Inference](related/architecture-innovations-beyond-recommendation.md#paper-2610-12327) · 2026 · Related
+
+<a id="company-d-matrix"></a>
+
+## d-Matrix
+
+- [DualQuant: Dual-scale Calibration-free Weight-and-Activation Quantization for LLMs](related/architecture-innovations-beyond-recommendation.md#paper-2610-13767) · 2026 · Related
