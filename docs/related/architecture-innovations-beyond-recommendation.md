@@ -6,7 +6,7 @@
 
 Transferable ideas from general-purpose model architecture research.
 
-110 papers · Updated 2026-10-14
+117 papers · Updated 2026-10-15
 
 <a id="paper-2606-16825"></a>
 
@@ -54,7 +54,7 @@ Transferable ideas from general-purpose model architecture research.
 
 <a id="paper-2603-21862"></a>
 
-- **Holistic MoE Scaling**: This framework translates compute budgets into complete MoE architecture configurations instead of fitting isolated expert-count trends. It jointly constrains compute, active parameters and total parameters, then reduces a large design space into two smaller search phases; experiments also show that larger scales permit a wider near-optimal band, leaving room to accommodate infrastructure constraints. — [Paper](https://arxiv.org/abs/2603.21862) (Academic · NeurIPS 2026). Reading priority: Worth reading.
+- **Holistic Scaling Laws for Optimal Mixture-of-Experts Architecture Optimization**: This framework jointly characterizes MoE designs by FLOPs per token, active parameters, and total parameters, then reduces a 16-variable architecture search into two lower-dimensional phases. Its updated abstract explicitly reports 670+ models over 10^18 to 3 × 10^20 FLOPs and a widening near-optimal design band at larger scales. These model counts and compute points already existed in the earlier full text; they are clarified evidence, not newly expanded experiments. The resulting architecture-budget mapping can inform recommendation MoE design, but transfer to CTR remains untested. — [Paper](https://arxiv.org/abs/2603.21862) (Fudan University; Hi Lab, Xiaohongshu Inc.; Project Numina · NeurIPS 2026). Reading priority: Worth reading.
 
 <a id="paper-2607-02980"></a>
 
@@ -314,7 +314,7 @@ Transferable ideas from general-purpose model architecture research.
 
 <a id="paper-2610-11575"></a>
 
-- **Smoothing the Top-k Exposure Boundary for Sparse Mixture-of-Experts**: Elastic Expert Routing softens the training-time top-k boundary by sampling the active expert count from a local symmetric distribution around k. This matches the expected expert-compute budget while retaining a fixed inference budget. The paper reports supervised-fine-tuning macro-average gains of 0.84 and 2.02 points on OLMoE-1B-7B and Qwen3-30B-A3B, plus a 1.6-point gain in from-scratch pretraining. Its relevance to recommendation MoE training is inferred; the evaluations do not establish CTR gains. Version 2 adds comparisons against Noisy top-k, expert FFN dropout, and DefaultMoE under static top-8 inference, reporting the best average scores in the tested Qwen3 fine-tuning and pretraining settings and up to 0.04 lower validation LM loss than static routing. — [Paper](https://arxiv.org/abs/2610.11575) (Shanghai AI Laboratory, Shanghai, China; Shanghai Jiao Tong University, Shanghai, China; Nanyang Technological University, Singapore · arXiv 2026). Reading priority: Unrated.
+- **Smoothing the Top-k Exposure Boundary for Sparse Mixture-of-Experts**: Elastic Expert Routing softens the training-time top-k boundary by sampling the active expert count from a local symmetric distribution around k. This matches the expected expert-compute budget while retaining a fixed inference budget. The paper reports supervised-fine-tuning macro-average gains of 0.84 and 2.02 points on OLMoE-1B-7B and Qwen3-30B-A3B, plus a 1.6-point gain in from-scratch pretraining. Its relevance to recommendation MoE training is inferred; the evaluations do not establish CTR gains. Version 2 adds comparisons against Noisy top-k, expert FFN dropout, and DefaultMoE under static top-8 inference, reporting the best average scores in the tested Qwen3 fine-tuning and pretraining settings and up to 0.04 lower validation LM loss than static routing. — [Paper](https://arxiv.org/abs/2610.11575) (Shanghai AI Laboratory; Shanghai Jiao Tong University; Nanyang Technological University · arXiv 2026). Reading priority: Unrated.
 
 <a id="paper-2610-11214"></a>
 
@@ -394,7 +394,7 @@ Transferable ideas from general-purpose model architecture research.
 
 <a id="paper-2610-13735"></a>
 
-- **Orthros: Phase-Aware Heterogeneous Attention for Efficient Transformers**: Orthros changes attention computation by phase: linear-complexity prefill is paired with full-attention decoding. Language-model pretraining, conversion, and recall evaluations support the design for long prompts with comparatively short generation; the reported 21.9× prefill speedup occurs at one-million-token length and is not a universal end-to-end gain. Its phase-aware design may inform long-history processing, but CTR transfer has not been demonstrated. — [Paper](https://arxiv.org/abs/2610.13735) (The Hong Kong Polytechnic University; University of Chinese Academy of Sciences; Independent Researcher; University of Sydney · arXiv 2026). Reading priority: Unrated.
+- **Orthros: Phase-Aware Heterogeneous Attention for Efficient Transformers**: Orthros changes attention computation by phase: linear-complexity prefill is paired with full-attention decoding. Language-model pretraining, conversion, and recall evaluations support the design for long prompts with comparatively short generation; the reported 21.9× prefill speedup occurs at one-million-token length and is not a universal end-to-end gain. Its phase-aware design may inform long-history processing, but CTR transfer has not been demonstrated. — [Paper](https://arxiv.org/abs/2610.13735) · [Official venue](https://neurips.cc/virtual/2026/poster/154037) (The Hong Kong Polytechnic University; University of Chinese Academy of Sciences; Independent Researcher; University of Sydney · NeurIPS 2026). Reading priority: Unrated.
 
 <a id="paper-2610-13674"></a>
 
@@ -447,3 +447,31 @@ Transferable ideas from general-purpose model architecture research.
 <a id="paper-2610-08527"></a>
 
 - **PHBA: Prefix-State Hybrid Block Attention**: PHBA couples top-k block-sparse token retrieval with a compact recurrent prefix state for each retrieved block, combining precise long-range evidence and compressed preceding context. A streaming Triton implementation avoids large intermediates; 760M and 1.3B language-model experiments compare long-context and retrieval performance with linear and hybrid baselines. The architecture suggests a way to combine search and compressed history for recommendation, but the paper does not evaluate CTR tasks. — [Paper](https://arxiv.org/abs/2610.08527) (The Hong Kong University of Science and Technology (Guangzhou); Independent researcher · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-18654"></a>
+
+- **Kwai Summary Attention V2 Technical Report**: Kwai Summary Attention V2 addresses hybrid summary-token/full-attention models whose shared compression granularity restricts KV-cache flexibility and whose full-attention layers still incur quadratic prefill cost. Summary tokens serve both as compressed key/value memory and as sparse indexers, enabling layer-specific compression and selective access. It offers a possible design direction for long-history compression, but the reported experiments concern language models rather than CTR ranking. — [Paper](https://arxiv.org/abs/2610.18654) (arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-18809"></a>
+
+- **Depth Memory**: Depth Memory unifies residual and cross-layer aggregation as memory retrieval. Its Linear Depth Memory variant uses recursive least squares and three depth streams, with a hardware-aware implementation that reduces overhead relative to its naive implementation. It reports the lowest perplexities among tested PreLN, mHC and AttnRes baselines at 400M and 1.5B, with competitive zero-shot accuracy. This suggests a depth-scaling direction for ranking models, but no CTR experiments establish transfer. — [Paper](https://arxiv.org/abs/2610.18809) (ELLIS Institute Tübingen; Max Planck Institute for Intelligent Systems, Tübingen; Tübingen AI Center; ETH Zürich; Liquid AI · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-17637"></a>
+
+- **Mixed Precision Scaling Laws for Quantized Pretraining**: This mixed-precision scaling law separates capacity loss from persistent optimization error in forward and backward quantization. Selected 4-bit Qwen3 experiments and published Llama-style results yield up to 11× lower loss-prediction MSE than prior laws. A hardware-aware cost model jointly chooses model size, tokens and layer-wise precision, predicting higher optimal precision at larger budgets. This informs possible ranking-training budget studies, not demonstrated CTR gains or measured end-to-end acceleration. — [Paper](https://arxiv.org/abs/2610.17637) (Seoul National University; Amazon Annapurna Labs · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-16147"></a>
+
+- **BARTER: Compact Dynamic Sparse Training with Standard Dense Kernels**: BARTER dynamically prunes and clones attention heads and FFN channels while physically resizing tensors and optimizer states, allowing standard dense kernels to train compact models. Vision-transformer experiments at densities 0.1–0.7 report competitive accuracy, up to 6.29× faster measured training segments and 81.3% lower peak allocated GPU memory on L40 versus full-tensor DST implementations. These are segment benchmarks, not complete-run speedups; ranking transfer remains untested. — [Paper](https://arxiv.org/abs/2610.16147) (Northwestern University; Arm Inc. · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-17959"></a>
+
+- **Virtual Head Attention**: Virtual Head Attention uses linear query premixing and low-rank head postmixing that fold into standard GQA-2 at inference. Across four 50B-token pretraining scales, it reports better evaluated quality with smaller KV caches; the dense comparisons use GQA-8 and the MoE comparison GQA-4. A separate matched long-context MoE study reduces KV heads only in full-attention layers. Its cache/quality tradeoff suggests ranking-attention designs, but no CTR results establish benefit. — [Paper](https://arxiv.org/abs/2610.17959) (Baidu Inc.; Peking University · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-14219"></a>
+
+- **Learnable Low-Rank Polynomial Sketch for Effective Linear Attention**: LLoPS learns low-rank polynomial feature sketches for linear attention, aiming to reduce approximation error relative to existing polynomial-kernel constructions. It reports strong results against tested linear-attention baselines across language and long-range benchmarks. The language study adapts BASED checkpoints with matched continued training for the BASED comparator. The theoretical approximation result is not a guarantee of better task accuracy; possible long-history ranking use remains untested. — [Paper](https://arxiv.org/abs/2610.14219) (University of California, Los Angeles · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-15715"></a>
+
+- **History Replays Itself: Unleashing Long-Context Capability in Linear Attention**: NoteBank adds a training-free episodic archive to pretrained recurrent models: it stores selected text before future queries are known, retrieves with native model features, and replays evidence through the original backbone. At one million tokens, Gated DeltaNet mean accuracy on six RULER retrieval tasks rises from 1.7% to 70.3%. Its small analytical-FLOPs overhead is not negligible wall-clock overhead, and the storage comparison excludes model weights and transient allocations. Long-history ranking is a possible transfer direction, not a tested CTR result. — [Paper](https://arxiv.org/abs/2610.15715) (King Abdullah University of Science and Technology · arXiv 2026). Reading priority: Unrated.

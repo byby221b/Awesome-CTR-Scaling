@@ -6,7 +6,7 @@
 
 Scaling retrieval and reranking stages of recommendation pipelines.
 
-20 papers · Updated 2026-10-14
+23 papers · Updated 2026-10-15
 
 <a id="paper-2603-04816"></a>
 
@@ -87,3 +87,15 @@ Scaling retrieval and reranking stages of recommendation pipelines.
 <a id="paper-2606-01782"></a>
 
 - **More Efficient LLM Reranking with Whole-Pool, Setwise, Long-Context Language Models**: When all retrieved candidates fit the context window, DualEnd Setwise selects the most and least relevant candidates together and fills a complete ranking from both ends. It ranks 100 candidates in 50 comparisons; experiments with nine open-weight LLMs and six BEIR datasets approximately halve tokens and ranking time versus single-end whole-pool ranking. This is an output-depth-specific efficiency tradeoff: top-10 quality can decline and main timings omit retry generations. It offers a test-time-compute design for reranking, not an established online CTR improvement. — [Paper](https://arxiv.org/abs/2606.01782) (The University of Queensland · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-17467"></a>
+
+- **Computed, not Memorized: Bit-Factorized Identifiers for Efficient Generative Retrieval**: This generative-retrieval design factorizes numeric document identifiers into bits whose scores derive from the language model's representations, allowing new documents to remain scorable without retraining identifier embeddings. Across three benchmarks it improves unseen-document retrieval while maintaining comparable seen-document results; reported latency comparisons concern numeric-ID baselines. The approach is relevant to reducing index-refresh training costs in dynamic retrieval systems, with transfer to recommendation still untested. — [Paper](https://arxiv.org/abs/2610.17467) (Leiden University; Shandong University; Radboud University · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-16979"></a>
+
+- **WeGR: Unified Generative Retrieval for Industrial Search Systems in WeChat**: WeGR combines a collaboration-aware tokenizer that mitigates codebook collapse with policy optimization that progressively expands the semantic-ID reward horizon. This addresses poor item discrimination and sparse exact-match rewards in industrial generative search. A WeChat E-commerce Search A/B test reports relative gains of 2.539% in orders, 1.508% in CTR, and 1.381% in CVR. Its 25.5% CPU and 26.1% GPU savings belong to a deployment that reduces candidates from other retrieval channels, not a standalone generator-kernel speedup. — [Paper](https://arxiv.org/abs/2610.16979) (arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2604-05379"></a>
+
+- **Retrieve-then-Adapt: Retrieval-Augmented Test-Time Adaptation for Sequential Recommendation**: ReAd retrieves collaboratively similar items from a memory database and integrates them through a lightweight retrieval module to refine a sequential recommender’s predictions. The backbone stays frozen at inference; retrieved signals adapt the prediction without online parameter updates. Five benchmark datasets show improvements over the tested sequential methods. This offers a retrieval-based route to handle shifted or rare preferences, but requires extra retrieval/fusion work and does not establish production CTR or latency gains. — [Paper](https://arxiv.org/abs/2604.05379) · [DOI](https://doi.org/10.1145/3799682.3841085) · [Official venue](https://cikm2026.diag.uniroma1.it/program/) (Shenzhen Technology University; City University of Hong Kong; McGill University; Shenzhen University; Kuaishou Technology · CIKM 2026). Reading priority: Unrated.

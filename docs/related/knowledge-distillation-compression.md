@@ -6,7 +6,7 @@
 
 Transferring, compressing and deploying larger recommendation models.
 
-4 papers · Updated 2026-10-14
+5 papers · Updated 2026-10-15
 
 <a id="paper-2411-16122"></a>
 
@@ -23,3 +23,7 @@ Transferring, compressing and deploying larger recommendation models.
 <a id="paper-2608-08627"></a>
 
 - **UniMoMo**: UniMoMo compresses a trained recommendation mixture-of-experts model into a smaller expert bank under an explicit deployment budget. It merges experts with similar responses on unlabeled calibration data and protects heavily used experts differently across layers, producing standard MoE checkpoints that improve serving speed while largely preserving recommendation quality after conversion and adaptation. — [Paper](https://arxiv.org/abs/2608.08627) (2026). Reading priority: Worth reading.
+
+<a id="paper-2610-16569"></a>
+
+- **From a Large-Scale Teacher to Efficient Multimodal Students for Search Relevance Prediction**: This search-relevance framework uses a small human-labeled set to refine an LLM judge, then distills its large-scale labels into compact multimodal student models. The students approach teacher quality while improving serving cost and throughput, offering a route to scale query–item relevance supervision. Evaluation distinguishes a test set used during teacher-prompt refinement from a separate cleaner test set; this is relevance-label distillation, not evidence of an online CTR gain. — [Paper](https://arxiv.org/abs/2610.16569) (eBay; Tooploox · arXiv 2026). Reading priority: Unrated.

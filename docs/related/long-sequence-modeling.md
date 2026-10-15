@@ -6,7 +6,7 @@
 
 Long-history modeling, memory and compression for user behavior sequences.
 
-28 papers · Updated 2026-10-14
+29 papers · Updated 2026-10-15
 
 <a id="paper-2504-06780"></a>
 
@@ -119,3 +119,7 @@ Long-history modeling, memory and compression for user behavior sequences.
 <a id="paper-2610-06050"></a>
 
 - **MATE: Adaptive Long- and Short-Term User Memory for LLM-Based Recommendation**: MATE uses temporal evidence to update separate long- and short-term user memories, then reads them according to recent context while keeping shared model parameters fixed during adaptation. Experiments on filtered MovieLens-10M, Luxury Beauty, and KuaiRec user cohorts support the memory design. However, freezing further online writes matches its aggregate accuracy, so incremental test-time adaptation is not established; user-state storage and update computation also increase. — [Paper](https://arxiv.org/abs/2610.06050) (Yonsei University · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2602-21009"></a>
+
+- **HiSAC: Hierarchical Sparse Activation Compression for Ultra-long Sequence Modeling in Recommenders**: HiSAC compresses ultra-long behavior histories with a hierarchical semantic codebook. Sparse hierarchical voting selects personalized interest agents, and soft-routing attention aggregates behaviors by semantic similarity to reduce quantization error and retain long-tail preferences. Taobao homepage A/B tests report a 1.65% CTR lift. The work offers a structured compression path for long-sequence ranking; deployment efficiency also depends on request reuse and caching, rather than the compression mechanism alone. — [Paper](https://arxiv.org/abs/2602.21009) · [DOI](https://doi.org/10.1145/3799682.3840124) · [Official venue](https://cikm2026.diag.uniroma1.it/program/) (Alibaba; Renmin University of China · CIKM (Applied) 2026). Reading priority: Unrated.

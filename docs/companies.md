@@ -7,19 +7,19 @@
 Company membership follows recorded affiliation aliases and preserved company-overview mentions. A paper may appear under multiple companies. This structural migration does not independently reverify affiliations or publication claims.
 
 - [Meta](#company-meta) (49)
-- [ByteDance / TikTok](#company-bytedance-tiktok) (21)
-- [Alibaba](#company-alibaba) (37)
+- [ByteDance / TikTok](#company-bytedance-tiktok) (22)
+- [Alibaba](#company-alibaba) (39)
 - [Meituan](#company-meituan) (9)
-- [Tencent](#company-tencent) (17)
-- [Google](#company-google) (12)
+- [Tencent](#company-tencent) (18)
+- [Google](#company-google) (14)
 - [LinkedIn](#company-linkedin) (4)
 - [NetEase](#company-netease) (2)
-- [Kuaishou](#company-kuaishou) (25)
+- [Kuaishou](#company-kuaishou) (26)
 - [Huawei](#company-huawei) (9)
-- [Baidu](#company-baidu) (4)
+- [Baidu](#company-baidu) (6)
 - [Shopee](#company-shopee) (3)
 - [Coupang](#company-coupang) (1)
-- [Netflix](#company-netflix) (2)
+- [Netflix](#company-netflix) (3)
 - [Tubi](#company-tubi) (1)
 - [Pinterest](#company-pinterest) (5)
 - [Yandex](#company-yandex) (6)
@@ -28,11 +28,11 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [Microsoft](#company-microsoft) (1)
 - [Walmart](#company-walmart) (1)
 - [Snap](#company-snap) (4)
-- [Xiaohongshu](#company-xiaohongshu) (5)
-- [Amazon](#company-amazon) (4)
+- [Xiaohongshu](#company-xiaohongshu) (6)
+- [Amazon](#company-amazon) (5)
 - [Capital One](#company-capital-one) (1)
 - [Shopify](#company-shopify) (1)
-- [Liquid AI](#company-liquid-ai) (2)
+- [Liquid AI](#company-liquid-ai) (3)
 - [IBM (MIT-IBM Computing Research Lab)](#company-ibm-mit-ibm-computing-research-lab) (3)
 - [Perplexity AI](#company-perplexity-ai) (1)
 - [NVIDIA](#company-nvidia) (4)
@@ -68,6 +68,11 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [D. E. Shaw Research](#company-de-shaw-research) (1)
 - [Ant Group](#company-ant-group) (1)
 - [d-Matrix](#company-d-matrix) (1)
+- [Glance](#company-glance) (1)
+- [eBay](#company-ebay) (1)
+- [Tooploox](#company-tooploox) (1)
+- [Arm](#company-arm) (1)
+- [Disney](#company-disney) (1)
 
 <a id="company-meta"></a>
 
@@ -147,7 +152,8 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [X-Rec Technical Report](related/retrieval-reranking-scaling.md#paper-2609-29180) · 2026 · Related
 - [Block Sparse Attention with Log-Linear Complexity](related/architecture-innovations-beyond-recommendation.md#paper-2609-31093) · 2026 · Related
 - [MDL: A Unified Multi-Distribution Learner in Large-scale Industrial Recommendation through Tokenization](topics/foundation-models-multi-scenario.md#paper-2602-07520) · 2026 · Core
-- [Deploying RDMA for Large-Scale Inference and Training Workloads](related/engineering-serving.md#paper-2610-12815) · 2026 · Related
+- [Deploying RDMA for Distributed Inference and Training At Scale](related/engineering-serving.md#paper-2610-12815) · 2026 · Related
+- [LEMUR: Large scale End-to-end MUltimodal Recommendation](topics/scalable-architecture.md#paper-2511-10962) · 2026 · Core
 
 <a id="company-alibaba"></a>
 
@@ -190,6 +196,8 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [Democratizing MoE inference on commodity GPUs with CoMoE](related/engineering-serving.md#paper-2610-09424) · 2026 · Related
 - [Beyond Sequences: Distilling Structured Decision Memory for LLM Recommendation](related/long-sequence-modeling.md#paper-2610-11501) · 2026 · Related
 - [Generative Spatiotemporal Intent Sequence Recommendation via Implicit Reasoning in Amap](related/generative-recommendation.md#paper-2605-28888) · 2026 · Related
+- [UniSGR-V2: Stepwise Target-Side Feature Anticipation and Crossing for Generative Recommendation](topics/unified-feature-sequence-modeling.md#paper-2610-16132) · 2026 · Core
+- [HiSAC: Hierarchical Sparse Activation Compression for Ultra-long Sequence Modeling in Recommenders](related/long-sequence-modeling.md#paper-2602-21009) · 2026 · Related
 
 <a id="company-meituan"></a>
 
@@ -226,6 +234,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [GPR: Towards a Generative Pre-trained One-Model Paradigm for Large-Scale Advertising Recommendation](topics/scalable-architecture.md#paper-2511-10138) · 2026 · Core
 - [Preference-Drift-Aware Subsequence Learning and Hierarchical Context Fusion for Long-Sequence Generative Recommendation](related/long-sequence-modeling.md#paper-2609-12556) · 2026 · Related
 - [Self-Indexing Attention for Compression-Compatible Sparse Long-Context LLM Inference](related/architecture-innovations-beyond-recommendation.md#paper-2609-13205) · 2026 · Related
+- [Large Foundation Model for Ads Recommendation](topics/foundation-models-multi-scenario.md#paper-2508-14948) · 2026 · Core
 
 <a id="company-google"></a>
 
@@ -243,6 +252,8 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [Cut Binary Cross Entropy: Efficient Large-Vocabulary Loss and Gradient Kernels for Sequential Recommendation](related/engineering-serving.md#paper-2610-05559) · 2026 · Related
 - [Tokens are All You Need: Dual-purpose Semantic IDs for Achieving LLM-Level I/O Efficiency in recommendation systems](topics/efficiency-deployment.md#paper-2607-24865) · 2026 · Core
 - [BRANCH-MoE: Balance-Aware Tree Routing for Large Embedding Models](topics/scalable-architecture.md#paper-2610-06725) · 2026 · Core
+- [Understanding and Mitigating Training Instability in Large-Scale Recommender Systems: A Cascade Perspective](related/engineering-serving.md#paper-2610-14394) · 2026 · Related
+- [Chain Dimension Scaling: Communication-Efficient Loop-Style Scaling for Industrial Short-Video Ranking](topics/scalable-architecture.md#paper-2610-16415) · 2026 · Core
 
 <a id="company-linkedin"></a>
 
@@ -289,6 +300,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [Inherit4Rec: Parameter Inheritance for Efficient Scaling of Recommendation Models](topics/efficiency-deployment.md#paper-2609-23111) · 2026 · Core
 - [OneLA: Scaling Linear-Attention Decoding to Large Beams in Generative Recommendation](topics/efficiency-deployment.md#paper-2609-12399) · 2026 · Core
 - [UxSID: Semantic-Aware User Interests Modeling for Ultra-Long Sequence](topics/efficiency-deployment.md#paper-2605-09040) · 2026 · Core
+- [Retrieve-then-Adapt: Retrieval-Augmented Test-Time Adaptation for Sequential Recommendation](related/retrieval-reranking-scaling.md#paper-2604-05379) · 2026 · Related
 
 <a id="company-huawei"></a>
 
@@ -312,6 +324,8 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [MoUE (Mixture of Universal Experts)](related/architecture-innovations-beyond-recommendation.md#paper-2603-04971) · 2026 · Related
 - [UNIQUE: A Unified Retrieval and Ranking System for Large-Scale Feed Recommendation](related/retrieval-reranking-scaling.md#paper-2609-23718) · 2026 · Related
 - [MuSeR: Scalable Long-sequence Recommendation with Multi-interest Modeling](related/retrieval-reranking-scaling.md#paper-2609-23677) · 2026 · Related
+- [FlashMask-3: Efficient and Expressive Mask-Aware Distributed Attention](related/engineering-serving.md#paper-2610-17901) · 2026 · Related
+- [Virtual Head Attention](related/architecture-innovations-beyond-recommendation.md#paper-2610-17959) · 2026 · Related
 
 <a id="company-shopee"></a>
 
@@ -333,6 +347,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 
 - [Towards Generalizable and Efficient Large-Scale Generative Recommenders](related/generative-recommendation.md#paper-2605-23312) · 2026 · Related
 - [GenPage](related/generative-recommendation.md#paper-2606-31031) · 2026 · Related
+- [Personalized LLM Recommendation with Semantic IDs: Autoregressive Beam Search vs. Multi-Token Prediction](related/generative-recommendation.md#paper-2610-15864) · 2026 · Related
 
 <a id="company-tubi"></a>
 
@@ -404,6 +419,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 
 - [GateDiffInt: Gate-Mediated Controllable Diffusion and Multi-Intent LLM Distillation for User Behavior Modeling](topics/scalable-architecture.md#paper-2608-18764) · 2026 · Core
 - [OneModel: A Unified Foundation for Platform-Scale Multi-Scenario Ranking](topics/foundation-models-multi-scenario.md#paper-2608-18606) · 2026 · Core
+- [Holistic Scaling Laws for Optimal Mixture-of-Experts Architecture Optimization](related/architecture-innovations-beyond-recommendation.md#paper-2603-21862) · 2026 · Related
 - [LatentIndex: Cross-Layer Sharing with Layer-Specific Selection for Sparse Attention](related/architecture-innovations-beyond-recommendation.md#paper-2610-04635) · 2026 · Related
 - [LIFT: A Lifecycle-aware Interaction Factorization Transformer for Unified Retrieval and Ranking](topics/foundation-models-multi-scenario.md#paper-2610-10556) · 2026 · Core
 - [Multi-Stream Attention Residuals](related/architecture-innovations-beyond-recommendation.md#paper-2610-13630) · 2026 · Related
@@ -416,6 +432,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [MoSE (Mixture of Slimmable Experts)](related/architecture-innovations-beyond-recommendation.md#paper-2602-06154) · 2026 · Related
 - [Rethinking Semantic ID Construction for Generative Recommendation: SimHash with Parallel Decoding and Semantic Alignment](related/generative-recommendation.md#paper-2610-07402) · 2026 · Related
 - [STAPLE: Static Sparse Upcycling of Pretrained Checkpoints via Embedding Modules](related/architecture-innovations-beyond-recommendation.md#paper-2610-12599) · 2026 · Related
+- [Mixed Precision Scaling Laws for Quantized Pretraining](related/architecture-innovations-beyond-recommendation.md#paper-2610-17637) · 2026 · Related
 
 <a id="company-capital-one"></a>
 
@@ -435,6 +452,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 
 - [T-RoPE: Time-Aware Rotary Position Embedding for Sequential Recommendation](related/long-sequence-modeling.md#paper-2609-30576) · 2026 · Related
 - [On State Reduction in Linear Attention](related/architecture-innovations-beyond-recommendation.md#paper-2602-04852) · 2026 · Related
+- [Depth Memory](related/architecture-innovations-beyond-recommendation.md#paper-2610-18809) · 2026 · Related
 
 <a id="company-ibm-mit-ibm-computing-research-lab"></a>
 
@@ -653,3 +671,33 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 ## d-Matrix
 
 - [DualQuant: Dual-scale Calibration-free Weight-and-Activation Quantization for LLMs](related/architecture-innovations-beyond-recommendation.md#paper-2610-13767) · 2026 · Related
+
+<a id="company-glance"></a>
+
+## Glance
+
+- [HASTE: Hierarchical and Attribute-aware Supervision for Generative Recommendation](related/generative-recommendation.md#paper-2610-17368) · 2026 · Related
+
+<a id="company-ebay"></a>
+
+## eBay
+
+- [From a Large-Scale Teacher to Efficient Multimodal Students for Search Relevance Prediction](related/knowledge-distillation-compression.md#paper-2610-16569) · 2026 · Related
+
+<a id="company-tooploox"></a>
+
+## Tooploox
+
+- [From a Large-Scale Teacher to Efficient Multimodal Students for Search Relevance Prediction](related/knowledge-distillation-compression.md#paper-2610-16569) · 2026 · Related
+
+<a id="company-arm"></a>
+
+## Arm
+
+- [BARTER: Compact Dynamic Sparse Training with Standard Dense Kernels](related/architecture-innovations-beyond-recommendation.md#paper-2610-16147) · 2026 · Related
+
+<a id="company-disney"></a>
+
+## Disney
+
+- [DRanker: A Transformer-Based Multi-Task Ranking Model for the Disney+ Homepage](topics/foundation-models-multi-scenario.md#paper-2610-15696) · 2026 · Core

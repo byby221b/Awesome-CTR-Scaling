@@ -6,7 +6,7 @@
 
 Systems, serving infrastructure and hardware-aware optimization.
 
-36 papers · Updated 2026-10-14
+38 papers · Updated 2026-10-15
 
 <a id="paper-2510-18239"></a>
 
@@ -150,4 +150,12 @@ Systems, serving infrastructure and hardware-aware optimization.
 
 <a id="paper-2610-12815"></a>
 
-- **Deploying RDMA for Large-Scale Inference and Training Workloads**: ByteExpress is a software communication layer for RDMA in ByteDance parameter-server-based inference and training. It combines buffer management, zero-copy transfers, connection multiplexing, flow control, and recovery above the transport layer. Production inference reports 35.7% lower mean and 43.7% lower P99 parameter-fetch latency, plus 10.69% lower total CPU use versus kernel TCP. It directly informs recommendation parameter-serving infrastructure; these are communication and system metrics, not ranking-quality gains. — [Paper](https://arxiv.org/abs/2610.12815) (Fudan University; ByteDance · arXiv 2026). Reading priority: Unrated.
+- **Deploying RDMA for Distributed Inference and Training At Scale**: ByteExpress is a software communication layer for RDMA in ByteDance parameter-server-based inference and training. It combines buffer management, zero-copy transfers, connection multiplexing, flow control, and recovery above the transport layer. Production inference reports 35.7% lower mean and 43.7% lower P99 parameter-fetch latency, plus 10.69% lower total CPU use versus kernel TCP. It directly informs recommendation parameter-serving infrastructure; these are communication and system metrics, not ranking-quality gains. — [Paper](https://arxiv.org/abs/2610.12815) (Fudan University; ByteDance Inc.; University of Michigan · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-14394"></a>
+
+- **Understanding and Mitigating Training Instability in Large-Scale Recommender Systems: A Cascade Perspective**: This study analyzes training divergence in an industrial short-video recommender as a coupled gradient–weight–loss cascade and groups interventions into gradient control, weight/activation stabilization, and loss shaping. Industrial experiments support combining these controls to stabilize continuously updated models under distribution shifts. The measurements do not establish the exact temporal cascade for every divergence event; the work offers a practical diagnostic framework for scaling rankers rather than a universal causal law. — [Paper](https://arxiv.org/abs/2610.14394) (Google · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-17901"></a>
+
+- **FlashMask-3: Efficient and Expressive Mask-Aware Distributed Attention**: FlashMask-3 combines a Hopper-optimized structured-mask attention kernel with zero-communication mask localization, load balancing and communication pruning for context parallelism. In 118B-A14B MoE training at 128K context on 128 H100 GPUs, throughput improves 7.3–11.0% over Dual Chunk all-gather. The separate kernel and distributed-attention gains are not end-to-end gains. Long-sequence ranking may benefit from these systems ideas, subject to mask and hardware compatibility; CTR transfer is untested. — [Paper](https://arxiv.org/abs/2610.17901) (Baidu Inc. · arXiv 2026). Reading priority: Unrated.

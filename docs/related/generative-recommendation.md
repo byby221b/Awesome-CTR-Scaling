@@ -6,7 +6,7 @@
 
 Generative retrieval, recommendation and ranking beyond discriminative CTR.
 
-85 papers · Updated 2026-10-14
+87 papers · Updated 2026-10-15
 
 <a id="paper-2605-12617"></a>
 
@@ -298,7 +298,7 @@ Generative retrieval, recommendation and ranking beyond discriminative CTR.
 
 <a id="paper-2610-01533"></a>
 
-- **Neither Black nor White: Balancing Semantic and Collaborative Signals with Graph-Informed Semantic IDs (GrIS)**: GrIS reframes semantic-ID construction for generative recommendation as hierarchical partitioning of a graph whose nodes encode semantic content and edges encode collaborative signals, with content-only quantization recovered as an empty-graph special case. It separates graph construction from recursive partitioning and studies RecDMoN, based on differentiable graph pooling, and RQ-GAE, which adds graph-aware representations and reconstruction to residual quantization. The abstract reports improvements over collaborative-filtering-aware state-of-the-art methods on real-world datasets, with Hit@10 gains of up to 52%. — [Paper](https://arxiv.org/abs/2610.01533) (Huawei Ireland Research Centre · arXiv 2026). Reading priority: Worth reading.
+- **Neither Black nor White: Balancing Semantic and Collaborative Signals with Graph-Informed Semantic IDs (GrIS)**: GrIS reframes semantic-ID construction for generative recommendation as hierarchical partitioning of a graph whose nodes encode semantic content and edges encode collaborative signals, with content-only quantization recovered as an empty-graph special case. It separates graph construction from recursive partitioning and studies RecDMoN, based on differentiable graph pooling, and RQ-GAE, which adds graph-aware representations and reconstruction to residual quantization. The abstract reports improvements over collaborative-filtering-aware state-of-the-art methods on real-world datasets, with Hit@10 gains of up to 52%. — [Paper](https://arxiv.org/abs/2610.01533) · [DOI](https://doi.org/10.1145/3799682.3840883) · [Official venue](https://cikm2026.diag.uniroma1.it/program/) (Huawei Ireland Research Centre · CIKM 2026). Reading priority: Worth reading.
 
 <a id="paper-2609-38646"></a>
 
@@ -318,11 +318,11 @@ Generative retrieval, recommendation and ranking beyond discriminative CTR.
 
 <a id="paper-2610-06590"></a>
 
-- **SPRIG: Semantic-ID-enhanced Paths for Knowledge Graph-based Generative Recommendation**: SPRIG combines content-derived semantic IDs with knowledge-graph path reasoning. It trains a generative recommender on paths that end in quantized item tokens, seeking parameter sharing while retaining relational context. Movie and music experiments report competitive recommendation performance with fewer parameters and lower compute than prior generative models. — [Paper](https://arxiv.org/abs/2610.06590) (Johannes Kepler University Linz; Albatross AI; Criteo AI Lab; Linz Institute of Technology · arXiv 2026). Reading priority: Worth reading.
+- **SPRIG: Semantic-ID-enhanced Paths for Knowledge Graph-based Generative Recommendation**: SPRIG combines content-derived semantic IDs with knowledge-graph path reasoning. It trains a generative recommender on paths that end in quantized item tokens, seeking parameter sharing while retaining relational context. Movie and music experiments report competitive recommendation performance with fewer parameters and lower compute than prior generative models. — [Paper](https://arxiv.org/abs/2610.06590) · [DOI](https://doi.org/10.1145/3799682.3839870) · [Official venue](https://cikm2026.diag.uniroma1.it/program/) (Johannes Kepler University Linz; Albatross AI; Criteo AI Lab; Linz Institute of Technology · CIKM (Short) 2026). Reading priority: Worth reading.
 
 <a id="paper-2609-15598"></a>
 
-- **Self-Evolving Memory for Generative Recommendation**: LION addresses conflicts between heterogeneous preference changes during continual adaptation of a shared generative recommender. Sparse key-value memory isolates activated behavior patterns, and consolidation loss reinforces underrepresented changes. Experiments evaluate per-period and user/item-group behavior on real-world datasets. The design is useful for sparse adaptation, but the reported Amazon setup uses at most ten history items and does not demonstrate ultra-long-history scaling. — [Paper](https://arxiv.org/abs/2609.15598) (National University of Singapore; Meta AI · arXiv 2026). Reading priority: Worth reading.
+- **Self-Evolving Memory for Generative Recommendation**: LION addresses conflicts between heterogeneous preference changes during continual adaptation of a shared generative recommender. Sparse key-value memory isolates activated behavior patterns, and consolidation loss reinforces underrepresented changes. Experiments evaluate per-period and user/item-group behavior on real-world datasets. The design is useful for sparse adaptation, but the reported Amazon setup uses at most ten history items and does not demonstrate ultra-long-history scaling. — [Paper](https://arxiv.org/abs/2609.15598) · [DOI](https://doi.org/10.1145/3799682.3840721) · [Official venue](https://cikm2026.diag.uniroma1.it/program/) (National University of Singapore; Meta AI · CIKM 2026). Reading priority: Worth reading.
 
 <a id="paper-2601-19501"></a>
 
@@ -347,3 +347,11 @@ Generative retrieval, recommendation and ranking beyond discriminative CTR.
 <a id="paper-2610-12977"></a>
 
 - **Beyond Semantic IDs: Finite-Beam Reachability and Continuous-Query Generation in Generative Recommendation**: CQG replaces discrete semantic-ID beam expansion with a generated continuous retrieval query, either in one pass or through autoregressive residual refinement. On MovieLens-1M, Beauty, and Sports, it separates finite-beam target reachability from the ability to score every indexed item. CQG-Single beats the TIGER-style baseline in all seven MovieLens runs with 55.3% as many trainable parameters; stronger continuous-query expressiveness does not guarantee higher top-K recall, and full-rank SASRec remains strongest on Sports. Production latency and index-update costs are unmeasured. — [Paper](https://arxiv.org/abs/2610.12977) (arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-15864"></a>
+
+- **Personalized LLM Recommendation with Semantic IDs: Autoregressive Beam Search vs. Multi-Token Prediction**: In a multitask streaming-media recommender, this study compares autoregressive semantic-ID beam search with parallel multi-token prediction strengthened by an auxiliary ranking loss. With four-code IDs and Qwen3 backbones, beam search performs better on most ranking and content-QA metrics and costs about 1/2.6 as much to train at 8B scale; parallel prediction retains the inference-throughput advantage. The result motivates measuring quality, training cost, and serving throughput together, without assuming the same trade-off for much longer IDs or different task mixtures. — [Paper](https://arxiv.org/abs/2610.15864) (Netflix · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-17368"></a>
+
+- **HASTE: Hierarchical and Attribute-aware Supervision for Generative Recommendation**: HASTE adds hierarchical and item-attribute supervision to semantic-ID generative recommendation, aiming to reduce training effort and improve representations of infrequent items. Hierarchical loss supervises each ID level, while attribute losses preserve fine-grained semantics. Fashion and Amazon experiments report gains across item-frequency groups; the approximately 2x convergence improvement measures training steps to a validation-loss threshold, not a demonstrated 2x end-to-end wall-clock speedup. — [Paper](https://arxiv.org/abs/2610.17368) (Glance · arXiv 2026). Reading priority: Unrated.

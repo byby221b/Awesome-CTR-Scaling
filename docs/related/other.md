@@ -6,7 +6,7 @@
 
 Adjacent research, diagnostics and other relevant recommendation methods.
 
-9 papers · Updated 2026-10-14
+9 papers · Updated 2026-10-15
 
 <a id="paper-2411-13700"></a>
 
@@ -42,4 +42,4 @@ Adjacent research, diagnostics and other relevant recommendation methods.
 
 <a id="paper-2609-39007"></a>
 
-- **RouteRec: Behavior-Guided Sparse Routing for Sequential Recommendation**: RouteRec uses interaction tempo, item-group focus, repetition/carryover and popularity cues to guide sparse expert allocation at three history scopes. Cue scores select groups and backbone states refine experts within them. Six public datasets and routing ablations support behavior-aware allocation beyond extra capacity. It offers a routing design for sequential recommenders, but does not establish industrial scaling laws or online throughput gains. — [Paper](https://arxiv.org/abs/2609.39007) (Korea Advanced Institute of Science and Technology; Seoul National University · arXiv 2026). Reading priority: Worth reading.
+- **RouteRec: Behavior-Guided Sparse Routing for Sequential Recommendation**: RouteRec uses interaction tempo, item-group focus, repetition/carryover and popularity cues to guide sparse expert allocation at three history scopes. Cue scores select groups and backbone states refine experts within them. Six public datasets and routing ablations support behavior-aware allocation beyond extra capacity. It offers a routing design for sequential recommenders, but does not establish industrial scaling laws or online throughput gains. — [Paper](https://arxiv.org/abs/2609.39007) · [DOI](https://doi.org/10.1145/3799682.3841104) · [Official venue](https://cikm2026.diag.uniroma1.it/program/) (Korea Advanced Institute of Science and Technology; Seoul National University · CIKM 2026). Reading priority: Worth reading.
