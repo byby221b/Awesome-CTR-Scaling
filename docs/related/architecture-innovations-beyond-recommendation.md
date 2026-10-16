@@ -6,7 +6,7 @@
 
 Transferable ideas from general-purpose model architecture research.
 
-117 papers · Updated 2026-10-15
+126 papers · Updated 2026-10-16
 
 <a id="paper-2606-16825"></a>
 
@@ -475,3 +475,39 @@ Transferable ideas from general-purpose model architecture research.
 <a id="paper-2610-15715"></a>
 
 - **History Replays Itself: Unleashing Long-Context Capability in Linear Attention**: NoteBank adds a training-free episodic archive to pretrained recurrent models: it stores selected text before future queries are known, retrieves with native model features, and replays evidence through the original backbone. At one million tokens, Gated DeltaNet mean accuracy on six RULER retrieval tasks rises from 1.7% to 70.3%. Its small analytical-FLOPs overhead is not negligible wall-clock overhead, and the storage comparison excludes model weights and transient allocations. Long-history ranking is a possible transfer direction, not a tested CTR result. — [Paper](https://arxiv.org/abs/2610.15715) (King Abdullah University of Science and Technology · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-20456"></a>
+
+- **The COUNT: Counting N-grams Unlocks Scaling on Host Memory and Training-Free Adaptation**: COUNT stores precomputed n-gram counts in host memory and uses those frequencies to combine the language model’s output embeddings into additional input embeddings, without a separately learned n-gram table. In 1B-parameter pretraining, the authors report validation-loss gains comparable to spending 57% more estimated training compute on the baseline; changing count tables also enables training-free domain adaptation. Separating cheap stored statistics from active computation is relevant to memory-heavy recommendation designs, but the reported gains are language-model results, not CTR measurements. — [Paper](https://arxiv.org/abs/2610.20456) (University of Washington; Allen Institute for AI · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-19975"></a>
+
+- **LatentLoop: Scaling Looped MoE Models with Asymmetric Compute Allocation**: LatentLoop allocates unequal computation to two visits of a shared MoE block: the first uses a compressed sequence, the second keeps full resolution, and saved compute increases model width. It shares expert weights but separates attention parameters and learns writeback strength. Across 15 configurations from 1.3B to 7B parameters, validation NLL improves; fitted curves at NLL 1.988 predict 19.0% and 7.9% less compute than vanilla and looped MoE baselines. These are fitted language-model savings, suggesting a budget-allocation hypothesis for recommendation rather than established CTR gains. — [Paper](https://arxiv.org/abs/2610.19975) (SJTU; Shanghai AI Lab; USTC; CUHK; NTU · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-19026"></a>
+
+- **Joint Subspace Sparse Attention for Efficient Long-Context Decoding**: JSSA preserves query–key ranking information in a shared low-dimensional subspace and pairs token selection with an indexed-attention kernel that avoids gathering scattered cache entries. Tests across several attention architectures retain accuracy close to full-cache attention; on one NVIDIA B200 at 128K context with a 2,048-token KV budget, reported decoding throughput reaches up to 6.43 times the full-cache baseline. The transferable lesson is to optimize selection quality and memory access together for long histories; the experiments concern LLM decoding and do not establish recommendation serving gains. — [Paper](https://arxiv.org/abs/2610.19026) (Seoul National University · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-18451"></a>
+
+- **FastEEP: Fast Intra-Instance Elastic Scaling for Expert-Parallel MoE Serving**: FastEEP resizes expert-parallel groups inside a running MoE serving instance by separating reusable execution state from configuration-dependent resources. Reusing worker, GPU-memory and communication state avoids destroying and rebuilding the whole instance. Across the tested models, scaling operations are 4.5–11.7 times faster than a vLLM-based approach. This is reconfiguration speed, not token-generation throughput; the design offers a systems reference for elastic sparse-model serving, with recommendation-specific workloads still requiring validation. — [Paper](https://arxiv.org/abs/2610.18451) (Shanghai Jiao Tong University · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-15709"></a>
+
+- **Preserving Updates in Low-Bit Recurrent State Quantization**: The paper targets low-bit recurrent-state quantization, where repeated rounding can discard small updates and create correlated errors. A low-rank bypass accumulates these updates, while bounded directional rounding prevents harmful update reversals without extra storage for that rounding rule. Tests on Gated DeltaNet, GLA, Mamba2 and RetNet outperform INT4, with up to 5.3-fold state-memory reduction and 1.9-fold decoding speedup versus FP32 states. Preserving update direction is a useful hypothesis for compressed recommendation histories; the evidence remains on the tested recurrent models. — [Paper](https://arxiv.org/abs/2610.15709) (The Chinese University of Hong Kong · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-16368"></a>
+
+- **LoopQuant: Accurate and Efficient Post-Training Quantization for Looped Transformers**: LoopQuant adapts post-training quantization to repeated use of shared Transformer blocks. It canonicalizes cross-loop activation distributions, allocates activation precision by loop sensitivity and interactions, and calibrates the resulting low-bit trajectory. On Ouro-2.6B, the authors report that W4A4 exceeds the tested W4A8 baselines and gives a 1.7-fold decoding speedup versus BF16. This provides a loop-aware compression recipe for parameter-sharing architectures; the reported efficiency and accuracy do not establish gains for CTR models or other hardware configurations. — [Paper](https://arxiv.org/abs/2610.16368) (Peking University; Houmo AI · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-15124"></a>
+
+- **ShellElastic: Scalable Elastic Pretraining with Simultaneous Maximal Updates and Hyperparameter Transfer**: ShellElastic trains nested subnetworks inside one shared Transformer by arranging hidden matrices as a dense core with block-lower-triangular shells. A full-width forward pass preserves each smaller network’s exact hidden-state prefix, enabling a fixed joint-training graph. Its maximal-update extension supports simultaneous subnetwork updates and hyperparameter transfer, with experiments comparing MatFormer, fully elastic and separately trained models. This is relevant to producing recommendation models for multiple serving budgets without wholly separate pretraining runs; recommendation-specific transfer remains untested. — [Paper](https://arxiv.org/abs/2610.15124) (Rutgers University; Adobe Research · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-14754"></a>
+
+- **GateSight: Recurrent Memory Anticipates Attention Memory for Query-Agnostic KV Eviction in Hybrid LLMs**: GateSight learns per-head predictors from recurrent-layer write, decay and magnitude signals to estimate the future usefulness of attention-cache entries before a query arrives. It scores once after prefill, sets layer budgets using native attention gates and physically evicts discarded entries. On two Qwen3.8 models with SCBench and RULER-4096, retaining one tenth of the attention KV cache ranks first among five query-agnostic methods on three of four model–benchmark pairs. It suggests reusing recurrent signals for hybrid long-history memory allocation, but requires learned predictors and is not a model-independent guarantee. Transfer to recommendation is untested. — [Paper](https://arxiv.org/abs/2610.14754) (Shanghai Jiao Tong University · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-15139"></a>
+
+- **When Dynamic Scaling Fails: A Scale-State Feedback Governs Recurrent-State Quantization in Linear-Attention and SSM LLMs**: This study separates numerical instability from information loss in quantized recurrent states. Scale–state feedback can cause norm growth, but controlling that scale alone recovers only part of lost performance; finer resolution and long decoding horizons still matter. In the tested settings, group-wise INT4 at 32K decode performs no better than discarding the state, and learned layer precision allocation reduces to protecting early layers under article-disjoint evaluation. The useful warning for compressed recommendation histories is to validate error accumulation over the intended horizon, rather than certify a bit width from short recall tests. — [Paper](https://arxiv.org/abs/2610.15139) (Independent Researcher · arXiv 2026). Reading priority: Unrated.

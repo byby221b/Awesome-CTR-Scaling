@@ -1,15 +1,15 @@
 {
   "coverage": {
     "reading_tiers_assigned": 339,
-    "reading_tiers_unrated": 73,
-    "known_added_dates": 412,
+    "reading_tiers_unrated": 86,
+    "known_added_dates": 425,
     "papers_with_updates": 282,
-    "verified_source_dates": 412,
-    "verified_abstracts": 412,
+    "verified_source_dates": 425,
+    "verified_abstracts": 425,
     "unavailable_abstracts": 0,
     "pending_abstracts": 0,
-    "english_summaries": 412,
-    "chinese_summaries": 412
+    "english_summaries": 425,
+    "chinese_summaries": 425
   },
   "schema_version": 4,
   "meta": {
@@ -17,7 +17,7 @@
     "description": "Scaling laws and scalable ranking models for industrial recommendation.",
     "repository_url": "https://github.com/byby221b/Awesome-CTR-Scaling",
     "site_url": "https://byby221b.github.io/Awesome-CTR-Scaling/",
-    "updated": "2026-10-15",
+    "updated": "2026-10-16",
     "source_commit": "31ad30becff83ca14a01f37fc99d52ba79f85565",
     "scope": "We cover papers that (1) study scaling laws for recommendation models, (2) propose scalable Transformer-based architectures for CTR/ranking, (3) address efficiency challenges in scaling up industrial ranking systems, or (4) explore novel paradigms (e.g., sparse scaling, generative pre-training, foundation models) for scalable recommendation.",
     "history": {
@@ -26,7 +26,7 @@
       "added_at_basis": "Earliest recorded inclusion in reachable repository main history; 50 records were present at its root commit. This is not the source publication date.",
       "backfill_policy": "Unknown historical instants remain null. Source-date imports and structural/UI migrations do not invent catalog change events."
     },
-    "catalog_sha256": "dfc86a14c93ac8c57ce857ba66465c5751394b0a5cc5cab8988b6bf36cb207eb"
+    "catalog_sha256": "71fe0b70e668292e48823d14ef815f4b05c4f5fcd1fe7cc6a223b924213a37d3"
   },
   "categories": [
     {
@@ -173,7 +173,7 @@
     {
       "id": "shopee",
       "name": "Shopee",
-      "count": 3
+      "count": 4
     },
     {
       "id": "coupang",
@@ -233,17 +233,17 @@
     {
       "id": "amazon",
       "name": "Amazon",
-      "count": 5
+      "count": 6
     },
     {
       "id": "capital-one",
       "name": "Capital One",
-      "count": 1
+      "count": 2
     },
     {
       "id": "shopify",
       "name": "Shopify",
-      "count": 1
+      "count": 2
     },
     {
       "id": "liquid-ai",
@@ -273,7 +273,7 @@
     {
       "id": "adobe-research",
       "name": "Adobe Research",
-      "count": 1
+      "count": 2
     },
     {
       "id": "unbox-ai",
@@ -448,6 +448,11 @@
     {
       "id": "disney",
       "name": "Disney",
+      "count": 1
+    },
+    {
+      "id": "houmo-ai",
+      "name": "Houmo AI",
       "count": 1
     }
   ],
@@ -17038,13 +17043,21 @@
       "collection": "related",
       "category": "retrieval-reranking-scaling",
       "affiliation": "Meta",
-      "venue": "",
+      "venue": "EDBT (Industrial & Applications)",
       "year": 2026,
       "tags": [],
       "links": [
         {
           "label": "Paper",
           "url": "https://arxiv.org/abs/2604.12965"
+        },
+        {
+          "label": "DOI",
+          "url": "https://doi.org/10.48786/EDBT.2026.57"
+        },
+        {
+          "label": "Official venue",
+          "url": "https://openproceedings.org/html/pages/2026_edbt.html"
         }
       ],
       "aliases": [
@@ -17096,6 +17109,23 @@
           ],
           "source_url": "https://github.com/byby221b/Awesome-CTR-Scaling/commit/a49e55867454f76e5a77114de99b196cb83fd797",
           "commit_sha": "a49e55867454f76e5a77114de99b196cb83fd797"
+        },
+        {
+          "at": "2026-10-16T01:09:40Z",
+          "kind": "venue_update",
+          "fields": [
+            "venue"
+          ],
+          "source_url": "https://openproceedings.org/html/pages/2026_edbt.html"
+        },
+        {
+          "at": "2026-10-16T01:09:40Z",
+          "kind": "metadata_enrichment",
+          "fields": [
+            "doi",
+            "links"
+          ],
+          "source_url": "https://openproceedings.org/html/pages/2026_edbt.html"
         }
       ],
       "source_dates": {
@@ -17106,6 +17136,7 @@
         "verified_at": "2026-10-02T04:51:26Z"
       },
       "reading_tier": "consider",
+      "doi": "10.48786/EDBT.2026.57",
       "companies": [
         "meta"
       ],
@@ -32146,6 +32177,858 @@
         "kuaishou"
       ],
       "order": 411
+    },
+    {
+      "id": "2604.12234",
+      "title": "UniRec: Bridging the Expressive Gap between Generative and Discriminative Recommendation via Chain-of-Attribute",
+      "collection": "core",
+      "category": "scalable-architecture",
+      "affiliation": "Shopee",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [
+        "Architecture",
+        "Generative Rec",
+        "Multi-scenario",
+        "E-commerce"
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2604.12234"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Generative Recommendation (GR) reframes retrieval and ranking as autoregressive decoding over Semantic IDs (SIDs), unifying the multi-stage pipeline into a single model. Yet a fundamental expressive gap persists: discriminative models score items with direct feature access enabling explicit user-item crossing, whereas GR decodes over compact SID tokens without item-side signal. We formalize this via Bayes' theorem: ranking by p(y|f,u) is equivalent to ranking by p(f|y,u), which factorizes autoregressively over item features, showing that a generative model with full feature access matches its discriminative counterpart, with any practical gap stemming solely from incomplete feature coverage. We propose UniRec with Chain-of-Attribute (CoA) as its core mechanism. CoA prefixes each SID sequence with structured attribute tokens:category, seller, brand, before decoding the SID, recovering the item-side feature crossing that discriminative models exploit. Since items sharing identical attributes cluster in adjacent SID regions, attribute conditioning yields a measurable per-step entropy reduction H(s_k|s<k,a) < H(s_k|s<k), narrowing the search space and stabilizing beam search. We further address two deployment challenges: Capacity-constrained SID introduces exposure-weighted capacity penalties into residual quantization to suppress token collapse and the Matthew effect; Conditional Decoding Context (CDC) combines Task-Conditioned BOS with hash-based Content Summaries to inject scenario signals at each decoding step. A joint RFT and DPO framework aligns the model with business objectives beyond distribution matching. Experiments show UniRec outperforms the strongest baseline by +22.6% HR@50 overall and +15.5% on high-value orders. Deployed on Shopee's e-commerce platform, online A/B tests confirm significant gains in PVCTR (+5.37%), orders (+4.76%), and GMV (+5.60%).",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2604.12234v5",
+        "retrieved_at": "2026-10-15T23:11:00Z",
+        "license": "CC0-1.0",
+        "source_title": "UniRec: Bridging the Expressive Gap between Generative and Discriminative Recommendation via Chain-of-Attribute",
+        "source_version": "v5"
+      },
+      "source_dates": {
+        "published_at": "2026-04-14T03:13:50Z",
+        "updated_at": "2026-10-14T16:27:42Z",
+        "source_version": "v5",
+        "source_url": "https://arxiv.org/abs/2604.12234v5",
+        "verified_at": "2026-10-15T23:11:00Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "UniRec prefixes semantic item IDs with category, seller and brand tokens to expose item attributes during autoregressive recommendation. Exposure-aware capacity penalties and scenario-conditioned decoding address token concentration and multi-scenario deployment, while reward-weighted fine-tuning and preference optimization align business objectives. The authors report offline retrieval and online Shopee gains. For CTR scaling, the useful design is attribute-conditioned generation with explicit scenario signals; the abstract’s broad expressive-equivalence claim should not be read as an unconditional guarantee of equivalent ranking.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-16",
+          "source_urls": [
+            "https://arxiv.org/abs/2604.12234v5",
+            "https://arxiv.org/html/2604.12234v5"
+          ]
+        },
+        "zh": {
+          "text": "UniRec先生成类目、卖家和品牌，再生成物品语义ID，让自回归推荐显式利用物品属性。曝光加权的容量惩罚缓解令牌集中，场景条件解码配合奖励加权微调与偏好优化，面向多场景部署。作者报告了离线召回和Shopee线上收益。对CTR扩展的借鉴是属性条件生成与显式场景信号；摘要中的表达能力等价论断不应理解为无条件的排序等价保证。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-16",
+          "source_urls": [
+            "https://arxiv.org/abs/2604.12234v5",
+            "https://arxiv.org/html/2604.12234v5"
+          ]
+        }
+      },
+      "added_at": "2026-10-16T01:09:40Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2604.12234"
+      },
+      "change_history": [],
+      "reading_tier": null,
+      "companies": [
+        "shopee"
+      ],
+      "order": 412
+    },
+    {
+      "id": "2610.20456",
+      "title": "The COUNT: Counting N-grams Unlocks Scaling on Host Memory and Training-Free Adaptation",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "University of Washington; Allen Institute for AI",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.20456"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "The scaling relationship of compute and performance for language models (LMs) has been extensively studied; more recently, models are being designed to scale memory use, as well. In particular, adding embeddings for n-grams scales memory separately from compute use, because each pass only processes individual embedding rows, which are much smaller than the storage used for the whole embedding table. However, existing methods train embeddings from scratch, which needs expensive GPU memory for fast reading and writing. Meanwhile, the ordinary memory of the host system is cheap and underutilized by these training methods. To scale on host memory, we introduce COUNT (Counting Offline Unlocks N-gram Transformers), which builds n-gram embeddings without adding learned parameters by storing precomputed n-gram counts on host. We use the corpus frequencies to weight together the LM's own unembeddings of the next tokens most often following the current n-gram history. At a fixed compute budget, COUNT can be added as an additional input embedding for pretraining 1B-parameter LMs to improve validation loss as much as an LM with 57% more compute. If GPU memory is limited, using COUNT to let backbone parameters fill GPU memory gives better performance than splitting memory with additional learned n-gram embeddings. Beyond efficiency, COUNT allows switching in a different table of n-gram counts from a domain-specific corpus at inference time to adapt to a new task without any training.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.20456v1",
+        "retrieved_at": "2026-10-15T23:11:00Z",
+        "license": "CC0-1.0",
+        "source_title": "The COUNT: Counting N-grams Unlocks Scaling on Host Memory and Training-Free Adaptation",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-10-14T16:38:19Z",
+        "updated_at": "2026-10-14T16:38:19Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.20456v1",
+        "verified_at": "2026-10-15T23:11:00Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "COUNT stores precomputed n-gram counts in host memory and uses those frequencies to combine the language model’s output embeddings into additional input embeddings, without a separately learned n-gram table. In 1B-parameter pretraining, the authors report validation-loss gains comparable to spending 57% more estimated training compute on the baseline; changing count tables also enables training-free domain adaptation. Separating cheap stored statistics from active computation is relevant to memory-heavy recommendation designs, but the reported gains are language-model results, not CTR measurements.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-16",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.20456v1",
+            "https://arxiv.org/html/2610.20456v1"
+          ]
+        },
+        "zh": {
+          "text": "COUNT把预计算的n元词组计数放在主机内存，用频率加权语言模型的输出嵌入，构造额外输入嵌入，无需另学一张n元词组嵌入表。在10亿参数语言模型预训练中，作者报告的验证损失改善相当于基线多用57%估算训练计算量；替换计数表还能免训练适配领域。把低成本存储统计与实际计算分离，可为推荐的大容量记忆设计提供借鉴，但这些收益来自语言模型，未经CTR验证。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-16",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.20456v1",
+            "https://arxiv.org/html/2610.20456v1"
+          ]
+        }
+      },
+      "added_at": "2026-10-16T01:09:40Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.20456"
+      },
+      "change_history": [],
+      "reading_tier": null,
+      "companies": [],
+      "order": 413
+    },
+    {
+      "id": "2610.19975",
+      "title": "LatentLoop: Scaling Looped MoE Models with Asymmetric Compute Allocation",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "SJTU; Shanghai AI Lab; USTC; CUHK; NTU",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.19975"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Looped Mixture-of-Experts (MoE) models combine parameter reuse with sparse computation to improve performance under matched budgets. Prior work demonstrates that different loop visits can play different roles even when they share parameters. To probe the contributions of different loop visits, we learn separate residual coefficients in a model that applies a shared block twice, observing a smaller scale in the first visit. Fixed coefficient experiments show that reducing the first visit's scale preserves or improves performance, whereas the same reductions to the second hurt it. This asymmetry motivates us to explore asymmetric compute allocation. We propose \\textbf{LatentLoop}, which compresses the first visit's sequence, retains full resolution in the second, and reallocates saved computation to increase the hidden size. We further learn how strongly the first visit updates the full sequence, and share MoE weights across visits while using separate attention parameters to accommodate their different sequence resolutions. Across 15 configurations spanning 1.3B--7B parameters, with the largest budget exceeding $10^{21}$ FLOPs, LatentLoop consistently lowers validation NLL. At a fitted NLL of 1.988, predicted compute savings are 19.0\\% and 7.9\\% relative to vanilla MoE and the looped baseline. It also improves average scores on nine benchmarks at all sizes in 0-shot and 5-shot settings. These results suggest asymmetric compute allocation is a promising direction for looped MoE models.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.19975v1",
+        "retrieved_at": "2026-10-15T23:11:00Z",
+        "license": "CC0-1.0",
+        "source_title": "LatentLoop: Scaling Looped MoE Models with Asymmetric Compute Allocation",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-10-14T10:57:55Z",
+        "updated_at": "2026-10-14T10:57:55Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.19975v1",
+        "verified_at": "2026-10-15T23:11:00Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "LatentLoop allocates unequal computation to two visits of a shared MoE block: the first uses a compressed sequence, the second keeps full resolution, and saved compute increases model width. It shares expert weights but separates attention parameters and learns writeback strength. Across 15 configurations from 1.3B to 7B parameters, validation NLL improves; fitted curves at NLL 1.988 predict 19.0% and 7.9% less compute than vanilla and looped MoE baselines. These are fitted language-model savings, suggesting a budget-allocation hypothesis for recommendation rather than established CTR gains.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-16",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.19975v1",
+            "https://arxiv.org/html/2610.19975v1"
+          ]
+        },
+        "zh": {
+          "text": "LatentLoop给共享MoE模块的两次循环分配不同计算量：首次压缩序列，第二次保留完整分辨率，节省的计算用于加宽模型。专家权重共享，注意力参数分开，并学习写回强度。13亿至70亿参数的15组配置中，验证负对数似然改善；在拟合损失1.988处，相对普通MoE和循环MoE预测分别省19.0%和7.9%计算。这是语言模型拟合结果，可用于提出推荐计算分配的实验假设，尚非CTR收益。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-16",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.19975v1",
+            "https://arxiv.org/html/2610.19975v1"
+          ]
+        }
+      },
+      "added_at": "2026-10-16T01:09:40Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.19975"
+      },
+      "change_history": [],
+      "reading_tier": null,
+      "companies": [],
+      "order": 414
+    },
+    {
+      "id": "2610.19026",
+      "title": "Joint Subspace Sparse Attention for Efficient Long-Context Decoding",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "Seoul National University",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.19026"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Sparse attention reduces the KV-cache traffic that dominates long-context LLM decoding, but practical methods largely operate at coarse granularity. Token-level selection offers finer control, yet presents two challenges: low-dimensional scoring may lose query--key structure needed for accurate ranking, while gathering scattered selected tokens can offset the resulting latency benefit. We introduce Joint Subspace Sparse Attention (JSSA) to address both challenges. For selection quality, JSSA learns a shared low-dimensional query--key subspace by minimizing token-score preservation error. We upper-bound the resulting non-convex objective with a tractable marginal objective that admits a closed-form spectral solution; direct refinement of the exact objective provides no measurable improvement in the tested settings. For execution efficiency, we develop a gather-free token-level indexed-attention kernel that supports distinct per-KV-head selections under the standard grouped-query attention (GQA) KV-cache layout. Across standard GQA, hybrid sliding-window/global attention, and Multi-head Latent Attention (MLA) models, JSSA consistently remains close to full-KV accuracy while avoiding the substantial generation-length inflation and architecture-dependent failures observed with competing methods. On an NVIDIA B200 GPU, JSSA achieves up to $6.43\\times$ the decoding throughput of full-KV attention at 128K context. JSSA achieves reasoning accuracy comparable to model-native DSA without model training and reaches 96--99\\% of its decoding throughput even at 700B scale large models.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.19026v1",
+        "retrieved_at": "2026-10-15T23:11:00Z",
+        "license": "CC0-1.0",
+        "source_title": "Joint Subspace Sparse Attention for Efficient Long-Context Decoding",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-10-13T18:18:47Z",
+        "updated_at": "2026-10-13T18:18:47Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.19026v1",
+        "verified_at": "2026-10-15T23:11:00Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "JSSA preserves query–key ranking information in a shared low-dimensional subspace and pairs token selection with an indexed-attention kernel that avoids gathering scattered cache entries. Tests across several attention architectures retain accuracy close to full-cache attention; on one NVIDIA B200 at 128K context with a 2,048-token KV budget, reported decoding throughput reaches up to 6.43 times the full-cache baseline. The transferable lesson is to optimize selection quality and memory access together for long histories; the experiments concern LLM decoding and do not establish recommendation serving gains.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-16",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.19026v1",
+            "https://arxiv.org/html/2610.19026v1"
+          ]
+        },
+        "zh": {
+          "text": "JSSA在共享低维子空间中保留查询与键的排序信息，并用索引注意力内核直接读取所选令牌，避免先搬运零散缓存。多种注意力架构测试中，准确率接近完整缓存注意力；在单张NVIDIA B200、128K上下文、2,048令牌KV预算条件下，解码吞吐最高达到完整缓存基线的6.43倍。对长历史建模的借鉴是共同优化筛选质量与内存访问；实验针对语言模型解码，不能直接视为推荐服务收益。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-16",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.19026v1",
+            "https://arxiv.org/html/2610.19026v1"
+          ]
+        }
+      },
+      "added_at": "2026-10-16T01:09:40Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.19026"
+      },
+      "change_history": [],
+      "reading_tier": null,
+      "companies": [],
+      "order": 415
+    },
+    {
+      "id": "2610.18451",
+      "title": "FastEEP: Fast Intra-Instance Elastic Scaling for Expert-Parallel MoE Serving",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "Shanghai Jiao Tong University",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.18451"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Large-scale expert parallelism (EP) has become the standard deployment configuration for Mixture-of-Experts (MoE) models in production. Meanwhile, the highly dynamic nature of LLM workloads requires providers to continuously adjust serving capacity to match fluctuating demand. Scaling MoE serving cannot be efficiently achieved by simply adding or removing serving instances; instead, it often requires resizing the EP group within an existing instance, which we refer to as intra-instance scaling.Existing inference engines primarily rely on instance-level scaling, which destroys and reconstructs entire serving instances, incurring substantial scaling overhead.\n  We present FastEEP (Fast Elastic Expert Parallel), a fast intra-instance scaling system for MoE serving based on the principle of Partial Reuse. FastEEP reuses existing runtime state across worker execution, GPU memory, and communication by separating reusable execution structures from the resources activated by the current EP configuration. This separation enables coordinated resource reclamation and reconfiguration while preserving costly-to-reconstruct state, allowing fast EP scaling without full instance teardown and reconstruction. Our evaluation shows that FastEEP achieves 4.5x--11.7x faster scaling than the existing vLLM-based approach across different models, enabling efficient, fine-grained scaling of MoE serving.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.18451v1",
+        "retrieved_at": "2026-10-15T23:11:00Z",
+        "license": "CC0-1.0",
+        "source_title": "FastEEP: Fast Intra-Instance Elastic Scaling for Expert-Parallel MoE Serving",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-10-13T14:22:00Z",
+        "updated_at": "2026-10-13T14:22:00Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.18451v1",
+        "verified_at": "2026-10-15T23:11:00Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "FastEEP resizes expert-parallel groups inside a running MoE serving instance by separating reusable execution state from configuration-dependent resources. Reusing worker, GPU-memory and communication state avoids destroying and rebuilding the whole instance. Across the tested models, scaling operations are 4.5–11.7 times faster than a vLLM-based approach. This is reconfiguration speed, not token-generation throughput; the design offers a systems reference for elastic sparse-model serving, with recommendation-specific workloads still requiring validation.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-16",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.18451v1",
+            "https://arxiv.org/html/2610.18451v1"
+          ]
+        },
+        "zh": {
+          "text": "FastEEP在运行中的MoE服务实例内调整专家并行组，把可复用执行状态与依赖当前配置的资源分开。复用工作进程、显存和通信状态，减少整实例销毁重建。所测模型中，扩缩容操作比基于vLLM的方案快4.5至11.7倍。该数字衡量重配置速度，不是令牌生成吞吐；其状态复用设计可供弹性稀疏模型服务参考，推荐负载仍需单独验证。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-16",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.18451v1",
+            "https://arxiv.org/html/2610.18451v1"
+          ]
+        }
+      },
+      "added_at": "2026-10-16T01:09:40Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.18451"
+      },
+      "change_history": [],
+      "reading_tier": null,
+      "companies": [],
+      "order": 416
+    },
+    {
+      "id": "2610.15709",
+      "title": "Preserving Updates in Low-Bit Recurrent State Quantization",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "The Chinese University of Hong Kong",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.15709"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Linear attention and recurrent models compress past tokens into a fixed-size state that is updated at every step. However, storing these states in high precision incurs substantial memory and bandwidth costs at large batch sizes, motivating low-bit state quantization. Unlike weights and key--value caches, a recurrent state is requantized after every update, so its quantization errors accumulate across steps. Our analysis shows that these errors are highly coherent across steps, so reducing per-step errors alone is insufficient. This coherence arises mainly from small updates that are lost in rounding. To preserve these updates, we intervene both before and at rounding. Before rounding, we propose Low-Rank Bypass (LRB), which accumulates small updates in a compact low-rank buffer and periodically merges its sufficiently large elements into the state. At rounding, we observe that a state element can even move opposite to its update, and such reversals prove particularly harmful. Therefore, we propose Bounded Directional Rounding (BDR), which rounds reversed elements toward their updates without additional storage. Although BDR enlarges the rounding error, it improves the model, suggesting that the direction of an update matters more than its rounding error at a single step. Across Gated DeltaNet, GLA, Mamba2, and RetNet, our training-free method substantially outperforms INT4, while reducing state memory by up to 5.3$\\times$ and speeding up decoding by up to 1.9$\\times$ relative to FP32 states.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.15709v1",
+        "retrieved_at": "2026-10-15T23:11:00Z",
+        "license": "CC0-1.0",
+        "source_title": "Preserving Updates in Low-Bit Recurrent State Quantization",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-10-11T15:46:25Z",
+        "updated_at": "2026-10-11T15:46:25Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.15709v1",
+        "verified_at": "2026-10-15T23:11:00Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "The paper targets low-bit recurrent-state quantization, where repeated rounding can discard small updates and create correlated errors. A low-rank bypass accumulates these updates, while bounded directional rounding prevents harmful update reversals without extra storage for that rounding rule. Tests on Gated DeltaNet, GLA, Mamba2 and RetNet outperform INT4, with up to 5.3-fold state-memory reduction and 1.9-fold decoding speedup versus FP32 states. Preserving update direction is a useful hypothesis for compressed recommendation histories; the evidence remains on the tested recurrent models.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-16",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.15709v1",
+            "https://arxiv.org/html/2610.15709v1"
+          ]
+        },
+        "zh": {
+          "text": "论文处理低比特循环状态量化：反复舍入会丢失小更新，并产生跨步相关误差。低秩旁路先积累小更新，有界方向舍入则避免更新方向反转，后者本身无需额外存储。在Gated DeltaNet、GLA、Mamba2和RetNet上优于普通INT4；相对FP32状态，状态内存最低约为FP32的1/5.3、解码最多加速1.9倍。保留更新方向可作为推荐历史压缩的实验思路，证据仍限于所测循环模型。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-16",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.15709v1",
+            "https://arxiv.org/html/2610.15709v1"
+          ]
+        }
+      },
+      "added_at": "2026-10-16T01:09:40Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.15709"
+      },
+      "change_history": [],
+      "reading_tier": null,
+      "companies": [],
+      "order": 417
+    },
+    {
+      "id": "2610.19065",
+      "title": "Revisiting Generative vs. Dense Retrieval: A Static Value Prior Reverses the Gap",
+      "collection": "related",
+      "category": "retrieval-reranking-scaling",
+      "affiliation": "Shopify; University of Toronto",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.19065"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Generative retrieval (GR) has emerged as a strong candidate generator for sequential recommendation as language models and semantic-item identifiers have improved. However, GR is not a uniformly stronger replacement of dense retrieval (DR) in online retail candidate generation. We examine their differences on two Amazon Toys datasets under different metrics. GR leads on best relevant item value among users both methods cover, while DR leads on exact-target recall and relevant value across the ranked list. With deep analysis, we find that popularity contributes the most to GR's measured value lead. Adding the same static item value to DR in one reranking step reverses this lead and keeps recall above GR. Finally, on an industrial-scale internal e-commerce dataset with LLM-judged relevance, we show that a 14B SID-LLM still underperforms a $47\\times$ smaller dense encoder.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.19065v1",
+        "retrieved_at": "2026-10-15T23:11:00Z",
+        "license": "CC0-1.0",
+        "source_title": "Revisiting Generative vs. Dense Retrieval: A Static Value Prior Reverses the Gap",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-10-13T19:02:30Z",
+        "updated_at": "2026-10-13T19:02:30Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.19065v1",
+        "verified_at": "2026-10-15T23:11:00Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "This study compares generative and dense retrieval on two Amazon Toys datasets using exact-target recall, best-item value among jointly covered users and value across the full ranked list. Their ordering changes with the metric, and adding the same static item-value prior to dense retrieval reverses the generative method’s measured best-item-value lead. A separate internal e-commerce test uses LLM-judged relevance. For recommendation scaling, it motivates matching evaluation populations, objectives and simple priors before attributing gains to larger generative models; it does not prove universal dense-retrieval superiority.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-16",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.19065v1",
+            "https://arxiv.org/html/2610.19065v1"
+          ]
+        },
+        "zh": {
+          "text": "研究在两套Amazon Toys数据上比较生成式与稠密检索，分别看精确目标召回、双方都覆盖用户中的最佳物品价值，以及完整列表价值。方法排序随指标改变；给稠密检索加入同一静态物品价值先验后，生成式方法原有的最佳物品价值优势被反转。另有内部电商测试采用语言模型判断相关性。对推荐扩展的启示是先对齐评估人群、目标和简单先验，再归因于生成模型规模，不能推广为稠密检索普遍更强。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-16",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.19065v1",
+            "https://arxiv.org/html/2610.19065v1"
+          ]
+        }
+      },
+      "added_at": "2026-10-16T01:09:40Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.19065"
+      },
+      "change_history": [],
+      "reading_tier": null,
+      "companies": [
+        "shopify"
+      ],
+      "order": 418
+    },
+    {
+      "id": "2607.29606",
+      "title": "QASP: Query-Adaptive Robust Vector Search Policy",
+      "collection": "related",
+      "category": "retrieval-reranking-scaling",
+      "affiliation": "Amazon; Tel Aviv University",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2607.29606"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "A fundamental challenge of vector search is achieving consistently high recall while minimizing computational costs. Fixed search parameters cause significant performance variance across queries, and conventional evaluation on average recall masks these per-query disparities. We introduce QASP (Query-Adaptive robust vector Search Policy), which predicts the complete recall progression curve per query via a single upfront supervised regression, from which a search policy is derived for any recall target; this avoids iterative model invocations during search or separate predictors per target. By predicting normalized recall values with scale-invariant features and pre-search inference, QASP generalizes across recall targets, index configurations, and datasets. The fine-grained progress predictions further enable a lightweight reactive complement that adjusts search depth based on predicted-versus-observed deviations without additional inference. We prove that QASP requires a finite training sample independent of dataset size and dimensionality, that it matches or improves on the best fixed-policy loss up to a vanishing statistical error, and that its data access savings over fixed probing grow exponentially in intrinsic dimensionality. Experimentally, QASP achieves significantly lower recall variance and deviation from target, higher query satisfaction rate, and scales to large data and hierarchical indices without retraining, achieving 99% recall with 80% less data access. Our implementation can be found at https://github.com/amazon-science/QASP.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2607.29606v3",
+        "retrieved_at": "2026-10-15T23:11:00Z",
+        "license": "CC0-1.0",
+        "source_title": "QASP: Query-Adaptive Robust Vector Search Policy",
+        "source_version": "v3"
+      },
+      "source_dates": {
+        "published_at": "2026-07-31T16:38:47Z",
+        "updated_at": "2026-10-14T15:20:16Z",
+        "source_version": "v3",
+        "source_url": "https://arxiv.org/abs/2607.29606v3",
+        "verified_at": "2026-10-15T23:11:00Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "QASP predicts each query’s recall-progress curve with one upfront regression, then derives search depth for different recall targets. A lightweight reactive step adjusts depth from observed deviations without invoking the predictor again. The authors report lower per-query recall variance and reduced data access, including transfer across tested datasets and index configurations. This offers a way to allocate retrieval compute by query difficulty instead of a fixed search budget; extrapolation to production recommendation traffic requires calibration and validation.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-16",
+          "source_urls": [
+            "https://arxiv.org/abs/2607.29606v3",
+            "https://arxiv.org/html/2607.29606v3"
+          ]
+        },
+        "zh": {
+          "text": "QASP用一次前置回归预测每个查询的召回进度曲线，再按不同召回目标确定搜索深度；轻量反馈步骤依据实际偏差调整深度，无需再次调用预测器。作者报告了更低的逐查询召回波动和数据访问量，并测试了跨数据集、跨索引配置迁移。其可借鉴点是按查询难度分配检索计算，而非统一搜索预算；迁移到生产推荐流量仍需校准和验证。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-16",
+          "source_urls": [
+            "https://arxiv.org/abs/2607.29606v3",
+            "https://arxiv.org/html/2607.29606v3"
+          ]
+        }
+      },
+      "added_at": "2026-10-16T01:09:40Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2607.29606"
+      },
+      "change_history": [],
+      "reading_tier": null,
+      "companies": [
+        "amazon"
+      ],
+      "order": 419
+    },
+    {
+      "id": "2606.26277",
+      "title": "From Clicks to Intent: Cross-Platform Session Embeddings with LLM-Distilled Taxonomy for Financial Services Recommendations",
+      "collection": "related",
+      "category": "knowledge-distillation-compression",
+      "affiliation": "Capital One",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2606.26277"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Sequential user behavior modeling is widely adopted in industrial recommender systems; however, significant gaps remain in financial services, where pre-login web interactions and authenticated in-app experiences differ drastically. Specifically, pre-login web users typically explore new products, whereas logged-in app users focus on account servicing. Due to the challenge of cross-channel entity resolution (e.g., matching anonymous web sessions to authenticated mobile accounts), web-based intent signals remain underutilized for post-authentication personalization. Existing methods for capturing web-based intent are often ad-hoc and narrow, lacking the flexibility to support both quantitative downstream recommendations and qualitative understanding at scale. In this work, we propose a scalable and dual-purpose intent prediction framework for web-based interactions and demonstrate its applicability for personalization. Our approach transforms raw web clickstreams into two outputs: a self-supervised Transformer encodes multi-modal clickstreams into a compact session embedding, while an LLM-based taxonomy generation and distillation pipeline produces interpretable intent labels. Our system demonstrates that self-supervised clickstream representations combined with LLM-distilled taxonomies can jointly serve quantitative tasks and qualitative understanding in production: on the mobile homepage tile ranking task, the session embedding improves macro Recall@1 by 1.88% and reduces Log Loss by 13.38% over production baselines. On the user conversion prediction task, the embedding outperforms the LLM labels by 4.3% on micro F1, while the distillation layer delivers interpretable labels at ultra-low latency with only a 7% performance drop.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2606.26277v3",
+        "retrieved_at": "2026-10-15T23:11:00Z",
+        "license": "CC0-1.0",
+        "source_title": "From Clicks to Intent: Cross-Platform Session Embeddings with LLM-Distilled Taxonomy for Financial Services Recommendations",
+        "source_version": "v3"
+      },
+      "source_dates": {
+        "published_at": "2026-06-24T18:18:56Z",
+        "updated_at": "2026-10-14T17:04:12Z",
+        "source_version": "v3",
+        "source_url": "https://arxiv.org/abs/2606.26277v3",
+        "verified_at": "2026-10-15T23:11:00Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "The framework turns web clickstreams into compact self-supervised Transformer session embeddings and separately distills an LLM-generated intent taxonomy into interpretable labels. In the reported mobile-homepage ranking task, session embeddings improve macro Recall@1 by 1.88% and reduce log loss by 13.38% against production baselines. The two outputs serve prediction and explanation under different latency constraints. For recommendation scaling, the useful separation is dense behavioral representation versus inexpensive intent labeling; cross-channel identity resolution and financial-services evaluation limit direct generalization.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-16",
+          "source_urls": [
+            "https://arxiv.org/abs/2606.26277v3",
+            "https://arxiv.org/html/2606.26277v3"
+          ]
+        },
+        "zh": {
+          "text": "该框架用自监督Transformer把网页点击流编码为紧凑会话嵌入，另将语言模型生成的意图分类体系蒸馏为可解释标签。在所报告的移动首页排序任务中，会话嵌入相对生产基线提升1.88%的宏平均Recall@1、降低13.38%的对数损失。两类输出分别服务预测和不同延迟要求下的解释。对推荐扩展的借鉴是分开建设行为表示与低成本意图标签；跨渠道身份关联和金融服务评估范围限制了直接推广。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-16",
+          "source_urls": [
+            "https://arxiv.org/abs/2606.26277v3",
+            "https://arxiv.org/html/2606.26277v3"
+          ]
+        }
+      },
+      "aliases": [
+        "From Clicks to Intent: Distilling LLM Intent Understanding into Compact, Deployable Models in Financial Services"
+      ],
+      "added_at": "2026-10-16T01:09:40Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2606.26277"
+      },
+      "change_history": [],
+      "reading_tier": null,
+      "companies": [
+        "capital-one"
+      ],
+      "order": 420
+    },
+    {
+      "id": "2610.16368",
+      "title": "LoopQuant: Accurate and Efficient Post-Training Quantization for Looped Transformers",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "Peking University; Houmo AI",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.16368"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Looped Language Models (LoopLMs) improve parameter efficiency by recursively reusing shared Transformer modules, yet their repeated computation over evolving recurrent states poses new challenges for low-bit deployment. Existing post-training quantization (PTQ) methods, largely designed for feed-forward Transformers, fail to account for cross-loop activation dynamics, heterogeneous loop sensitivity, and recursive error propagation, leading to substantial performance degradation at low precision. To address these challenges, we propose LoopQuant, a loop-aware PTQ framework for accurate and efficient low-bit quantization of LoopLMs. LoopQuant is built on three core components: 1) Cross-Loop Distribution Canonicalization (CLDC) learns a shared quantization-friendly representation across recurrent states while preserving parameter sharing; 2) Interaction-Aware Loop-wise Precision Allocation (ILPA) allocates activation precision under a fixed bit budget by modeling task-level loop sensitivity and cross-loop interactions; and 3) Loop-Conditioned Task Calibration (LCTC) further aligns quantized inference with the low-bit recursive trajectory through lightweight task-space calibration. Extensive experiments across LoopLM architectures demonstrate that LoopQuant consistently outperforms existing low-bit PTQ methods. On Ouro-2.6B, LoopQuant under W4A4 surpasses all W4A8 baselines in performance, while reducing model memory by 65.3% with only 3.4% additional storage overhead over naive INT4 and achieving a 1.7 times decoding speedup over BF16. These results demonstrate a strong balance among accuracy, compression, and inference efficiency, providing a practical and deployment-friendly solution for low-bit LoopLM inference. The code is available at [this https URL].",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.16368v1",
+        "retrieved_at": "2026-10-15T23:17:00Z",
+        "license": null,
+        "source_title": "LoopQuant: Accurate and Efficient Post-Training Quantization for Looped Transformers",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-10-12T08:20:04Z",
+        "updated_at": "2026-10-12T08:20:04Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.16368v1",
+        "verified_at": "2026-10-15T23:17:00Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "LoopQuant adapts post-training quantization to repeated use of shared Transformer blocks. It canonicalizes cross-loop activation distributions, allocates activation precision by loop sensitivity and interactions, and calibrates the resulting low-bit trajectory. On Ouro-2.6B, the authors report that W4A4 exceeds the tested W4A8 baselines and gives a 1.7-fold decoding speedup versus BF16. This provides a loop-aware compression recipe for parameter-sharing architectures; the reported efficiency and accuracy do not establish gains for CTR models or other hardware configurations.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-16",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.16368v1",
+            "https://arxiv.org/html/2610.16368v1"
+          ]
+        },
+        "zh": {
+          "text": "LoopQuant针对共享Transformer模块被反复执行时的量化误差，统一跨循环激活分布，按各轮敏感度与相互作用分配激活精度，再校准低比特循环轨迹。在Ouro-2.6B上，作者报告W4A4优于所测W4A8基线，解码速度为BF16的1.7倍。该方法可供共享参数架构的循环感知压缩参考，但未证明CTR模型或其他硬件配置下具有同样收益。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-16",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.16368v1",
+            "https://arxiv.org/html/2610.16368v1"
+          ]
+        }
+      },
+      "added_at": "2026-10-16T01:09:40Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.16368"
+      },
+      "change_history": [],
+      "reading_tier": null,
+      "companies": [
+        "houmo-ai"
+      ],
+      "order": 421
+    },
+    {
+      "id": "2610.15124",
+      "title": "ShellElastic: Scalable Elastic Pretraining with Simultaneous Maximal Updates and Hyperparameter Transfer",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "Rutgers University; Adobe Research",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.15124"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Foundation models need to support diverse inference budgets, yet training a separate model for each budget duplicates pretraining effort. Elastic models train several nested sub-networks inside one weight-shared supernet, but existing recipes face three obstacles: variable per-step workloads that hinder distributed scaling, limited hyperparameter (HP) transfer across model sizes, and no guarantee that all sub-networks are maximally updated at once. We present \\Ours, an elastic transformer that organizes hidden dimensions into a dense core and successive shells, so that every hidden matrix is block lower triangular. One full-width forward pass contains every sub-network's exact hidden states as prefixes, so joint training keeps a fixed computation graph and costs about as much per step as training the widest sub-network alone. We further introduce \\muE, an extension of maximal update parameterization (\\mup) to \\Ours and other elastic architectures. Its scaling rules provably keep all sub-networks of a supernet maximally updated simultaneously (\\muI), and keep doing so when the supernet is widened or given more shells; sweeps confirm that HPs tuned on a small non-elastic proxy stay near-optimal for elastic families and larger supernets (\\mbox{\\muT}). A single \\Ours run produces sub-networks that outperform MatFormer and fully elastic baselines at matched parameter counts, and approach separately trained models that together take several times the steps.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.15124v1",
+        "retrieved_at": "2026-10-15T23:17:00Z",
+        "license": null,
+        "source_title": "ShellElastic: Scalable Elastic Pretraining with Simultaneous Maximal Updates and Hyperparameter Transfer",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-10-10T18:56:52Z",
+        "updated_at": "2026-10-10T18:56:52Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.15124v1",
+        "verified_at": "2026-10-15T23:17:00Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "ShellElastic trains nested subnetworks inside one shared Transformer by arranging hidden matrices as a dense core with block-lower-triangular shells. A full-width forward pass preserves each smaller network’s exact hidden-state prefix, enabling a fixed joint-training graph. Its maximal-update extension supports simultaneous subnetwork updates and hyperparameter transfer, with experiments comparing MatFormer, fully elastic and separately trained models. This is relevant to producing recommendation models for multiple serving budgets without wholly separate pretraining runs; recommendation-specific transfer remains untested.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-16",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.15124v1",
+            "https://arxiv.org/html/2610.15124v1"
+          ]
+        },
+        "zh": {
+          "text": "ShellElastic把共享Transformer组织成密集核心与分块下三角外层，一次完整宽度前向计算即可保留各小子网的精确隐状态前缀，联合训练的计算图因此固定。其最大更新参数化扩展支持各子网同时学习与超参数迁移，并与MatFormer、全弹性模型和单独训练模型比较。该设计可为一次预训练产出多种服务预算的推荐模型提供参考，推荐场景迁移仍未验证。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-16",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.15124v1",
+            "https://arxiv.org/html/2610.15124v1"
+          ]
+        }
+      },
+      "added_at": "2026-10-16T01:09:40Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.15124"
+      },
+      "change_history": [],
+      "reading_tier": null,
+      "companies": [
+        "adobe-research"
+      ],
+      "order": 422
+    },
+    {
+      "id": "2610.14754",
+      "title": "GateSight: Recurrent Memory Anticipates Attention Memory for Query-Agnostic KV Eviction in Hybrid LLMs",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "Shanghai Jiao Tong University",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.14754"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Hybrid language models interleave Gated DeltaNet (GDN) layers, whose recurrent memory has a fixed size, with full-attention layers, whose key-value (KV) cache grows with the context and dominates serving memory. In this paper, we ask whether the recurrent memory already knows what the attention memory will need. We first show that which GDN heads of Qwen3.8-27B keep long memories is fixed by the weights rather than by the document. Next, we define the future utility of a KV entry by how much removing it changes the attention output over the model's own continuations, and find that the write gate, decay and write magnitude that GDN layers emit during prefill anticipate this utility before any query is seen. Because the relation is spread across many GDN heads and layers, and a linear map recovers its trend but less of its high-utility tail than a nonlinear one, we propose GateSight, which learns it with lightweight per-head multilayer perceptrons that read these signals and no attention score. Their predicted utility decides which entries each attention layer keeps, and how much each layer keeps is set by the model's native attention output gate, whose mean differs by more than an order of magnitude across layers. Finally, at serving time, GateSight scores the cache once after prefill and physically releases discarded KV entries. Experimental results on SCBench and RULER-4096 with Qwen3.8-27B and, with the same recipe, the sparse-attention model Qwen3.8-Flash-Next, up to the 262K-token limit of the models, show that with a tenth of the attention KV cache, GateSight is the most accurate of five query-agnostic methods on three of the four model-benchmark pairs and leads KVzip on all four, by 9.5 to 47.2 points. Notably, it scores a full-length context with negligible overhead relative to prefill.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.14754v1",
+        "retrieved_at": "2026-10-15T23:17:00Z",
+        "license": null,
+        "source_title": "GateSight: Recurrent Memory Anticipates Attention Memory for Query-Agnostic KV Eviction in Hybrid LLMs",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-10-10T09:19:05Z",
+        "updated_at": "2026-10-10T09:19:05Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.14754v1",
+        "verified_at": "2026-10-15T23:17:00Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "GateSight learns per-head predictors from recurrent-layer write, decay and magnitude signals to estimate the future usefulness of attention-cache entries before a query arrives. It scores once after prefill, sets layer budgets using native attention gates and physically evicts discarded entries. On two Qwen3.8 models with SCBench and RULER-4096, retaining one tenth of the attention KV cache ranks first among five query-agnostic methods on three of four model–benchmark pairs. It suggests reusing recurrent signals for hybrid long-history memory allocation, but requires learned predictors and is not a model-independent guarantee. Transfer to recommendation is untested.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-16",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.14754v1",
+            "https://arxiv.org/html/2610.14754v1"
+          ]
+        },
+        "zh": {
+          "text": "GateSight用循环层的写入、衰减和更新幅度信号训练逐头预测器，在查询到来前估计注意力缓存的未来用途。预填充后只评分一次，以模型原生注意力门控分配各层预算，并实际释放淘汰项。在两种Qwen3.8模型的SCBench和RULER-4096测试中，保留十分之一注意力KV缓存时，四组模型—基准组合中三组在五种查询无关方法中排名第一。其可借鉴点是用循环信号分配混合长历史记忆，但需要训练预测器，并非适用于任意模型的保证。向推荐任务迁移仍未验证。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-16",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.14754v1",
+            "https://arxiv.org/html/2610.14754v1"
+          ]
+        }
+      },
+      "added_at": "2026-10-16T01:09:40Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.14754"
+      },
+      "change_history": [],
+      "reading_tier": null,
+      "companies": [],
+      "order": 423
+    },
+    {
+      "id": "2610.15139",
+      "title": "When Dynamic Scaling Fails: A Scale-State Feedback Governs Recurrent-State Quantization in Linear-Attention and SSM LLMs",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "Independent Researcher",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.15139"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Linear-attention and state-space LLMs carry long context in a fixed-size recurrent state, and quantizing that state is the natural way to cut its cost during long decode. Unlike a weight tensor, the state is rewritten at every step, so a quantizer applied at each step sits inside the recurrence and its errors compound. INT4 that leaves synthetic recall perfectly intact at the start destroys it a thousand steps later. The mechanism is a feedback between the quantizer scale and the state it is derived from. Yoking that scale to a full-precision reference removes the resulting norm explosion entirely, yet recovers only 1.8 of the 5.4 nats lost, so numerical instability and functional degradation are separable failures. The remainder is a resolution problem that locating outliers does not solve, since every outlier-aware scheme here loses to plain persistent scaling. Allocating bits across layers does help, but under article-disjoint splits a learned allocation collapses onto the trivial rule of protecting the first few layers. Run out to 32K, group-wise INT4 is worth no more than discarding the state. Contain the scale rather than locate outliers, and report the decode horizon at which a bit-width was certified.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.15139v1",
+        "retrieved_at": "2026-10-15T23:17:00Z",
+        "license": null,
+        "source_title": "When Dynamic Scaling Fails: A Scale-State Feedback Governs Recurrent-State Quantization in Linear-Attention and SSM LLMs",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-10-10T19:30:50Z",
+        "updated_at": "2026-10-10T19:30:50Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.15139v1",
+        "verified_at": "2026-10-15T23:17:00Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "This study separates numerical instability from information loss in quantized recurrent states. Scale–state feedback can cause norm growth, but controlling that scale alone recovers only part of lost performance; finer resolution and long decoding horizons still matter. In the tested settings, group-wise INT4 at 32K decode performs no better than discarding the state, and learned layer precision allocation reduces to protecting early layers under article-disjoint evaluation. The useful warning for compressed recommendation histories is to validate error accumulation over the intended horizon, rather than certify a bit width from short recall tests.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-16",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.15139v1",
+            "https://arxiv.org/html/2610.15139v1"
+          ]
+        },
+        "zh": {
+          "text": "研究把循环状态量化的数值不稳定与信息损失分开检查：量化尺度和状态之间的反馈可能放大范数，但只控制尺度只能恢复部分损失，量化分辨率和持续解码长度仍重要。在所测设置中，分组INT4持续解码到32K时不优于丢弃状态；按文章隔离评估后，学习得到的逐层精度分配退化为优先保护前几层。对推荐历史压缩的警示是按实际使用长度检查误差积累，不能只凭短序列召回测试认定某比特宽度可靠。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-16",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.15139v1",
+            "https://arxiv.org/html/2610.15139v1"
+          ]
+        }
+      },
+      "added_at": "2026-10-16T01:09:40Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.15139"
+      },
+      "change_history": [],
+      "reading_tier": null,
+      "companies": [],
+      "order": 424
     }
   ]
 }

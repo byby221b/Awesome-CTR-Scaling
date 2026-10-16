@@ -6,7 +6,7 @@
 
 Scaling retrieval and reranking stages of recommendation pipelines.
 
-23 papers · Updated 2026-10-15
+25 papers · Updated 2026-10-16
 
 <a id="paper-2603-04816"></a>
 
@@ -18,7 +18,7 @@ Scaling retrieval and reranking stages of recommendation pipelines.
 
 <a id="paper-2604-12965"></a>
 
-- **Efficient Retrieval Scaling with Hierarchical Indexing**: The paper jointly learns a hierarchical retrieval index with cross-attention and residual quantization so larger recommendation models can search efficiently. Instead of treating indexing as a detached serving step, the learned hierarchy organizes model memory; the authors also find that its intermediate nodes identify useful data for further fine-tuning, improving deployed retrieval performance. — [Paper](https://arxiv.org/abs/2604.12965) (Meta · 2026). Reading priority: Worth reading.
+- **Efficient Retrieval Scaling with Hierarchical Indexing**: The paper jointly learns a hierarchical retrieval index with cross-attention and residual quantization so larger recommendation models can search efficiently. Instead of treating indexing as a detached serving step, the learned hierarchy organizes model memory; the authors also find that its intermediate nodes identify useful data for further fine-tuning, improving deployed retrieval performance. — [Paper](https://arxiv.org/abs/2604.12965) · [DOI](https://doi.org/10.48786/EDBT.2026.57) · [Official venue](https://openproceedings.org/html/pages/2026_edbt.html) (Meta · EDBT (Industrial & Applications) 2026). Reading priority: Worth reading.
 
 <a id="paper-2606-13533"></a>
 
@@ -99,3 +99,11 @@ Scaling retrieval and reranking stages of recommendation pipelines.
 <a id="paper-2604-05379"></a>
 
 - **Retrieve-then-Adapt: Retrieval-Augmented Test-Time Adaptation for Sequential Recommendation**: ReAd retrieves collaboratively similar items from a memory database and integrates them through a lightweight retrieval module to refine a sequential recommender’s predictions. The backbone stays frozen at inference; retrieved signals adapt the prediction without online parameter updates. Five benchmark datasets show improvements over the tested sequential methods. This offers a retrieval-based route to handle shifted or rare preferences, but requires extra retrieval/fusion work and does not establish production CTR or latency gains. — [Paper](https://arxiv.org/abs/2604.05379) · [DOI](https://doi.org/10.1145/3799682.3841085) · [Official venue](https://cikm2026.diag.uniroma1.it/program/) (Shenzhen Technology University; City University of Hong Kong; McGill University; Shenzhen University; Kuaishou Technology · CIKM 2026). Reading priority: Unrated.
+
+<a id="paper-2610-19065"></a>
+
+- **Revisiting Generative vs. Dense Retrieval: A Static Value Prior Reverses the Gap**: This study compares generative and dense retrieval on two Amazon Toys datasets using exact-target recall, best-item value among jointly covered users and value across the full ranked list. Their ordering changes with the metric, and adding the same static item-value prior to dense retrieval reverses the generative method’s measured best-item-value lead. A separate internal e-commerce test uses LLM-judged relevance. For recommendation scaling, it motivates matching evaluation populations, objectives and simple priors before attributing gains to larger generative models; it does not prove universal dense-retrieval superiority. — [Paper](https://arxiv.org/abs/2610.19065) (Shopify; University of Toronto · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2607-29606"></a>
+
+- **QASP: Query-Adaptive Robust Vector Search Policy**: QASP predicts each query’s recall-progress curve with one upfront regression, then derives search depth for different recall targets. A lightweight reactive step adjusts depth from observed deviations without invoking the predictor again. The authors report lower per-query recall variance and reduced data access, including transfer across tested datasets and index configurations. This offers a way to allocate retrieval compute by query difficulty instead of a fixed search budget; extrapolation to production recommendation traffic requires calibration and validation. — [Paper](https://arxiv.org/abs/2607.29606) (Amazon; Tel Aviv University · arXiv 2026). Reading priority: Unrated.

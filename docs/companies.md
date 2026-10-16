@@ -17,7 +17,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [Kuaishou](#company-kuaishou) (26)
 - [Huawei](#company-huawei) (9)
 - [Baidu](#company-baidu) (6)
-- [Shopee](#company-shopee) (3)
+- [Shopee](#company-shopee) (4)
 - [Coupang](#company-coupang) (1)
 - [Netflix](#company-netflix) (3)
 - [Tubi](#company-tubi) (1)
@@ -29,15 +29,15 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [Walmart](#company-walmart) (1)
 - [Snap](#company-snap) (4)
 - [Xiaohongshu](#company-xiaohongshu) (6)
-- [Amazon](#company-amazon) (5)
-- [Capital One](#company-capital-one) (1)
-- [Shopify](#company-shopify) (1)
+- [Amazon](#company-amazon) (6)
+- [Capital One](#company-capital-one) (2)
+- [Shopify](#company-shopify) (2)
 - [Liquid AI](#company-liquid-ai) (3)
 - [IBM (MIT-IBM Computing Research Lab)](#company-ibm-mit-ibm-computing-research-lab) (3)
 - [Perplexity AI](#company-perplexity-ai) (1)
 - [NVIDIA](#company-nvidia) (4)
 - [StepFun](#company-stepfun) (1)
-- [Adobe Research](#company-adobe-research) (1)
+- [Adobe Research](#company-adobe-research) (2)
 - [Unbox AI](#company-unbox-ai) (1)
 - [Kimi](#company-kimi) (1)
 - [Qualcomm AI Research](#company-qualcomm-ai-research) (1)
@@ -73,6 +73,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [Tooploox](#company-tooploox) (1)
 - [Arm](#company-arm) (1)
 - [Disney](#company-disney) (1)
+- [Houmo AI](#company-houmo-ai) (1)
 
 <a id="company-meta"></a>
 
@@ -334,6 +335,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [OnePiece: Bringing Context Engineering and Reasoning to Industrial Cascade Ranking System](topics/foundation-models-multi-scenario.md#paper-2509-18091) · 2026 · Core
 - [OneRank: Unified Transformer-Native Ranking Architecture for Multi-Task Recommendation](topics/foundation-models-multi-scenario.md#paper-2606-16838) · 2026 · Core
 - [KGD](related/generative-pre-training-for-ctr.md#paper-2608-02738) · 2026 · Related
+- [UniRec: Bridging the Expressive Gap between Generative and Discriminative Recommendation via Chain-of-Attribute](topics/scalable-architecture.md#paper-2604-12234) · 2026 · Core
 
 <a id="company-coupang"></a>
 
@@ -433,18 +435,21 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [Rethinking Semantic ID Construction for Generative Recommendation: SimHash with Parallel Decoding and Semantic Alignment](related/generative-recommendation.md#paper-2610-07402) · 2026 · Related
 - [STAPLE: Static Sparse Upcycling of Pretrained Checkpoints via Embedding Modules](related/architecture-innovations-beyond-recommendation.md#paper-2610-12599) · 2026 · Related
 - [Mixed Precision Scaling Laws for Quantized Pretraining](related/architecture-innovations-beyond-recommendation.md#paper-2610-17637) · 2026 · Related
+- [QASP: Query-Adaptive Robust Vector Search Policy](related/retrieval-reranking-scaling.md#paper-2607-29606) · 2026 · Related
 
 <a id="company-capital-one"></a>
 
 ## Capital One
 
 - [DP-Rec: Towards Dynamic Patching for Efficient Long-Sequence Recommendation](related/long-sequence-modeling.md#paper-2609-32215) · 2026 · Related
+- [From Clicks to Intent: Cross-Platform Session Embeddings with LLM-Distilled Taxonomy for Financial Services Recommendations](related/knowledge-distillation-compression.md#paper-2606-26277) · 2026 · Related
 
 <a id="company-shopify"></a>
 
 ## Shopify
 
 - [T-RoPE: Time-Aware Rotary Position Embedding for Sequential Recommendation](related/long-sequence-modeling.md#paper-2609-30576) · 2026 · Related
+- [Revisiting Generative vs. Dense Retrieval: A Static Value Prior Reverses the Gap](related/retrieval-reranking-scaling.md#paper-2610-19065) · 2026 · Related
 
 <a id="company-liquid-ai"></a>
 
@@ -488,6 +493,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 ## Adobe Research
 
 - [Complete-muE: Optimal Hyperparameter Transfer and Scaling for MoE Models](related/architecture-innovations-beyond-recommendation.md#paper-2605-23893) · 2026 · Related
+- [ShellElastic: Scalable Elastic Pretraining with Simultaneous Maximal Updates and Hyperparameter Transfer](related/architecture-innovations-beyond-recommendation.md#paper-2610-15124) · 2026 · Related
 
 <a id="company-unbox-ai"></a>
 
@@ -701,3 +707,9 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 ## Disney
 
 - [DRanker: A Transformer-Based Multi-Task Ranking Model for the Disney+ Homepage](topics/foundation-models-multi-scenario.md#paper-2610-15696) · 2026 · Core
+
+<a id="company-houmo-ai"></a>
+
+## Houmo AI
+
+- [LoopQuant: Accurate and Efficient Post-Training Quantization for Looped Transformers](related/architecture-innovations-beyond-recommendation.md#paper-2610-16368) · 2026 · Related
