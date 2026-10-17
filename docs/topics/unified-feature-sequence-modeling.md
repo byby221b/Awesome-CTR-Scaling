@@ -6,7 +6,7 @@
 
 Joint modeling of feature interactions, user histories and behavioral sequences.
 
-16 papers · Updated 2026-10-16
+16 papers · Updated 2026-10-17
 
 | Paper | Affiliation | Venue | Year | Tags | Links | Key Contribution |
 |:------|:------------|:------|:-----|:-----|:------|:-----------------|

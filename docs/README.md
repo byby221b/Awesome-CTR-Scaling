@@ -18,11 +18,11 @@
 - [Sample/Instance Compression for Sequence Modeling](related/sample-instance-compression-for-sequence-modeling.md) (2) — Compressing complete interactions and raw samples into sequence tokens.
 - [Generative Recommendation](related/generative-recommendation.md) (87) — Generative retrieval, recommendation and ranking beyond discriminative CTR.
 - [Generative Pre-training for CTR](related/generative-pre-training-for-ctr.md) (4) — Generative objectives and pre-training for discriminative CTR tasks.
-- [Knowledge Distillation & Compression](related/knowledge-distillation-compression.md) (6) — Transferring, compressing and deploying larger recommendation models.
-- [Engineering & Serving](related/engineering-serving.md) (38) — Systems, serving infrastructure and hardware-aware optimization.
-- [Retrieval & Reranking Scaling](related/retrieval-reranking-scaling.md) (25) — Scaling retrieval and reranking stages of recommendation pipelines.
-- [Architecture Innovations Beyond Recommendation](related/architecture-innovations-beyond-recommendation.md) (126) — Transferable ideas from general-purpose model architecture research.
-- [Other](related/other.md) (9) — Adjacent research, diagnostics and other relevant recommendation methods.
+- [Knowledge Distillation & Compression](related/knowledge-distillation-compression.md) (7) — Transferring, compressing and deploying larger recommendation models.
+- [Engineering & Serving](related/engineering-serving.md) (39) — Systems, serving infrastructure and hardware-aware optimization.
+- [Retrieval & Reranking Scaling](related/retrieval-reranking-scaling.md) (27) — Scaling retrieval and reranking stages of recommendation pipelines.
+- [Architecture Innovations Beyond Recommendation](related/architecture-innovations-beyond-recommendation.md) (138) — Transferable ideas from general-purpose model architecture research.
+- [Other](related/other.md) (12) — Adjacent research, diagnostics and other relevant recommendation methods.
 
 ## Tag vocabulary
 

@@ -6,7 +6,7 @@
 
 Long-history modeling, memory and compression for user behavior sequences.
 
-29 papers · Updated 2026-10-16
+29 papers · Updated 2026-10-17
 
 <a id="paper-2504-06780"></a>
 
@@ -30,7 +30,7 @@ Long-history modeling, memory and compression for user behavior sequences.
 
 <a id="paper-2512-07216"></a>
 
-- **MUSE**: MUSE distinguishes the roles of multimodal information in two-stage lifelong-interest modeling. It finds simple similarity search effective for coarse behavior retrieval, while the fine-grained stage needs richer multimodal sequence processing and fusion with item IDs. The framework therefore spends modeling complexity after retrieval, where the selected behaviors are interpreted in relation to the target. — [Paper](https://arxiv.org/abs/2512.07216) (Alibaba · 2025). Reading priority: Read first.
+- **MUSE**: MUSE distinguishes the roles of multimodal information in two-stage lifelong-interest modeling. It finds simple similarity search effective for coarse behavior retrieval, while the fine-grained stage needs richer multimodal sequence processing and fusion with item IDs. The framework therefore spends modeling complexity after retrieval, where the selected behaviors are interpreted in relation to the target. — [Paper](https://arxiv.org/abs/2512.07216) (Alibaba · CIKM (Applied) 2026). Reading priority: Read first.
 
 <a id="paper-2601-03479"></a>
 

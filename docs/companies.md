@@ -6,17 +6,17 @@
 
 Company membership follows recorded affiliation aliases and preserved company-overview mentions. A paper may appear under multiple companies. This structural migration does not independently reverify affiliations or publication claims.
 
-- [Meta](#company-meta) (49)
+- [Meta](#company-meta) (50)
 - [ByteDance / TikTok](#company-bytedance-tiktok) (22)
 - [Alibaba](#company-alibaba) (39)
-- [Meituan](#company-meituan) (9)
-- [Tencent](#company-tencent) (18)
+- [Meituan](#company-meituan) (10)
+- [Tencent](#company-tencent) (19)
 - [Google](#company-google) (14)
 - [LinkedIn](#company-linkedin) (4)
 - [NetEase](#company-netease) (2)
 - [Kuaishou](#company-kuaishou) (26)
 - [Huawei](#company-huawei) (9)
-- [Baidu](#company-baidu) (6)
+- [Baidu](#company-baidu) (7)
 - [Shopee](#company-shopee) (4)
 - [Coupang](#company-coupang) (1)
 - [Netflix](#company-netflix) (3)
@@ -33,7 +33,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [Capital One](#company-capital-one) (2)
 - [Shopify](#company-shopify) (2)
 - [Liquid AI](#company-liquid-ai) (3)
-- [IBM (MIT-IBM Computing Research Lab)](#company-ibm-mit-ibm-computing-research-lab) (3)
+- [IBM (MIT-IBM Computing Research Lab)](#company-ibm-mit-ibm-computing-research-lab) (4)
 - [Perplexity AI](#company-perplexity-ai) (1)
 - [NVIDIA](#company-nvidia) (4)
 - [StepFun](#company-stepfun) (1)
@@ -74,6 +74,11 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [Arm](#company-arm) (1)
 - [Disney](#company-disney) (1)
 - [Houmo AI](#company-houmo-ai) (1)
+- [StartLux](#company-startlux) (1)
+- [China Telecom](#company-china-telecom) (1)
+- [Atomic Machines](#company-atomic-machines) (1)
+- [Slater Labs](#company-slater-labs) (1)
+- [DeepAuto.ai](#company-deepauto-ai) (1)
 
 <a id="company-meta"></a>
 
@@ -128,6 +133,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [MARS: Multi-resolution Adaptive Routing for Sequential Recommendation](related/long-sequence-modeling.md#paper-2610-07505) · 2026 · Related
 - [Mosaic: A Fleet of User Embedding Specialists for Recommendation at Meta](topics/foundation-models-multi-scenario.md#paper-2607-24015) · 2026 · Core
 - [STAPLE: Static Sparse Upcycling of Pretrained Checkpoints via Embedding Modules](related/architecture-innovations-beyond-recommendation.md#paper-2610-12599) · 2026 · Related
+- [Efficiently Estimating Optimal Hyperparameter Scaling Laws through Power-Law Entropy Search](related/other.md#paper-2609-01431) · 2026 · Related
 
 <a id="company-bytedance-tiktok"></a>
 
@@ -172,7 +178,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [LUM: Unlocking Scaling Law in Industrial Recommendation Systems with a Three-step Paradigm based Large User Model](topics/foundation-models-multi-scenario.md#paper-2502-08309) · 2026 · Core
 - [Selective Test-Time Compute Scaling for CTR Prediction via Uncertainty-Triggered Feature Path Exploration](topics/efficiency-deployment.md#paper-2605-24989) · 2026 · Core
 - [ENCODE](related/long-sequence-modeling.md#paper-2508-13567) · 2025 · Related
-- [MUSE](related/long-sequence-modeling.md#paper-2512-07216) · 2025 · Related
+- [MUSE](related/long-sequence-modeling.md#paper-2512-07216) · 2026 · Related
 - [DeGRe](related/generative-recommendation.md#paper-2605-25749) · 2026 · Related
 - [STAMP](related/generative-recommendation.md#paper-2604-05329) · 2026 · Related
 - [SSRLive](related/generative-recommendation.md#paper-2606-06970) · 2026 · Related
@@ -213,6 +219,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [Not Only NTP](related/generative-recommendation.md#paper-2607-12277) · 2026 · Related
 - [LGRID](related/generative-recommendation.md#paper-2607-27944) · 2026 · Related
 - [Residual Trajectory Distillation for Generative Retrieval](related/generative-recommendation.md#paper-2609-39319) · 2026 · Related
+- [CAST: History-Adaptive Spectral Clipping for LLM Pretraining](related/architecture-innovations-beyond-recommendation.md#paper-2610-19761) · 2026 · Related
 
 <a id="company-tencent"></a>
 
@@ -236,6 +243,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [Preference-Drift-Aware Subsequence Learning and Hierarchical Context Fusion for Long-Sequence Generative Recommendation](related/long-sequence-modeling.md#paper-2609-12556) · 2026 · Related
 - [Self-Indexing Attention for Compression-Compatible Sparse Long-Context LLM Inference](related/architecture-innovations-beyond-recommendation.md#paper-2609-13205) · 2026 · Related
 - [Large Foundation Model for Ads Recommendation](topics/foundation-models-multi-scenario.md#paper-2508-14948) · 2026 · Core
+- [Hybrid Gated Attention](related/architecture-innovations-beyond-recommendation.md#paper-2608-11805) · 2026 · Related
 
 <a id="company-google"></a>
 
@@ -327,6 +335,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [MuSeR: Scalable Long-sequence Recommendation with Multi-interest Modeling](related/retrieval-reranking-scaling.md#paper-2609-23677) · 2026 · Related
 - [FlashMask-3: Efficient and Expressive Mask-Aware Distributed Attention](related/engineering-serving.md#paper-2610-17901) · 2026 · Related
 - [Virtual Head Attention](related/architecture-innovations-beyond-recommendation.md#paper-2610-17959) · 2026 · Related
+- [RoLaQ: Joint Rotation and Range Calibration for 2-Bit KV Caches in Multi-Head Latent Attention](related/architecture-innovations-beyond-recommendation.md#paper-2610-20686) · 2026 · Related
 
 <a id="company-shopee"></a>
 
@@ -466,6 +475,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [Triadic Linear Attention: Three-Dimensional Recurrent States for Long-Context Sequence Modeling](related/architecture-innovations-beyond-recommendation.md#paper-2609-36529) · 2026 · Related
 - [The Surprising Effectiveness of Shared Memory in Looped Transformers](related/architecture-innovations-beyond-recommendation.md#paper-2610-02383) · 2026 · Related
 - [A Self-Pruning Transformer: Extreme KV-Cache Compression with Universal Attention](related/architecture-innovations-beyond-recommendation.md#paper-2610-09051) · 2026 · Related
+- [DropKV: Decoupling Residual-Output Perturbation for Near-Optimal KV-Cache Eviction](related/architecture-innovations-beyond-recommendation.md#paper-2610-22130) · 2026 · Related
 
 <a id="company-perplexity-ai"></a>
 
@@ -713,3 +723,33 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 ## Houmo AI
 
 - [LoopQuant: Accurate and Efficient Post-Training Quantization for Looped Transformers](related/architecture-innovations-beyond-recommendation.md#paper-2610-16368) · 2026 · Related
+
+<a id="company-startlux"></a>
+
+## StartLux
+
+- [ReaDy: Recurrent States as Dynamic Context for Speculative Drafting in Hybrid Linear Attention Large Language Models](related/architecture-innovations-beyond-recommendation.md#paper-2610-20503) · 2026 · Related
+
+<a id="company-china-telecom"></a>
+
+## China Telecom
+
+- [Tail-Replay: Escaping the Curse of Linear Attention in Prefix Caching for Hybrid LLMs](related/architecture-innovations-beyond-recommendation.md#paper-2608-30310) · 2026 · Related
+
+<a id="company-atomic-machines"></a>
+
+## Atomic Machines
+
+- [Efficiently Estimating Optimal Hyperparameter Scaling Laws through Power-Law Entropy Search](related/other.md#paper-2609-01431) · 2026 · Related
+
+<a id="company-slater-labs"></a>
+
+## Slater Labs
+
+- [SLEM: Spectrum-Aware Latent Expert Merging](related/architecture-innovations-beyond-recommendation.md#paper-2610-16484) · 2026 · Related
+
+<a id="company-deepauto-ai"></a>
+
+## DeepAuto.ai
+
+- [SLEM: Spectrum-Aware Latent Expert Merging](related/architecture-innovations-beyond-recommendation.md#paper-2610-16484) · 2026 · Related

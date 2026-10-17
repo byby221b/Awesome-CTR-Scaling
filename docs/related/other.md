@@ -6,7 +6,7 @@
 
 Adjacent research, diagnostics and other relevant recommendation methods.
 
-9 papers · Updated 2026-10-16
+12 papers · Updated 2026-10-17
 
 <a id="paper-2411-13700"></a>
 
@@ -43,3 +43,15 @@ Adjacent research, diagnostics and other relevant recommendation methods.
 <a id="paper-2609-39007"></a>
 
 - **RouteRec: Behavior-Guided Sparse Routing for Sequential Recommendation**: RouteRec uses interaction tempo, item-group focus, repetition/carryover and popularity cues to guide sparse expert allocation at three history scopes. Cue scores select groups and backbone states refine experts within them. Six public datasets and routing ablations support behavior-aware allocation beyond extra capacity. It offers a routing design for sequential recommenders, but does not establish industrial scaling laws or online throughput gains. — [Paper](https://arxiv.org/abs/2609.39007) · [DOI](https://doi.org/10.1145/3799682.3841104) · [Official venue](https://cikm2026.diag.uniroma1.it/program/) (Korea Advanced Institute of Science and Technology; Seoul National University · CIKM 2026). Reading priority: Worth reading.
+
+<a id="paper-2609-01431"></a>
+
+- **Efficiently Estimating Optimal Hyperparameter Scaling Laws through Power-Law Entropy Search**: Power-Law Entropy Search chooses training configurations to maximize cost-adjusted uncertainty reduction about optimal-hyperparameter scaling laws. Its cost-aware, multi-fidelity Bayesian optimization targets the law itself rather than the best score at one fixed scale, allowing informative small runs to guide larger configurations. The authors evaluate synthetic tasks, fitted training-data surrogates and actual LLM pretraining, reporting substantially lower search budgets than the compared grid-search and other baselines. Compute is represented by a parameter-count–token-count proxy. The relevant idea for CTR scaling studies is experimental allocation across scales; the assumed law family and cost model still require validation for recommendation workloads. — [Paper](https://arxiv.org/abs/2609.01431) (Meta; National University of Singapore; Atomic Machines · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-14709"></a>
+
+- **Vela: User Behavior as Supervision Sparks LLM Intelligence**: Vela converts anonymized user-behavior records into supervised tasks and training trajectories, combining task templates, difficulty filtering and trajectory acceptance criteria. Fine-tuning a Qwen3.6-35B-A3B model improves the evaluated user-related tasks and general benchmarks, and the authors report further gains when increasing behavior-training data and adding reinforcement learning. For recommendation research, the relevant contribution is a reusable way to turn long-term behavior into user-modeling supervision. Its evidence concerns language-model task evaluations, not industrial CTR lift or a fitted recommendation scaling law, so broader transfer remains to be tested. — [Paper](https://arxiv.org/abs/2610.14709) (AllSpark Team · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-16297"></a>
+
+- **SLDBench v2: Active Scaling Law Discovery**: SLDBench v2 tests experimental planning for scaling-law discovery through historical replay: agents buy recorded experiments, revise fitted laws, and predict hidden larger-scale outcomes. Across eight agent systems on 30 screened scenarios, active acquisition produces worse extrapolation than receiving all observations upfront; favoring cheap experiments can miss informative scale variation. Costs and prediction quality are reported separately, and prices include estimates/proxies rather than uniformly measured compute. CTR engineering inference: replay existing training sweeps to evaluate acquisition policies before funding new runs, preserving held-out scales and within-domain coverage. This is an empirical methodology benchmark, not a new architecture or CTR result. — [Paper](https://arxiv.org/abs/2610.16297) (The Chinese University of Hong Kong, Shenzhen; The University of Hong Kong; University of Electronic Science and Technology of China; Tsinghua University; Peking University · arXiv 2026). Reading priority: Unrated.

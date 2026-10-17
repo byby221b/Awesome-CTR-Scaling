@@ -6,7 +6,7 @@
 
 Scaling retrieval and reranking stages of recommendation pipelines.
 
-25 papers · Updated 2026-10-16
+27 papers · Updated 2026-10-17
 
 <a id="paper-2603-04816"></a>
 
@@ -42,7 +42,7 @@ Scaling retrieval and reranking stages of recommendation pipelines.
 
 <a id="paper-2608-25528"></a>
 
-- **TransRetrieval**: TransRetrieval diagnoses heterogeneous feature-token norms as a reason that deeper Transformers can scale poorly in recommendation retrieval. Weighted aggregation stabilizes the token representation, target-token compression reduces candidate-side computation, and lightweight domain embeddings incorporate cross-domain data, enabling more effective scaling of retrieval quality under practical latency constraints. — [Paper](https://arxiv.org/abs/2608.25528) (Alibaba · CIKM 2026). Reading priority: Read first.
+- **TransRetrieval**: TransRetrieval diagnoses heterogeneous feature-token norms as a reason that deeper Transformers can scale poorly in recommendation retrieval. Weighted aggregation stabilizes the token representation, target-token compression reduces candidate-side computation, and lightweight domain embeddings incorporate cross-domain data, enabling more effective scaling of retrieval quality under practical latency constraints. — [Paper](https://arxiv.org/abs/2608.25528) (Alibaba · CIKM (Applied) 2026). Reading priority: Read first.
 
 <a id="paper-2609-39327"></a>
 
@@ -107,3 +107,11 @@ Scaling retrieval and reranking stages of recommendation pipelines.
 <a id="paper-2607-29606"></a>
 
 - **QASP: Query-Adaptive Robust Vector Search Policy**: QASP predicts each query’s recall-progress curve with one upfront regression, then derives search depth for different recall targets. A lightweight reactive step adjusts depth from observed deviations without invoking the predictor again. The authors report lower per-query recall variance and reduced data access, including transfer across tested datasets and index configurations. This offers a way to allocate retrieval compute by query difficulty instead of a fixed search budget; extrapolation to production recommendation traffic requires calibration and validation. — [Paper](https://arxiv.org/abs/2607.29606) (Amazon; Tel Aviv University · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-21877"></a>
+
+- **Aligning LLMs with Sparse Retrieval via Adaptive Sparse Supervision**: This framework trains an LLM-based sparse retriever using input-adaptive supervision from SPLADE. A cumulative-activation threshold selects salient lexical supports for each input instead of imposing a fixed support count; contrastive learning, distillation and sparsity regularization then refine retrieval. On MS MARCO and six selected BEIR datasets, the authors report a favorable effectiveness–efficiency trade-off against the evaluated sparse retrievers. The transferable idea for large retrieval stages is to adapt the sparsity budget to the input while measuring index size and end-to-end query cost; the evidence concerns text retrieval, not CTR prediction. — [Paper](https://arxiv.org/abs/2610.21877) (Soochow University · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-21030"></a>
+
+- **Learning When to Think: Utility-Guided Adaptive Reasoning for Efficient Text Retrieval**: AURA supervises intermediate query-reasoning states by their ability to separate relevant documents from hard distractors, then uses a lightweight utility estimator to decide when to stop reasoning. On BRIGHT, the reported 4B model obtains 34.7 average nDCG@10 with 2.8 reasoning steps and 96 generated tokens per query. Under matched deployment conditions, adaptive stopping lowers latency from 4.6 to 0.76 seconds relative to full-trajectory reasoning. For retrieval and ranking pipelines, the useful design principle is to allocate test-time computation according to predicted retrieval utility; these results do not establish CTR gains. — [Paper](https://arxiv.org/abs/2610.21030) (Carnegie Mellon University; University of Pittsburgh · arXiv 2026). Reading priority: Unrated.

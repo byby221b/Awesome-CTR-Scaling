@@ -6,7 +6,7 @@
 
 Transferring, compressing and deploying larger recommendation models.
 
-6 papers · Updated 2026-10-16
+7 papers · Updated 2026-10-17
 
 <a id="paper-2411-16122"></a>
 
@@ -31,3 +31,7 @@ Transferring, compressing and deploying larger recommendation models.
 <a id="paper-2606-26277"></a>
 
 - **From Clicks to Intent: Cross-Platform Session Embeddings with LLM-Distilled Taxonomy for Financial Services Recommendations**: The framework turns web clickstreams into compact self-supervised Transformer session embeddings and separately distills an LLM-generated intent taxonomy into interpretable labels. In the reported mobile-homepage ranking task, session embeddings improve macro Recall@1 by 1.88% and reduce log loss by 13.38% against production baselines. The two outputs serve prediction and explanation under different latency constraints. For recommendation scaling, the useful separation is dense behavioral representation versus inexpensive intent labeling; cross-channel identity resolution and financial-services evaluation limit direct generalization. — [Paper](https://arxiv.org/abs/2606.26277) (Capital One · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-21220"></a>
+
+- **RecSoup: Efficient Model Merging Approach for Controllable Multi-Objective Recommendation**: RecSoup reuses objective-specific recommendation models to adjust serving-time trade-offs without joint retraining. It first prunes parameters using objective-specific importance and cross-objective relevance, then learns a mapping from desired preferences to merging coefficients. Experiments report improved Pareto-front quality and substantially lower parameter-construction latency than the evaluated parameter-generating approaches; this comparison is not a general speedup over ordinary rankers. For multi-objective CTR systems, it offers a model-reuse and deployment option, rather than evidence of a recommendation scaling law. — [Paper](https://arxiv.org/abs/2610.21220) · [DOI](https://doi.org/10.1145/3799682.3840938) (Renmin University of China · CIKM 2026). Reading priority: Unrated.

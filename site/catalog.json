@@ -1,15 +1,15 @@
 {
   "coverage": {
     "reading_tiers_assigned": 339,
-    "reading_tiers_unrated": 86,
-    "known_added_dates": 425,
+    "reading_tiers_unrated": 105,
+    "known_added_dates": 444,
     "papers_with_updates": 282,
-    "verified_source_dates": 425,
-    "verified_abstracts": 425,
+    "verified_source_dates": 444,
+    "verified_abstracts": 444,
     "unavailable_abstracts": 0,
     "pending_abstracts": 0,
-    "english_summaries": 425,
-    "chinese_summaries": 425
+    "english_summaries": 444,
+    "chinese_summaries": 444
   },
   "schema_version": 4,
   "meta": {
@@ -17,7 +17,7 @@
     "description": "Scaling laws and scalable ranking models for industrial recommendation.",
     "repository_url": "https://github.com/byby221b/Awesome-CTR-Scaling",
     "site_url": "https://byby221b.github.io/Awesome-CTR-Scaling/",
-    "updated": "2026-10-16",
+    "updated": "2026-10-17",
     "source_commit": "31ad30becff83ca14a01f37fc99d52ba79f85565",
     "scope": "We cover papers that (1) study scaling laws for recommendation models, (2) propose scalable Transformer-based architectures for CTR/ranking, (3) address efficiency challenges in scaling up industrial ranking systems, or (4) explore novel paradigms (e.g., sparse scaling, generative pre-training, foundation models) for scalable recommendation.",
     "history": {
@@ -26,7 +26,7 @@
       "added_at_basis": "Earliest recorded inclusion in reachable repository main history; 50 records were present at its root commit. This is not the source publication date.",
       "backfill_policy": "Unknown historical instants remain null. Source-date imports and structural/UI migrations do not invent catalog change events."
     },
-    "catalog_sha256": "71fe0b70e668292e48823d14ef815f4b05c4f5fcd1fe7cc6a223b924213a37d3"
+    "catalog_sha256": "0ac20322ca6124d08ff57b7cd6c6979c99cf80ed09a8369290a46fbd2930b9b3"
   },
   "categories": [
     {
@@ -118,7 +118,7 @@
     {
       "id": "meta",
       "name": "Meta",
-      "count": 49
+      "count": 50
     },
     {
       "id": "bytedance-tiktok",
@@ -133,12 +133,12 @@
     {
       "id": "meituan",
       "name": "Meituan",
-      "count": 9
+      "count": 10
     },
     {
       "id": "tencent",
       "name": "Tencent",
-      "count": 18
+      "count": 19
     },
     {
       "id": "google",
@@ -168,7 +168,7 @@
     {
       "id": "baidu",
       "name": "Baidu",
-      "count": 6
+      "count": 7
     },
     {
       "id": "shopee",
@@ -253,7 +253,7 @@
     {
       "id": "ibm-mit-ibm-computing-research-lab",
       "name": "IBM (MIT-IBM Computing Research Lab)",
-      "count": 3
+      "count": 4
     },
     {
       "id": "perplexity-ai",
@@ -453,6 +453,31 @@
     {
       "id": "houmo-ai",
       "name": "Houmo AI",
+      "count": 1
+    },
+    {
+      "id": "startlux",
+      "name": "StartLux",
+      "count": 1
+    },
+    {
+      "id": "china-telecom",
+      "name": "China Telecom",
+      "count": 1
+    },
+    {
+      "id": "atomic-machines",
+      "name": "Atomic Machines",
+      "count": 1
+    },
+    {
+      "id": "slater-labs",
+      "name": "Slater Labs",
+      "count": 1
+    },
+    {
+      "id": "deepauto-ai",
+      "name": "DeepAuto.ai",
       "count": 1
     }
   ],
@@ -7715,8 +7740,8 @@
       "collection": "related",
       "category": "long-sequence-modeling",
       "affiliation": "Alibaba",
-      "venue": "",
-      "year": 2025,
+      "venue": "CIKM (Applied)",
+      "year": 2026,
       "tags": [],
       "links": [
         {
@@ -7770,6 +7795,22 @@
           ],
           "source_url": "https://github.com/byby221b/Awesome-CTR-Scaling/commit/a49e55867454f76e5a77114de99b196cb83fd797",
           "commit_sha": "a49e55867454f76e5a77114de99b196cb83fd797"
+        },
+        {
+          "at": "2026-10-17T00:05:45Z",
+          "kind": "venue_update",
+          "fields": [
+            "venue"
+          ],
+          "source_url": "https://cikm2026.diag.uniroma1.it/program/"
+        },
+        {
+          "at": "2026-10-17T00:05:45Z",
+          "kind": "metadata_enrichment",
+          "fields": [
+            "year"
+          ],
+          "source_url": "https://cikm2026.diag.uniroma1.it/program/"
         }
       ],
       "source_dates": {
@@ -17544,7 +17585,7 @@
       "collection": "related",
       "category": "retrieval-reranking-scaling",
       "affiliation": "Alibaba",
-      "venue": "CIKM",
+      "venue": "CIKM (Applied)",
       "year": 2026,
       "tags": [],
       "links": [
@@ -17599,6 +17640,14 @@
           ],
           "source_url": "https://github.com/byby221b/Awesome-CTR-Scaling/commit/a49e55867454f76e5a77114de99b196cb83fd797",
           "commit_sha": "a49e55867454f76e5a77114de99b196cb83fd797"
+        },
+        {
+          "at": "2026-10-17T00:05:45Z",
+          "kind": "venue_update",
+          "fields": [
+            "venue"
+          ],
+          "source_url": "https://cikm2026.diag.uniroma1.it/program/"
         }
       ],
       "source_dates": {
@@ -33029,6 +33078,1245 @@
       "reading_tier": null,
       "companies": [],
       "order": 424
+    },
+    {
+      "id": "2610.21220",
+      "title": "RecSoup: Efficient Model Merging Approach for Controllable Multi-Objective Recommendation",
+      "collection": "related",
+      "category": "knowledge-distillation-compression",
+      "affiliation": "Renmin University of China",
+      "venue": "CIKM",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.21220"
+        },
+        {
+          "label": "DOI",
+          "url": "https://doi.org/10.1145/3799682.3840938"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Recommender systems often need to balance multiple conflicting objectives. Controllable Multi-Objective Recommendation (CMOR) enables dynamic adjustment of objective trade-offs at inference time without retraining, adapting to shifting user or system requirements. Existing CMOR approaches typically rely on output-level reranking or parameter-generating modules, which either limit the scope of feasible trade-offs or incur substantial training and inference cost. Model merging provides a promising alternative by reusing multiple objective-specific models via parameter combination. However, its direct application to recommender systems is challenging due to the lack of a shared linear regime and cross-objective interference. To address these issues, we propose RecSoup, a lightweight two-stage approach for effective CMOR via specialized model merging. RecSoup first mitigates parameter interference across objectives through a pruning strategy that jointly considers objective-specific importance and cross-objective relevance. It then performs adaptive parameter merging via a learnable preference-to-coefficient mapping, allowing dynamic trade-off control at inference time without joint retraining or additional generative modules. Theoretically, we prove that RecSoup outperforms the parameter generation paradigm in effectiveness and efficiency, as it can fully navigate the Pareto front without smoothness constraints. Extensive experiments on multiple benchmarks demonstrate that RecSoup achieves improved Pareto front quality and effective controllability while delivers 165--228x faster inference-time latency than parameter generation approaches. Code is available at https://github.com/35798642/RECSOUP.git.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.21220v1",
+        "retrieved_at": "2026-10-16T23:16:04Z",
+        "license": "CC0-1.0",
+        "source_title": "RecSoup: Efficient Model Merging Approach for Controllable Multi-Objective Recommendation",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-10-15T04:08:22Z",
+        "updated_at": "2026-10-15T04:08:22Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.21220v1",
+        "verified_at": "2026-10-16T23:16:04Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "RecSoup reuses objective-specific recommendation models to adjust serving-time trade-offs without joint retraining. It first prunes parameters using objective-specific importance and cross-objective relevance, then learns a mapping from desired preferences to merging coefficients. Experiments report improved Pareto-front quality and substantially lower parameter-construction latency than the evaluated parameter-generating approaches; this comparison is not a general speedup over ordinary rankers. For multi-objective CTR systems, it offers a model-reuse and deployment option, rather than evidence of a recommendation scaling law.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-17",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.21220v1",
+            "https://arxiv.org/html/2610.21220v1"
+          ]
+        },
+        "zh": {
+          "text": "RecSoup复用针对不同目标训练的推荐模型，让线上目标权衡可以调整，而无需联合重训。它先结合各目标的参数重要性与跨目标相关性做剪枝，再学习从目标偏好到模型合并系数的映射。实验显示更好的帕累托前沿质量，并比所比较的参数生成方法构建参数更快；这不等于相对普通排序器普遍提速。对多目标CTR系统，可借鉴的是模型复用与部署方式，论文并未建立推荐扩展定律。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-17",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.21220v1",
+            "https://arxiv.org/html/2610.21220v1"
+          ]
+        }
+      },
+      "doi": "10.1145/3799682.3840938",
+      "added_at": "2026-10-17T00:05:45Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.21220"
+      },
+      "change_history": [],
+      "reading_tier": null,
+      "companies": [],
+      "order": 425
+    },
+    {
+      "id": "2610.21877",
+      "title": "Aligning LLMs with Sparse Retrieval via Adaptive Sparse Supervision",
+      "collection": "related",
+      "category": "retrieval-reranking-scaling",
+      "affiliation": "Soochow University",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.21877"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "While large language models (LLMs) offer strong semantic representations, their application to first-stage retrieval incurs substantial latency and storage costs. Neural sparse retrievers such as SPLADE provide efficient retrieval but rely on relatively compact encoders with limited representational capacity. To bridge this gap, we propose an LLM-based sparse retrieval framework with input-adaptive sparse alignment. Specifically, we introduce a dynamic $\\alpha$-truncation strategy that selects input-specific supervision supports based on the cumulative activation mass of SPLADE representations. This strategy guides the LLM to preserve salient lexical signals while suppressing less informative activations, without relying on a fixed support budget. Subsequent retrieval fine-tuning combines contrastive learning, knowledge distillation, and sparsity regularization to improve retrieval effectiveness. Experiments on MS MARCO and six selected BEIR datasets demonstrate improvements over SPLADE++ while maintaining competitive effectiveness against LLM-based sparse retrievers. Compared with Lion-sp, our method reduces index storage by 6.4-fold and end-to-end query latency by over 11-fold, achieving a favorable effectiveness-efficiency trade-off.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.21877v1",
+        "retrieved_at": "2026-10-16T23:16:04Z",
+        "license": "CC0-1.0",
+        "source_title": "Aligning LLMs with Sparse Retrieval via Adaptive Sparse Supervision",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-10-15T13:44:48Z",
+        "updated_at": "2026-10-15T13:44:48Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.21877v1",
+        "verified_at": "2026-10-16T23:16:04Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "This framework trains an LLM-based sparse retriever using input-adaptive supervision from SPLADE. A cumulative-activation threshold selects salient lexical supports for each input instead of imposing a fixed support count; contrastive learning, distillation and sparsity regularization then refine retrieval. On MS MARCO and six selected BEIR datasets, the authors report a favorable effectiveness–efficiency trade-off against the evaluated sparse retrievers. The transferable idea for large retrieval stages is to adapt the sparsity budget to the input while measuring index size and end-to-end query cost; the evidence concerns text retrieval, not CTR prediction.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-17",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.21877v1",
+            "https://arxiv.org/html/2610.21877v1"
+          ]
+        },
+        "zh": {
+          "text": "该框架用SPLADE提供的稀疏表示监督大语言模型检索器：按每个输入的累计激活量选择重要词项，而不固定保留词项数量，再结合对比学习、蒸馏和稀疏正则训练。作者在MS MARCO及六个选定BEIR数据集上报告了效果与成本的较好权衡。大规模召回可借鉴按输入分配稀疏预算的做法，同时检查索引体积和端到端查询成本；现有证据来自文本检索，并非CTR预测。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-17",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.21877v1",
+            "https://arxiv.org/html/2610.21877v1"
+          ]
+        }
+      },
+      "added_at": "2026-10-17T00:05:45Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.21877"
+      },
+      "change_history": [],
+      "reading_tier": null,
+      "companies": [],
+      "order": 426
+    },
+    {
+      "id": "2610.21030",
+      "title": "Learning When to Think: Utility-Guided Adaptive Reasoning for Efficient Text Retrieval",
+      "collection": "related",
+      "category": "retrieval-reranking-scaling",
+      "affiliation": "Carnegie Mellon University; University of Pittsburgh",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.21030"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Reasoning-conditioned embeddings can improve retrieval by progressively refining semantic constraints. However, additional reasoning may introduce over-generalized or semantically noisy abstractions that weaken retrieval specificity. Existing methods largely supervise reasoning through final retrieval outcomes, providing limited guidance over the refinement process itself. We propose AURA, a framework that directly supervises intermediate reasoning states according to how well they separate relevant documents from hard distractors. AURA further trains a lightweight utility estimator over prefix-conditioned embeddings to adapt reasoning depth at inference time. On the reasoning-intensive BRIGHT benchmark, AURA-4B achieves 34.7 average nDCG@10 while using 2.8 reasoning steps and 96 generated tokens per query. Under matched deployment conditions, adaptive stopping reduces latency from 4.6 to 0.76 seconds relative to full-trajectory reasoning. Results on MS MARCO further suggest that this specialization need not substantially degrade conventional in-domain retrieval.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.21030v1",
+        "retrieved_at": "2026-10-16T23:16:04Z",
+        "license": "CC0-1.0",
+        "source_title": "Learning When to Think: Utility-Guided Adaptive Reasoning for Efficient Text Retrieval",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-10-15T00:04:21Z",
+        "updated_at": "2026-10-15T00:04:21Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.21030v1",
+        "verified_at": "2026-10-16T23:16:04Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "AURA supervises intermediate query-reasoning states by their ability to separate relevant documents from hard distractors, then uses a lightweight utility estimator to decide when to stop reasoning. On BRIGHT, the reported 4B model obtains 34.7 average nDCG@10 with 2.8 reasoning steps and 96 generated tokens per query. Under matched deployment conditions, adaptive stopping lowers latency from 4.6 to 0.76 seconds relative to full-trajectory reasoning. For retrieval and ranking pipelines, the useful design principle is to allocate test-time computation according to predicted retrieval utility; these results do not establish CTR gains.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-17",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.21030v1",
+            "https://arxiv.org/html/2610.21030v1"
+          ]
+        },
+        "zh": {
+          "text": "AURA直接监督查询推理的中间状态，看它们能否区分相关文档与难负例，再用轻量效用估计器决定何时停止推理。其4B模型在BRIGHT上取得34.7的平均nDCG@10，每个查询平均推理2.8步、生成96个令牌；在匹配的部署条件下，相对完整推理轨迹，延迟从4.6秒降至0.76秒。检索和排序可借鉴按预测检索效用分配推理计算的原则，但这些结果尚不能说明CTR收益。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-17",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.21030v1",
+            "https://arxiv.org/html/2610.21030v1"
+          ]
+        }
+      },
+      "added_at": "2026-10-17T00:05:45Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.21030"
+      },
+      "change_history": [],
+      "reading_tier": null,
+      "companies": [],
+      "order": 427
+    },
+    {
+      "id": "2610.22130",
+      "title": "DropKV: Decoupling Residual-Output Perturbation for Near-Optimal KV-Cache Eviction",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "University at Albany, SUNY; IBM Research; Northwestern University",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.22130"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Key-value (KV) cache management has become a critical bottleneck for scaling Large Language Models (LLMs) to long-context scenarios due to linear memory growth. While recent eviction methods have moved beyond simple attention-score heuristics to incorporate value representations, they typically face a fundamental trade-off: the underlying optimization for minimizing output perturbation is an NP-hard combinatorial problem, leading to mathematically suboptimal heuristics or implementations that are difficult to kernelize. In this work, we propose DropKV, a simple principled eviction framework based on Decoupled Residual-Output Perturbation. By decoupling the joint eviction decision into independent per-token scoring, DropKV circumvents combinatorial intractability and admits a provable constant-factor approximation guarantee under a cone condition that we empirically verify on three long-context LLMs. To ensure practical viability, we provide a high-performance implementation using fused Triton kernels that avoid materializing the full attention matrix, delivering a 19.8x scoring-kernel speedup that translates to up to a 9.9% matched-batch end-to-end prefill speedup. Extensive evaluations on the RULER and LongBench benchmarks demonstrate that DropKV consistently outperforms state-of-the-art baselines at equivalent cache budgets, achieving the lowest inference latency among eviction methods while also remaining faster than the dynamic cache baseline.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.22130v1",
+        "retrieved_at": "2026-10-16T23:16:04Z",
+        "license": "CC0-1.0",
+        "source_title": "DropKV: Decoupling Residual-Output Perturbation for Near-Optimal KV-Cache Eviction",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-10-15T16:05:17Z",
+        "updated_at": "2026-10-15T16:05:17Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.22130v1",
+        "verified_at": "2026-10-16T23:16:04Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "DropKV approximates the joint decision of which cached tokens to evict using independent scores based on residual-output perturbations. The approximation bound requires small attention weights and aligned value residuals within a candidate pool; empirical checks cover three models, not every layer, head or query. Fused Triton kernels accelerate prefill scoring without materializing the complete attention matrix, and RULER and LongBench evaluations compare quality at equal cache budgets. For compressed recommendation histories, the transferable idea is to score the effect of deletion on outputs and assess the implementation cost, rather than rely only on attention weights; direct CTR transfer remains untested.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-17",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.22130v1",
+            "https://arxiv.org/html/2610.22130v1"
+          ]
+        },
+        "zh": {
+          "text": "DropKV把联合选择待删除缓存令牌的问题，近似为按残差输出扰动独立打分。近似界要求候选集合内被删除项的注意力权重较小、数值残差方向对齐；三个模型上的经验检查并不覆盖每个层、头和查询。融合Triton内核在预填充打分时避免显式构造完整注意力矩阵，并在RULER和LongBench上按相同缓存预算比较效果。推荐历史压缩可借鉴按删除行为对输出的影响打分，同时计入实现成本；直接用于CTR的收益仍未验证。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-17",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.22130v1",
+            "https://arxiv.org/html/2610.22130v1"
+          ]
+        }
+      },
+      "added_at": "2026-10-17T00:05:45Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.22130"
+      },
+      "change_history": [],
+      "reading_tier": null,
+      "companies": [
+        "ibm-mit-ibm-computing-research-lab"
+      ],
+      "order": 428
+    },
+    {
+      "id": "2610.20503",
+      "title": "ReaDy: Recurrent States as Dynamic Context for Speculative Drafting in Hybrid Linear Attention Large Language Models",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "StartLux; University of Chinese Academy of Sciences; The University of Hong Kong",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.20503"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Speculative decoding accelerates autoregressive generation by drafting multiple tokens per step, yet feature-based drafters rely on target hidden features whose contextual emphasis may not align with the needs of subsequent draft positions. Hybrid linear attention (HLA) models maintain compact recurrent states that accumulate historical associations, offering an efficient source of complementary context for speculative drafting. We introduce ReaDy, the first speculative decoding method, to the best of our knowledge, to leverage HLA recurrent states for position-specific context retrieval during drafting. ReaDy equips each draft position with a learned query to retrieve supplementary context directly from the target's committed recurrent states. A lightweight state reader integrates this context into draft representations through residual updates, while low-rank state reads and fused operators keep additional computation and I/O overhead low. Building on DSpark's parallel backbone and sequential prediction head, ReaDy employs a lightweight two-stage adaptation strategy, with reader capacity, state sources, and residual placement examined through ablation studies. Across seven benchmarks spanning mathematics, code generation, and dialogue, ReaDy achieves an average $3.16\\times$ decoding speedup over autoregressive decoding with Qwen3.8-27B on a single NVIDIA B200 GPU. It outperforms DSpark on every benchmark, improving throughput by 7.97% and acceptance length by 8.50% on average. Our code is available at https://github.com/StartLuxLabs/ReaDy.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.20503v1",
+        "retrieved_at": "2026-10-16T23:16:04Z",
+        "license": "CC0-1.0",
+        "source_title": "ReaDy: Recurrent States as Dynamic Context for Speculative Drafting in Hybrid Linear Attention Large Language Models",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-10-14T17:08:52Z",
+        "updated_at": "2026-10-14T17:08:52Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.20503v1",
+        "verified_at": "2026-10-16T23:16:04Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "ReaDy supplies a speculative drafter with position-specific context retrieved from the recurrent states of a hybrid linear-attention target model. Learned queries and a lightweight residual state reader complement ordinary hidden features; low-rank reads and fused operators limit additional I/O and computation. On seven benchmarks with Qwen3.8-27B on one NVIDIA B200, the authors report higher throughput and more output tokens per verification round than pretrained DSpark. This suggests reusing compressed recurrent memory as an active information source for generation, not just a passive cache; it assumes access to suitable hybrid-model states and does not demonstrate recommendation gains.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-17",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.20503v1",
+            "https://arxiv.org/html/2610.20503v1"
+          ]
+        },
+        "zh": {
+          "text": "ReaDy让推测解码的草稿模型按预测位置，从混合线性注意力模型的循环状态中读取额外上下文。它用可学习查询和轻量残差读取器补充普通隐藏特征，并以低秩读取和融合算子控制额外计算与I/O。在单张NVIDIA B200上运行Qwen3.8-27B的七项测试中，作者报告其吞吐量与每轮验证输出的令牌数均优于预训练DSpark。可借鉴的是主动复用压缩循环记忆，但需要可读取的混合模型状态，尚无推荐收益证据。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-17",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.20503v1",
+            "https://arxiv.org/html/2610.20503v1"
+          ]
+        }
+      },
+      "added_at": "2026-10-17T00:05:45Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.20503"
+      },
+      "change_history": [],
+      "reading_tier": null,
+      "companies": [
+        "startlux"
+      ],
+      "order": 429
+    },
+    {
+      "id": "2609.01431",
+      "title": "Efficiently Estimating Optimal Hyperparameter Scaling Laws through Power-Law Entropy Search",
+      "collection": "related",
+      "category": "other",
+      "affiliation": "Meta; National University of Singapore; Atomic Machines",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2609.01431"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Optimal hyperparameter scaling laws describe how the best hyperparameters for large language model (LLM) training change with model and data scale, enabling practitioners to predict optimal configurations at production scales without expensive large-scale tuning. However, estimating these scaling laws conventionally requires exhaustive grid searches over thousands of training runs, consuming enormous computational resources. We introduce Power-Law Entropy Search (PLES), a computational cost-aware acquisition function built on multi-fidelity Bayesian optimization that efficiently estimates optimal hyperparameter scaling laws through adaptive experimentation. A key innovation in PLES is that it searches for candidates that reduce the overall uncertainty of a scaling law estimate, instead of optimizing a single objective function. At each iteration, PLES selects the candidate configuration that maximally reduces the uncertainty of the scaling law estimates per unit computational cost, naturally favoring informative small-scale experiments. We evaluate PLES on synthetic benchmarks, surrogate models fitted to real LLM training data, and actual LLM pre-training runs. Across all settings, PLES converges to accurate optimal hyperparameter scaling laws using less than one-tenth of the computational budget required by conventional grid search and other baselines.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2609.01431v3",
+        "retrieved_at": "2026-10-16T23:16:04Z",
+        "license": "CC0-1.0",
+        "source_title": "Efficiently Estimating Optimal Hyperparameter Scaling Laws through Power-Law Entropy Search",
+        "source_version": "v3"
+      },
+      "source_dates": {
+        "published_at": "2026-09-01T15:41:59Z",
+        "updated_at": "2026-10-15T12:33:07Z",
+        "source_version": "v3",
+        "source_url": "https://arxiv.org/abs/2609.01431v3",
+        "verified_at": "2026-10-16T23:16:04Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "Power-Law Entropy Search chooses training configurations to maximize cost-adjusted uncertainty reduction about optimal-hyperparameter scaling laws. Its cost-aware, multi-fidelity Bayesian optimization targets the law itself rather than the best score at one fixed scale, allowing informative small runs to guide larger configurations. The authors evaluate synthetic tasks, fitted training-data surrogates and actual LLM pretraining, reporting substantially lower search budgets than the compared grid-search and other baselines. Compute is represented by a parameter-count–token-count proxy. The relevant idea for CTR scaling studies is experimental allocation across scales; the assumed law family and cost model still require validation for recommendation workloads.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-17",
+          "source_urls": [
+            "https://arxiv.org/abs/2609.01431v3",
+            "https://arxiv.org/html/2609.01431v3"
+          ]
+        },
+        "zh": {
+          "text": "Power-Law Entropy Search按成本调整后的扩展规律不确定性降幅，选择下一组训练配置。它用考虑成本的多保真贝叶斯优化，直接学习最优超参数如何随规模变化，使有信息量的小实验帮助决定更大规模配置。作者在合成任务、训练数据拟合代理和实际语言模型预训练中，报告相对所比较网格搜索及其他基线更低的搜索预算。计算成本以参数量乘训练令牌量为代理。CTR扩展研究可借鉴跨规模实验分配，但规律形式与成本模型仍须在推荐任务上验证。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-17",
+          "source_urls": [
+            "https://arxiv.org/abs/2609.01431v3",
+            "https://arxiv.org/html/2609.01431v3"
+          ]
+        }
+      },
+      "added_at": "2026-10-17T00:05:45Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2609.01431"
+      },
+      "change_history": [],
+      "reading_tier": null,
+      "companies": [
+        "meta",
+        "atomic-machines"
+      ],
+      "order": 430
+    },
+    {
+      "id": "2608.11805",
+      "title": "Hybrid Gated Attention",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "Tencent Hunyuan; Peking University",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2608.11805"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Gated attention is an effective approach to mitigate attention sinks and enhance the representational capacity of attention. To further extend its effectiveness-efficiency Pareto frontier, we propose a Hybrid Gated Attention (HyGA) framework that contains three types of gating strategies. Specifically, these gates leverage diverse information from multiple stages of attention, and collaboratively build element-wise/head-wise gating from multiple perspectives, capturing intra-head and cross-head information interactions. Through our hybrid gating components, HyGA could provide multi-source modulation signals, enabling more comprehensive control over information flow and improving the representational capacity of attention. We also introduce low-rank matrix decomposition and learnable attention sink to further enhance training efficiency and stability. In experiments, we evaluate HyGA on widely-used benchmarks based on different backbones. The experimental results show that our HyGA comprehensively improves both training loss and various downstream performances compared with Gated attention. HyGA has also been verified to achieve the best performance at different computation costs, with comprehensive model analyses for better understanding. The proposed HyGA sheds light on a more effective, efficient, and stable attention mechanism.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2608.11805v2",
+        "retrieved_at": "2026-10-16T23:16:04Z",
+        "license": "CC0-1.0",
+        "source_title": "Hybrid Gated Attention",
+        "source_version": "v2"
+      },
+      "source_dates": {
+        "published_at": "2026-08-12T08:46:50Z",
+        "updated_at": "2026-10-14T06:45:28Z",
+        "source_version": "v2",
+        "source_url": "https://arxiv.org/abs/2608.11805v2",
+        "verified_at": "2026-10-16T23:16:04Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "Hybrid Gated Attention combines three gating strategies using signals from multiple attention stages, with element-wise and head-wise modulation of intra-head and cross-head information. Low-rank decomposition and a learnable attention sink are added to improve training efficiency and stability. Across the evaluated backbones and computation budgets, the authors report lower training loss and better downstream results than gated-attention baselines. For scalable ranking Transformers, the relevant hypothesis is that richer but inexpensive gates can regulate information flow; those recommendation benefits have not been directly tested, and this is not a linear-time attention replacement.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-17",
+          "source_urls": [
+            "https://arxiv.org/abs/2608.11805v2",
+            "https://arxiv.org/html/2608.11805v2"
+          ]
+        },
+        "zh": {
+          "text": "Hybrid Gated Attention结合三种门控，从注意力的不同阶段获取调节信号，在元素与注意力头层面控制头内、头间信息。低秩分解和可学习的注意力汇（attention sink）用于改善训练效率与稳定性。作者在所测骨干模型和计算预算下，报告了相对门控注意力基线更低的训练损失和更好的下游表现。可扩展排序Transformer可考虑低成本多来源门控这一设想，但推荐收益尚未直接验证，它也不是线性复杂度注意力替代方案。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-17",
+          "source_urls": [
+            "https://arxiv.org/abs/2608.11805v2",
+            "https://arxiv.org/html/2608.11805v2"
+          ]
+        }
+      },
+      "added_at": "2026-10-17T00:05:45Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2608.11805"
+      },
+      "change_history": [],
+      "reading_tier": null,
+      "companies": [
+        "tencent"
+      ],
+      "order": 431
+    },
+    {
+      "id": "2610.14709",
+      "title": "Vela: User Behavior as Supervision Sparks LLM Intelligence",
+      "collection": "related",
+      "category": "other",
+      "affiliation": "AllSpark Team",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.14709"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Large language models are increasingly deployed in applications that act on users' long-term behavior histories, from personal assistants to recommendation and advertising systems. These applications demand the user dimension of LLM intelligence: inferring a person's preferences, intent, and likely future actions from weeks to years of behavior data. Yet current models are trained on static text or synthetic data, neither of which captures how user behavior evolves over time. Real-world behavior records, already available at scale on content platforms and in personal-assistant agents, offer a natural supervisory signal. We propose user behavior as supervision and introduce Vela, a framework that converts real user behavior data into trainable tasks and trajectories. From the anonymized behavior records of 100,000 users, Vela generates 100,000 tasks across 91 real-world task templates; difficulty-based filtering and trajectory acceptance criteria retain approximately 75,000 tasks with selected training trajectories. Fine-tuning Qwen3.6-35B-A3B on these trajectories improves performance over the base model by up to 11.5 points on user-related tasks and by an average of 4 points on general benchmarks. Training on more user behavior data further improves user-related performance, and reinforcement learning after fine-tuning outperforms reinforcement learning from the base model by up to 7.7 points. These gains suggest that real-world user behavior is a scalable source of supervision for both user-centered capabilities and the broader intelligence of LLMs.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.14709v1",
+        "retrieved_at": "2026-10-16T23:16:04Z",
+        "license": "CC0-1.0",
+        "source_title": "Vela: User Behavior as Supervision Sparks LLM Intelligence",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-10-10T08:28:00Z",
+        "updated_at": "2026-10-10T08:28:00Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.14709v1",
+        "verified_at": "2026-10-16T23:16:04Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "Vela converts anonymized user-behavior records into supervised tasks and training trajectories, combining task templates, difficulty filtering and trajectory acceptance criteria. Fine-tuning a Qwen3.6-35B-A3B model improves the evaluated user-related tasks and general benchmarks, and the authors report further gains when increasing behavior-training data and adding reinforcement learning. For recommendation research, the relevant contribution is a reusable way to turn long-term behavior into user-modeling supervision. Its evidence concerns language-model task evaluations, not industrial CTR lift or a fitted recommendation scaling law, so broader transfer remains to be tested.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-17",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.14709v1",
+            "https://arxiv.org/html/2610.14709v1"
+          ]
+        },
+        "zh": {
+          "text": "Vela将匿名用户行为记录转成监督任务与训练轨迹，结合任务模板、难度筛选和轨迹接受条件构造训练数据。微调Qwen3.6-35B-A3B后，所测用户相关任务和通用基准有所改善；作者还报告增加行为训练数据及后续强化学习的收益。推荐研究可借鉴的是把长期行为转成用户建模监督的流程。证据来自语言模型任务评估，不能视为工业CTR提升或已拟合的推荐扩展定律，更广泛的迁移仍需验证。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-17",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.14709v1",
+            "https://arxiv.org/html/2610.14709v1"
+          ]
+        }
+      },
+      "added_at": "2026-10-17T00:05:45Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.14709"
+      },
+      "change_history": [],
+      "reading_tier": null,
+      "companies": [],
+      "order": 432
+    },
+    {
+      "id": "2610.22353",
+      "title": "Rethinking Routing Exploration in Modern Mixture-of-Experts",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "ETH Zurich; The University of Hong Kong; Max Planck Institute for Intelligent Systems; WU Vienna",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.22353"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Mixture-of-experts (MoE) models have become an important approach for scaling model parameters. Modern MoE architectures increasingly combine two design choices: fine-grained expert segmentation and shared experts. The former increases expressiveness by enabling more expert combinations at a fixed activation ratio, and the latter introduces experts that are active for every token. We identify an exploration dilemma between these designs: shared experts can make routing less exploratory by reducing the variability of token representations. This conflicts with the greater need for exploration induced by fine-grained expert segmentation due to the combinatorially enlarged routing space. Consequently, the additional expressiveness offered by fine-grained segmentation may not be fully realized in practice. MirrorMoE is proposed to reconcile this exploration dilemma by shrinking the exploration space through token-adaptive suppression of unnecessary experts. MirrorMoE consistently improves performance across model scales.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.22353v1",
+        "retrieved_at": "2026-10-16T23:16:04Z",
+        "license": "CC0-1.0",
+        "source_title": "Rethinking Routing Exploration in Modern Mixture-of-Experts",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-10-15T17:58:02Z",
+        "updated_at": "2026-10-15T17:58:02Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.22353v1",
+        "verified_at": "2026-10-16T23:16:04Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "MirrorMoE addresses a tension between shared experts and fine-grained routing: shared experts can weaken the representation changes needed to distinguish alternative routes. It mixes routing distributions from original and negated logits for expert selection, but retains original probabilities for aggregation, adaptively suppressing some selected experts. Across four language-model scales, it improves perplexity and average downstream accuracy. The activated-expert count stays fixed, and gains without shared experts are limited. CTR engineering inference: inspect effective expert contributions before enlarging a shared-expert ranking model, and test routing changes under matched compute. The paper reports language-model experiments, not CTR experiments.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-17",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.22353v1",
+            "https://arxiv.org/html/2610.22353v1"
+          ]
+        },
+        "zh": {
+          "text": "MirrorMoE 指出，共享专家可能削弱不同路由带来的表示差异，使细粒度专家组合难以充分探索。它结合原始及取反 logits 产生的路由分布选择专家，再用原始概率聚合，自适应压低部分已选专家的实际贡献。四种语言模型规模的困惑度和下游平均准确率均有改善；实际激活专家数仍固定，无共享专家时收益有限。对 CTR 的工程启发是：扩充共享专家排序模型前，先检查专家的有效贡献，并在匹配计算量下验证路由改动。本文没有 CTR 实验。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-17",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.22353v1",
+            "https://arxiv.org/html/2610.22353v1"
+          ]
+        }
+      },
+      "added_at": "2026-10-17T00:05:45Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.22353"
+      },
+      "change_history": [],
+      "reading_tier": null,
+      "companies": [],
+      "order": 433
+    },
+    {
+      "id": "2610.22256",
+      "title": "BitSparse: Compact Activation Storage for ReLU Feed-Forward Networks",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "University of Cambridge; University of Oxford",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.22256"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Reducing memory use in large language model (LLM) training is an ongoing challenge. Activation checkpointing saves memory by recomputation, while lossy compression changes the stored activations. The reemergence of sparse $\\relu$ and $\\relu^2$ activations creates a third opportunity: losslessly compressing the activation cache itself. We present BitSparse, a GPU-resident lossless compression format for sparse activations. Compression and reconstruction run in custom Triton kernels fused into an autograd function, shrinking the activation cache while recovering it exactly for the backward pass. Bfloat16 (BF16) and FP8 activations are supported. Optional sign-bit packing further increases compression up to close to the theoretical limit. We analyze its compression ratio and compare it to the theoretical optimum. BitSparse lowers per-token VRAM by 31\\% and 30\\% Modded-NanoGPT and Nemotron-H respectively, with overheads of no more than 1\\% at practical sequence lengths. Additionally, a new preallocated buffer system avoids host synchronization during training when variable size tensors are allocated.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.22256v1",
+        "retrieved_at": "2026-10-16T23:16:04Z",
+        "license": "CC0-1.0",
+        "source_title": "BitSparse: Compact Activation Storage for ReLU Feed-Forward Networks",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-10-15T17:24:51Z",
+        "updated_at": "2026-10-15T17:24:51Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.22256v1",
+        "verified_at": "2026-10-16T23:16:04Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "BitSparse losslessly compresses sparse ReLU-family activation caches in their chosen BF16 or FP8 storage format, using tile bitmasks, compact values, and fused Triton kernels. A preallocated shared buffer avoids host synchronization for variable-size storage. Reported roughly 30% per-token memory reductions come from forward/backward benchmarks without retained optimizer or full-model gradient buffers; a separate NanoGPT training run preserves validation loss closely. Benefits depend on exact zeros and target feed-forward activations, not attention or Mamba states. CTR engineering inference: profile exact-zero sparsity in ranking MLPs before testing activation-cache compression against checkpointing. No CTR experiments are reported.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-17",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.22256v1",
+            "https://arxiv.org/html/2610.22256v1"
+          ]
+        },
+        "zh": {
+          "text": "BitSparse 用分块位图、紧凑数值和融合 Triton 内核，无损压缩所选 BF16 或 FP8 存储格式中的 ReLU 系列激活缓存；预分配共享缓冲区避免变长存储导致的主机同步。约 30% 的每 token 显存降幅来自不保留优化器状态和全模型梯度缓冲区的前后向基准；另一次 NanoGPT 完整训练的验证损失几乎不变。收益依赖精确零值，仅覆盖前馈激活，不覆盖注意力或 Mamba 状态。对 CTR 的工程启发是先测量排序 MLP 的精确零值比例，再比较激活缓存压缩与重计算。本文没有 CTR 实验。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-17",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.22256v1",
+            "https://arxiv.org/html/2610.22256v1"
+          ]
+        }
+      },
+      "added_at": "2026-10-17T00:05:45Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.22256"
+      },
+      "change_history": [],
+      "reading_tier": null,
+      "companies": [],
+      "order": 434
+    },
+    {
+      "id": "2610.20247",
+      "title": "Scaling Multilingual Mixture-of-Experts: How Language Coverage Changes Capacity and Compute Allocation",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "Data Science Group, Heinz Nixdorf Institute, Paderborn University, Germany",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.20247"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Multilingual models share capacity across languages, so adding languages can hurt performance on existing ones. Mixture-of-experts models expand this capacity with little additional per-token computation. Given this extra capacity, does adding experts reduce what each additional language costs? To answer this question, we propose a repetition-aware joint scaling law relating number of active parameters, training tokens per language, number of experts, and language coverage. Fitted on 26,300 per-language loss observations from 64 pretrained configurations, our law reduces prediction error on held-out configurations by 28% relative to the strongest evaluated baseline. At matched number of active parameters and training tokens per language, 32 experts reduce the loss penalty of expanding from 12 to 200 languages by 83% compared with a dense model. Our law further shows that broader language coverage favors more experts across a wider range of compute budgets, guiding capacity allocation as multilingual models scale.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.20247v2",
+        "retrieved_at": "2026-10-16T23:16:04Z",
+        "license": "CC0-1.0",
+        "source_title": "Scaling Multilingual Mixture-of-Experts: How Language Coverage Changes Capacity and Compute Allocation",
+        "source_version": "v2"
+      },
+      "source_dates": {
+        "published_at": "2026-10-14T14:20:19Z",
+        "updated_at": "2026-10-15T17:58:04Z",
+        "source_version": "v2",
+        "source_url": "https://arxiv.org/abs/2610.20247v2",
+        "verified_at": "2026-10-16T23:16:04Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "This study fits a repetition-aware scaling law linking active parameters, per-language training tokens, expert count, and language coverage. Across controlled multilingual pretraining configurations, extra experts reduce the penalty of broader coverage when active capacity and tokens per language are matched. Broader coverage also shifts the modeled capacity allocation toward experts, yet preserving average quality can still leave individual languages worse off. Conclusions are bounded by the studied Top-1 architecture and training regime; logical compute excludes hardware overheads. CTR engineering inference: allocate capacity across traffic domains while checking slice-level regressions and data repetition. These are multilingual language-model results, not CTR experiments.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-17",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.20247v2",
+            "https://arxiv.org/html/2610.20247v2"
+          ]
+        },
+        "zh": {
+          "text": "研究建立了考虑数据重复的扩展定律，将激活参数量、每种语言的训练 token 数、专家数和语言覆盖范围联系起来。在匹配激活容量及每语言训练量的受控预训练中，增加专家能缓解扩大语言覆盖造成的损失；模型推算的容量分配也更偏向专家。但恢复平均质量并不保证每种语言都不退步。结论受所测 Top-1 架构和训练配置限制，逻辑计算量不包含硬件开销。对 CTR 的工程启发是：跨流量域分配容量时，同时检查分域退步和数据重复。本文是多语言建模研究，没有 CTR 实验。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-17",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.20247v2",
+            "https://arxiv.org/html/2610.20247v2"
+          ]
+        }
+      },
+      "added_at": "2026-10-17T00:05:45Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.20247"
+      },
+      "change_history": [],
+      "reading_tier": null,
+      "companies": [],
+      "order": 435
+    },
+    {
+      "id": "2608.30310",
+      "title": "Tail-Replay: Escaping the Curse of Linear Attention in Prefix Caching for Hybrid LLMs",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "Institute of Artificial Intelligence, China Telecom (TeleAI); Shanghai Jiao Tong University",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2608.30310"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Hybrid large language models interleave full-attention layers with linear-attention layers to reduce the cost of long-context inference. This structure complicates prefix caching: full-attention key-value caches are token-addressable, whereas linear-attention layers maintain recurrent states that cannot be rolled back to arbitrary prefix boundaries. Existing hybrid prefix caching methods address this mismatch by storing recurrent-state checkpoints. As a result, token-level matches are directly usable only at positions aligned with stored checkpoints, constraining prefix reuse to a discrete set of boundaries. We present Tail-Replay, a prefix caching mechanism that enables unconstrained token-level prefix reuse in hybrid large language models. The key insight is that linear-attention mechanisms such as Gated DeltaNet can be viewed as a structured, lossy compression of the input prefix: gated recurrent updates progressively attenuate the contributions of earlier inputs. Consequently, the recurrent state of a matched prefix can be well approximated by replaying only a short, recent suffix of that prefix. Tail-Replay exploits this property by caching the exact full-attention key-value cache while omitting recurrent-state checkpoints. On a cache hit, it reconstructs the linear-attention states by replaying a short, recent suffix of the matched prefix. As a result, the reuse boundary is determined by the shared tokens rather than by recurrent-state checkpoints. We evaluate Tail-Replay on three Gated DeltaNet-based hybrid models using the LongBench and RULER benchmarks. With only a 5--10\\% replay budget, it retains 92.8--99.9\\% of full-prefill quality on LongBench and RULER. For serving efficiency, we evaluate time-to-first-token speedups across multiple matched-prefix lengths---8K, 16K, and 32K. The speedup grows with prefix length, reaching $9.1$--$14.3\\times$ over full prefill at 32K.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2608.30310v2",
+        "retrieved_at": "2026-10-16T23:16:04Z",
+        "license": "CC0-1.0",
+        "source_title": "Tail-Replay: Escaping the Curse of Linear Attention in Prefix Caching for Hybrid LLMs",
+        "source_version": "v2"
+      },
+      "source_dates": {
+        "published_at": "2026-08-31T06:27:07Z",
+        "updated_at": "2026-10-15T14:12:48Z",
+        "source_version": "v2",
+        "source_url": "https://arxiv.org/abs/2608.30310v2",
+        "verified_at": "2026-10-16T23:16:04Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "Tail-Replay enables prefix reuse at arbitrary matched-token boundaries in hybrid full/linear-attention language models. It caches exact full-attention KV and output hidden states, then replays a recent suffix from zero-initialized recurrent states instead of keeping recurrent checkpoints. On three Gated DeltaNet-based models, replaying 5–10% of a matched prefix preserves most benchmark-average quality on LongBench and RULER and reduces first-token latency on tested long shared prefixes. Reconstruction is approximate, and quality retention varies by model and task. CTR engineering inference: distinguish exact reusable sequence features from approximate state recovery, then measure latency and slice-level quality together. No CTR experiments are reported.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-17",
+          "source_urls": [
+            "https://arxiv.org/abs/2608.30310v2",
+            "https://arxiv.org/html/2608.30310v2"
+          ]
+        },
+        "zh": {
+          "text": "Tail-Replay 让全注意力与线性注意力混合语言模型可在任意已匹配 token 边界复用前缀。它缓存精确的全注意力 KV 及输出隐藏状态，再从零初始化递归状态、回放最近一段前缀，省去递归状态检查点。在三种基于 Gated DeltaNet 的模型上，回放前缀的 5–10% 保留了 LongBench 和 RULER 的大部分基准平均质量，并降低所测长共享前缀的首 token 延迟。状态恢复是近似的，质量保留率随模型和任务变化。对 CTR 的工程启发是区分精确序列特征复用与近似状态恢复，同时验证延迟和分域质量。本文没有 CTR 实验。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-17",
+          "source_urls": [
+            "https://arxiv.org/abs/2608.30310v2",
+            "https://arxiv.org/html/2608.30310v2"
+          ]
+        }
+      },
+      "added_at": "2026-10-17T00:05:45Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2608.30310"
+      },
+      "change_history": [],
+      "reading_tier": null,
+      "companies": [
+        "china-telecom"
+      ],
+      "order": 436
+    },
+    {
+      "id": "2610.21594",
+      "title": "LoopAhead: Speculating Ahead for Faster Decoding in Looped Language Models",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "Shanghai Jiao Tong University; Tongji University",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.21594"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Looped Transformers improve parameter efficiency by repeatedly applying the same Transformer layers. However, generating each token still involves sequential computation and repeated access to model weights, leading to high decoding latency. Recent pipelined self-speculative decoding methods reduce this delay by drafting tokens from early-loop predictions and asynchronously advancing tokens at different recurrent depths in the same batch, but they do not fully exploit early-loop features for longer lookahead and still spend computation verifying incorrect speculative branches. We introduce \\method, a speculative decoding framework for looped transformers that enables earlier drafting of future tokens and assigns complementary roles to different recurrent depths. A lightweight lookahead drafter (LAD) predicts multiple future tokens with early-loop states, and deeper-loop feedback helps decide which draft branches to continue and which to pause, while the full-depth model makes the final token decisions. LoopAhead achieves up to 7.82x decoding speedup over autoregressive decoding while preserving the target model's output distribution.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.21594v1",
+        "retrieved_at": "2026-10-16T23:16:04Z",
+        "license": "CC0-1.0",
+        "source_title": "LoopAhead: Speculating Ahead for Faster Decoding in Looped Language Models",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-10-15T09:38:11Z",
+        "updated_at": "2026-10-15T09:38:11Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.21594v1",
+        "verified_at": "2026-10-16T23:16:04Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "LoopAhead accelerates looped language models with a trained lightweight drafter that proposes multiple future tokens from early-loop states. Intermediate-loop feedback suspends or resumes speculative branches, while full-depth verification retains final acceptance authority and preserves the target distribution. Experiments cover Ouro and Raven models; the maximum 7.82× autoregressive-decoding speedup is Raven-TinyLlama on HumanEval under greedy decoding, with one request per A40 GPU. Drafters and scheduling require model-specific adaptation, and concurrent-serving gains remain untested. CTR engineering inference: use cheap intermediate signals to budget speculative computation while retaining final-model verification in suitable generative ranking pipelines. No CTR experiments are reported.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-17",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.21594v1",
+            "https://arxiv.org/html/2610.21594v1"
+          ]
+        },
+        "zh": {
+          "text": "LoopAhead 为循环语言模型训练轻量草稿器，利用早期循环状态一次提出多个未来 token；中间循环反馈控制推测分支暂停或恢复，最终仍由完整深度模型验证，保持目标输出分布。实验覆盖 Ouro 和 Raven；最高 7.82 倍自回归解码加速来自 Raven-TinyLlama 的 HumanEval 贪心解码，条件为每张 A40 GPU 一个请求。草稿器和调度需按模型适配，并发服务收益尚未验证。对 CTR 的工程启发是：在合适的生成式排序流程中，用低成本中间信号分配推测计算预算，同时保留最终模型验证。本文没有 CTR 实验。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-17",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.21594v1",
+            "https://arxiv.org/html/2610.21594v1"
+          ]
+        }
+      },
+      "added_at": "2026-10-17T00:05:45Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.21594"
+      },
+      "change_history": [],
+      "reading_tier": null,
+      "companies": [],
+      "order": 437
+    },
+    {
+      "id": "2610.20686",
+      "title": "RoLaQ: Joint Rotation and Range Calibration for 2-Bit KV Caches in Multi-Head Latent Attention",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "Research Center for Social Computing and Interactive Robotics, Harbin Institute of Technology; Tsinghua University; Baidu Inc.",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.20686"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Multi-head latent attention (MLA) compresses the content of a key-value cache into a shared latent per token, making low-bit storage attractive for long-context inference. At two bits, errors in this representation perturb both attention matching and value readout, with effects that depend on error direction and reconstruction scale. We introduce RoLaQ (Rotation-calibrated Latent Quantization), an offline method for joint rotation and range calibration. RoLaQ refines a shared rotation within subspaces defined by the frozen key and value projections, and jointly learns quantization ranges whose thresholds and reconstruction gains are coupled to control the shared signal's response. Prediction matching and attention-output supervision guide calibration with model weights frozen. Across three MLA models and six benchmarks, RoLaQ achieves the highest average accuracy among the compared 2-bit methods both without and with token protection. On DeepSeek-V2-Lite, an SGLang implementation provides 3.96 times the BF16 KV capacity under the same memory budget and 2.51 times its decode throughput with 256K input tokens.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.20686v1",
+        "retrieved_at": "2026-10-16T23:16:04Z",
+        "license": "CC0-1.0",
+        "source_title": "RoLaQ: Joint Rotation and Range Calibration for 2-Bit KV Caches in Multi-Head Latent Attention",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-10-14T16:46:48Z",
+        "updated_at": "2026-10-14T16:46:48Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.20686v1",
+        "verified_at": "2026-10-16T23:16:04Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "RoLaQ jointly calibrates rotations and quantization ranges for the shared content latent in multi-head latent attention, using frozen key/value projections and teacher predictions plus attention outputs. It achieves the highest six-benchmark average among compared 2-bit methods across three MLA models. Only content latents are quantized; positional keys remain BF16, with optional protected tokens. DeepSeek-V2-Lite serving tests improve long-context capacity and throughput, but short-context overhead can outweigh savings and measurements cover one A100 setup. CTR engineering inference: calibrate compressed shared representations against every downstream consumer and benchmark realistic sequence lengths. The paper evaluates language models, not CTR experiments.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-17",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.20686v1",
+            "https://arxiv.org/html/2610.20686v1"
+          ]
+        },
+        "zh": {
+          "text": "RoLaQ 利用冻结的 key/value 投影，以及教师预测和注意力输出，联合校准多头潜在注意力共享内容表示的旋转与量化范围。在三种 MLA 模型中，它取得所比较 2-bit 方法里最高的六项基准平均分。量化仅针对内容表示，位置 key 仍为 BF16，也可保护部分 token。DeepSeek-V2-Lite 服务实验提升了长上下文容量与吞吐，但短上下文的量化开销可能抵消收益，服务测试仅覆盖一种 A100 配置。对 CTR 的工程启发是：共享表示压缩应同时校准所有下游用途，并按实际序列长度测试。本文评估语言模型，没有 CTR 实验。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-17",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.20686v1",
+            "https://arxiv.org/html/2610.20686v1"
+          ]
+        }
+      },
+      "added_at": "2026-10-17T00:05:45Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.20686"
+      },
+      "change_history": [],
+      "reading_tier": null,
+      "companies": [
+        "baidu"
+      ],
+      "order": 438
+    },
+    {
+      "id": "2610.19761",
+      "title": "CAST: History-Adaptive Spectral Clipping for LLM Pretraining",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "Meituan",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.19761"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Soft spectral clipping (SSC) reduces gradient singular values, but its effect depends on the gradient scale and clipping threshold. We introduce CAST (Clipping with Adaptive Scales and Thresholds), a history-adaptive extension of SSC. AdamW's previous second moment sets row and column scales. An exponential moving average of the clipped output's estimated spectral norm sets each matrix's threshold. CAST restores the original coordinates before the AdamW update. We train a mixture-of-experts (MoE) model with 19.08B total parameters for 83.89B tokens. CAST achieves lower training and mean validation losses than nine gradient-processing baselines, with the fewest relative gradient spikes. It reaches the best baseline's final smoothed training loss in 7.2\\% fewer steps.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.19761v1",
+        "retrieved_at": "2026-10-16T23:16:04Z",
+        "license": "CC0-1.0",
+        "source_title": "CAST: History-Adaptive Spectral Clipping for LLM Pretraining",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-10-14T08:15:43Z",
+        "updated_at": "2026-10-14T08:15:43Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.19761v1",
+        "verified_at": "2026-10-16T23:16:04Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "CAST adapts soft spectral clipping before AdamW using two histories: the previous second moment sets row/column scales, and an exponential moving average of the clipped spectral norm sets each matrix’s threshold. It restores original coordinates before the optimizer update. In a single-seed MoE pretraining comparison, CAST lowers training and mean validation losses against nine gradient-processing baselines and reaches the best baseline’s final smoothed loss in fewer steps. Extra per-step work and hardware-dependent costs remain. CTR engineering inference: test history-adaptive gradient processing for unstable large-model training, reporting loss-versus-time alongside spike counts. This paper contains no CTR experiments.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-17",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.19761v1",
+            "https://arxiv.org/html/2610.19761v1"
+          ]
+        },
+        "zh": {
+          "text": "CAST 在 AdamW 更新前自适应执行软谱裁剪：用上一轮二阶矩确定梯度矩阵的行列尺度，用裁剪后谱范数的指数移动平均确定各矩阵阈值，再恢复原坐标后更新优化器。单种子 MoE 预训练对比中，其训练损失和平均验证损失低于九种梯度处理基线，并用更少步数达到最佳基线的最终平滑损失；但每步有额外开销，实际成本依赖硬件。对 CTR 的工程启发是测试基于历史的梯度处理能否改善大模型训练稳定性，同时报告损失随时间的变化与梯度尖峰数。本文没有 CTR 实验。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-17",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.19761v1",
+            "https://arxiv.org/html/2610.19761v1"
+          ]
+        }
+      },
+      "added_at": "2026-10-17T00:05:45Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.19761"
+      },
+      "change_history": [],
+      "reading_tier": null,
+      "companies": [
+        "meituan"
+      ],
+      "order": 439
+    },
+    {
+      "id": "2610.19232",
+      "title": "Spectral-MoE: Heterogeneous Per-Layer Expert Utilization in Dense-to-MoE Conversion",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "Stanford University",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.19232"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Large language models impose substantial memory demands and arithmetic costs during inference. Dense-to-mixture-of-experts (MoE) conversion is a model optimization technique that aims to reduce these arithmetic costs. Dense-to-MoE conversion partitions pretrained feed-forward network (FFN) neurons into experts and selects a subset for each token. Leading methods fall into two categories: analytic methods produce a converted model quickly using heuristics, while learning methods produce a model much more slowly by optimizing via gradients. Both approaches, however, fix the same active expert count, or \"utilization,\" at every layer. We introduce Spectral-MoE, which learns to allocate a utilization budget heterogeneously across layers. Its name draws a metaphor between separating a dense FFN into experts and separating a light beam into its spectrum. Spectral-MoE consists of two distinct approaches: a static approach that uses a single per-layer scalar which is shared across tokens, and a dynamic approach which emits a per-token schedule. We demonstrate that both allocators improve performance over uniform on both the analytic-based and learning-based SOTA dense-to-MoE methods. At 25% FFN utilization, dynamic allocation reduces WikiText-2 perplexity relative to uniform by 1.04, 2.96, and 2.71 points on the learned base for Llama-2-7B, Llama-3-8B, and Qwen2.5-7B, respectively. The corresponding reductions on the analytic base are 2.45, 6.26, and 2.17 points. On the learned base, dynamic allocation improves six-task mean accuracy over uniform by an average of 1.5, 4.2, and 3.6 percentage points across the three models at FFN utilizations of 12.5%, 25%, and 50%, respectively. These results establish per-layer expert utilization as a novel optimization axis in dense-to-MoE conversion.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.19232v1",
+        "retrieved_at": "2026-10-16T23:16:04Z",
+        "license": "CC0-1.0",
+        "source_title": "Spectral-MoE: Heterogeneous Per-Layer Expert Utilization in Dense-to-MoE Conversion",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-10-13T21:48:12Z",
+        "updated_at": "2026-10-13T21:48:12Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.19232v1",
+        "verified_at": "2026-10-16T23:16:04Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "Spectral-MoE learns unequal expert-activation allocations across layers when converting dense language models into MoEs. A static allocator shares one layer schedule across tokens; a dynamic allocator revises each token’s remaining schedule from intermediate states while conserving its total expert budget. Across three models and analytic/learned conversion bases, heterogeneous allocation improves perplexity, with dynamic allocation also improving average task accuracy. Serving speedups are not measured, and the authors’ learned-base reproduction underperforms its published baseline. CTR engineering inference: test layer-sensitive compute allocation under fixed activation budgets, then verify real serving costs. No CTR experiments are reported.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-17",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.19232v1",
+            "https://arxiv.org/html/2610.19232v1"
+          ]
+        },
+        "zh": {
+          "text": "Spectral-MoE 在稠密语言模型转换为 MoE 时，学习跨层不均匀的专家激活分配。静态方案为所有 token 共用一套分层计划；动态方案根据中间状态修订各 token 后续层的计划，同时保持每个 token 的总专家预算不变。在三种模型、解析式与学习式转换基础上，异构分配改善了困惑度，动态方案也提高了任务平均准确率。论文未测量实际服务加速，作者复现的学习式基线低于原论文成绩。对 CTR 的工程启发是在固定激活预算下测试按层分配计算，再验证实际服务成本。本文没有 CTR 实验。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-17",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.19232v1",
+            "https://arxiv.org/html/2610.19232v1"
+          ]
+        }
+      },
+      "added_at": "2026-10-17T00:05:45Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.19232"
+      },
+      "change_history": [],
+      "reading_tier": null,
+      "companies": [],
+      "order": 440
+    },
+    {
+      "id": "2610.16484",
+      "title": "SLEM: Spectrum-Aware Latent Expert Merging",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "KAIST; University of Oxford; Slater Labs; DeepAuto.ai",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.16484"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Mixture-of-Experts (MoE) models scale model capacity efficiently by activating only a small subset of experts for each input, while still requiring all parameters to be stored in memory, resulting in substantial memory overhead. Expert merging techniques have recently emerged as a promising compression paradigm that reduces this overhead by consolidating multiple experts into a smaller set. However, existing approaches have two key limitations: (i) direct convex interpolation in parameter space is not generally guaranteed to yield meaningful interpolation of expert functions; and (ii) estimating expert similarity or merging coefficients often relies on calibration data, introducing dependence on the calibration distribution. To address these limitations, we propose Spectrum-Aware Latent Expert Merging (SLEM), a calibration-free expert merging framework that occurs in a structured latent representation of expert weights using a VAE. SLEM groups experts within and across layers based on latent similarities and derives merging coefficients from expert weight spectra. It then performs geometry-aware latent interpolation and decodes the resulting representations into merged expert weights. Compared with existing expert merging methods, SLEM achieves comparable or better performance on general knowledge benchmarks and higher average performance on generation benchmarks involving mathematical reasoning and code generation.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.16484v1",
+        "retrieved_at": "2026-10-16T23:16:04Z",
+        "license": "CC0-1.0",
+        "source_title": "SLEM: Spectrum-Aware Latent Expert Merging",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-10-12T09:38:24Z",
+        "updated_at": "2026-10-12T09:38:24Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.16484v1",
+        "verified_at": "2026-10-16T23:16:04Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "SLEM compresses MoE expert storage by training a variational autoencoder on expert weights, pairing experts through latent similarity, and merging them within or across layers using spectrum-derived coefficients and latent interpolation. It needs no input calibration dataset, but does require VAE training and model-dependent rank choices. Tests on three language models show competitive knowledge-task results and stronger average math/code generation than compared merging methods; higher compression still loses quality versus uncompressed models. CTR engineering inference: evaluate weight-only expert consolidation when calibration traffic is unavailable, including compression preparation cost and slice-level regression checks. No CTR experiments are reported.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-17",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.16484v1",
+            "https://arxiv.org/html/2610.16484v1"
+          ]
+        },
+        "zh": {
+          "text": "SLEM 在专家权重上训练变分自编码器，按潜在表示相似度将专家配对，再结合权重谱确定的系数与潜在空间插值，在层内或跨层合并专家以减少存储。它不需要输入校准数据，但仍需训练 VAE，并选择与模型相关的谱秩。在三种语言模型中，知识任务表现具有竞争力，数学与代码生成的平均表现优于所比较合并方法；较高压缩率下仍不及未压缩模型。对 CTR 的工程启发是在缺少校准流量时评估仅依赖权重的专家合并，同时计入压缩准备成本并检查分域退步。本文没有 CTR 实验。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-17",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.16484v1",
+            "https://arxiv.org/html/2610.16484v1"
+          ]
+        }
+      },
+      "added_at": "2026-10-17T00:05:45Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.16484"
+      },
+      "change_history": [],
+      "reading_tier": null,
+      "companies": [
+        "slater-labs",
+        "deepauto-ai"
+      ],
+      "order": 441
+    },
+    {
+      "id": "2610.14798",
+      "title": "Accelerating MoE Training through Expert Placement and Replica Coordination",
+      "collection": "related",
+      "category": "engineering-serving",
+      "affiliation": "Harbin Institute of Technology, Shenzhen; Hong Kong University of Science and Technology",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.14798"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Distributed training of sparsely activated mixture-of-experts (MoE) models is often bottlenecked by workload imbalance and all-to-all (A2A) communication induced by dynamic token routing. Existing token deduplication, expert placement, and replication techniques alleviate these bottlenecks but do not jointly capture their distinct load semantics. Under hierarchical token deduplication, communication counts each token once per destination group at each hierarchy level, whereas expert computation processes every token-expert assignment. With replication, both costs depend jointly on physical layout and token-to-copy mapping, making separate optimization suboptimal. We present PlaceMoE to address this coupling. First, we formulate the joint optimization of expert layout and source-aware token-to-copy mapping for E experts distributed across P devices, accounting for both hierarchical communication traffic and expert-compute load. Second, we develop a solver that combines co-selection-aware expert grouping, bounded dynamic programming for replica allocation, and alternating refinement of layout and mapping. Third, PlaceMoE overlaps replica-gradient synchronization with attention backward. We evaluate PlaceMoE on a 32-GPU cluster and a 64-NPU cluster using Qwen3-VL and DeepSeek-V3. Experimental results show that PlaceMoE achieves up to a 6.94x speedup in A2A communication and 1.74-2.33x speedups in end-to-end training over the state-of-the-art training framework VeOmni.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.14798v1",
+        "retrieved_at": "2026-10-16T23:16:04Z",
+        "license": "CC0-1.0",
+        "source_title": "Accelerating MoE Training through Expert Placement and Replica Coordination",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-10-10T10:43:05Z",
+        "updated_at": "2026-10-10T10:43:05Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.14798v1",
+        "verified_at": "2026-10-16T23:16:04Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "PlaceMoE jointly plans expert replicas, physical placement, and source-aware token-to-copy dispatch, distinguishing deduplicated communication from token–expert compute load. It also overlaps replica-gradient synchronization with attention backpropagation. GPU/NPU-cluster tests show faster steady-state training than the evaluated systems on Qwen3-VL and a six-MoE-layer DeepSeek-V3 configuration. Initial profiling, calibration, and planning are excluded from headline step timings, and extra replicas consume memory. CTR engineering inference: co-optimize placement and dispatch for distributed expert rankers using topology-calibrated costs, then include planning amortization and replica memory in end-to-end comparisons. These are language/multimodal-model systems experiments, not CTR experiments.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-17",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.14798v1",
+            "https://arxiv.org/html/2610.14798v1"
+          ]
+        },
+        "zh": {
+          "text": "PlaceMoE 联合规划专家副本、物理放置和按 token 来源选择副本的派发映射，分别建模去重后的通信量与 token–专家分配产生的计算量，并将副本梯度同步与注意力反向计算重叠。在 GPU/NPU 集群上，Qwen3-VL 及仅保留六个 MoE 层的 DeepSeek-V3 配置，其稳态训练速度优于所比较系统。主要单步计时不包含初始采样、校准和规划，额外副本也占用显存。对 CTR 的工程启发是依据拓扑校准的成本联合优化分布式专家排序器的放置与派发，并计入规划摊销和副本内存。本文没有 CTR 实验。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-17",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.14798v1",
+            "https://arxiv.org/html/2610.14798v1"
+          ]
+        }
+      },
+      "added_at": "2026-10-17T00:05:45Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.14798"
+      },
+      "change_history": [],
+      "reading_tier": null,
+      "companies": [],
+      "order": 442
+    },
+    {
+      "id": "2610.16297",
+      "title": "SLDBench v2: Active Scaling Law Discovery",
+      "collection": "related",
+      "category": "other",
+      "affiliation": "The Chinese University of Hong Kong, Shenzhen; The University of Hong Kong; University of Electronic Science and Technology of China; Tsinghua University; Peking University",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.16297"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Scaling laws predict large-model performance from small experiments, but finding a reliable law itself requires costly experiments. SLDBench tests whether language-model agents can discover scaling laws when all experimental results are given upfront. We introduce SLDBench v2 with two extensions. First, we expand the corpus from 8 to 127 scenarios spanning language-model pretraining, downstream performance, and vision-language transfer, and select 30 challenging scenarios on which a reference power-law fit reaches $R^2 \\le 0.8$; they represent at least $1.09 \\times 10^{23}$ FLOPs of source-reported training compute. Second, we introduce active scaling law discovery: an agent chooses which experiments to run, pays each one's recorded cost (e.g., training FLOPs), and revises its law as outcomes arrive, and is scored on the same hidden extrapolation targets as in the passive setting. Across 8 frontier agent systems, median $R^2$ drops from 0.72-0.75 (passive) to 0.24-0.57 (active), and prediction error rises 1.5-4.7 times, depending on the system. Agents favor cheap experiments, spending 8-44% of the full-pool cost on average; low-cost acquisition can yield strong predictions, but cheap purchases also leave experimental conditions needed for extrapolation unobserved. Experimental planning thus remains a key open challenge for agents that assist model development in the prevailing AI-for-AI study.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.16297v1",
+        "retrieved_at": "2026-10-16T23:16:04Z",
+        "license": "CC0-1.0",
+        "source_title": "SLDBench v2: Active Scaling Law Discovery",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-10-12T07:23:23Z",
+        "updated_at": "2026-10-12T07:23:23Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.16297v1",
+        "verified_at": "2026-10-16T23:16:04Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "SLDBench v2 tests experimental planning for scaling-law discovery through historical replay: agents buy recorded experiments, revise fitted laws, and predict hidden larger-scale outcomes. Across eight agent systems on 30 screened scenarios, active acquisition produces worse extrapolation than receiving all observations upfront; favoring cheap experiments can miss informative scale variation. Costs and prediction quality are reported separately, and prices include estimates/proxies rather than uniformly measured compute. CTR engineering inference: replay existing training sweeps to evaluate acquisition policies before funding new runs, preserving held-out scales and within-domain coverage. This is an empirical methodology benchmark, not a new architecture or CTR result.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-17",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.16297v1",
+            "https://arxiv.org/html/2610.16297v1"
+          ]
+        },
+        "zh": {
+          "text": "SLDBench v2 通过历史实验回放评估扩展定律的实验规划：代理付费获取已记录实验的结果，修订拟合规律，再预测隐藏的大规模结果。在筛选出的 30 个场景、八种代理系统中，主动选购数据的外推表现低于预先获得全部观测；偏好便宜实验可能遗漏关键的规模变化。成本与预测质量分开报告，价格含估算和代理指标，并非统一实测计算量。对 CTR 的工程启发是先用历史训练扫描回放评估实验选择策略，再投入新训练，并保留隐藏测试规模和域内覆盖。这是实证方法基准，不是新架构，也没有 CTR 结果。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-17",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.16297v1",
+            "https://arxiv.org/html/2610.16297v1"
+          ]
+        }
+      },
+      "added_at": "2026-10-17T00:05:45Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.16297"
+      },
+      "change_history": [],
+      "reading_tier": null,
+      "companies": [],
+      "order": 443
     }
   ]
 }

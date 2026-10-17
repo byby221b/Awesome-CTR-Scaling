@@ -6,7 +6,7 @@
 
 Systems, serving infrastructure and hardware-aware optimization.
 
-38 papers · Updated 2026-10-16
+39 papers · Updated 2026-10-17
 
 <a id="paper-2510-18239"></a>
 
@@ -159,3 +159,7 @@ Systems, serving infrastructure and hardware-aware optimization.
 <a id="paper-2610-17901"></a>
 
 - **FlashMask-3: Efficient and Expressive Mask-Aware Distributed Attention**: FlashMask-3 combines a Hopper-optimized structured-mask attention kernel with zero-communication mask localization, load balancing and communication pruning for context parallelism. In 118B-A14B MoE training at 128K context on 128 H100 GPUs, throughput improves 7.3–11.0% over Dual Chunk all-gather. The separate kernel and distributed-attention gains are not end-to-end gains. Long-sequence ranking may benefit from these systems ideas, subject to mask and hardware compatibility; CTR transfer is untested. — [Paper](https://arxiv.org/abs/2610.17901) (Baidu Inc. · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-14798"></a>
+
+- **Accelerating MoE Training through Expert Placement and Replica Coordination**: PlaceMoE jointly plans expert replicas, physical placement, and source-aware token-to-copy dispatch, distinguishing deduplicated communication from token–expert compute load. It also overlaps replica-gradient synchronization with attention backpropagation. GPU/NPU-cluster tests show faster steady-state training than the evaluated systems on Qwen3-VL and a six-MoE-layer DeepSeek-V3 configuration. Initial profiling, calibration, and planning are excluded from headline step timings, and extra replicas consume memory. CTR engineering inference: co-optimize placement and dispatch for distributed expert rankers using topology-calibrated costs, then include planning amortization and replica memory in end-to-end comparisons. These are language/multimodal-model systems experiments, not CTR experiments. — [Paper](https://arxiv.org/abs/2610.14798) (Harbin Institute of Technology, Shenzhen; Hong Kong University of Science and Technology · arXiv 2026). Reading priority: Unrated.
