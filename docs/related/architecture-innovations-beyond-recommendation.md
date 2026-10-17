@@ -6,7 +6,7 @@
 
 Transferable ideas from general-purpose model architecture research.
 
-138 papers · Updated 2026-10-17
+138 papers · Updated 2026-10-18
 
 <a id="paper-2606-16825"></a>
 
@@ -466,11 +466,11 @@ Transferable ideas from general-purpose model architecture research.
 
 <a id="paper-2610-17959"></a>
 
-- **Virtual Head Attention**: Virtual Head Attention uses linear query premixing and low-rank head postmixing that fold into standard GQA-2 at inference. Across four 50B-token pretraining scales, it reports better evaluated quality with smaller KV caches; the dense comparisons use GQA-8 and the MoE comparison GQA-4. A separate matched long-context MoE study reduces KV heads only in full-attention layers. Its cache/quality tradeoff suggests ranking-attention designs, but no CTR results establish benefit. — [Paper](https://arxiv.org/abs/2610.17959) (Baidu Inc.; Peking University · arXiv 2026). Reading priority: Unrated.
+- **Virtual Head Attention**: Virtual Head Attention uses linear query premixing and low-rank head postmixing that fold into standard GQA-2 at inference. Across four 50B-token pretraining scales, it reports better evaluated quality with smaller KV caches; the dense comparisons use GQA-8 and the MoE comparison GQA-4. A separate matched long-context MoE study reduces KV heads only in full-attention layers. Its cache/quality tradeoff suggests ranking-attention designs, but no CTR results establish benefit. — [Paper](https://arxiv.org/abs/2610.17959) (Baidu Inc.; Peking University · NeurIPS 2026). Reading priority: Unrated.
 
 <a id="paper-2610-14219"></a>
 
-- **Learnable Low-Rank Polynomial Sketch for Effective Linear Attention**: LLoPS learns low-rank polynomial feature sketches for linear attention, aiming to reduce approximation error relative to existing polynomial-kernel constructions. It reports strong results against tested linear-attention baselines across language and long-range benchmarks. The language study adapts BASED checkpoints with matched continued training for the BASED comparator. The theoretical approximation result is not a guarantee of better task accuracy; possible long-history ranking use remains untested. — [Paper](https://arxiv.org/abs/2610.14219) (University of California, Los Angeles · arXiv 2026). Reading priority: Unrated.
+- **Learnable Low-Rank Polynomial Sketch for Effective Linear Attention**: LLoPS learns low-rank polynomial feature sketches for linear attention, aiming to reduce approximation error relative to existing polynomial-kernel constructions. It reports strong results against tested linear-attention baselines across language and long-range benchmarks. The language study adapts BASED checkpoints with matched continued training for the BASED comparator. The theoretical approximation result is not a guarantee of better task accuracy; possible long-history ranking use remains untested. — [Paper](https://arxiv.org/abs/2610.14219) (University of California, Los Angeles · NeurIPS 2026). Reading priority: Unrated.
 
 <a id="paper-2610-15715"></a>
 
@@ -514,7 +514,7 @@ Transferable ideas from general-purpose model architecture research.
 
 <a id="paper-2610-22130"></a>
 
-- **DropKV: Decoupling Residual-Output Perturbation for Near-Optimal KV-Cache Eviction**: DropKV approximates the joint decision of which cached tokens to evict using independent scores based on residual-output perturbations. The approximation bound requires small attention weights and aligned value residuals within a candidate pool; empirical checks cover three models, not every layer, head or query. Fused Triton kernels accelerate prefill scoring without materializing the complete attention matrix, and RULER and LongBench evaluations compare quality at equal cache budgets. For compressed recommendation histories, the transferable idea is to score the effect of deletion on outputs and assess the implementation cost, rather than rely only on attention weights; direct CTR transfer remains untested. — [Paper](https://arxiv.org/abs/2610.22130) (University at Albany, SUNY; IBM Research; Northwestern University · arXiv 2026). Reading priority: Unrated.
+- **DropKV: Decoupling Residual-Output Perturbation for Near-Optimal KV-Cache Eviction**: DropKV approximates the joint decision of which cached tokens to evict using independent scores based on residual-output perturbations. The approximation bound requires small attention weights and aligned value residuals within a candidate pool; empirical checks cover three models, not every layer, head or query. Fused Triton kernels accelerate prefill scoring without materializing the complete attention matrix, and RULER and LongBench evaluations compare quality at equal cache budgets. For compressed recommendation histories, the transferable idea is to score the effect of deletion on outputs and assess the implementation cost, rather than rely only on attention weights; direct CTR transfer remains untested. — [Paper](https://arxiv.org/abs/2610.22130) (University at Albany, SUNY; IBM Research; Northwestern University · NeurIPS 2026). Reading priority: Unrated.
 
 <a id="paper-2610-20503"></a>
 

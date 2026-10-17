@@ -6,7 +6,7 @@
 
 Generative retrieval, recommendation and ranking beyond discriminative CTR.
 
-87 papers · Updated 2026-10-17
+87 papers · Updated 2026-10-18
 
 <a id="paper-2605-12617"></a>
 
@@ -58,7 +58,7 @@ Generative retrieval, recommendation and ranking beyond discriminative CTR.
 
 <a id="paper-2606-08604"></a>
 
-- **Gryphon**: Gryphon supplements semantic-ID generation with joint item-level scoring that reuses the encoder's user representation. Resolving generated identifiers to actual items and scoring them directly separates identifier collisions and avoids relying on poorly calibrated beam likelihoods; a production test simplified candidate generation without a statistically significant change in total listening time. — [Paper](https://arxiv.org/abs/2606.08604) (Yandex · 2026). Reading priority: Read first.
+- **Gryphon**: Gryphon supplements semantic-ID generation with joint item-level scoring that reuses the encoder's user representation. Resolving generated identifiers to actual items and scoring them directly separates identifier collisions and avoids relying on poorly calibrated beam likelihoods; a production test simplified candidate generation without a statistically significant change in total listening time. — [Paper](https://arxiv.org/abs/2606.08604) (Yandex · CIKM (Short) 2026). Reading priority: Read first.
 
 <a id="paper-2606-08480"></a>
 
@@ -262,7 +262,7 @@ Generative retrieval, recommendation and ranking beyond discriminative CTR.
 
 <a id="paper-2601-17787"></a>
 
-- **Beyond Uniform Token Training**: Beyond Uniform Token Training recognizes that semantic-ID tokens play different roles and occur at different frequencies. Prefix-aware weighting emphasizes ambiguity-reducing decisions, frequency weighting gives rarer tokens more attention, and a curriculum combines both with standard likelihood, aligning training effort with hierarchical structure while addressing popularity imbalance. — [Paper](https://arxiv.org/abs/2601.17787) (Academic · 2026). Reading priority: Worth reading.
+- **Beyond Uniform Token Training**: Beyond Uniform Token Training recognizes that semantic-ID tokens play different roles and occur at different frequencies. Prefix-aware weighting emphasizes ambiguity-reducing decisions, frequency weighting gives rarer tokens more attention, and a curriculum combines both with standard likelihood, aligning training effort with hierarchical structure while addressing popularity imbalance. — [Paper](https://arxiv.org/abs/2601.17787) (Academic · CIKM 2026). Reading priority: Worth reading.
 
 <a id="paper-2608-21012"></a>
 
@@ -270,7 +270,7 @@ Generative retrieval, recommendation and ranking beyond discriminative CTR.
 
 <a id="paper-2609-03313"></a>
 
-- **SelfDR**: SelfDR transfers an LLM's own reasoning-enhanced recommendations into a same-backbone student that answers directly. A reward-trained reasoner supplies targeted rationales to the teacher, and dynamically weighted self-distillation teaches the student from its predictions, retaining useful reasoning effects without requiring external models or explicit reasoning generation at serving time. — [Paper](https://arxiv.org/abs/2609.03313) (2026). Reading priority: Worth reading.
+- **SelfDR**: SelfDR transfers an LLM's own reasoning-enhanced recommendations into a same-backbone student that answers directly. A reward-trained reasoner supplies targeted rationales to the teacher, and dynamically weighted self-distillation teaches the student from its predictions, retaining useful reasoning effects without requiring external models or explicit reasoning generation at serving time. — [Paper](https://arxiv.org/abs/2609.03313) (CIKM 2026). Reading priority: Worth reading.
 
 <a id="paper-2609-03369"></a>
 

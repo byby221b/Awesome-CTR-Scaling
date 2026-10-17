@@ -3,7 +3,7 @@
     "reading_tiers_assigned": 339,
     "reading_tiers_unrated": 105,
     "known_added_dates": 444,
-    "papers_with_updates": 282,
+    "papers_with_updates": 286,
     "verified_source_dates": 444,
     "verified_abstracts": 444,
     "unavailable_abstracts": 0,
@@ -17,7 +17,7 @@
     "description": "Scaling laws and scalable ranking models for industrial recommendation.",
     "repository_url": "https://github.com/byby221b/Awesome-CTR-Scaling",
     "site_url": "https://byby221b.github.io/Awesome-CTR-Scaling/",
-    "updated": "2026-10-17",
+    "updated": "2026-10-18",
     "source_commit": "31ad30becff83ca14a01f37fc99d52ba79f85565",
     "scope": "We cover papers that (1) study scaling laws for recommendation models, (2) propose scalable Transformer-based architectures for CTR/ranking, (3) address efficiency challenges in scaling up industrial ranking systems, or (4) explore novel paradigms (e.g., sparse scaling, generative pre-training, foundation models) for scalable recommendation.",
     "history": {
@@ -26,7 +26,7 @@
       "added_at_basis": "Earliest recorded inclusion in reachable repository main history; 50 records were present at its root commit. This is not the source publication date.",
       "backfill_policy": "Unknown historical instants remain null. Source-date imports and structural/UI migrations do not invent catalog change events."
     },
-    "catalog_sha256": "0ac20322ca6124d08ff57b7cd6c6979c99cf80ed09a8369290a46fbd2930b9b3"
+    "catalog_sha256": "a3dc4856df7ad4e72ea61b4617883b77a8efab1187326643fb014482a643b358"
   },
   "categories": [
     {
@@ -10305,7 +10305,7 @@
       "collection": "related",
       "category": "generative-recommendation",
       "affiliation": "Yandex",
-      "venue": "",
+      "venue": "CIKM (Short)",
       "year": 2026,
       "tags": [],
       "links": [
@@ -10360,6 +10360,14 @@
           ],
           "source_url": "https://github.com/byby221b/Awesome-CTR-Scaling/commit/a49e55867454f76e5a77114de99b196cb83fd797",
           "commit_sha": "a49e55867454f76e5a77114de99b196cb83fd797"
+        },
+        {
+          "at": "2026-10-17T23:19:35Z",
+          "kind": "venue_update",
+          "fields": [
+            "venue"
+          ],
+          "source_url": "https://cikm2026.diag.uniroma1.it/program/"
         }
       ],
       "source_dates": {
@@ -14272,7 +14280,7 @@
       "collection": "related",
       "category": "generative-recommendation",
       "affiliation": "Academic",
-      "venue": "",
+      "venue": "CIKM",
       "year": 2026,
       "tags": [],
       "links": [
@@ -14327,6 +14335,14 @@
           ],
           "source_url": "https://github.com/byby221b/Awesome-CTR-Scaling/commit/a49e55867454f76e5a77114de99b196cb83fd797",
           "commit_sha": "a49e55867454f76e5a77114de99b196cb83fd797"
+        },
+        {
+          "at": "2026-10-17T23:19:35Z",
+          "kind": "venue_update",
+          "fields": [
+            "venue"
+          ],
+          "source_url": "https://cikm2026.diag.uniroma1.it/program/"
         }
       ],
       "source_dates": {
@@ -14422,7 +14438,7 @@
       "collection": "related",
       "category": "generative-recommendation",
       "affiliation": "",
-      "venue": "",
+      "venue": "CIKM",
       "year": 2026,
       "tags": [],
       "links": [
@@ -14477,6 +14493,14 @@
           ],
           "source_url": "https://github.com/byby221b/Awesome-CTR-Scaling/commit/a49e55867454f76e5a77114de99b196cb83fd797",
           "commit_sha": "a49e55867454f76e5a77114de99b196cb83fd797"
+        },
+        {
+          "at": "2026-10-17T23:19:35Z",
+          "kind": "venue_update",
+          "fields": [
+            "venue"
+          ],
+          "source_url": "https://cikm2026.diag.uniroma1.it/program/"
         }
       ],
       "source_dates": {
@@ -31433,7 +31457,7 @@
       "category": "engineering-serving",
       "id": "2610.17901",
       "title": "FlashMask-3: Efficient and Expressive Mask-Aware Distributed Attention",
-      "venue": "arXiv",
+      "venue": "NeurIPS",
       "year": 2026,
       "tags": [],
       "links": [
@@ -31486,7 +31510,16 @@
         "kind": "catalog_entry",
         "source_url": "https://arxiv.org/abs/2610.17901"
       },
-      "change_history": [],
+      "change_history": [
+        {
+          "at": "2026-10-17T23:19:35Z",
+          "kind": "venue_update",
+          "fields": [
+            "venue"
+          ],
+          "source_url": "https://neurips.cc/virtual/2026/poster/148370"
+        }
+      ],
       "reading_tier": null,
       "companies": [
         "baidu"
@@ -31631,7 +31664,7 @@
       "category": "architecture-innovations-beyond-recommendation",
       "id": "2610.17959",
       "title": "Virtual Head Attention",
-      "venue": "arXiv",
+      "venue": "NeurIPS",
       "year": 2026,
       "tags": [],
       "links": [
@@ -31684,7 +31717,16 @@
         "kind": "catalog_entry",
         "source_url": "https://arxiv.org/abs/2610.17959"
       },
-      "change_history": [],
+      "change_history": [
+        {
+          "at": "2026-10-17T23:19:35Z",
+          "kind": "venue_update",
+          "fields": [
+            "venue"
+          ],
+          "source_url": "https://neurips.cc/virtual/2026/poster/155297"
+        }
+      ],
       "reading_tier": null,
       "companies": [
         "baidu"
@@ -31697,7 +31739,7 @@
       "category": "architecture-innovations-beyond-recommendation",
       "id": "2610.14219",
       "title": "Learnable Low-Rank Polynomial Sketch for Effective Linear Attention",
-      "venue": "arXiv",
+      "venue": "NeurIPS",
       "year": 2026,
       "tags": [],
       "links": [
@@ -31750,7 +31792,16 @@
         "kind": "catalog_entry",
         "source_url": "https://arxiv.org/abs/2610.14219"
       },
-      "change_history": [],
+      "change_history": [
+        {
+          "at": "2026-10-17T23:19:35Z",
+          "kind": "venue_update",
+          "fields": [
+            "venue"
+          ],
+          "source_url": "https://neurips.cc/virtual/2026/poster/149962"
+        }
+      ],
       "reading_tier": null,
       "companies": [],
       "order": 405
@@ -33282,7 +33333,7 @@
       "collection": "related",
       "category": "architecture-innovations-beyond-recommendation",
       "affiliation": "University at Albany, SUNY; IBM Research; Northwestern University",
-      "venue": "arXiv",
+      "venue": "NeurIPS",
       "year": 2026,
       "tags": [],
       "links": [
@@ -33335,7 +33386,16 @@
         "kind": "catalog_entry",
         "source_url": "https://arxiv.org/abs/2610.22130"
       },
-      "change_history": [],
+      "change_history": [
+        {
+          "at": "2026-10-17T23:19:35Z",
+          "kind": "venue_update",
+          "fields": [
+            "venue"
+          ],
+          "source_url": "https://neurips.cc/virtual/2026/poster/152246"
+        }
+      ],
       "reading_tier": null,
       "companies": [
         "ibm-mit-ibm-computing-research-lab"
