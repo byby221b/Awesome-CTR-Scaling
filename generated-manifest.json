@@ -1,12 +1,12 @@
 {
   "schema_version": 1,
-  "catalog_sha256": "166836966ca4efd6f118c226281b1a9314ce00cd0d15f890a5aae32100377bce",
+  "catalog_sha256": "4bec93ec15046e2f02c7ca49e631c0d2d2710d73fbd25ef09090ee054fd620de",
   "paper_count": 450,
   "coverage": {
     "reading_tiers_assigned": 339,
     "reading_tiers_unrated": 111,
     "known_added_dates": 450,
-    "papers_with_updates": 286,
+    "papers_with_updates": 287,
     "verified_source_dates": 450,
     "verified_abstracts": 450,
     "unavailable_abstracts": 0,
@@ -31,17 +31,17 @@
     "docs/related/other.md": "a17f6ce29e33b9f9ce1c359c05d9920a29451b84488a62448ea80ea37b1fee8a",
     "docs/related/retrieval-reranking-scaling.md": "4c62534494bd8ae31a8e464b26e76eb6aad4f36ca39994a944e8f5f14a870108",
     "docs/related/sample-instance-compression-for-sequence-modeling.md": "dc9825cb9f8eeb34ac67861263cae9506cb1d32869f69c8a0bccc9dcbf18969c",
-    "docs/topics/efficiency-deployment.md": "92df77621e3bcb3e54a7c2127f4cdb9967945391a95d874fde72d05c72912545",
+    "docs/topics/efficiency-deployment.md": "f3f1e769842d149a504500f0ee2d9dcdf034f20fb5c9b71519f44bc51a70dace",
     "docs/topics/foundation-models-multi-scenario.md": "5f2a4727afc03bc42c957164da43a2812befaae81daf56fcb2aebc4a7f69c8f2",
     "docs/topics/scalable-architecture.md": "6601fccdb6d52d6119ec303dfd4dcf0ff53b013bcb65d933beb3ed2100fce30e",
     "docs/topics/scaling-law-theory.md": "1bb7ce7cfee92e909afef27a848cf16ab156bf09c0319b9df8da8d1a18e5ce7c",
     "docs/topics/unified-feature-sequence-modeling.md": "5561c439d5a05296d95138fa7ba9dcb4fc48d8df60e8e95cab348a723ce4b998",
     "site/.nojekyll": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "site/app.js": "5b78c9e2454bce3fb162d4af72f96c0b4cba706fd4e01ca3e9beeca3280949c8",
-    "site/catalog.json": "4c76817d334072d66efaf677f4e368a3dbe3755aef497923cb8376f918b4b5bb",
+    "site/catalog.json": "a2cb0274e2095166fee8b1dd8e135c64483fbf9cd4e12b5b65f3b8bb236510d1",
     "site/favicon.svg": "3f54fc261cc3c1f995dc5daba017f021138d20858005fa65ce6b2ae5113854af",
-    "site/index.html": "6aac245c04681c02e0629d89bd43698c95082ac0ea151b57b8521b2fc60cff57",
+    "site/index.html": "437ec028cf3234a3c880edca2da4c2f6bbc34f278ad793ed3338cf699012bb87",
     "site/styles.css": "e279c8977c7f028ff12f74aaad4bfa665a09930dfbd19da4bc5fe74365041a03",
-    "site/zh.html": "3bd5cee93d2b112a3097f3c4aa90ba3e5389fe174326abe1cf2e7d79735c9f20"
+    "site/zh.html": "a53c00a7e0d365a2bc532d6a0ad78ebab567c7632d7603ccd0defc0111af0ec2"
   }
 }

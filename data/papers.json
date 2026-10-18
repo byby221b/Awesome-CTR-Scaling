@@ -33916,9 +33916,9 @@
       "venue": "arXiv",
       "year": 2026,
       "tags": [
+        "Architecture",
         "Training Efficiency",
-        "Distributed",
-        "Architecture"
+        "Distributed"
       ],
       "links": [
         {
@@ -33969,7 +33969,16 @@
         "kind": "catalog_entry",
         "source_url": "https://arxiv.org/abs/2610.22230"
       },
-      "change_history": [],
+      "change_history": [
+        {
+          "at": "2026-10-18T23:21:28Z",
+          "kind": "metadata_enrichment",
+          "fields": [
+            "tags"
+          ],
+          "source_url": "https://arxiv.org/html/2610.22230v1"
+        }
+      ],
       "reading_tier": null
     },
     {

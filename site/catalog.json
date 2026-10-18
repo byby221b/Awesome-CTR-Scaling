@@ -3,7 +3,7 @@
     "reading_tiers_assigned": 339,
     "reading_tiers_unrated": 111,
     "known_added_dates": 450,
-    "papers_with_updates": 286,
+    "papers_with_updates": 287,
     "verified_source_dates": 450,
     "verified_abstracts": 450,
     "unavailable_abstracts": 0,
@@ -26,7 +26,7 @@
       "added_at_basis": "Earliest recorded inclusion in reachable repository main history; 50 records were present at its root commit. This is not the source publication date.",
       "backfill_policy": "Unknown historical instants remain null. Source-date imports and structural/UI migrations do not invent catalog change events."
     },
-    "catalog_sha256": "166836966ca4efd6f118c226281b1a9314ce00cd0d15f890a5aae32100377bce"
+    "catalog_sha256": "4bec93ec15046e2f02c7ca49e631c0d2d2710d73fbd25ef09090ee054fd620de"
   },
   "categories": [
     {
@@ -34455,9 +34455,9 @@
       "venue": "arXiv",
       "year": 2026,
       "tags": [
+        "Architecture",
         "Training Efficiency",
-        "Distributed",
-        "Architecture"
+        "Distributed"
       ],
       "links": [
         {
@@ -34508,7 +34508,16 @@
         "kind": "catalog_entry",
         "source_url": "https://arxiv.org/abs/2610.22230"
       },
-      "change_history": [],
+      "change_history": [
+        {
+          "at": "2026-10-18T23:21:28Z",
+          "kind": "metadata_enrichment",
+          "fields": [
+            "tags"
+          ],
+          "source_url": "https://arxiv.org/html/2610.22230v1"
+        }
+      ],
       "reading_tier": null,
       "companies": [
         "meta"
