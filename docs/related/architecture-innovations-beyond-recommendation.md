@@ -6,7 +6,7 @@
 
 Transferable ideas from general-purpose model architecture research.
 
-138 papers · Updated 2026-10-18
+141 papers · Updated 2026-10-19
 
 <a id="paper-2606-16825"></a>
 
@@ -559,3 +559,15 @@ Transferable ideas from general-purpose model architecture research.
 <a id="paper-2610-16484"></a>
 
 - **SLEM: Spectrum-Aware Latent Expert Merging**: SLEM compresses MoE expert storage by training a variational autoencoder on expert weights, pairing experts through latent similarity, and merging them within or across layers using spectrum-derived coefficients and latent interpolation. It needs no input calibration dataset, but does require VAE training and model-dependent rank choices. Tests on three language models show competitive knowledge-task results and stronger average math/code generation than compared merging methods; higher compression still loses quality versus uncompressed models. CTR engineering inference: evaluate weight-only expert consolidation when calibration traffic is unavailable, including compression preparation cost and slice-level regression checks. No CTR experiments are reported. — [Paper](https://arxiv.org/abs/2610.16484) (KAIST; University of Oxford; Slater Labs; DeepAuto.ai · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-19844"></a>
+
+- **Memory-Efficient Subspace Optimization with Residual Correction: From Momentum SGD to Muon**: Low-rank optimizer states save memory, but noisy gradients can make the retained subspace miss useful update directions. SMRC for momentum SGD and PMRC for Muon keep states in the subspace and add the orthogonal residual gradient back to the update. The paper proves an O(T^(-1/4)) convergence rate matching the corresponding full-space methods, including variants that periodically refresh the basis, and reports experiments supporting effectiveness and efficiency. The abstract provides no quantitative memory or speed gains; benefits for CTR training remain unverified. — [Paper](https://arxiv.org/abs/2610.19844) (Nanjing University; Nanjing University of Science and Technology; Alibaba Group · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-22179"></a>
+
+- **LCT: Losslessly Compressed Tensors with GPU friendly execution for Training**: LCT makes repeated lossless tensor encoding and decoding practical during GPU training by using precomputed Huffman codebooks and optimized kernels to exploit redundancy in floating-point weights, activations and optimizer states. On 162M-parameter NanoGPT, it reduces memory usage by 24.6% at a 7.2% increase in step time. In Qwen3-4B fine-tuning, it saves up to 23.8% of peak memory and enables 3.5x longer training context on the same GPU. These language-model experiments show a memory–runtime trade-off; effectiveness in recommendation training is not established. — [Paper](https://arxiv.org/abs/2610.22179) (University of Cambridge; University of Oxford · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-17191"></a>
+
+- **FreeSolo: Linear-time Sparse Attention with Zero-Shot Length Extrapolation**: FreeSolo avoids forcing all long-context information into a fixed recurrent state by combining a sliding-window branch with a long-range branch that selects keypoint cells for direct token attention. FS-L learns prefix pruning through short continued pretraining and has linear-time sequence cost; FS-B searches balanced trees with O(N log^2 N) cost including radix-sort construction. The paper reports stronger zero-shot length extrapolation than its baselines without long-context fine-tuning. The variants have different memory and complexity trade-offs, and the abstract does not establish gains on recommendation workloads. — [Paper](https://arxiv.org/abs/2610.17191) (National University of Singapore; University of Toronto; Sea AI Lab · arXiv 2026). Reading priority: Unrated.

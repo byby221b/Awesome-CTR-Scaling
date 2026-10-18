@@ -6,7 +6,7 @@
 
 Systems, serving infrastructure and hardware-aware optimization.
 
-39 papers · Updated 2026-10-18
+40 papers · Updated 2026-10-19
 
 <a id="paper-2510-18239"></a>
 
@@ -163,3 +163,7 @@ Systems, serving infrastructure and hardware-aware optimization.
 <a id="paper-2610-14798"></a>
 
 - **Accelerating MoE Training through Expert Placement and Replica Coordination**: PlaceMoE jointly plans expert replicas, physical placement, and source-aware token-to-copy dispatch, distinguishing deduplicated communication from token–expert compute load. It also overlaps replica-gradient synchronization with attention backpropagation. GPU/NPU-cluster tests show faster steady-state training than the evaluated systems on Qwen3-VL and a six-MoE-layer DeepSeek-V3 configuration. Initial profiling, calibration, and planning are excluded from headline step timings, and extra replicas consume memory. CTR engineering inference: co-optimize placement and dispatch for distributed expert rankers using topology-calibrated costs, then include planning amortization and replica memory in end-to-end comparisons. These are language/multimodal-model systems experiments, not CTR experiments. — [Paper](https://arxiv.org/abs/2610.14798) (Harbin Institute of Technology, Shenzhen; Hong Kong University of Science and Technology · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-21676"></a>
+
+- **ConStore: Search-Overlapped Prefetch and Co-Retrieval-Aware Content Storage for Disk-Based ANNS**: At large retrieval depth, loading the content behind vector-search results can cost as much as the search itself. ConStore overlaps bounded speculative content prefetch with disk-based ANNS, groups frequently co-retrieved documents, adapts the layout to workload changes, and batches page-aware reads. Across three multi-hop QA workloads with K from 10 to 1600, it reduces end-to-end retrieval latency by up to 48% on DiskANN and 25% on SPANN versus the best per-document-read baseline. Separate 100M- and billion-vector experiments test prefetch scalability. These are retrieval-system results, not measured CTR improvements. — [Paper](https://arxiv.org/abs/2610.21676) (arXiv 2026). Reading priority: Unrated.

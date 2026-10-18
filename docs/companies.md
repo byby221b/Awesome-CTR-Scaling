@@ -6,9 +6,9 @@
 
 Company membership follows recorded affiliation aliases and preserved company-overview mentions. A paper may appear under multiple companies. This structural migration does not independently reverify affiliations or publication claims.
 
-- [Meta](#company-meta) (50)
+- [Meta](#company-meta) (51)
 - [ByteDance / TikTok](#company-bytedance-tiktok) (22)
-- [Alibaba](#company-alibaba) (39)
+- [Alibaba](#company-alibaba) (40)
 - [Meituan](#company-meituan) (10)
 - [Tencent](#company-tencent) (19)
 - [Google](#company-google) (14)
@@ -134,6 +134,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [Mosaic: A Fleet of User Embedding Specialists for Recommendation at Meta](topics/foundation-models-multi-scenario.md#paper-2607-24015) · 2026 · Core
 - [STAPLE: Static Sparse Upcycling of Pretrained Checkpoints via Embedding Modules](related/architecture-innovations-beyond-recommendation.md#paper-2610-12599) · 2026 · Related
 - [Efficiently Estimating Optimal Hyperparameter Scaling Laws through Power-Law Entropy Search](related/other.md#paper-2609-01431) · 2026 · Related
+- [Architecting for Hardware Diversity: Meta's End-to-End Co-Design for High-Performance AI Training on AMD GPUs](topics/efficiency-deployment.md#paper-2610-22230) · 2026 · Core
 
 <a id="company-bytedance-tiktok"></a>
 
@@ -205,6 +206,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [Generative Spatiotemporal Intent Sequence Recommendation via Implicit Reasoning in Amap](related/generative-recommendation.md#paper-2605-28888) · 2026 · Related
 - [UniSGR-V2: Stepwise Target-Side Feature Anticipation and Crossing for Generative Recommendation](topics/unified-feature-sequence-modeling.md#paper-2610-16132) · 2026 · Core
 - [HiSAC: Hierarchical Sparse Activation Compression for Ultra-long Sequence Modeling in Recommenders](related/long-sequence-modeling.md#paper-2602-21009) · 2026 · Related
+- [Memory-Efficient Subspace Optimization with Residual Correction: From Momentum SGD to Muon](related/architecture-innovations-beyond-recommendation.md#paper-2610-19844) · 2026 · Related
 
 <a id="company-meituan"></a>
 

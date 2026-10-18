@@ -5,7 +5,7 @@
     "description": "Scaling laws and scalable ranking models for industrial recommendation.",
     "repository_url": "https://github.com/byby221b/Awesome-CTR-Scaling",
     "site_url": "https://byby221b.github.io/Awesome-CTR-Scaling/",
-    "updated": "2026-10-18",
+    "updated": "2026-10-19",
     "source_commit": "31ad30becff83ca14a01f37fc99d52ba79f85565",
     "scope": "We cover papers that (1) study scaling laws for recommendation models, (2) propose scalable Transformer-based architectures for CTR/ranking, (3) address efficiency challenges in scaling up industrial ranking systems, or (4) explore novel paradigms (e.g., sparse scaling, generative pre-training, foundation models) for scalable recommendation.",
     "history": {
@@ -33839,6 +33839,389 @@
       "added_provenance": {
         "kind": "catalog_entry",
         "source_url": "https://arxiv.org/abs/2610.16297"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2610.19844",
+      "title": "Memory-Efficient Subspace Optimization with Residual Correction: From Momentum SGD to Muon",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "Nanjing University; Nanjing University of Science and Technology; Alibaba Group",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.19844"
+        }
+      ],
+      "aliases": [
+        "SMRC",
+        "PMRC"
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Memory-efficient subspace optimization has emerged as a practical approach to reducing the memory cost of LLM training while preserving optimization performance. Previous algorithms typically rely on the leading singular subspace of stochastic gradients, yet the gradient noise may dominate the subspace in later training stages and can prevent convergence. To overcome this limitation, we adopt a residual correction framework, which maintains the optimizer states in the subspace and adds the orthogonal residual gradient to the parameter update. We first integrate this scheme into momentum SGD to develop SMRC, which attains an $O(T^{-1/4})$ convergence rate for a fixed orthonormal basis, matching that of full-space momentum SGD. Our analysis introduces a subspace virtual iterate to resolve the coupling between the momentum and the residual correction. Furthermore, we extend SMRC to a multi-stage variant which periodically recomputes bases to track the evolving dominant subspace and retains the same rate. Since each basis refresh breaks the consistency of the virtual iterates, we devise a boundary correction approach that aligns them across stages. Beyond momentum SGD, we incorporate our framework into Muon and propose PMRC, which applies the matrix sign to the projected momentum. Through a weighted momentum tracking analysis that accounts for the residual gradient, we establish an $O(T^{-1/4})$ convergence rate for PMRC, which matches the rate of full-space Muon. We also design a multi-stage PMRC with periodically refreshed bases, which maintains a convergence rate of the same order. Extensive experimental results confirm the effectiveness and efficiency of our algorithms.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.19844v1",
+        "retrieved_at": "2026-10-18T23:11:58Z",
+        "license": "CC0-1.0",
+        "source_title": "Memory-Efficient Subspace Optimization with Residual Correction: From Momentum SGD to Muon",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-10-14T09:12:57Z",
+        "updated_at": "2026-10-14T09:12:57Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.19844v1",
+        "verified_at": "2026-10-18T23:11:58Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "Low-rank optimizer states save memory, but noisy gradients can make the retained subspace miss useful update directions. SMRC for momentum SGD and PMRC for Muon keep states in the subspace and add the orthogonal residual gradient back to the update. The paper proves an O(T^(-1/4)) convergence rate matching the corresponding full-space methods, including variants that periodically refresh the basis, and reports experiments supporting effectiveness and efficiency. The abstract provides no quantitative memory or speed gains; benefits for CTR training remain unverified.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-19",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.19844v1"
+          ]
+        },
+        "zh": {
+          "text": "低秩优化器状态可以节省内存，但梯度噪声可能使保留的子空间遗漏有用的更新方向。SMRC 和 PMRC 分别面向动量 SGD 与 Muon，将优化器状态留在子空间内，并在参数更新时补回正交残差梯度。论文证明其收敛率达到 O(T^(-1/4))，与对应全空间方法同阶，周期刷新子空间基的变体也保留这一收敛阶，并报告实验支持其有效性与效率。摘要未给出具体内存或速度收益，CTR 训练中的效果仍待验证。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-19",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.19844v1"
+          ]
+        }
+      },
+      "added_at": "2026-10-18T23:13:44Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.19844"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2610.22230",
+      "title": "Architecting for Hardware Diversity: Meta's End-to-End Co-Design for High-Performance AI Training on AMD GPUs",
+      "collection": "core",
+      "category": "efficiency-deployment",
+      "affiliation": "Meta; AMD",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [
+        "Training Efficiency",
+        "Distributed",
+        "Architecture"
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.22230"
+        }
+      ],
+      "aliases": [],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Meta deploys a heterogeneous fleet comprising NVIDIA GPUs, AMD GPUs, and proprietary MTIA accelerators to reduce costs and mitigate vendor lock-in. However, the extensive history of NVIDIA-specific optimizations hinders performance portability to other hardware. This paper presents our methods for optimizing alternative accelerators, using AMD Instinct MI350X versus NVIDIA B200 for recommendation model training as a case study. We propose three reusable principles. First, hardware-model co-design is essential: rather than directly porting models from NVIDIA GPUs, revising model structures and software recipes allows full exploitation of accelerator-specific strengths (e.g., MI350X's 1.6x HBM capacity relative to B200). Second, our analytical performance model enables zero-warmup optimal kernel selection across diverse datatypes and matrix shapes in production models, drastically simplifying tuning. Third, increasingly mature agentic workflows have lowered the barrier to porting from the CUDA ecosystem; we extend these workflows for microarchitecture-aware kernel optimizations and custom shim generation. Compared to the directly ported baseline, these methods deliver up to 1.5x improvement in end-to-end training throughput. To our knowledge, this is the first hyperscaler report on productionizing AMD GPUs for large-scale training. Our contributions have been upstreamed to the open-source PyTorch, Triton, and ROCm ecosystems.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.22230v1",
+        "retrieved_at": "2026-10-18T23:11:58Z",
+        "license": "CC0-1.0",
+        "source_title": "Architecting for Hardware Diversity: Meta's End-to-End Co-Design for High-Performance AI Training on AMD GPUs",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-10-15T17:09:08Z",
+        "updated_at": "2026-10-15T17:09:08Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.22230v1",
+        "verified_at": "2026-10-18T23:11:58Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "Porting recommendation training from NVIDIA GPUs to AMD hardware leaves performance on the table when model structures and software remain unchanged. Using MI350X and B200 as a case study, the paper combines hardware-model co-design, analytical kernel selection without warmup, and agent-assisted kernel optimization and shim generation. Relative to a directly ported baseline, the combined methods improve end-to-end training throughput by up to 1.5x. This is a production recommendation-training result under the evaluated hardware and models, not a universal AMD-over-NVIDIA speedup.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-19",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.22230v1"
+          ]
+        },
+        "zh": {
+          "text": "推荐模型训练从 NVIDIA GPU 迁移到 AMD 时，沿用原有模型结构和软件方案可能无法发挥新硬件的能力。本文以 MI350X 与 B200 为案例，结合硬件与模型协同设计、无需预热的解析式内核选择，以及代理辅助的内核优化和兼容层生成。相较直接移植的基线，这些方法共同使端到端训练吞吐最高提升至 1.5 倍。该结果限定于所评估的生产推荐模型及硬件配置，不能解读为 AMD 对 NVIDIA 的普遍性能优势。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-19",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.22230v1"
+          ]
+        }
+      },
+      "added_at": "2026-10-18T23:13:44Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.22230"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2610.21676",
+      "title": "ConStore: Search-Overlapped Prefetch and Co-Retrieval-Aware Content Storage for Disk-Based ANNS",
+      "collection": "related",
+      "category": "engineering-serving",
+      "affiliation": "",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.21676"
+        }
+      ],
+      "aliases": [
+        "ConStore"
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Disk-based approximate nearest-neighbor search (ANNS) supports retrieval-augmented generation (RAG), search, recommendation, and advertising over corpora that exceed memory capacity. Existing ANNS research often focuses on vector search at small top-K, whereas industrial-scale applications require larger retrieval sets. Fetching the corresponding content from storage remains comparatively underexplored. Our profiling across million- to billion-vector corpora shows that, at large K, content fetch latency can match or exceed vector-search latency and cannot be ignored in end-to-end retrieval.\n  We present ConStore, a content storage engine combining two complementary techniques to reduce end-to-end retrieval latency. Speculative Inline Content Prefetch (SICP) commonly abstracts graph-based and cluster-based ANNS as progressive SSD I/O that refines an in-flight candidate queue. It prefetches content for stable leading candidates under a bounded I/O budget, overlapping content reads with search without changing the final top-K results. Co-Retrieval-Pattern-Aware Grouping (RPAG) uses query logs to place frequently co-retrieved documents in contiguous segments. Workload-Adaptive Segment Reorganization (WASR) adapts this layout to workload shifts by selectively regrouping segments under a bounded rewrite budget. Group Content Fetch (GCF) exploits this layout to coalesce per-document random reads into batched, page-aware I/O requests. SICP works independently of the content layout, while RPAG and GCF reduce fetch cost even without prefetching.\n  Across three multi-hop QA workloads with K from 10 to 1600, ConStore reduces end-to-end retrieval latency over the best per-document-read baseline by up to 48% on DiskANN and 25% on SPANN. Separate experiments on 100M- and billion-vector indexes demonstrate SICP's applicability at larger scales.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.21676v1",
+        "retrieved_at": "2026-10-18T23:11:58Z",
+        "license": "CC0-1.0",
+        "source_title": "ConStore: Search-Overlapped Prefetch and Co-Retrieval-Aware Content Storage for Disk-Based ANNS",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-10-15T11:01:16Z",
+        "updated_at": "2026-10-15T11:01:16Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.21676v1",
+        "verified_at": "2026-10-18T23:11:58Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "At large retrieval depth, loading the content behind vector-search results can cost as much as the search itself. ConStore overlaps bounded speculative content prefetch with disk-based ANNS, groups frequently co-retrieved documents, adapts the layout to workload changes, and batches page-aware reads. Across three multi-hop QA workloads with K from 10 to 1600, it reduces end-to-end retrieval latency by up to 48% on DiskANN and 25% on SPANN versus the best per-document-read baseline. Separate 100M- and billion-vector experiments test prefetch scalability. These are retrieval-system results, not measured CTR improvements.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-19",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.21676v1"
+          ]
+        },
+        "zh": {
+          "text": "当召回数量较大时，向量搜索后读取对应内容的耗时可能与搜索本身相当。ConStore 将有预算约束的推测式内容预取与磁盘近邻搜索重叠执行，集中存放经常被共同召回的文档，随负载变化调整布局，并批量合并按页读取。在三个多跳问答负载、K 为 10 至 1600 的测试中，相较最佳逐文档读取基线，DiskANN 和 SPANN 的端到端召回延迟分别最多降低 48% 和 25%；另以一亿及十亿向量索引验证预取的扩展性。这些是检索系统指标，不是 CTR 提升。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-19",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.21676v1"
+          ]
+        }
+      },
+      "added_at": "2026-10-18T23:13:44Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.21676"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2610.17771",
+      "title": "Many Right Answers, One Training Example: Removing Responder Noise from GRPO for LLM Recommenders",
+      "collection": "related",
+      "category": "generative-recommendation",
+      "affiliation": "Nanyang Technological University",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.17771"
+        }
+      ],
+      "aliases": [
+        "ReMaRk"
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "A recommendation request on Reddit draws several replies, each naming different titles. When an LLM recommender is trained on such threads with reinforcement learning (RL), which replies should a generated list be rewarded against? The state-of-the-art recipe, Rank-GRPO, picks one reply per training example, so the advantage mostly records which reply was drawn (85% of its variance) rather than how good the list is. We argue that RL should train on the request, not on each answer, and propose ReMaRk: it scores every list once against the union of all replies' titles and samples each request equally. This makes RL cheaper. On seven backbones and three datasets, ReMaRk reaches the validation recall of 2,000 per-reply RL steps in 25 to 53% of the steps and leads at that budget; trained until neither improves, it is never significantly behind Rank-GRPO and in four of seven pairs reaches Rank-GRPO's best with fewer GPU-hours. The same reward helps on ProtoQA, where about 100 people answer each question, which points to a simple rule for RL with several valid human answers: reward them jointly.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.17771v1",
+        "retrieved_at": "2026-10-18T23:11:58Z",
+        "license": "CC0-1.0",
+        "source_title": "Many Right Answers, One Training Example: Removing Responder Noise from GRPO for LLM Recommenders",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-10-13T05:57:20Z",
+        "updated_at": "2026-10-13T05:57:20Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.17771v1",
+        "verified_at": "2026-10-18T23:11:58Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "When a recommendation request has several valid human replies, rewarding each generated list against one sampled reply adds responder noise. ReMaRk instead scores the list against the union of titles across replies and samples requests uniformly. Across seven backbones and three datasets, it reaches the validation recall of 2000 per-reply RL steps in 25–53% of those steps. In longer runs it is never significantly behind Rank-GRPO, but only four of seven pairs reach that baseline's best result with fewer GPU-hours. The evidence concerns LLM recommendation training, not online CTR gains.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-19",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.17771v1"
+          ]
+        },
+        "zh": {
+          "text": "一个推荐请求往往有多个人工回答；若每次只随机选一个回答评价生成列表，奖励会混入回答者差异造成的噪声。ReMaRk 按请求均匀采样，并以所有回答中的物品名称并集统一评分。在七个基座模型、三个数据集上，达到按回答训练基线 2000 步时的验证召回水平，仅需其 25–53% 的步数。更长训练中，其结果没有显著落后于 Rank-GRPO，但只有七组对比中的四组以更少 GPU 小时达到该基线的最佳结果。证据针对语言模型推荐训练，不代表线上 CTR 收益。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-19",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.17771v1"
+          ]
+        }
+      },
+      "added_at": "2026-10-18T23:13:44Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.17771"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2610.22179",
+      "title": "LCT: Losslessly Compressed Tensors with GPU friendly execution for Training",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "University of Cambridge; University of Oxford",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.22179"
+        }
+      ],
+      "aliases": [
+        "LCT"
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Lossless tensor compression could reduce memory usage during training, but training requires tensors to be repeatedly re-encoded. We introduce Losslessly Compressed Tensors (LCT), a GPU execution framework designed for this repeated encode-decode regime. LCT exploits the natural redundancy in floating point data to reduce storage for weights, activations and optimizer states. Highly optimized GPU kernels implement Huffman coding with precomputed codebooks for low compression and decompression overhead, essential for training. Our analysis characterizes LCT's storage costs and adaptation to magnitude shifts. LCT achieves a compression ratio of up to $1.455\\times$, and is demonstrated in training and finetuning settings. On a 162M-parameter NanoGPT, LCT reduces memory usage by $24.6\\%$ for a $7.2\\%$ step-time increase. In Qwen3-4B fine-tuning, LCT saves up to $23.8\\%$ of peak memory, enabling a $3.5\\times$ larger context length in training on the same GPU.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.22179v1",
+        "retrieved_at": "2026-10-18T23:11:58Z",
+        "license": "CC0-1.0",
+        "source_title": "LCT: Losslessly Compressed Tensors with GPU friendly execution for Training",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-10-15T16:34:35Z",
+        "updated_at": "2026-10-15T16:34:35Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.22179v1",
+        "verified_at": "2026-10-18T23:11:58Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "LCT makes repeated lossless tensor encoding and decoding practical during GPU training by using precomputed Huffman codebooks and optimized kernels to exploit redundancy in floating-point weights, activations and optimizer states. On 162M-parameter NanoGPT, it reduces memory usage by 24.6% at a 7.2% increase in step time. In Qwen3-4B fine-tuning, it saves up to 23.8% of peak memory and enables 3.5x longer training context on the same GPU. These language-model experiments show a memory–runtime trade-off; effectiveness in recommendation training is not established.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-19",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.22179v1"
+          ]
+        },
+        "zh": {
+          "text": "LCT 利用浮点权重、激活和优化器状态中的冗余，通过预计算 Huffman 码本及优化的 GPU 内核，降低训练过程中反复无损编码与解码的开销。在 1.62 亿参数 NanoGPT 上，内存用量降低 24.6%，代价是每步耗时增加 7.2%；在 Qwen3-4B 微调中，峰值内存最多降低 23.8%，同一 GPU 可支持的训练上下文长度增至 3.5 倍。这些语言模型实验体现的是内存与运行开销之间的取舍，尚未证实推荐训练中的效果。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-19",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.22179v1"
+          ]
+        }
+      },
+      "added_at": "2026-10-18T23:13:44Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.22179"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2610.17191",
+      "title": "FreeSolo: Linear-time Sparse Attention with Zero-Shot Length Extrapolation",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "National University of Singapore; University of Toronto; Sea AI Lab",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.17191"
+        }
+      ],
+      "aliases": [
+        "FreeSolo",
+        "FS-L",
+        "FS-B"
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Linear-time sequence models typically store long-context information in a recurrent state. A fixed-size state limits how much information can be stored, while hybrid architectures that add full attention for better recall incur quadratic sequence cost. Alternatively, sparse attention with continued pretraining (CPT) can extend the effective context length. Generalization beyond the trained length remains challenging, however, and CPT can be costly. We introduce FreeSolo, a native sparse attention mechanism with a short-range sliding window branch and a long-range branch that selects keypoint cells for direct token attention. Its linear-time variant, FS-L, learns to prune the prefix before query-dependent selection through short CPT. FS-B searches balanced trees with $O(N\\log^2 N)$ algorithmic cost including radix-sort construction. FreeSolo demonstrates better zero-shot length extrapolation than the baselines without long-context fine-tuning.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.17191v1",
+        "retrieved_at": "2026-10-18T23:11:58Z",
+        "license": "CC0-1.0",
+        "source_title": "FreeSolo: Linear-time Sparse Attention with Zero-Shot Length Extrapolation",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-10-12T17:55:45Z",
+        "updated_at": "2026-10-12T17:55:45Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.17191v1",
+        "verified_at": "2026-10-18T23:11:58Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "FreeSolo avoids forcing all long-context information into a fixed recurrent state by combining a sliding-window branch with a long-range branch that selects keypoint cells for direct token attention. FS-L learns prefix pruning through short continued pretraining and has linear-time sequence cost; FS-B searches balanced trees with O(N log^2 N) cost including radix-sort construction. The paper reports stronger zero-shot length extrapolation than its baselines without long-context fine-tuning. The variants have different memory and complexity trade-offs, and the abstract does not establish gains on recommendation workloads.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-19",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.17191v1"
+          ]
+        },
+        "zh": {
+          "text": "FreeSolo 将滑动窗口注意力与选择关键单元、直接访问原始 token 的长距离分支结合，避免把全部长上下文信息压入固定大小的循环状态。FS-L 通过短期继续预训练学习前缀剪枝，序列计算成本为线性；FS-B 搜索平衡树，计入基数排序建树后复杂度为 O(N log^2 N)。论文报告其在不进行长上下文微调的情况下，零样本长度外推优于所比较的基线。两种变体的内存与计算取舍不同，摘要未证实推荐负载上的收益。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-19",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.17191v1"
+          ]
+        }
+      },
+      "added_at": "2026-10-18T23:13:44Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.17191"
       },
       "change_history": [],
       "reading_tier": null

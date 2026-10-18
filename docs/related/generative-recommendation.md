@@ -6,7 +6,7 @@
 
 Generative retrieval, recommendation and ranking beyond discriminative CTR.
 
-87 papers · Updated 2026-10-18
+88 papers · Updated 2026-10-19
 
 <a id="paper-2605-12617"></a>
 
@@ -355,3 +355,7 @@ Generative retrieval, recommendation and ranking beyond discriminative CTR.
 <a id="paper-2610-17368"></a>
 
 - **HASTE: Hierarchical and Attribute-aware Supervision for Generative Recommendation**: HASTE adds hierarchical and item-attribute supervision to semantic-ID generative recommendation, aiming to reduce training effort and improve representations of infrequent items. Hierarchical loss supervises each ID level, while attribute losses preserve fine-grained semantics. Fashion and Amazon experiments report gains across item-frequency groups; the approximately 2x convergence improvement measures training steps to a validation-loss threshold, not a demonstrated 2x end-to-end wall-clock speedup. — [Paper](https://arxiv.org/abs/2610.17368) (Glance · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-17771"></a>
+
+- **Many Right Answers, One Training Example: Removing Responder Noise from GRPO for LLM Recommenders**: When a recommendation request has several valid human replies, rewarding each generated list against one sampled reply adds responder noise. ReMaRk instead scores the list against the union of titles across replies and samples requests uniformly. Across seven backbones and three datasets, it reaches the validation recall of 2000 per-reply RL steps in 25–53% of those steps. In longer runs it is never significantly behind Rank-GRPO, but only four of seven pairs reach that baseline's best result with fewer GPU-hours. The evidence concerns LLM recommendation training, not online CTR gains. — [Paper](https://arxiv.org/abs/2610.17771) (Nanyang Technological University · arXiv 2026). Reading priority: Unrated.
