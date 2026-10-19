@@ -6,7 +6,7 @@
 
 Transferable ideas from general-purpose model architecture research.
 
-141 papers · Updated 2026-10-19
+167 papers · Updated 2026-10-20
 
 <a id="paper-2606-16825"></a>
 
@@ -571,3 +571,107 @@ Transferable ideas from general-purpose model architecture research.
 <a id="paper-2610-17191"></a>
 
 - **FreeSolo: Linear-time Sparse Attention with Zero-Shot Length Extrapolation**: FreeSolo avoids forcing all long-context information into a fixed recurrent state by combining a sliding-window branch with a long-range branch that selects keypoint cells for direct token attention. FS-L learns prefix pruning through short continued pretraining and has linear-time sequence cost; FS-B searches balanced trees with O(N log^2 N) cost including radix-sort construction. The paper reports stronger zero-shot length extrapolation than its baselines without long-context fine-tuning. The variants have different memory and complexity trade-offs, and the abstract does not establish gains on recommendation workloads. — [Paper](https://arxiv.org/abs/2610.17191) (National University of Singapore; University of Toronto; Sea AI Lab · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-22985"></a>
+
+- **Prism Attention: Proposal-Refined Index Sharing Mechanism for Efficient LLMs Inference**: Prism Attention reduces repeated sparse-index computation during long-context decoding by refining shared cross-layer proposals instead of reusing fixed indices. The authors report a 3.4x end-to-end decoding speedup over FlashAttention at 128K context, alongside strong results against the evaluated sparse-attention methods. Its index-sharing design may inform long-history recommendation, but recommendation gains are untested. — [Paper](https://arxiv.org/abs/2610.22985) (Soochow University; Baidu · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-22796"></a>
+
+- **Causal Latent Workspaces for Looped Transformers**: This looped Transformer adds causal latent slots that exchange compact prefix summaries between shared-block applications while retaining the input embedding. Across three byte-level corpora, three seeds and two matched parameter budgets, it gives the best mean held-out perplexity in five of six settings. The evidence supports a compact recurrent-memory design at the tested scales; transfer to recommendation remains untested. — [Paper](https://arxiv.org/abs/2610.22796) (arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-22714"></a>
+
+- **First Passage Attention**: First Passage Attention penalizes keys using extrema of a learned scalar field, allowing intervening context to be forgotten while older relevant tokens survive. Beyond synthetic expressivity tests, a 110M-parameter language model matches the Forgetting Transformer in perplexity and achieves perfect passkey retrieval at eight times the training length with about 25% of the KV cache. These results motivate selective historical-memory mechanisms, with recommendation transfer untested. — [Paper](https://arxiv.org/abs/2610.22714) (University of Bergen · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-22428"></a>
+
+- **Embeddings Are Overpriced? A Frozen 16 MB Vocabulary for Small and Ternary Language Models**: The study replaces a trainable vocabulary embedding table with frozen 512-bit codes derived from pretrained embeddings, using 16 MB and no trainable table parameters. At matched 2.05B training tokens, downstream results vary by benchmark and the learned table retains a 0.20-nat validation-loss advantage. A ternary-body configuration also reduces storage and CPU decoding cost. Frozen compressed embeddings offer a potential design for memory-bound models, without established recommendation results. — [Paper](https://arxiv.org/abs/2610.22428) (QLNI · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-23036"></a>
+
+- **Towards Looped Models Done Right, Part I: Topology, Input Injection, Recurrent-State Design**: The study separates recurrence placement, input injection and recurrent-state organization in looped language models under matched budgets. A Huginn-style prelude–recurrent-block–coda design transfers from dense models to MoE models. At matched training and inference FLOPs, the tested looped MoE uses 75% fewer resident parameters than a 112-layer feedforward MoE, with benchmark-dependent quality. The findings inform parameter-sharing architecture choices, not measured recommender improvements. — [Paper](https://arxiv.org/abs/2610.23036) (Institute of Foundation Models; USC; CMU · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-13041"></a>
+
+- **RAMP: Recurrent Adaptive Mixed Precision for Efficient Prefill in Recurrent-Depth Language Models**: RAMP reduces recurrent-depth prefill cost by using low-precision weights and activations in early iterations and restoring high precision for final refinement. Matched-budget experiments support greater tolerance of early quantization errors. At contexts up to 4K on an NVIDIA H100, it preserves near-full-precision prefill quality and achieves up to 1.16x end-to-end first-prefill speedup. This is a tested prefill result, with recommendation transfer unverified. — [Paper](https://arxiv.org/abs/2610.13041) (University of Virginia · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-13990"></a>
+
+- **DoSA: Dots Sparse Attention**: DoSA avoids fully scoring sparse-attention indexer candidates that provable bounds already rule out, preserving exact token selection under its stated conditions. The GPU implementation speeds up the full indexer by up to 2.74x over SGLang and 1.69x over LiteTopK. End-to-end tests on GLM-5.2 and DeepSeek-V3.2 report time-to-first-token speedups up to 1.94x and 1.50x against those baselines. Transfer to recommendation indexing remains untested. — [Paper](https://arxiv.org/abs/2610.13990) (Dots Studio, Xiaohongshu · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-17966"></a>
+
+- **BELT : BEhavior-Aligned Low-Rank KV Cache Compression with Learned Top-k Rank Allocation**: BELT compresses KV caches using an attention-distribution-based low-rank objective and a learned global rank allocator under a component budget. Across three LLMs, the authors report up to 70% low-rank cache compression and benchmark-specific gains; combining quantization reaches up to 17.8x cache reduction. GPU kernels yield up to 2.7x attention speedup and 3.3x end-to-end decoding throughput. These maxima describe different evaluated configurations; recommendation transfer remains untested. — [Paper](https://arxiv.org/abs/2610.17966) (Peking University; JD.com; Tencent; Beihang University · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-15384"></a>
+
+- **E8 Lattice Key Quantization for Low-Bit KV-Cache Compression**: E8 lattice vector quantization exploits correlations between key dimensions to support 2-bit keys and values, with table-based attention scoring that avoids explicit codebook decompression. Across five LLM families, it provides roughly 6x KV compression, about 20% less storage than scalar 3-bit-key/2-bit-value quantization, while retaining near-baseline perplexity and throughput parity with scalar baselines. It suggests a memory-efficient primitive whose recommendation applicability is untested. — [Paper](https://arxiv.org/abs/2610.15384) (Technical University of Berlin; logsight.ai · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-13982"></a>
+
+- **PRIME: Frequency-Aware Unified Pruning and Merging for MoE Compression**: PRIME jointly chooses expert pruning and merging through a global integer-linear optimization with a frequency-weighted surrogate objective. Experiments on Qwen3-30B-A3B and Qwen3.5-122B-A10B assess retained quality across knowledge, coding, mathematics and long-context tasks, with vLLM serving measurements of memory and throughput. The work offers a coordinated expert-compression design; gains for recommendation MoE models remain untested. — [Paper](https://arxiv.org/abs/2610.13982) (Baidu · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-20353"></a>
+
+- **Beyond Expert Rankings: Contrast Calibration for Mixed-Precision MoE Quantization**: NatScale calibrates the contrast of gradient-based expert importance weights while preserving their ordering, then allocates mixed precision under a storage budget using joint gate/up/down error estimates. Across three MoE models and nine settings it gives the lowest native-to-quantized KL divergence and highest top-token agreement against five allocation baselines, and the lowest perplexity in seven settings. Recommendation-model benefits remain untested. — [Paper](https://arxiv.org/abs/2610.20353) (Nanjing University of Posts and Telecommunications; Tylogi AI Lab; Anhui University of Technology; Shanghai Jiao Tong University; Southeast University; Microsoft; University of Cambridge · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-17970"></a>
+
+- **AlignPred: Error-Controlled KV Cache Compression via Alignment and Predictive Coding**: AlignPred compresses persistent KV caches using local orthogonal alignment, cross-token/head/layer prediction and error-bounded residual coding. Its SGLang HiCache integration reduces persistent target-KV storage by 42–72% relative to native HiCache at comparable latency. It also preserves near-native scores at tested 128K LongBench-Pro operating points. The result concerns persistent cache storage; recommendation transfer remains untested. — [Paper](https://arxiv.org/abs/2610.17970) (Hunan University; Tencent; Central China Normal University · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-14688"></a>
+
+- **Accelerating Cross-Model LLM Inference via Attention Map Reuse**: MapFlow reuses attention maps across heterogeneous LLMs processing shared context, combining partial recomputation, lightweight layer/head translation, block-sparse compression and a fused retrieval kernel. Experiments report lower prefill latency and better end-to-end serving efficiency while preserving generation quality across tested model pairs and multi-turn routing workloads. Cross-model attention reuse could inform shared-context serving, with recommendation gains unverified. — [Paper](https://arxiv.org/abs/2610.14688) (Peking University · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-14423"></a>
+
+- **Scaling Laws for Multimodal Data Mixtures**: This multimodal scaling study fits data-mixture laws from 268 MoE experiments spanning 457M–8.3B parameters and up to 150B tokens. Compute-optimal allocation differs by modality: audio favors parameters more strongly, while text and vision favor balanced model/data growth. Repeating vision or audio data beyond twice offers negligible benefits, and cross-modal interference is asymmetric. These findings may guide multimodal recommendation budgeting, but that transfer is untested. — [Paper](https://arxiv.org/abs/2610.14423) (Mila; McGill University; EPFL; ETH; University of Washington · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-14344"></a>
+
+- **On the Depth Transfer of Neural Optimizers via L-Smoothness**: The paper analyzes depth transfer through loss Lipschitz and smoothness constants, showing that inverse-depth residual scaling can keep these bounds depth-independent at fixed width under its assumptions. Learning-rate sweeps on GPT-2 and CIFAR-100 ResNets support stable Muon/MOGA transfer, including a common optimal rate across a 64-fold depth increase. This informs deep-model scaling recipes; recommender applicability remains untested. — [Paper](https://arxiv.org/abs/2610.14344) (University of Chicago; Peking University; University of British Columbia · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-14644"></a>
+
+- **Shaping Latent Mixture-of-Experts: From Expert Geometry to Layerwise Capacity Allocation**: The study treats latent-MoE expert input dimension and intermediate width as separate design variables, linking their balance to a local Jacobian-rank ceiling. Controlled sweeps favor near-square experts. Layerwise intrinsic-dimension-guided allocation improves validation loss and downstream results while keeping each layer's parameters, active FLOPs and communication volume fixed. Expert shape is a transferable design hypothesis, not a verified recommendation gain. — [Paper](https://arxiv.org/abs/2610.14644) (Xiamen University; Tencent Hunyuan; Soochow University · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-13605"></a>
+
+- **zip2zip++: Towards Inference-Time Token Compression with Minimal Quality Loss**: zip2zip++ improves dynamic LZW token compression with separate input/output embeddings, size-aware RoPE and selective merges plus alternative segmentations. Across four models it improves tested-corpus perplexity and mathematical reasoning, closing roughly half the quality gap to uncompressed models at similar general-text compression ratios. It remains lossy in quality; transfer to compressed recommendation token streams is untested. — [Paper](https://arxiv.org/abs/2610.13605) (EPFL; Technical University of Munich; Zuse School ELIZA; ETH Zürich · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-21126"></a>
+
+- **Compression Does Not End at Selection: Post-Selection Positional Geometry for Sparse KV Caches**: RoPERelay reorganizes the positions of an already selected sparse KV cache using compact order-preserving coordinates and key phase rotations, synchronizing subsequent queries and generation. Without reselection, historical re-prefill or extra cache budget, it improves 32 of 36 tested comparisons; one LongMemEval-S configuration rises from 23.6% to 35.4% accuracy, with roughly 1–3% complete-request overhead. Recommendation transfer remains untested. — [Paper](https://arxiv.org/abs/2610.21126) (National University of Defense Technology · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-20418"></a>
+
+- **OrionMoE-v1.0: A Mixture-of-Experts Foundation Model for Tabular In-Context Learning**: OrionMoE-Small applies dataset-conditioned sparse expert routing along the feature axis of a dual-axis tabular Transformer. It is pretrained on synthetic classification tasks and predicts from labeled support tables without task-specific gradient updates. The authors report competitive results against larger tabular foundation models, especially for small contexts and high-dimensional data. Its heterogeneous-feature computation may inform recommendation models, but direct recommendation results are absent. — [Paper](https://arxiv.org/abs/2610.20418) (Lexsi Labs · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-18162"></a>
+
+- **LoOPSD: On-Policy Self-Distillation with Looped Teachers**: LoOPSD searches for beneficial layer repetitions while holding weights fixed, uses the resulting stronger looped teacher to guide on-policy self-distillation, then repeats search and distillation. On GSM8K at a 400-token thinking budget, Qwen3-1.7B accuracy increases from 42.30% to 79.61%; later rounds add gains. The method offers a way to distill extra computation into a student, with recommendation transfer untested. — [Paper](https://arxiv.org/abs/2610.18162) (Anhui Province Key Laboratory of Digital Security; Alibaba Group; Independent Researcher · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-21682"></a>
+
+- **Router Drift Control: Mitigating Off-Policy Degradation in Mixture-of-Experts Reinforcement Learning**: Router Drift Control filters high-drift responses using disagreement between rollout-time and training-time expert routing, preserving native routing on retained responses. It targets off-policy mismatch without replaying expert selections. In asynchronous RL, combining RDC with truncated importance sampling raises average peak validation accuracy on AIME 2024/2025 by 5.5 points over TIS and 4.5 over routing replay. Recommender-MoE training benefits remain untested. — [Paper](https://arxiv.org/abs/2610.21682) (Peking University; Shanghai Innovation Institute; Zhejiang University; Shanghai Jiaotong University; Infrawaves · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-15146"></a>
+
+- **Compute-Optimal Scaling Laws for Spiking Language Models**: An IsoFLOP study of SpikeGPT-family language models on FineWeb-EDU sweeps widths 384–1536 and compute budgets from 3e17 to 1e19 FLOPs. It finds compute-optimal parameter scaling proportional to compute raised to 0.56. Matched non-spiking RWKV and Transformer comparisons separate a roughly constant backbone loss cost from a spiking penalty that declines then plateaus. The result informs sparse-activation budgeting within this range, without measured recommendation or energy benefits. — [Paper](https://arxiv.org/abs/2610.15146) (Luma AI; X School · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-20951"></a>
+
+- **LEV: Thinking Fast and Deep with Looped Decision Models**: LEV adapts looped language-model backbones into decision models that score options after each loop without generating reasoning text. A learned stopper allocates depth per question; across tested backbones it saves 15–24% computation at less than one accuracy-point cost. Locked-test comparisons also show gains over matched-latency dense models and cascades. Adaptive-depth scoring is relevant to ranking design, though recommendation results are untested. — [Paper](https://arxiv.org/abs/2610.20951) (Lehigh University; University of British Columbia; Vector Institute · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-13261"></a>
+
+- **Data-Adaptive Mahalanobis Metric Learning for Cross-Head Attention in Transformers**: DAMCHA extends multi-head attention with an input-dependent full cross-head metric, allowing interactions omitted by independent head-wise similarities. Stack-wise parameter sharing and regularization target stable, efficient training. The authors report improvements across evaluated Transformer tasks with comparable or reduced computational overhead. Cross-head feature interactions are a potential recommendation application, not an established result of this study. — [Paper](https://arxiv.org/abs/2610.13261) (Zhongnan University of Economics and Law; CodeSoul.Co; The Chinese University of Hong Kong · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-16890"></a>
+
+- **FORGE: Procedural Weight Generation for Sparse MoE Inference**: FORGE proposes a hardware unit that regenerates approximate MoE expert weights from compact rotor parameters instead of loading full tensors. With 30% of FFN layers replaced, the authors estimate 1.3–2.8x system throughput at matched GPU count and 1.10–1.15x lower short-context per-user decode latency, with downstream accuracy losses. The verified SystemVerilog design is a hardware proposal; these system estimates are not measured recommender deployment gains. — [Paper](https://arxiv.org/abs/2610.16890) (University of Wisconsin-Madison; Korea University; NVIDIA · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-17425"></a>
+
+- **When Sparsity Breaks Connectivity: Functional Reachability and Guided Topology Dynamics in Extreme Sparse Training**: The paper connects extreme dynamic-sparse-training failure to broken input–output pathways and guides pruning/regrowth using functional reachability. On image benchmarks it recovers up to 14.4 accuracy points at 99.9% sparsity; an MLP-Mixer remains trainable at 99.99% sparsity where unguided regrowth degrades. Connectivity-preserving sparse training may inform recommendation architectures, but the evidence is from vision tasks. — [Paper](https://arxiv.org/abs/2610.17425) (University of Twente; Paderborn University · arXiv 2026). Reading priority: Unrated.

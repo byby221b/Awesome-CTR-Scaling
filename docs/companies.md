@@ -8,34 +8,34 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 
 - [Meta](#company-meta) (51)
 - [ByteDance / TikTok](#company-bytedance-tiktok) (22)
-- [Alibaba](#company-alibaba) (40)
+- [Alibaba](#company-alibaba) (41)
 - [Meituan](#company-meituan) (10)
-- [Tencent](#company-tencent) (19)
-- [Google](#company-google) (14)
+- [Tencent](#company-tencent) (22)
+- [Google](#company-google) (15)
 - [LinkedIn](#company-linkedin) (4)
 - [NetEase](#company-netease) (2)
 - [Kuaishou](#company-kuaishou) (26)
 - [Huawei](#company-huawei) (9)
-- [Baidu](#company-baidu) (7)
+- [Baidu](#company-baidu) (9)
 - [Shopee](#company-shopee) (4)
 - [Coupang](#company-coupang) (1)
 - [Netflix](#company-netflix) (3)
 - [Tubi](#company-tubi) (1)
 - [Pinterest](#company-pinterest) (5)
 - [Yandex](#company-yandex) (6)
-- [JD](#company-jd) (5)
+- [JD](#company-jd) (6)
 - [VK](#company-vk) (1)
-- [Microsoft](#company-microsoft) (1)
+- [Microsoft](#company-microsoft) (3)
 - [Walmart](#company-walmart) (1)
 - [Snap](#company-snap) (4)
-- [Xiaohongshu](#company-xiaohongshu) (6)
+- [Xiaohongshu](#company-xiaohongshu) (7)
 - [Amazon](#company-amazon) (6)
 - [Capital One](#company-capital-one) (2)
 - [Shopify](#company-shopify) (2)
 - [Liquid AI](#company-liquid-ai) (3)
 - [IBM (MIT-IBM Computing Research Lab)](#company-ibm-mit-ibm-computing-research-lab) (4)
 - [Perplexity AI](#company-perplexity-ai) (1)
-- [NVIDIA](#company-nvidia) (4)
+- [NVIDIA](#company-nvidia) (5)
 - [StepFun](#company-stepfun) (1)
 - [Adobe Research](#company-adobe-research) (2)
 - [Unbox AI](#company-unbox-ai) (1)
@@ -207,6 +207,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [UniSGR-V2: Stepwise Target-Side Feature Anticipation and Crossing for Generative Recommendation](topics/unified-feature-sequence-modeling.md#paper-2610-16132) · 2026 · Core
 - [HiSAC: Hierarchical Sparse Activation Compression for Ultra-long Sequence Modeling in Recommenders](related/long-sequence-modeling.md#paper-2602-21009) · 2026 · Related
 - [Memory-Efficient Subspace Optimization with Residual Correction: From Momentum SGD to Muon](related/architecture-innovations-beyond-recommendation.md#paper-2610-19844) · 2026 · Related
+- [LoOPSD: On-Policy Self-Distillation with Looped Teachers](related/architecture-innovations-beyond-recommendation.md#paper-2610-18162) · 2026 · Related
 
 <a id="company-meituan"></a>
 
@@ -246,6 +247,9 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [Self-Indexing Attention for Compression-Compatible Sparse Long-Context LLM Inference](related/architecture-innovations-beyond-recommendation.md#paper-2609-13205) · 2026 · Related
 - [Large Foundation Model for Ads Recommendation](topics/foundation-models-multi-scenario.md#paper-2508-14948) · 2026 · Core
 - [Hybrid Gated Attention](related/architecture-innovations-beyond-recommendation.md#paper-2608-11805) · 2026 · Related
+- [BELT : BEhavior-Aligned Low-Rank KV Cache Compression with Learned Top-k Rank Allocation](related/architecture-innovations-beyond-recommendation.md#paper-2610-17966) · 2026 · Related
+- [AlignPred: Error-Controlled KV Cache Compression via Alignment and Predictive Coding](related/architecture-innovations-beyond-recommendation.md#paper-2610-17970) · 2026 · Related
+- [Shaping Latent Mixture-of-Experts: From Expert Geometry to Layerwise Capacity Allocation](related/architecture-innovations-beyond-recommendation.md#paper-2610-14644) · 2026 · Related
 
 <a id="company-google"></a>
 
@@ -265,6 +269,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [BRANCH-MoE: Balance-Aware Tree Routing for Large Embedding Models](topics/scalable-architecture.md#paper-2610-06725) · 2026 · Core
 - [Understanding and Mitigating Training Instability in Large-Scale Recommender Systems: A Cascade Perspective](related/engineering-serving.md#paper-2610-14394) · 2026 · Related
 - [Chain Dimension Scaling: Communication-Efficient Loop-Style Scaling for Industrial Short-Video Ranking](topics/scalable-architecture.md#paper-2610-16415) · 2026 · Core
+- [Reasoning Reranking with Semantic IDs as the Sole Item Representation](related/generative-recommendation.md#paper-2610-22797) · 2026 · Related
 
 <a id="company-linkedin"></a>
 
@@ -338,6 +343,8 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [FlashMask-3: Efficient and Expressive Mask-Aware Distributed Attention](related/engineering-serving.md#paper-2610-17901) · 2026 · Related
 - [Virtual Head Attention](related/architecture-innovations-beyond-recommendation.md#paper-2610-17959) · 2026 · Related
 - [RoLaQ: Joint Rotation and Range Calibration for 2-Bit KV Caches in Multi-Head Latent Attention](related/architecture-innovations-beyond-recommendation.md#paper-2610-20686) · 2026 · Related
+- [Prism Attention: Proposal-Refined Index Sharing Mechanism for Efficient LLMs Inference](related/architecture-innovations-beyond-recommendation.md#paper-2610-22985) · 2026 · Related
+- [PRIME: Frequency-Aware Unified Pruning and Merging for MoE Compression](related/architecture-innovations-beyond-recommendation.md#paper-2610-13982) · 2026 · Related
 
 <a id="company-shopee"></a>
 
@@ -398,6 +405,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [AdaGRPO](related/generative-recommendation.md#paper-2606-08480) · 2026 · Related
 - [Compile the Table: Query-Calibrated Operator Compression for Tabular In-Context Learning](related/architecture-innovations-beyond-recommendation.md#paper-2610-11784) · 2026 · Related
 - [CompileMask: Bridging the Gap Between Expressiveness and Efficiency in Attention Masking](related/architecture-innovations-beyond-recommendation.md#paper-2610-13474) · 2026 · Related
+- [BELT : BEhavior-Aligned Low-Rank KV Cache Compression with Learned Top-k Rank Allocation](related/architecture-innovations-beyond-recommendation.md#paper-2610-17966) · 2026 · Related
 
 <a id="company-vk"></a>
 
@@ -410,6 +418,8 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 ## Microsoft
 
 - [FlashTrie](related/engineering-serving.md#paper-2607-10044) · 2026 · Related
+- [Beyond Expert Rankings: Contrast Calibration for Mixed-Precision MoE Quantization](related/architecture-innovations-beyond-recommendation.md#paper-2610-20353) · 2026 · Related
+- [Simple Linear Corrections for Compression in Late Interaction](related/retrieval-reranking-scaling.md#paper-2610-14196) · 2026 · Related
 
 <a id="company-walmart"></a>
 
@@ -436,6 +446,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [LatentIndex: Cross-Layer Sharing with Layer-Specific Selection for Sparse Attention](related/architecture-innovations-beyond-recommendation.md#paper-2610-04635) · 2026 · Related
 - [LIFT: A Lifecycle-aware Interaction Factorization Transformer for Unified Retrieval and Ranking](topics/foundation-models-multi-scenario.md#paper-2610-10556) · 2026 · Core
 - [Multi-Stream Attention Residuals](related/architecture-innovations-beyond-recommendation.md#paper-2610-13630) · 2026 · Related
+- [DoSA: Dots Sparse Attention](related/architecture-innovations-beyond-recommendation.md#paper-2610-13990) · 2026 · Related
 
 <a id="company-amazon"></a>
 
@@ -493,6 +504,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [MegaFlux: Skew-Resilient MoE Megakernels via Pipelined Expert Replication](related/engineering-serving.md#paper-2610-00671) · 2026 · Related
 - [NCCL M2N: A Layout- and Topology-Aware Collective for Distributed Tensor Resharding](related/engineering-serving.md#paper-2610-07516) · 2026 · Related
 - [ReplaySSM: Cache SSM Inputs, Not State](related/architecture-innovations-beyond-recommendation.md#paper-2610-13778) · 2026 · Related
+- [FORGE: Procedural Weight Generation for Sparse MoE Inference](related/architecture-innovations-beyond-recommendation.md#paper-2610-16890) · 2026 · Related
 
 <a id="company-stepfun"></a>
 

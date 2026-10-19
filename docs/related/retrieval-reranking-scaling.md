@@ -6,7 +6,7 @@
 
 Scaling retrieval and reranking stages of recommendation pipelines.
 
-27 papers · Updated 2026-10-19
+29 papers · Updated 2026-10-20
 
 <a id="paper-2603-04816"></a>
 
@@ -115,3 +115,11 @@ Scaling retrieval and reranking stages of recommendation pipelines.
 <a id="paper-2610-21030"></a>
 
 - **Learning When to Think: Utility-Guided Adaptive Reasoning for Efficient Text Retrieval**: AURA supervises intermediate query-reasoning states by their ability to separate relevant documents from hard distractors, then uses a lightweight utility estimator to decide when to stop reasoning. On BRIGHT, the reported 4B model obtains 34.7 average nDCG@10 with 2.8 reasoning steps and 96 generated tokens per query. Under matched deployment conditions, adaptive stopping lowers latency from 4.6 to 0.76 seconds relative to full-trajectory reasoning. For retrieval and ranking pipelines, the useful design principle is to allocate test-time computation according to predicted retrieval utility; these results do not establish CTR gains. — [Paper](https://arxiv.org/abs/2610.21030) (Carnegie Mellon University; University of Pittsburgh · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-23510"></a>
+
+- **LSNR: Learned Sparse News Recommendations with Attentive User Modeling**: LSNR separately encodes news articles, then combines attention-weighted sparse article vectors with a dense-projected user expansion. This avoids flattening and truncating concatenated histories. On MIND and EBNeRD it outperforms STAR, remains competitive with dense recommenders in standard settings, and performs better with short histories. Its serving index is an order of magnitude smaller than the evaluated uncompressed dense baseline. — [Paper](https://arxiv.org/abs/2610.23510) (University of Amsterdam; Johns Hopkins University · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-14196"></a>
+
+- **Simple Linear Corrections for Compression in Late Interaction**: A lightweight linear correction distills uncompressed late-interaction retrieval scores after document-vector compression, leaving the encoder and compressor frozen. Across ColBERTv2, Jina v4 and ColPali2 experiments, it improves 154 of 160 in-domain BEIR settings; transfer from MS MARCO is more variable. The correction can be applied at query time or to stored vectors offline, recovering some quality without retraining encoders or recompressing documents. — [Paper](https://arxiv.org/abs/2610.14196) (Microsoft Research India · arXiv 2026). Reading priority: Unrated.

@@ -6,7 +6,7 @@
 
 Generative retrieval, recommendation and ranking beyond discriminative CTR.
 
-88 papers · Updated 2026-10-19
+89 papers · Updated 2026-10-20
 
 <a id="paper-2605-12617"></a>
 
@@ -359,3 +359,7 @@ Generative retrieval, recommendation and ranking beyond discriminative CTR.
 <a id="paper-2610-17771"></a>
 
 - **Many Right Answers, One Training Example: Removing Responder Noise from GRPO for LLM Recommenders**: When a recommendation request has several valid human replies, rewarding each generated list against one sampled reply adds responder noise. ReMaRk instead scores the list against the union of titles across replies and samples requests uniformly. Across seven backbones and three datasets, it reaches the validation recall of 2000 per-reply RL steps in 25–53% of those steps. In longer runs it is never significantly behind Rank-GRPO, but only four of seven pairs reach that baseline's best result with fewer GPU-hours. The evidence concerns LLM recommendation training, not online CTR gains. — [Paper](https://arxiv.org/abs/2610.17771) (Nanyang Technological University · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-22797"></a>
+
+- **Reasoning Reranking with Semantic IDs as the Sole Item Representation**: ReRankID tests whether reasoning rerankers can rank candidate slates from semantic IDs alone. Post-training remedies the tendency to copy input order; the strongest tested 8B model, trained with a graded ranking reward, matches strong text-reading LLMs whose prompts are about 20x longer. It retains gains with long histories, but its item descriptions remain less accurate. Compact-ID ranking therefore needs separate checks of ranking quality and explanation faithfulness. — [Paper](https://arxiv.org/abs/2610.22797) (Google; University of Toronto · arXiv 2026). Reading priority: Unrated.
