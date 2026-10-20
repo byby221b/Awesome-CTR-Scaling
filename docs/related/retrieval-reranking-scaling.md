@@ -6,7 +6,7 @@
 
 Scaling retrieval and reranking stages of recommendation pipelines.
 
-29 papers · Updated 2026-10-20
+30 papers · Updated 2026-10-21
 
 <a id="paper-2603-04816"></a>
 
@@ -123,3 +123,7 @@ Scaling retrieval and reranking stages of recommendation pipelines.
 <a id="paper-2610-14196"></a>
 
 - **Simple Linear Corrections for Compression in Late Interaction**: A lightweight linear correction distills uncompressed late-interaction retrieval scores after document-vector compression, leaving the encoder and compressor frozen. Across ColBERTv2, Jina v4 and ColPali2 experiments, it improves 154 of 160 in-domain BEIR settings; transfer from MS MARCO is more variable. The correction can be applied at query time or to stored vectors offline, recovering some quality without retraining encoders or recompressing documents. — [Paper](https://arxiv.org/abs/2610.14196) (Microsoft Research India · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-25172"></a>
+
+- **RemoteANN: A Native Vector Search Engine for Cloud Object Storage**: RemoteANN co-designs vector indexing and querying for cloud object storage, combining IVF and RaBitQ with locality-aware reordering, cluster pruning, Range-GET merging and NVMe caching. QGKMeans reduces index construction latency. At 97% target recall, evaluations report up to 5.9x throughput and 16.1x fewer object-storage requests than representative baselines. This supports infrastructure choices for large vector retrieval; recommendation-quality gains are not established. — [Paper](https://arxiv.org/abs/2610.25172) (Nanyang Technological University; ByteDance · arXiv 2026). Reading priority: Unrated.

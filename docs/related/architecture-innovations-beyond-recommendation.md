@@ -6,7 +6,7 @@
 
 Transferable ideas from general-purpose model architecture research.
 
-167 papers · Updated 2026-10-20
+170 papers · Updated 2026-10-21
 
 <a id="paper-2606-16825"></a>
 
@@ -675,3 +675,15 @@ Transferable ideas from general-purpose model architecture research.
 <a id="paper-2610-17425"></a>
 
 - **When Sparsity Breaks Connectivity: Functional Reachability and Guided Topology Dynamics in Extreme Sparse Training**: The paper connects extreme dynamic-sparse-training failure to broken input–output pathways and guides pruning/regrowth using functional reachability. On image benchmarks it recovers up to 14.4 accuracy points at 99.9% sparsity; an MLP-Mixer remains trainable at 99.99% sparsity where unguided regrowth degrades. Connectivity-preserving sparse training may inform recommendation architectures, but the evidence is from vision tasks. — [Paper](https://arxiv.org/abs/2610.17425) (University of Twente; Paderborn University · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-26834"></a>
+
+- **Kronecker Delta Rule for Long Context Linear Attention**: KronLSTM introduces the Kronecker Delta Rule, which revises associative matrix memory along one matrix-space direction to reduce interference with stored information. Its analysis establishes a uniformly bounded expected memory norm and steady-state convergence under the described dynamics. Long-context language-model experiments are competitive with, and often outperform, tested linear-attention baselines including the (Gated) DeltaNet family. This is a potentially transferable stable-memory design; recommendation performance has not been tested. — [Paper](https://arxiv.org/abs/2610.26834) (Johannes Kepler University Linz; NXAI GmbH · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-26030"></a>
+
+- **Truncate or Not? A Scaling Study of Looped Transformers with Truncated Backpropagation**: Across nearly 600 looped-Transformer training runs, the study models the joint effects of model size, data, forward loops and backward loops. When both loop counts are optimized under matched compute, full backpropagation through fewer loops outperforms truncation. With model size also variable, two fully trained loops achieve lower loss than the compute-optimal non-looped model using about 27% fewer non-embedding parameters and 8% more training compute. The result informs loop-training budget allocation within the studied language-model regime, not validated CTR scaling. — [Paper](https://arxiv.org/abs/2610.26030) (The University of Hong Kong; Yale University · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-25717"></a>
+
+- **Fine-Grained Units, Flat Decisions: Hierarchical Micro-Expert Pruning for Mixture-of-Experts Models**: UC-RAMP separates allocation of retained expert widths from channel selection in post-training MoE pruning. CAPE redistributes capacity under an exact layer budget; RAMP refines channels at fixed widths using interaction-guided exchanges. It has the best ten-task mean accuracy in five of six tested model/pruning settings. At 25% pruning on one A100, time to first token falls 19.7–23.9% and time per output token 20.2–22.3% versus unpruned models. Transfer to recommendation remains untested. — [Paper](https://arxiv.org/abs/2610.25717) (Houmo AI; University of Science and Technology of China; Southeast University · arXiv 2026). Reading priority: Unrated.

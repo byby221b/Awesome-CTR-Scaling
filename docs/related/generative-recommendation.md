@@ -6,7 +6,7 @@
 
 Generative retrieval, recommendation and ranking beyond discriminative CTR.
 
-89 papers · Updated 2026-10-20
+93 papers · Updated 2026-10-21
 
 <a id="paper-2605-12617"></a>
 
@@ -363,3 +363,19 @@ Generative retrieval, recommendation and ranking beyond discriminative CTR.
 <a id="paper-2610-22797"></a>
 
 - **Reasoning Reranking with Semantic IDs as the Sole Item Representation**: ReRankID tests whether reasoning rerankers can rank candidate slates from semantic IDs alone. Post-training remedies the tendency to copy input order; the strongest tested 8B model, trained with a graded ranking reward, matches strong text-reading LLMs whose prompts are about 20x longer. It retains gains with long histories, but its item descriptions remain less accurate. Compact-ID ranking therefore needs separate checks of ranking quality and explanation faithfulness. — [Paper](https://arxiv.org/abs/2610.22797) (Google; University of Toronto · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-26831"></a>
+
+- **AGR: Agentic Generative Retrieval with Tool-Augmented Search**: AGR interleaves semantic-ID generation with on-demand feature acquisition. The request and decoded prefix guide when to call a tool, which feature to fetch and where to use it; training trajectories use feature applicability and information gain. The abstract reports gains on an industrial dataset, three public benchmarks and an online A/B test, without numerical effect sizes. The work addresses feature-use cost and relevance in generative retrieval. — [Paper](https://arxiv.org/abs/2610.26831) (Fudan University; Kuaishou Technology · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-26105"></a>
+
+- **Don't Rewrite the SID Map: Topology Preservation for Generative Retrieval in Dynamic E-Commerce Search**: The study links semantic-ID remapping to retrieval degradation using 67 days of e-commerce logs. Large beams conceal much of the damage: at beam size 1, mapping updates reduce HitRate by 41.78–62.05%. Preserving old-item IDs, inserting new items and warm-starting the model improves old- and new-item HitRate by 10% and 109% across two update cycles. A three-week TmallAPP A/B test reports UCTCVR +0.29% and GMV +1.16%. These findings support stable identifier topology in the tested dynamic retrieval setting. — [Paper](https://arxiv.org/abs/2610.26105) (Alibaba; Nankai University; University of Science and Technology of China · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-25805"></a>
+
+- **OneChord: Distill What You Rank, Recommend in One Pass**: OneChord uses the same learned, catalog-normalized fusion of semantic-ID and item-matching scores for supervision, refinement distillation and serving. A parallel decoder learns from refined targets on shared hard candidates so that inference needs one pass. Across six Amazon datasets, average Recall@5 and NDCG@5 gains over the strongest baseline are 6.30% and 7.12%; full-test generation is 1.04–1.18x faster than the fastest baseline. These are offline recommendation results, with no reported production CTR test. — [Paper](https://arxiv.org/abs/2610.25805) (University of Chinese Academy of Sciences · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-25093"></a>
+
+- **Structure-Aligned History Learning with Subspace-Structured Semantic IDs for Generative Recommendation**: SAHL aligns history reconstruction with a balanced token–subspace–item hierarchy learned by semantic residual quantization. Predictive entropy emphasizes uncertain transitions, and a curriculum shifts training toward next-item prediction. On four Amazon Review categories, NDCG@10 improves by 18.6–30.0% over RPG and 2.7–6.0% over MHL. The evidence concerns code utilization and history-dependent offline recommendation, without demonstrated industrial latency or CTR gains. — [Paper](https://arxiv.org/abs/2610.25093) (Chongqing University; China Telecom; Institute of Automation, Chinese Academy of Sciences; University of Science and Technology Beijing; Unisound AI; Tianjin University; Minzu University of China; The Hong Kong Polytechnic University; Shandong Computer Science Center · arXiv 2026). Reading priority: Unrated.

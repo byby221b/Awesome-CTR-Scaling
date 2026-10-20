@@ -16,12 +16,12 @@
 
 - [Long Sequence Modeling](related/long-sequence-modeling.md) (29) — Long-history modeling, memory and compression for user behavior sequences.
 - [Sample/Instance Compression for Sequence Modeling](related/sample-instance-compression-for-sequence-modeling.md) (2) — Compressing complete interactions and raw samples into sequence tokens.
-- [Generative Recommendation](related/generative-recommendation.md) (89) — Generative retrieval, recommendation and ranking beyond discriminative CTR.
+- [Generative Recommendation](related/generative-recommendation.md) (93) — Generative retrieval, recommendation and ranking beyond discriminative CTR.
 - [Generative Pre-training for CTR](related/generative-pre-training-for-ctr.md) (4) — Generative objectives and pre-training for discriminative CTR tasks.
-- [Knowledge Distillation & Compression](related/knowledge-distillation-compression.md) (7) — Transferring, compressing and deploying larger recommendation models.
-- [Engineering & Serving](related/engineering-serving.md) (40) — Systems, serving infrastructure and hardware-aware optimization.
-- [Retrieval & Reranking Scaling](related/retrieval-reranking-scaling.md) (29) — Scaling retrieval and reranking stages of recommendation pipelines.
-- [Architecture Innovations Beyond Recommendation](related/architecture-innovations-beyond-recommendation.md) (167) — Transferable ideas from general-purpose model architecture research.
+- [Knowledge Distillation & Compression](related/knowledge-distillation-compression.md) (8) — Transferring, compressing and deploying larger recommendation models.
+- [Engineering & Serving](related/engineering-serving.md) (42) — Systems, serving infrastructure and hardware-aware optimization.
+- [Retrieval & Reranking Scaling](related/retrieval-reranking-scaling.md) (30) — Scaling retrieval and reranking stages of recommendation pipelines.
+- [Architecture Innovations Beyond Recommendation](related/architecture-innovations-beyond-recommendation.md) (170) — Transferable ideas from general-purpose model architecture research.
 - [Other](related/other.md) (12) — Adjacent research, diagnostics and other relevant recommendation methods.
 
 ## Tag vocabulary

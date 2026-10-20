@@ -6,7 +6,7 @@
 
 Transferring, compressing and deploying larger recommendation models.
 
-7 papers · Updated 2026-10-20
+8 papers · Updated 2026-10-21
 
 <a id="paper-2411-16122"></a>
 
@@ -35,3 +35,7 @@ Transferring, compressing and deploying larger recommendation models.
 <a id="paper-2610-21220"></a>
 
 - **RecSoup: Efficient Model Merging Approach for Controllable Multi-Objective Recommendation**: RecSoup reuses objective-specific recommendation models to adjust serving-time trade-offs without joint retraining. It first prunes parameters using objective-specific importance and cross-objective relevance, then learns a mapping from desired preferences to merging coefficients. Experiments report improved Pareto-front quality and substantially lower parameter-construction latency than the evaluated parameter-generating approaches; this comparison is not a general speedup over ordinary rankers. For multi-objective CTR systems, it offers a model-reuse and deployment option, rather than evidence of a recommendation scaling law. — [Paper](https://arxiv.org/abs/2610.21220) · [DOI](https://doi.org/10.1145/3799682.3840938) (Renmin University of China · CIKM 2026). Reading priority: Unrated.
+
+<a id="paper-2610-26143"></a>
+
+- **FLMNet: Self-Ensemble Distillation from Masks to Seeds for Single-Tower CTR Prediction**: FLMNet explains dropout self-distillation as a label loss plus a disagreement penalty in the infinite-mask limit. When dropout leaves feature gating unchanged, the penalty admits a closed-form approximation, enabling sampling-free training; distilling models trained from different seeds recovers part of the ensemble gain in one network. On five CTR benchmarks against seventeen baselines, the resulting models occupy the top two accuracy positions. The evidence concerns benchmark accuracy with single-network inference, not industrial scaling laws. — [Paper](https://arxiv.org/abs/2610.26143) (National University of Singapore; University of Science and Technology of China · arXiv 2026). Reading priority: Unrated.

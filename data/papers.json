@@ -5,7 +5,7 @@
     "description": "Scaling laws and scalable ranking models for industrial recommendation.",
     "repository_url": "https://github.com/byby221b/Awesome-CTR-Scaling",
     "site_url": "https://byby221b.github.io/Awesome-CTR-Scaling/",
-    "updated": "2026-10-20",
+    "updated": "2026-10-21",
     "source_commit": "31ad30becff83ca14a01f37fc99d52ba79f85565",
     "scope": "We cover papers that (1) study scaling laws for recommendation models, (2) propose scalable Transformer-based architectures for CTR/ranking, (3) address efficiency challenges in scaling up industrial ranking systems, or (4) explore novel paradigms (e.g., sparse scaling, generative pre-training, foundation models) for scalable recommendation.",
     "history": {
@@ -36075,6 +36075,701 @@
       "added_provenance": {
         "kind": "catalog_entry",
         "source_url": "https://arxiv.org/abs/2610.17425"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2610.26831",
+      "title": "AGR: Agentic Generative Retrieval with Tool-Augmented Search",
+      "collection": "related",
+      "category": "generative-recommendation",
+      "affiliation": "Fudan University; Kuaishou Technology",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.26831"
+        }
+      ],
+      "aliases": [
+        "AGR"
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Large-scale search and recommendation systems derive much of their retrieval quality from rich, heterogeneous features, yet existing generative retrieval (GR) methods struggle to exploit such feature ecosystems efficiently. Static feature injection either encodes all available signals or places them according to predetermined schemes, increasing serving cost and introducing irrelevant or conflicting evidence. More fundamentally, existing methods cannot adaptively determine when a feature is needed, which feature to select, or where it should influence hierarchical Semantic ID (SID) generation. We propose Agentic Generative Retrieval (AGR), a tool-augmented paradigm that interleaves SID generation with on-demand feature acquisition. Conditioned on the request and decoded SID prefix, AGR decides whether to invoke a tool, which feature to acquire, and where its observation should influence subsequent decoding, thereby steering generation toward feature-consistent SID branches. To supervise this behavior, we construct tool-augmented trajectories based on feature applicability and information gain along the SID hierarchy, and train the model through SID pretraining followed by tool-augmented fine-tuning. Experiments on an industrial dataset and three public benchmarks, together with an online A/B test, consistently demonstrate the effectiveness of AGR.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.26831v1",
+        "retrieved_at": "2026-10-20T23:05:23Z",
+        "license": "CC0-1.0",
+        "source_title": "AGR: Agentic Generative Retrieval with Tool-Augmented Search",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-10-19T17:56:04Z",
+        "updated_at": "2026-10-19T17:56:04Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.26831v1",
+        "verified_at": "2026-10-20T23:05:23Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "AGR interleaves semantic-ID generation with on-demand feature acquisition. The request and decoded prefix guide when to call a tool, which feature to fetch and where to use it; training trajectories use feature applicability and information gain. The abstract reports gains on an industrial dataset, three public benchmarks and an online A/B test, without numerical effect sizes. The work addresses feature-use cost and relevance in generative retrieval.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-21",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.26831v1"
+          ]
+        },
+        "zh": {
+          "text": "AGR 在生成语义 ID 的过程中按需获取特征：根据请求和已生成的前缀，决定何时调用工具、获取哪项特征，以及在哪里使用它。训练轨迹依据特征适用性与信息增益构建。摘要报告了工业数据、三个公开基准和在线 A/B 测试中的效果，但未给出增益数值；其直接价值在于改善生成式检索的特征使用成本与相关性。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-21",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.26831v1"
+          ]
+        }
+      },
+      "added_at": "2026-10-20T23:10:01Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.26831"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2610.26143",
+      "title": "FLMNet: Self-Ensemble Distillation from Masks to Seeds for Single-Tower CTR Prediction",
+      "collection": "related",
+      "category": "knowledge-distillation-compression",
+      "affiliation": "National University of Singapore; University of Science and Technology of China",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.26143"
+        }
+      ],
+      "aliases": [
+        "FLMNet"
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Click-through rate (CTR) prediction underpins recommender systems and online advertising, where high-dimensional categorical features interact in combinatorially many ways. Several recent CTR models, such as FinalNet and QNN, report higher accuracy when a network also learns from its own averaged predictions, for example by running the same network under different dropout patterns and training each run toward the average. Why this self-distillation helps, and whether its random sampling is needed, remains unclear. This work shows that as the number of dropout patterns grows without bound, the objective reduces exactly to the label loss of the logit-averaged prediction plus a penalty on how much the dropout copies of the network disagree. When dropout does not affect how a network gates its features, this penalty can be approximated in closed form, and FLMNet is designed on this principle and trains without sampling. Networks trained from different seeds disagree in the same form, and distilling several of them into one network recovers part of their ensemble gain. On five benchmarks against seventeen baselines, the resulting models take the top two places in accuracy with a single network at inference, and the gains of the penalty and of distillation, where measurable, largely add up.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.26143v1",
+        "retrieved_at": "2026-10-20T23:05:23Z",
+        "license": "CC0-1.0",
+        "source_title": "FLMNet: Self-Ensemble Distillation from Masks to Seeds for Single-Tower CTR Prediction",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-10-19T10:27:04Z",
+        "updated_at": "2026-10-19T10:27:04Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.26143v1",
+        "verified_at": "2026-10-20T23:05:23Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "FLMNet explains dropout self-distillation as a label loss plus a disagreement penalty in the infinite-mask limit. When dropout leaves feature gating unchanged, the penalty admits a closed-form approximation, enabling sampling-free training; distilling models trained from different seeds recovers part of the ensemble gain in one network. On five CTR benchmarks against seventeen baselines, the resulting models occupy the top two accuracy positions. The evidence concerns benchmark accuracy with single-network inference, not industrial scaling laws.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-21",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.26143v1"
+          ]
+        },
+        "zh": {
+          "text": "FLMNet 将无限多 dropout 掩码下的自蒸馏目标分解为标签损失与预测分歧惩罚。在 dropout 不改变特征门控的条件下，惩罚项可作闭式近似，从而免去训练时的随机采样；再把不同随机种子训练出的模型蒸馏到单个网络，保留部分集成收益。在五个 CTR 基准、十七个对比方法中，所得模型占据准确率前两名，推理仍只需一个网络。证据限于这些基准，未建立工业扩展规律。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-21",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.26143v1"
+          ]
+        }
+      },
+      "added_at": "2026-10-20T23:10:01Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.26143"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2610.26105",
+      "title": "Don't Rewrite the SID Map: Topology Preservation for Generative Retrieval in Dynamic E-Commerce Search",
+      "collection": "related",
+      "category": "generative-recommendation",
+      "affiliation": "Alibaba; Nankai University; University of Science and Technology of China",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.26105"
+        }
+      ],
+      "aliases": [],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Generative retrieval assigns each item a discrete semantic identifier (SID) and retrieves items by autoregressively generating SID sequences. In dynamic environments such as e-commerce, new items arrive continuously, requiring periodic updates to the SID-to-Item mapping and model to maintain retrieval timeliness. Each update, however, can invalidate search paths already learned by the retriever, and the quantitative relationship between mapping change and retrieval quality has not been systematically characterized. We study this problem with extensive controlled experiments over 67 days of large-scale e-commerce search logs and obtain three core findings. (1) SID semantic drift causes severe retrieval degradation that may be masked by large beam sizes: mapping updates reduce HitRate by 41.78-62.05% at beam size 1 but only 8.33-10.85% at beam size 1000, as redundant candidate generation conceals the true severity of drift. (2) The fraction of changed SIDs is strictly monotonically related to retrieval quality: as the remapped fraction increases from 0% to 72.75%, HitRate decreases monotonically, dropping up to 42.66% at beam size 1. Full remapping remains substantially worse than the preservation policy under warm-start training, indicating that short-budget continued training alone cannot repair topology disruption. (3) The SID topology-preserving principle makes even the simplest warm-start strategy highly effective: fixing old-item SIDs, inserting new-items, and warm-starting from the previous model improves old-item HitRate by 10% and new-item HitRate by 109%, validated across two non-overlapping update cycles. These findings distill into a concise deployment principle: insert new-items, freeze old-items; warm-start when possible, otherwise freeze; never change SIDs the model has already learned. A three-week online A/B test on TmallAPP shows UCTCVR +0.29% and GMV +1.16%.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.26105v1",
+        "retrieved_at": "2026-10-20T23:05:23Z",
+        "license": "CC0-1.0",
+        "source_title": "Don't Rewrite the SID Map: Topology Preservation for Generative Retrieval in Dynamic E-Commerce Search",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-10-19T10:01:25Z",
+        "updated_at": "2026-10-19T10:01:25Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.26105v1",
+        "verified_at": "2026-10-20T23:05:23Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "The study links semantic-ID remapping to retrieval degradation using 67 days of e-commerce logs. Large beams conceal much of the damage: at beam size 1, mapping updates reduce HitRate by 41.78–62.05%. Preserving old-item IDs, inserting new items and warm-starting the model improves old- and new-item HitRate by 10% and 109% across two update cycles. A three-week TmallAPP A/B test reports UCTCVR +0.29% and GMV +1.16%. These findings support stable identifier topology in the tested dynamic retrieval setting.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-21",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.26105v1"
+          ]
+        },
+        "zh": {
+          "text": "研究基于 67 天电商搜索日志，分析语义 ID 重映射造成的检索退化。大束宽会掩盖部分损失；束宽为 1 时，映射更新使 HitRate 下降 41.78%–62.05%。固定旧商品 ID、插入新商品并热启动模型，在两个更新周期中分别提升旧商品和新商品 HitRate 10% 与 109%。天猫 App 三周 A/B 测试报告 UCTCVR 提升 0.29%、GMV 提升 1.16%，支持在该动态检索场景中保持 ID 拓扑稳定。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-21",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.26105v1"
+          ]
+        }
+      },
+      "added_at": "2026-10-20T23:10:01Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.26105"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2610.25805",
+      "title": "OneChord: Distill What You Rank, Recommend in One Pass",
+      "collection": "related",
+      "category": "generative-recommendation",
+      "affiliation": "University of Chinese Academy of Sciences",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.25805"
+        }
+      ],
+      "aliases": [
+        "OneChord"
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Accurate product discovery on the Web requires recommendation models that rank catalog candidates within tight inference budgets. In semantic-ID recommendation, deployment can fuse code probabilities with item similarities, making the final ranking depend on their normalization and relative weights. This motivates a direct training principle: \\emph{distill what you rank}. We present OneChord, which uses one learned, catalog-normalized fusion for next-item supervision, refinement distillation, and inference. A shared parallel decoder produces joint SID evidence and item-matching scores. During training, a frozen denoiser supplies legal partial SIDs; the student evaluates these states to construct refined fused targets. Matching direct and refined predictions on shared hard candidates transfers refinement into one-pass recommendation. We characterize the fusion weights induced by candidate conditioning and establish sufficient conditions for preserving the refined predictor's full-catalog Top-$K$ selection. Across six Amazon datasets, OneChord achieves the highest Recall@5 and NDCG@5 among the compared methods on every dataset, with average relative gains of 6.30\\% and 7.12\\% over the strongest baseline. It also achieves a 1.04--1.18$\\times$ full-test generation speedup over the fastest baseline. OneChord makes the served ranking distribution the common object of recommendation learning and distillation.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.25805v1",
+        "retrieved_at": "2026-10-20T23:05:23Z",
+        "license": "CC0-1.0",
+        "source_title": "OneChord: Distill What You Rank, Recommend in One Pass",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-10-19T05:16:36Z",
+        "updated_at": "2026-10-19T05:16:36Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.25805v1",
+        "verified_at": "2026-10-20T23:05:23Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "OneChord uses the same learned, catalog-normalized fusion of semantic-ID and item-matching scores for supervision, refinement distillation and serving. A parallel decoder learns from refined targets on shared hard candidates so that inference needs one pass. Across six Amazon datasets, average Recall@5 and NDCG@5 gains over the strongest baseline are 6.30% and 7.12%; full-test generation is 1.04–1.18x faster than the fastest baseline. These are offline recommendation results, with no reported production CTR test.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-21",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.25805v1"
+          ]
+        },
+        "zh": {
+          "text": "OneChord 在监督训练、细化蒸馏与服务时使用同一套经过全目录归一化的分数融合，将语义 ID 概率与商品匹配分数对齐。并行解码器在共享困难候选上学习细化目标，把多步细化能力压入单次前向推理。在六个 Amazon 数据集上，相对最强基线的 Recall@5、NDCG@5 平均提升 6.30%、7.12%；完整测试集生成速度为最快基线的 1.04–1.18 倍。这些是离线推荐结果，未报告生产 CTR 测试。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-21",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.25805v1"
+          ]
+        }
+      },
+      "added_at": "2026-10-20T23:10:01Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.25805"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2610.25093",
+      "title": "Structure-Aligned History Learning with Subspace-Structured Semantic IDs for Generative Recommendation",
+      "collection": "related",
+      "category": "generative-recommendation",
+      "affiliation": "Chongqing University; China Telecom; Institute of Automation, Chinese Academy of Sciences; University of Science and Technology Beijing; Unisound AI; Tianjin University; Minzu University of China; The Hong Kong Polytechnic University; Shandong Computer Science Center",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.25093"
+        }
+      ],
+      "aliases": [
+        "SAHL",
+        "SRBQ"
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Generative recommendation constructs semantic IDs for catalog items and predicts the next ID from user interaction histories. However, existing methods face limitations in both stages. First, conventional quantizers may produce imbalanced code assignments and lack coherent intermediate semantic units between individual tokens and complete items, limiting history reconstruction. Second, recommendation models remain dominated by next-item prediction, treating historical interactions mainly as conditioning context and providing limited supervision for recovering persistent preferences across the historical path, particularly when relevant preference signals are distributed over distant interactions. To address these limitations, Structure-Aligned History Learning (SAHL) reconnects the two stages by using the structure created during quantization directly for history reconstruction. Its Semantic Residual Balanced Quantization (SRBQ) forms a balanced token-subspace-item hierarchy, and SAHL reconstructs history at these same granularities. Predictive entropy prioritizes uncertain transitions, while curriculum optimization progressively shifts training to inference-aligned next-item prediction. On four Amazon Review categories, SAHL improves NDCG@10 by 18.6%-30.0% over RPG and 2.7%-6.0% over strong method MHL. Controlled analyses verify balanced code use, the benefit of following quantizer-defined groups during reconstruction, and dependence on user history. The relevant code is available at https://github.com/CQU-MM-Intelligent-Lab/SAHL.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.25093v1",
+        "retrieved_at": "2026-10-20T23:05:23Z",
+        "license": "CC0-1.0",
+        "source_title": "Structure-Aligned History Learning with Subspace-Structured Semantic IDs for Generative Recommendation",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-10-18T07:58:35Z",
+        "updated_at": "2026-10-18T07:58:35Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.25093v1",
+        "verified_at": "2026-10-20T23:05:23Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "SAHL aligns history reconstruction with a balanced token–subspace–item hierarchy learned by semantic residual quantization. Predictive entropy emphasizes uncertain transitions, and a curriculum shifts training toward next-item prediction. On four Amazon Review categories, NDCG@10 improves by 18.6–30.0% over RPG and 2.7–6.0% over MHL. The evidence concerns code utilization and history-dependent offline recommendation, without demonstrated industrial latency or CTR gains.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-21",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.25093v1"
+          ]
+        },
+        "zh": {
+          "text": "SAHL 用语义残差均衡量化建立 token—子空间—商品层次，并沿同一结构重建用户历史；预测熵用于突出不确定的转移，课程训练逐步转向与推理一致的下一商品预测。在四个 Amazon Review 类别上，NDCG@10 相对 RPG 提升 18.6%–30.0%，相对 MHL 提升 2.7%–6.0%。证据集中于编码利用率与依赖历史的离线推荐，未验证工业延迟或 CTR 收益。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-21",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.25093v1"
+          ]
+        }
+      },
+      "added_at": "2026-10-20T23:10:01Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.25093"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2610.24481",
+      "title": "DuoLM: Fast and Effective Personalized Recommendation with Language Models",
+      "collection": "related",
+      "category": "engineering-serving",
+      "affiliation": "University of California, Irvine; Google DeepMind; Oracle",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.24481"
+        }
+      ],
+      "aliases": [
+        "DuoLM"
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Language models can make personalized recommendations from rich item content, user history, and feedback. However, evaluating many candidates with full-text inputs incurs substantial online computation and limits serving throughput. We introduce DuoLM, a framework for fast and effective personalized recommendation that integrates a compact recommendation model with an efficient serving runtime. An encoder LLM learns compact item representations for offline reuse, while a personalized ranker LLM combines them with user history and feedback for recommendation. We train both models end to end with recommendation supervision and teacher distillation. The runtime further accelerates inference through virtual token IDs for embedding access, shared history computation, and CUDA Graph replay. Benchmark results show that our framework achieves recommendation quality comparable to that of the expert teacher model. On a single H100, it delivers approximately 26,400 candidate scores per second, about $60\\times$ the throughput of the teacher served with vLLM and automatic prefix caching.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.24481v1",
+        "retrieved_at": "2026-10-20T23:05:23Z",
+        "license": "CC0-1.0",
+        "source_title": "DuoLM: Fast and Effective Personalized Recommendation with Language Models",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-10-17T05:56:40Z",
+        "updated_at": "2026-10-17T05:56:40Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.24481v1",
+        "verified_at": "2026-10-20T23:05:23Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "DuoLM separates an encoder that produces reusable compact item representations from a personalized LLM ranker, training both with recommendation supervision and teacher distillation. Virtual token IDs, shared history computation and CUDA Graph replay reduce serving overhead. Benchmarks retain quality comparable to the expert teacher; on one H100 the system scores about 26,400 candidates per second, roughly 60x the teacher throughput with vLLM and automatic prefix caching. The throughput comparison is specific to that hardware and serving setup.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-21",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.24481v1"
+          ]
+        },
+        "zh": {
+          "text": "DuoLM 将可离线复用的紧凑商品编码与个性化 LLM 排序器分开，并通过推荐监督与教师蒸馏联合训练。运行时利用虚拟 token ID 访问嵌入、共享历史计算和 CUDA Graph 重放降低开销。基准上的质量接近专家教师模型；单张 H100 每秒可打分约 26,400 个候选，约为采用 vLLM 与自动前缀缓存的教师模型的 60 倍。该吞吐比较仅对应论文所测硬件与服务配置。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-21",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.24481v1"
+          ]
+        }
+      },
+      "added_at": "2026-10-20T23:10:01Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.24481"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2610.25172",
+      "title": "RemoteANN: A Native Vector Search Engine for Cloud Object Storage",
+      "collection": "related",
+      "category": "retrieval-reranking-scaling",
+      "affiliation": "Nanyang Technological University; ByteDance",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.25172"
+        }
+      ],
+      "aliases": [
+        "RemoteANN",
+        "QGKMeans"
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Vector search engines built on cloud object storage have drawn growing attention from both academia and industry. These systems typically adopt a disaggregated storage-compute architecture, persisting the primary vector payload in object stores (e.g., Amazon S3) while retaining compact index metadata on compute nodes. However, conventional vector indexing structures are not natively tailored to the pronounced network latency and per-request access costs of cloud object stores, resulting in network I/O amplification, degraded query throughput, and higher API expenses.\n  To resolve these challenges, we present RemoteANN, a vector search engine explicitly co-designed for cloud object storage across indexing and querying. To mitigate the dominant network I/O bottleneck, RemoteANN couples an Inverted File (IVF) index with RaBitQ quantization, further optimized by inter-cluster and intra-cluster data reordering for improved data locality. Building on this tailored data layout, RemoteANN's query engine combines cluster pruning, fine-grained Range-GET requests, request merging, and local NVMe SSD caching, dramatically reducing discrete storage requests and network transfer volume without sacrificing accuracy. To address the index construction bottleneck, we further develop QGKMeans, which substantially reduces construction latency without compromising clustering quality. Extensive evaluations on real-world datasets demonstrate that, compared with representative baselines, RemoteANN achieves up to a $5.9\\times$ throughput speedup while issuing up to $16.1\\times$ fewer object storage requests at 97% target recall.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.25172v1",
+        "retrieved_at": "2026-10-20T23:05:23Z",
+        "license": "CC0-1.0",
+        "source_title": "RemoteANN: A Native Vector Search Engine for Cloud Object Storage",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-10-18T10:52:39Z",
+        "updated_at": "2026-10-18T10:52:39Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.25172v1",
+        "verified_at": "2026-10-20T23:05:23Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "RemoteANN co-designs vector indexing and querying for cloud object storage, combining IVF and RaBitQ with locality-aware reordering, cluster pruning, Range-GET merging and NVMe caching. QGKMeans reduces index construction latency. At 97% target recall, evaluations report up to 5.9x throughput and 16.1x fewer object-storage requests than representative baselines. This supports infrastructure choices for large vector retrieval; recommendation-quality gains are not established.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-21",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.25172v1"
+          ]
+        },
+        "zh": {
+          "text": "RemoteANN 面向云对象存储协同设计向量索引与查询，将 IVF、RaBitQ 量化与局部性重排、簇剪枝、Range-GET 合并及 NVMe 缓存结合，并用 QGKMeans 降低建索引延迟。在目标召回率 97% 时，相对所测代表性基线，吞吐最高提升至 5.9 倍，对象存储请求数最多减少至约 1/16.1。该结果可供大规模向量检索基础设施参考，未证明推荐质量提升。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-21",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.25172v1"
+          ]
+        }
+      },
+      "added_at": "2026-10-20T23:10:01Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.25172"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2610.26834",
+      "title": "Kronecker Delta Rule for Long Context Linear Attention",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "Johannes Kepler University Linz; NXAI GmbH",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.26834"
+        }
+      ],
+      "aliases": [
+        "KronLSTM"
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "We propose KronLSTM, a linear attention architecture based on the Kronecker Delta Rule, a novel update rule for associative matrix memories. KronLSTM extends the xLSTM family with a memory-revision mechanism that corrects targeted associations while modifying the memory only along a single direction in matrix space. This minimally invasive memory revision reduces interference with previously stored information compared with delta-rule updates, making it particularly well suited for long-context language modeling. The resulting memory dynamics can be mathematically described as a Markov chain that converges to a steady-state distribution, while the expected norm of the memory matrix remains uniformly bounded throughout the entire input sequence. Hence, KronLSTM ensures stable memory dynamics without requiring additional normalization and stabilization mechanisms for the memory state. Experiments show that KronLSTM is competitive with, and often outperforms, existing linear attention architectures, including models of the (Gated) DeltaNet family, with particularly strong performance on long context benchmarks. These results establish the Kronecker Delta Rule as an effective and analytically tractable foundation for stable associative memory in recurrent linear attention architectures. Our code (https://github.com/NX-AI/KronLSTM) and models (https://huggingface.co/collections/NX-AI/kronlstm) are open-source.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.26834v1",
+        "retrieved_at": "2026-10-20T23:06:02Z",
+        "license": "CC0-1.0",
+        "source_title": "Kronecker Delta Rule for Long Context Linear Attention",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-10-19T17:56:52Z",
+        "updated_at": "2026-10-19T17:56:52Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.26834v1",
+        "verified_at": "2026-10-20T23:06:02Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "KronLSTM introduces the Kronecker Delta Rule, which revises associative matrix memory along one matrix-space direction to reduce interference with stored information. Its analysis establishes a uniformly bounded expected memory norm and steady-state convergence under the described dynamics. Long-context language-model experiments are competitive with, and often outperform, tested linear-attention baselines including the (Gated) DeltaNet family. This is a potentially transferable stable-memory design; recommendation performance has not been tested.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-21",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.26834v1"
+          ]
+        },
+        "zh": {
+          "text": "KronLSTM 提出 Kronecker Delta Rule，沿矩阵空间的单一方向修正关联记忆，以减少对已存信息的干扰。论文分析给出了所述动力学下记忆范数期望的一致有界性与稳态收敛性质。长上下文语言模型实验与包括 (Gated) DeltaNet 在内的线性注意力基线相当，并在多项比较中更好。其稳定记忆机制可作为迁移候选，但尚未验证推荐效果。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-21",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.26834v1"
+          ]
+        }
+      },
+      "added_at": "2026-10-20T23:10:01Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.26834"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2610.26030",
+      "title": "Truncate or Not? A Scaling Study of Looped Transformers with Truncated Backpropagation",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "The University of Hong Kong; Yale University",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.26030"
+        }
+      ],
+      "aliases": [],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Looped transformers reuse a shared block of layers to increase computational depth without increasing the number of trainable parameters. They are trained with backpropagation through time (BPTT). To save training compute, BPTT is often truncated to the last few loops, although this may weaken the benefit of looping. To study this tradeoff systematically, we jointly vary model size, training tokens, and forward and backward loop counts across nearly 600 training runs and fit a unified scaling law that captures the effects of looping and truncation through effective parameters. Despite the training-compute savings of truncation, our fitted law favors full BPTT when forward and backward loop counts are jointly optimized. In matched-compute runs, full BPTT through fewer loops consistently outperforms truncated settings of the same compute. The law further shows that at fixed model size, the compute-optimal loop count and training-token budget both grow with compute. When model size is also free, the law identifies two fully trained loops as the best looped setting. Experimentally, this setting achieves lower loss than the compute-optimal non-looped model with about 27% fewer non-embedding parameters and only 8% more training compute.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.26030v1",
+        "retrieved_at": "2026-10-20T23:06:02Z",
+        "license": "CC0-1.0",
+        "source_title": "Truncate or Not? A Scaling Study of Looped Transformers with Truncated Backpropagation",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-10-19T08:52:29Z",
+        "updated_at": "2026-10-19T08:52:29Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.26030v1",
+        "verified_at": "2026-10-20T23:06:02Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "Across nearly 600 looped-Transformer training runs, the study models the joint effects of model size, data, forward loops and backward loops. When both loop counts are optimized under matched compute, full backpropagation through fewer loops outperforms truncation. With model size also variable, two fully trained loops achieve lower loss than the compute-optimal non-looped model using about 27% fewer non-embedding parameters and 8% more training compute. The result informs loop-training budget allocation within the studied language-model regime, not validated CTR scaling.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-21",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.26030v1"
+          ]
+        },
+        "zh": {
+          "text": "研究通过近 600 次循环 Transformer 训练，联合分析模型大小、数据量及前向和反向循环次数。在相同计算预算下同时优化两种循环次数时，较少循环配合完整反向传播优于截断反向传播。允许调整模型大小后，两次完整训练循环相比计算最优的非循环模型，以约少 27% 的非嵌入参数和多 8% 的训练计算获得更低损失。结论可用于所研究语言模型范围内的循环训练预算分配，尚未在 CTR 上验证。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-21",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.26030v1"
+          ]
+        }
+      },
+      "added_at": "2026-10-20T23:10:01Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.26030"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2610.25717",
+      "title": "Fine-Grained Units, Flat Decisions: Hierarchical Micro-Expert Pruning for Mixture-of-Experts Models",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "Houmo AI; University of Science and Technology of China; Southeast University",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.25717"
+        }
+      ],
+      "aliases": [
+        "UC-RAMP"
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Micro-expert pruning reduces the capacity of mixture-of-experts (MoE) models by removing coupled channels within routed experts. However, finer pruning granularity alone does not guarantee the preservation of downstream capabilities, as similar language-modeling perplexity can accompany substantially different task performance. We revisit micro-expert mask construction as two distinct decisions: allocating retained capacity across experts and selecting channels within that capacity. We propose UC-RAMP, a two-stage post-training pruning framework that explicitly separates these decisions. CAPE uses cross-domain calibration evidence to redistribute expert widths under an exact layer-wise budget, while RAMP refines channel composition at fixed widths through one-out, one-in exchanges guided by a channel-interaction surrogate. Across three MoE models at 25% and 50% routed-expert channel pruning, UC-RAMP achieves the highest ten-task mean accuracy among evaluated pruning methods in five of six settings. At 50% pruning, it outperforms the strongest evaluated baseline by 8.19, 3.96, and 6.14 percentage points across the three models, respectively. In a single-A100 deployment at 25% pruning, UC-RAMP reduces measured time to first token by 19.7--23.9% and time per output token by 20.2--22.3% relative to the unpruned model. The code is available at https://github.com/xzktx003/UC_RAMP.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.25717v1",
+        "retrieved_at": "2026-10-20T23:06:08Z",
+        "license": "CC0-1.0",
+        "source_title": "Fine-Grained Units, Flat Decisions: Hierarchical Micro-Expert Pruning for Mixture-of-Experts Models",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-10-19T03:10:28Z",
+        "updated_at": "2026-10-19T03:10:28Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.25717v1",
+        "verified_at": "2026-10-20T23:06:08Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "UC-RAMP separates allocation of retained expert widths from channel selection in post-training MoE pruning. CAPE redistributes capacity under an exact layer budget; RAMP refines channels at fixed widths using interaction-guided exchanges. It has the best ten-task mean accuracy in five of six tested model/pruning settings. At 25% pruning on one A100, time to first token falls 19.7–23.9% and time per output token 20.2–22.3% versus unpruned models. Transfer to recommendation remains untested.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-21",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.25717v1"
+          ]
+        },
+        "zh": {
+          "text": "UC-RAMP 将 MoE 训练后剪枝分成专家宽度分配与通道选择两步：CAPE 在固定层预算内重新分配容量，RAMP 再依据通道交互替换通道。它在六种模型与剪枝比例组合中的五种取得最高十任务平均准确率。单张 A100、25% 剪枝时，相对未剪枝模型，首 token 延迟下降 19.7%–23.9%，每输出 token 耗时下降 20.2%–22.3%。这些压缩方法尚未在推荐任务上验证。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-21",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.25717v1"
+          ]
+        }
+      },
+      "added_at": "2026-10-20T23:10:01Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.25717"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2610.23064",
+      "title": "BaGuaLu-2: Taming Dynamic Memory Fluctuation for Efficient MoE Model Training over 10,000 GPUs",
+      "collection": "related",
+      "category": "engineering-serving",
+      "affiliation": "Tsinghua University; Qingcheng.AI; University of Science and Technology Beijing",
+      "venue": "SC",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.23064"
+        },
+        {
+          "label": "Official venue",
+          "url": "https://sc26.conference-program.com/presentation/?id=pap287&sess=sess211"
+        }
+      ],
+      "aliases": [
+        "BaGuaLu-2"
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Fine-grained Mixture-of-Experts (MoE) is the de facto architecture for scaling large language models. However, dynamic expert load imbalance causes severe memory fluctuations that degrade training efficiency. Existing systems rely on static memory provisioning: they either over-provision, leaving GPU memory idle during normal execution, or under- provision, inviting out-of-memory crashes and costly manual rollbacks when load spikes occur. To address these challenges, we propose BaGuaLu-2, a large-scale MoE training system that eliminates this dilemma through flexible provisioning. By transforming memory allocation from a static, one-time tuning choice into a continuous and fine-grained control. BaGuaLu-2 grants exact activation memory on demand for each training batch. Furthermore, it offsets any dynamic management overhead through system optimizations. BaGuaLu-2 demonstrates exceptional scalability, training a model with 1040 billion parameters across 12,288 GPUs while sustaining over 2 EFlops at 35% MFU. Compared with state-of-the-art systems, BaGuaLu-2 delivers 1.14x and 1.13x average throughput improvements over Megatron-Kuai and AdaPipe, respectively.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.23064v1",
+        "retrieved_at": "2026-10-20T23:06:16Z",
+        "license": "CC0-1.0",
+        "source_title": "BaGuaLu-2: Taming Dynamic Memory Fluctuation for Efficient MoE Model Training over 10,000 GPUs",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-10-16T07:40:24Z",
+        "updated_at": "2026-10-16T07:40:24Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.23064v1",
+        "verified_at": "2026-10-20T23:06:16Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "BaGuaLu-2 addresses activation-memory fluctuations caused by MoE expert-load imbalance through per-batch dynamic provisioning and system optimizations. It trains a 1.04-trillion-parameter model on 12,288 GPUs at over 2 EFlops and 35% model FLOPs utilization. Reported average throughput is 1.14x Megatron-Kuai and 1.13x AdaPipe. The system offers a memory-management reference for large sparse-model training, with no recommendation-specific evaluation.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-21",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.23064v1"
+          ]
+        },
+        "zh": {
+          "text": "BaGuaLu-2 针对 MoE 专家负载不均引起的激活显存波动，按训练批次动态分配内存，并用系统优化抵消管理开销。论文在 12,288 张 GPU 上训练 1.04 万亿参数模型，达到超过 2 EFlops 和 35% 的模型算力利用率；平均吞吐分别为 Megatron-Kuai、AdaPipe 的 1.14 倍和 1.13 倍。它为大型稀疏模型训练提供显存管理参考，未开展推荐专门评测。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-21",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.23064v1"
+          ]
+        }
+      },
+      "added_at": "2026-10-20T23:10:01Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.23064"
       },
       "change_history": [],
       "reading_tier": null

@@ -7,14 +7,14 @@
 Company membership follows recorded affiliation aliases and preserved company-overview mentions. A paper may appear under multiple companies. This structural migration does not independently reverify affiliations or publication claims.
 
 - [Meta](#company-meta) (51)
-- [ByteDance / TikTok](#company-bytedance-tiktok) (22)
-- [Alibaba](#company-alibaba) (41)
+- [ByteDance / TikTok](#company-bytedance-tiktok) (23)
+- [Alibaba](#company-alibaba) (42)
 - [Meituan](#company-meituan) (10)
 - [Tencent](#company-tencent) (22)
-- [Google](#company-google) (15)
+- [Google](#company-google) (16)
 - [LinkedIn](#company-linkedin) (4)
 - [NetEase](#company-netease) (2)
-- [Kuaishou](#company-kuaishou) (26)
+- [Kuaishou](#company-kuaishou) (27)
 - [Huawei](#company-huawei) (9)
 - [Baidu](#company-baidu) (9)
 - [Shopee](#company-shopee) (4)
@@ -73,9 +73,9 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [Tooploox](#company-tooploox) (1)
 - [Arm](#company-arm) (1)
 - [Disney](#company-disney) (1)
-- [Houmo AI](#company-houmo-ai) (1)
+- [Houmo AI](#company-houmo-ai) (2)
 - [StartLux](#company-startlux) (1)
-- [China Telecom](#company-china-telecom) (1)
+- [China Telecom](#company-china-telecom) (2)
 - [Atomic Machines](#company-atomic-machines) (1)
 - [Slater Labs](#company-slater-labs) (1)
 - [DeepAuto.ai](#company-deepauto-ai) (1)
@@ -162,6 +162,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [MDL: A Unified Multi-Distribution Learner in Large-scale Industrial Recommendation through Tokenization](topics/foundation-models-multi-scenario.md#paper-2602-07520) · 2026 · Core
 - [Deploying RDMA for Distributed Inference and Training At Scale](related/engineering-serving.md#paper-2610-12815) · 2026 · Related
 - [LEMUR: Large scale End-to-end MUltimodal Recommendation](topics/scalable-architecture.md#paper-2511-10962) · 2026 · Core
+- [RemoteANN: A Native Vector Search Engine for Cloud Object Storage](related/retrieval-reranking-scaling.md#paper-2610-25172) · 2026 · Related
 
 <a id="company-alibaba"></a>
 
@@ -208,6 +209,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [HiSAC: Hierarchical Sparse Activation Compression for Ultra-long Sequence Modeling in Recommenders](related/long-sequence-modeling.md#paper-2602-21009) · 2026 · Related
 - [Memory-Efficient Subspace Optimization with Residual Correction: From Momentum SGD to Muon](related/architecture-innovations-beyond-recommendation.md#paper-2610-19844) · 2026 · Related
 - [LoOPSD: On-Policy Self-Distillation with Looped Teachers](related/architecture-innovations-beyond-recommendation.md#paper-2610-18162) · 2026 · Related
+- [Don't Rewrite the SID Map: Topology Preservation for Generative Retrieval in Dynamic E-Commerce Search](related/generative-recommendation.md#paper-2610-26105) · 2026 · Related
 
 <a id="company-meituan"></a>
 
@@ -270,6 +272,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [Understanding and Mitigating Training Instability in Large-Scale Recommender Systems: A Cascade Perspective](related/engineering-serving.md#paper-2610-14394) · 2026 · Related
 - [Chain Dimension Scaling: Communication-Efficient Loop-Style Scaling for Industrial Short-Video Ranking](topics/scalable-architecture.md#paper-2610-16415) · 2026 · Core
 - [Reasoning Reranking with Semantic IDs as the Sole Item Representation](related/generative-recommendation.md#paper-2610-22797) · 2026 · Related
+- [DuoLM: Fast and Effective Personalized Recommendation with Language Models](related/engineering-serving.md#paper-2610-24481) · 2026 · Related
 
 <a id="company-linkedin"></a>
 
@@ -317,6 +320,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [OneLA: Scaling Linear-Attention Decoding to Large Beams in Generative Recommendation](topics/efficiency-deployment.md#paper-2609-12399) · 2026 · Core
 - [UxSID: Semantic-Aware User Interests Modeling for Ultra-Long Sequence](topics/efficiency-deployment.md#paper-2605-09040) · 2026 · Core
 - [Retrieve-then-Adapt: Retrieval-Augmented Test-Time Adaptation for Sequential Recommendation](related/retrieval-reranking-scaling.md#paper-2604-05379) · 2026 · Related
+- [AGR: Agentic Generative Retrieval with Tool-Augmented Search](related/generative-recommendation.md#paper-2610-26831) · 2026 · Related
 
 <a id="company-huawei"></a>
 
@@ -737,6 +741,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 ## Houmo AI
 
 - [LoopQuant: Accurate and Efficient Post-Training Quantization for Looped Transformers](related/architecture-innovations-beyond-recommendation.md#paper-2610-16368) · 2026 · Related
+- [Fine-Grained Units, Flat Decisions: Hierarchical Micro-Expert Pruning for Mixture-of-Experts Models](related/architecture-innovations-beyond-recommendation.md#paper-2610-25717) · 2026 · Related
 
 <a id="company-startlux"></a>
 
@@ -749,6 +754,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 ## China Telecom
 
 - [Tail-Replay: Escaping the Curse of Linear Attention in Prefix Caching for Hybrid LLMs](related/architecture-innovations-beyond-recommendation.md#paper-2608-30310) · 2026 · Related
+- [Structure-Aligned History Learning with Subspace-Structured Semantic IDs for Generative Recommendation](related/generative-recommendation.md#paper-2610-25093) · 2026 · Related
 
 <a id="company-atomic-machines"></a>
 

@@ -6,7 +6,7 @@
 
 Systems, serving infrastructure and hardware-aware optimization.
 
-40 papers · Updated 2026-10-20
+42 papers · Updated 2026-10-21
 
 <a id="paper-2510-18239"></a>
 
@@ -167,3 +167,11 @@ Systems, serving infrastructure and hardware-aware optimization.
 <a id="paper-2610-21676"></a>
 
 - **ConStore: Search-Overlapped Prefetch and Co-Retrieval-Aware Content Storage for Disk-Based ANNS**: At large retrieval depth, loading the content behind vector-search results can cost as much as the search itself. ConStore overlaps bounded speculative content prefetch with disk-based ANNS, groups frequently co-retrieved documents, adapts the layout to workload changes, and batches page-aware reads. Across three multi-hop QA workloads with K from 10 to 1600, it reduces end-to-end retrieval latency by up to 48% on DiskANN and 25% on SPANN versus the best per-document-read baseline. Separate 100M- and billion-vector experiments test prefetch scalability. These are retrieval-system results, not measured CTR improvements. — [Paper](https://arxiv.org/abs/2610.21676) (arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-24481"></a>
+
+- **DuoLM: Fast and Effective Personalized Recommendation with Language Models**: DuoLM separates an encoder that produces reusable compact item representations from a personalized LLM ranker, training both with recommendation supervision and teacher distillation. Virtual token IDs, shared history computation and CUDA Graph replay reduce serving overhead. Benchmarks retain quality comparable to the expert teacher; on one H100 the system scores about 26,400 candidates per second, roughly 60x the teacher throughput with vLLM and automatic prefix caching. The throughput comparison is specific to that hardware and serving setup. — [Paper](https://arxiv.org/abs/2610.24481) (University of California, Irvine; Google DeepMind; Oracle · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-23064"></a>
+
+- **BaGuaLu-2: Taming Dynamic Memory Fluctuation for Efficient MoE Model Training over 10,000 GPUs**: BaGuaLu-2 addresses activation-memory fluctuations caused by MoE expert-load imbalance through per-batch dynamic provisioning and system optimizations. It trains a 1.04-trillion-parameter model on 12,288 GPUs at over 2 EFlops and 35% model FLOPs utilization. Reported average throughput is 1.14x Megatron-Kuai and 1.13x AdaPipe. The system offers a memory-management reference for large sparse-model training, with no recommendation-specific evaluation. — [Paper](https://arxiv.org/abs/2610.23064) · [Official venue](https://sc26.conference-program.com/presentation/?id=pap287&sess=sess211) (Tsinghua University; Qingcheng.AI; University of Science and Technology Beijing · SC 2026). Reading priority: Unrated.
