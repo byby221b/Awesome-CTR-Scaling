@@ -3,7 +3,7 @@
     "reading_tiers_assigned": 339,
     "reading_tiers_unrated": 191,
     "known_added_dates": 530,
-    "papers_with_updates": 296,
+    "papers_with_updates": 297,
     "verified_source_dates": 530,
     "verified_abstracts": 530,
     "unavailable_abstracts": 0,
@@ -26,7 +26,7 @@
       "added_at_basis": "Earliest recorded inclusion in reachable repository main history; 50 records were present at its root commit. This is not the source publication date.",
       "backfill_policy": "Unknown historical instants remain null. Source-date imports and structural/UI migrations do not invent catalog change events."
     },
-    "catalog_sha256": "d3dc072b40e6034f422794d529d9a27b51e9a4eafe01900ad68634d6574de529"
+    "catalog_sha256": "01877b4c3ccaae12d9898c955804bef269578853ecefbe0d9110cdeb0dd86f7f"
   },
   "categories": [
     {
@@ -39568,8 +39568,8 @@
       "venue": "arXiv",
       "year": 2026,
       "tags": [
-        "Unified FI+Seq",
         "Attention",
+        "Unified FI+Seq",
         "Multi-scenario"
       ],
       "aliases": [
@@ -39623,7 +39623,16 @@
         "kind": "catalog_entry",
         "source_url": "https://arxiv.org/abs/2610.35318"
       },
-      "change_history": [],
+      "change_history": [
+        {
+          "at": "2026-10-27T23:19:43Z",
+          "kind": "metadata_enrichment",
+          "fields": [
+            "tags"
+          ],
+          "source_url": "https://arxiv.org/abs/2610.35318v1"
+        }
+      ],
       "reading_tier": null,
       "companies": [
         "alibaba"

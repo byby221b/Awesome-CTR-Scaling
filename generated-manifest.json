@@ -1,12 +1,12 @@
 {
   "schema_version": 1,
-  "catalog_sha256": "d3dc072b40e6034f422794d529d9a27b51e9a4eafe01900ad68634d6574de529",
+  "catalog_sha256": "01877b4c3ccaae12d9898c955804bef269578853ecefbe0d9110cdeb0dd86f7f",
   "paper_count": 530,
   "coverage": {
     "reading_tiers_assigned": 339,
     "reading_tiers_unrated": 191,
     "known_added_dates": 530,
-    "papers_with_updates": 296,
+    "papers_with_updates": 297,
     "verified_source_dates": 530,
     "verified_abstracts": 530,
     "unavailable_abstracts": 0,
@@ -35,13 +35,13 @@
     "docs/topics/foundation-models-multi-scenario.md": "95e4fe7dbb4ef396ac479e536395c4fd4fffe6806917a2223ccd33214808ec1f",
     "docs/topics/scalable-architecture.md": "222662cd4628da2c0ef2fe62e7bd5eba67adf3f799bdf2647fadf7158f712812",
     "docs/topics/scaling-law-theory.md": "9482446cbbe97e7993bbd49759ecfbe516810bf876e3b5194dd8271b6728a8d4",
-    "docs/topics/unified-feature-sequence-modeling.md": "b81b32757457dc27447873379d28c68bb9990ba6899f9b643c376f45b31583e9",
+    "docs/topics/unified-feature-sequence-modeling.md": "912be3a4d4021bfdcb4da5a8d25866e2acfbd295ca3b960ca6f3e21814b99a87",
     "site/.nojekyll": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "site/app.js": "5b78c9e2454bce3fb162d4af72f96c0b4cba706fd4e01ca3e9beeca3280949c8",
-    "site/catalog.json": "0a5ca5eab4afdcb8799688b9988a807891f399bad191606ae22432940291fd89",
+    "site/catalog.json": "0c1cdc9b29ed6c8279871a7a07961f3c1fafd9933a4383f0c45a82def07eb01f",
     "site/favicon.svg": "3f54fc261cc3c1f995dc5daba017f021138d20858005fa65ce6b2ae5113854af",
-    "site/index.html": "de053a99d8ffc9fc25c47d525547e143747f4ca6569c168db84a0238b2eba14a",
+    "site/index.html": "d5cd55fe6f0401c403d3aabbffada665e08e46e16cb1706935c50846533428f1",
     "site/styles.css": "e279c8977c7f028ff12f74aaad4bfa665a09930dfbd19da4bc5fe74365041a03",
-    "site/zh.html": "ca4eb90fe74ca0dca1c5fd49b2c3487b80fe4a9a3f182f031e48676e613c0a34"
+    "site/zh.html": "c2d745312e990f6c4bc5cd2a36b9cb6ffa3f5991efc16261368448dc7598da62"
   }
 }

@@ -38811,8 +38811,8 @@
       "venue": "arXiv",
       "year": 2026,
       "tags": [
-        "Unified FI+Seq",
         "Attention",
+        "Unified FI+Seq",
         "Multi-scenario"
       ],
       "aliases": [
@@ -38866,7 +38866,16 @@
         "kind": "catalog_entry",
         "source_url": "https://arxiv.org/abs/2610.35318"
       },
-      "change_history": [],
+      "change_history": [
+        {
+          "at": "2026-10-27T23:19:43Z",
+          "kind": "metadata_enrichment",
+          "fields": [
+            "tags"
+          ],
+          "source_url": "https://arxiv.org/abs/2610.35318v1"
+        }
+      ],
       "reading_tier": null
     },
     {
