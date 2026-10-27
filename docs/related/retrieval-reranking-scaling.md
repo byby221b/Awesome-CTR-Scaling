@@ -6,7 +6,7 @@
 
 Scaling retrieval and reranking stages of recommendation pipelines.
 
-36 papers · Updated 2026-10-27
+37 papers · Updated 2026-10-28
 
 <a id="paper-2603-04816"></a>
 
@@ -151,3 +151,7 @@ Scaling retrieval and reranking stages of recommendation pipelines.
 <a id="paper-2610-30941"></a>
 
 - **PAIR: Preference-Aligned Intent Retrieval for Premium People Recommendation at LinkedIn**: PAIR models complementary professional intent rather than profile similarity for people retrieval. An exposure-conditioned multi-negative contrastive objective learns preferences, while position-aware click-history aggregation permits constant-cost updates within a fixed history window. A 0.6B-parameter model reaches MAR@100 of 0.45 on LinkedIn Premium retrieval. Lightweight CPU updates avoid repeated language-model inference during personalization; the abstract reports no online business lift. — [Paper](https://arxiv.org/abs/2610.30941) (LinkedIn · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-35256"></a>
+
+- **Octen-WebGR: Scaling Generative Retrieval to 200 Million Web Pages**: Octen-WebGR retrieves web pages by generating a two-token semantic identifier constrained to real URLs. Its 4B model indexes 201 million pages and reaches 59.6% top-1 accuracy on subsequent navigational traffic, versus 46.5% for a click-enhanced dense retriever. It is strongest on new queries for well-exposed pages; dense retrieval retains an advantage on rarely visited pages. Experiments up to 32 million URLs link capacity requirements to index size and exposure, offering evidence for large-scale generative retrieval rather than CTR ranking. — [Paper](https://arxiv.org/abs/2610.35256) (arXiv 2026). Reading priority: Unrated.

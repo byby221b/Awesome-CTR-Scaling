@@ -6,7 +6,7 @@
 
 Generative retrieval, recommendation and ranking beyond discriminative CTR.
 
-101 papers · Updated 2026-10-27
+102 papers · Updated 2026-10-28
 
 <a id="paper-2605-12617"></a>
 
@@ -178,7 +178,7 @@ Generative retrieval, recommendation and ranking beyond discriminative CTR.
 
 <a id="paper-2607-26621"></a>
 
-- **WhisperRec**: OneLatent compresses teacher-generated reasoning into a small set of learnable latent tokens instead of emitting lengthy chains of thought. Multi-view adaptive reasoning supplies supervision, staged alignment internalizes it, and curriculum post-training activates the latent reasoning for recommendation, improving the quality-efficiency trade-off in public and industrial evaluations. — [Paper](https://arxiv.org/abs/2607.26621) (Kuaishou · 2026). Reading priority: Worth reading.
+- **WhisperRec**: WhisperRec compresses teacher-generated reasoning into learnable latent tokens, using multi-view adaptive supervision, three-stage alignment and curriculum post-training to avoid generating lengthy rationales. Its revised abstract reports SID@64 gains of 17.44% and 9.33% over explicit-CoT Think and No-Think variants and over 10-fold online inference throughput on the reported recommendation evaluation. — [Paper](https://arxiv.org/abs/2607.26621) (Kuaishou · 2026). Reading priority: Worth reading.
 
 <a id="paper-2605-05803"></a>
 
@@ -411,3 +411,7 @@ Generative retrieval, recommendation and ranking beyond discriminative CTR.
 <a id="paper-2610-33435"></a>
 
 - **PinGER: Token-Efficient Generative Retrieval with Semantic IDs**: PinGER retains semantic-ID outputs while serving one token per history item. An asymmetric mask preserves the training function, goal-conditioned generation and diversity controls steer retrieval, and wide-beam serving resolves valid IDs through a local index. Deployment in Pinterest Related Pins increases fresh-Pin saves by 3.60% and overall saves by 0.62%, reduces end-to-end surface latency by 0.7%, and removes the replaced nearest-neighbor search cost. — [Paper](https://arxiv.org/abs/2610.33435) (Pinterest · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-32980"></a>
+
+- **Separating Thinking from Spelling for Efficient Generative Recommendation**: Deco separates history reasoning from semantic-ID decoding: each history item becomes one fused token, a heavy backbone produces one next-item concept, and a lightweight cached decoder performs beam search. On seven recommendation datasets it matches or improves the compared models while delivering 3.2–8.6 times their throughput under a 50 ms p95 budget in a production-style pipeline. The result supports larger candidate pools and backbones through cheaper decoding; it is not an online business-lift claim. — [Paper](https://arxiv.org/abs/2610.32980) (arXiv 2026). Reading priority: Unrated.

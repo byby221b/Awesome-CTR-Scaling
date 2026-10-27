@@ -8,9 +8,9 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 
 - [Meta](#company-meta) (52)
 - [ByteDance / TikTok](#company-bytedance-tiktok) (23)
-- [Alibaba](#company-alibaba) (45)
+- [Alibaba](#company-alibaba) (47)
 - [Meituan](#company-meituan) (10)
-- [Tencent](#company-tencent) (23)
+- [Tencent](#company-tencent) (24)
 - [Google](#company-google) (18)
 - [LinkedIn](#company-linkedin) (6)
 - [NetEase](#company-netease) (2)
@@ -214,6 +214,8 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [Progressive Learning from Content to Relevance to Personalization for CTR Prediction](topics/unified-feature-sequence-modeling.md#paper-2610-29138) · 2026 · Core
 - [Rethinking Sequence Compression with Test-time Regression](related/architecture-innovations-beyond-recommendation.md#paper-2610-31574) · 2026 · Related
 - [SLIDE: Search-to-List Item Distillation for Single-Rollout Generative Retrieval](related/generative-recommendation.md#paper-2610-34764) · 2026 · Related
+- [Unified Heterogeneous Feature Interaction via Effective-Rank Scaling for Recommender Systems](topics/unified-feature-sequence-modeling.md#paper-2610-35318) · 2026 · Core
+- [CRIM: Composable and Reusable Item Memory for Efficient Personalized Retrieval](related/sample-instance-compression-for-sequence-modeling.md#paper-2610-35323) · 2026 · Related
 
 <a id="company-meituan"></a>
 
@@ -257,6 +259,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [AlignPred: Error-Controlled KV Cache Compression via Alignment and Predictive Coding](related/architecture-innovations-beyond-recommendation.md#paper-2610-17970) · 2026 · Related
 - [Shaping Latent Mixture-of-Experts: From Expert Geometry to Layerwise Capacity Allocation](related/architecture-innovations-beyond-recommendation.md#paper-2610-14644) · 2026 · Related
 - [LoopGR: Parameter-Efficient Scaling for Generative Recommendation via Recurrent Depth](related/generative-recommendation.md#paper-2610-34157) · 2026 · Related
+- [HyScale: Scaling Long-Context Training for Learned Sparse Attention](related/engineering-serving.md#paper-2610-32057) · 2026 · Related
 
 <a id="company-google"></a>
 

@@ -6,7 +6,7 @@
 
 Transferring, compressing and deploying larger recommendation models.
 
-9 papers · Updated 2026-10-27
+10 papers · Updated 2026-10-28
 
 <a id="paper-2411-16122"></a>
 
@@ -43,3 +43,7 @@ Transferring, compressing and deploying larger recommendation models.
 <a id="paper-2610-32943"></a>
 
 - **Knowledge Distillation across Item and Code Spaces for Parallel Generative Recommendation**: This work distills an item-space teacher into parallel semantic-ID generation, which avoids conditioning on previously generated codes. Item Distribution Matching reconstructs item probabilities, while Code Marginal Matching projects teacher distributions onto code marginals. Reported mean gains are 15.39% in Recall@10 for the former and 8.28% in NDCG@10 for the latter. The methods connect item-level knowledge with parallel code prediction. — [Paper](https://arxiv.org/abs/2610.32943) (The Hong Kong University of Science and Technology; University of Science and Technology of China · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-35218"></a>
+
+- **MuSID-KD: Multigranularity Knowledge Distillation for Generative Recommendation with Semantic IDs**: MuSID-KD transfers semantic-ID recommendation knowledge to lightweight students at multiple granularities. It aligns candidate distributions aggregated by shared prefixes and allocates token-level supervision according to estimated ranking impact. Experiments with three student architectures report better recommendation accuracy and closer prefix and pairwise ranking alignment without changing online inference architecture. This is a training-side method for preserving ranking quality in compact generative recommenders. — [Paper](https://arxiv.org/abs/2610.35218) (East China Normal University; Fudan University · arXiv 2026). Reading priority: Unrated.

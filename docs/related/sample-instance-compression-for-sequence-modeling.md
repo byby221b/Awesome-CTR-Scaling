@@ -6,7 +6,7 @@
 
 Compressing complete interactions and raw samples into sequence tokens.
 
-2 papers · Updated 2026-10-27
+3 papers · Updated 2026-10-28
 
 <a id="paper-2604-08933"></a>
 
@@ -15,3 +15,7 @@ Compressing complete interactions and raw samples into sequence tokens.
 <a id="paper-2604-15650"></a>
 
 - **SIF**: SIF treats a complete historical sample as a sequence feature instead of retaining only an item-level subset. Hierarchical group-adaptive quantization creates sample tokens, and SIF-Mixer performs token- and sample-level interactions over homogeneous representations, connecting richer historical context with a unified architecture for model-capacity scaling. — [Paper](https://arxiv.org/abs/2604.15650) (Meituan · RecSys (Industry) 2026). Reading priority: Worth reading.
+
+<a id="paper-2610-35323"></a>
+
+- **CRIM: Composable and Reusable Item Memory for Efficient Personalized Retrieval**: CRIM reduces repeated item-text encoding in personalized retrieval by compressing each item into user- and query-independent continuous memories. Requests compose cached memories in interaction order, while readout tokens and sampled live re-encoding support joint training with periodic cache refreshes. Evaluations on MovieLens-1M, Qilin and LazSeq report stronger retrieval with lower inference costs at the same backbone scale. The reusable item representation offers a practical route to compressing recommendation histories without removing request-level context modeling. — [Paper](https://arxiv.org/abs/2610.35323) (Tsinghua University; Alibaba International Digital Commerce Group · arXiv 2026). Reading priority: Unrated.

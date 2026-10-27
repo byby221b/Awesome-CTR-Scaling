@@ -6,7 +6,7 @@
 
 Transferable ideas from general-purpose model architecture research.
 
-180 papers · Updated 2026-10-27
+183 papers · Updated 2026-10-28
 
 <a id="paper-2606-16825"></a>
 
@@ -727,3 +727,15 @@ Transferable ideas from general-purpose model architecture research.
 <a id="paper-2610-31574"></a>
 
 - **Rethinking Sequence Compression with Test-time Regression**: TTR-Compressor treats sequence compression as learned test-time regression, computing closed-form coefficients during the forward pass. It supports blockwise attention and visual-token merging. Experiments report strong RULER results, while a visual merger matches an MLP merger with 55.6% fewer tokens. These results concern long-context and multimodal models, with no recommendation-specific evaluation. — [Paper](https://arxiv.org/abs/2610.31574) (The Chinese University of Hong Kong; Independent Researcher; Token Foundry; Alibaba Group · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-35556"></a>
+
+- **LoopFold: Parallelizing Recurrent Depth in Looped Transformers**: LoopFold reduces sequential dependencies in looped Transformers by predicting inputs to later loops, executing multiple depths in parallel, and correcting their outputs with newly available earlier states. In 1.4B language models, deeper configurations improve average zero-shot accuracy across eight tasks; five sequential stages reduce decoding latency by 46% relative to a nine-loop vanilla model using additional parallel computation. This suggests a latency–compute trade-off for recurrent architectures, with no recommendation evaluation reported. — [Paper](https://arxiv.org/abs/2610.35556) (Shanghai Jiao Tong University; Sun Yat-sen University; Shanghai Innovation Institute · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-35544"></a>
+
+- **StateLoop: Persistent State for Looped Transformers**: StateLoop adds a persistent state to every token in a looped Transformer. A learned gate retains and updates information across iterations, and a projection feeds that state back into subsequent computation and prediction. It lowers Pile perplexity and improves average accuracy across eight zero-shot tasks against vanilla looping, with the perplexity advantage growing at greater trained depth. The mechanism is relevant to parameter-sharing architectures, but transfer to ranking remains untested. — [Paper](https://arxiv.org/abs/2610.35544) (Shanghai Jiao Tong University; Sun Yat-sen University; Shanghai Innovation Institute · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-34056"></a>
+
+- **INTRA: Interleaved Non-contiguous Token spaRse Attention**: INTRA uses complementary Scatter and Gather sparse token groups to relay information across layers, with a GPU kernel that packs non-contiguous tokens for computation. After adaptation, it reports a 1.53-fold FLUX.1-dev generation speedup on an A100 and improved long-context prefill efficiency for LLaMA-3.1-8B. Larger reported gains are attention-only benchmarks, not end-to-end speedups. Its hardware-aware static pattern offers a transferable sparse-attention design; CTR performance is unverified. — [Paper](https://arxiv.org/abs/2610.34056) (New York University · arXiv 2026). Reading priority: Unrated.

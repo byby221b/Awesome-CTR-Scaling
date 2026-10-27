@@ -6,7 +6,7 @@
 
 Systems, serving infrastructure and hardware-aware optimization.
 
-43 papers · Updated 2026-10-27
+44 papers · Updated 2026-10-28
 
 <a id="paper-2510-18239"></a>
 
@@ -179,3 +179,7 @@ Systems, serving infrastructure and hardware-aware optimization.
 <a id="paper-2610-28096"></a>
 
 - **KPage: Cross-Block Page Compaction for Hardware-Efficient Sparse Attention**: KPage addresses wasted GPU tile capacity in partially occupied sparse-attention blocks. It packs 16-row KV pages across block boundaries during loading and selects query tile shapes, preserving the original sparse graph without materializing compacted tensors in high-bandwidth memory. Across eight layouts it reports 1.13–4.25 times forward and 1.02–2.71 times forward-plus-backward speedup over the strongest exact sparse baselines. These are attention-kernel results, not recommendation-system gains. — [Paper](https://arxiv.org/abs/2610.28096) (KlingAI Research; NVIDIA · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-32057"></a>
+
+- **HyScale: Scaling Long-Context Training for Learned Sparse Attention**: HyScale targets the selection bottleneck in learned sparse-attention training. HyTopK computes exact top-k indices without materializing the score table, and selection replay reuses forward selections during recomputation. With other system optimizations, it speeds up million-token GLM-5.1 training by 2.07 times over Megatron-LM on 512 H20 GPUs; additional results measure individual attention layers on 32 H800 GPUs. The selection and recomputation design is relevant to long-sequence training engineering, with no CTR benchmark claimed. — [Paper](https://arxiv.org/abs/2610.32057) (University of Edinburgh; Tencent Hunyuan · arXiv 2026). Reading priority: Unrated.

@@ -1,15 +1,15 @@
 {
   "coverage": {
     "reading_tiers_assigned": 339,
-    "reading_tiers_unrated": 182,
-    "known_added_dates": 521,
+    "reading_tiers_unrated": 191,
+    "known_added_dates": 530,
     "papers_with_updates": 296,
-    "verified_source_dates": 521,
-    "verified_abstracts": 521,
+    "verified_source_dates": 530,
+    "verified_abstracts": 530,
     "unavailable_abstracts": 0,
     "pending_abstracts": 0,
-    "english_summaries": 521,
-    "chinese_summaries": 521
+    "english_summaries": 530,
+    "chinese_summaries": 530
   },
   "schema_version": 4,
   "meta": {
@@ -17,7 +17,7 @@
     "description": "Scaling laws and scalable ranking models for industrial recommendation.",
     "repository_url": "https://github.com/byby221b/Awesome-CTR-Scaling",
     "site_url": "https://byby221b.github.io/Awesome-CTR-Scaling/",
-    "updated": "2026-10-27",
+    "updated": "2026-10-28",
     "source_commit": "31ad30becff83ca14a01f37fc99d52ba79f85565",
     "scope": "We cover papers that (1) study scaling laws for recommendation models, (2) propose scalable Transformer-based architectures for CTR/ranking, (3) address efficiency challenges in scaling up industrial ranking systems, or (4) explore novel paradigms (e.g., sparse scaling, generative pre-training, foundation models) for scalable recommendation.",
     "history": {
@@ -26,7 +26,7 @@
       "added_at_basis": "Earliest recorded inclusion in reachable repository main history; 50 records were present at its root commit. This is not the source publication date.",
       "backfill_policy": "Unknown historical instants remain null. Source-date imports and structural/UI migrations do not invent catalog change events."
     },
-    "catalog_sha256": "540fbdc906e48760642b9d817a52ff726af25e60cb28a1270a842527ecb6f3a1"
+    "catalog_sha256": "d3dc072b40e6034f422794d529d9a27b51e9a4eafe01900ad68634d6574de529"
   },
   "categories": [
     {
@@ -128,7 +128,7 @@
     {
       "id": "alibaba",
       "name": "Alibaba",
-      "count": 45
+      "count": 47
     },
     {
       "id": "meituan",
@@ -138,7 +138,7 @@
     {
       "id": "tencent",
       "name": "Tencent",
-      "count": 23
+      "count": 24
     },
     {
       "id": "google",
@@ -12702,31 +12702,31 @@
       ],
       "original_abstract": {
         "status": "verified",
-        "text": "Large language models (LLMs) have demonstrated strong reasoning capabilities, motivating their use as the backbone of foundation recommendation models (FRMs). Existing methods enhance recommendations through explicit Chain-of-Thought (CoT) reasoning under a Think-then-Answer paradigm. However, explicit CoT incurs substantial inference overhead by generating lengthy reasoning traces and relies on manually designed templates that struggle to capture diverse, dynamic user interests. We propose OneLatent, an efficient latent reasoning framework that compresses explicit reasoning traces into several learnable latent tokens, enabling Latent-Reason-then-Answer inference without generating verbose traces. OneLatent first introduces Multi-View Adaptive CoT (MV-ACoT), which creates diverse, high-quality teacher-generated supervision by exploring user interests from multiple perspectives and automatically adapting reasoning complexity to each instance. Building on pretrained FRMs, it then uses a three-stage latent-token alignment paradigm to progressively internalize CoT traces into learnable latent tokens. Finally, a multistage curriculum-based post-training strategy activates latent-token reasoning for downstream recommendation tasks. Experiments on an industrial-scale Kuaishou dataset and the public Kuaishou LLM-Rec benchmark show that OneLatent consistently outperforms explicit CoT-based methods and traditional baselines. Compared with the Think and No-Think variants of FRMs, OneLatent improves SID@64 by 17.44% and 9.33%, respectively, while achieving over 17x higher online inference throughput. We further develop a production serving system for scalable, real-time FRM inference. An online A/B test in Kuaishou's local-services advertising scenario shows that deploying OneLatent with this system yields an estimated 9.6% revenue lift over strong online baselines, including OneRec and OneReason.",
+        "text": "Large language models (LLMs) have demonstrated strong reasoning capabilities, motivating their adoption as backbones for foundation recommendation models (FRMs). Existing approaches typically enhance recommendation with explicit Chain-of-Thought (CoT) under the Think-then-Answer paradigm. However, generating lengthy rationales introduces substantial inference overhead, while fixed CoT templates struggle to model diverse, dynamic, and context-dependent user interests. We propose WhisperRec, an efficient latent reasoning framework for FRMs. WhisperRec compresses teacher-generated CoT into learnable latent reasoning tokens, enabling a Latent-Reason-then-Answer paradigm that performs reasoning in latent space without producing verbose rationales. This design retains decision-relevant reasoning information while avoiding the latency bottleneck of autoregressive rationale generation. Specifically, it first introduces Multi-View Adaptive CoT (MV-ACoT) to construct diverse, high-quality supervision from complementary perspectives on user interests. MV-ACoT also adapts reasoning complexity to each instance, applying lightweight analysis to clear cases and targeted multi-factor reasoning to challenging ones. Building on a pre-trained FRM, WhisperRec then employs a three-stage Latent Reasoning Alignment procedure to progressively internalize teacher CoT into latent representations. Finally, curriculum-based post-training activates latent-token reasoning for downstream recommendation while preserving standard recommendation capability. Experiments on an industrial-scale Kuaishou dataset and the public Kuaishou LLM-Rec benchmark show that WhisperRec consistently outperforms explicit-CoT methods and conventional baselines. Compared with explicit CoT Think and No-Think variants, WhisperRec improves SID@64 by 17.44% and 9.33%, respectively, and achieves over 10x higher online inference throughput.",
         "language": "en",
-        "source_url": "https://arxiv.org/abs/2607.26621v3",
-        "retrieved_at": "2026-10-02T04:50:41Z",
+        "source_url": "https://arxiv.org/abs/2607.26621v4",
+        "retrieved_at": "2026-10-27T23:14:28Z",
         "license": "CC0-1.0",
-        "source_title": "OneLatent: Latent Reasoning for Efficient Foundation Recommendation Models",
-        "source_version": "v3"
+        "source_title": "WhisperRec: Latent Reasoning for Efficient Foundation Recommendation Models",
+        "source_version": "v4"
       },
       "summaries": {
         "en": {
-          "text": "OneLatent compresses teacher-generated reasoning into a small set of learnable latent tokens instead of emitting lengthy chains of thought. Multi-view adaptive reasoning supplies supervision, staged alignment internalizes it, and curriculum post-training activates the latent reasoning for recommendation, improving the quality-efficiency trade-off in public and industrial evaluations.",
+          "text": "WhisperRec compresses teacher-generated reasoning into learnable latent tokens, using multi-view adaptive supervision, three-stage alignment and curriculum post-training to avoid generating lengthy rationales. Its revised abstract reports SID@64 gains of 17.44% and 9.33% over explicit-CoT Think and No-Think variants and over 10-fold online inference throughput on the reported recommendation evaluation.",
           "basis": "original_abstract",
           "method": "ai_assisted",
-          "updated_at": "2026-10-02",
+          "updated_at": "2026-10-28",
           "source_urls": [
-            "https://arxiv.org/abs/2607.26621v3"
+            "https://arxiv.org/abs/2607.26621v4"
           ]
         },
         "zh": {
-          "text": "OneLatent 将教师生成的推理压缩进少量可学习潜在令牌，无需在线输出冗长思维链。它先以多视角自适应推理提供监督，再分阶段对齐潜在表示，并通过课程式后训练激活推荐推理，在公开与工业实验中改善效果和效率的平衡。",
+          "text": "WhisperRec 通过多视角自适应监督、三阶段对齐和课程式后训练，将教师推理压缩进可学习潜在令牌，避免在线生成冗长理由。修订摘要报告，相对显式思维链的 Think 和 No-Think 变体，SID@64 分别提升 17.44% 和 9.33%，并获得超过 10 倍的在线推理吞吐。",
           "basis": "original_abstract",
           "method": "ai_assisted",
-          "updated_at": "2026-10-02",
+          "updated_at": "2026-10-28",
           "source_urls": [
-            "https://arxiv.org/abs/2607.26621v3"
+            "https://arxiv.org/abs/2607.26621v4"
           ]
         }
       },
@@ -12746,14 +12746,25 @@
           ],
           "source_url": "https://github.com/byby221b/Awesome-CTR-Scaling/commit/a49e55867454f76e5a77114de99b196cb83fd797",
           "commit_sha": "a49e55867454f76e5a77114de99b196cb83fd797"
+        },
+        {
+          "at": "2026-10-27T23:14:28Z",
+          "kind": "paper_revision",
+          "fields": [
+            "original_abstract",
+            "source_dates",
+            "summaries"
+          ],
+          "source_url": "https://arxiv.org/abs/2607.26621v4",
+          "source_version": "v4"
         }
       ],
       "source_dates": {
         "published_at": "2026-07-29T08:48:35Z",
-        "updated_at": "2026-09-29T13:01:15Z",
-        "source_version": "v3",
-        "source_url": "https://arxiv.org/abs/2607.26621v3",
-        "verified_at": "2026-10-02T04:50:41Z"
+        "updated_at": "2026-10-22T03:59:02Z",
+        "source_version": "v4",
+        "source_url": "https://arxiv.org/abs/2607.26621v4",
+        "verified_at": "2026-10-27T23:14:28Z"
       },
       "reading_tier": "consider",
       "companies": [
@@ -39547,6 +39558,599 @@
         "linkedin"
       ],
       "order": 520
+    },
+    {
+      "id": "2610.35318",
+      "title": "Unified Heterogeneous Feature Interaction via Effective-Rank Scaling for Recommender Systems",
+      "collection": "core",
+      "category": "unified-feature-sequence-modeling",
+      "affiliation": "Alibaba Group; Renmin University of China; Institute of Automation, Chinese Academy of Sciences",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [
+        "Unified FI+Seq",
+        "Attention",
+        "Multi-scenario"
+      ],
+      "aliases": [
+        "HiRank"
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.35318"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Large-scale industrial ranking models must jointly capture heterogeneous feature interactions, long-term user behaviors, and multi-scenario dependencies under stringent online serving constraints. Existing architectures typically process sequential and non-sequential features with separate modules, limiting bidirectional information exchange. Directly applying homogeneous self-attention to all semantic tokens can also be inefficient when sequential and non-sequential signals exhibit different effective-ranks (eRanks). Meanwhile, shared representations can overlook scenario-specific patterns and induce negative transfer between scenarios. In this paper, we propose HiRank, a unified framework for multi-scenario recommendation that jointly models Heterogeneous feature Interactions via effective-Rank scaling. HiRank integrates gated sequential attention with heterogeneous feature interaction within a unified backbone, enabling bidirectional fusion between sequential and non-sequential representations. HiRank further uses scenario-aware aggregation to compress heterogeneous low-order tokens into a compact representation. Distinct learned projections transform the full compact representation into scenario-aware composite tokens with complementary global feature views and more uniform information density, enabling more effective high-order self-attention. Extensive experiments on industrial-scale datasets demonstrate favorable performance scaling with parameter count and consistent improvements over competitive baselines. Online A/B tests further show a 2.27% increase in orders per user.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.35318v1",
+        "retrieved_at": "2026-10-27T23:14:10Z",
+        "license": "CC0-1.0",
+        "source_title": "Unified Heterogeneous Feature Interaction via Effective-Rank Scaling for Recommender Systems",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-10-26T12:17:27Z",
+        "updated_at": "2026-10-26T12:17:27Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.35318v1",
+        "verified_at": "2026-10-27T23:14:10Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "HiRank addresses industrial ranking with heterogeneous features, long user histories and multiple scenarios. A unified backbone combines gated sequence attention with bidirectional feature interaction, then compresses low-order tokens into scenario-aware composite tokens for high-order attention. Industrial experiments report favorable parameter scaling and an online 2.27% increase in orders per user. The contribution is unified ranking architecture rather than a general scaling law.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-28",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.35318v1"
+          ]
+        },
+        "zh": {
+          "text": "HiRank 面向同时包含异构特征、长行为历史和多场景的工业排序。它在统一骨干中结合门控序列注意力与双向特征交互，再将低阶令牌压缩为场景感知的组合令牌，用于高阶注意力。工业实验显示随参数增长的效果改善，线上 A/B 测试报告人均订单量提升 2.27%。主要贡献是统一排序架构，而非通用缩放定律。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-28",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.35318v1"
+          ]
+        }
+      },
+      "added_at": "2026-10-27T23:14:28Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.35318"
+      },
+      "change_history": [],
+      "reading_tier": null,
+      "companies": [
+        "alibaba"
+      ],
+      "order": 521
+    },
+    {
+      "id": "2610.35256",
+      "title": "Octen-WebGR: Scaling Generative Retrieval to 200 Million Web Pages",
+      "collection": "related",
+      "category": "retrieval-reranking-scaling",
+      "affiliation": "",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "aliases": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.35256"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Navigational search aims to find a single target page among hundreds of millions of web pages. Click tables work well for queries seen before but cannot generalise to new formulations, while embedding retrievers generalise across content but often rank navigational targets poorly. We introduce Octen-WebGR, a generative retrieval framework that stores web pages in the parameters of a language model: given a query, the model generates a two-token semantic identifier constrained to a table of real URLs. We develop Octen-WebGR-4B, which indexes 201 million web pages, and evaluate it on real navigational traffic from the month after training. Generative retrieval is most effective on new ways of asking for familiar pages: for unseen queries targeting pages with substantial interaction history, it ranks the correct page first 30.9% of the time, against 17.2% for a dense retriever trained on the same clicks (21.4% with a click prior). Embedding retrieval keeps an advantage on rarely visited pages, so the two approaches generalise on complementary sides, the query and the page. Over all navigational traffic, Octen-WebGR reaches 59.6% top-1 accuracy, against 46.5% for a click-enhanced dense retriever and up to 37.5% for frontier LLMs answering from memory, which cost at least 40 times as much per query. The 4B model runs on a single GPU with 10 GB of memory, compared with 412 GB for exact dense retrieval. Scaling experiments with up to 32 million URLs show that, when every query-page pair is seen equally often, the model size needed grows sublinearly with index size, and that retrieval is constrained more by page exposure than by model capacity. We release Octen-WebGR-4B and Octen-WebGR-0.6B with their identifier tables and inference code.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.35256v1",
+        "retrieved_at": "2026-10-27T23:14:10Z",
+        "license": "CC0-1.0",
+        "source_title": "Octen-WebGR: Scaling Generative Retrieval to 200 Million Web Pages",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-10-26T11:39:04Z",
+        "updated_at": "2026-10-26T11:39:04Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.35256v1",
+        "verified_at": "2026-10-27T23:14:10Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "Octen-WebGR retrieves web pages by generating a two-token semantic identifier constrained to real URLs. Its 4B model indexes 201 million pages and reaches 59.6% top-1 accuracy on subsequent navigational traffic, versus 46.5% for a click-enhanced dense retriever. It is strongest on new queries for well-exposed pages; dense retrieval retains an advantage on rarely visited pages. Experiments up to 32 million URLs link capacity requirements to index size and exposure, offering evidence for large-scale generative retrieval rather than CTR ranking.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-28",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.35256v1"
+          ]
+        },
+        "zh": {
+          "text": "Octen-WebGR 生成受真实 URL 表约束的双令牌语义标识符来检索网页。其 4B 模型索引 2.01 亿网页，在训练后月份的导航搜索流量上取得 59.6% 的首位命中率，结合点击先验的稠密检索为 46.5%。优势主要来自熟悉网页的新查询，稠密检索在少访问网页上仍有优势。最多 3200 万 URL 的缩放实验分析了索引规模、曝光与容量需求，可参考于大规模生成式检索，尚非 CTR 排序验证。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-28",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.35256v1"
+          ]
+        }
+      },
+      "added_at": "2026-10-27T23:14:28Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.35256"
+      },
+      "change_history": [],
+      "reading_tier": null,
+      "companies": [],
+      "order": 522
+    },
+    {
+      "id": "2610.35323",
+      "title": "CRIM: Composable and Reusable Item Memory for Efficient Personalized Retrieval",
+      "collection": "related",
+      "category": "sample-instance-compression-for-sequence-modeling",
+      "affiliation": "Tsinghua University; Alibaba International Digital Commerce Group",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "aliases": [
+        "CRIM"
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.35323"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Large language models incur substantial training and inference costs in personalized search and recommendation, as growing interaction histories lengthen request inputs and repeatedly expose the same item text to the model. We propose \\textbf{C}omposable and \\textbf{R}eusable \\textbf{I}tem \\textbf{M}emory (CRIM), a framework that separates item-level semantic encoding from request-level history modeling. A small set of learnable summary tokens compresses each item into compact continuous memories, while segment-level readout tokens (REC tokens) introduce predictive supervision within the interaction history. These memories are independent of users and queries and can therefore be reused across requests. At inference time, CRIM composes cached memories in interaction order and incorporates an optional query to produce a personalized retrieval representation, reducing repeated item-text encoding while retaining request-dependent contextual modeling. We further introduce a joint training mechanism that combines cached memories with sampled live re-encoding. Re-encoding only a few history items per request allows the retrieval objective to jointly optimize the item and request encoders at limited computational cost, while periodic cache refreshes maintain consistency. Extensive evaluation and cost analysis on MovieLens-1M, Qilin, and our new LazSeq dataset show that CRIM achieves state-of-the-art retrieval performance with substantially lower inference costs at the same backbone scale, while limiting item re-encoding during joint training. We will publicly release our code and dataset.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.35323v1",
+        "retrieved_at": "2026-10-27T23:14:10Z",
+        "license": "CC0-1.0",
+        "source_title": "CRIM: Composable and Reusable Item Memory for Efficient Personalized Retrieval",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-10-26T12:21:45Z",
+        "updated_at": "2026-10-26T12:21:45Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.35323v1",
+        "verified_at": "2026-10-27T23:14:10Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "CRIM reduces repeated item-text encoding in personalized retrieval by compressing each item into user- and query-independent continuous memories. Requests compose cached memories in interaction order, while readout tokens and sampled live re-encoding support joint training with periodic cache refreshes. Evaluations on MovieLens-1M, Qilin and LazSeq report stronger retrieval with lower inference costs at the same backbone scale. The reusable item representation offers a practical route to compressing recommendation histories without removing request-level context modeling.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-28",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.35323v1"
+          ]
+        },
+        "zh": {
+          "text": "CRIM 将物品压缩为不依赖用户和查询的连续记忆，减少个性化检索中重复编码物品文本的开销。请求按行为顺序组合缓存记忆，训练通过读出令牌、少量物品实时重编码和定期缓存刷新共同优化编码器。在 MovieLens-1M、Qilin 和 LazSeq 上，同等骨干规模下报告了更好的检索效果和更低推理开销。可复用物品表示为历史压缩提供了工程方案，同时保留请求层面的上下文建模。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-28",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.35323v1"
+          ]
+        }
+      },
+      "added_at": "2026-10-27T23:14:28Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.35323"
+      },
+      "change_history": [],
+      "reading_tier": null,
+      "companies": [
+        "alibaba"
+      ],
+      "order": 523
+    },
+    {
+      "id": "2610.32980",
+      "title": "Separating Thinking from Spelling for Efficient Generative Recommendation",
+      "collection": "related",
+      "category": "generative-recommendation",
+      "affiliation": "",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "aliases": [
+        "Deco"
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.32980"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Generative recommenders retrieve items by writing their semantic IDs (SIDs) code by code under trie-constrained beam search, an approach now deployed on large web platforms. Standard autoregressive interfaces pay for the SID length K twice: a history of T items enters the backbone as TK code tokens, and every beam-search step runs through the backbone, so returning B candidates costs O(BK) backbone decode tokens per user. The second cost often dominates, and it grows with the backbone, the SID depth and the candidate budget.\n  We introduce Deco (decoding from concepts), which separates reading the history from writing the identifier. The backbone reads each history item as one fused token and condenses the history once into a compact next-item concept; a light KV-cached decoder conditioned on the concept and the generated prefix runs the entire beam search, while the identifiers, the trie and the autoregressive factorization stay unchanged. The decoder approaches full-backbone accuracy with cross-entropy alone, and distillation improves it further. On seven datasets from e-commerce, movies and music streaming, Deco achieves comparable or better accuracy than both a standard generative recommender and the full-backbone teacher with fused inputs, while delivering 3.2-8.6$\\times$ their throughput under a 50 ms p95 latency budget in a production-style serving pipeline. Delegating beam search makes larger candidate pools and models practical: Deco generates 1000 candidates faster than its teacher generates 100, and with a 1.5B-parameter LLM backbone, it matches the 69M-parameter teacher's throughput while achieving higher accuracy.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.32980v2",
+        "retrieved_at": "2026-10-27T23:14:10Z",
+        "license": "CC0-1.0",
+        "source_title": "Separating Thinking from Spelling for Efficient Generative Recommendation",
+        "source_version": "v2"
+      },
+      "source_dates": {
+        "published_at": "2026-10-23T17:59:24Z",
+        "updated_at": "2026-10-26T10:15:27Z",
+        "source_version": "v2",
+        "source_url": "https://arxiv.org/abs/2610.32980v2",
+        "verified_at": "2026-10-27T23:14:10Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "Deco separates history reasoning from semantic-ID decoding: each history item becomes one fused token, a heavy backbone produces one next-item concept, and a lightweight cached decoder performs beam search. On seven recommendation datasets it matches or improves the compared models while delivering 3.2–8.6 times their throughput under a 50 ms p95 budget in a production-style pipeline. The result supports larger candidate pools and backbones through cheaper decoding; it is not an online business-lift claim.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-28",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.32980v2"
+          ]
+        },
+        "zh": {
+          "text": "Deco 将历史建模与语义标识符解码分开：每个历史物品合并为一个令牌，重骨干一次生成下一物品的概念表示，再由带缓存的轻量解码器执行束搜索。在七个推荐数据集上，其效果达到或超过所比较模型，并在生产式流水线的 p95 50 毫秒预算下获得 3.2–8.6 倍吞吐。该结果说明降低解码成本可支持更大的候选池和骨干，不代表已验证的线上业务收益。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-28",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.32980v2"
+          ]
+        }
+      },
+      "added_at": "2026-10-27T23:14:28Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.32980"
+      },
+      "change_history": [],
+      "reading_tier": null,
+      "companies": [],
+      "order": 524
+    },
+    {
+      "id": "2610.35218",
+      "title": "MuSID-KD: Multigranularity Knowledge Distillation for Generative Recommendation with Semantic IDs",
+      "collection": "related",
+      "category": "knowledge-distillation-compression",
+      "affiliation": "East China Normal University; Fudan University",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "aliases": [
+        "MuSID-KD"
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.35218"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Generative recommendation with semantic IDs (SIDs) represents each item as a sequence of discrete tokens and autoregressively predicts the next item's SID. Despite strong recommendation performance, repeated decoding over multiple SID positions incurs substantial inference cost. Knowledge distillation transfers knowledge from a powerful generative teacher to a lightweight student, yet conventional objectives do not fully account for multi-token SID generation. We identify two limitations: item-level distribution alignment may not adequately preserve the teacher's ranking of candidate groups sharing SID prefixes, while uniform alignment across SID positions may affect final item ranking differently. We propose MuSID-KD, which combines Hierarchical Candidate Distribution Alignment (HCDA) and Ranking Impact Guided Levelwise Distillation (RIGD). HCDA aggregates item probabilities according to shared SID prefixes and aligns candidate distributions at successive levels, from candidate groups to individual items. RIGD evaluates the reduction in pairwise ranking surrogate loss when one student score contribution is replaced with the teacher's contribution, and allocates supervision accordingly. Experiments on real-world recommendation datasets using three lightweight student architectures demonstrate improved recommendation accuracy and better alignment of prefix marginal distributions and pairwise item rankings, without modifying the student's online inference architecture. Code is available at https://anonymous.4open.science/r/m7k2-review-83f9/.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.35218v1",
+        "retrieved_at": "2026-10-27T23:14:10Z",
+        "license": "CC0-1.0",
+        "source_title": "MuSID-KD: Multigranularity Knowledge Distillation for Generative Recommendation with Semantic IDs",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-10-26T11:09:39Z",
+        "updated_at": "2026-10-26T11:09:39Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.35218v1",
+        "verified_at": "2026-10-27T23:14:10Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "MuSID-KD transfers semantic-ID recommendation knowledge to lightweight students at multiple granularities. It aligns candidate distributions aggregated by shared prefixes and allocates token-level supervision according to estimated ranking impact. Experiments with three student architectures report better recommendation accuracy and closer prefix and pairwise ranking alignment without changing online inference architecture. This is a training-side method for preserving ranking quality in compact generative recommenders.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-28",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.35218v1"
+          ]
+        },
+        "zh": {
+          "text": "MuSID-KD 在多个粒度上向轻量学生模型蒸馏语义标识符推荐知识。它按共享前缀聚合并对齐候选分布，再依据估计的排序影响分配各令牌位置的监督。三类学生架构的实验报告了推荐准确率、前缀分布和物品两两排序对齐的改善，在线推理架构保持不变。其价值是在训练阶段帮助紧凑生成式推荐模型保留排序质量。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-28",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.35218v1"
+          ]
+        }
+      },
+      "added_at": "2026-10-27T23:14:28Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.35218"
+      },
+      "change_history": [],
+      "reading_tier": null,
+      "companies": [],
+      "order": 525
+    },
+    {
+      "id": "2610.35556",
+      "title": "LoopFold: Parallelizing Recurrent Depth in Looped Transformers",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "Shanghai Jiao Tong University; Sun Yat-sen University; Shanghai Innovation Institute",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "aliases": [
+        "LoopFold"
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.35556"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Looped Transformers increase computation per token by repeatedly applying a shared backbone, offering a way to improve language modeling and downstream task performance at a fixed backbone parameter count. However, each loop depends on the preceding loop, so increasing recurrent depth also increases decoding latency. Existing approaches include Parallel Loop Transformers, which reduce latency by overlapping loop computation across token positions, but yield rapidly diminishing marginal accuracy gains at larger depths. To address this challenge, we introduce LoopFold, which folds computation at multiple recurrent depths into parallel batches for the same token prefix. A lightweight predictor estimates inputs to later loops so they can start before earlier loops finish. A corrector then refines the outputs of these later loops using newly available results from earlier loops. All components are trained jointly using only the final next-token prediction loss. In experiments with 1.4B models, deeper LoopFold configurations achieve progressively higher average zero-shot accuracy across eight tasks, rising from 53.41% to 56.38%. Vanilla looped models and PLT show limited gains over the same depth range. Compared with a nine-loop vanilla model, LoopFold uses five sequential stages and additional parallel computation to reduce decoding latency by 46%.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.35556v1",
+        "retrieved_at": "2026-10-27T23:14:10Z",
+        "license": "CC0-1.0",
+        "source_title": "LoopFold: Parallelizing Recurrent Depth in Looped Transformers",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-10-26T14:58:11Z",
+        "updated_at": "2026-10-26T14:58:11Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.35556v1",
+        "verified_at": "2026-10-27T23:14:10Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "LoopFold reduces sequential dependencies in looped Transformers by predicting inputs to later loops, executing multiple depths in parallel, and correcting their outputs with newly available earlier states. In 1.4B language models, deeper configurations improve average zero-shot accuracy across eight tasks; five sequential stages reduce decoding latency by 46% relative to a nine-loop vanilla model using additional parallel computation. This suggests a latency–compute trade-off for recurrent architectures, with no recommendation evaluation reported.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-28",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.35556v1"
+          ]
+        },
+        "zh": {
+          "text": "LoopFold 先预测后续循环的输入，让多个深度并行执行，再利用新得到的前序状态修正输出，以减少循环 Transformer 的串行依赖。在 1.4B 语言模型中，更深配置提高了八项任务的平均零样本准确率；相对九次普通循环，五个串行阶段以额外并行计算换取 46% 的解码延迟下降。它提供了循环架构中延迟与计算量的权衡思路，尚未报告推荐实验。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-28",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.35556v1"
+          ]
+        }
+      },
+      "added_at": "2026-10-27T23:14:28Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.35556"
+      },
+      "change_history": [],
+      "reading_tier": null,
+      "companies": [],
+      "order": 526
+    },
+    {
+      "id": "2610.35544",
+      "title": "StateLoop: Persistent State for Looped Transformers",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "Shanghai Jiao Tong University; Sun Yat-sen University; Shanghai Innovation Institute",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "aliases": [
+        "StateLoop"
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.35544"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Looped Transformers offer a parameter-efficient approach to language modeling by repeatedly applying a shared backbone. Vanilla looped Transformers use each backbone output directly as the input to the next iteration. These outputs may contain information useful several iterations later, but retaining it across the loop depends entirely on the single hidden state. We introduce StateLoop, which maintains one additional persistent state per token to retain information across iterations. At each iteration, a learned gate controls how much of the previous state is retained and how much information from the backbone output is incorporated. The updated state is projected back and added to the backbone output for subsequent iterations and final prediction. This design reduces Pile perplexity and improves average accuracy across eight zero-shot tasks over Vanilla Looped. Its perplexity advantage over Vanilla Looped grows with trained loop depth, consistent with persistent state becoming increasingly useful as recurrent computation deepens.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.35544v1",
+        "retrieved_at": "2026-10-27T23:14:10Z",
+        "license": "CC0-1.0",
+        "source_title": "StateLoop: Persistent State for Looped Transformers",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-10-26T14:53:49Z",
+        "updated_at": "2026-10-26T14:53:49Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.35544v1",
+        "verified_at": "2026-10-27T23:14:10Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "StateLoop adds a persistent state to every token in a looped Transformer. A learned gate retains and updates information across iterations, and a projection feeds that state back into subsequent computation and prediction. It lowers Pile perplexity and improves average accuracy across eight zero-shot tasks against vanilla looping, with the perplexity advantage growing at greater trained depth. The mechanism is relevant to parameter-sharing architectures, but transfer to ranking remains untested.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-28",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.35544v1"
+          ]
+        },
+        "zh": {
+          "text": "StateLoop 为循环 Transformer 的每个令牌增加持久状态，通过可学习门控在迭代间保留和更新信息，再将该状态投影回后续计算与预测。相对普通循环，它降低了 Pile 困惑度并提高八项零样本任务的平均准确率，且困惑度优势随训练循环深度增加而扩大。该机制可供参数共享架构参考，迁移到排序仍待验证。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-28",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.35544v1"
+          ]
+        }
+      },
+      "added_at": "2026-10-27T23:14:28Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.35544"
+      },
+      "change_history": [],
+      "reading_tier": null,
+      "companies": [],
+      "order": 527
+    },
+    {
+      "id": "2610.34056",
+      "title": "INTRA: Interleaved Non-contiguous Token spaRse Attention",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "New York University",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "aliases": [
+        "INTRA"
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.34056"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Transformers achieve strong performance across modalities but are bottlenecked by the quadratic cost of attention. Sparse attention can reduce this cost, but effective sparsity must preserve useful long-range communication and map well to GPU hardware. We introduce INTRA--Interleaved Non-contiguous Token spaRse Attention--a hardware-aware static sparse attention design based on a relay-communication view under Computational Query Set (CQS) constraints. Rather than directly covering all token-to-token interactions within each sparse layer, INTRA uses complementary sparse groups to provide short mediated communication paths across layers. Scatter forms relay groups that sample broadly across local neighborhoods, while Gather reconnects these groups in subsequent layers. Under a partition model, this structure guides CQS-compatible sparse patterns with global reachability. Our CQS-aware FlashAttention-style kernel computes structured indices at runtime, loads selected non-contiguous tokens, and packs them densely for computation. On an A100, INTRA achieves a $1.53\\times$ speedup in $2K$ FLUX.1-dev generation, with better measured image quality than evaluated CLEAR configurations after LoRA self-distillation. On LLaMA-3.1-8B, it improves long-context prefill efficiency with strong teacher-forced retrieval performance under matched LoRA adaptation. Attention-only benchmarks further show up to $8.4\\times$ and $10.4\\times$ speedups over MoBA and density-constrained NSA, respectively.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.34056v1",
+        "retrieved_at": "2026-10-27T23:14:10Z",
+        "license": "CC0-1.0",
+        "source_title": "INTRA: Interleaved Non-contiguous Token spaRse Attention",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-10-25T04:33:31Z",
+        "updated_at": "2026-10-25T04:33:31Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.34056v1",
+        "verified_at": "2026-10-27T23:14:10Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "INTRA uses complementary Scatter and Gather sparse token groups to relay information across layers, with a GPU kernel that packs non-contiguous tokens for computation. After adaptation, it reports a 1.53-fold FLUX.1-dev generation speedup on an A100 and improved long-context prefill efficiency for LLaMA-3.1-8B. Larger reported gains are attention-only benchmarks, not end-to-end speedups. Its hardware-aware static pattern offers a transferable sparse-attention design; CTR performance is unverified.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-28",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.34056v1"
+          ]
+        },
+        "zh": {
+          "text": "INTRA 以互补的 Scatter 和 Gather 稀疏令牌组跨层传递信息，并由 GPU 内核将不连续令牌打包计算。经过适配后，它在 A100 上报告 FLUX.1-dev 生成加速 1.53 倍，并改善 LLaMA-3.1-8B 的长上下文预填充效率。论文中更大的加速数字来自纯注意力基准，不能视为端到端收益。其硬件感知静态模式可供稀疏注意力设计参考，CTR 效果尚未验证。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-28",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.34056v1"
+          ]
+        }
+      },
+      "added_at": "2026-10-27T23:14:28Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.34056"
+      },
+      "change_history": [],
+      "reading_tier": null,
+      "companies": [],
+      "order": 528
+    },
+    {
+      "id": "2610.32057",
+      "title": "HyScale: Scaling Long-Context Training for Learned Sparse Attention",
+      "collection": "related",
+      "category": "engineering-serving",
+      "affiliation": "University of Edinburgh; Tencent Hunyuan",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "aliases": [
+        "HyScale"
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.32057"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "We present HyScale, a long-context training system for learned sparse attention. Learned sparse attention is a promising architecture for million-token contexts, widely adopted in production since DeepSeek-V3.2. Selection, however, grows into the training bottleneck. For each query, it scores every previous token whereas sparse attention reads only $k$; worse, current systems materialize a full score table and repeat selection during recomputation. Our key insight is that the output of selection is not an activation, but rather a set of indices. Building on it, HyScale introduces HyTopK and selection replay. HyTopK finds each query's exact top-$k$ on the fly without a score table, while selection replay reuses forward-pass selection in recomputation. Together with holistic system optimizations tackling end-to-end training challenges, HyScale speeds up GLM-5.1 training on 1M-token sequences by 2.07$\\times$ over Megatron-LM on 512 H20 GPUs. It also speeds up the CSA layers of DeepSeek-V4-Flash and the QSA layers of Qwen3.8-Flash-Next by 2.01$\\times$ and 1.57$\\times$ at 1M tokens on 32 H800 GPUs.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.32057v2",
+        "retrieved_at": "2026-10-27T23:14:10Z",
+        "license": "CC0-1.0",
+        "source_title": "HyScale: Scaling Long-Context Training for Learned Sparse Attention",
+        "source_version": "v2"
+      },
+      "source_dates": {
+        "published_at": "2026-10-23T01:54:02Z",
+        "updated_at": "2026-10-26T14:36:34Z",
+        "source_version": "v2",
+        "source_url": "https://arxiv.org/abs/2610.32057v2",
+        "verified_at": "2026-10-27T23:14:10Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "HyScale targets the selection bottleneck in learned sparse-attention training. HyTopK computes exact top-k indices without materializing the score table, and selection replay reuses forward selections during recomputation. With other system optimizations, it speeds up million-token GLM-5.1 training by 2.07 times over Megatron-LM on 512 H20 GPUs; additional results measure individual attention layers on 32 H800 GPUs. The selection and recomputation design is relevant to long-sequence training engineering, with no CTR benchmark claimed.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-28",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.32057v2"
+          ]
+        },
+        "zh": {
+          "text": "HyScale 处理可学习稀疏注意力训练中的选择瓶颈：HyTopK 不保存完整分数表，直接求精确 top-k 索引；选择重放则在重计算阶段复用前向选择结果。结合其他系统优化，在 512 张 H20 上将百万令牌 GLM-5.1 训练相对 Megatron-LM 加速 2.07 倍；另有在 32 张 H800 上测量单独注意力层的结果。其选择与重计算设计可供长序列训练工程参考，未声称 CTR 基准收益。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-28",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.32057v2"
+          ]
+        }
+      },
+      "added_at": "2026-10-27T23:14:28Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.32057"
+      },
+      "change_history": [],
+      "reading_tier": null,
+      "companies": [
+        "tencent"
+      ],
+      "order": 529
     }
   ]
 }
