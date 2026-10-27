@@ -6,7 +6,7 @@
 
 Scaling retrieval and reranking stages of recommendation pipelines.
 
-30 papers · Updated 2026-10-21
+36 papers · Updated 2026-10-27
 
 <a id="paper-2603-04816"></a>
 
@@ -94,7 +94,7 @@ Scaling retrieval and reranking stages of recommendation pipelines.
 
 <a id="paper-2610-16979"></a>
 
-- **WeGR: Unified Generative Retrieval for Industrial Search Systems in WeChat**: WeGR combines a collaboration-aware tokenizer that mitigates codebook collapse with policy optimization that progressively expands the semantic-ID reward horizon. This addresses poor item discrimination and sparse exact-match rewards in industrial generative search. A WeChat E-commerce Search A/B test reports relative gains of 2.539% in orders, 1.508% in CTR, and 1.381% in CVR. Its 25.5% CPU and 26.1% GPU savings belong to a deployment that reduces candidates from other retrieval channels, not a standalone generator-kernel speedup. — [Paper](https://arxiv.org/abs/2610.16979) (arXiv 2026). Reading priority: Unrated.
+- **WeGR: Towards Unified Generative Retrieval via Behavior-aware Tokenization and Preference Alignment**: WeGR addresses weak collaborative signals and sparse exact-ID rewards in generative retrieval. CoCo-VAE injects behavioral information before quantization and combats codebook collapse; DHPO progressively expands reward and optimization horizons. A six-week industrial e-commerce A/B test reports relative gains of 2.539% in orders, 1.508% in CTR and 1.381% in CVR, alongside 25.5% CPU and 26.1% GPU savings. These are system-level deployment results, not isolated generator-kernel speedups. — [Paper](https://arxiv.org/abs/2610.16979) (arXiv 2026). Reading priority: Unrated.
 
 <a id="paper-2604-05379"></a>
 
@@ -127,3 +127,27 @@ Scaling retrieval and reranking stages of recommendation pipelines.
 <a id="paper-2610-25172"></a>
 
 - **RemoteANN: A Native Vector Search Engine for Cloud Object Storage**: RemoteANN co-designs vector indexing and querying for cloud object storage, combining IVF and RaBitQ with locality-aware reordering, cluster pruning, Range-GET merging and NVMe caching. QGKMeans reduces index construction latency. At 97% target recall, evaluations report up to 5.9x throughput and 16.1x fewer object-storage requests than representative baselines. This supports infrastructure choices for large vector retrieval; recommendation-quality gains are not established. — [Paper](https://arxiv.org/abs/2610.25172) (Nanyang Technological University; ByteDance · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-27273"></a>
+
+- **FLINT: Fixed-budget Late Interaction**: FLINT reduces multi-vector retrieval storage and comparison costs by attention-pooling both queries and documents into fixed vector budgets. It retains comparable BEIR effectiveness and improves several long-query benchmarks across BERT and ModernBERT backbones. On long-query corpora, end-to-end retrieval is 1.5–2.8 times faster than ConstBERT; index size is 5.3–9.3 times smaller than token-level late-interaction models such as ColBERTv2. — [Paper](https://arxiv.org/abs/2610.27273) (University of Illinois Urbana-Champaign; University of California, Berkeley · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-27195"></a>
+
+- **UIBK-Embedding: Effective Text Retrieval by Unifying Dense and Late-Interaction Retrieval**: UIBK-Embedding combines dense and token-level retrieval in one 179M-parameter encoder and one unchanged MaxSim index. Three extra vectors encode the dense representation, with a tag preventing cross-type matching; shared layers and fused-score distillation train both heads together. BEIR nDCG@10 reaches 59.79, exceeding LateOn by 2.10 points under matched document lengths. On decontaminated BEIR it leads on average and on eight of twelve datasets. — [Paper](https://arxiv.org/abs/2610.27195) (University of Innsbruck · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-27306"></a>
+
+- **SweepANN: A GPU-Accelerated Large-K Approximate Vector Search for Drug Discovery**: SweepANN targets large-K vector retrieval, where conventional ANN indexes lose much of their advantage at high recall. It scans compressed GPU-resident partitions with batched matrix multiplication and selective top-K merging. Four RTX PRO 6000 GPUs process 26,562 drug-discovery queries in about 61 seconds at 99.6% mean recall, excluding library loading. The application is drug discovery; cross-hardware campaign comparisons do not isolate an algorithmic speedup. — [Paper](https://arxiv.org/abs/2610.27306) (Arizona State University; Independent Researcher · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-28435"></a>
+
+- **Multimodal Reranking Is a System One Decision**: This study casts multimodal reranking as one multiple-choice decision over sixteen candidates, ranking label probabilities from a single VLM forward pass. It outperforms per-candidate yes/no scoring; text-only decision tuning further improves page reranking by 0.6–1.1 points while leaving natural images unchanged. Comparisons with supervised rerankers are confounded by model size and generation, so they do not isolate the proposed formulation’s effect. — [Paper](https://arxiv.org/abs/2610.28435) (Aalto University · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-26938"></a>
+
+- **GRaSP: Latency-Aware Optimization for Geo-Distributed Retrieval-Augmented Generation**: GRaSP reranks retrieval candidates using relevance, network latency and optional transfer cost under regional caps, without retraining. Its benefit depends on content placement. On a five-node testbed, a moderate setting reduces P90 fetch latency by 41% while retaining 78% of relevance-only recall. End-to-end QA reduces context-fetch latency by 43% while staying within 0.062 absolute EM of relevance-only retrieval; this is a quality-latency trade-off. — [Paper](https://arxiv.org/abs/2610.26938) (Independent Researcher; The Pennsylvania State University · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-30941"></a>
+
+- **PAIR: Preference-Aligned Intent Retrieval for Premium People Recommendation at LinkedIn**: PAIR models complementary professional intent rather than profile similarity for people retrieval. An exposure-conditioned multi-negative contrastive objective learns preferences, while position-aware click-history aggregation permits constant-cost updates within a fixed history window. A 0.6B-parameter model reaches MAR@100 of 0.45 on LinkedIn Premium retrieval. Lightweight CPU updates avoid repeated language-model inference during personalization; the abstract reports no online business lift. — [Paper](https://arxiv.org/abs/2610.30941) (LinkedIn · arXiv 2026). Reading priority: Unrated.

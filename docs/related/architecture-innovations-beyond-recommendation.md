@@ -6,7 +6,7 @@
 
 Transferable ideas from general-purpose model architecture research.
 
-170 papers · Updated 2026-10-21
+180 papers · Updated 2026-10-27
 
 <a id="paper-2606-16825"></a>
 
@@ -658,7 +658,7 @@ Transferable ideas from general-purpose model architecture research.
 
 <a id="paper-2610-15146"></a>
 
-- **Compute-Optimal Scaling Laws for Spiking Language Models**: An IsoFLOP study of SpikeGPT-family language models on FineWeb-EDU sweeps widths 384–1536 and compute budgets from 3e17 to 1e19 FLOPs. It finds compute-optimal parameter scaling proportional to compute raised to 0.56. Matched non-spiking RWKV and Transformer comparisons separate a roughly constant backbone loss cost from a spiking penalty that declines then plateaus. The result informs sparse-activation budgeting within this range, without measured recommendation or energy benefits. — [Paper](https://arxiv.org/abs/2610.15146) (Luma AI; X School · arXiv 2026). Reading priority: Unrated.
+- **Compute-Optimal Scaling Laws for Spiking Language Models**: This IsoFLOP study evaluates SpikeGPT-family language models across widths 384–1536 and compute budgets of 3×10^17–10^19 FLOPs. The compute-optimal parameter exponent is 0.56. Matched training comparisons separate an approximately 0.16-nat backbone loss cost from a spiking cost that decreases from 0.34 to 0.23 nats with compute. It quantifies accuracy trade-offs in the tested range; it does not measure recommendation performance or hardware energy savings. — [Paper](https://arxiv.org/abs/2610.15146) (Luma AI; X School · arXiv 2026). Reading priority: Unrated.
 
 <a id="paper-2610-20951"></a>
 
@@ -687,3 +687,43 @@ Transferable ideas from general-purpose model architecture research.
 <a id="paper-2610-25717"></a>
 
 - **Fine-Grained Units, Flat Decisions: Hierarchical Micro-Expert Pruning for Mixture-of-Experts Models**: UC-RAMP separates allocation of retained expert widths from channel selection in post-training MoE pruning. CAPE redistributes capacity under an exact layer budget; RAMP refines channels at fixed widths using interaction-guided exchanges. It has the best ten-task mean accuracy in five of six tested model/pruning settings. At 25% pruning on one A100, time to first token falls 19.7–23.9% and time per output token 20.2–22.3% versus unpruned models. Transfer to recommendation remains untested. — [Paper](https://arxiv.org/abs/2610.25717) (Houmo AI; University of Science and Technology of China; Southeast University · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-28441"></a>
+
+- **Stratified Sparse Attention: Reducing the Sparse-to-Dense Gap at Extreme Sparsity**: Stratified Sparse Attention combines deterministic retrieval of high-score tokens with score-guided sampling and inclusion-probability correction for residual attention mass. Across five language models and four benchmark suites, it improves accuracy at matched sparsity. Optimized CUDA kernels yield up to 2.96 times decode speedup over FlashInfer at one-million-token context. The evidence concerns language-model inference; recommendation transfer remains untested. — [Paper](https://arxiv.org/abs/2610.28441) (Rice University; University of California, Berkeley; Stanford University; Indian Institute of Technology Bombay · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-28385"></a>
+
+- **RACE: RoPE-Aligned Attention Compression Based on Query-Key Activation Energies**: RACE reduces KV-cache dimensions without reconstructing full-dimensional states at inference. It selects complete RoPE rotary pairs using joint query-key activation energy and folds the selection into model weights. At 50% KV-cache retention and 256K context, it reports 47.8% fewer total inference FLOPs, 1.79 times throughput, 43.2% lower TTFT and 28.1% lower allocated GPU memory than the uncompressed model. Recommendation transfer is untested. — [Paper](https://arxiv.org/abs/2610.28385) (MIT CSAIL; MIT-IBM Computing Research Lab · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-27598"></a>
+
+- **Meta Expert: Cross-Layer Expert Sharing for Storage- and Retrieval-Efficient MoE**: Meta Expert addresses redundant expert parameters across MoE layers by sharing experts between layers. Empirical comparisons show lower redundancy, lower cross-entropy and higher downstream accuracy; with activated expert count and granularity fixed, it matches vanilla MoE performance using 70–80% of the experts. The analysis attributes additional benefits to more flexible residual paths. These findings concern general model architecture, with no recommendation-specific evaluation. — [Paper](https://arxiv.org/abs/2610.27598) (Tsinghua University; Shanghai AI Laboratory · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-27123"></a>
+
+- **Reconstruction-Optimized Expert Pruning for Mixture-of-Experts Language Models**: OptEP treats post-training MoE expert pruning as selecting a fixed-size subset that reconstructs the original layer output. A continuous relaxation optimizes expert selection, followed by lightweight updates of retained weights. Across mathematical-reasoning and code-generation tasks, it outperforms evaluated pruning baselines, especially at aggressive pruning. The method targets expert storage costs; its abstract does not establish recommendation gains or measured serving acceleration. — [Paper](https://arxiv.org/abs/2610.27123) (LinkedIn; MIT; Google · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-28489"></a>
+
+- **Asymmetric Looped Transformers: Fixed Global Representations for an Iterative Decoder**: AsymLoop separates one-pass context encoding from recurrent state refinement. A causal encoder supplies fixed global KV caches, while a weight-tied decoder attends jointly to them and evolving local states. At matched effective depth and training tokens, models from 60M to 1B improve over full-stack looping. At 1B, average accuracy on seven commonsense benchmarks rises from 49.58% to 50.85%; recommendation transfer is untested. — [Paper](https://arxiv.org/abs/2610.28489) (Shanghai Jiao Tong University; University of Science and Technology of China; Nanyang Technological University; Nanjing University · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-28369"></a>
+
+- **Don't Skip the Baseline: A Controlled Comparison of Dynamic Expert Skipping in MoEs**: This controlled study compares four dynamic MoE expert-skipping methods with simply reducing the same expert count across layers and tokens. At matched expert-compute budgets, static reduction is difficult to beat consistently across text and multimodal models. Calibration-time effective expert counts can diverge from test-time counts, distorting cost comparisons. The contribution is a stronger evaluation baseline, not a new recommendation architecture. — [Paper](https://arxiv.org/abs/2610.28369) (Technical University of Munich; Tensordyne; ETH Zurich; Ulm University · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-24998"></a>
+
+- **Block Recursive Transformers for Structured Parameter Sharing**: Block Recursive Transformers partition layers into contiguous blocks and repeatedly apply each block before proceeding to the next. This intermediate sharing pattern balances local refinement and depth-wise differentiation without adding routing, auxiliary states or objectives. Across decoder-only models up to 1.7B parameters, with encoder-decoder and encoder-only studies, it improves validation loss and downstream accuracy over static recursive-sharing baselines. Recommendation transfer is untested. — [Paper](https://arxiv.org/abs/2610.24998) (Sungkyunkwan University; Korea University · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-25250"></a>
+
+- **Improving the Expressive Power of Hybrid Sequence Models via Multi-Hop Retrieval**: MuRA lets efficient hybrid sequence layers perform multiple retrieval hops over a shared KV cache. For function-composition tasks, theory establishes a strict hierarchy in retrieval depth: a fixed-size m-hop block computes m-function composition, while one more composition requires polynomial size at that depth. Synthetic experiments support the hierarchy. This motivates more expressive efficient architectures, but does not establish language-model or recommendation production gains. — [Paper](https://arxiv.org/abs/2610.25250) (Technion - Israel Institute of Technology; NVIDIA · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-31642"></a>
+
+- **A Fix for Softmax and Cross-Entropy**: This work identifies floating-point errors in softmax and cross-entropy: target gradients can round to zero, and near-matching teacher and student distributions can suffer cancellation. Revised implementations suppress the Slingshot effect and distillation drift in the reported experiments. The contribution improves numerical behavior of common training operators; recommendation-specific gains are not established. — [Paper](https://arxiv.org/abs/2610.31642) (Google DeepMind · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-31574"></a>
+
+- **Rethinking Sequence Compression with Test-time Regression**: TTR-Compressor treats sequence compression as learned test-time regression, computing closed-form coefficients during the forward pass. It supports blockwise attention and visual-token merging. Experiments report strong RULER results, while a visual merger matches an MLP merger with 55.6% fewer tokens. These results concern long-context and multimodal models, with no recommendation-specific evaluation. — [Paper](https://arxiv.org/abs/2610.31574) (The Chinese University of Hong Kong; Independent Researcher; Token Foundry; Alibaba Group · arXiv 2026). Reading priority: Unrated.

@@ -6,7 +6,7 @@
 
 Transferring, compressing and deploying larger recommendation models.
 
-8 papers · Updated 2026-10-21
+9 papers · Updated 2026-10-27
 
 <a id="paper-2411-16122"></a>
 
@@ -39,3 +39,7 @@ Transferring, compressing and deploying larger recommendation models.
 <a id="paper-2610-26143"></a>
 
 - **FLMNet: Self-Ensemble Distillation from Masks to Seeds for Single-Tower CTR Prediction**: FLMNet explains dropout self-distillation as a label loss plus a disagreement penalty in the infinite-mask limit. When dropout leaves feature gating unchanged, the penalty admits a closed-form approximation, enabling sampling-free training; distilling models trained from different seeds recovers part of the ensemble gain in one network. On five CTR benchmarks against seventeen baselines, the resulting models occupy the top two accuracy positions. The evidence concerns benchmark accuracy with single-network inference, not industrial scaling laws. — [Paper](https://arxiv.org/abs/2610.26143) (National University of Singapore; University of Science and Technology of China · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-32943"></a>
+
+- **Knowledge Distillation across Item and Code Spaces for Parallel Generative Recommendation**: This work distills an item-space teacher into parallel semantic-ID generation, which avoids conditioning on previously generated codes. Item Distribution Matching reconstructs item probabilities, while Code Marginal Matching projects teacher distributions onto code marginals. Reported mean gains are 15.39% in Recall@10 for the former and 8.28% in NDCG@10 for the latter. The methods connect item-level knowledge with parallel code prediction. — [Paper](https://arxiv.org/abs/2610.32943) (The Hong Kong University of Science and Technology; University of Science and Technology of China · arXiv 2026). Reading priority: Unrated.

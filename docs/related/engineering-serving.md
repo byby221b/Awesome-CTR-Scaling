@@ -6,7 +6,7 @@
 
 Systems, serving infrastructure and hardware-aware optimization.
 
-42 papers · Updated 2026-10-21
+43 papers · Updated 2026-10-27
 
 <a id="paper-2510-18239"></a>
 
@@ -175,3 +175,7 @@ Systems, serving infrastructure and hardware-aware optimization.
 <a id="paper-2610-23064"></a>
 
 - **BaGuaLu-2: Taming Dynamic Memory Fluctuation for Efficient MoE Model Training over 10,000 GPUs**: BaGuaLu-2 addresses activation-memory fluctuations caused by MoE expert-load imbalance through per-batch dynamic provisioning and system optimizations. It trains a 1.04-trillion-parameter model on 12,288 GPUs at over 2 EFlops and 35% model FLOPs utilization. Reported average throughput is 1.14x Megatron-Kuai and 1.13x AdaPipe. The system offers a memory-management reference for large sparse-model training, with no recommendation-specific evaluation. — [Paper](https://arxiv.org/abs/2610.23064) · [Official venue](https://sc26.conference-program.com/presentation/?id=pap287&sess=sess211) (Tsinghua University; Qingcheng.AI; University of Science and Technology Beijing · SC 2026). Reading priority: Unrated.
+
+<a id="paper-2610-28096"></a>
+
+- **KPage: Cross-Block Page Compaction for Hardware-Efficient Sparse Attention**: KPage addresses wasted GPU tile capacity in partially occupied sparse-attention blocks. It packs 16-row KV pages across block boundaries during loading and selects query tile shapes, preserving the original sparse graph without materializing compacted tensors in high-bandwidth memory. Across eight layouts it reports 1.13–4.25 times forward and 1.02–2.71 times forward-plus-backward speedup over the strongest exact sparse baselines. These are attention-kernel results, not recommendation-system gains. — [Paper](https://arxiv.org/abs/2610.28096) (KlingAI Research; NVIDIA · arXiv 2026). Reading priority: Unrated.

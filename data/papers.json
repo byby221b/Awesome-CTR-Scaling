@@ -5,7 +5,7 @@
     "description": "Scaling laws and scalable ranking models for industrial recommendation.",
     "repository_url": "https://github.com/byby221b/Awesome-CTR-Scaling",
     "site_url": "https://byby221b.github.io/Awesome-CTR-Scaling/",
-    "updated": "2026-10-21",
+    "updated": "2026-10-27",
     "source_commit": "31ad30becff83ca14a01f37fc99d52ba79f85565",
     "scope": "We cover papers that (1) study scaling laws for recommendation models, (2) propose scalable Transformer-based architectures for CTR/ranking, (3) address efficiency challenges in scaling up industrial ranking systems, or (4) explore novel paradigms (e.g., sparse scaling, generative pre-training, foundation models) for scalable recommendation.",
     "history": {
@@ -4130,7 +4130,7 @@
       "collection": "core",
       "category": "scalable-architecture",
       "affiliation": "Alibaba",
-      "venue": "SIGIR",
+      "venue": "CIKM (Applied)",
       "year": 2026,
       "tags": [
         "Architecture",
@@ -4200,6 +4200,14 @@
           ],
           "source_url": "https://github.com/byby221b/Awesome-CTR-Scaling/commit/a49e55867454f76e5a77114de99b196cb83fd797",
           "commit_sha": "a49e55867454f76e5a77114de99b196cb83fd797"
+        },
+        {
+          "at": "2026-10-27T02:44:02Z",
+          "kind": "venue_update",
+          "fields": [
+            "venue"
+          ],
+          "source_url": "https://cikm2026.diag.uniroma1.it/program/"
         }
       ],
       "source_dates": {
@@ -7694,7 +7702,7 @@
       "collection": "core",
       "category": "efficiency-deployment",
       "affiliation": "Alibaba",
-      "venue": "arXiv",
+      "venue": "CIKM",
       "year": 2026,
       "tags": [
         "Test-time Compute",
@@ -7755,6 +7763,14 @@
           ],
           "source_url": "https://github.com/byby221b/Awesome-CTR-Scaling/commit/a49e55867454f76e5a77114de99b196cb83fd797",
           "commit_sha": "a49e55867454f76e5a77114de99b196cb83fd797"
+        },
+        {
+          "at": "2026-10-27T02:44:02Z",
+          "kind": "venue_update",
+          "fields": [
+            "venue"
+          ],
+          "source_url": "https://cikm2026.diag.uniroma1.it/program/"
         }
       ],
       "source_dates": {
@@ -9549,31 +9565,31 @@
       ],
       "original_abstract": {
         "status": "verified",
-        "text": "Conversational agents, generative recommenders, and personalized advertising all rest on one capability: understanding each user from raw behavior. Prevailing industrial practice is task-specific: for each task, a relevant subsequence is extracted from the full history and a dedicated model trained on it. In production it hits two bottlenecks. First, even after filtering, a single-task sequence stays extremely long: content-interest summarization reads several hundred items per user, tens of thousands of tokens once serialized as prompt text. Second, profiles are refreshed routinely: a billion users weekly, roughly 100K QPM in aggregate, which under a fixed GPU budget sets a hard throughput floor. Compression is therefore mandatory, yet truncation or coarse compression can silently distort the profile, introducing four hallucination types (fabrication, omission, date misattribution, broken logic) that, with no way to evaluate the compressed representation itself, surface only as diffuse degradation in downstream metrics. We present KuaFu, a unified behavior-compression layer whose minimal unit is one behavior item. A two-axis projector compresses each item into 2-4 tokens of width 128-256 (about 10x along the token axis, 20x along width; per-item cache 10 KB to 0.5 KB), with fidelity-oriented four-stage training and layered intermediate evaluation. Across four production profiling tasks it matches or exceeds uncompressed single-task production models on all five headline metrics, raises per-GPU throughput by 37%-350%, and saves 190 GPUs. On public benchmarks it nearly always beats prior compressors at the same compression ratio (up to +17.7 EM on out-of-domain MRQA); on RecBench, a 4B model surpasses its 8B counterpart by 1.90 points. KuaFu has run on the Tencent advertising and recommendation platform for ten months, lifting overall GMV by 1.37%.",
+        "text": "Learning user preferences from long behavioral sequences is fundamental to large-scale advertising, recommender systems, and conversational agents. In industrial systems, preference modeling is typically task-wise, with different downstream tasks independently processing the same user history to capture different aspects of preference. This repeated processing creates substantial redundancy at billion-user scale, especially as preferences evolve and representations require frequent updates. We present KuaFu, a unified user preference modeling system that replaces repeated user-level sequence encoding with reusable item-level compressed representations. Each behavioral item is encoded once and shared across users and downstream tasks, while a user's history is built chronologically and extended with new item representations as they arrive, letting KuaFu capture evolving preferences without re-encoding the entire history. To reduce inference and storage overhead, KuaFu introduces a two-axis projector: token-axis compression shortens behavior sequences by up to 15x and reduces each item from 150 KB to 10 KB, while width-axis compression reduces the cached representation to 0.5 KB. We further develop a four-stage training pipeline consisting of reconstruction pre-training, preference-understanding post-training, joint compression-generation training, and hallucination-aware reinforcement learning, progressively improving representation fidelity and downstream utility. Across six MRQA and five RecBench benchmarks, KuaFu consistently outperforms existing compression methods at comparable ratios, with gains of up to 17.7 EM and 1.90 AUC points respectively. KuaFu has been deployed and evaluated on the Tencent advertising and recommendation platform for ten months. Over this period, it improves per-GPU throughput by up to 350%, saves 190 GPUs, and increases overall GMV by 1.37%.",
         "language": "en",
-        "source_url": "https://arxiv.org/abs/2609.31045v1",
-        "retrieved_at": "2026-10-02T04:50:17Z",
+        "source_url": "https://arxiv.org/abs/2609.31045v2",
+        "retrieved_at": "2026-10-27T02:34:59Z",
         "license": "CC0-1.0",
         "source_title": "KuaFu: Compressing Long User Behavior into Understanding at Billion Scale",
-        "source_version": "v1"
+        "source_version": "v2"
       },
       "summaries": {
         "en": {
-          "text": "KuaFu compresses each behavior item along both token-count and representation-width axes to make large-scale user profiling affordable. Four-stage fidelity-oriented training and intermediate evaluation target distortions such as fabricated or omitted information, allowing a unified compression layer to support multiple profiling tasks while improving throughput in production.",
+          "text": "KuaFu avoids repeated user-history encoding by caching compressed item representations reusable across users and tasks. A two-axis projector and four-stage training reduce token count and representation width while supporting incremental history updates. The abstract reports up to 15-fold sequence compression, 0.5 KB cached representations per item, and gains up to 17.7 EM and 1.90 AUC points on MRQA and RecBench. Ten months of Tencent deployment report up to 350% higher per-GPU throughput, 190 GPUs saved and GMV +1.37%.",
           "basis": "original_abstract",
           "method": "ai_assisted",
-          "updated_at": "2026-10-02",
+          "updated_at": "2026-10-27",
           "source_urls": [
-            "https://arxiv.org/abs/2609.31045v1"
+            "https://arxiv.org/abs/2609.31045v2"
           ]
         },
         "zh": {
-          "text": "KuaFu 以单条行为为基本单位，同时压缩令牌数量与表示宽度，降低大规模用户画像的处理成本。四阶段保真训练和中间层评估专门关注虚构、遗漏等压缩失真，让统一压缩层支持多种画像任务，并在生产环境提高吞吐效率。",
+          "text": "KuaFu 缓存可跨用户、跨任务复用的商品压缩表示，避免反复编码完整用户历史。双轴投影器和四阶段训练压缩 token 数与表示宽度，并支持历史增量更新。摘要报告最高 15 倍序列压缩、每个商品 0.5 KB 缓存，以及 MRQA、RecBench 上最高 17.7 EM 和 1.90 AUC 点增益。腾讯十个月部署报告单 GPU 吞吐最高提升 350%、节省 190 张 GPU，GMV 提升 1.37%。",
           "basis": "original_abstract",
           "method": "ai_assisted",
-          "updated_at": "2026-10-02",
+          "updated_at": "2026-10-27",
           "source_urls": [
-            "https://arxiv.org/abs/2609.31045v1"
+            "https://arxiv.org/abs/2609.31045v2"
           ]
         }
       },
@@ -9593,14 +9609,25 @@
           ],
           "source_url": "https://github.com/byby221b/Awesome-CTR-Scaling/commit/a49e55867454f76e5a77114de99b196cb83fd797",
           "commit_sha": "a49e55867454f76e5a77114de99b196cb83fd797"
+        },
+        {
+          "at": "2026-10-27T02:44:02Z",
+          "kind": "paper_revision",
+          "fields": [
+            "original_abstract",
+            "source_dates",
+            "summaries"
+          ],
+          "source_url": "https://arxiv.org/abs/2609.31045v2",
+          "source_version": "v2"
         }
       ],
       "source_dates": {
         "published_at": "2026-09-25T09:39:39Z",
-        "updated_at": "2026-09-25T09:39:39Z",
-        "source_version": "v1",
-        "source_url": "https://arxiv.org/abs/2609.31045v1",
-        "verified_at": "2026-10-02T04:50:17Z"
+        "updated_at": "2026-10-20T12:09:04Z",
+        "source_version": "v2",
+        "source_url": "https://arxiv.org/abs/2609.31045v2",
+        "verified_at": "2026-10-27T02:41:47Z"
       },
       "reading_tier": "prioritize"
     },
@@ -30994,7 +31021,7 @@
       "collection": "related",
       "category": "retrieval-reranking-scaling",
       "id": "2610.16979",
-      "title": "WeGR: Unified Generative Retrieval for Industrial Search Systems in WeChat",
+      "title": "WeGR: Towards Unified Generative Retrieval via Behavior-aware Tokenization and Preference Alignment",
       "venue": "arXiv",
       "year": 2026,
       "tags": [],
@@ -31007,44 +31034,43 @@
       "aliases": [
         "WeGR",
         "CoCo-VAE",
-        "DHPO"
+        "DHPO",
+        "WeGR: Unified Generative Retrieval for Industrial Search Systems in WeChat"
       ],
       "original_abstract": {
         "status": "verified",
-        "text": "Generative retrieval (GR) offers a promising paradigm for industrial search by unifying candidate generation within an autoregressive framework. However, its effectiveness is limited by two key challenges. First, existing Semantic ID (SID) tokenizers struggle to incorporate collaborative signals while maintaining effective codebook utilization, limiting their ability to distinguish items and achieve high-quality retrieval. Second, existing reinforcement learning (RL) methods suffer from severe reward sparsity under exact SID matching, leaving many sampled trajectories without effective learning signals and hindering preference optimization. To address these challenges, we propose WeGR, a unified generative retrieval framework consisting of two complementary components. Specifically, the Collaborative and Collapse-free Tokenizer (CoCo-VAE) incorporates query-to-item and item-to-item collaborative signals while mitigating codebook collapse through codebook refresh and complementary regularization, enabling more informative and balanced SID representations. Building upon these SIDs, Dynamic Horizon Policy Optimization (DHPO) progressively expands both reward evaluation and policy optimization horizons, reducing learning difficulty while leveraging behavioral reward signals at different levels of the SID hierarchy, without relying on auxiliary reward models. Extensive offline experiments demonstrate the effectiveness of WeGR in improving retrieval and ranking performance. Moreover, a two-month online A/B test in WeChat E-commerce Search demonstrates relative improvements of 2.539% in orders, 1.508% in click-through rate, and 1.381% in conversion rate, while reducing online CPU and GPU usage by 25.5% and 26.1%, respectively. The system has been successfully deployed across multiple search scenarios in WeChat, serving billions of users, generating tens of millions of PVs daily.",
+        "text": "Generative retrieval (GR) offers a promising paradigm for industrial search by unifying candidate generation within an autoregressive framework. However, effectively leveraging user behaviors in industrial GR remains challenging: existing SID tokenization methods struggle to preserve collaborative signals while maintaining balanced codebook utilization, whereas reinforcement learning (RL) for prioritizing high-value candidates suffers from sparse rewards when generated SIDs fail to match positive items. To address these challenges, we propose WeGR, a unified GR framework with two complementary components. Specifically, the Collaborative and Collapse-free Tokenizer (CoCo-VAE) injects query-to-item and item-to-item collaborative signals into continuous representations before quantization, preserving behavioral information without disrupting codebook optimization. It further couples first-layer codebook refresh to reactivate underutilized codewords with fidelity anti-collapse regularization, which broadens gradient coverage over relevant codewords and penalizes collisions in deeper layers to yield behavior-aware SIDs with balanced utilization. For preference alignment, Dynamic Horizon Policy Optimization (DHPO) progressively expands reward evaluation and policy optimization horizons to alleviate reward sparsity, enabling coarse-to-fine preference learning from SID prefixes to complete items without auxiliary reward models. Extensive offline experiments validate that WeGR improves retrieval and ranking performance. Moreover, a six-week online A/B test on a large-scale e-commerce search platform achieves relative gains of 2.539% in orders, 1.508% in CTR, and 1.381% in CVR, while reducing CPU and GPU usage by 25.5% and 26.1%. These results highlight the effectiveness and efficiency of WeGR in industrial deployment, supporting multiple search scenarios and tens of millions of daily page views.",
         "language": "en",
-        "source_url": "https://arxiv.org/abs/2610.16979v1",
-        "retrieved_at": "2026-10-14T23:21:00Z",
+        "source_url": "https://arxiv.org/abs/2610.16979v3",
+        "retrieved_at": "2026-10-27T02:36:05Z",
         "license": null,
-        "source_title": "WeGR: Unified Generative Retrieval for Industrial Search Systems in WeChat",
-        "source_version": "v1"
+        "source_title": "WeGR: Towards Unified Generative Retrieval via Behavior-aware Tokenization and Preference Alignment",
+        "source_version": "v3"
       },
       "source_dates": {
         "published_at": "2026-10-12T15:38:47Z",
-        "updated_at": "2026-10-12T15:38:47Z",
-        "source_version": "v1",
-        "source_url": "https://arxiv.org/abs/2610.16979v1",
-        "verified_at": "2026-10-14T23:21:00Z"
+        "updated_at": "2026-10-21T09:11:29Z",
+        "source_version": "v3",
+        "source_url": "https://arxiv.org/abs/2610.16979v3",
+        "verified_at": "2026-10-27T02:41:40Z"
       },
       "summaries": {
         "en": {
-          "text": "WeGR combines a collaboration-aware tokenizer that mitigates codebook collapse with policy optimization that progressively expands the semantic-ID reward horizon. This addresses poor item discrimination and sparse exact-match rewards in industrial generative search. A WeChat E-commerce Search A/B test reports relative gains of 2.539% in orders, 1.508% in CTR, and 1.381% in CVR. Its 25.5% CPU and 26.1% GPU savings belong to a deployment that reduces candidates from other retrieval channels, not a standalone generator-kernel speedup.",
+          "text": "WeGR addresses weak collaborative signals and sparse exact-ID rewards in generative retrieval. CoCo-VAE injects behavioral information before quantization and combats codebook collapse; DHPO progressively expands reward and optimization horizons. A six-week industrial e-commerce A/B test reports relative gains of 2.539% in orders, 1.508% in CTR and 1.381% in CVR, alongside 25.5% CPU and 26.1% GPU savings. These are system-level deployment results, not isolated generator-kernel speedups.",
           "basis": "original_abstract",
           "method": "ai_assisted",
-          "updated_at": "2026-10-15",
+          "updated_at": "2026-10-27",
           "source_urls": [
-            "https://arxiv.org/abs/2610.16979v1",
-            "https://arxiv.org/pdf/2610.16979v1"
+            "https://arxiv.org/abs/2610.16979v3"
           ]
         },
         "zh": {
-          "text": "WeGR将融合协同信号、防止码本坍塌的分词器，与逐步扩大语义ID奖励范围的策略优化结合，改善工业生成式搜索的商品区分能力和精确匹配奖励稀疏问题。微信电商搜索A/B测试报告订单量、CTR及CVR分别相对提升2.539%、1.508%和1.381%。25.5%的CPU及26.1%的GPU节省来自减少其他召回渠道候选的部署配置，不能视为生成器内核单独提速。",
+          "text": "WeGR 针对生成式检索中的协同信号不足和精确 ID 匹配奖励稀疏，用 CoCo-VAE 在量化前注入行为信息并缓解码本坍塌，用 DHPO 逐步扩大奖励与优化范围。六周工业电商 A/B 测试报告订单、CTR、CVR 分别相对提升 2.539%、1.508%、1.381%，同时节省 25.5% CPU 和 26.1% GPU 用量。这些是系统级部署结果，不能视为生成器内核单独提速。",
           "basis": "original_abstract",
           "method": "ai_assisted",
-          "updated_at": "2026-10-15",
+          "updated_at": "2026-10-27",
           "source_urls": [
-            "https://arxiv.org/abs/2610.16979v1",
-            "https://arxiv.org/pdf/2610.16979v1"
+            "https://arxiv.org/abs/2610.16979v3"
           ]
         }
       },
@@ -31053,7 +31079,28 @@
         "kind": "catalog_entry",
         "source_url": "https://arxiv.org/abs/2610.16979"
       },
-      "change_history": [],
+      "change_history": [
+        {
+          "at": "2026-10-27T02:44:02Z",
+          "kind": "paper_revision",
+          "fields": [
+            "original_abstract",
+            "source_dates",
+            "summaries"
+          ],
+          "source_url": "https://arxiv.org/abs/2610.16979v3",
+          "source_version": "v3"
+        },
+        {
+          "at": "2026-10-27T02:44:02Z",
+          "kind": "metadata_enrichment",
+          "fields": [
+            "aliases",
+            "title"
+          ],
+          "source_url": "https://arxiv.org/abs/2610.16979v3"
+        }
+      ],
       "reading_tier": null
     },
     {
@@ -35796,47 +35843,59 @@
       ],
       "original_abstract": {
         "status": "verified",
-        "text": "Spiking neural networks target energy-efficient language modeling through sparse, binary activations, but the efficiency-accuracy tradeoff of spiking language models is uncharacterized at scale. We present the first Chinchilla-style IsoFLOP scaling study of a spiking language model, sweeping SpikeGPT-family models (RWKV backbone) from width 384 to 1536 across compute budgets from $3\\times10^{17}$ to $10^{19}$ FLOPs on FineWeb-EDU. We report two findings. First, the compute-optimal frontier is $N_{opt} \\propto C^{0.56}$, close to the 0.50 that Hoffmann et al. report for dense Transformers, so spiking does not change how parameters and data should be traded off under a compute budget. Second, against non-spiking RWKV and Transformer baselines trained the same way, the loss gap splits into a backbone cost of about 0.16 nats that does not change with compute and a spiking cost that falls from 0.34 to about 0.23 nats and then levels off. These results give the first compute-optimal recipe for spiking language models and quantify the accuracy cost of their sparsity.",
+        "text": "Spiking neural networks target energy-efficient language modeling through sparse, binary activations, but the efficiency-accuracy tradeoff of spiking language models is uncharacterized at scale. We present the first Chinchilla-style IsoFLOP scaling study of a spiking language model, sweeping SpikeGPT-family models (RWKV backbone) from width 384 to 1536 across compute budgets from $3\\times10^{17}$ to $10^{19}$ FLOPs on FineWeb-EDU. We report two findings. First, the compute-optimal frontier is $N_{opt} \\propto C^{0.56}$, close to the 0.50 that Hoffmann et al. report for dense Transformers, so spiking does not change how parameters and data should be traded off under a compute budget. Second, against non-spiking RWKV and Transformer baselines trained the same way, the loss gap splits into a backbone cost of about 0.16 nats that does not change with compute and a spiking cost that falls steadily with compute, from 0.34 to 0.23 nats over our range. These results give the first compute-optimal recipe for spiking language models and quantify the accuracy cost of their sparsity.",
         "language": "en",
-        "source_url": "https://arxiv.org/abs/2610.15146v1",
-        "retrieved_at": "2026-10-19T23:09:49Z",
+        "source_url": "https://arxiv.org/abs/2610.15146v2",
+        "retrieved_at": "2026-10-27T02:36:22Z",
         "license": "CC0-1.0",
         "source_title": "Compute-Optimal Scaling Laws for Spiking Language Models",
-        "source_version": "v1"
+        "source_version": "v2"
       },
       "summaries": {
         "en": {
-          "text": "An IsoFLOP study of SpikeGPT-family language models on FineWeb-EDU sweeps widths 384–1536 and compute budgets from 3e17 to 1e19 FLOPs. It finds compute-optimal parameter scaling proportional to compute raised to 0.56. Matched non-spiking RWKV and Transformer comparisons separate a roughly constant backbone loss cost from a spiking penalty that declines then plateaus. The result informs sparse-activation budgeting within this range, without measured recommendation or energy benefits.",
+          "text": "This IsoFLOP study evaluates SpikeGPT-family language models across widths 384–1536 and compute budgets of 3×10^17–10^19 FLOPs. The compute-optimal parameter exponent is 0.56. Matched training comparisons separate an approximately 0.16-nat backbone loss cost from a spiking cost that decreases from 0.34 to 0.23 nats with compute. It quantifies accuracy trade-offs in the tested range; it does not measure recommendation performance or hardware energy savings.",
           "basis": "original_abstract",
           "method": "ai_assisted",
-          "updated_at": "2026-10-20",
+          "updated_at": "2026-10-27",
           "source_urls": [
-            "https://arxiv.org/abs/2610.15146v1"
+            "https://arxiv.org/abs/2610.15146v2"
           ]
         },
         "zh": {
-          "text": "该研究在固定计算量下比较不同规模的脉冲语言模型，覆盖384—1536宽度和3×10¹⁷至10¹⁹ FLOPs，得到最优参数量约随计算量的0.56次方增长。与匹配训练的非脉冲RWKV及Transformer比较后，区分出较稳定的骨干损失代价和先下降后趋平的脉冲激活代价。这为所测范围内的稀疏激活预算提供依据，尚无推荐收益或实际能耗收益测量。",
+          "text": "该等 FLOPs 研究在宽度 384–1536、计算预算 3×10^17–10^19 FLOPs 范围内评测 SpikeGPT 系列语言模型，得到计算最优参数规模的指数为 0.56。相同训练条件下，损失差距可分为约 0.16 nat 的骨干成本，以及随计算量增加而从 0.34 降至 0.23 nat 的脉冲化成本。它量化了测试范围内的准确率权衡，没有测量推荐表现或硬件节能。",
           "basis": "original_abstract",
           "method": "ai_assisted",
-          "updated_at": "2026-10-20",
+          "updated_at": "2026-10-27",
           "source_urls": [
-            "https://arxiv.org/abs/2610.15146v1"
+            "https://arxiv.org/abs/2610.15146v2"
           ]
         }
       },
       "source_dates": {
         "published_at": "2026-10-10T19:46:24Z",
-        "updated_at": "2026-10-10T19:46:24Z",
-        "source_version": "v1",
-        "source_url": "https://arxiv.org/abs/2610.15146v1",
-        "verified_at": "2026-10-19T23:09:49Z"
+        "updated_at": "2026-10-20T15:59:21Z",
+        "source_version": "v2",
+        "source_url": "https://arxiv.org/abs/2610.15146v2",
+        "verified_at": "2026-10-27T02:41:34Z"
       },
       "added_at": "2026-10-19T23:15:11Z",
       "added_provenance": {
         "kind": "catalog_entry",
         "source_url": "https://arxiv.org/abs/2610.15146"
       },
-      "change_history": [],
+      "change_history": [
+        {
+          "at": "2026-10-27T02:44:02Z",
+          "kind": "paper_revision",
+          "fields": [
+            "original_abstract",
+            "source_dates",
+            "summaries"
+          ],
+          "source_url": "https://arxiv.org/abs/2610.15146v2",
+          "source_version": "v2"
+        }
+      ],
       "reading_tier": null
     },
     {
@@ -36770,6 +36829,1964 @@
       "added_provenance": {
         "kind": "catalog_entry",
         "source_url": "https://arxiv.org/abs/2610.23064"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2610.27691",
+      "title": "EASformer: Environment-Action-State Alignment for Industrial Generative Ranking",
+      "collection": "core",
+      "category": "unified-feature-sequence-modeling",
+      "affiliation": "Beihang University; Harbin Institute of Technology; Independent Researcher",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [
+        "Architecture",
+        "Attention",
+        "Unified FI+Seq"
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.27691"
+        }
+      ],
+      "aliases": [
+        "EASformer"
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Modern industrial ranking systems increasingly adopt generative recommendation (GR) paradigms, in which user behavior sequences and non-sequential (NS) features are tokenized and jointly modeled by Transformer-style backbones. This unified formulation provides a scalable interface for modeling long histories and heterogeneous features. However, sequence and NS representations often carry asymmetric semantics: historical representations may combine environment context with observed-action semantics, whereas candidate-side NS representations contain no observed action but incorporate richer supplementary context, such as user-item interaction features and recent behavior lists. Direct interaction between such representations can make query-key dot products compare different semantic objects, limiting meaningful cross-token interaction. To fill this gap, we propose EASformer, an Environment-Action-State disentangled architecture for industrial app ranking. EASformer constructs an explicitly aligned context environment space shared by historical and non-sequence tokens, while disentangling user actions from historical token and candidate-specific context form non-sequence tokens. Based on this aligned space, EASformer enables complementary historical action retrieval and state-conditioned action prediction. Furthermore, the disentangled design supports a Cloze-style self-supervised objective by masking historical actions and reusing the candidate prediction pathway. On an offline benchmark from a real-world industrial app marketplace, EASformer achieves an AUC of 0.89411, yielding a 0.88% relative improvement over the deployed baseline. Online A/B tests further support this advantage, with relative eCPM lifts of 1.26% and 3.94% across two real-world ranking scenarios.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.27691v2",
+        "retrieved_at": "2026-10-27T02:34:33Z",
+        "license": null,
+        "source_title": "EASformer: Environment-Action-State Alignment for Industrial Generative Ranking",
+        "source_version": "v2"
+      },
+      "source_dates": {
+        "published_at": "2026-10-20T06:08:07Z",
+        "updated_at": "2026-10-23T15:20:54Z",
+        "source_version": "v2",
+        "source_url": "https://arxiv.org/abs/2610.27691v2",
+        "verified_at": "2026-10-27T02:39:18Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "EASformer addresses semantic mismatch between historical behavior tokens and candidate-side features by separating environment, action and state representations. An aligned environment space supports action retrieval, state-conditioned prediction and masked-action self-supervision. On an industrial app-marketplace benchmark, AUC reaches 0.89411, a 0.88% relative gain over the deployed baseline; two online ranking scenarios report relative eCPM gains of 1.26% and 3.94%.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-27",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.27691v2"
+          ]
+        },
+        "zh": {
+          "text": "EASformer 针对历史行为 token 与候选侧特征的语义不对齐，将环境、动作和状态表示分开。共享环境空间支持动作检索、状态条件预测及掩码动作自监督。在工业应用商店基准上，AUC 达到 0.89411，比线上基线相对提升 0.88%；两个在线排序场景的 eCPM 分别相对提升 1.26% 和 3.94%。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-27",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.27691v2"
+          ]
+        }
+      },
+      "added_at": "2026-10-27T02:44:02Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.27691"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2610.23453",
+      "title": "Predictable Scaling: Efficient Model Exploration via Scaling-Law Prediction",
+      "collection": "core",
+      "category": "scaling-law-theory",
+      "affiliation": "Meta Platforms, Inc.",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [
+        "Scaling Law",
+        "Training Efficiency"
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.23453"
+        }
+      ],
+      "aliases": [
+        "Predictable Scaling",
+        "PS"
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Evaluating candidate changes (hypotheses) to recommendation models requires full-scale training runs consuming thousands of GPU-hours, severely limiting the hypothesis space engineers can feasibly explore. We introduce Predictable Scaling (PS), a systematic framework that exploits empirically verified regularity conditions to predict full-scale model performance from small-scale proxies. PS constructs scaled-down variants via composable scaling functions along distinct resource axes, and projects metrics to the target scale via curve fitting with calibrated uncertainty estimates. We compare three prediction strategies of increasing expressiveness: even the simplest (raw proxy) achieves prediction error within the empirical noise floor of repeated-run variance; the most expressive (Gaussian Process) provides an indicative 15% relative MAE improvement and calibrated uncertainty. Evaluation on two ranking models of increasing complexity---a task-specific model and a foundation model---demonstrates that PS correctly ranks actionable hypotheses across diverse hypothesis types at 79-88% compute reductions.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.23453v2",
+        "retrieved_at": "2026-10-27T02:34:33Z",
+        "license": null,
+        "source_title": "Predictable Scaling: Efficient Model Exploration via Scaling-Law Prediction",
+        "source_version": "v2"
+      },
+      "source_dates": {
+        "published_at": "2026-10-16T13:35:54Z",
+        "updated_at": "2026-10-21T21:48:45Z",
+        "source_version": "v2",
+        "source_url": "https://arxiv.org/abs/2610.23453v2",
+        "verified_at": "2026-10-27T02:39:22Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "Predictable Scaling reduces the cost of testing recommendation-model changes by constructing smaller proxies along resource axes and extrapolating their metrics with calibrated uncertainty. On a task-specific ranking model and a foundation ranking model, it correctly ranks actionable hypotheses while reducing compute by 79–88%. These results depend on empirically checked regularity conditions; they do not establish universal transfer of proxy rankings.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-27",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.23453v2"
+          ]
+        },
+        "zh": {
+          "text": "Predictable Scaling 为降低推荐模型方案试验的成本，沿资源维度构造小模型代理，再结合校准后的不确定性外推指标。在一个任务专用排序模型和一个基础排序模型上，它正确排列了具有实际价值的改进方案，计算量减少 79%–88%。结果依赖经过实证检查的规律性条件，并不意味着小模型排名能够普遍迁移。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-27",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.23453v2"
+          ]
+        }
+      },
+      "added_at": "2026-10-27T02:44:02Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.23453"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2610.27898",
+      "title": "SPAR: Stepwise Personalized Autoregressive Recommendation with Prefix-Balanced Semantic IDs",
+      "collection": "related",
+      "category": "generative-recommendation",
+      "affiliation": "University of Electronic Science and Technology of China; University of Science and Technology of China; HUJING Digital Media & Entertainment Group; Southwest Jiaotong University",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.27898"
+        }
+      ],
+      "aliases": [
+        "SPAR"
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Semantic ID (SID)-based generative recommendation retrieves items through successive token-level decisions, making personalization at each decoding step essential. However, existing methods insufficiently account for prefix-dependent user evidence and imbalanced historical interaction loads among candidate branches. This can cause irreversible branch-selection errors and favor popular paths. We propose SPAR, a generative recommendation framework that jointly improves stepwise personalization and SID construction. Its PATH Decoder retrieves prefix-relevant evidence from compressed long-term user memories and combines it with recent behavior, user profiles, and event context to guide each token decision. Its RQ-PIB module balances historical interaction loads among sibling branches under each parent prefix while preserving semantic structure. Experiments on large-scale Youku production data show an average relative HitRate improvement of 2.66% over the strongest baseline. SPAR also increases target-prefix retention by 5.79 percentage points and reduces the traffic-weighted largest child-branch share by 32.84% across SID levels. In a 7-day online A/B test, SPAR serves 10% of Youku's production traffic and improves average watch time per user by 3.95% and play conversion rate by 3.38%. These results demonstrate more reliable hierarchical decoding, balanced SID branches, and improved user engagement in industrial recommendation.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.27898v1",
+        "retrieved_at": "2026-10-27T02:34:33Z",
+        "license": null,
+        "source_title": "SPAR: Stepwise Personalized Autoregressive Recommendation with Prefix-Balanced Semantic IDs",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-10-20T09:17:14Z",
+        "updated_at": "2026-10-20T09:17:14Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.27898v1",
+        "verified_at": "2026-10-27T02:39:25Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "SPAR addresses irreversible branch errors and popularity-heavy paths in semantic-ID generation. Its PATH decoder retrieves prefix-relevant evidence from compressed user memories, while RQ-PIB balances interaction loads among sibling branches. On Youku production data, relative HitRate improves by 2.66% over the strongest baseline. A seven-day A/B test covering 10% of traffic reports watch time per user +3.95% and play conversion +3.38%.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-27",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.27898v1"
+          ]
+        },
+        "zh": {
+          "text": "SPAR 针对语义 ID 生成中的不可逆分支错误和热门路径偏置，用 PATH 解码器从压缩用户记忆中检索与当前前缀相关的证据，并用 RQ-PIB 平衡同级分支的交互负载。在优酷生产数据上，HitRate 比最强基线相对提升 2.66%；覆盖 10% 流量的七天 A/B 测试报告人均观看时长提升 3.95%、播放转化率提升 3.38%。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-27",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.27898v1"
+          ]
+        }
+      },
+      "added_at": "2026-10-27T02:44:02Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.27898"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2610.27232",
+      "title": "Neighborhood-Aware Unlearning for Generative Recommendation",
+      "collection": "related",
+      "category": "generative-recommendation",
+      "affiliation": "BIFOLD; TU Berlin; University of Amsterdam",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.27232"
+        }
+      ],
+      "aliases": [
+        "NAU"
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Generative recommendation predicts items by autoregressively generating semantic identifiers (SIDs), whose tokens are shared across semantically related items. With this paradigm gaining adoption, the question of how to support unlearning in it has become pressing. If training interactions must later be removed, such as injected spam or interactions with items a user no longer wants, this sharing lets an unlearning update unintentionally affect the predictions for the interactions' neighbors. We show that this effect is locally structured and hidden by global metrics: unlearning can leave recommendation utility on the whole test set nearly unchanged while substantially degrading it on neighborhoods of the forgotten interactions' SIDs. We propose Neighborhood-Aware Unlearning (NAU), which augments interaction-level unlearning with explicit control over the probability mass assigned to the forgotten items' neighborhoods. Across three datasets and four SID tokenizers, NAU restores spam-induced exposure toward the retrained reference while retaining more than 95% of retrained utility, and recovers the neighborhood utility that forget-and-repair unlearning loses at no global cost. We identify local probability redistribution as an important failure mode of unlearning in SID-based generative recommenders and show that explicitly controlling this redistribution can mitigate its effects.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.27232v1",
+        "retrieved_at": "2026-10-27T02:34:33Z",
+        "license": null,
+        "source_title": "Neighborhood-Aware Unlearning for Generative Recommendation",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-10-19T20:00:39Z",
+        "updated_at": "2026-10-19T20:00:39Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.27232v1",
+        "verified_at": "2026-10-27T02:39:28Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "Neighborhood-Aware Unlearning addresses collateral damage when shared semantic-ID tokens couple forgotten interactions to neighboring items. It explicitly controls probability mass in those neighborhoods alongside interaction-level unlearning. Across three datasets and four tokenizers, it moves spam-induced exposure toward a retrained reference while retaining more than 95% of retrained utility, and recovers neighborhood utility lost by forget-and-repair unlearning without reducing global utility.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-27",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.27232v1"
+          ]
+        },
+        "zh": {
+          "text": "Neighborhood-Aware Unlearning 针对语义 ID 共享 token 导致的遗忘连带损伤，在交互级遗忘之外显式控制相邻商品的概率质量。在三个数据集、四种分词器上，它使垃圾交互引起的曝光变化向重新训练的参考模型回归，同时保留超过 95% 的重训效用；还能恢复“遗忘后修复”方法损失的邻域效用，而不降低整体效用。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-27",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.27232v1"
+          ]
+        }
+      },
+      "added_at": "2026-10-27T02:44:02Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.27232"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2610.27273",
+      "title": "FLINT: Fixed-budget Late Interaction",
+      "collection": "related",
+      "category": "retrieval-reranking-scaling",
+      "affiliation": "University of Illinois Urbana-Champaign; University of California, Berkeley",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.27273"
+        }
+      ],
+      "aliases": [
+        "FLINT"
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Multi-vector retrieval models such as ColBERT often outperform single-vector models of comparable scale by matching queries and documents at the token level. However, retaining a vector for every token substantially increases storage requirements and slows retrieval compared to single-vector bi-encoders, limiting their scalability. We introduce FLINT (Fixed-budget Late INTeraction), an architecture that uses attention-based pooling to represent each query and document with a fixed number of embedding vectors. Unlike architectures that pool only document representations while retaining token-level queries, FLINT applies pooling symmetrically to both sides, limiting document storage and the number of vector comparisons needed during retrieval. FLINT achieves comparable ranking effectiveness to the closest baselines on BEIR and outperforms them on several benchmarks with longer and more complex queries, including BrowseComp+, CRUMB, and TREC Tip-of-the-Tongue 2025. We demonstrate that FLINT's effectiveness-efficiency benefits extend across encoder architectures, testing it on two separate backbones (BERT and ModernBERT). On long-query corpora, FLINT delivers 1.5-2.8 times faster end-to-end retrieval than ConstBERT, the closest baseline. FLINT also reduces index size by 5.3-9.3 times relative to token-level late-interaction models such as ColBERTv2.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.27273v1",
+        "retrieved_at": "2026-10-27T02:34:33Z",
+        "license": null,
+        "source_title": "FLINT: Fixed-budget Late Interaction",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-10-19T20:46:01Z",
+        "updated_at": "2026-10-19T20:46:01Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.27273v1",
+        "verified_at": "2026-10-27T02:39:31Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "FLINT reduces multi-vector retrieval storage and comparison costs by attention-pooling both queries and documents into fixed vector budgets. It retains comparable BEIR effectiveness and improves several long-query benchmarks across BERT and ModernBERT backbones. On long-query corpora, end-to-end retrieval is 1.5–2.8 times faster than ConstBERT; index size is 5.3–9.3 times smaller than token-level late-interaction models such as ColBERTv2.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-27",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.27273v1"
+          ]
+        },
+        "zh": {
+          "text": "FLINT 用注意力池化将查询和文档都压缩到固定数量的向量，降低多向量检索的存储和比较成本。在 BERT、ModernBERT 两种骨干上，它保持相近的 BEIR 效果，并改善多个长查询基准。长查询语料上的端到端检索速度为 ConstBERT 的 1.5–2.8 倍；索引比 ColBERTv2 等逐 token 交互模型缩小 5.3–9.3 倍。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-27",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.27273v1"
+          ]
+        }
+      },
+      "added_at": "2026-10-27T02:44:02Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.27273"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2610.27195",
+      "title": "UIBK-Embedding: Effective Text Retrieval by Unifying Dense and Late-Interaction Retrieval",
+      "collection": "related",
+      "category": "retrieval-reranking-scaling",
+      "affiliation": "University of Innsbruck",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.27195"
+        }
+      ],
+      "aliases": [
+        "UIBK-Embedding"
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Dense bi-encoders and late-interaction retrievers are usually treated as alternatives, yet they fail on different queries: one vector captures what a text is about, token-level matching finds its exact entities and phrases. Using both today means two models, two indexes and a score-fusion step. We present UIBK-Embedding-v1, a 179M-parameter English encoder that produces both representations in one pass and scores them with one unmodified MaxSim. The dense embedding is written into the list of token vectors as three extra vectors, and a one-dimensional tag keeps the two kinds of vectors from matching each other, so that plain MaxSim equals the token-level MaxSim plus a weighted dense cosine. The model therefore runs in a standard late-interaction index without changes; we test it with PLAID. A shared 18-layer trunk with a separate 4-layer top per head, and a cross-encoder distilled into the fused score, turn the two heads into one retriever. On BEIR, UIBK-Embedding-v1 reaches 59.79 nDCG@10. This is 2.57 points above LateOn, the strongest model of its size, and 2.10 points above it when both models read documents of the same length; UIBK-Embedding-v1 is ahead on all 15 datasets. On a decontaminated version of BEIR it stays ahead on average (61.55 against 60.36) and on 8 of 12 datasets. Among the 156 models with complete BEIR results in the MTEB results repository, only models with at least 1.5B parameters score higher. Code, model weights, and a technical blog post are available at https://github.com/DataScienceUIBK/uibk-embedding , https://huggingface.co/DataScience-UIBK/uibk-embedding-v1 , and https://huggingface.co/blog/abdoelsayed/uibk-embedding-v1 .",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.27195v1",
+        "retrieved_at": "2026-10-27T02:34:33Z",
+        "license": null,
+        "source_title": "UIBK-Embedding: Effective Text Retrieval by Unifying Dense and Late-Interaction Retrieval",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-10-19T19:30:38Z",
+        "updated_at": "2026-10-19T19:30:38Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.27195v1",
+        "verified_at": "2026-10-27T02:39:35Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "UIBK-Embedding combines dense and token-level retrieval in one 179M-parameter encoder and one unchanged MaxSim index. Three extra vectors encode the dense representation, with a tag preventing cross-type matching; shared layers and fused-score distillation train both heads together. BEIR nDCG@10 reaches 59.79, exceeding LateOn by 2.10 points under matched document lengths. On decontaminated BEIR it leads on average and on eight of twelve datasets.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-27",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.27195v1"
+          ]
+        },
+        "zh": {
+          "text": "UIBK-Embedding 在一个 1.79 亿参数编码器和无需修改的 MaxSim 索引中结合稠密检索与 token 级检索。三个额外向量承载稠密表示，类型标记防止跨类型匹配，共享层和融合分数蒸馏联合训练两个分支。BEIR nDCG@10 达到 59.79；文档长度一致时，比 LateOn 高 2.10 点。在去污染版 BEIR 上，它的平均表现更高，并在十二个数据集中的八个领先。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-27",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.27195v1"
+          ]
+        }
+      },
+      "added_at": "2026-10-27T02:44:02Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.27195"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2610.28568",
+      "title": "Evolving Semantic Indexes for Generative Retrieval",
+      "collection": "related",
+      "category": "generative-recommendation",
+      "affiliation": "Santa Clara University; Coupang",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.28568"
+        }
+      ],
+      "aliases": [],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Generative retrieval (GR) casts search and recommendation as autoregressive generation of discrete semantic identifiers (SIDs). SID design largely determines GR quality, but its discrete, interdependent components (SID construction, collision handling, decoding, and training) cannot be optimized end-to-end with gradients and remain largely hand-designed. We introduce a framework that improves these components through LLM-driven evolutionary program search, to our knowledge the first application of this approach to GR. A locally served, open-weight 31B model mutates executable GR components, so no proprietary LLM API is used, and a 1M-parameter proxy decoder provides fast feedback in place of repeatedly training the 1B target generator. Across 21 SID programs on NQ320K, proxy and target Recall@100 show strong rank correlation (Spearman $ρ= 0.90$). Guided by this proxy, evolution improves the seed GR on NQ320K, MSMARCO300K, and a multilingual e-commerce dataset under a fixed training recipe. On NQ320K, jointly evolving SID construction and collision handling improves Recall@1 from 55.8% to 59.3% and Recall@100 from 85.8% to 90.6%. A component study shows that proxy reliability depends on what is evolved: improvements transfer reliably for the semantic index but not for the generator's training objective or the full pipeline. LLM-driven evolutionary search is thus a practical tool for GR design, provided proxy reliability is established for the chosen search space.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.28568v1",
+        "retrieved_at": "2026-10-27T02:34:33Z",
+        "license": null,
+        "source_title": "Evolving Semantic Indexes for Generative Retrieval",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-10-20T17:27:46Z",
+        "updated_at": "2026-10-20T17:27:46Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.28568v1",
+        "verified_at": "2026-10-27T02:39:38Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "This framework uses a locally served 31B language model to evolve semantic-index programs and a 1M proxy decoder to evaluate designs before training a 1B generator. On NQ320K, jointly evolving ID construction and collision handling raises Recall@1 from 55.8% to 59.3% and Recall@100 from 85.8% to 90.6%. Proxy gains transfer reliably for semantic indexes, but not for training objectives or the full pipeline.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-27",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.28568v1"
+          ]
+        },
+        "zh": {
+          "text": "该框架用本地部署的 310 亿参数语言模型演化语义索引程序，并用 100 万参数代理解码器评估方案，减少反复训练 10 亿参数生成器的需求。在 NQ320K 上，联合优化 ID 构建与碰撞处理，使 Recall@1 从 55.8% 升至 59.3%，Recall@100 从 85.8% 升至 90.6%。代理收益能可靠迁移到语义索引，但未能可靠迁移到训练目标或完整流水线。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-27",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.28568v1"
+          ]
+        }
+      },
+      "added_at": "2026-10-27T02:44:02Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.28568"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2610.28441",
+      "title": "Stratified Sparse Attention: Reducing the Sparse-to-Dense Gap at Extreme Sparsity",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "Rice University; University of California, Berkeley; Stanford University; Indian Institute of Technology Bombay",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.28441"
+        }
+      ],
+      "aliases": [
+        "SSA"
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Large Language Model inference over long contexts is increasingly bottlenecked by the cost of attending to a growing Key-Value (KV) cache. Sparse attention reduces this cost by accessing only a fraction of the cache, but existing methods face a trade-off between deterministic retrieval, which captures high-scoring tokens but discards residual attention mass, and sampling, which improves coverage at the cost of higher variance. Hybrid methods combine top-$k$ retrieval with uniform sampling, yet still exhibit a substantial gap from dense attention at aggressive sparsity. We introduce \\emph{Stratified Sparse Attention (SSA)}, a unified framework combining deterministic retrieval with score-guided sampling. SSA deterministically attends to high-scoring tokens while sampling the residual using proxy attention scores and correcting for their inclusion probabilities, thereby recovering attention mass beyond the retrieval set. SSA encompasses top-$k$, top-$p$, and hybrid top-$k$+sampling as special cases. Across RULER, LongBench, LOFT, and AIME, and five models ranging from 3B to 27B parameters, SSA consistently improves over the baselines at matched sparsity. On RULER-HARD with Ministral-3-8B, SSA improves accuracy over the strongest practical baseline from 81.8\\% to 84.2\\% at 32K and from 63.8\\% to 69.3\\% at 128K under $50\\times$ attention sparsity, recovering 94\\% and 85\\% of dense-attention performance, respectively. With optimized CUDA kernels, SSA achieves up to $2.96\\times$ decode speedup over FlashInfer at 1M context, demonstrating that its accuracy gains translate into practical long-context inference acceleration. We open-source our code at https://github.com/skylight-org/SSA-Paper-Code.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.28441v1",
+        "retrieved_at": "2026-10-27T02:34:33Z",
+        "license": null,
+        "source_title": "Stratified Sparse Attention: Reducing the Sparse-to-Dense Gap at Extreme Sparsity",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-10-20T16:02:12Z",
+        "updated_at": "2026-10-20T16:02:12Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.28441v1",
+        "verified_at": "2026-10-27T02:39:41Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "Stratified Sparse Attention combines deterministic retrieval of high-score tokens with score-guided sampling and inclusion-probability correction for residual attention mass. Across five language models and four benchmark suites, it improves accuracy at matched sparsity. Optimized CUDA kernels yield up to 2.96 times decode speedup over FlashInfer at one-million-token context. The evidence concerns language-model inference; recommendation transfer remains untested.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-27",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.28441v1"
+          ]
+        },
+        "zh": {
+          "text": "Stratified Sparse Attention 将高分 token 的确定性检索与分数引导的剩余部分采样结合，再按入选概率校正遗漏的注意力质量。在五个语言模型和四组基准上，它在相同稀疏度下改善准确率；优化后的 CUDA 内核在百万 token 上下文中实现最高 2.96 倍于 FlashInfer 的解码速度。证据来自语言模型推理，尚未验证推荐任务迁移。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-27",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.28441v1"
+          ]
+        }
+      },
+      "added_at": "2026-10-27T02:44:02Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.28441"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2610.28385",
+      "title": "RACE: RoPE-Aligned Attention Compression Based on Query-Key Activation Energies",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "MIT CSAIL; MIT-IBM Computing Research Lab",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.28385"
+        }
+      ],
+      "aliases": [
+        "RACE"
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Head-dimension compression can reduce the memory required by the key-value (KV) cache, but existing methods often reconstruct full-dimensional representations during inference, adding significant decoding FLOPs overhead. We formalize the design considerations for converting pretrained attention into a natively reduced-dimensional form that reduces both KV-cache storage and attention computation using a calibration set. Specifically, we consider reductions that (1) apply a shared projection to queries and keys so that they remain in a common reduced feature space, (2) derive this projection jointly from query and key activations to better preserve their interaction, and (3) are compatible with the pretrained RoPE transformation. To obtain a reconstruction-free realization of this reduction, we restrict it to coordinate selection and theoretically show that RoPE compatibility then holds if and only if complete rotary pairs are retained. Building on this characterization, we introduce RACE, a post-training method that selects rotary pairs using their joint query-key activation energy. We theoretically show that this criterion minimizes a separable, calibration-dependent upper bound on post-RoPE query-key product approximation error. The resulting reductions are folded into the model weights and require neither runtime reconstruction nor specialized kernels. Across three model families and different compression levels, RACE outperforms structured pruning and remains competitive with reconstruction-based methods on language-modeling, zero-shot, and long-context tasks. At 50% KV-cache retention and 256K context, RACE reduces total inference FLOPs by 47.8%, yielding 1.79x higher throughput, 43.2% lower time-to-first-token (TTFT), and 28.1% lower allocated GPU memory in comparison to an uncompressed model.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.28385v1",
+        "retrieved_at": "2026-10-27T02:34:33Z",
+        "license": null,
+        "source_title": "RACE: RoPE-Aligned Attention Compression Based on Query-Key Activation Energies",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-10-20T15:34:02Z",
+        "updated_at": "2026-10-20T15:34:02Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.28385v1",
+        "verified_at": "2026-10-27T02:39:45Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "RACE reduces KV-cache dimensions without reconstructing full-dimensional states at inference. It selects complete RoPE rotary pairs using joint query-key activation energy and folds the selection into model weights. At 50% KV-cache retention and 256K context, it reports 47.8% fewer total inference FLOPs, 1.79 times throughput, 43.2% lower TTFT and 28.1% lower allocated GPU memory than the uncompressed model. Recommendation transfer is untested.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-27",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.28385v1"
+          ]
+        },
+        "zh": {
+          "text": "RACE 通过保留完整 RoPE 旋转对来压缩 KV 缓存维度，依据查询与键的联合激活能量选择坐标，并将选择折叠进模型权重，避免推理时重建完整表示。在保留 50% KV 缓存、256K 上下文的设置下，相对未压缩模型，总推理 FLOPs 减少 47.8%，吞吐达到 1.79 倍，首 token 延迟下降 43.2%，已分配 GPU 显存下降 28.1%。推荐任务迁移尚未验证。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-27",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.28385v1"
+          ]
+        }
+      },
+      "added_at": "2026-10-27T02:44:02Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.28385"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2610.27598",
+      "title": "Meta Expert: Cross-Layer Expert Sharing for Storage- and Retrieval-Efficient MoE",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "Tsinghua University; Shanghai AI Laboratory",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.27598"
+        }
+      ],
+      "aliases": [
+        "Meta Expert"
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "As model parameters scale up, sparsely activated Mixture-of-Experts (MoE) approaches have become essential for model scaling. However, mainstream models currently adopt hierarchical architectures, where experts in different layers, although topologically independent, exhibit substantial similarity and redundancy in their stored content. Compared to the hierarchically arranged \\textbf{Local Expert} in existing mainstream models, we hypothesize that inter-layer shared \\textbf{Meta Expert} hold greater potential. To this end, we conduct a multi-dimensional empirical comparison between Local and Meta Experts, and find that models incorporating Meta Experts exhibit lower parameter redundancy, together with lower cross-entropy loss and higher downstream task accuracy. With the activated quantity and the expert granularity held fixed, \\textbf{our model matches the performance of Vanilla MoE using only 70--80\\% of the experts}, substantially improving the model's scaling potential. Beyond removing inter-layer redundancy among experts and improving information storage efficiency, our theoretical analysis further shows that, compared with Local Experts, Meta Experts provide hidden states with more flexible residual pathways, thereby improving information retrieval efficiency.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.27598v1",
+        "retrieved_at": "2026-10-27T02:34:33Z",
+        "license": null,
+        "source_title": "Meta Expert: Cross-Layer Expert Sharing for Storage- and Retrieval-Efficient MoE",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-10-20T04:05:56Z",
+        "updated_at": "2026-10-20T04:05:56Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.27598v1",
+        "verified_at": "2026-10-27T02:39:48Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "Meta Expert addresses redundant expert parameters across MoE layers by sharing experts between layers. Empirical comparisons show lower redundancy, lower cross-entropy and higher downstream accuracy; with activated expert count and granularity fixed, it matches vanilla MoE performance using 70–80% of the experts. The analysis attributes additional benefits to more flexible residual paths. These findings concern general model architecture, with no recommendation-specific evaluation.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-27",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.27598v1"
+          ]
+        },
+        "zh": {
+          "text": "Meta Expert 通过跨层共享专家，减少 MoE 不同层之间的参数冗余。实验显示冗余和交叉熵更低、下游准确率更高；在激活专家数量与专家粒度不变时，使用原始 MoE 的 70%–80% 专家即可匹配其表现。分析还将部分收益归因于更灵活的残差路径。证据来自通用模型架构，没有推荐专门评测。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-27",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.27598v1"
+          ]
+        }
+      },
+      "added_at": "2026-10-27T02:44:02Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.27598"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2610.27123",
+      "title": "Reconstruction-Optimized Expert Pruning for Mixture-of-Experts Language Models",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "LinkedIn; MIT; Google",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.27123"
+        }
+      ],
+      "aliases": [
+        "OptEP"
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Mixture-of-Experts (MoE) models reduce computation through sparse expert activation, but deployment still requires storing a large number of expert parameters. We study post-training expert pruning using task-domain calibration data as a subset-selection problem: given a pretrained MoE layer, select a fixed number of experts that best reconstruct its original output. Exact subset search is combinatorial and becomes intractable for modern MoE models with many experts per layer. We develop OptEP, a scalable continuous relaxation that directly optimizes differentiable expert-selection variables, followed by a lightweight reconstruction-based update of the retained expert weights. Across multiple MoE architectures and tasks spanning mathematical reasoning and code generation, our approach improves over the strongest existing expert-pruning baselines, with absolute accuracy gains of up to 15.05% on Qwen3-30B-A3B, 14.55% on Qwen3-235B-A22B, 11.06% on GLM-4.5-Air, and 16.20% on Mixtral-8x7B. The improvements are particularly pronounced under aggressive pruning, demonstrating that reconstruction-driven expert selection and weight adaptation can preserve substantially more of the original model's performance while reducing the number of retained experts.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.27123v1",
+        "retrieved_at": "2026-10-27T02:34:33Z",
+        "license": null,
+        "source_title": "Reconstruction-Optimized Expert Pruning for Mixture-of-Experts Language Models",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-10-19T18:24:03Z",
+        "updated_at": "2026-10-19T18:24:03Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.27123v1",
+        "verified_at": "2026-10-27T02:39:51Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "OptEP treats post-training MoE expert pruning as selecting a fixed-size subset that reconstructs the original layer output. A continuous relaxation optimizes expert selection, followed by lightweight updates of retained weights. Across mathematical-reasoning and code-generation tasks, it outperforms evaluated pruning baselines, especially at aggressive pruning. The method targets expert storage costs; its abstract does not establish recommendation gains or measured serving acceleration.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-27",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.27123v1"
+          ]
+        },
+        "zh": {
+          "text": "OptEP 将 MoE 训练后专家剪枝表述为固定数量的专家子集选择，以重建原层输出为目标。它先用连续松弛优化专家选择，再轻量更新保留的权重。在数学推理和代码生成任务上，它优于所评测的剪枝基线，激进剪枝时优势更明显。该方法针对专家存储成本，摘要没有证明推荐收益或实测服务加速。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-27",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.27123v1"
+          ]
+        }
+      },
+      "added_at": "2026-10-27T02:44:02Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.27123"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2610.28489",
+      "title": "Asymmetric Looped Transformers: Fixed Global Representations for an Iterative Decoder",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "Shanghai Jiao Tong University; University of Science and Technology of China; Nanyang Technological University; Nanjing University",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.28489"
+        }
+      ],
+      "aliases": [
+        "AsymLoop"
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Looped Transformers increase effective depth by repeatedly applying shared layers, offering a way to scale computation without increasing parameter count. However, full-stack looping places context construction and iterative state refinement within the same recurrent computation, without explicitly distinguishing their roles. We introduce the Asymmetric Looped Transformer (AsymLoop), which separates single-pass context encoding from recurrent state refinement. A single-pass causal encoder produces layer-specific Global key-value (KV) caches that remain fixed across iterations, while a weight-tied recurrent decoder generates Local KV from its evolving state. Joint attention over both sources under a single softmax allows each update to integrate persistent contextual information with the current intermediate state. For training, we apply a heavy-tail-guided layerwise learning-rate method to the encoder and decoder. Experiments on FineWeb-Edu across four model scales, from 60M to 1B, show consistently lower validation perplexity and higher average downstream accuracy than Full Loop under matched effective depth and training token budgets. At 1B, AsymLoop improves average zero-shot accuracy across seven commonsense reasoning benchmarks from 49.58% to 50.85%. Further experiments extend these benefits to longer training budgets, an OLMo-style backbone, and sparse mixture-of-experts models. These results support asymmetric context encoding and state refinement as an effective design for recurrent language models.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.28489v1",
+        "retrieved_at": "2026-10-27T02:34:33Z",
+        "license": null,
+        "source_title": "Asymmetric Looped Transformers: Fixed Global Representations for an Iterative Decoder",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-10-20T16:36:33Z",
+        "updated_at": "2026-10-20T16:36:33Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.28489v1",
+        "verified_at": "2026-10-27T02:39:55Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "AsymLoop separates one-pass context encoding from recurrent state refinement. A causal encoder supplies fixed global KV caches, while a weight-tied decoder attends jointly to them and evolving local states. At matched effective depth and training tokens, models from 60M to 1B improve over full-stack looping. At 1B, average accuracy on seven commonsense benchmarks rises from 49.58% to 50.85%; recommendation transfer is untested.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-27",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.28489v1"
+          ]
+        },
+        "zh": {
+          "text": "AsymLoop 将一次性上下文编码与循环状态更新分开：因果编码器提供固定的全局 KV 缓存，共享权重的解码器联合关注全局缓存和不断变化的局部状态。在有效深度和训练 token 数一致时，6000 万至 10 亿参数模型优于整栈循环；10 亿参数模型的七项常识基准平均准确率从 49.58% 升至 50.85%。推荐任务迁移尚未验证。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-27",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.28489v1"
+          ]
+        }
+      },
+      "added_at": "2026-10-27T02:44:02Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.28489"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2610.28096",
+      "title": "KPage: Cross-Block Page Compaction for Hardware-Efficient Sparse Attention",
+      "collection": "related",
+      "category": "engineering-serving",
+      "affiliation": "KlingAI Research; NVIDIA",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.28096"
+        }
+      ],
+      "aliases": [
+        "KPage"
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Sparse attention reduces the computational cost of long-sequence video Transformers, but three-dimensional token layouts often leave selected blocks partially occupied, wasting physical tile capacity. We present KPage, a block-sparse attention scheme that packs valid 16-row K/V pages across logical-block boundaries into large tiles directly during loading, without materializing compacted tensors in high-bandwidth memory. KPage also routes Q blocks between 64x256 and 128x128 tiles to reduce query-side padding. Exact masking and K/V-owned page packing preserve the original sparse graph in forward and backward execution.\n  Across five representative workloads, KPage achieves 1.35x-2.06x bare forward-kernel speedup over NVIDIA Block-Sparse Attention (BSA), with a geometric mean of 1.77x. It is near parity for fully occupied blocks (1.03x) but achieves 2.29x geometric-mean speedup on 3D layouts with partial blocks. KPage reduces physical query-key pair capacity from 334.1G to 177.5G while preserving 160.6G useful interactions. Across eight layouts from open-source SSTA, STA, and VSA systems, KPage achieves 1.13x-4.25x forward and 1.02x-2.71x forward-plus-backward speedup over the strongest exact sparse baselines. With independent Q/K partitions, KPage also achieves 1.49x speedup over the strongest exact sparse baseline and 1.57x over BSA on the SVG2 Wan 14B/720p configuration. After compliance review, we will open-source KPage and submit a pull request to NVIDIA cuDNN Frontend.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.28096v1",
+        "retrieved_at": "2026-10-27T02:34:33Z",
+        "license": null,
+        "source_title": "KPage: Cross-Block Page Compaction for Hardware-Efficient Sparse Attention",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-10-20T12:12:16Z",
+        "updated_at": "2026-10-20T12:12:16Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.28096v1",
+        "verified_at": "2026-10-27T02:39:58Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "KPage addresses wasted GPU tile capacity in partially occupied sparse-attention blocks. It packs 16-row KV pages across block boundaries during loading and selects query tile shapes, preserving the original sparse graph without materializing compacted tensors in high-bandwidth memory. Across eight layouts it reports 1.13–4.25 times forward and 1.02–2.71 times forward-plus-backward speedup over the strongest exact sparse baselines. These are attention-kernel results, not recommendation-system gains.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-27",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.28096v1"
+          ]
+        },
+        "zh": {
+          "text": "KPage 针对稀疏注意力块未填满造成的 GPU tile 容量浪费，在加载时跨块打包 16 行 KV 页面，并选择查询 tile 形状；它保留原稀疏图，不在高带宽显存中物化压紧后的张量。在八种布局上，前向速度为最强精确稀疏基线的 1.13–4.25 倍，前向加反向为 1.02–2.71 倍。这些是注意力内核结果，并非推荐系统收益。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-27",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.28096v1"
+          ]
+        }
+      },
+      "added_at": "2026-10-27T02:44:02Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.28096"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2610.27306",
+      "title": "SweepANN: A GPU-Accelerated Large-K Approximate Vector Search for Drug Discovery",
+      "collection": "related",
+      "category": "retrieval-reranking-scaling",
+      "affiliation": "Arizona State University; Independent Researcher",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.27306"
+        }
+      ],
+      "aliases": [
+        "SweepANN"
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "DrugCLIP places small molecules and protein pockets in one space, turning genome-wide drug discovery into large-K retrieval by vector proximity. A campaign fixes over 20K pockets in advance for one library of over 500M molecules. Each pocket keeps K = 500K candidates, 0.1% of the collection, versus 100 in ANN benchmarks. Missed hits never get tested, so mean recall must reach 99% relative to exact search. Large answers make IVF probe every list holding a result and graph search track K or more candidates, so costs grow with K. On our CPUs and GPUs, neither index family reaches the target without losing most of its edge over scanning.\n  SweepANN partitions compressed vectors across GPUs and scans each resident partition. One matrix multiplication scores each block for a whole query batch, reading it once. Several plans perform the K-dependent selection and merging of each query's K answers, each returning an exact top-K under compressed scoring. The window plan retains each query's best K from sampled blocks as its seed, and only rows above each seed's minimum score, shared once across GPUs, enter the buffers.\n  Four Blackwell GPUs (RTX PRO 6000) answer all 26,562 pockets with a resident time of about 61 seconds, excluding library loading, and 99.6% mean recall relative to exact FP32 search. DrugCLIP reports roughly 24 hours with eight A100 GPUs in its own campaign. On 500M rows, the window plan runs 1.41x faster than SweepANN's grouped plan in the same memory. Across 25M-500M rows and K of 10K-500K, all GPU IVF configurations meeting the recall target take 8.2-24x SweepANN's resident time. On DEEP1B's 1B vectors across eight GPUs, against SweepANN's exact full-score scan of uncompressed FP32 rows, the window plan cuts resident time by 5.4x and 3.2x at K = 100K and 500K. It also cuts per-GPU peak memory by 6.0x and 5.3x, losing 1.0 and 0.7 mean-recall points.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.27306v1",
+        "retrieved_at": "2026-10-27T02:34:33Z",
+        "license": null,
+        "source_title": "SweepANN: A GPU-Accelerated Large-K Approximate Vector Search for Drug Discovery",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-10-19T21:21:31Z",
+        "updated_at": "2026-10-19T21:21:31Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.27306v1",
+        "verified_at": "2026-10-27T02:40:01Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "SweepANN targets large-K vector retrieval, where conventional ANN indexes lose much of their advantage at high recall. It scans compressed GPU-resident partitions with batched matrix multiplication and selective top-K merging. Four RTX PRO 6000 GPUs process 26,562 drug-discovery queries in about 61 seconds at 99.6% mean recall, excluding library loading. The application is drug discovery; cross-hardware campaign comparisons do not isolate an algorithmic speedup.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-27",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.27306v1"
+          ]
+        },
+        "zh": {
+          "text": "SweepANN 针对高召回率、大 K 向量检索中常规 ANN 索引优势缩小的问题，用批量矩阵乘法扫描 GPU 驻留的压缩分区，并选择性合并 top-K 结果。四张 RTX PRO 6000 GPU 约用 61 秒处理 26,562 个药物发现查询，平均召回率为 99.6%，时间不含向量库加载。应用场景是药物发现；跨硬件的整体任务对比不能单独证明算法加速幅度。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-27",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.27306v1"
+          ]
+        }
+      },
+      "added_at": "2026-10-27T02:44:02Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.27306"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2610.28435",
+      "title": "Multimodal Reranking Is a System One Decision",
+      "collection": "related",
+      "category": "retrieval-reranking-scaling",
+      "affiliation": "Aalto University",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.28435"
+        }
+      ],
+      "aliases": [],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Multimodal rerankers are usually dedicated models: a vision-language model (VLM) is trained on retrieval data to score the candidates of a query. Scoring options is not specific to reranking. System One decision models such as Jev map a state and a typed question to one probability per option without generating text, and general models can make such decisions with little or no training. Reranking is one such decision, with the query and its candidates as the state and the candidates as the options. We therefore argue that a general VLM can serve as a multimodal reranker through System One decisions, and that decision tuning can improve its reranking. We ask a VLM one choice question over the top 16 candidates of a first-stage retriever and rank the candidates by the probabilities of their labels, read from one forward pass. On MMEB-V2 image retrieval, this choice scores 5.4 to 7.3 hit@1 above a yes/no question per candidate, and the yes/no question falls below the first stage. With the choice, zero-shot Qwen3.8-27B beats the supervised Qwen3-VL-Reranker-2B on all three benchmarks and comes within 1.6 points of Reranker-8B on each. It matches Reranker-8B on MMEB-V2 visual documents (84.79 vs. 84.78 nDCG@5), at 1.1 to 1.5 times its latency. JEV-27B-VL, the same backbone tuned on text decisions only, improves page reranking by 0.6 to 1.1 points, with gains on most tasks (sign test, p <= 0.017), and leaves natural images unchanged. The zero-shot model is larger than the supervised rerankers and of a newer generation, so these comparisons are confounded; we discuss this and other alternative views, and the experiments that would test the position.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.28435v1",
+        "retrieved_at": "2026-10-27T02:34:33Z",
+        "license": null,
+        "source_title": "Multimodal Reranking Is a System One Decision",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-10-20T16:00:45Z",
+        "updated_at": "2026-10-20T16:00:45Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.28435v1",
+        "verified_at": "2026-10-27T02:40:04Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "This study casts multimodal reranking as one multiple-choice decision over sixteen candidates, ranking label probabilities from a single VLM forward pass. It outperforms per-candidate yes/no scoring; text-only decision tuning further improves page reranking by 0.6–1.1 points while leaving natural images unchanged. Comparisons with supervised rerankers are confounded by model size and generation, so they do not isolate the proposed formulation’s effect.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-27",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.28435v1"
+          ]
+        },
+        "zh": {
+          "text": "该研究将多模态重排转化为对十六个候选的一次多选决策，用视觉语言模型单次前向计算的标签概率排序。它优于逐候选的是非问答打分；仅用文本决策调优后，页面重排再提高 0.6–1.1 点，自然图像效果未变。与监督式重排器的比较受到模型大小和代际差异干扰，不能单独归因于这一决策形式。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-27",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.28435v1"
+          ]
+        }
+      },
+      "added_at": "2026-10-27T02:44:02Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.28435"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2610.26938",
+      "title": "GRaSP: Latency-Aware Optimization for Geo-Distributed Retrieval-Augmented Generation",
+      "collection": "related",
+      "category": "retrieval-reranking-scaling",
+      "affiliation": "Independent Researcher; The Pennsylvania State University",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.26938"
+        }
+      ],
+      "aliases": [
+        "GRaSP"
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Retrieval-Augmented Generation (RAG) is increasingly served across geo-distributed cloud and edge infrastructures, where wide-area latency, cross-region egress cost, and data-residency rules compete with retrieval quality. Conventional pipelines rank by semantic similarity alone and ignore where content lives, inflating tail latency and cost. We formalize the Geo-RAG Selection Problem (GRaSP), a drop-in re-scoring layer that decays relevance by latency and adds an optional cost penalty under a cardinality budget and per-region caps, with no retraining. We first settle its complexity: the base formulation is a linear objective over a partition matroid, solved optimally by an O(N log N) greedy algorithm, rather than NP-hard as a knapsack framing suggests, with hardness entering only under an additive egress budget. On a five-node CloudLab testbed emulating a four-region WAN over the Natural Questions corpus (2.68M passages), GRaSP's benefit is placement-dependent: under uniform placement it cuts fetch latency at negligible quality cost; under topical (residency-like) placement it traces a recall-latency Pareto frontier that dominates relevance-only, nearest-k, and a latency-budgeted baseline. At a moderate latency setting, GRaSP lowers P90 fetch latency by 41% while retaining 78% of relevance-only's recall, with sub-millisecond selection overhead, stable to 200 queries/s. Findings generalize across four public BEIR benchmarks. In end-to-end question answering, GRaSP reduces context-fetch latency by 43% while remaining within 0.062 absolute EM of relevance-only retrieval.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.26938v1",
+        "retrieved_at": "2026-10-27T02:34:36Z",
+        "license": null,
+        "source_title": "GRaSP: Latency-Aware Optimization for Geo-Distributed Retrieval-Augmented Generation",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-10-17T23:20:16Z",
+        "updated_at": "2026-10-17T23:20:16Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.26938v1",
+        "verified_at": "2026-10-27T02:40:08Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "GRaSP reranks retrieval candidates using relevance, network latency and optional transfer cost under regional caps, without retraining. Its benefit depends on content placement. On a five-node testbed, a moderate setting reduces P90 fetch latency by 41% while retaining 78% of relevance-only recall. End-to-end QA reduces context-fetch latency by 43% while staying within 0.062 absolute EM of relevance-only retrieval; this is a quality-latency trade-off.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-27",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.26938v1"
+          ]
+        },
+        "zh": {
+          "text": "GRaSP 在区域数量约束下结合相关性、网络延迟和可选传输成本重排候选，无需重训；收益取决于内容部署位置。五节点测试平台上的中等延迟设置使 P90 获取延迟下降 41%，保留仅按相关性检索的 78% 召回率。端到端问答的上下文获取延迟下降 43%，EM 与仅按相关性检索的绝对差距不超过 0.062；这是质量与延迟的权衡。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-27",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.26938v1"
+          ]
+        }
+      },
+      "added_at": "2026-10-27T02:44:02Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.26938"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2610.28369",
+      "title": "Don't Skip the Baseline: A Controlled Comparison of Dynamic Expert Skipping in MoEs",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "Technical University of Munich; Tensordyne; ETH Zurich; Ulm University",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.28369"
+        }
+      ],
+      "aliases": [],
+      "original_abstract": {
+        "status": "verified",
+        "text": "A growing body of work proposes dynamic expert-skipping methods for Mixture-of-Experts (MoE) models that adjust the number of experts activated per token during inference, aiming to preserve model quality while further reducing the number of active parameters. These methods have added calibrated importance scores, inter-expert similarity metrics, or learned per-token allocators in order to identify experts to skip. However, different calibration regimes, different reductions in the effective number of experts, and evaluation suites make comparisons difficult. We classify four representative prior methods into a unified taxonomy and benchmark them against a natural, simple baseline: statically reducing the number of experts $k$ (i.e., same reduced $k$ across all layers and tokens). We provide a fair comparison of these methods at matched expert-compute budget, on two modern MoEs (Gemma4-26B-A4B and Qwen3-30B-A3B) in a text-only setting and a contemporary vision-language model (Qwen3-VL) in a multimodal setting. Surprisingly, we find that the simple baseline is hard to outperform consistently across models, modalities, benchmarks, and calibration settings. The methods we benchmark often underperform the baseline and achieved gains, when present, are minor. We further find that the effective $k$ achieved (or optimized for) in calibration can diverge from the effective $k$ in testing, resulting in over- or under-estimating the compute at inference time. Based on these findings, we recommend a calibration-free per-modality static $k$ reduction and validate this on a held-out model and modality. We further argue that a static control at matched measured compute is the baseline any dynamic skipping method must beat.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.28369v1",
+        "retrieved_at": "2026-10-27T02:34:36Z",
+        "license": null,
+        "source_title": "Don't Skip the Baseline: A Controlled Comparison of Dynamic Expert Skipping in MoEs",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-10-20T15:29:19Z",
+        "updated_at": "2026-10-20T15:29:19Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.28369v1",
+        "verified_at": "2026-10-27T02:40:11Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "This controlled study compares four dynamic MoE expert-skipping methods with simply reducing the same expert count across layers and tokens. At matched expert-compute budgets, static reduction is difficult to beat consistently across text and multimodal models. Calibration-time effective expert counts can diverge from test-time counts, distorting cost comparisons. The contribution is a stronger evaluation baseline, not a new recommendation architecture.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-27",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.28369v1"
+          ]
+        },
+        "zh": {
+          "text": "该受控研究将四种动态 MoE 专家跳过方法，与所有层和 token 使用相同较小专家数的简单方案比较。在专家计算预算一致时，静态减少专家数很难被文本和多模态模型上的动态方法稳定超越；校准与测试时的实际专家数还可能不同，导致成本比较失真。其价值在于建立更可靠的评测基线，并非提出新的推荐架构。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-27",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.28369v1"
+          ]
+        }
+      },
+      "added_at": "2026-10-27T02:44:02Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.28369"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2610.24998",
+      "title": "Block Recursive Transformers for Structured Parameter Sharing",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "Sungkyunkwan University; Korea University",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.24998"
+        }
+      ],
+      "aliases": [
+        "BRT"
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Recursive Transformers depend not only on how many parameters are shared, but also on how shared parameters are organized across depth. Existing static schemes adopt two extreme reuse topologies: layer-wise repetition, where each layer is reused independently, and global cyclic reuse, where the entire stack is repeatedly applied as a single shared function. We argue that sharing granularity is an important factor in recursive parameter sharing. This study proposes Block Recursive Transformers (BRT), which partition layers into contiguous blocks and recursively reuse each block before moving to the next. This intermediate topology enables local refinement within blocks while preserving depth-wise transitions, without adding routing modules, auxiliary states, or extra training objectives. Across decoder-only models up to 1.7B parameters, with additional encoder-decoder and encoder-only studies, BRT improves validation negative log-likelihood and downstream accuracy over static recursive sharing baselines. Ablations and representation analyses further show that intermediate block granularity better balances local refinement and depth-wise differentiation. Project website: https://aim-skku.github.io/BRT/",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.24998v1",
+        "retrieved_at": "2026-10-27T02:34:36Z",
+        "license": null,
+        "source_title": "Block Recursive Transformers for Structured Parameter Sharing",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-10-18T04:02:40Z",
+        "updated_at": "2026-10-18T04:02:40Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.24998v1",
+        "verified_at": "2026-10-27T02:40:14Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "Block Recursive Transformers partition layers into contiguous blocks and repeatedly apply each block before proceeding to the next. This intermediate sharing pattern balances local refinement and depth-wise differentiation without adding routing, auxiliary states or objectives. Across decoder-only models up to 1.7B parameters, with encoder-decoder and encoder-only studies, it improves validation loss and downstream accuracy over static recursive-sharing baselines. Recommendation transfer is untested.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-27",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.24998v1"
+          ]
+        },
+        "zh": {
+          "text": "Block Recursive Transformers 将连续层划分成块，反复执行当前块后再进入下一块。这种中间粒度的共享方式平衡局部细化与不同深度的功能分化，无需新增路由、辅助状态或训练目标。在最高 17 亿参数的仅解码器模型及编码器—解码器、仅编码器实验中，它改善了静态递归共享基线的验证损失和下游准确率。推荐任务迁移尚未验证。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-27",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.24998v1"
+          ]
+        }
+      },
+      "added_at": "2026-10-27T02:44:02Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.24998"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2610.25250",
+      "title": "Improving the Expressive Power of Hybrid Sequence Models via Multi-Hop Retrieval",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "Technion - Israel Institute of Technology; NVIDIA",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.25250"
+        }
+      ],
+      "aliases": [
+        "MuRA"
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Hybrid architectures offer a promising approach to efficient language modeling by combining a small number of full-attention layers with a larger number of efficient sequence layers, such as sparse attention and recurrent layers. While full-attention layers maintain a KV cache that grows linearly with sequence length, efficient layers typically rely on separate, fixed-size states rather than accessing this richer existing memory. Recent work has begun exploring ways to allow efficient layers access to the KV cache, but the theoretical benefits of such access, and the extent to which existing approaches can realize them remain poorly understood. We investigate these questions by analyzing the expressive power of individual hybrid blocks on function composition, a well-studied task in sequence-model expressivity associated with multi-hop reasoning. We first establish that both conventional hybrid blocks and those with top-$κ$ KV-cache access require $Ω(\\sqrt{n})$ capacity to compute even two-function composition over a domain of size $n$. To overcome this limitation, we introduce the \\emph{Multi-hop Retrieval Attention} (MuRA) hybrid block, a simple architecture that enables multi-hop retrieval from a shared KV cache while preserving asymptotic computational and memory efficiency. We prove that a single fixed size $m$-hop MuRA block can compute $m$-function composition, whereas computing $(m+1)$-function composition with the same retrieval depth requires polynomial model size, establishing a strict expressivity hierarchy in retrieval depth. Synthetic experiments support this hierarchy, showing that increasing retrieval depth enables learning progressively deeper compositions, substantially outperforming existing hybrid architectures. Together, our results identify multi-hop retrieval as a promising mechanism for improving the expressive power of efficient hybrid architectures.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.25250v1",
+        "retrieved_at": "2026-10-27T02:34:36Z",
+        "license": null,
+        "source_title": "Improving the Expressive Power of Hybrid Sequence Models via Multi-Hop Retrieval",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-10-18T13:10:43Z",
+        "updated_at": "2026-10-18T13:10:43Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.25250v1",
+        "verified_at": "2026-10-27T02:40:18Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "MuRA lets efficient hybrid sequence layers perform multiple retrieval hops over a shared KV cache. For function-composition tasks, theory establishes a strict hierarchy in retrieval depth: a fixed-size m-hop block computes m-function composition, while one more composition requires polynomial size at that depth. Synthetic experiments support the hierarchy. This motivates more expressive efficient architectures, but does not establish language-model or recommendation production gains.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-27",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.25250v1"
+          ]
+        },
+        "zh": {
+          "text": "MuRA 让高效混合序列层在共享 KV 缓存上执行多跳检索。函数复合任务的理论分析给出严格的检索深度层级：固定大小的 m 跳模块可计算 m 重函数复合，而保持该深度再多复合一层需要多项式规模。合成实验支持这一层级。它为增强高效架构的表达能力提供思路，但没有证明语言模型或推荐生产环境收益。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-27",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.25250v1"
+          ]
+        }
+      },
+      "added_at": "2026-10-27T02:44:02Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.25250"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2610.28569",
+      "title": "ECHO: Efficient Cascade with Homogeneous Operators for Distillation-Guided 100K-Sequence Modeling",
+      "collection": "core",
+      "category": "efficiency-deployment",
+      "affiliation": "Kuaishou Technology",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [
+        "Long Sequence",
+        "Knowledge Distillation",
+        "Serving"
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.28569"
+        }
+      ],
+      "aliases": [
+        "ECHO"
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Modeling lifetime user behavior sequences is essential for capturing long-range preferences in industrial recommendation, yet sequences containing up to 100K interactions make target-aware ranking prohibitively expensive. Search-based methods that retrieve from raw sequences incur candidate-dependent costs that grow with sequence length, whereas latent compression methods reduce computation at the expense of item-level addressability. We propose ECHO (Efficient Cascade with Homogeneous Operators), a framework that balances efficiency and fine-grained retrieval by retaining a subset of original event records per user through a Distilled Selector (DS) and retrieving a smaller set of target-relevant records for each candidate through a Target-aware Fine-grained Retriever (TFR). DS is supervised by a candidate-aware full-history teacher via per-target distillation, enabling target-aware user-level selection without requiring full-history computation for every candidate. The retriever and target-attention scorer share the relevance parameters learned by the teacher, ensuring consistent relevance estimation throughout the cascade. At a sequence length of 100K, ECHO reduces online sequence-branch FLOPs by approximately 160 times compared with a representative end-to-end model. Three deployment optimizations, including common user inputs, compact record encoding, and key-side projection absorption, further reduce memory, storage, and data-movement overhead. Experiments on KuaiRand-1K and an industrial-scale short-video platform demonstrate relative GAUC improvements ranging from 0.113% to 1.520% over state-of-the-art baselines across multiple tasks. Furthermore, online A/B tests in two production scenarios, Kuaishou and Kuaishou Lite, show that ECHO improves app usage time by 0.240% and 0.373%, respectively.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.28569v2",
+        "retrieved_at": "2026-10-27T02:34:36Z",
+        "license": null,
+        "source_title": "ECHO: Efficient Cascade with Homogeneous Operators for Distillation-Guided 100K-Sequence Modeling",
+        "source_version": "v2"
+      },
+      "source_dates": {
+        "published_at": "2026-10-20T17:28:16Z",
+        "updated_at": "2026-10-24T15:07:22Z",
+        "source_version": "v2",
+        "source_url": "https://arxiv.org/abs/2610.28569v2",
+        "verified_at": "2026-10-27T02:40:21Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "ECHO makes target-aware ranking over 100K user events practical by distilling a teacher into a user-level selector that retains raw records and a candidate-aware retriever with shared operator design. It reports roughly 160 times fewer online sequence-branch FLOPs than a representative end-to-end approach, with relative GAUC gains of 0.113–1.520% on KuaiRand and industrial data. Online Kuaishou and Kuaishou Lite tests report usage-time gains of 0.240% and 0.373%.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-27",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.28569v2"
+          ]
+        },
+        "zh": {
+          "text": "ECHO 为降低十万条用户行为上的目标感知排序成本，将教师知识蒸馏到保留原始记录的用户级选择器和候选感知检索器，两阶段采用同构算子。相对一个代表性的端到端方案，在线序列分支 FLOPs 约减少至 1/160；KuaiRand 与工业数据上的 GAUC 相对提升 0.113%–1.520%。快手与快手极速版在线测试的使用时长分别提升 0.240% 和 0.373%。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-27",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.28569v2"
+          ]
+        }
+      },
+      "added_at": "2026-10-27T02:44:02Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.28569"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2610.29138",
+      "title": "Progressive Learning from Content to Relevance to Personalization for CTR Prediction",
+      "collection": "core",
+      "category": "unified-feature-sequence-modeling",
+      "affiliation": "Alibaba Group",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [
+        "Tokenization",
+        "Feature Interaction"
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.29138"
+        }
+      ],
+      "aliases": [],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Multimodal click-through rate (CTR) prediction is central to search systems, where ranking depends on item content, query relevance, and user preference. Existing approaches incorporate content through dense embeddings or coarse discrete IDs, yet effectively integrating fine-grained heterogeneous content with ID-based predictors remains challenging. We propose FineSID, a progressive learning framework that unifies content tokenization, query--item semantic pretraining, and personalized post-training via a shared fine-grained discrete representation. Each stage optimizes an explicit objective while preserving token-level access to content. First, a pretrained multi-scale visual tokenizer and text tokenizers convert heterogeneous content into fine-grained Semantic IDs (SIDs), explicitly aligning them with the ID features. Second, full-parameter semantic pretraining under query--item relevance supervision establishes a robust matching prior, jointly optimizing the interactions of multimodal SIDs and conventional fields within a shared predictor. Third, this initialized predictor is directly fine-tuned with user click supervision to capture implicit personalized preferences. Extensive offline and online evaluations demonstrate substantial gains in both standard CTR prediction and core business metrics. Furthermore, FineSID improves within-product creative discrimination, demonstrating its semantic generalization beyond conventional ID memorization.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.29138v1",
+        "retrieved_at": "2026-10-27T02:34:36Z",
+        "license": null,
+        "source_title": "Progressive Learning from Content to Relevance to Personalization for CTR Prediction",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-10-21T03:19:02Z",
+        "updated_at": "2026-10-21T03:19:02Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.29138v1",
+        "verified_at": "2026-10-27T02:40:34Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "This progressive CTR framework connects content understanding, query relevance and personalization. Fine-grained visual and textual semantic IDs share a feature-interaction predictor with ID features; full-parameter query-item semantic pretraining precedes personalized click fine-tuning. Offline and online evaluations report improvements in CTR and business metrics, alongside within-product creative discrimination. The abstract supplies no numerical effect sizes.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-27",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.29138v1"
+          ]
+        },
+        "zh": {
+          "text": "该渐进式 CTR 框架衔接内容理解、查询相关性和个性化：细粒度视觉与文本语义 ID 和 ID 特征共用交互预测器，先进行全参数查询—商品语义预训练，再以个性化点击任务微调。离线和在线评测报告 CTR 与业务指标改善，并提升同商品创意区分能力。摘要未提供数值增益。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-27",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.29138v1"
+          ]
+        }
+      },
+      "added_at": "2026-10-27T02:44:02Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.29138"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2610.30128",
+      "title": "Think Harder Where It Matters: Item-Level Adaptive Recursion for Sequential Recommendation",
+      "collection": "related",
+      "category": "long-sequence-modeling",
+      "affiliation": "Renmin University of China",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.30128"
+        }
+      ],
+      "aliases": [
+        "LoopRec"
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Existing sequential recommenders usually allocate a fixed computational budget to every item in a user's interaction history, regardless of the item's contribution to the final prediction. We challenge this de facto design with two diagnostic findings. (1) Non-uniform computational need: items within the same sequence vary drastically in how much computation they require. Most converge after shallow processing while a critical minority only stabilizes at full depth. (2) Suboptimality of fixed allocation: given oracle access to the target item, a non-uniform depth assignment consistently outranks the fixed one, indicating that existing uniform computation both wastes capacity on already-converged items and sacrifices overall recommendation quality. These observations motivate a shift from fixed-depth computation to item-level adaptive reasoning. To this end, we propose LoopRec. LoopRec recursively applies a single weight-shared block and introduces a lightweight gate at each recursion boundary that makes a binary exit-or-continue decision for every item independently. Items whose representations have sufficiently matured exit early, while those requiring deeper reasoning continue to subsequent recursions. This design converts the fixed global depth into a learned, per-item property without auxiliary depth labels, and is readily adaptable to diverse backbone architectures. Extensive experiments on public benchmarks with four backbone families demonstrate that LoopRec consistently outperforms matched fixed-depth counterparts. Further analysis reveals that LoopRec's learned allocation exhibits interpretable patterns aligned with our post-hoc oracle analysis: lower-frequency items and more recent interactions naturally receive deeper computation. Our code is available at https://github.com/Elpmis117/LoopRec.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.30128v1",
+        "retrieved_at": "2026-10-27T02:34:36Z",
+        "license": null,
+        "source_title": "Think Harder Where It Matters: Item-Level Adaptive Recursion for Sequential Recommendation",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-10-21T17:58:06Z",
+        "updated_at": "2026-10-21T17:58:06Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.30128v1",
+        "verified_at": "2026-10-27T02:40:41Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "LoopRec allocates different amounts of recurrent computation to individual history items. A shared block and binary exit gate learn item-level depth without auxiliary depth labels. Across four sequential recommendation backbones on public benchmarks, adaptive recursion improves the quality-efficiency trade-off; analyses associate deeper computation with rare and recent items. The evidence does not establish industrial serving gains.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-27",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.30128v1"
+          ]
+        },
+        "zh": {
+          "text": "LoopRec 为历史中的不同商品分配不同循环计算量，通过共享模块和二元退出门学习逐商品深度，无需额外深度标签。在公共基准的四种序列推荐骨干上，自适应循环改善了效果与效率的权衡；分析显示低频和近期商品往往获得更深计算。证据尚不能证明工业服务收益。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-27",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.30128v1"
+          ]
+        }
+      },
+      "added_at": "2026-10-27T02:44:02Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.30128"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2610.29298",
+      "title": "Generative Recommenders Forget the Long Tail: Restoring Memorization in Retrieval and Ranking",
+      "collection": "related",
+      "category": "generative-recommendation",
+      "affiliation": "University of Science and Technology of China; Independent Researcher",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.29298"
+        }
+      ],
+      "aliases": [
+        "CAPE"
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Generative recommenders replace the retrieve-then-rank cascade with a single model: beam search over semantic item identifiers performs retrieval, and the same likelihood performs ranking. We show that this shared score makes them forget long-tail items twice. In retrieval, beam search keeps identifier prefixes by the probability mass of their subtrees, so tail items are pruned early, and a wider beam admits few more of them. In ranking, the likelihood places tail items below head items even when they are admitted, so expanding retrieval alone brings little or no gain. Both failures reflect missing item-level memorization (i.e., direct recall of which items co-occur), which collaborative filtering provides and shared-prefix generation lacks. To this end, we propose CAPE (Co-occurrence-Aware Pool Expansion), a training-free plug-in that restores memorization at both stages: (i) a memorization channel retrieves co-occurrence-supported tail items outside the beam and scores them with the frozen generator, and (ii) memorization-calibrated ranking fuses the generator likelihood with co-occurrence evidence while keeping the generator's first item. Experiments with two generative backbones on product and music domains show that CAPE significantly improves long-tail accuracy over the backbones and over re-ranking baselines that share its candidates, preserves or improves overall accuracy, and adds a small fraction of the latency.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.29298v1",
+        "retrieved_at": "2026-10-27T02:34:36Z",
+        "license": null,
+        "source_title": "Generative Recommenders Forget the Long Tail: Restoring Memorization in Retrieval and Ranking",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-10-21T06:49:39Z",
+        "updated_at": "2026-10-21T06:49:39Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.29298v1",
+        "verified_at": "2026-10-27T02:40:47Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "CAPE addresses long-tail memorization lost by semantic-ID generative recommenders. A training-free co-occurrence candidate pool expands beyond beam-search results, and memorization-calibrated reranking preserves the generator’s top item. Experiments with two backbones on product and music recommendation improve tail retrieval and ranking. This complements generative generalization without retraining the generator; the abstract gives no numerical effect sizes.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-27",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.29298v1"
+          ]
+        },
+        "zh": {
+          "text": "CAPE 针对语义 ID 生成式推荐丢失长尾记忆的问题，用无需训练的共现候选池补充束搜索结果，再以记忆校准重排保留生成器的首位商品。商品和音乐推荐上的两种骨干实验改善了长尾检索与排序。它无需重训生成器即可补充生成式泛化能力；摘要未给出数值增益。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-27",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.29298v1"
+          ]
+        }
+      },
+      "added_at": "2026-10-27T02:44:02Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.29298"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2610.31642",
+      "title": "A Fix for Softmax and Cross-Entropy",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "Google DeepMind",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.31642"
+        }
+      ],
+      "aliases": [
+        "Softmax Fix"
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Standard implementations of softmax, log-softmax, and cross-entropy have two numerical bugs. The first bug, Softmax Collapse, rounds the target logit's gradient to zero if that one logit is much larger than the others, resulting in gradients that no longer sum to zero. The second bug, Softmax Cancellation, occurs when student logits are close to teacher logits, and produces non-zero gradients even when the student and teacher logits are equal. We present simple implementations of log-softmax, softmax, and cross-entropy that fix both bugs. Our fix eliminates the previously-observed \"Slingshot\" phenomenon, speeds up grokking with weight decay, prevents accuracy collapse without weight decay, stops student networks from drifting away from the teacher during distillation, and shows that after memorization, logit growth is bounded by an equilibrium between weight decay and Adam's $ε$ hyperparameter.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.31642v1",
+        "retrieved_at": "2026-10-27T02:34:36Z",
+        "license": null,
+        "source_title": "A Fix for Softmax and Cross-Entropy",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-10-22T17:54:56Z",
+        "updated_at": "2026-10-22T17:54:56Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.31642v1",
+        "verified_at": "2026-10-27T02:40:54Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "This work identifies floating-point errors in softmax and cross-entropy: target gradients can round to zero, and near-matching teacher and student distributions can suffer cancellation. Revised implementations suppress the Slingshot effect and distillation drift in the reported experiments. The contribution improves numerical behavior of common training operators; recommendation-specific gains are not established.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-27",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.31642v1"
+          ]
+        },
+        "zh": {
+          "text": "该研究指出 softmax 和交叉熵中的浮点误差：目标梯度可能被舍入为零，接近的教师与学生分布也可能出现相消误差。修正实现抑制了所报告实验中的 Slingshot 现象和蒸馏漂移。其意义在于改善常用训练算子的数值行为，尚未证明推荐任务上的收益。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-27",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.31642v1"
+          ]
+        }
+      },
+      "added_at": "2026-10-27T02:44:02Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.31642"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2610.31574",
+      "title": "Rethinking Sequence Compression with Test-time Regression",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "The Chinese University of Hong Kong; Independent Researcher; Token Foundry; Alibaba Group",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.31574"
+        }
+      ],
+      "aliases": [
+        "TTR-Compressor"
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Sequence compression is a fundamental operation and a critical information bottleneck in efficient language and multimodal models, and yet prevailing approaches based on pooling or learned projections remain underperforming. We revisit sequence compression through the lens of test-time regression: input tokens define a regression problem whose fitted coefficients form the compressed representation. Importantly, the regression problem is learned end-to-end via backpropagation, while its coefficients are computed efficiently in closed form during the forward pass. This leads to TTR-Compressor, a general alternative to conventional pooling and projection-based compression. We evaluate TTR-Compressor as the compressor for block-wise sparse attention and the visual token merger for multimodal large language models. On block-wise sparse attention, TTR-Compressor improves RULER performance over attention-based compressors by a large margin. For visual token merging, it consistently outperforms the standard MLP merger and matches its performance with 55.6% fewer visual tokens. These results establish test-time regression as an effective primitive for sequence compression in efficient language and multimodal models.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.31574v1",
+        "retrieved_at": "2026-10-27T02:34:36Z",
+        "license": null,
+        "source_title": "Rethinking Sequence Compression with Test-time Regression",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-10-22T17:14:38Z",
+        "updated_at": "2026-10-22T17:14:38Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.31574v1",
+        "verified_at": "2026-10-27T02:41:01Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "TTR-Compressor treats sequence compression as learned test-time regression, computing closed-form coefficients during the forward pass. It supports blockwise attention and visual-token merging. Experiments report strong RULER results, while a visual merger matches an MLP merger with 55.6% fewer tokens. These results concern long-context and multimodal models, with no recommendation-specific evaluation.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-27",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.31574v1"
+          ]
+        },
+        "zh": {
+          "text": "TTR-Compressor 将序列压缩表述为可学习的测试时回归，在前向过程中求闭式系数，支持分块注意力与视觉 token 合并。实验报告了较强的 RULER 表现；视觉合并器用少 55.6% 的 token 匹配 MLP 合并器效果。结果来自长上下文和多模态模型，没有推荐专门评测。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-27",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.31574v1"
+          ]
+        }
+      },
+      "added_at": "2026-10-27T02:44:02Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.31574"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2610.32943",
+      "title": "Knowledge Distillation across Item and Code Spaces for Parallel Generative Recommendation",
+      "collection": "related",
+      "category": "knowledge-distillation-compression",
+      "affiliation": "The Hong Kong University of Science and Technology; University of Science and Technology of China",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.32943"
+        }
+      ],
+      "aliases": [],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Generative recommendation with semantic IDs represents each item as a sequence of discrete codes derived from its semantic representation and predicts these codes to generate recommendations. Existing semantic-ID recommenders are typically trained with hard labels for the observed next item. Although such supervision identifies the target, it provides no explicit distributional information about alternative items conditioned on the same user history. Sequential recommenders can supply this item-level predictive knowledge, but transferring it to semantic-ID generation is challenging because the teacher and student operate in item and code spaces, respectively. We propose two complementary knowledge-distillation objectives for parallel semantic-ID recommenders, which predict all code positions simultaneously without autoregressive prefix conditioning. Item Distribution Matching (IDM) reconstructs a catalogue-level item distribution from the student's parallel code predictions and aligns it with the teacher's item distribution. Code Marginal Matching (CMM) projects the teacher's item probabilities onto each code position using fixed item-to-code assignments, then matches the resulting code marginals to the corresponding student heads. Both objectives transfer the teacher's soft distributional knowledge while preserving the student's parallel prediction structure. Experiments on benchmark datasets show that both methods consistently outperform existing state-of-the-art approaches. On average, IDM improves Recall@10 by 15.39%, while CMM improves NDCG@10 by 8.28%. These results demonstrate that distillation in either reconstructed item space or code-marginal space can substantially strengthen hard-label supervision for parallel generative recommendation.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.32943v1",
+        "retrieved_at": "2026-10-27T02:34:36Z",
+        "license": null,
+        "source_title": "Knowledge Distillation across Item and Code Spaces for Parallel Generative Recommendation",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-10-23T17:37:55Z",
+        "updated_at": "2026-10-23T17:37:55Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.32943v1",
+        "verified_at": "2026-10-27T02:41:14Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "This work distills an item-space teacher into parallel semantic-ID generation, which avoids conditioning on previously generated codes. Item Distribution Matching reconstructs item probabilities, while Code Marginal Matching projects teacher distributions onto code marginals. Reported mean gains are 15.39% in Recall@10 for the former and 8.28% in NDCG@10 for the latter. The methods connect item-level knowledge with parallel code prediction.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-27",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.32943v1"
+          ]
+        },
+        "zh": {
+          "text": "该研究将商品空间教师蒸馏到并行语义 ID 生成器，避免依赖已经生成的码。Item Distribution Matching 重建商品概率，Code Marginal Matching 将教师分布投影到码的边缘分布。前者报告 Recall@10 平均提升 15.39%，后者报告 NDCG@10 平均提升 8.28%，为商品级知识与并行码预测建立联系。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-27",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.32943v1"
+          ]
+        }
+      },
+      "added_at": "2026-10-27T02:44:02Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.32943"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2610.32098",
+      "title": "From Item Scores to Semantic Tokens: Test-Time Collaborative Adaptation for Generative Recommendation",
+      "collection": "related",
+      "category": "generative-recommendation",
+      "affiliation": "Shenzhen Technology University; McGill University; Shenzhen University",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.32098"
+        }
+      ],
+      "aliases": [
+        "TCBSA"
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Generative recommenders using semantic identifiers predict items through successive token decisions, but beam search may irreversibly prune promising item paths. This limitation is particularly consequential when a few recent interactions signal an emerging interest while earlier behavior favors established preferences. Yet an independently trained discriminative recommender may rank the same items highly from the same interaction history. Such complementary scores are available at test time, offering a way to adapt a frozen generator without retraining either model. The challenge is to use these scores before pruning: combining completed recommendation lists cannot alter earlier beam decisions, while scores over complete items cannot directly inform choices among semantic prefixes shared by multiple items. We propose \\textbf{T}est-Time \\textbf{C}ollaborative \\textbf{B}eam \\textbf{S}earch \\textbf{A}daptation (\\textbf{TCBSA}), a training-free method that incorporates collaborative information into semantic decoding. TCBSA transforms discriminative score margins into potentials over shared semantic edges and uses a confidence gate to regulate their contributions to cumulative path scores before beam selection. We establish a sufficient condition for target prefix survival under global beam competition and bound score perturbations under low discriminative confidence. Full-catalog experiments show consistent improvements over strong baselines across datasets and different generative and discriminative recommenders. Analyses of emerging interests and decoding behavior demonstrate gains in recommendation accuracy and target path survival, while targeted interventions support the contribution of shared prefix corrections. TCBSA also offers a favorable balance between recommendation accuracy and inference latency compared with simply widening the native beam.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.32098v1",
+        "retrieved_at": "2026-10-27T02:34:36Z",
+        "license": null,
+        "source_title": "From Item Scores to Semantic Tokens: Test-Time Collaborative Adaptation for Generative Recommendation",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-10-23T03:01:12Z",
+        "updated_at": "2026-10-23T03:01:12Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.32098v1",
+        "verified_at": "2026-10-27T02:41:20Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "TCBSA adapts generative retrieval at test time using a frozen discriminative recommender. It projects item scores onto shared semantic-ID edges and applies confidence-gated potentials before beam pruning. Full-catalog experiments improve retrieval with a favorable latency trade-off compared with widening the beam. The method adds collaborative evidence without retraining the generator; the abstract gives no numerical effect sizes.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-27",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.32098v1"
+          ]
+        },
+        "zh": {
+          "text": "TCBSA 在测试时用冻结的判别式推荐器适配生成式检索，将商品分数投影到共享语义 ID 边，并在束剪枝前加入置信度门控势值。全商品库实验改善了检索效果，相比扩大束宽具有较好的延迟权衡。它无需重训生成器即可引入协同证据；摘要未提供数值增益。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-27",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.32098v1"
+          ]
+        }
+      },
+      "added_at": "2026-10-27T02:44:02Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.32098"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2610.34764",
+      "title": "SLIDE: Search-to-List Item Distillation for Single-Rollout Generative Retrieval",
+      "collection": "related",
+      "category": "generative-recommendation",
+      "affiliation": "Zhejiang University; Taobao & Tmall Group of Alibaba",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.34764"
+        }
+      ],
+      "aliases": [
+        "SLIDE"
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Generative retrieval (GR) typically relies on item-level beam search to retrieve candidates, leaving cross-item dependencies unmodeled and limiting direct optimization of list-level objectives. A natural alternative is to generate the entire list within a single autoregressive trajectory. However, greedy decoding with directly trained list-wise models substantially underperforms beam search. We identify two contributing factors: the broader search space explored by beam search and the positional bias of scarce positive signals, which deprives later positions of adequate supervision. To address these challenges, we propose $\\textbf{SLIDE}$, a search-to-list item distillation framework that decouples offline search from online list generation. A teacher model retrieves high-quality candidates through offline item-level beam search, providing additional conversion-relevant supervision beyond sparse behavioral labels. Their Semantic IDs (SIDs) are then concatenated in beam-score order to form list-wise distillation targets. This search-to-list conversion transforms candidates retrieved along separate search paths into sequential item-generation targets within a single trajectory. Trained on these targets, the student generates the Top-$K$ list in a single greedy pass, also decoupling teacher scaling from online deployment. Experiments on FORGE and Taobao Search show that SLIDE substantially improves retrieval quality under single greedy decoding and, with stronger offline teachers, surpasses the beam-search reference. Supplementary RL experiments support the effectiveness of list-level generation.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.34764v1",
+        "retrieved_at": "2026-10-27T02:36:29Z",
+        "license": null,
+        "source_title": "SLIDE: Search-to-List Item Distillation for Single-Rollout Generative Retrieval",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-10-26T03:08:18Z",
+        "updated_at": "2026-10-26T03:08:18Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.34764v1",
+        "verified_at": "2026-10-27T02:42:13Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "SLIDE addresses weak greedy list generation by distilling offline item-level beam search into a single online trajectory. Teacher candidates are ordered by beam score and their semantic IDs concatenated as list-wise targets. On FORGE and Taobao Search, this improves single-pass retrieval, and stronger offline teachers exceed the beam-search reference. It separates teacher scaling from online deployment without claiming measured production speedups.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-27",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.34764v1"
+          ]
+        },
+        "zh": {
+          "text": "SLIDE 针对贪心列表生成效果不足，将离线逐商品束搜索蒸馏到单条在线轨迹：按束分数排列教师候选，并将语义 ID 拼接成列表监督目标。在 FORGE 和淘宝搜索上，它改善了单次贪心检索；更强的离线教师还能超过束搜索参考。该方法将教师扩展与在线部署分开，摘要未报告实测生产加速。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-27",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.34764v1"
+          ]
+        }
+      },
+      "added_at": "2026-10-27T02:44:02Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.34764"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2610.34157",
+      "title": "LoopGR: Parameter-Efficient Scaling for Generative Recommendation via Recurrent Depth",
+      "collection": "related",
+      "category": "generative-recommendation",
+      "affiliation": "Sun Yat-sen University; Tencent",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.34157"
+        }
+      ],
+      "aliases": [
+        "LoopGR"
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Generative recommendation formulates item recommendation as autoregressive generation rather than a discriminative scoring problem. Although empirical studies exhibit favorable scaling behavior in recommendation, unleashing the benefits of scaling remains challenging under the strict model size and inference cost constraints of real-world systems. A central challenge is to combine expressive modeling of user-item interaction histories with flexible computational depth without proportionally increasing model size. We introduce LoopGR, a parameter-efficient scaling framework for generative recommendation via recurrent depth. LoopGR employs a tailored hierarchical recurrent depth mechanism that alternates between a shared generative decoder and a lightweight context updater. For efficient inference, we further develop recurrent trajectory self-distillation that distills a low-budget student from a high-budget teacher by aligning both predictive distributions and evolution directions. Extensive experiments show that LoopGR consistently outperforms strong generative recommendation baselines. Compared with a representative encoder-decoder baseline, LoopGR achieves superior performance while reducing model size by up to 52%. These results establish recurrent depth as a new scaling dimension, offering a flexible and resource-efficient scaling path for generative recommendation.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.34157v1",
+        "retrieved_at": "2026-10-27T02:36:29Z",
+        "license": null,
+        "source_title": "LoopGR: Parameter-Efficient Scaling for Generative Recommendation via Recurrent Depth",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-10-25T08:40:32Z",
+        "updated_at": "2026-10-25T08:40:32Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.34157v1",
+        "verified_at": "2026-10-27T02:42:19Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "LoopGR increases generative recommendation depth without proportionally increasing parameters. A shared generative decoder alternates with a lightweight context updater, while recurrent trajectory self-distillation aligns predictions and evolution directions between high- and low-budget runs. Experiments outperform strong baselines and reduce model size by up to 52% relative to a representative encoder-decoder. The result concerns parameter-efficient scaling, not a quantified production latency gain.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-27",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.34157v1"
+          ]
+        },
+        "zh": {
+          "text": "LoopGR 在不同比增加参数的情况下加深生成式推荐计算：共享生成解码器与轻量上下文更新器交替执行，再用循环轨迹自蒸馏对齐高、低预算运行的预测与演化方向。实验优于强基线，相对一个代表性的编码器—解码器，模型大小最多减少 52%。结果支持参数高效扩展，并未量化生产延迟收益。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-27",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.34157v1"
+          ]
+        }
+      },
+      "added_at": "2026-10-27T02:44:02Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.34157"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2610.33435",
+      "title": "PinGER: Token-Efficient Generative Retrieval with Semantic IDs",
+      "collection": "related",
+      "category": "generative-recommendation",
+      "affiliation": "Pinterest",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.33435"
+        }
+      ],
+      "aliases": [
+        "PinGER"
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Generative retrieval replaces nearest-neighbor search with token-by-token decoding of an item's semantic ID (SID). But existing SID-based methods primarily use L levels of tokens sequentially to represent each item in the input history. As a result, a fixed context window holds L times fewer items than it would with one embedding per item. We present PinGER, a generative retriever deployed at Pinterest that retains SID outputs while making input histories compact, built on three ideas. (1) An asymmetric attention mask over interleaved SID and dense tokens lets later items attend only to the dense ones, so the model is supervised at every SID position in training yet serves one token per item while computing the same function. (2) Generation is controllable through goal-conditioned outputs, reinforcement learning, and a prefix-diversity penalty, which together steer retrieval toward surface-specific goals and diverse candidates. (3) A serving stack built for efficient wide-beam generation is paired with decoding constrained to valid identifiers and candidate resolution from a host-local index. Deployed in Related Pins, PinGER lifts saves of fresh Pins by 3.60% and overall saves by 0.62%, while reducing the surface's end-to-end latency by 0.7% and eliminating the cost of the nearest-neighbor search it replaces.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.33435v1",
+        "retrieved_at": "2026-10-27T02:36:29Z",
+        "license": null,
+        "source_title": "PinGER: Token-Efficient Generative Retrieval with Semantic IDs",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-10-24T04:24:45Z",
+        "updated_at": "2026-10-24T04:24:45Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.33435v1",
+        "verified_at": "2026-10-27T02:42:26Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "PinGER retains semantic-ID outputs while serving one token per history item. An asymmetric mask preserves the training function, goal-conditioned generation and diversity controls steer retrieval, and wide-beam serving resolves valid IDs through a local index. Deployment in Pinterest Related Pins increases fresh-Pin saves by 3.60% and overall saves by 0.62%, reduces end-to-end surface latency by 0.7%, and removes the replaced nearest-neighbor search cost.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-27",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.33435v1"
+          ]
+        },
+        "zh": {
+          "text": "PinGER 保留语义 ID 输出，同时在服务时将每条历史商品压缩为一个 token。非对称掩码保持训练函数一致，目标条件生成和多样性控制引导检索，宽束服务通过本地索引解析有效 ID。在 Pinterest Related Pins 部署中，新鲜 Pin 保存量提升 3.60%、整体保存量提升 0.62%，页面端到端延迟降低 0.7%，并消除了被替代近邻搜索的成本。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-27",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.33435v1"
+          ]
+        }
+      },
+      "added_at": "2026-10-27T02:44:02Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.33435"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2610.30941",
+      "title": "PAIR: Preference-Aligned Intent Retrieval for Premium People Recommendation at LinkedIn",
+      "collection": "related",
+      "category": "retrieval-reranking-scaling",
+      "affiliation": "LinkedIn",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.30941"
+        }
+      ],
+      "aliases": [
+        "PAIR"
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "General-purpose embeddings trained on profile similarity often misrank candidates in professional networks, where relevance is inherently complementary rather than symmetric. For example, job seekers usually engage with recruiters rather than peers with similar credentials. Current user recommendation systems are often built on profile similarity or social signals such as shared connections, which are effective in friend-oriented social networks where users tend to connect with similar people or within existing social circles. However, this does not hold in professional platforms like LinkedIn, where interactions are often goal-driven and cross-role interactions, requiring matching based on complementary intents rather than similarity or social proximity. In this paper, we propose Preference-Aligned Intent Retrieval, a retrieval framework that is designed to model user intent preference instead of profile similarity. Our approach is inspired by the preference-learning perspective of Direct Preference Optimization, but instantiates preference learning as an exposure-conditioned multi-negative contrastive objective over embeddings. This formulation simplifies training and scales efficiently to large candidate sets without requiring an explicit reference model. Furthermore, we incorporate user interaction history by aggregating click histories with positional encoding to capture temporal order, which enables constant-cost updates of user representations over a fixed history window, allowing new interactions to be incorporated without re-encoding history. As a result, personalization can be updated efficiently using lightweight CPU operations without repeated LLM inference during serving. We evaluate PAIR on LinkedIn's Premium retrieval task. A 0.6B parameter model achieves a MAR@100 of 0.45.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.30941v1",
+        "retrieved_at": "2026-10-27T02:36:35Z",
+        "license": null,
+        "source_title": "PAIR: Preference-Aligned Intent Retrieval for Premium People Recommendation at LinkedIn",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-10-22T08:57:58Z",
+        "updated_at": "2026-10-22T08:57:58Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.30941v1",
+        "verified_at": "2026-10-27T02:42:33Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "PAIR models complementary professional intent rather than profile similarity for people retrieval. An exposure-conditioned multi-negative contrastive objective learns preferences, while position-aware click-history aggregation permits constant-cost updates within a fixed history window. A 0.6B-parameter model reaches MAR@100 of 0.45 on LinkedIn Premium retrieval. Lightweight CPU updates avoid repeated language-model inference during personalization; the abstract reports no online business lift.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-27",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.30941v1"
+          ]
+        },
+        "zh": {
+          "text": "PAIR 在人员检索中建模互补职业意图，而非仅匹配档案相似度。曝光条件下的多负例对比目标学习偏好，带位置编码的点击历史聚合支持固定历史窗口内的常数成本更新。6 亿参数模型在 LinkedIn Premium 检索任务上达到 MAR@100 0.45；轻量 CPU 更新避免个性化时反复调用语言模型，摘要未报告在线业务增益。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-27",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.30941v1"
+          ]
+        }
+      },
+      "added_at": "2026-10-27T02:44:02Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.30941"
       },
       "change_history": [],
       "reading_tier": null

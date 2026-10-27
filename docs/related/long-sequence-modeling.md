@@ -6,7 +6,7 @@
 
 Long-history modeling, memory and compression for user behavior sequences.
 
-29 papers · Updated 2026-10-21
+30 papers · Updated 2026-10-27
 
 <a id="paper-2504-06780"></a>
 
@@ -90,7 +90,7 @@ Long-history modeling, memory and compression for user behavior sequences.
 
 <a id="paper-2609-31045"></a>
 
-- **KuaFu: Compressing Long User Behavior into Understanding at Billion Scale**: KuaFu compresses each behavior item along both token-count and representation-width axes to make large-scale user profiling affordable. Four-stage fidelity-oriented training and intermediate evaluation target distortions such as fabricated or omitted information, allowing a unified compression layer to support multiple profiling tasks while improving throughput in production. — [Paper](https://arxiv.org/abs/2609.31045) (Tencent · arXiv 2026). Reading priority: Read first.
+- **KuaFu: Compressing Long User Behavior into Understanding at Billion Scale**: KuaFu avoids repeated user-history encoding by caching compressed item representations reusable across users and tasks. A two-axis projector and four-stage training reduce token count and representation width while supporting incremental history updates. The abstract reports up to 15-fold sequence compression, 0.5 KB cached representations per item, and gains up to 17.7 EM and 1.90 AUC points on MRQA and RecBench. Ten months of Tencent deployment report up to 350% higher per-GPU throughput, 190 GPUs saved and GMV +1.37%. — [Paper](https://arxiv.org/abs/2609.31045) (Tencent · arXiv 2026). Reading priority: Read first.
 
 <a id="paper-2609-32215"></a>
 
@@ -123,3 +123,7 @@ Long-history modeling, memory and compression for user behavior sequences.
 <a id="paper-2602-21009"></a>
 
 - **HiSAC: Hierarchical Sparse Activation Compression for Ultra-long Sequence Modeling in Recommenders**: HiSAC compresses ultra-long behavior histories with a hierarchical semantic codebook. Sparse hierarchical voting selects personalized interest agents, and soft-routing attention aggregates behaviors by semantic similarity to reduce quantization error and retain long-tail preferences. Taobao homepage A/B tests report a 1.65% CTR lift. The work offers a structured compression path for long-sequence ranking; deployment efficiency also depends on request reuse and caching, rather than the compression mechanism alone. — [Paper](https://arxiv.org/abs/2602.21009) · [DOI](https://doi.org/10.1145/3799682.3840124) · [Official venue](https://cikm2026.diag.uniroma1.it/program/) (Alibaba; Renmin University of China · CIKM (Applied) 2026). Reading priority: Unrated.
+
+<a id="paper-2610-30128"></a>
+
+- **Think Harder Where It Matters: Item-Level Adaptive Recursion for Sequential Recommendation**: LoopRec allocates different amounts of recurrent computation to individual history items. A shared block and binary exit gate learn item-level depth without auxiliary depth labels. Across four sequential recommendation backbones on public benchmarks, adaptive recursion improves the quality-efficiency trade-off; analyses associate deeper computation with rare and recent items. The evidence does not establish industrial serving gains. — [Paper](https://arxiv.org/abs/2610.30128) (Renmin University of China · arXiv 2026). Reading priority: Unrated.

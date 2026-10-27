@@ -6,7 +6,7 @@
 
 Generative retrieval, recommendation and ranking beyond discriminative CTR.
 
-93 papers · Updated 2026-10-21
+101 papers · Updated 2026-10-27
 
 <a id="paper-2605-12617"></a>
 
@@ -379,3 +379,35 @@ Generative retrieval, recommendation and ranking beyond discriminative CTR.
 <a id="paper-2610-25093"></a>
 
 - **Structure-Aligned History Learning with Subspace-Structured Semantic IDs for Generative Recommendation**: SAHL aligns history reconstruction with a balanced token–subspace–item hierarchy learned by semantic residual quantization. Predictive entropy emphasizes uncertain transitions, and a curriculum shifts training toward next-item prediction. On four Amazon Review categories, NDCG@10 improves by 18.6–30.0% over RPG and 2.7–6.0% over MHL. The evidence concerns code utilization and history-dependent offline recommendation, without demonstrated industrial latency or CTR gains. — [Paper](https://arxiv.org/abs/2610.25093) (Chongqing University; China Telecom; Institute of Automation, Chinese Academy of Sciences; University of Science and Technology Beijing; Unisound AI; Tianjin University; Minzu University of China; The Hong Kong Polytechnic University; Shandong Computer Science Center · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-27898"></a>
+
+- **SPAR: Stepwise Personalized Autoregressive Recommendation with Prefix-Balanced Semantic IDs**: SPAR addresses irreversible branch errors and popularity-heavy paths in semantic-ID generation. Its PATH decoder retrieves prefix-relevant evidence from compressed user memories, while RQ-PIB balances interaction loads among sibling branches. On Youku production data, relative HitRate improves by 2.66% over the strongest baseline. A seven-day A/B test covering 10% of traffic reports watch time per user +3.95% and play conversion +3.38%. — [Paper](https://arxiv.org/abs/2610.27898) (University of Electronic Science and Technology of China; University of Science and Technology of China; HUJING Digital Media & Entertainment Group; Southwest Jiaotong University · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-27232"></a>
+
+- **Neighborhood-Aware Unlearning for Generative Recommendation**: Neighborhood-Aware Unlearning addresses collateral damage when shared semantic-ID tokens couple forgotten interactions to neighboring items. It explicitly controls probability mass in those neighborhoods alongside interaction-level unlearning. Across three datasets and four tokenizers, it moves spam-induced exposure toward a retrained reference while retaining more than 95% of retrained utility, and recovers neighborhood utility lost by forget-and-repair unlearning without reducing global utility. — [Paper](https://arxiv.org/abs/2610.27232) (BIFOLD; TU Berlin; University of Amsterdam · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-28568"></a>
+
+- **Evolving Semantic Indexes for Generative Retrieval**: This framework uses a locally served 31B language model to evolve semantic-index programs and a 1M proxy decoder to evaluate designs before training a 1B generator. On NQ320K, jointly evolving ID construction and collision handling raises Recall@1 from 55.8% to 59.3% and Recall@100 from 85.8% to 90.6%. Proxy gains transfer reliably for semantic indexes, but not for training objectives or the full pipeline. — [Paper](https://arxiv.org/abs/2610.28568) (Santa Clara University; Coupang · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-29298"></a>
+
+- **Generative Recommenders Forget the Long Tail: Restoring Memorization in Retrieval and Ranking**: CAPE addresses long-tail memorization lost by semantic-ID generative recommenders. A training-free co-occurrence candidate pool expands beyond beam-search results, and memorization-calibrated reranking preserves the generator’s top item. Experiments with two backbones on product and music recommendation improve tail retrieval and ranking. This complements generative generalization without retraining the generator; the abstract gives no numerical effect sizes. — [Paper](https://arxiv.org/abs/2610.29298) (University of Science and Technology of China; Independent Researcher · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-32098"></a>
+
+- **From Item Scores to Semantic Tokens: Test-Time Collaborative Adaptation for Generative Recommendation**: TCBSA adapts generative retrieval at test time using a frozen discriminative recommender. It projects item scores onto shared semantic-ID edges and applies confidence-gated potentials before beam pruning. Full-catalog experiments improve retrieval with a favorable latency trade-off compared with widening the beam. The method adds collaborative evidence without retraining the generator; the abstract gives no numerical effect sizes. — [Paper](https://arxiv.org/abs/2610.32098) (Shenzhen Technology University; McGill University; Shenzhen University · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-34764"></a>
+
+- **SLIDE: Search-to-List Item Distillation for Single-Rollout Generative Retrieval**: SLIDE addresses weak greedy list generation by distilling offline item-level beam search into a single online trajectory. Teacher candidates are ordered by beam score and their semantic IDs concatenated as list-wise targets. On FORGE and Taobao Search, this improves single-pass retrieval, and stronger offline teachers exceed the beam-search reference. It separates teacher scaling from online deployment without claiming measured production speedups. — [Paper](https://arxiv.org/abs/2610.34764) (Zhejiang University; Taobao & Tmall Group of Alibaba · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-34157"></a>
+
+- **LoopGR: Parameter-Efficient Scaling for Generative Recommendation via Recurrent Depth**: LoopGR increases generative recommendation depth without proportionally increasing parameters. A shared generative decoder alternates with a lightweight context updater, while recurrent trajectory self-distillation aligns predictions and evolution directions between high- and low-budget runs. Experiments outperform strong baselines and reduce model size by up to 52% relative to a representative encoder-decoder. The result concerns parameter-efficient scaling, not a quantified production latency gain. — [Paper](https://arxiv.org/abs/2610.34157) (Sun Yat-sen University; Tencent · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-33435"></a>
+
+- **PinGER: Token-Efficient Generative Retrieval with Semantic IDs**: PinGER retains semantic-ID outputs while serving one token per history item. An asymmetric mask preserves the training function, goal-conditioned generation and diversity controls steer retrieval, and wide-beam serving resolves valid IDs through a local index. Deployment in Pinterest Related Pins increases fresh-Pin saves by 3.60% and overall saves by 0.62%, reduces end-to-end surface latency by 0.7%, and removes the replaced nearest-neighbor search cost. — [Paper](https://arxiv.org/abs/2610.33435) (Pinterest · arXiv 2026). Reading priority: Unrated.
