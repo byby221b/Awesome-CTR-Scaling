@@ -9,7 +9,7 @@
 - [Scaling Law & Theory](topics/scaling-law-theory.md) (18) — Empirical laws, scaling recipes and theoretical limits for recommendation models.
 - [Scalable Architecture](topics/scalable-architecture.md) (36) — Transformer, mixer and sparse architectures built to scale industrial ranking.
 - [Unified Feature & Sequence Modeling](topics/unified-feature-sequence-modeling.md) (20) — Joint modeling of feature interactions, user histories and behavioral sequences.
-- [Foundation Models & Multi-Scenario](topics/foundation-models-multi-scenario.md) (20) — Shared foundations, multi-task learning and transfer across scenarios.
+- [Foundation Models & Multi-Scenario](topics/foundation-models-multi-scenario.md) (19) — Shared foundations, multi-task learning and transfer across scenarios.
 - [Efficiency & Deployment](topics/efficiency-deployment.md) (14) — Training, inference and deployment techniques that make model scaling practical.
 
 ## Related work

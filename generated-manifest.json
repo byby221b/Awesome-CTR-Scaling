@@ -1,27 +1,27 @@
 {
   "schema_version": 1,
-  "catalog_sha256": "5a425cc7e9bbb5562c73cefc29abe9d1ea4f0b8dbf11ce907f458261d890ff0b",
-  "paper_count": 545,
+  "catalog_sha256": "7e130df52779407e0f120ce7dfb1e90450b43f2026470b7d75f7cc80b9d7c7e6",
+  "paper_count": 544,
   "coverage": {
     "reading_tiers_assigned": 339,
-    "reading_tiers_unrated": 206,
-    "known_added_dates": 545,
+    "reading_tiers_unrated": 205,
+    "known_added_dates": 544,
     "papers_with_updates": 302,
-    "verified_source_dates": 545,
-    "verified_abstracts": 545,
+    "verified_source_dates": 544,
+    "verified_abstracts": 544,
     "unavailable_abstracts": 0,
     "pending_abstracts": 0,
-    "english_summaries": 545,
-    "chinese_summaries": 545
+    "english_summaries": 544,
+    "chinese_summaries": 544
   },
   "collection_counts": {
-    "core": 108,
+    "core": 107,
     "related": 437
   },
   "files": {
-    "README.md": "db8758453e1db4f4c800708406a0bba6078ebc3cdeeb912cca47d336921199ef",
-    "docs/README.md": "81613177c329db39cf59a6266e07d89e81cbe266b9df6e3880ffcd1da2720945",
-    "docs/companies.md": "cd1a38c4de5c93657ddb47216ea96266775ddeef3b6a59de5292a7e247177f76",
+    "README.md": "776206a5f2691ad1ab02315e9c14310d22320bb9c46d5c9b244bc9e8b511ebd0",
+    "docs/README.md": "3d9a52a3fc91fda346ae0497a6bbfad5ed516fc15a84d76f9d2d584583202e95",
+    "docs/companies.md": "b6b085fe3a18288b9284e620c7f38a627ce64149955e1ea506c277d91b147187",
     "docs/related/architecture-innovations-beyond-recommendation.md": "9fd0c22a1f62bab6b1f582b43968f23a6df02c3847e8e557c7523fb1023f51a3",
     "docs/related/engineering-serving.md": "55cbaccd5f9f9e318e8d41ddc5984b6028454eb7eae9bab53482a9f4dcfc67ac",
     "docs/related/generative-pre-training-for-ctr.md": "99de27039783251a1e62bbc57031b7ff82c5525efe1e3bbb60af367348dc10a7",
@@ -32,16 +32,16 @@
     "docs/related/retrieval-reranking-scaling.md": "9d3f7525f51b059ea47c27b8068b303bc2787c069df8b040826026f9258a0f72",
     "docs/related/sample-instance-compression-for-sequence-modeling.md": "b8b32da5551d1ff49b3287d2b88a91acf56d8afe74f55995efc2cb8d8500f4ed",
     "docs/topics/efficiency-deployment.md": "751238c2b15b3bea63b2f86fce65dd75dd04cfe1d438116775f8804d3c2a3451",
-    "docs/topics/foundation-models-multi-scenario.md": "21783f18e0dfcad29241a04ac84b0304a93cb6b6547510db571c0b599b3d672f",
+    "docs/topics/foundation-models-multi-scenario.md": "3936370c18275ad31ecf4f7802fcb3dfed3086ffc1acf3c8e640ace0dc30a47b",
     "docs/topics/scalable-architecture.md": "e4c11f42bc764aa53ea698118e59fc9743e0eb56565c69780e0cdff89d42c594",
     "docs/topics/scaling-law-theory.md": "6fbf31652e3eaaf774d819ac78efb16d2e47e3ca8e85c5fab5d5ec910ada97c1",
     "docs/topics/unified-feature-sequence-modeling.md": "037cb18642a8bd64b3a5016bacec2168f42d2e8ece3182186975e4aa4d09ccaa",
     "site/.nojekyll": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "site/app.js": "5b78c9e2454bce3fb162d4af72f96c0b4cba706fd4e01ca3e9beeca3280949c8",
-    "site/catalog.json": "27692c171c74c176ec5ef813a23f82fea2cf8fa0ebc29ae6d3122e66d2533bb2",
+    "site/catalog.json": "aba0a2ee108f4dd6da929976d7442eb7b5b3f1d67ae330db46659e74de009143",
     "site/favicon.svg": "3f54fc261cc3c1f995dc5daba017f021138d20858005fa65ce6b2ae5113854af",
-    "site/index.html": "15b585a66e2d9cd48089cf5310a49ffe998104629eafae3426565fc23a856f18",
+    "site/index.html": "fb2c158b5441b4ff1bb8b9d36e34d23914221999ebdae6fbd0447b8d2f7d6a77",
     "site/styles.css": "e279c8977c7f028ff12f74aaad4bfa665a09930dfbd19da4bc5fe74365041a03",
-    "site/zh.html": "ffa583848e158e742c8ce83d8b89b5a1602de09b5b1ccce5b4dac5d05d5b5a48"
+    "site/zh.html": "87aaa08208b2381e34d34e833d55235023424facc3f17be461bbfd61121bc85b"
   }
 }

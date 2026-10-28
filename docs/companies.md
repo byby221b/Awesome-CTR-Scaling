@@ -14,7 +14,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [Google](#company-google) (19)
 - [LinkedIn](#company-linkedin) (6)
 - [NetEase](#company-netease) (2)
-- [Kuaishou](#company-kuaishou) (29)
+- [Kuaishou](#company-kuaishou) (28)
 - [Huawei](#company-huawei) (10)
 - [Baidu](#company-baidu) (9)
 - [Shopee](#company-shopee) (4)
@@ -339,7 +339,6 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [Retrieve-then-Adapt: Retrieval-Augmented Test-Time Adaptation for Sequential Recommendation](related/retrieval-reranking-scaling.md#paper-2604-05379) · 2026 · Related
 - [AGR: Agentic Generative Retrieval with Tool-Augmented Search](related/generative-recommendation.md#paper-2610-26831) · 2026 · Related
 - [ECHO: Efficient Cascade with Homogeneous Operators for Distillation-Guided 100K-Sequence Modeling](topics/efficiency-deployment.md#paper-2610-28569) · 2026 · Core
-- [OneLatent: Latent Reasoning for Efficient Foundation Recommendation Models](topics/foundation-models-multi-scenario.md#paper-2610-30675) · 2026 · Core
 
 <a id="company-huawei"></a>
 

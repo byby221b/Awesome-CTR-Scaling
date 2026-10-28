@@ -4,13 +4,13 @@
 
 A curated library of **scaling laws and scalable ranking/CTR models** for industrial recommendation systems.
 
-**545 papers** · **108 core** · **437 related** · Updated 2026-10-29
+**544 papers** · **107 core** · **437 related** · Updated 2026-10-29
 
 <a id="table-of-contents"></a>
 
 [**Search the paper library →**](https://byby221b.github.io/Awesome-CTR-Scaling/) · [**中文页面**](https://byby221b.github.io/Awesome-CTR-Scaling/zh.html) · [All topics](docs/README.md) · [Company index](docs/companies.md) · [Contribute](CONTRIBUTING.md)
 
-Reading priority: **339 assigned** · **206 unrated**. Filter or sort by Read first, Worth reading, or Read as needed on the website. These are reading suggestions, not objective quality ratings; unrated papers have not been assigned a tier.
+Reading priority: **339 assigned** · **205 unrated**. Filter or sort by Read first, Worth reading, or Read as needed on the website. These are reading suggestions, not objective quality ratings; unrated papers have not been assigned a tier.
 
 > **Scope:** We cover papers that (1) study scaling laws for recommendation models, (2) propose scalable Transformer-based architectures for CTR/ranking, (3) address efficiency challenges in scaling up industrial ranking systems, or (4) explore novel paradigms (e.g., sparse scaling, generative pre-training, foundation models) for scalable recommendation.
 
@@ -40,7 +40,7 @@ Joint modeling of feature interactions, user histories and behavioral sequences.
 
 ### Foundation Models & Multi-Scenario
 
-Shared foundations, multi-task learning and transfer across scenarios. [Browse 20 papers →](docs/topics/foundation-models-multi-scenario.md)
+Shared foundations, multi-task learning and transfer across scenarios. [Browse 19 papers →](docs/topics/foundation-models-multi-scenario.md)
 
 <a id="efficiency--deployment"></a>
 
