@@ -6,7 +6,7 @@
 
 Long-history modeling, memory and compression for user behavior sequences.
 
-30 papers · Updated 2026-10-28
+30 papers · Updated 2026-10-29
 
 <a id="paper-2504-06780"></a>
 
@@ -66,7 +66,7 @@ Long-history modeling, memory and compression for user behavior sequences.
 
 <a id="paper-2606-28533"></a>
 
-- **CMSL**: CMSL addresses the difficulty of representing several interests inside one mixed user history, where unrelated behaviors compete for attention. A learnable Sequence Construction Module separates behavior into coherent thematic sequences, which linear attention then models efficiently; the method has been deployed across ranking and retrieval on four major Meta surfaces. — [Paper](https://arxiv.org/abs/2606.28533) (Meta · 2026). Reading priority: Worth reading.
+- **CMSL**: CMSL addresses the difficulty of representing several interests inside one mixed user history, where unrelated behaviors compete for attention. A learnable Sequence Construction Module separates behavior into coherent thematic sequences, which linear attention then models efficiently; the method has been deployed across ranking and retrieval on four major Meta surfaces. — [Paper](https://arxiv.org/abs/2606.28533) (Meta · SIGIR (Industry) 2026). Reading priority: Worth reading.
 
 <a id="paper-2606-29946"></a>
 

@@ -6,7 +6,7 @@
 
 Scaling retrieval and reranking stages of recommendation pipelines.
 
-37 papers · Updated 2026-10-28
+37 papers · Updated 2026-10-29
 
 <a id="paper-2603-04816"></a>
 
@@ -14,7 +14,7 @@ Scaling retrieval and reranking stages of recommendation pipelines.
 
 <a id="paper-2605-27810"></a>
 
-- **LRanker**: LRanker adapts language-model ranking to candidate pools too large to fit into a single context. It summarizes candidate structure through clustering and uses a graph-based test-time procedure to build and ensemble multiple query embeddings, improving the coverage and robustness of ranking across massive pools rather than relying on one query representation. — [Paper](https://arxiv.org/abs/2605.27810) (UIUC · 2026). Reading priority: Worth reading.
+- **LRanker**: LRanker combines K-means aggregation of offline candidate embeddings with graph-based test-time ensembling of partition-conditioned query embeddings. Cached inner-product scoring handles millions of candidates, while extra inference computation improves quality. Across seven RBench tasks, the revised abstract reports task-specific results, including a 27.0% improvement over Tiger on a recommendation task with over 6.8 million candidates; ablations support both aggregation and ensembling. — [Paper](https://arxiv.org/abs/2605.27810) (UIUC · 2026). Reading priority: Worth reading.
 
 <a id="paper-2604-12965"></a>
 
@@ -34,7 +34,7 @@ Scaling retrieval and reranking stages of recommendation pipelines.
 
 <a id="paper-2607-10096"></a>
 
-- **Scaling and Stabilizing Large-Scale EBR**: This production retrieval pipeline improves both training signals and the transition to a stronger encoder. It combines diverse online cross-batch negatives with offline hard negatives selected using cross-encoder scores and metadata, then warm-starts the larger backbone through legacy-model distillation, preserving established domain knowledge while improving large-catalog discrimination. — [Paper](https://arxiv.org/abs/2607.10096) (Walmart · 2026). Reading priority: Worth reading.
+- **Scaling and Stabilizing Large-Scale EBR**: This production retrieval pipeline improves both training signals and the transition to a stronger encoder. It combines diverse online cross-batch negatives with offline hard negatives selected using cross-encoder scores and metadata, then warm-starts the larger backbone through legacy-model distillation, preserving established domain knowledge while improving large-catalog discrimination. — [Paper](https://arxiv.org/abs/2607.10096) (Walmart · SIGIR (Industry) 2026). Reading priority: Worth reading.
 
 <a id="paper-2607-27475"></a>
 

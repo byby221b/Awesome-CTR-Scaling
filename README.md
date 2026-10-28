@@ -4,13 +4,13 @@
 
 A curated library of **scaling laws and scalable ranking/CTR models** for industrial recommendation systems.
 
-**530 papers** · **105 core** · **425 related** · Updated 2026-10-28
+**545 papers** · **108 core** · **437 related** · Updated 2026-10-29
 
 <a id="table-of-contents"></a>
 
 [**Search the paper library →**](https://byby221b.github.io/Awesome-CTR-Scaling/) · [**中文页面**](https://byby221b.github.io/Awesome-CTR-Scaling/zh.html) · [All topics](docs/README.md) · [Company index](docs/companies.md) · [Contribute](CONTRIBUTING.md)
 
-Reading priority: **339 assigned** · **191 unrated**. Filter or sort by Read first, Worth reading, or Read as needed on the website. These are reading suggestions, not objective quality ratings; unrated papers have not been assigned a tier.
+Reading priority: **339 assigned** · **206 unrated**. Filter or sort by Read first, Worth reading, or Read as needed on the website. These are reading suggestions, not objective quality ratings; unrated papers have not been assigned a tier.
 
 > **Scope:** We cover papers that (1) study scaling laws for recommendation models, (2) propose scalable Transformer-based architectures for CTR/ranking, (3) address efficiency challenges in scaling up industrial ranking systems, or (4) explore novel paradigms (e.g., sparse scaling, generative pre-training, foundation models) for scalable recommendation.
 
@@ -34,19 +34,19 @@ Transformer, mixer and sparse architectures built to scale industrial ranking. [
 
 ### Unified Feature & Sequence Modeling
 
-Joint modeling of feature interactions, user histories and behavioral sequences. [Browse 19 papers →](docs/topics/unified-feature-sequence-modeling.md)
+Joint modeling of feature interactions, user histories and behavioral sequences. [Browse 20 papers →](docs/topics/unified-feature-sequence-modeling.md)
 
 <a id="foundation-models--multi-scenario"></a>
 
 ### Foundation Models & Multi-Scenario
 
-Shared foundations, multi-task learning and transfer across scenarios. [Browse 19 papers →](docs/topics/foundation-models-multi-scenario.md)
+Shared foundations, multi-task learning and transfer across scenarios. [Browse 20 papers →](docs/topics/foundation-models-multi-scenario.md)
 
 <a id="efficiency--deployment"></a>
 
 ### Efficiency & Deployment
 
-Training, inference and deployment techniques that make model scaling practical. [Browse 13 papers →](docs/topics/efficiency-deployment.md)
+Training, inference and deployment techniques that make model scaling practical. [Browse 14 papers →](docs/topics/efficiency-deployment.md)
 
 ## Related Work
 
@@ -54,12 +54,12 @@ Adjacent research is grouped separately to keep the core CTR scaling signal clea
 
 - <a id="long-sequence-modeling"></a>[Long Sequence Modeling](docs/related/long-sequence-modeling.md) · 30 papers
 - <a id="sampleinstance-compression-for-sequence-modeling"></a>[Sample/Instance Compression for Sequence Modeling](docs/related/sample-instance-compression-for-sequence-modeling.md) · 3 papers
-- <a id="generative-recommendation"></a>[Generative Recommendation](docs/related/generative-recommendation.md) · 102 papers
+- <a id="generative-recommendation"></a>[Generative Recommendation](docs/related/generative-recommendation.md) · 107 papers
 - <a id="generative-pre-training-for-ctr"></a>[Generative Pre-training for CTR](docs/related/generative-pre-training-for-ctr.md) · 4 papers
-- <a id="knowledge-distillation--compression"></a>[Knowledge Distillation & Compression](docs/related/knowledge-distillation-compression.md) · 10 papers
-- <a id="engineering--serving"></a>[Engineering & Serving](docs/related/engineering-serving.md) · 44 papers
+- <a id="knowledge-distillation--compression"></a>[Knowledge Distillation & Compression](docs/related/knowledge-distillation-compression.md) · 11 papers
+- <a id="engineering--serving"></a>[Engineering & Serving](docs/related/engineering-serving.md) · 46 papers
 - <a id="retrieval--reranking-scaling"></a>[Retrieval & Reranking Scaling](docs/related/retrieval-reranking-scaling.md) · 37 papers
-- <a id="architecture-innovations-beyond-recommendation"></a>[Architecture Innovations Beyond Recommendation](docs/related/architecture-innovations-beyond-recommendation.md) · 183 papers
+- <a id="architecture-innovations-beyond-recommendation"></a>[Architecture Innovations Beyond Recommendation](docs/related/architecture-innovations-beyond-recommendation.md) · 187 papers
 - <a id="other"></a>[Other](docs/related/other.md) · 12 papers
 
 ## Company Overview

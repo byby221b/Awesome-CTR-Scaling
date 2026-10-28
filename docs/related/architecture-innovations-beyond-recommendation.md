@@ -6,7 +6,7 @@
 
 Transferable ideas from general-purpose model architecture research.
 
-183 papers · Updated 2026-10-28
+187 papers · Updated 2026-10-29
 
 <a id="paper-2606-16825"></a>
 
@@ -22,7 +22,7 @@ Transferable ideas from general-purpose model architecture research.
 
 <a id="paper-2606-16456"></a>
 
-- **SPRI: SVD-Partitioned Residual Initialization for Data-Constrained MoE Upcycling**: SPRI converts a pretrained dense model into a mixture of experts when supervised adaptation data are limited. It partitions residual components of the feed-forward weights through singular-value decomposition to create controlled expert diversity, then uses two-stage training to stabilize adaptation; multilingual speech translation experiments show benefits over dense fine-tuning and prior upcycling approaches. — [Paper](https://arxiv.org/abs/2606.16456) (2026). Reading priority: Read as needed.
+- **SPRI: SVD-Partitioned Residual Initialization for Data-Constrained MoE Upcycling**: SPRI converts a pretrained dense model into a mixture of experts when supervised adaptation data are limited. It partitions residual components of the feed-forward weights through singular-value decomposition to create controlled expert diversity, then uses two-stage training to stabilize adaptation; multilingual speech translation experiments show benefits over dense fine-tuning and prior upcycling approaches. — [Paper](https://arxiv.org/abs/2606.16456) (EMNLP 2026). Reading priority: Read as needed.
 
 <a id="paper-2606-17952"></a>
 
@@ -242,7 +242,7 @@ Transferable ideas from general-purpose model architecture research.
 
 <a id="paper-2610-02953"></a>
 
-- **SlimKV: Joint Token-Feature KV Cache Compression with Reconstruction-Free Beacon Attention**: SlimKV jointly compresses context tokens into beacon memories and their KV features into low-rank latent representations, with layer-adaptive rank allocation. Training beacon keys without key-side RoPE enables reconstruction-free latent-space decoding. The authors report stronger high-compression LongBench results and retention of over 96% of the uncompressed score at 4×/8× compression. — [Paper](https://arxiv.org/abs/2610.02953) (University of Science and Technology of China; Nanyang Technological University; Tencent · arXiv 2026). Reading priority: Read as needed.
+- **SlimKV: Joint Token-Feature KV Cache Compression with Reconstruction-Free Beacon Attention**: SlimKV jointly compresses context tokens into beacon memories and their KV features into low-rank latent representations, with layer-adaptive rank allocation. Training beacon keys without key-side RoPE enables reconstruction-free latent-space decoding. The authors report stronger high-compression LongBench results and retention of over 96% of the uncompressed score at 4×/8× compression. — [Paper](https://arxiv.org/abs/2610.02953) (University of Science and Technology of China; Nanyang Technological University; Tencent · EMNLP 2026). Reading priority: Read as needed.
 
 <a id="paper-2610-04753"></a>
 
@@ -574,7 +574,7 @@ Transferable ideas from general-purpose model architecture research.
 
 <a id="paper-2610-22985"></a>
 
-- **Prism Attention: Proposal-Refined Index Sharing Mechanism for Efficient LLMs Inference**: Prism Attention reduces repeated sparse-index computation during long-context decoding by refining shared cross-layer proposals instead of reusing fixed indices. The authors report a 3.4x end-to-end decoding speedup over FlashAttention at 128K context, alongside strong results against the evaluated sparse-attention methods. Its index-sharing design may inform long-history recommendation, but recommendation gains are untested. — [Paper](https://arxiv.org/abs/2610.22985) (Soochow University; Baidu · arXiv 2026). Reading priority: Unrated.
+- **Prism Attention: Proposal-Refined Index Sharing Mechanism for Efficient LLMs Inference**: Prism Attention reduces repeated sparse-index computation during long-context decoding by refining shared cross-layer proposals instead of reusing fixed indices. The authors report a 3.4x end-to-end decoding speedup over FlashAttention at 128K context, alongside strong results against the evaluated sparse-attention methods. Its index-sharing design may inform long-history recommendation, but recommendation gains are untested. — [Paper](https://arxiv.org/abs/2610.22985) (Soochow University; Baidu · NeurIPS 2026). Reading priority: Unrated.
 
 <a id="paper-2610-22796"></a>
 
@@ -626,7 +626,7 @@ Transferable ideas from general-purpose model architecture research.
 
 <a id="paper-2610-14423"></a>
 
-- **Scaling Laws for Multimodal Data Mixtures**: This multimodal scaling study fits data-mixture laws from 268 MoE experiments spanning 457M–8.3B parameters and up to 150B tokens. Compute-optimal allocation differs by modality: audio favors parameters more strongly, while text and vision favor balanced model/data growth. Repeating vision or audio data beyond twice offers negligible benefits, and cross-modal interference is asymmetric. These findings may guide multimodal recommendation budgeting, but that transfer is untested. — [Paper](https://arxiv.org/abs/2610.14423) (Mila; McGill University; EPFL; ETH; University of Washington · arXiv 2026). Reading priority: Unrated.
+- **Scaling Laws for Multimodal Data Mixtures**: This multimodal scaling study fits data-mixture laws from 268 MoE experiments spanning 457M–8.3B parameters and up to 150B tokens. Compute-optimal allocation differs by modality: audio favors parameters more strongly, while text and vision favor balanced model/data growth. Repeating vision or audio data beyond twice offers negligible benefits, and cross-modal interference is asymmetric. These findings may guide multimodal recommendation budgeting, but that transfer is untested. — [Paper](https://arxiv.org/abs/2610.14423) (Mila; McGill University; EPFL; ETH; University of Washington · NeurIPS 2026). Reading priority: Unrated.
 
 <a id="paper-2610-14344"></a>
 
@@ -666,7 +666,7 @@ Transferable ideas from general-purpose model architecture research.
 
 <a id="paper-2610-13261"></a>
 
-- **Data-Adaptive Mahalanobis Metric Learning for Cross-Head Attention in Transformers**: DAMCHA extends multi-head attention with an input-dependent full cross-head metric, allowing interactions omitted by independent head-wise similarities. Stack-wise parameter sharing and regularization target stable, efficient training. The authors report improvements across evaluated Transformer tasks with comparable or reduced computational overhead. Cross-head feature interactions are a potential recommendation application, not an established result of this study. — [Paper](https://arxiv.org/abs/2610.13261) (Zhongnan University of Economics and Law; CodeSoul.Co; The Chinese University of Hong Kong · arXiv 2026). Reading priority: Unrated.
+- **Data-Adaptive Mahalanobis Metric Learning for Cross-Head Attention in Transformers**: DAMCHA extends multi-head attention with an input-dependent full cross-head metric, allowing interactions omitted by independent head-wise similarities. Stack-wise parameter sharing and regularization target stable, efficient training. The authors report improvements across evaluated Transformer tasks with comparable or reduced computational overhead. Cross-head feature interactions are a potential recommendation application, not an established result of this study. — [Paper](https://arxiv.org/abs/2610.13261) (Zhongnan University of Economics and Law; CodeSoul.Co; The Chinese University of Hong Kong · NeurIPS 2026). Reading priority: Unrated.
 
 <a id="paper-2610-16890"></a>
 
@@ -739,3 +739,19 @@ Transferable ideas from general-purpose model architecture research.
 <a id="paper-2610-34056"></a>
 
 - **INTRA: Interleaved Non-contiguous Token spaRse Attention**: INTRA uses complementary Scatter and Gather sparse token groups to relay information across layers, with a GPU kernel that packs non-contiguous tokens for computation. After adaptation, it reports a 1.53-fold FLUX.1-dev generation speedup on an A100 and improved long-context prefill efficiency for LLaMA-3.1-8B. Larger reported gains are attention-only benchmarks, not end-to-end speedups. Its hardware-aware static pattern offers a transferable sparse-attention design; CTR performance is unverified. — [Paper](https://arxiv.org/abs/2610.34056) (New York University · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-37645"></a>
+
+- **Multi-State Linear Attention with Generalized Second-Order Routing**: MERLIN improves multi-state linear attention by tracking first and second moments of segment keys, allowing queries to use both mean and variance of alignment when combining memory-state readouts. Tests on Gated DeltaNet-1.3B and Mamba-2-780M report stronger long-context retrieval and question answering, including improvements over baselines using four times more memory. The method offers a general content-aware routing design for compressed sequence states. — [Paper](https://arxiv.org/abs/2610.37645) (Princeton University; Google DeepMind · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-37062"></a>
+
+- **EnergyCal: Taming Loss Spikes in Muon-Family Optimizers for Sparse MoE Training**: EnergyCal attenuates routed-expert updates using normalized squared Frobenius norms of finite-step Newton-Schulz directions, leaving the spectral transform unchanged and adding no persistent optimizer state. On a 4B-parameter sparse MoE, it reduces mean thresholded loss-spike burden by 99.51% and final geometric-mean perplexity by 4.06% relative to a selected lower-learning-rate MuonH recipe, with modest throughput cost. Plain-Muon experiments also show stabilization within the evaluated settings. — [Paper](https://arxiv.org/abs/2610.37062) (arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-36520"></a>
+
+- **Folding Attention Biases into Keys Makes Compacted KV Caches Run on Standard Kernels**: The method folds Attention Matching logit biases into retained keys along one fitted direction per head, producing compact KV caches compatible with standard attention kernels and the original query path. Unmodified vLLM serves these caches through a connector. Under equal head budgets, accuracy is within noise of Attention Matching in 13 of 14 tested settings; results are less uniformly favorable under the published per-head budgets, emphasizing budget-dependent tradeoffs. — [Paper](https://arxiv.org/abs/2610.36520) (Independent Researcher · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-37386"></a>
+
+- **Channel Selection for Mixture-of-Experts Decoding Needs No Calibration Data**: The paper replaces calibrated channel-selection thresholds with per-token top-k selection for predictable routed-expert read budgets. It also builds a weight-only reader using a ternary sketch and low-rank recovery of skipped channels. Across three post-trained MoE models, the reader retains 98.1% of full-model accuracy at 17.8% of expert-weight reads; Triton MoE blocks run 1.60–1.90x faster than optimized vLLM at batch one, and up to 2.69x at larger batches. — [Paper](https://arxiv.org/abs/2610.37386) (KAIST; DeepAuto.ai · arXiv 2026). Reading priority: Unrated.

@@ -6,7 +6,7 @@
 
 Generative retrieval, recommendation and ranking beyond discriminative CTR.
 
-102 papers · Updated 2026-10-28
+107 papers · Updated 2026-10-29
 
 <a id="paper-2605-12617"></a>
 
@@ -94,7 +94,7 @@ Generative retrieval, recommendation and ranking beyond discriminative CTR.
 
 <a id="paper-2606-25147"></a>
 
-- **TokenMinds**: TokenMinds produces both discrete semantic-ID user tokens and dense embeddings from a pretrained encoder-decoder model. The shared item-and-user vocabulary supports semantically grounded behavior modeling, while the dense output remains compatible with existing rankers; asynchronous representation generation lets multiple YouTube surfaces reuse these complementary outputs at large scale. — [Paper](https://arxiv.org/abs/2606.25147) (Google / YouTube · 2026). Reading priority: Read first.
+- **TokenMinds**: TokenMinds adapts a pretrained-LLM encoder-decoder to produce dense user embeddings and discrete semantic-ID user tokens. A shared vocabulary combines long- and short-form video histories, reducing upstream training and serving compute by 50% and 31%, while textual search queries add explicit intent. Offline and live YouTube ranking experiments serving billions of users show that tokens work alone, complement dense embeddings and jointly outperform the previous non-LLM user model. — [Paper](https://arxiv.org/abs/2606.25147) (Google / YouTube · 2026). Reading priority: Read first.
 
 <a id="paper-2606-25496"></a>
 
@@ -415,3 +415,23 @@ Generative retrieval, recommendation and ranking beyond discriminative CTR.
 <a id="paper-2610-32980"></a>
 
 - **Separating Thinking from Spelling for Efficient Generative Recommendation**: Deco separates history reasoning from semantic-ID decoding: each history item becomes one fused token, a heavy backbone produces one next-item concept, and a lightweight cached decoder performs beam search. On seven recommendation datasets it matches or improves the compared models while delivering 3.2–8.6 times their throughput under a 50 ms p95 budget in a production-style pipeline. The result supports larger candidate pools and backbones through cheaper decoding; it is not an online business-lift claim. — [Paper](https://arxiv.org/abs/2610.32980) (arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-36958"></a>
+
+- **PailitaoMMSearch2.0 Technical Report: Scaling Generative Retrieval to Unified End-to-End Multimodal Search**: PailitaoMMSearch directly generates product semantic IDs from images and free-form instructions. It scales data workflows, shopping intents and deployment scenarios through continual pretraining, mixed-budget supervised fine-tuning and intent-balanced reinforcement learning with serving-aligned rollouts. A controlled online A/B test on Taobao Pailitao reports statistically significant gains of 17.90% in item page views, 27.04% in transactions and 8.94% in gross merchandise value. — [Paper](https://arxiv.org/abs/2610.36958) (Taobao & Tmall Group of Alibaba · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-36763"></a>
+
+- **The Vocabulary Is Already Here: Adapting Pretrained Interpretable Features for Generative Recommendation**: API reuses interpretable features from pretrained sparse autoencoders as a semantic-ID vocabulary without training a new vocabulary. Its IDs retain feature indices and relative strengths; a semantic prediction adapter jointly predicts both to score items from user histories. Feature contributions explain candidate-score differences. Experiments report competitive recommendation across backbones and decoding schemes while preserving item distinctions under compact token budgets. — [Paper](https://arxiv.org/abs/2610.36763) (Central South University; The Hong Kong University of Science and Technology (Guangzhou); Hong Kong Polytechnic University; Queen Mary University of London; Microsoft · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-37286"></a>
+
+- **LESSRec: Level-Specific History Modeling for Semantic ID-Based Recommendation**: LESSRec encodes semantic-ID history separately by quantization level and restricts historical token attention to the target level. A second cross-attention branch accesses chronological item-level semantics to complement the level-specific context. LESSRec+ uses separate level encoders at the same total parameter count to reduce encoder computation. Three datasets and three tokenizers support recommendation effectiveness and the computational benefits of LESSRec+. — [Paper](https://arxiv.org/abs/2610.37286) (Chongqing University; Griffith University · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-36973"></a>
+
+- **KL-MOPD: Discrepancy-Aware Multi-Objective On-Policy Distillation for Generative Recommendation**: KL-MOPD distills single-objective teachers into a multi-objective generative recommender, weighting each teacher at each token by the initial student-teacher KL divergence. This prioritizes harder-to-distill objectives with one-time calibration and negligible training overhead. The paper proves improvement over vanilla multi-objective on-policy distillation under stated mild conditions and reports individual and joint objective gains on public benchmarks, a billion-scale industrial dataset and online advertising tests. — [Paper](https://arxiv.org/abs/2610.36973) (Zhejiang University; Alibaba Group · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-37584"></a>
+
+- **REGER: Modeling inter-item Relations with Semantic IDs for Generative Recommendation**: REGER explicitly models inter-item relations through semantic-neighbor SID pretraining, combined global and SID-boundary local attention, and discriminative-teacher preference distillation. A hierarchical SID-prefix analysis factorizes collaborative preferences and item-level KL divergence, motivating distillation over all legal next tokens along target prefixes. Experiments on real-world datasets report consistent gains over generative-recommendation baselines. — [Paper](https://arxiv.org/abs/2610.37584) (University of Electronic Science and Technology of China · arXiv 2026). Reading priority: Unrated.

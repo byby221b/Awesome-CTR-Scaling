@@ -8,14 +8,14 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 
 - [Meta](#company-meta) (52)
 - [ByteDance / TikTok](#company-bytedance-tiktok) (23)
-- [Alibaba](#company-alibaba) (47)
-- [Meituan](#company-meituan) (10)
-- [Tencent](#company-tencent) (24)
-- [Google](#company-google) (18)
+- [Alibaba](#company-alibaba) (49)
+- [Meituan](#company-meituan) (11)
+- [Tencent](#company-tencent) (25)
+- [Google](#company-google) (19)
 - [LinkedIn](#company-linkedin) (6)
 - [NetEase](#company-netease) (2)
-- [Kuaishou](#company-kuaishou) (28)
-- [Huawei](#company-huawei) (9)
+- [Kuaishou](#company-kuaishou) (29)
+- [Huawei](#company-huawei) (10)
 - [Baidu](#company-baidu) (9)
 - [Shopee](#company-shopee) (4)
 - [Coupang](#company-coupang) (2)
@@ -25,7 +25,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [Yandex](#company-yandex) (6)
 - [JD](#company-jd) (6)
 - [VK](#company-vk) (1)
-- [Microsoft](#company-microsoft) (3)
+- [Microsoft](#company-microsoft) (4)
 - [Walmart](#company-walmart) (1)
 - [Snap](#company-snap) (4)
 - [Xiaohongshu](#company-xiaohongshu) (7)
@@ -78,7 +78,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [China Telecom](#company-china-telecom) (2)
 - [Atomic Machines](#company-atomic-machines) (1)
 - [Slater Labs](#company-slater-labs) (1)
-- [DeepAuto.ai](#company-deepauto-ai) (1)
+- [DeepAuto.ai](#company-deepauto-ai) (2)
 
 <a id="company-meta"></a>
 
@@ -216,6 +216,8 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [SLIDE: Search-to-List Item Distillation for Single-Rollout Generative Retrieval](related/generative-recommendation.md#paper-2610-34764) · 2026 · Related
 - [Unified Heterogeneous Feature Interaction via Effective-Rank Scaling for Recommender Systems](topics/unified-feature-sequence-modeling.md#paper-2610-35318) · 2026 · Core
 - [CRIM: Composable and Reusable Item Memory for Efficient Personalized Retrieval](related/sample-instance-compression-for-sequence-modeling.md#paper-2610-35323) · 2026 · Related
+- [PailitaoMMSearch2.0 Technical Report: Scaling Generative Retrieval to Unified End-to-End Multimodal Search](related/generative-recommendation.md#paper-2610-36958) · 2026 · Related
+- [KL-MOPD: Discrepancy-Aware Multi-Objective On-Policy Distillation for Generative Recommendation](related/generative-recommendation.md#paper-2610-36973) · 2026 · Related
 
 <a id="company-meituan"></a>
 
@@ -231,6 +233,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [LGRID](related/generative-recommendation.md#paper-2607-27944) · 2026 · Related
 - [Residual Trajectory Distillation for Generative Retrieval](related/generative-recommendation.md#paper-2609-39319) · 2026 · Related
 - [CAST: History-Adaptive Spectral Clipping for LLM Pretraining](related/architecture-innovations-beyond-recommendation.md#paper-2610-19761) · 2026 · Related
+- [Latent Residual Reasoning for Ranking in Generative Recommendation](topics/efficiency-deployment.md#paper-2610-36890) · 2026 · Core
 
 <a id="company-tencent"></a>
 
@@ -260,6 +263,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [Shaping Latent Mixture-of-Experts: From Expert Geometry to Layerwise Capacity Allocation](related/architecture-innovations-beyond-recommendation.md#paper-2610-14644) · 2026 · Related
 - [LoopGR: Parameter-Efficient Scaling for Generative Recommendation via Recurrent Depth](related/generative-recommendation.md#paper-2610-34157) · 2026 · Related
 - [HyScale: Scaling Long-Context Training for Learned Sparse Attention](related/engineering-serving.md#paper-2610-32057) · 2026 · Related
+- [Rethinking Positional Encoding and Interaction Granularity for CTR Prediction](topics/unified-feature-sequence-modeling.md#paper-2610-37140) · 2026 · Core
 
 <a id="company-google"></a>
 
@@ -283,6 +287,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [DuoLM: Fast and Effective Personalized Recommendation with Language Models](related/engineering-serving.md#paper-2610-24481) · 2026 · Related
 - [Reconstruction-Optimized Expert Pruning for Mixture-of-Experts Language Models](related/architecture-innovations-beyond-recommendation.md#paper-2610-27123) · 2026 · Related
 - [A Fix for Softmax and Cross-Entropy](related/architecture-innovations-beyond-recommendation.md#paper-2610-31642) · 2026 · Related
+- [Multi-State Linear Attention with Generalized Second-Order Routing](related/architecture-innovations-beyond-recommendation.md#paper-2610-37645) · 2026 · Related
 
 <a id="company-linkedin"></a>
 
@@ -334,6 +339,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [Retrieve-then-Adapt: Retrieval-Augmented Test-Time Adaptation for Sequential Recommendation](related/retrieval-reranking-scaling.md#paper-2604-05379) · 2026 · Related
 - [AGR: Agentic Generative Retrieval with Tool-Augmented Search](related/generative-recommendation.md#paper-2610-26831) · 2026 · Related
 - [ECHO: Efficient Cascade with Homogeneous Operators for Distillation-Guided 100K-Sequence Modeling](topics/efficiency-deployment.md#paper-2610-28569) · 2026 · Core
+- [OneLatent: Latent Reasoning for Efficient Foundation Recommendation Models](topics/foundation-models-multi-scenario.md#paper-2610-30675) · 2026 · Core
 
 <a id="company-huawei"></a>
 
@@ -348,6 +354,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [QUILT: Rethinking Sparse-Attention Prefill through Shared Query Execution](related/architecture-innovations-beyond-recommendation.md#paper-2610-11134) · 2026 · Related
 - [Kronecker Product Attention: Memory-Efficient KV Compression via Structured Factorization](related/architecture-innovations-beyond-recommendation.md#paper-2610-12657) · 2026 · Related
 - [DuoRate: Two-Rate Per-Expert Precision Allocation for Mixture-of-Experts Serving](related/architecture-innovations-beyond-recommendation.md#paper-2610-13328) · 2026 · Related
+- [INC-MoE: Overlapping In-Network Collectives and Expert Computation for Expert-Parallel Mixture-of-Experts Inference](related/engineering-serving.md#paper-2610-36339) · 2026 · Related
 
 <a id="company-baidu"></a>
 
@@ -439,6 +446,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [FlashTrie](related/engineering-serving.md#paper-2607-10044) · 2026 · Related
 - [Beyond Expert Rankings: Contrast Calibration for Mixed-Precision MoE Quantization](related/architecture-innovations-beyond-recommendation.md#paper-2610-20353) · 2026 · Related
 - [Simple Linear Corrections for Compression in Late Interaction](related/retrieval-reranking-scaling.md#paper-2610-14196) · 2026 · Related
+- [The Vocabulary Is Already Here: Adapting Pretrained Interpretable Features for Generative Recommendation](related/generative-recommendation.md#paper-2610-36763) · 2026 · Related
 
 <a id="company-walmart"></a>
 
@@ -791,3 +799,4 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 ## DeepAuto.ai
 
 - [SLEM: Spectrum-Aware Latent Expert Merging](related/architecture-innovations-beyond-recommendation.md#paper-2610-16484) · 2026 · Related
+- [Channel Selection for Mixture-of-Experts Decoding Needs No Calibration Data](related/architecture-innovations-beyond-recommendation.md#paper-2610-37386) · 2026 · Related

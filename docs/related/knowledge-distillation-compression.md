@@ -6,7 +6,7 @@
 
 Transferring, compressing and deploying larger recommendation models.
 
-10 papers · Updated 2026-10-28
+11 papers · Updated 2026-10-29
 
 <a id="paper-2411-16122"></a>
 
@@ -47,3 +47,7 @@ Transferring, compressing and deploying larger recommendation models.
 <a id="paper-2610-35218"></a>
 
 - **MuSID-KD: Multigranularity Knowledge Distillation for Generative Recommendation with Semantic IDs**: MuSID-KD transfers semantic-ID recommendation knowledge to lightweight students at multiple granularities. It aligns candidate distributions aggregated by shared prefixes and allocates token-level supervision according to estimated ranking impact. Experiments with three student architectures report better recommendation accuracy and closer prefix and pairwise ranking alignment without changing online inference architecture. This is a training-side method for preserving ranking quality in compact generative recommenders. — [Paper](https://arxiv.org/abs/2610.35218) (East China Normal University; Fudan University · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-36267"></a>
+
+- **Preserving rare-item recall under a storage budget: quantization, distillation, and the limits of teacher fidelity**: Under a fixed embedding-storage budget, the study compares low-dimensional models, distilled students and higher-rank low-precision factorizations across seven dataset-backbone cells. A rank-300 4-bit factorization uses 13% of teacher storage while retaining 95–103% of tail recall@20 and 93–97% of NDCG@20, at 7.5 times the arithmetic per score. Teacher-hit retention can misrank candidates, so the authors recommend assessing total rare-item recall directly. — [Paper](https://arxiv.org/abs/2610.36267) (University of Texas at Austin; Unaffiliated · arXiv 2026). Reading priority: Unrated.

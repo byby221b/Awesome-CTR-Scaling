@@ -6,7 +6,7 @@
 
 Systems, serving infrastructure and hardware-aware optimization.
 
-44 papers · Updated 2026-10-28
+46 papers · Updated 2026-10-29
 
 <a id="paper-2510-18239"></a>
 
@@ -183,3 +183,11 @@ Systems, serving infrastructure and hardware-aware optimization.
 <a id="paper-2610-32057"></a>
 
 - **HyScale: Scaling Long-Context Training for Learned Sparse Attention**: HyScale targets the selection bottleneck in learned sparse-attention training. HyTopK computes exact top-k indices without materializing the score table, and selection replay reuses forward selections during recomputation. With other system optimizations, it speeds up million-token GLM-5.1 training by 2.07 times over Megatron-LM on 512 H20 GPUs; additional results measure individual attention layers on 32 H800 GPUs. The selection and recomputation design is relevant to long-sequence training engineering, with no CTR benchmark claimed. — [Paper](https://arxiv.org/abs/2610.32057) (University of Edinburgh; Tencent Hunyuan · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-36339"></a>
+
+- **INC-MoE: Overlapping In-Network Collectives and Expert Computation for Expert-Parallel Mixture-of-Experts Inference**: INC-MoE offloads expert-parallel dispatch and combine to switch-side multicast and reduction, overlapping these collectives with expert computation through a banded persistent-kernel pipeline. It integrates as a vLLM MoE-layer replacement. In an emulated four-node deployment using a dedicated accelerator as the network switch, OLMoE prefill reduces time to first token by up to 33% and raises throughput by up to 50% while matching outputs. — [Paper](https://arxiv.org/abs/2610.36339) (Huawei · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-35989"></a>
+
+- **Layerwise Repacking: Variable-Length Hybrid-Attention Training without an Extra Redistribution Pass**: Layerwise Repacking adapts sequence-parallel groups to variable-length hybrid-attention training: wide groups serve full-attention layers, while node-local child groups serve sparse layers. Sample repacking shares existing Ulysses all-to-all exchanges, avoiding an extra redistribution pass. On the 22 relevant steps among the first 200 steps of a 1F3S model, repacking plus a parent-group solver reduces mean end-to-end time by 7.61% and increases MFU by 4.83 percentage points. — [Paper](https://arxiv.org/abs/2610.35989) (KlingAI Research · arXiv 2026). Reading priority: Unrated.
