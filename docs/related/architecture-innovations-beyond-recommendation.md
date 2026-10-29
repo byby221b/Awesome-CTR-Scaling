@@ -6,7 +6,7 @@
 
 Transferable ideas from general-purpose model architecture research.
 
-187 papers · Updated 2026-10-29
+190 papers · Updated 2026-10-30
 
 <a id="paper-2606-16825"></a>
 
@@ -755,3 +755,15 @@ Transferable ideas from general-purpose model architecture research.
 <a id="paper-2610-37386"></a>
 
 - **Channel Selection for Mixture-of-Experts Decoding Needs No Calibration Data**: The paper replaces calibrated channel-selection thresholds with per-token top-k selection for predictable routed-expert read budgets. It also builds a weight-only reader using a ternary sketch and low-rank recovery of skipped channels. Across three post-trained MoE models, the reader retains 98.1% of full-model accuracy at 17.8% of expert-weight reads; Triton MoE blocks run 1.60–1.90x faster than optimized vLLM at batch one, and up to 2.69x at larger batches. — [Paper](https://arxiv.org/abs/2610.37386) (KAIST; DeepAuto.ai · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-37019"></a>
+
+- **V-LUMEN: Visual Lookup Memory for Embedding Scaling in Vision-Language Models**: V-LUMEN expands vision-language capacity with a lookup table instead of additional dense per-token computation. A frozen codebook discretizes visual features; spatial hashing and text-conditioned relevance address memory, whose embeddings enter the backbone through gated residuals. Tests on five reasoning benchmarks and three disjoint-image transfer benchmarks support this capacity axis; matched-budget LoRA/MoE comparisons preserve accuracy on two backbones. Lookup occurs once at prefill and is constant in table size. — [Paper](https://arxiv.org/abs/2610.37019) (Korea University · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-33719"></a>
+
+- **ZipFusion: Fusing Lossless KV Decompression with Attention for Efficient LLM Decoding**: ZipFusion co-designs a lossless KV format and attention kernel so compressed values are reconstructed directly in registers, avoiding a separate decompression pass and reducing GPU memory reads. Integrated with FlashInfer and SGLang, it reports about 1.25x decode-attention speed on H100 and up to 26.3% higher model decoding throughput at 8K context under the same GPU-memory budget. The up-to-2.76x comparison uses each lossless-compression baseline at its largest supported batch. — [Paper](https://arxiv.org/abs/2610.33719) (The Chinese University of Hong Kong; Unaffiliated · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-34828"></a>
+
+- **Transporting Quantiles to Codebook: Scalable Vector Quantization without Codebook Collapse**: FlowVQ tackles VQ-VAE codebook collapse by jointly learning a latent distribution with a lightweight flow-matching model and constructing codes from equal-quantile partitions transported through that flow. Voronoi centroids provide the resulting structured discretization. Image tokenization/generation and two high-precision tokenization tasks show scalable, expressive codebooks with full utilization; recommendation semantic IDs remain a potential application rather than an evaluated result. — [Paper](https://arxiv.org/abs/2610.34828) (National University of Singapore; SEA AI Lab · arXiv 2026). Reading priority: Unrated.

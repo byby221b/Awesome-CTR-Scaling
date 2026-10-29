@@ -6,7 +6,7 @@
 
 Systems, serving infrastructure and hardware-aware optimization.
 
-46 papers · Updated 2026-10-29
+48 papers · Updated 2026-10-30
 
 <a id="paper-2510-18239"></a>
 
@@ -191,3 +191,11 @@ Systems, serving infrastructure and hardware-aware optimization.
 <a id="paper-2610-35989"></a>
 
 - **Layerwise Repacking: Variable-Length Hybrid-Attention Training without an Extra Redistribution Pass**: Layerwise Repacking adapts sequence-parallel groups to variable-length hybrid-attention training: wide groups serve full-attention layers, while node-local child groups serve sparse layers. Sample repacking shares existing Ulysses all-to-all exchanges, avoiding an extra redistribution pass. On the 22 relevant steps among the first 200 steps of a 1F3S model, repacking plus a parent-group solver reduces mean end-to-end time by 7.61% and increases MFU by 4.83 percentage points. — [Paper](https://arxiv.org/abs/2610.35989) (KlingAI Research · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-36408"></a>
+
+- **Cross-Day Compatibility of Daily Item Embeddings: An Empirical Study of Alignment, Scale Management, and CTR Adaptation**: This empirical study examines daily item-embedding drift in multi-day CTR training through 48 configurations, including 32 common-protocol CTR evaluations. Alignment, warm-start scale control and downstream encoders play complementary roles. Daily global rescaling achieves the highest observed GAUC gain of 4.0% relative to the corresponding Word2Vec baseline. Raw metric values and exact dataset sizes are withheld, and better retrieval or geometric compatibility does not necessarily imply better CTR. — [Paper](https://arxiv.org/abs/2610.36408) (LY Corporation · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-36383"></a>
+
+- **From Generation to Scoring: Scaling LLM-Based Semantic Labeling at LinkedIn**: LinkedIn replaces packed YES/NO label generation with single-candidate semantic scores from a prefill-only pass, and masks attention between candidates to score hundreds together with Multiple-Item Scoring. Candidate reordering changes at most 0.01% of decisions. Compared with the deployed stack, throughput rises 1.24x offline and 1.9x in serving under a one-second p99 target. The application is profile qualification labeling, not an online CTR gain. — [Paper](https://arxiv.org/abs/2610.36383) (LinkedIn · arXiv 2026). Reading priority: Unrated.

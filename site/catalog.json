@@ -1,15 +1,15 @@
 {
   "coverage": {
     "reading_tiers_assigned": 339,
-    "reading_tiers_unrated": 205,
-    "known_added_dates": 544,
-    "papers_with_updates": 302,
-    "verified_source_dates": 544,
-    "verified_abstracts": 544,
+    "reading_tiers_unrated": 214,
+    "known_added_dates": 553,
+    "papers_with_updates": 303,
+    "verified_source_dates": 553,
+    "verified_abstracts": 553,
     "unavailable_abstracts": 0,
     "pending_abstracts": 0,
-    "english_summaries": 544,
-    "chinese_summaries": 544
+    "english_summaries": 553,
+    "chinese_summaries": 553
   },
   "schema_version": 4,
   "meta": {
@@ -17,7 +17,7 @@
     "description": "Scaling laws and scalable ranking models for industrial recommendation.",
     "repository_url": "https://github.com/byby221b/Awesome-CTR-Scaling",
     "site_url": "https://byby221b.github.io/Awesome-CTR-Scaling/",
-    "updated": "2026-10-29",
+    "updated": "2026-10-30",
     "source_commit": "31ad30becff83ca14a01f37fc99d52ba79f85565",
     "scope": "We cover papers that (1) study scaling laws for recommendation models, (2) propose scalable Transformer-based architectures for CTR/ranking, (3) address efficiency challenges in scaling up industrial ranking systems, or (4) explore novel paradigms (e.g., sparse scaling, generative pre-training, foundation models) for scalable recommendation.",
     "history": {
@@ -26,7 +26,7 @@
       "added_at_basis": "Earliest recorded inclusion in reachable repository main history; 50 records were present at its root commit. This is not the source publication date.",
       "backfill_policy": "Unknown historical instants remain null. Source-date imports and structural/UI migrations do not invent catalog change events."
     },
-    "catalog_sha256": "7e130df52779407e0f120ce7dfb1e90450b43f2026470b7d75f7cc80b9d7c7e6"
+    "catalog_sha256": "cc417c18e8015b167e8d364448f4dd82956ad85de96f0a65481513e288216abd"
   },
   "categories": [
     {
@@ -143,12 +143,12 @@
     {
       "id": "google",
       "name": "Google",
-      "count": 19
+      "count": 21
     },
     {
       "id": "linkedin",
       "name": "LinkedIn",
-      "count": 6
+      "count": 7
     },
     {
       "id": "netease",
@@ -218,7 +218,7 @@
     {
       "id": "walmart",
       "name": "Walmart",
-      "count": 1
+      "count": 2
     },
     {
       "id": "snap",
@@ -433,7 +433,7 @@
     {
       "id": "ebay",
       "name": "eBay",
-      "count": 1
+      "count": 2
     },
     {
       "id": "tooploox",
@@ -478,6 +478,16 @@
     {
       "id": "deepauto-ai",
       "name": "DeepAuto.ai",
+      "count": 2
+    },
+    {
+      "id": "ly-corporation",
+      "name": "LY Corporation",
+      "count": 1
+    },
+    {
+      "id": "sea-ai-lab",
+      "name": "SEA AI Lab",
       "count": 2
     }
   ],
@@ -35012,7 +35022,9 @@
       },
       "change_history": [],
       "reading_tier": null,
-      "companies": [],
+      "companies": [
+        "sea-ai-lab"
+      ],
       "order": 449
     },
     {
@@ -40332,7 +40344,7 @@
       "collection": "core",
       "category": "efficiency-deployment",
       "affiliation": "University of Science and Technology of China; Meituan; Renmin University of China; The Hong Kong Polytechnic University; Academy of Cyber",
-      "venue": "arXiv",
+      "venue": "CIKM",
       "year": 2026,
       "tags": [
         "Test-time Compute",
@@ -40343,6 +40355,10 @@
         {
           "label": "Paper",
           "url": "https://arxiv.org/abs/2610.36890"
+        },
+        {
+          "label": "Conference",
+          "url": "https://cikm2026.diag.uniroma1.it/program/"
         }
       ],
       "aliases": [
@@ -40390,7 +40406,24 @@
         "kind": "catalog_entry",
         "source_url": "https://arxiv.org/abs/2610.36890"
       },
-      "change_history": [],
+      "change_history": [
+        {
+          "at": "2026-10-29T23:12:12Z",
+          "kind": "venue_update",
+          "fields": [
+            "venue"
+          ],
+          "source_url": "https://cikm2026.diag.uniroma1.it/program/"
+        },
+        {
+          "at": "2026-10-29T23:12:12Z",
+          "kind": "metadata_enrichment",
+          "fields": [
+            "links"
+          ],
+          "source_url": "https://cikm2026.diag.uniroma1.it/program/"
+        }
+      ],
       "reading_tier": null,
       "companies": [
         "meituan"
@@ -41185,6 +41218,607 @@
       "reading_tier": null,
       "companies": [],
       "order": 543
+    },
+    {
+      "id": "2602.05945",
+      "title": "AgenticTagger: Structured Item Representation for Recommendation with LLM Agents",
+      "collection": "related",
+      "category": "generative-recommendation",
+      "affiliation": "Google; Google DeepMind; University of California San Diego",
+      "venue": "Findings of EMNLP",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2602.05945"
+        },
+        {
+          "label": "Proceedings",
+          "url": "https://aclanthology.org/2026.findings-emnlp.2069/"
+        }
+      ],
+      "aliases": [
+        "AgenticTagger"
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "High-quality representations are a core requirement for effective recommendation. In this work, we study the problem of LLM-based descriptor generation, i.e., keyphrase-like natural language item representation generation frameworks with minimal constraints on downstream applications. We propose AgenticTagger, a framework that queries LLMs for representing items with sequences of text descriptors. However, open-ended generation provides little control over the generation space, leading to high cardinality, low-performance descriptors that render downstream modeling challenging. To this end, AgenticTagger features two core stages: (1) a vocabulary-building stage in which a set of hierarchical, low-cardinality, and high-quality descriptors is identified, and (2) a vocabulary-assignment stage in which LLMs assign in-vocabulary descriptors to items. To effectively and efficiently ground vocabulary in the item corpus of interest, we design a multi-agent reflection mechanism in which an architect LLM iteratively refines the vocabulary guided by parallelized feedback from annotator LLMs that validate the vocabulary against item data. Experiments on public and private data show AgenticTagger brings consistent improvements across diverse recommendation scenarios, including generative and term-based retrieval, ranking, and controllability-oriented, critique-based recommendation.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2602.05945v2",
+        "retrieved_at": "2026-10-29T23:12:12Z",
+        "license": null,
+        "source_title": "AgenticTagger: Structured Item Representation for Recommendation with LLM Agents",
+        "source_version": "v2"
+      },
+      "source_dates": {
+        "published_at": "2026-02-05T18:01:37Z",
+        "updated_at": "2026-03-03T00:14:51Z",
+        "source_version": "v2",
+        "source_url": "https://arxiv.org/abs/2602.05945v2",
+        "verified_at": "2026-10-29T23:12:12Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "AgenticTagger addresses uncontrolled, high-cardinality item descriptors by building a hierarchical vocabulary and assigning its descriptors to items with LLMs. An architect model refines the vocabulary using annotator-agent feedback. Public and private evaluations report improvements across generative and term-based retrieval, ranking and critique-based recommendation.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-30",
+          "source_urls": [
+            "https://arxiv.org/abs/2602.05945v2"
+          ]
+        },
+        "zh": {
+          "text": "AgenticTagger针对自由生成商品描述时词汇过散、难以建模的问题，先构建分层且规模受控的描述词表，再由大模型为商品分配词表内标签。架构代理根据标注代理的反馈反复改进词表，公开及私有数据实验显示其可改善生成式与词项检索、排序及基于用户反馈的推荐。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-30",
+          "source_urls": [
+            "https://arxiv.org/abs/2602.05945v2"
+          ]
+        }
+      },
+      "added_at": "2026-10-29T23:12:12Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2602.05945"
+      },
+      "change_history": [],
+      "reading_tier": null,
+      "companies": [
+        "google"
+      ],
+      "order": 544
+    },
+    {
+      "id": "2610.37176",
+      "title": "Lossless Compression of Proximity Graph Indexes for Efficient Approximate Nearest Neighbors Search",
+      "collection": "related",
+      "category": "retrieval-reranking-scaling",
+      "affiliation": "eBay; ISTI-CNR; University of Pisa",
+      "venue": "CIKM (Applied Research)",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.37176"
+        },
+        {
+          "label": "Conference",
+          "url": "https://cikm2026.diag.uniroma1.it/program/"
+        }
+      ],
+      "aliases": [],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Graph-based Approximate Nearest Neighbor (ANN) indexes, such as HNSW, are the backbone of modern vector search. However, their massive memory footprint creates a severe infrastructure bottleneck. While vector quantization is widely adopted to reduce the memory required to store data vectors, the graph's edge structure increasingly dominates total memory usage. Compressing these adjacency lists for online search presents a critical system challenge: because decompression occurs during query processing, i.e., while navigating the graph, memory savings cannot come at the expense of query latency. In this paper, we present a compression technique explicitly tailored for live HNSW routing. By applying offline graph permutations to artificially induce structural locality, we enable the use of SIMD-accelerated integer compressors, such as Stream VByte, for rapid on-the-fly decompression. Evaluated across diverse real-world workloads, we significantly outperform the current state of the art in both compression ratio and query latency. Our experimental results show that we achieve compression ratios up to 52.7% with negligible penalties in latency compared to the uncompressed baseline. Furthermore, our technique has been effectively deployed in production at eBay, achieving up to 44.3% reduction in edge storage with no degradation in query latency.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.37176v1",
+        "retrieved_at": "2026-10-29T23:12:12Z",
+        "license": null,
+        "source_title": "Lossless Compression of Proximity Graph Indexes for Efficient Approximate Nearest Neighbors Search",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-10-27T13:02:53Z",
+        "updated_at": "2026-10-27T13:02:53Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.37176v1",
+        "verified_at": "2026-10-29T23:12:12Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "This work reduces HNSW graph-edge storage by permuting nodes offline to create locality and applying SIMD-accelerated integer compression during online traversal. It reports compression ratios up to 52.7% with negligible latency penalties; an eBay deployment reduces edge storage by up to 44.3% without query-latency degradation. The savings concern graph edges rather than the entire retrieval service.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-30",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.37176v1"
+          ]
+        },
+        "zh": {
+          "text": "该研究通过离线重排节点增强邻接表局部性，再以SIMD整数压缩支持查询时快速解码，减少HNSW图边的内存开销。实验报告最高52.7%的压缩比例且延迟代价很小；eBay生产部署中，边存储最多减少44.3%，查询延迟未退化。这里的节省针对图边，而非整个检索服务。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-30",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.37176v1"
+          ]
+        }
+      },
+      "added_at": "2026-10-29T23:12:12Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.37176"
+      },
+      "change_history": [],
+      "reading_tier": null,
+      "companies": [
+        "ebay"
+      ],
+      "order": 545
+    },
+    {
+      "id": "2610.37019",
+      "title": "V-LUMEN: Visual Lookup Memory for Embedding Scaling in Vision-Language Models",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "Korea University",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.37019"
+        }
+      ],
+      "aliases": [
+        "V-LUMEN"
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Embedding-level scaling expands the capacity of language models through lookup-based memory rather than by increasing model depth, width, or dense computation. Extending this idea to vision-language models (VLMs) is challenging because visual features are continuous, spatially structured, and query-dependent, unlike discrete text tokens that naturally support n-gram lookup. We introduce V-LUMEN, a visual lookup memory for VLMs. V-LUMEN discretizes visual features with a frozen codebook, builds spatially aware memory keys through spatial aggregation-based hashing, and modulates them with text-conditioned relevance signals; all addressing is non-parametric, and the retrieved embeddings are fused into the backbone through a gated residual pathway. On five reasoning-intensive benchmarks, V-LUMEN substantially improves a frozen Qwen3-VL-2B backbone and transfers zero-shot to three benchmarks whose images are disjoint from the training data. At a matched parameter budget, moving part of a LoRA or MoE adapter's capacity into V-LUMEN preserves accuracy on two backbones, indicating that external visual memory is an independent capacity axis rather than a stronger adaptation method. Because lookup cost is constant in table size and incurred only once at prefill, this capacity grows in storage rather than in per-token compute. Code is available at https://github.com/miso-choi/V-Lumen.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.37019v1",
+        "retrieved_at": "2026-10-29T23:12:12Z",
+        "license": null,
+        "source_title": "V-LUMEN: Visual Lookup Memory for Embedding Scaling in Vision-Language Models",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-10-27T10:57:47Z",
+        "updated_at": "2026-10-27T10:57:47Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.37019v1",
+        "verified_at": "2026-10-29T23:12:12Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "V-LUMEN expands vision-language capacity with a lookup table instead of additional dense per-token computation. A frozen codebook discretizes visual features; spatial hashing and text-conditioned relevance address memory, whose embeddings enter the backbone through gated residuals. Tests on five reasoning benchmarks and three disjoint-image transfer benchmarks support this capacity axis; matched-budget LoRA/MoE comparisons preserve accuracy on two backbones. Lookup occurs once at prefill and is constant in table size.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-30",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.37019v1"
+          ]
+        },
+        "zh": {
+          "text": "V-LUMEN将视觉特征经固定码本离散化，用空间哈希和文本相关性寻址外部记忆，再通过门控残差接入视觉语言模型，以存储扩容代替增加逐token稠密计算。五个推理基准和三个图像不重叠的迁移基准验证了这条容量扩展路径；在两个骨干上，将部分LoRA或MoE容量转入记忆仍能保持准确率。查表仅发生在预填充阶段，其成本不随表大小增长。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-30",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.37019v1"
+          ]
+        }
+      },
+      "added_at": "2026-10-29T23:12:12Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.37019"
+      },
+      "change_history": [],
+      "reading_tier": null,
+      "companies": [],
+      "order": 546
+    },
+    {
+      "id": "2610.37364",
+      "title": "EmbeddingGemma 2: Unified and Efficient Multimodal Representations",
+      "collection": "related",
+      "category": "retrieval-reranking-scaling",
+      "affiliation": "Google",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.37364"
+        }
+      ],
+      "aliases": [
+        "EmbeddingGemma 2"
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "We present EmbeddingGemma 2, an open multimodal embedding model which natively represents text, images, audio, video, and combinations thereof in a unified space. Our approach introduces improvements such as simplified per-layer embeddings and a multi-stage curriculum with modality and objective progression which ensure strong quality across unimodal, cross-modal, and mixed-modal evaluations. Notably, in comprehensive embedding benchmarks across all modalities, EmbeddingGemma 2 establishes a new Pareto frontier, outperforming both specialist models and models two to twelve times larger. Furthermore, our design offers flexibility for resource-constrained environments, supporting selective modality encoder loading, adjustable vision token budgets, truncatable embedding dimensions, and quantized weights. We present ablations analyzing key decisions and release EmbeddingGemma 2 to promote further research.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.37364v1",
+        "retrieved_at": "2026-10-29T23:12:12Z",
+        "license": null,
+        "source_title": "EmbeddingGemma 2: Unified and Efficient Multimodal Representations",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-10-27T15:00:42Z",
+        "updated_at": "2026-10-27T15:00:42Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.37364v1",
+        "verified_at": "2026-10-29T23:12:12Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "EmbeddingGemma 2 places text, images, audio, video and mixed inputs in one embedding space. Simplified per-layer embeddings and a staged modality/objective curriculum support quality across modalities. The reported benchmarks outperform specialist and 2–12x larger models; selective encoder loading, adjustable visual-token budgets, truncatable dimensions and quantized weights provide deployment tradeoffs.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-30",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.37364v1"
+          ]
+        },
+        "zh": {
+          "text": "EmbeddingGemma 2把文本、图像、音频、视频及混合输入映射到同一表征空间，通过简化逐层embedding和分阶段模态／目标课程训练提升跨模态质量。论文报告在所测基准中超过专用模型及规模大2至12倍的模型，并提供按需加载模态编码器、调整视觉token预算、截断向量维度和权重量化等部署选项。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-30",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.37364v1"
+          ]
+        }
+      },
+      "added_at": "2026-10-29T23:12:12Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.37364"
+      },
+      "change_history": [],
+      "reading_tier": null,
+      "companies": [
+        "google"
+      ],
+      "order": 547
+    },
+    {
+      "id": "2610.36408",
+      "title": "Cross-Day Compatibility of Daily Item Embeddings: An Empirical Study of Alignment, Scale Management, and CTR Adaptation",
+      "collection": "related",
+      "category": "engineering-serving",
+      "affiliation": "LY Corporation",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.36408"
+        }
+      ],
+      "aliases": [],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Daily item co-occurrence embeddings are paired with next-day behavior without future-behavior leakage. Multi-day click-through rate (CTR) training therefore mixes versions whose directions and norms may differ for the same item. We compare Word2Vec and an item-graph XSimGCL adaptation across initialization, inheritance, post-processing, training constraints, and downstream augmentation. The inventory contains 48 configurations, including 32 common-protocol CTR evaluations. Observed metrics are reported as relative percentage changes from the corresponding Word2Vec baseline (0%), with raw values and exact dataset sizes withheld. Three findings emerge. First, multiple upstream interventions improve compatibility and CTR. ID-init and orthogonal alignment increase cosine by 51.2% and 93.4%, and GAUC by 2.2% and 2.6%, relative to ordinary Word2Vec. Retrieval and geometry remain insufficient downstream surrogates. Second, warm starts perform strongly but accumulate scale. The day-matched norm increase over Word2Vec reaches 102.5% after eight days; daily global rescaling limits it to 8.2% and attains the highest observed GAUC increase, 4.0%. Third, CTR learning through a dimensionality-reducing encoder further adapts to residual drift. Against dimension-matched random-projection, SVD, and untrained-network controls, trained encoders attain the highest cross-day cosine for four of six upstream methods. The other two rank third and second in train-to-test cosine. These industrial results support complementary roles for upstream stabilization, inherited-scale management, and downstream task learning.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.36408v1",
+        "retrieved_at": "2026-10-29T23:12:12Z",
+        "license": null,
+        "source_title": "Cross-Day Compatibility of Daily Item Embeddings: An Empirical Study of Alignment, Scale Management, and CTR Adaptation",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-10-26T23:42:10Z",
+        "updated_at": "2026-10-26T23:42:10Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.36408v1",
+        "verified_at": "2026-10-29T23:12:12Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "This empirical study examines daily item-embedding drift in multi-day CTR training through 48 configurations, including 32 common-protocol CTR evaluations. Alignment, warm-start scale control and downstream encoders play complementary roles. Daily global rescaling achieves the highest observed GAUC gain of 4.0% relative to the corresponding Word2Vec baseline. Raw metric values and exact dataset sizes are withheld, and better retrieval or geometric compatibility does not necessarily imply better CTR.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-30",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.36408v1"
+          ]
+        },
+        "zh": {
+          "text": "该研究分析每天更新的商品embedding在跨日CTR训练中出现的方向与尺度漂移，比较48种配置，其中32种进行了统一协议CTR评测。对齐、热启动后的尺度控制和下游编码器各有作用；每日全局重缩放取得所测最高GAUC相对增幅4.0%，基线为对应Word2Vec配置。论文未公开原始指标与精确数据规模，检索或几何相容性改善也不必然对应CTR收益。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-30",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.36408v1"
+          ]
+        }
+      },
+      "added_at": "2026-10-29T23:12:12Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.36408"
+      },
+      "change_history": [],
+      "reading_tier": null,
+      "companies": [
+        "ly-corporation"
+      ],
+      "order": 548
+    },
+    {
+      "id": "2610.36239",
+      "title": "BehaveRec: When Does Long-Term Behavioral History Help Sequential Recommendation? A Study with Session, History, and Community Signals",
+      "collection": "related",
+      "category": "long-sequence-modeling",
+      "affiliation": "Walmart Global Tech",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.36239"
+        }
+      ],
+      "aliases": [
+        "BehaveRec"
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Sequential recommendation models typically predict a user's next action from recent session interactions, which limits personalization when short-term signals are weak or ambiguous. Rather than assuming that incorporating longer-term history and community signals is universally beneficial, we study when it actually helps. We propose BehaveRec, a three-signal framework combining a causal session transformer, a bidirectional User History Encoder over a 90-day window, and a GraphSAGE module over a user-user graph built from behavioral embedding similarity rather than item co-occurrence; a learned gate blends the three signals per user. On an industrial dataset of 137M sequences from 12.6M users, BehaveRec improves R@5 by +3.2% over SASRec, with a larger-capacity SASRec baseline (more parameters than BehaveRec) still trailing by +2.5%, ruling out capacity as the explanation. More importantly, a user-level stratification by history length reveals a clear dose-response relationship: BehaveRec's advantage is negligible below roughly 10 interactions and grows monotonically with history richness, reaching +0.017 R@5 for users with 101+ events. This pattern is corroborated across one industrial and three public datasets spanning history-rich to history-sparse regimes, where session-only models remain preferable. These headline results, and the resulting deployment threshold, are established for category-level intent prediction; a preliminary, single-run check on the full item-level vocabulary yields a directionally mixed result and is scoped as an open question rather than a claim. We use these results to derive a practical deployment rule -- roughly 20 interactions per user -- for when long-term history and behavioral-graph signals are worth their added complexity. Despite this added complexity, BehaveRec remains lightweight: it uses 5.67M parameters and trains on a single GPU in under two days.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.36239v1",
+        "retrieved_at": "2026-10-29T23:12:12Z",
+        "license": null,
+        "source_title": "BehaveRec: When Does Long-Term Behavioral History Help Sequential Recommendation? A Study with Session, History, and Community Signals",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-10-26T20:15:26Z",
+        "updated_at": "2026-10-26T20:15:26Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.36239v1",
+        "verified_at": "2026-10-29T23:12:12Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "BehaveRec gates together a causal session transformer, a 90-day history encoder and a behavioral-similarity user graph. On an industrial dataset with 137 million sequences from 12.6 million users, it reports a 3.2% R@5 gain over SASRec, with benefits increasing as histories become richer. Its roughly 20-interaction deployment rule concerns category-level intent prediction; item-level findings are mixed and history-sparse settings may favor session-only models.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-30",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.36239v1"
+          ]
+        },
+        "zh": {
+          "text": "BehaveRec用门控融合近期会话Transformer、90天历史编码器和基于行为相似性的用户图，研究哪些用户值得加入长历史信号。在覆盖1260万用户、1.37亿序列的工业数据上，论文报告相对SASRec的R@5增幅为3.2%，收益随历史丰富程度增加。约20次交互的部署建议针对类别级意图预测；商品级结果并不一致，历史稀疏时仅用会话可能更合适。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-30",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.36239v1"
+          ]
+        }
+      },
+      "added_at": "2026-10-29T23:12:12Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.36239"
+      },
+      "change_history": [],
+      "reading_tier": null,
+      "companies": [
+        "walmart"
+      ],
+      "order": 549
+    },
+    {
+      "id": "2610.36383",
+      "title": "From Generation to Scoring: Scaling LLM-Based Semantic Labeling at LinkedIn",
+      "collection": "related",
+      "category": "engineering-serving",
+      "affiliation": "LinkedIn",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.36383"
+        }
+      ],
+      "aliases": [],
+      "original_abstract": {
+        "status": "verified",
+        "text": "For efficiency, industrial large language model (LLM) labelers often pack many candidate labels into one prompt and generate a YES/NO answer for each, even when each decision depends only on the entity and one candidate. Generating these independent decisions as one answer list couples them, spends decoding on the list, and relies on the list being well-formed. In this paper, we present an end-to-end recipe that reformulates the labeler as semantic scoring, fine-tuning it on single-candidate prompts to return each decision as one answer-token score from a prefill-only pass. We also adapt Multiple-Item Scoring (MIS) to score hundreds of candidates in one sequence with attention masked between them. Deployed for profile qualification labeling at LinkedIn, semantic scoring changes at most 0.01% of decisions when candidates are reordered and matches the agreement with reference labels that packed generation reaches only with about 4.7x as many training pairs. The MIS-based stack raises throughput over the deployed stack by 1.24x offline and 1.9x in model serving under a one-second p99 latency target. For offline batch inference, we implement MIS-based scoring as a reusable, model-agnostic Ray Data API proposed for upstream adoption. Model serving uses MIS support contributed to SGLang.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.36383v1",
+        "retrieved_at": "2026-10-29T23:12:12Z",
+        "license": null,
+        "source_title": "From Generation to Scoring: Scaling LLM-Based Semantic Labeling at LinkedIn",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-10-26T22:59:10Z",
+        "updated_at": "2026-10-26T22:59:10Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.36383v1",
+        "verified_at": "2026-10-29T23:12:12Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "LinkedIn replaces packed YES/NO label generation with single-candidate semantic scores from a prefill-only pass, and masks attention between candidates to score hundreds together with Multiple-Item Scoring. Candidate reordering changes at most 0.01% of decisions. Compared with the deployed stack, throughput rises 1.24x offline and 1.9x in serving under a one-second p99 target. The application is profile qualification labeling, not an online CTR gain.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-30",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.36383v1"
+          ]
+        },
+        "zh": {
+          "text": "LinkedIn将一串YES/NO标签的生成改成单候选语义打分，只做预填充，并通过候选间注意力隔离在一个序列里同时评估数百候选。候选重排最多改变0.01%的决策；相对原部署栈，离线吞吐为1.24倍，在p99一秒目标下在线吞吐为1.9倍。实验用于个人资料资质标签生成，不应解读为线上CTR提升。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-30",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.36383v1"
+          ]
+        }
+      },
+      "added_at": "2026-10-29T23:12:12Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.36383"
+      },
+      "change_history": [],
+      "reading_tier": null,
+      "companies": [
+        "linkedin"
+      ],
+      "order": 550
+    },
+    {
+      "id": "2610.33719",
+      "title": "ZipFusion: Fusing Lossless KV Decompression with Attention for Efficient LLM Decoding",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "The Chinese University of Hong Kong; Unaffiliated",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.33719"
+        }
+      ],
+      "aliases": [
+        "ZipFusion"
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "The key-value (KV) cache places growing demands on GPU memory capacity and bandwidth as large language models serve longer contexts and more concurrent requests. Its footprint limits concurrency, while repeated KV reads during attention can make decoding memory-bandwidth bound. Prior lossless KV cache compression methods reduce transfers between devices but restore the uncompressed KV cache in GPU memory before attention. They therefore leave these repeated KV reads unchanged and require additional work and memory for decompression. We present ZipFusion, which enables attention to consume the losslessly compressed KV cache directly. ZipFusion co-designs the compression format and attention kernel to reduce the bytes read from GPU memory during attention. The kernel reconstructs the original values directly in registers using simple bit operations, avoiding a separate decompression pass and easing the memory-bandwidth bound. ZipFusion also reassigns memory freed by compression across layers to store additional KV cache. Its memory manager reserves space for ongoing generation and makes the remaining capacity available to new requests. We implement ZipFusion on top of FlashInfer and integrate it with SGLang. On an NVIDIA H100, ZipFusion achieves about 1.25x speedup over FlashInfer in decode attention. With 8K context, it improves model decode throughput by up to 26.3% over uncompressed SGLang under the same GPU memory budget. At each method's largest supported batch, it also delivers up to 2.76x the throughput of the best-performing lossless KV cache compression baseline.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.33719v1",
+        "retrieved_at": "2026-10-29T23:12:12Z",
+        "license": null,
+        "source_title": "ZipFusion: Fusing Lossless KV Decompression with Attention for Efficient LLM Decoding",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-10-24T15:07:10Z",
+        "updated_at": "2026-10-24T15:07:10Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.33719v1",
+        "verified_at": "2026-10-29T23:12:12Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "ZipFusion co-designs a lossless KV format and attention kernel so compressed values are reconstructed directly in registers, avoiding a separate decompression pass and reducing GPU memory reads. Integrated with FlashInfer and SGLang, it reports about 1.25x decode-attention speed on H100 and up to 26.3% higher model decoding throughput at 8K context under the same GPU-memory budget. The up-to-2.76x comparison uses each lossless-compression baseline at its largest supported batch.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-30",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.33719v1"
+          ]
+        },
+        "zh": {
+          "text": "ZipFusion联合设计无损KV格式与注意力内核，在寄存器中直接恢复原值，省去单独解压过程并减少显存读取。它基于FlashInfer并接入SGLang，在H100上报告约1.25倍的解码注意力速度；同等显存预算、8K上下文下，模型解码吞吐最多提升26.3%。相对其他无损压缩方案最高2.76倍的结果采用各自可支持的最大batch。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-30",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.33719v1"
+          ]
+        }
+      },
+      "added_at": "2026-10-29T23:12:12Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.33719"
+      },
+      "change_history": [],
+      "reading_tier": null,
+      "companies": [],
+      "order": 551
+    },
+    {
+      "id": "2610.34828",
+      "title": "Transporting Quantiles to Codebook: Scalable Vector Quantization without Codebook Collapse",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "National University of Singapore; SEA AI Lab",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.34828"
+        }
+      ],
+      "aliases": [
+        "FlowVQ"
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Effective discrete representation learning with VQ-VAE serves as a fundamental component of modern autoregressive generative models. However, it is widely known to suffer from codebook collapse and inefficient code utilization. To address this issue, we propose FlowVQ, a simple yet effective alternative to standard vector quantization by formulating neural quantization as a joint modeling and clustering process. Specifically, we learn the latent space using a lightweight flow matching model alongside training, corresponding to a probability flow ODE that transports an often fixed well-behaved source distribution while preserving probability mass. Based on this, we define the codebook C_1 by transporting even-quantile partitioned prior codes C_0 from the source space through the learned flow, and obtaining the Voronoi centroids under the induced distribution, leading to a structured discretization. We evaluated on image tokenization and generation, as well as on two tasks requiring high-precision tokenization, demonstrating scalability and improved expressivity of the codebook with full utilization.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.34828v1",
+        "retrieved_at": "2026-10-29T23:12:12Z",
+        "license": null,
+        "source_title": "Transporting Quantiles to Codebook: Scalable Vector Quantization without Codebook Collapse",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-10-26T04:22:47Z",
+        "updated_at": "2026-10-26T04:22:47Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.34828v1",
+        "verified_at": "2026-10-29T23:12:12Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "FlowVQ tackles VQ-VAE codebook collapse by jointly learning a latent distribution with a lightweight flow-matching model and constructing codes from equal-quantile partitions transported through that flow. Voronoi centroids provide the resulting structured discretization. Image tokenization/generation and two high-precision tokenization tasks show scalable, expressive codebooks with full utilization; recommendation semantic IDs remain a potential application rather than an evaluated result.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-30",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.34828v1"
+          ]
+        },
+        "zh": {
+          "text": "FlowVQ针对VQ-VAE码本坍塌，将轻量流匹配学习与量化结合：把源分布等分位划分得到的初始码通过概率流搬运，再构造Voronoi质心形成结构化码本。图像token化、生成和两项高精度token化任务显示其可扩展性、表达能力与完整码本利用率；推荐语义ID属于可借鉴方向，尚非论文已验证的结果。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-10-30",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.34828v1"
+          ]
+        }
+      },
+      "added_at": "2026-10-29T23:12:12Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.34828"
+      },
+      "change_history": [],
+      "reading_tier": null,
+      "companies": [
+        "sea-ai-lab"
+      ],
+      "order": 552
     }
   ]
 }

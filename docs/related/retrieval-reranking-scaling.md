@@ -6,7 +6,7 @@
 
 Scaling retrieval and reranking stages of recommendation pipelines.
 
-37 papers · Updated 2026-10-29
+39 papers · Updated 2026-10-30
 
 <a id="paper-2603-04816"></a>
 
@@ -155,3 +155,11 @@ Scaling retrieval and reranking stages of recommendation pipelines.
 <a id="paper-2610-35256"></a>
 
 - **Octen-WebGR: Scaling Generative Retrieval to 200 Million Web Pages**: Octen-WebGR retrieves web pages by generating a two-token semantic identifier constrained to real URLs. Its 4B model indexes 201 million pages and reaches 59.6% top-1 accuracy on subsequent navigational traffic, versus 46.5% for a click-enhanced dense retriever. It is strongest on new queries for well-exposed pages; dense retrieval retains an advantage on rarely visited pages. Experiments up to 32 million URLs link capacity requirements to index size and exposure, offering evidence for large-scale generative retrieval rather than CTR ranking. — [Paper](https://arxiv.org/abs/2610.35256) (arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-37176"></a>
+
+- **Lossless Compression of Proximity Graph Indexes for Efficient Approximate Nearest Neighbors Search**: This work reduces HNSW graph-edge storage by permuting nodes offline to create locality and applying SIMD-accelerated integer compression during online traversal. It reports compression ratios up to 52.7% with negligible latency penalties; an eBay deployment reduces edge storage by up to 44.3% without query-latency degradation. The savings concern graph edges rather than the entire retrieval service. — [Paper](https://arxiv.org/abs/2610.37176) · [Conference](https://cikm2026.diag.uniroma1.it/program/) (eBay; ISTI-CNR; University of Pisa · CIKM (Applied Research) 2026). Reading priority: Unrated.
+
+<a id="paper-2610-37364"></a>
+
+- **EmbeddingGemma 2: Unified and Efficient Multimodal Representations**: EmbeddingGemma 2 places text, images, audio, video and mixed inputs in one embedding space. Simplified per-layer embeddings and a staged modality/objective curriculum support quality across modalities. The reported benchmarks outperform specialist and 2–12x larger models; selective encoder loading, adjustable visual-token budgets, truncatable dimensions and quantized weights provide deployment tradeoffs. — [Paper](https://arxiv.org/abs/2610.37364) (Google · arXiv 2026). Reading priority: Unrated.

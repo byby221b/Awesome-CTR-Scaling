@@ -11,8 +11,8 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [Alibaba](#company-alibaba) (49)
 - [Meituan](#company-meituan) (11)
 - [Tencent](#company-tencent) (25)
-- [Google](#company-google) (19)
-- [LinkedIn](#company-linkedin) (6)
+- [Google](#company-google) (21)
+- [LinkedIn](#company-linkedin) (7)
 - [NetEase](#company-netease) (2)
 - [Kuaishou](#company-kuaishou) (28)
 - [Huawei](#company-huawei) (10)
@@ -26,7 +26,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [JD](#company-jd) (6)
 - [VK](#company-vk) (1)
 - [Microsoft](#company-microsoft) (4)
-- [Walmart](#company-walmart) (1)
+- [Walmart](#company-walmart) (2)
 - [Snap](#company-snap) (4)
 - [Xiaohongshu](#company-xiaohongshu) (7)
 - [Amazon](#company-amazon) (6)
@@ -69,7 +69,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [Ant Group](#company-ant-group) (1)
 - [d-Matrix](#company-d-matrix) (1)
 - [Glance](#company-glance) (1)
-- [eBay](#company-ebay) (1)
+- [eBay](#company-ebay) (2)
 - [Tooploox](#company-tooploox) (1)
 - [Arm](#company-arm) (1)
 - [Disney](#company-disney) (1)
@@ -79,6 +79,8 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [Atomic Machines](#company-atomic-machines) (1)
 - [Slater Labs](#company-slater-labs) (1)
 - [DeepAuto.ai](#company-deepauto-ai) (2)
+- [LY Corporation](#company-ly-corporation) (1)
+- [SEA AI Lab](#company-sea-ai-lab) (2)
 
 <a id="company-meta"></a>
 
@@ -288,6 +290,8 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [Reconstruction-Optimized Expert Pruning for Mixture-of-Experts Language Models](related/architecture-innovations-beyond-recommendation.md#paper-2610-27123) · 2026 · Related
 - [A Fix for Softmax and Cross-Entropy](related/architecture-innovations-beyond-recommendation.md#paper-2610-31642) · 2026 · Related
 - [Multi-State Linear Attention with Generalized Second-Order Routing](related/architecture-innovations-beyond-recommendation.md#paper-2610-37645) · 2026 · Related
+- [AgenticTagger: Structured Item Representation for Recommendation with LLM Agents](related/generative-recommendation.md#paper-2602-05945) · 2026 · Related
+- [EmbeddingGemma 2: Unified and Efficient Multimodal Representations](related/retrieval-reranking-scaling.md#paper-2610-37364) · 2026 · Related
 
 <a id="company-linkedin"></a>
 
@@ -299,6 +303,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [Embedding Subspace Partitioning for Dynamic Multi-Objective Retrieval](related/retrieval-reranking-scaling.md#paper-2609-30601) · 2026 · Related
 - [Reconstruction-Optimized Expert Pruning for Mixture-of-Experts Language Models](related/architecture-innovations-beyond-recommendation.md#paper-2610-27123) · 2026 · Related
 - [PAIR: Preference-Aligned Intent Retrieval for Premium People Recommendation at LinkedIn](related/retrieval-reranking-scaling.md#paper-2610-30941) · 2026 · Related
+- [From Generation to Scoring: Scaling LLM-Based Semantic Labeling at LinkedIn](related/engineering-serving.md#paper-2610-36383) · 2026 · Related
 
 <a id="company-netease"></a>
 
@@ -452,6 +457,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 ## Walmart
 
 - [Scaling and Stabilizing Large-Scale EBR](related/retrieval-reranking-scaling.md#paper-2607-10096) · 2026 · Related
+- [BehaveRec: When Does Long-Term Behavioral History Help Sequential Recommendation? A Study with Session, History, and Community Signals](related/long-sequence-modeling.md#paper-2610-36239) · 2026 · Related
 
 <a id="company-snap"></a>
 
@@ -742,6 +748,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 ## eBay
 
 - [From a Large-Scale Teacher to Efficient Multimodal Students for Search Relevance Prediction](related/knowledge-distillation-compression.md#paper-2610-16569) · 2026 · Related
+- [Lossless Compression of Proximity Graph Indexes for Efficient Approximate Nearest Neighbors Search](related/retrieval-reranking-scaling.md#paper-2610-37176) · 2026 · Related
 
 <a id="company-tooploox"></a>
 
@@ -799,3 +806,16 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 
 - [SLEM: Spectrum-Aware Latent Expert Merging](related/architecture-innovations-beyond-recommendation.md#paper-2610-16484) · 2026 · Related
 - [Channel Selection for Mixture-of-Experts Decoding Needs No Calibration Data](related/architecture-innovations-beyond-recommendation.md#paper-2610-37386) · 2026 · Related
+
+<a id="company-ly-corporation"></a>
+
+## LY Corporation
+
+- [Cross-Day Compatibility of Daily Item Embeddings: An Empirical Study of Alignment, Scale Management, and CTR Adaptation](related/engineering-serving.md#paper-2610-36408) · 2026 · Related
+
+<a id="company-sea-ai-lab"></a>
+
+## SEA AI Lab
+
+- [FreeSolo: Linear-time Sparse Attention with Zero-Shot Length Extrapolation](related/architecture-innovations-beyond-recommendation.md#paper-2610-17191) · 2026 · Related
+- [Transporting Quantiles to Codebook: Scalable Vector Quantization without Codebook Collapse](related/architecture-innovations-beyond-recommendation.md#paper-2610-34828) · 2026 · Related

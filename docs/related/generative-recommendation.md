@@ -6,7 +6,7 @@
 
 Generative retrieval, recommendation and ranking beyond discriminative CTR.
 
-107 papers · Updated 2026-10-29
+108 papers · Updated 2026-10-30
 
 <a id="paper-2605-12617"></a>
 
@@ -435,3 +435,7 @@ Generative retrieval, recommendation and ranking beyond discriminative CTR.
 <a id="paper-2610-37584"></a>
 
 - **REGER: Modeling inter-item Relations with Semantic IDs for Generative Recommendation**: REGER explicitly models inter-item relations through semantic-neighbor SID pretraining, combined global and SID-boundary local attention, and discriminative-teacher preference distillation. A hierarchical SID-prefix analysis factorizes collaborative preferences and item-level KL divergence, motivating distillation over all legal next tokens along target prefixes. Experiments on real-world datasets report consistent gains over generative-recommendation baselines. — [Paper](https://arxiv.org/abs/2610.37584) (University of Electronic Science and Technology of China · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2602-05945"></a>
+
+- **AgenticTagger: Structured Item Representation for Recommendation with LLM Agents**: AgenticTagger addresses uncontrolled, high-cardinality item descriptors by building a hierarchical vocabulary and assigning its descriptors to items with LLMs. An architect model refines the vocabulary using annotator-agent feedback. Public and private evaluations report improvements across generative and term-based retrieval, ranking and critique-based recommendation. — [Paper](https://arxiv.org/abs/2602.05945) · [Proceedings](https://aclanthology.org/2026.findings-emnlp.2069/) (Google; Google DeepMind; University of California San Diego · Findings of EMNLP 2026). Reading priority: Unrated.

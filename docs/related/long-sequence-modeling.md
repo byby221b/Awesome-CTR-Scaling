@@ -6,7 +6,7 @@
 
 Long-history modeling, memory and compression for user behavior sequences.
 
-30 papers · Updated 2026-10-29
+31 papers · Updated 2026-10-30
 
 <a id="paper-2504-06780"></a>
 
@@ -127,3 +127,7 @@ Long-history modeling, memory and compression for user behavior sequences.
 <a id="paper-2610-30128"></a>
 
 - **Think Harder Where It Matters: Item-Level Adaptive Recursion for Sequential Recommendation**: LoopRec allocates different amounts of recurrent computation to individual history items. A shared block and binary exit gate learn item-level depth without auxiliary depth labels. Across four sequential recommendation backbones on public benchmarks, adaptive recursion improves the quality-efficiency trade-off; analyses associate deeper computation with rare and recent items. The evidence does not establish industrial serving gains. — [Paper](https://arxiv.org/abs/2610.30128) (Renmin University of China · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-36239"></a>
+
+- **BehaveRec: When Does Long-Term Behavioral History Help Sequential Recommendation? A Study with Session, History, and Community Signals**: BehaveRec gates together a causal session transformer, a 90-day history encoder and a behavioral-similarity user graph. On an industrial dataset with 137 million sequences from 12.6 million users, it reports a 3.2% R@5 gain over SASRec, with benefits increasing as histories become richer. Its roughly 20-interaction deployment rule concerns category-level intent prediction; item-level findings are mixed and history-sparse settings may favor session-only models. — [Paper](https://arxiv.org/abs/2610.36239) (Walmart Global Tech · arXiv 2026). Reading priority: Unrated.
