@@ -6,7 +6,7 @@
 
 Compressing complete interactions and raw samples into sequence tokens.
 
-3 papers · Updated 2026-10-30
+4 papers · Updated 2026-10-31
 
 <a id="paper-2604-08933"></a>
 
@@ -19,3 +19,7 @@ Compressing complete interactions and raw samples into sequence tokens.
 <a id="paper-2610-35323"></a>
 
 - **CRIM: Composable and Reusable Item Memory for Efficient Personalized Retrieval**: CRIM reduces repeated item-text encoding in personalized retrieval by compressing each item into user- and query-independent continuous memories. Requests compose cached memories in interaction order, while readout tokens and sampled live re-encoding support joint training with periodic cache refreshes. Evaluations on MovieLens-1M, Qilin and LazSeq report stronger retrieval with lower inference costs at the same backbone scale. The reusable item representation offers a practical route to compressing recommendation histories without removing request-level context modeling. — [Paper](https://arxiv.org/abs/2610.35323) (Tsinghua University; Alibaba International Digital Commerce Group · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-39175"></a>
+
+- **PRISM: Personalized Item Representations in User History**: PRISM makes each history-item representation user-specific by compressing all layer states from an upstream user tower, user–item tower, and same-request candidate mixing into one replayable embedding per scored pair. Offline evaluation on a billion-scale recommendation surface reports an average normalized-entropy change of −0.15%, versus −0.07% for VISTA at similar history lengths. Over 26–240 events, the reported NE gain follows a fitted power law with exponent 0.468, suggesting a way to reuse ranking computation when scaling history modeling. The abstract reports no online gains. — [Paper](https://arxiv.org/abs/2610.39175) (Meta · arXiv 2026). Reading priority: Unrated.

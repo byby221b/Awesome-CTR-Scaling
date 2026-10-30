@@ -6,7 +6,7 @@
 
 Generative objectives and pre-training for discriminative CTR tasks.
 
-4 papers · Updated 2026-10-30
+5 papers · Updated 2026-10-31
 
 <a id="paper-2512-14041"></a>
 
@@ -23,3 +23,7 @@ Generative objectives and pre-training for discriminative CTR tasks.
 <a id="paper-2608-02738"></a>
 
 - **KGD**: KGD separates refreshable behavioral knowledge from task-specific adaptation in streaming recommendation. Behavioral multi-token prediction filters unrelated future events from supervision, while read-only cross-attention and a separate calibration residual let downstream tasks use refreshed encoder knowledge without rewriting it, reducing interference between continual pretraining updates and existing task models. — [Paper](https://arxiv.org/abs/2608.02738) (Shopee · 2026). Reading priority: Unrated.
+
+<a id="paper-2610-39090"></a>
+
+- **PALATE: Pretrained Autoregressive LATent Embeddings**: PALATE trains a GPT-style model to predict future consumer engagements and supplies its final hidden state as a daily refreshed, frozen user feature shared by browsing and search ad rankers. Exploration-weighted training, click pretraining followed by conversion fine-tuning, and mixed negative pools adapt the representation to repeated purchases. Offline relative Eval-AUC gains are 0.59% and 0.57%; online revenue and conversion gains come from bundled ranker retrains and cannot be attributed to PALATE alone. The design illustrates amortizing sequence modeling across ad surfaces. — [Paper](https://arxiv.org/abs/2610.39090) (DoorDash · arXiv 2026). Reading priority: Unrated.

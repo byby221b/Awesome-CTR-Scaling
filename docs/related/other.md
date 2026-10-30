@@ -6,7 +6,7 @@
 
 Adjacent research, diagnostics and other relevant recommendation methods.
 
-12 papers · Updated 2026-10-30
+13 papers · Updated 2026-10-31
 
 <a id="paper-2411-13700"></a>
 
@@ -55,3 +55,7 @@ Adjacent research, diagnostics and other relevant recommendation methods.
 <a id="paper-2610-16297"></a>
 
 - **SLDBench v2: Active Scaling Law Discovery**: SLDBench v2 tests experimental planning for scaling-law discovery through historical replay: agents buy recorded experiments, revise fitted laws, and predict hidden larger-scale outcomes. Across eight agent systems on 30 screened scenarios, active acquisition produces worse extrapolation than receiving all observations upfront; favoring cheap experiments can miss informative scale variation. Costs and prediction quality are reported separately, and prices include estimates/proxies rather than uniformly measured compute. CTR engineering inference: replay existing training sweeps to evaluate acquisition policies before funding new runs, preserving held-out scales and within-domain coverage. This is an empirical methodology benchmark, not a new architecture or CTR result. — [Paper](https://arxiv.org/abs/2610.16297) (The Chinese University of Hong Kong, Shenzhen; The University of Hong Kong; University of Electronic Science and Technology of China; Tsinghua University; Peking University · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-35695"></a>
+
+- **Towards a Unified Framework of Optimal Input-Side Dimensional Configuration for Deep CTR Prediction**: OptIDC jointly learns sample, feature, and embedding-unit selection for deep CTR prediction. Selection-weighted optimal transport coordinates coarse- and fine-grained decisions while retaining the meaning of each input level. The model-agnostic framework reports higher AUC than existing input-side selection methods on four real-world benchmark datasets. It offers a way to coordinate input configuration before feature interaction; the abstract does not establish a scaling law or quantify computational savings. — [Paper](https://arxiv.org/abs/2610.35695) (Shenzhen University; McGill University; Shenzhen Technology University · arXiv 2026). Reading priority: Unrated.

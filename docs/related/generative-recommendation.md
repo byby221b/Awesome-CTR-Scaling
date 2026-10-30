@@ -6,7 +6,7 @@
 
 Generative retrieval, recommendation and ranking beyond discriminative CTR.
 
-108 papers · Updated 2026-10-30
+110 papers · Updated 2026-10-31
 
 <a id="paper-2605-12617"></a>
 
@@ -439,3 +439,11 @@ Generative retrieval, recommendation and ranking beyond discriminative CTR.
 <a id="paper-2602-05945"></a>
 
 - **AgenticTagger: Structured Item Representation for Recommendation with LLM Agents**: AgenticTagger addresses uncontrolled, high-cardinality item descriptors by building a hierarchical vocabulary and assigning its descriptors to items with LLMs. An architect model refines the vocabulary using annotator-agent feedback. Public and private evaluations report improvements across generative and term-based retrieval, ranking and critique-based recommendation. — [Paper](https://arxiv.org/abs/2602.05945) · [Proceedings](https://aclanthology.org/2026.findings-emnlp.2069/) (Google; Google DeepMind; University of California San Diego · Findings of EMNLP 2026). Reading priority: Unrated.
+
+<a id="paper-2610-39984"></a>
+
+- **R2QRec: Learning Recommendation Queries from Retrieval Feedback**: R2QRec trains a recommendation-query generator while keeping the retriever and item index fixed. Queries that retrieve observed items provide supervised targets; subsequent policy refinement uses item log-rank in fused results with a KL constraint. Experiments on three public datasets report leading overall performance among evaluated methods, suggesting a way to improve generated queries without rebuilding the retrieval system. — [Paper](https://arxiv.org/abs/2610.39984) (Kuaishou Technology; Hong Kong Baptist University · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-39470"></a>
+
+- **RoFiGR: Coarse Routing, Fine Refinement via Level-Adaptive Distillation in Multimodal Generative Recommendation**: RoFiGR targets early routing errors in multimodal semantic-ID recommendation. It aligns coarse code representations with collaborative item embeddings and uses a sequential teacher to supervise valid generation branches, combining fixed coarse-level weights with bounded adaptive adjustments. Results on Instruments, Arts, and Games improve all five reported ranking metrics over evaluated external baselines, with corrected five-seed tests supporting the main NDCG@10 gains. It offers a design for preserving collaborative preferences during coarse-to-fine generation. — [Paper](https://arxiv.org/abs/2610.39470) (Beijing University of Posts and Telecommunications; Kuaishou Technology · arXiv 2026). Reading priority: Unrated.

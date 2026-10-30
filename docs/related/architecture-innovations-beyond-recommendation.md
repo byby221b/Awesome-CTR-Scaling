@@ -6,7 +6,7 @@
 
 Transferable ideas from general-purpose model architecture research.
 
-190 papers · Updated 2026-10-30
+197 papers · Updated 2026-10-31
 
 <a id="paper-2606-16825"></a>
 
@@ -282,7 +282,7 @@ Transferable ideas from general-purpose model architecture research.
 
 <a id="paper-2610-10381"></a>
 
-- **ResidualQuant: KV Cache Quantization for Looped Transformers with 2-Bit Residuals**: ResidualQuant stores final-loop KV states as references and encodes other loops with low-precision residuals. Scaling, rotations and loop-wise mixed precision improve the quality–memory trade-off, with measured decoding speedups on looped language models. — [Paper](https://arxiv.org/abs/2610.10381) (KAIST; Yonsei University; Seoul National University · arXiv 2026). Reading priority: Read as needed.
+- **ResidualQuant: KV Cache Quantization for Looped Transformers with 2-Bit Residuals**: ResidualQuant uses final-loop key-value states as a reference and quantizes residuals for other loops, combining least-square scaling, rotation-based quantization and loop-wise mixed precision. In the revised experiments on looped language models, near-BF16 accuracy accompanies an 80.7% reduction in theoretical KV storage. On an RTX 5090, the abstract reports up to 3.66-fold fixed-batch decoding throughput, up to eightfold larger batches and up to 5.38-fold peak throughput; these are distinct measured settings, not a general recommendation-serving speedup. — [Paper](https://arxiv.org/abs/2610.10381) (KAIST; Yonsei University; Seoul National University · arXiv 2026). Reading priority: Read as needed.
 
 <a id="paper-2610-10135"></a>
 
@@ -758,7 +758,7 @@ Transferable ideas from general-purpose model architecture research.
 
 <a id="paper-2610-37019"></a>
 
-- **V-LUMEN: Visual Lookup Memory for Embedding Scaling in Vision-Language Models**: V-LUMEN expands vision-language capacity with a lookup table instead of additional dense per-token computation. A frozen codebook discretizes visual features; spatial hashing and text-conditioned relevance address memory, whose embeddings enter the backbone through gated residuals. Tests on five reasoning benchmarks and three disjoint-image transfer benchmarks support this capacity axis; matched-budget LoRA/MoE comparisons preserve accuracy on two backbones. Lookup occurs once at prefill and is constant in table size. — [Paper](https://arxiv.org/abs/2610.37019) (Korea University · arXiv 2026). Reading priority: Unrated.
+- **V-LUMEN: Visual Lookup Memory for Embedding Scaling in Vision-Language Models**: V-LUMEN expands vision-language capacity with a lookup table instead of additional dense per-token computation. A frozen codebook discretizes visual features; spatial hashing and text-conditioned relevance address memory, whose embeddings enter the backbone through gated residuals. Tests on five reasoning benchmarks and three disjoint-image transfer benchmarks support this capacity axis; matched-budget LoRA/MoE comparisons preserve accuracy on two backbones. Lookup occurs once at prefill and is constant in table size. — [Paper](https://arxiv.org/abs/2610.37019) (Korea University · NeurIPS 2026). Reading priority: Unrated.
 
 <a id="paper-2610-33719"></a>
 
@@ -766,4 +766,32 @@ Transferable ideas from general-purpose model architecture research.
 
 <a id="paper-2610-34828"></a>
 
-- **Transporting Quantiles to Codebook: Scalable Vector Quantization without Codebook Collapse**: FlowVQ tackles VQ-VAE codebook collapse by jointly learning a latent distribution with a lightweight flow-matching model and constructing codes from equal-quantile partitions transported through that flow. Voronoi centroids provide the resulting structured discretization. Image tokenization/generation and two high-precision tokenization tasks show scalable, expressive codebooks with full utilization; recommendation semantic IDs remain a potential application rather than an evaluated result. — [Paper](https://arxiv.org/abs/2610.34828) (National University of Singapore; SEA AI Lab · arXiv 2026). Reading priority: Unrated.
+- **Transporting Quantiles to Codebook: Scalable Vector Quantization without Codebook Collapse**: FlowVQ tackles VQ-VAE codebook collapse by jointly learning a latent distribution with a lightweight flow-matching model and constructing codes from equal-quantile partitions transported through that flow. Voronoi centroids provide the resulting structured discretization. Image tokenization/generation and two high-precision tokenization tasks show scalable, expressive codebooks with full utilization; recommendation semantic IDs remain a potential application rather than an evaluated result. — [Paper](https://arxiv.org/abs/2610.34828) (National University of Singapore; SEA AI Lab · NeurIPS 2026). Reading priority: Unrated.
+
+<a id="paper-2610-38578"></a>
+
+- **Dual DeltaNet: Value-Side Memory Reorganization for Linear Attention**: Dual DeltaNet extends Kimi Delta Attention with a two-sided delta rule: key-side updates correct the value associated with a key, while value-side updates reorganize addresses holding selected value features. A chunkwise parallel algorithm supports training, and a rank-2 recurrence increases inference arithmetic intensity. The abstract reports the strongest overall results among KDA, GDN-2, and Mamba-3 across language modeling, downstream tasks, and retrieval, with modest overhead relative to KDA. Its fixed-state memory management is a potential design reference for efficient sequence models, not a tested CTR result. — [Paper](https://arxiv.org/abs/2610.38578) (Zhejiang University; National University of Singapore; Huzhou Normal University · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-38422"></a>
+
+- **Deeper Backpropagation or More Updates? Training Looped Language Models Across Budgets**: This study compares how many final repetitions of a looped language model should retain gradients during training. Identical-data experiments isolate learning efficiency per token, while approximately time-matched recipes compare the trade-off between deeper backpropagation and more updates. The tested shorter window loses much of its advantage as training budgets grow, so the preferred choice can change with budget. This offers a budget-aware training lesson for weight-sharing depth architectures; it does not establish a universal optimal window or a CTR result. — [Paper](https://arxiv.org/abs/2610.38422) (The Chinese University of Hong Kong, Shenzhen · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-38822"></a>
+
+- **CopyLoop: Fast Looped Transformer Decoding via Context Copying and Shallow Screening**: CopyLoop accelerates looped Transformer decoding without training by proposing multiple tokens copied from recurring context, filtering them at shallow recurrent depth, and overlapping newer blocks with earlier full-depth verification. Across six checkpoints from Ouro, Raven, and Huginn on code generation and mathematical reasoning, the abstract reports speedups of 2.98–10.70 times for Base models and 2.74–3.52 times for Thinking models over full-depth autoregressive decoding. It suggests a decoding design for recurrent-depth architectures, particularly when longer outputs contain reusable context; recommendation transfer remains untested. — [Paper](https://arxiv.org/abs/2610.38822) (DualverseAI · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-40577"></a>
+
+- **Multi-View MoE: Letting Every Router Shape Expert Computation**: Multi-View MoE combines several routers to select experts and uses their relative preferences to mix latent views into each selected expert's input. Each selected expert runs once, preserving the active-expert count, expert FLOPs and all-to-all communication volume. On a 24-layer model with 10B total and 1B active parameters trained on 708B tokens, it improves the mean across nine downstream tasks by 1.18 percentage points. The design is relevant to sparse ranking architectures that seek more expressive routing under a fixed expert-computation budget; it does not establish CTR gains. — [Paper](https://arxiv.org/abs/2610.40577) (Baidu · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-37914"></a>
+
+- **Muon Makes the First Mixture-of-Experts Layer Harder to Balance**: In MoE language models with 55M and 108M active parameters, this study finds that Muon can increase load imbalance in the first expert layer even when its router uses a different optimizer. Shared directions in router inputs coincide with expert overload; subtracting the batch mean removes the observed early overload with little loss change, while reducing Muon's learning rate helps on the smaller model. The findings inform optimizer and routing diagnostics for sparse scaling, but their demonstrated scope is limited to these model sizes and training settings. — [Paper](https://arxiv.org/abs/2610.37914) (Universidad Autónoma de Madrid · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-39216"></a>
+
+- **PDScope: Breaking the Prefill-Decode Seesaw for Memory-Bound MoE Inference**: PDScope accelerates CPU-GPU MoE inference when GPU memory cannot hold most experts. It predicts expert activations and adapts placement, prefetching and execution separately for compute-bound prefill and I/O-bound decoding, using cross-layer cost models and static execution pipelines. On tested MoE models, it reports 2.5–10.3× higher prefill throughput and 2.1–6.1× higher decoding throughput than existing systems. Phase-specific scheduling is a transferable serving idea for memory-constrained sparse models, though the reported experiments concern LLM inference rather than CTR ranking. — [Paper](https://arxiv.org/abs/2610.39216) (National University of Defense Technology; Qiyuan Laboratory · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-37720"></a>
+
+- **LRMoE: Demand-Side Load Re-Calibration for Efficient MoE Training on Memory-Constrained Nodes**: LRMoE reduces memory-constrained MoE training cost by jointly setting expert-placement and backward-retention quotas. It preserves all routed forward computations, then selects token-expert pairs for backpropagation according to estimated update contribution and routes retained pairs to instances of their original experts. Compact communication buffers and variable-size grouped matrix multiplications reduce backward work. On Qwen3-30B-A3B and GLM4.5-106B-A12B, cumulative MoE-layer time to fixed-loss targets falls by 21.2–44.8% versus SYMI, providing a systems reference for sparse scaling rather than a demonstrated recommendation gain. — [Paper](https://arxiv.org/abs/2610.37720) (JD.com · arXiv 2026). Reading priority: Unrated.

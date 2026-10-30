@@ -6,7 +6,7 @@
 
 Scaling retrieval and reranking stages of recommendation pipelines.
 
-39 papers · Updated 2026-10-30
+43 papers · Updated 2026-10-31
 
 <a id="paper-2603-04816"></a>
 
@@ -163,3 +163,19 @@ Scaling retrieval and reranking stages of recommendation pipelines.
 <a id="paper-2610-37364"></a>
 
 - **EmbeddingGemma 2: Unified and Efficient Multimodal Representations**: EmbeddingGemma 2 places text, images, audio, video and mixed inputs in one embedding space. Simplified per-layer embeddings and a staged modality/objective curriculum support quality across modalities. The reported benchmarks outperform specialist and 2–12x larger models; selective encoder loading, adjustable visual-token budgets, truncatable dimensions and quantized weights provide deployment tradeoffs. — [Paper](https://arxiv.org/abs/2610.37364) (Google · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-40122"></a>
+
+- **xPRT: Cross-Passage Retrieval Pretraining**: xPRT learns unsupervised dense-retrieval representations from information distributed across a document and the links between its passages. Controlled continual-pretraining comparisons with five objectives on MTEB English v2 report improvements over the strongest baseline. Its cross-passage supervision offers a possible way to use unlabeled text for retrieval pretraining; CTR gains are not established. — [Paper](https://arxiv.org/abs/2610.40122) (Microsoft Research · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-39610"></a>
+
+- **GistRank: Gist-Compressed Listwise Ranking with Large Language Models**: GistRank compresses each passage into four learned gist tokens for LLM listwise ranking. Semi-bidirectional compression training is followed by pairwise comparison and listwise adaptation. On TREC DL19/20 and five BEIR subsets, the abstract reports a 14-fold speedup over one-shot full-text ranking and average nDCG@10 of 59.17, within 0.89 of the strongest full-context baseline. The design is relevant to reducing reranking input cost, rather than a demonstrated CTR improvement. — [Paper](https://arxiv.org/abs/2610.39610) (Southwest University; Tencent; Renmin University of China; Institute of Computing Technology, Chinese Academy of Sciences · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-37707"></a>
+
+- **Relevance-Guided Residual Calibration for Spectral Compression of Dense Retrieval Embeddings**: RRC uses relevance judgments to calibrate individual spectral-compression directions while preserving the compressor’s overall spectral trend. Its closed-form residual correction is folded into the existing query–document transformation, requiring neither iterative training nor an extra inference stage. Across three encoders and nine retrieval datasets, SpecTemp + RRC achieves the best mean effectiveness among tested compressors at every evaluated target dimension; on five BRIGHT datasets, the average gain is 2.34 nDCG@10 points at 768 dimensions. Gains also persist with scalar and product quantization, informing storage-efficient retrieval embeddings. — [Paper](https://arxiv.org/abs/2610.37707) (University of Amsterdam · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-40454"></a>
+
+- **Glance: The Generator Is Its Own Reranker**: Glance equips a generation backbone with a lightweight decision adapter and pointer head to rerank passages from one shared prefill, avoiding separate encoding of every query-passage pair. A single resident 9B model supports generation and reranking, with about 0.1 GiB of additional memory per decision skill. Initial evaluations on two retrieval datasets and one QA dataset report gains over the evaluated cross-encoder baselines; a scaling study scores up to 200 candidates from the shared context. This provides a computation-reuse design for reranking, with evidence limited to one backbone family. — [Paper](https://arxiv.org/abs/2610.40454) (Airun Intelligence Labs · arXiv 2026). Reading priority: Unrated.
