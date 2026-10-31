@@ -6,12 +6,12 @@
 
 Company membership follows recorded affiliation aliases and preserved company-overview mentions. A paper may appear under multiple companies. This structural migration does not independently reverify affiliations or publication claims.
 
-- [Meta](#company-meta) (54)
-- [ByteDance / TikTok](#company-bytedance-tiktok) (23)
+- [Meta](#company-meta) (55)
+- [ByteDance / TikTok](#company-bytedance-tiktok) (24)
 - [Alibaba](#company-alibaba) (51)
 - [Meituan](#company-meituan) (11)
 - [Tencent](#company-tencent) (26)
-- [Google](#company-google) (21)
+- [Google](#company-google) (22)
 - [LinkedIn](#company-linkedin) (7)
 - [NetEase](#company-netease) (2)
 - [Kuaishou](#company-kuaishou) (31)
@@ -54,8 +54,8 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [Gandara AI](#company-gandara-ai) (1)
 - [OPPO](#company-oppo) (1)
 - [Albatross AI](#company-albatross-ai) (1)
-- [Criteo](#company-criteo) (1)
-- [Q Labs](#company-q-labs) (1)
+- [Criteo](#company-criteo) (3)
+- [Q Labs](#company-q-labs) (2)
 - [Spotify](#company-spotify) (1)
 - [Zyphra](#company-zyphra) (1)
 - [Airbnb](#company-airbnb) (2)
@@ -84,6 +84,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [Airun Intelligence Labs](#company-airun-intelligence-labs) (1)
 - [DoorDash](#company-doordash) (1)
 - [DualverseAI](#company-dualverseai) (1)
+- [InfRec](#company-infrec) (1)
 
 <a id="company-meta"></a>
 
@@ -143,6 +144,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [Predictable Scaling: Efficient Model Exploration via Scaling-Law Prediction](topics/scaling-law-theory.md#paper-2610-23453) · 2026 · Core
 - [Read More, Reason Deeper: Latent Workspaces for Long-Sequence Recommendation](topics/scalable-architecture.md#paper-2610-39188) · 2026 · Core
 - [PRISM: Personalized Item Representations in User History](related/sample-instance-compression-for-sequence-modeling.md#paper-2610-39175) · 2026 · Related
+- [How to Loop Your Transformer: Loop Scaling, Specialization, and Parallel Inference](related/architecture-innovations-beyond-recommendation.md#paper-2610-40325) · 2026 · Related
 
 <a id="company-bytedance-tiktok"></a>
 
@@ -171,6 +173,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [Deploying RDMA for Distributed Inference and Training At Scale](related/engineering-serving.md#paper-2610-12815) · 2026 · Related
 - [LEMUR: Large scale End-to-end MUltimodal Recommendation](topics/scalable-architecture.md#paper-2511-10962) · 2026 · Core
 - [RemoteANN: A Native Vector Search Engine for Cloud Object Storage](related/retrieval-reranking-scaling.md#paper-2610-25172) · 2026 · Related
+- [Does LLM Pre-Training Typically Occur at the Edge of Stability?](related/architecture-innovations-beyond-recommendation.md#paper-2610-36778) · 2026 · Related
 
 <a id="company-alibaba"></a>
 
@@ -300,6 +303,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [Multi-State Linear Attention with Generalized Second-Order Routing](related/architecture-innovations-beyond-recommendation.md#paper-2610-37645) · 2026 · Related
 - [AgenticTagger: Structured Item Representation for Recommendation with LLM Agents](related/generative-recommendation.md#paper-2602-05945) · 2026 · Related
 - [EmbeddingGemma 2: Unified and Efficient Multimodal Representations](related/retrieval-reranking-scaling.md#paper-2610-37364) · 2026 · Related
+- [Ambiguous Fits: The Rashomon Effect and Challenges in Scaling Law Estimation](related/architecture-innovations-beyond-recommendation.md#paper-2610-34514) · 2026 · Related
 
 <a id="company-linkedin"></a>
 
@@ -503,7 +507,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [Rethinking Semantic ID Construction for Generative Recommendation: SimHash with Parallel Decoding and Semantic Alignment](related/generative-recommendation.md#paper-2610-07402) · 2026 · Related
 - [STAPLE: Static Sparse Upcycling of Pretrained Checkpoints via Embedding Modules](related/architecture-innovations-beyond-recommendation.md#paper-2610-12599) · 2026 · Related
 - [Mixed Precision Scaling Laws for Quantized Pretraining](related/architecture-innovations-beyond-recommendation.md#paper-2610-17637) · 2026 · Related
-- [QASP: Query-Adaptive Robust Vector Search Policy](related/retrieval-reranking-scaling.md#paper-2607-29606) · 2026 · Related
+- [QASP: Query-Adaptive Robust Vector Search Policy](related/retrieval-reranking-scaling.md#paper-2607-29606) · 2027 · Related
 
 <a id="company-capital-one"></a>
 
@@ -670,12 +674,15 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 ## Criteo
 
 - [SPRIG: Semantic-ID-enhanced Paths for Knowledge Graph-based Generative Recommendation](related/generative-recommendation.md#paper-2610-06590) · 2026 · Related
+- [When Diffusion Recommenders Stop Sampling: Preserving Generative Diversity](related/generative-recommendation.md#paper-2610-36954) · 2026 · Related
+- [Compote: Collapse-Resistant Multiple Hypothesis Learning For Sequential Recommendation](related/other.md#paper-2610-37005) · 2026 · Related
 
 <a id="company-q-labs"></a>
 
 ## Q Labs
 
 - [How Model Growth, Recursion, and Boundary Operators Influence Scaling Exponents](related/architecture-innovations-beyond-recommendation.md#paper-2609-19107) · 2026 · Related
+- [Improving Data-Constrained Scaling with Hyperparameter Transfer and Ensembling](related/architecture-innovations-beyond-recommendation.md#paper-2610-37842) · 2026 · Related
 
 <a id="company-spotify"></a>
 
@@ -851,3 +858,9 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 ## DualverseAI
 
 - [CopyLoop: Fast Looped Transformer Decoding via Context Copying and Shallow Screening](related/architecture-innovations-beyond-recommendation.md#paper-2610-38822) · 2026 · Related
+
+<a id="company-infrec"></a>
+
+## InfRec
+
+- [AB-Attention: Accurate Block Attention for Accelerating Video Diffusion Transformers](related/architecture-innovations-beyond-recommendation.md#paper-2610-39663) · 2026 · Related

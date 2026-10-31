@@ -5,7 +5,7 @@
     "description": "Scaling laws and scalable ranking models for industrial recommendation.",
     "repository_url": "https://github.com/byby221b/Awesome-CTR-Scaling",
     "site_url": "https://byby221b.github.io/Awesome-CTR-Scaling/",
-    "updated": "2026-10-31",
+    "updated": "2026-11-01",
     "source_commit": "31ad30becff83ca14a01f37fc99d52ba79f85565",
     "scope": "We cover papers that (1) study scaling laws for recommendation models, (2) propose scalable Transformer-based architectures for CTR/ranking, (3) address efficiency challenges in scaling up industrial ranking systems, or (4) explore novel paradigms (e.g., sparse scaling, generative pre-training, foundation models) for scalable recommendation.",
     "history": {
@@ -1477,6 +1477,14 @@
       "name": "DualverseAI",
       "affiliation_aliases": [
         "DualverseAI"
+      ],
+      "legacy_entries": []
+    },
+    {
+      "id": "infrec",
+      "name": "InfRec",
+      "affiliation_aliases": [
+        "InfRec"
       ],
       "legacy_entries": []
     }
@@ -27212,7 +27220,7 @@
       "collection": "related",
       "category": "architecture-innovations-beyond-recommendation",
       "affiliation": "Kyoto University; The University of Tokyo; RIKEN AIP",
-      "venue": "arXiv",
+      "venue": "EMNLP (Findings)",
       "year": 2026,
       "tags": [],
       "links": [
@@ -27263,7 +27271,16 @@
         "kind": "catalog_entry",
         "source_url": "https://arxiv.org/abs/2610.09342"
       },
-      "change_history": [],
+      "change_history": [
+        {
+          "at": "2026-10-31T23:27:13Z",
+          "kind": "venue_update",
+          "fields": [
+            "venue"
+          ],
+          "source_url": "https://aclanthology.org/2026.findings-emnlp.1853/"
+        }
+      ],
       "reading_tier": "as_needed"
     },
     {
@@ -32565,8 +32582,8 @@
       "collection": "related",
       "category": "retrieval-reranking-scaling",
       "affiliation": "Amazon; Tel Aviv University",
-      "venue": "arXiv",
-      "year": 2026,
+      "venue": "ICDE",
+      "year": 2027,
       "tags": [],
       "links": [
         {
@@ -32618,7 +32635,24 @@
         "kind": "catalog_entry",
         "source_url": "https://arxiv.org/abs/2607.29606"
       },
-      "change_history": [],
+      "change_history": [
+        {
+          "at": "2026-10-31T23:27:13Z",
+          "kind": "venue_update",
+          "fields": [
+            "venue"
+          ],
+          "source_url": "https://icde2027.github.io/accepted-papers.html"
+        },
+        {
+          "at": "2026-10-31T23:27:13Z",
+          "kind": "metadata_enrichment",
+          "fields": [
+            "year"
+          ],
+          "source_url": "https://icde2027.github.io/accepted-papers.html"
+        }
+      ],
       "reading_tier": null
     },
     {
@@ -33078,7 +33112,7 @@
       "collection": "related",
       "category": "retrieval-reranking-scaling",
       "affiliation": "Carnegie Mellon University; University of Pittsburgh",
-      "venue": "arXiv",
+      "venue": "EMNLP (Findings)",
       "year": 2026,
       "tags": [],
       "links": [
@@ -33131,7 +33165,16 @@
         "kind": "catalog_entry",
         "source_url": "https://arxiv.org/abs/2610.21030"
       },
-      "change_history": [],
+      "change_history": [
+        {
+          "at": "2026-10-31T23:27:13Z",
+          "kind": "venue_update",
+          "fields": [
+            "venue"
+          ],
+          "source_url": "https://aclanthology.org/2026.findings-emnlp.1617/"
+        }
+      ],
       "reading_tier": null
     },
     {
@@ -35382,8 +35425,8 @@
       "collection": "related",
       "category": "architecture-innovations-beyond-recommendation",
       "affiliation": "Peking University",
-      "venue": "arXiv",
-      "year": 2026,
+      "venue": "SIGMOD",
+      "year": 2027,
       "tags": [],
       "links": [
         {
@@ -35433,7 +35476,24 @@
         "kind": "catalog_entry",
         "source_url": "https://arxiv.org/abs/2610.14688"
       },
-      "change_history": [],
+      "change_history": [
+        {
+          "at": "2026-10-31T23:27:13Z",
+          "kind": "venue_update",
+          "fields": [
+            "venue"
+          ],
+          "source_url": "https://2027.sigmodconf.hosting.acm.org/sigmod_papers.shtml"
+        },
+        {
+          "at": "2026-10-31T23:27:13Z",
+          "kind": "metadata_enrichment",
+          "fields": [
+            "year"
+          ],
+          "source_url": "https://2027.sigmodconf.hosting.acm.org/sigmod_papers.shtml"
+        }
+      ],
       "reading_tier": null
     },
     {
@@ -35822,47 +35882,59 @@
       ],
       "original_abstract": {
         "status": "verified",
-        "text": "Tabular foundation models enable in-context learning by predicting unseen observations from a labeled support table without task-specific parameter updates. Despite recent advances, most existing approaches rely on dense architectures that apply the same transformations across features and datasets. We introduce OrionMoE-Small, a compact tabular foundation model that combines distribution-aware representations with dataset-conditioned sparse mixture-of-experts computation. Built on a dual-axis Transformer architecture, OrionMoE-Small selectively activates experts along the feature axis, with routing decisions informed by both individual feature representations and the broader dataset context. This design enables adaptive allocation of computation across heterogeneous tabular problems while retaining a shared computational pathway across tasks. OrionMoE-Small is pretrained entirely on synthetic classification tasks generated from a structured causal prior and performs downstream prediction without gradient-based adaptation. Experiments across multiple tabular benchmarks demonstrate competitive performance against substantially larger foundation models, with particularly strong results on small-context and high-dimensional datasets. Further analysis reveals favorable relative performance under class imbalance and highlights the importance of feature composition.",
+        "text": "Tabular foundation models enable in-context learning by predicting unseen observations from a labeled support table without task-specific parameter updates. Despite recent advances, most existing approaches rely on dense architectures that apply the same transformations across features and datasets. We introduce OrionMoE-Small-v1.0, a compact tabular foundation model that combines distribution-aware representations with dataset-conditioned sparse mixture-of-experts computation. Built on a dual-axis transformer architecture, OrionMoE-Small selectively activates experts with routing decisions informed by both individual cell representations and the broader dataset context. This design enables adaptive allocation of computation across heterogeneous tabular problems while retaining a shared computational pathway across tasks. The model is pretrained entirely on synthetic classification tasks generated from a structured causal prior and performs downstream prediction without gradient-based adaptation. Experiments across multiple tabular benchmarks demonstrate competitive performance against substantially larger foundation models, with particularly strong results on small-context and high-dimensional datasets. Further analysis reveals favorable relative performance under class imbalance and highlights the importance of feature composition.",
         "language": "en",
-        "source_url": "https://arxiv.org/abs/2610.20418v1",
-        "retrieved_at": "2026-10-19T23:09:49Z",
+        "source_url": "https://arxiv.org/abs/2610.20418",
+        "retrieved_at": "2026-10-31T23:05:12Z",
         "license": "CC0-1.0",
         "source_title": "OrionMoE-v1.0: A Mixture-of-Experts Foundation Model for Tabular In-Context Learning",
-        "source_version": "v1"
+        "source_version": "v2"
       },
       "summaries": {
         "en": {
-          "text": "OrionMoE-Small applies dataset-conditioned sparse expert routing along the feature axis of a dual-axis tabular Transformer. It is pretrained on synthetic classification tasks and predicts from labeled support tables without task-specific gradient updates. The authors report competitive results against larger tabular foundation models, especially for small contexts and high-dimensional data. Its heterogeneous-feature computation may inform recommendation models, but direct recommendation results are absent.",
+          "text": "OrionMoE-Small-v1.0 combines distribution-aware representations with dataset-conditioned sparse expert computation in a dual-axis tabular Transformer. The revised abstract describes routing as conditioned on individual cell representations and the wider dataset context, removing the earlier feature-axis-only wording. Synthetic-task pretraining enables prediction from labeled support tables without task-specific gradient updates, with competitive reported results against larger tabular foundation models. The revision corrects the mechanism description; it does not establish new recommendation results or new performance gains.",
           "basis": "original_abstract",
           "method": "ai_assisted",
-          "updated_at": "2026-10-20",
+          "updated_at": "2026-11-01",
           "source_urls": [
-            "https://arxiv.org/abs/2610.20418v1"
+            "https://arxiv.org/abs/2610.20418"
           ]
         },
         "zh": {
-          "text": "不同表格的特征分布差异很大，统一使用同一套变换可能浪费计算。OrionMoE-Small根据特征与数据集上下文，在双轴Transformer的特征轴上稀疏选择专家。它用合成分类任务预训练，无需任务级梯度更新即可预测，在小上下文和高维表格上表现较强。对推荐异构特征建模的启发仍需直接实验验证。",
+          "text": "OrionMoE-Small-v1.0 在双轴表格 Transformer 中结合分布感知表示与数据集相关的稀疏专家计算。新版摘要把路由依据明确为单元格表示和整体数据集上下文，删除了原先沿特征轴选择专家的表述。模型通过合成任务预训练，无需任务级梯度更新即可根据带标签的支持表预测，作者报告与更大表格基座模型具有竞争力的结果。本次是机制说明更正，不代表新增推荐实验或新的性能收益。",
           "basis": "original_abstract",
           "method": "ai_assisted",
-          "updated_at": "2026-10-20",
+          "updated_at": "2026-11-01",
           "source_urls": [
-            "https://arxiv.org/abs/2610.20418v1"
+            "https://arxiv.org/abs/2610.20418"
           ]
         }
       },
       "source_dates": {
         "published_at": "2026-10-14T16:13:12Z",
-        "updated_at": "2026-10-14T16:13:12Z",
-        "source_version": "v1",
-        "source_url": "https://arxiv.org/abs/2610.20418v1",
-        "verified_at": "2026-10-19T23:09:49Z"
+        "updated_at": "2026-10-18T11:30:25Z",
+        "source_version": "v2",
+        "source_url": "https://arxiv.org/abs/2610.20418v2",
+        "verified_at": "2026-10-31T23:05:12Z"
       },
       "added_at": "2026-10-19T23:15:11Z",
       "added_provenance": {
         "kind": "catalog_entry",
         "source_url": "https://arxiv.org/abs/2610.20418"
       },
-      "change_history": [],
+      "change_history": [
+        {
+          "at": "2026-10-31T23:27:13Z",
+          "kind": "paper_revision",
+          "fields": [
+            "original_abstract",
+            "source_dates",
+            "summaries"
+          ],
+          "source_url": "https://arxiv.org/abs/2610.20418v2",
+          "source_version": "v2"
+        }
+      ],
       "reading_tier": null
     },
     {
@@ -38080,7 +38152,7 @@
       "collection": "related",
       "category": "architecture-innovations-beyond-recommendation",
       "affiliation": "Sungkyunkwan University; Korea University",
-      "venue": "arXiv",
+      "venue": "EMNLP (Findings)",
       "year": 2026,
       "tags": [],
       "links": [
@@ -38134,7 +38206,16 @@
         "kind": "catalog_entry",
         "source_url": "https://arxiv.org/abs/2610.24998"
       },
-      "change_history": [],
+      "change_history": [
+        {
+          "at": "2026-10-31T23:27:13Z",
+          "kind": "venue_update",
+          "fields": [
+            "venue"
+          ],
+          "source_url": "https://aclanthology.org/2026.findings-emnlp.1868/"
+        }
+      ],
       "reading_tier": null
     },
     {
@@ -40402,12 +40483,12 @@
       "aliases": [],
       "original_abstract": {
         "status": "verified",
-        "text": "Under a fixed embedding-storage budget, recommenders can use a small full-precision model, a distilled student, or a higher-rank low-precision model. We asked which choice preserves rare-item recall and whether teacher fidelity reflects it in seven dataset-backbone cells: matrix factorization on Gowalla, this http URL, Amazon Video Games, Steam, Goodbooks-10k and MovieLens-20M, and LightGCN on Amazon Video Games. Seven candidates fit in 168 bytes per user or item row: 40-dimensional Bayesian personalized ranking (BPR), two 40-dimensional unbiased knowledge distillation (UnKD) students, and factorizations of a 300-dimensional teacher's scores at ranks 40, 80, 155 and 300, stored in 32, 16, 8 and 4 bits. Each test set was evaluated once after fixing candidates and confirmatory analyses. The rank-300 4-bit factorization used 13% of teacher storage and retained 95-103% of its tail recall@20 and 93-97% of its NDCG@20 in every cell. The rank-40 factorization had the lowest tail recall in every cell; the 4-bit factorization had 1.2-12.7 times its tail recall and 0.99-1.46 times its NDCG. UnKD students retained 56-102% of teacher tail recall. In all ten prespecified comparisons across five prospective-expansion cells, the 4-bit factorization had higher tail recall, with simultaneous 95% intervals excluding zero. Teacher-hit retention, the share of the teacher's relevant tail hits also found by a model, ordered 23 of 147 candidate pairs differently from tail recall and identified the wrong tail-recall leader in 3 of 7 cells: models can find relevant tail items the teacher misses. In these cells, spending bytes on rank rather than precision preserved rare-item recall at 7.5 times the arithmetic per score. Compressed recommenders should be judged by total tail recall, not teacher fidelity alone.",
+        "text": "Under a fixed embedding-storage budget, recommenders can use a small full-precision model, a distilled student, or a higher-rank low-precision model. We asked which choice preserves rare-item recall and whether teacher fidelity reflects it in seven dataset-backbone cells: matrix factorization on Gowalla, Last.fm, Amazon Video Games, Steam, Goodbooks-10k and MovieLens-20M, and LightGCN on Amazon Video Games. Seven candidates fit in 168 bytes per user or item row: 40-dimensional Bayesian personalized ranking (BPR), two 40-dimensional unbiased knowledge distillation (UnKD) students, and factorizations of a 300-dimensional teacher's scores at ranks 40, 80, 155 and 300, stored in 32, 16, 8 and 4 bits. Each test set was evaluated once after fixing candidates and confirmatory analyses. The rank-300 4-bit factorization used 13% of teacher storage and retained 95-103% of its tail recall@20 and 93-97% of its NDCG@20 in every cell. The rank-40 factorization had the lowest tail recall in every cell; the 4-bit factorization had 1.2-12.7 times its tail recall and 0.99-1.46 times its NDCG. UnKD students retained 56-102% of teacher tail recall. In all ten prespecified comparisons across five prospective-expansion cells, the 4-bit factorization had higher tail recall, with simultaneous 95% intervals excluding zero. Teacher-hit retention, the share of the teacher's relevant tail hits also found by a model, ordered 23 of 147 candidate pairs differently from tail recall and identified the wrong tail-recall leader in 3 of 7 cells: models can find relevant tail items the teacher misses. In these cells, spending bytes on rank rather than precision preserved rare-item recall at 7.5 times the arithmetic per score. Compressed recommenders should be judged by total tail recall, not teacher fidelity alone.",
         "language": "en",
-        "source_url": "https://arxiv.org/abs/2610.36267v1",
+        "source_url": "https://arxiv.org/abs/2610.36267",
         "source_version": "v1",
         "source_title": "Preserving rare-item recall under a storage budget: quantization, distillation, and the limits of teacher fidelity",
-        "retrieved_at": "2026-10-28T23:04:27Z",
+        "retrieved_at": "2026-10-31T23:05:02Z",
         "license": null
       },
       "source_dates": {
@@ -40442,7 +40523,16 @@
         "kind": "catalog_entry",
         "source_url": "https://arxiv.org/abs/2610.36267"
       },
-      "change_history": [],
+      "change_history": [
+        {
+          "at": "2026-10-31T23:27:13Z",
+          "kind": "metadata_enrichment",
+          "fields": [
+            "original_abstract"
+          ],
+          "source_url": "https://arxiv.org/abs/2610.36267"
+        }
+      ],
       "reading_tier": null
     },
     {
@@ -42313,6 +42403,850 @@
       "added_provenance": {
         "kind": "catalog_entry",
         "source_url": "https://arxiv.org/abs/2610.37720"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2610.39663",
+      "title": "AB-Attention: Accurate Block Attention for Accelerating Video Diffusion Transformers",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "InfRec; The Chinese University of Hong Kong, Shenzhen; Shandong University; The University of Tokyo; Fudan University; University of California, Berkeley; The Hong Kong University of Science and Technology; National University of Singapore",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.39663"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Video diffusion transformers generate high-quality videos, but the quadratic cost of 3D full attention dominates their inference. Dynamic block-sparse attention reduces this cost by computing exact attention only on key/value blocks selected from current activations. However, its fidelity degrades under aggressive sparsity: blocks are scored from coarse summaries or formed by costly global clustering, pruned blocks vanish from the softmax, and whole tiles are kept or dropped even when only a few of their keys matter. To address these limitations, we propose Accurate Block Attention (AB-Attention), a training-free method that accurately approximates dense attention at high sparsity. Its Intra-Block Clustering Selector (IBCS) estimates block importance faithfully yet cheaply by clustering queries only within each query block, without permuting tokens. Sampling with Inclusion-Probability Weighting (SIP) then samples blocks in proportion to these estimates and reweights them by inverse inclusion probability, so that one pass estimates dense attention rather than truncating it. Finally, its kernel gathers key/value blocks much smaller than a tile into full tensor-core tiles, refining selection at no extra tensor-core cost. On Wan2.1 and HunyuanVideo, AB-Attention skips 89--92\\% of attention, whereas the baselines compute 1.8--3.6$\\times$ as much, yet it still improves PSNR by up to 4.4~dB over the strongest baseline and achieves up to 2.23$\\times$ end-to-end speedup. Our code is available at https://github.com/InfRec-Cardinal/AB-Attention.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.39663",
+        "retrieved_at": "2026-10-31T23:05:59Z",
+        "license": null,
+        "source_title": "AB-Attention: Accurate Block Attention for Accelerating Video Diffusion Transformers",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-10-29T09:15:39Z",
+        "updated_at": "2026-10-29T09:15:39Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.39663v1",
+        "verified_at": "2026-10-31T23:05:59Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "AB-Attention approximates dense attention with dynamic block sparsity without retraining. It estimates block importance by clustering queries within each block, samples and reweights selected blocks by inclusion probability, and packs smaller key-value blocks into full tensor-core tiles. On Wan2.1 and HunyuanVideo, the abstract reports skipping 89–92% of attention and up to 2.23-fold end-to-end speedup. Its selection and kernel design may inform sparse long-sequence attention, but recommendation gains are not established.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-01",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.39663"
+          ]
+        },
+        "zh": {
+          "text": "AB-Attention 无需重新训练，用动态块稀疏计算近似稠密注意力：先在查询块内部聚类以估计重要性，再按概率采样键值块并按纳入概率重新加权，内核将更小的键值块拼成完整的张量核心计算块。在 Wan2.1 和 HunyuanVideo 上，摘要报告跳过 89–92% 的注意力计算，端到端最高加速 2.23 倍。块选择与内核协同设计可供长序列稀疏注意力借鉴，尚未验证推荐收益。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-01",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.39663"
+          ]
+        }
+      },
+      "added_at": "2026-10-31T23:27:13Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.39663"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2610.40305",
+      "title": "Rimuru: Unified Memory Management for Modern LLM Serving via Elastic Expert Offloading",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "Sun Yat-sen University; Independent Researcher; EPFL; Peng Cheng Laboratory",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.40305"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Modern LLMs strain device memory through large model weights and attention states, particularly in resource-constrained scenarios. Existing systems separately provision memory for model weights and attention states, imposing fixed fixed boundaries that cannot adapt to the changing memory demands of workloads. Under heavy workloads, insufficient state capacity limits request concurrency and reduces throughput; under light workloads, idle memory in one region cannot be reallocated to another, wasting device memory. Meanwhile, modern LLM architectures introduce heterogeneous tensors with diverse layouts and lifetimes, further complicating memory management. These problems motivate unified memory management for heterogeneous tensors. However, a shared pool alone does not make memory directly reusable across tensors with different allocation granularities and execution layouts. This paper presents Rimuru, a modern LLM serving system that unifies memory management through elastic expert offloading. Rimuru establishes a shared page pool to enables elastic memory sharing across heterogeneous tensors. To accommodate different allocation granularities, Rimuru introduces memory views that allow each tensor type to interpret the shared memory space using its own page size and page table. Furthermore, Rimuru combines huge-page alignment with a multi-level page allocator that splits and merges pages, enabling cross-type capacity reuse. A page-table-aware fused MoE kernel directly accesses non-contiguous expert weights, avoiding copy overhead. Building on these mechanisms, Rimuru employs a workload-aware adjuster that dynamically reallocates pages across tensor types according to runtime demands. Implemented on top of vLLM, Rimuru remains compatible with modern LLMs. Evaluations show that Rimuru achieves up to 19.03x baseline throughput and reduces TTFT by 98.1% on average.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.40305",
+        "retrieved_at": "2026-10-31T23:05:32Z",
+        "license": null,
+        "source_title": "Rimuru: Unified Memory Management for Modern LLM Serving via Elastic Expert Offloading",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-10-29T15:47:19Z",
+        "updated_at": "2026-10-29T15:47:19Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.40305v1",
+        "verified_at": "2026-10-31T23:05:32Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "Rimuru pools memory for expert weights and attention states instead of reserving fixed regions for each. Tensor-specific memory views, a split-and-merge page allocator, and a page-table-aware MoE kernel allow capacity to move between heterogeneous tensors without copying expert weights into contiguous buffers. A workload-aware controller adjusts allocation at runtime. Implemented on vLLM, the system reports improved throughput and time to first token in its tested settings; the transferable idea is jointly managing sparse-model weights and request state, not an established recommendation-serving gain.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-01",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.40305"
+          ]
+        },
+        "zh": {
+          "text": "Rimuru 让专家权重与注意力状态共享内存池，避免为两者预留固定空间。不同张量通过各自的内存视图访问共享页，分裂与合并分配器调整容量，支持页表的 MoE 内核直接读取非连续专家权重，减少额外复制。控制器再按运行负载动态分配空间。基于 vLLM 的实验报告了吞吐与首 token 延迟改善；可借鉴的是联合管理稀疏模型权重和请求状态，尚未验证推荐服务收益。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-01",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.40305"
+          ]
+        }
+      },
+      "added_at": "2026-10-31T23:27:13Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.40305"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2610.36954",
+      "title": "When Diffusion Recommenders Stop Sampling: Preserving Generative Diversity",
+      "collection": "related",
+      "category": "generative-recommendation",
+      "affiliation": "Criteo AI Lab; Sorbonne Université; CNRS; ISIR",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.36954"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "A user history can admit multiple plausible next interactions, yet conventional sequential recommenders produce a single deterministic ranking. While diffusion models offer a natural way to sample alternative continuations, we show that existing target-item diffusion recommenders often suffer from severe sampling collapse, producing nearly identical outputs across independent draws. We identify two ubiquitous design choices that promote this collapse: joint learning of the latent space and denoiser, and in-trajectory supervision via discrete losses. To address these failure modes, we introduce DARTS (Diverse and Accurate Recommendation Through Sampling), a three-stage latent diffusion framework that explicitly decouples representation learning, generative modeling, and discrete ranking by learning and freezing the latent space before diffusion training and postponing ranking supervision to the final decoding stage. We further characterize sampling diversity using complementary measures of variation before and after decoding, and use posterior-predictive aggregation to exploit this diversity at inference. Across three Amazon Reviews 2023 categories, DARTS preserves substantially greater sampling diversity while outperforming strong sequential, generative-retrieval, and diffusion baselines by 7-12% on standard ranking metrics. Aggregating multiple samples further improves ranking accuracy at a fixed slate size.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.36954",
+        "retrieved_at": "2026-10-31T23:03:57Z",
+        "license": null,
+        "source_title": "When Diffusion Recommenders Stop Sampling: Preserving Generative Diversity",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-10-27T10:13:34Z",
+        "updated_at": "2026-10-27T10:13:34Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.36954v1",
+        "verified_at": "2026-10-31T23:03:57Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "DARTS separates representation learning, diffusion modeling, and discrete ranking to preserve alternative next-item samples. It freezes the latent space before diffusion training and postpones ranking supervision until decoding, addressing collapse associated with jointly learning representations and the denoiser or applying discrete losses inside denoising trajectories. On three Amazon Reviews 2023 categories, it reports greater sampling diversity and stronger ranking metrics than evaluated baselines. Aggregating several samples further improves ranking at a fixed slate size, suggesting a recommendation-specific way to use additional inference compute.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-01",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.36954"
+          ]
+        },
+        "zh": {
+          "text": "DARTS 将表示学习、扩散建模和离散排序分开：先冻结潜在空间，再训练扩散模型，把排序监督延后到最终解码，缓解多次采样仍生成近乎相同结果的问题。在 Amazon Reviews 2023 的三个类别中，作者报告采样多样性和排序指标均优于所比较的基线。最终推荐列表大小固定时，聚合多个样本还能改善排序，为生成式推荐增加推理计算提供了一条具体路径。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-01",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.36954"
+          ]
+        }
+      },
+      "added_at": "2026-10-31T23:27:13Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.36954"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2610.40325",
+      "title": "How to Loop Your Transformer: Loop Scaling, Specialization, and Parallel Inference",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "FAIR at Meta; MIT",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.40325"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Looping in transformer models reuses weights by repeatedly applying the same transformer, or parts of it, making the model deeper without increasing its parameter count. Whether looping is useful depends on which constraint dominates: model size, training compute, or autoregressive inference efficiency. We study these trade-offs jointly in dense decoder-only transformers trained from scratch, varying which parts of the model are looped, how many loops are applied, and how information is passed between loops. Our experiments span models with up to 1B parameters, trained on up to 155B tokens with up to $1.07\\times10^{21}$ FLOPs and 32 loops. We find that looping the full transformer generally gives the strongest quality at a fixed parameter budget, whereas looping a middle block of layers gives a better return when training FLOPs are constrained. Adding loops is not uniformly beneficial: gains eventually saturate, reverse, or become unstable. This motivates asking whether forcing every loop to use the same weights limits the benefit of deeper looping. We address this by adding small loop-specific low-rank adapters that improve quality, with larger gains as more loops are added. Looped transformers also suffer a decoding slowdown proportional to the number of loops. Parallel Loop Transformers address this by passing hidden states between loops across adjacent token positions, allowing loop stages to run concurrently. However, in our experiments the original formulation does not consistently retain the quality gains of ordinary looping. We find that preserving the current-token embedding and separately normalizing it and the previous-token hidden state before combining them recovers strong performance across model scales and training budgets. Together, these results show that effective looping requires matching the design to the resource constraint and inference setting.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.40325",
+        "retrieved_at": "2026-10-31T23:05:26Z",
+        "license": null,
+        "source_title": "How to Loop Your Transformer: Loop Scaling, Specialization, and Parallel Inference",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-10-29T15:56:09Z",
+        "updated_at": "2026-10-29T15:56:09Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.40325v1",
+        "verified_at": "2026-10-31T23:05:26Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "This study compares looped decoder-only Transformers under parameter, training-compute and decoding constraints, using models up to 1B parameters, 155B training tokens and 32 loops. Full-model looping generally works best at fixed parameter count, while middle-block looping gives better returns at fixed training FLOPs; additional loops can also saturate or destabilize training. Loop-specific low-rank adapters improve quality, and preserving the current-token embedding with separate normalization improves parallel-loop inference. The findings guide resource-aware shared-depth designs rather than establish recommendation gains.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-01",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.40325"
+          ]
+        },
+        "zh": {
+          "text": "这项研究比较共享权重的循环 Transformer 在参数量、训练计算量和解码效率约束下的取舍，实验最大为 10 亿参数、1550 亿训练 token 和 32 次循环。固定参数量时，循环整个模型通常效果更好；限制训练 FLOPs 时，只循环中间层更划算，但增加循环也可能收益饱和或引起不稳定。逐循环低秩适配器能改善效果；并行循环推理中，保留当前 token 表示并对两路输入分别归一化也有帮助。这些结果可指导按资源约束设计共享深度架构，尚非推荐收益验证。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-01",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.40325"
+          ]
+        }
+      },
+      "added_at": "2026-10-31T23:27:13Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.40325"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2610.34124",
+      "title": "Decision-Native Recommendation with Large Language Models",
+      "collection": "related",
+      "category": "retrieval-reranking-scaling",
+      "affiliation": "University of Science and Technology of China; Independent Researcher",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.34124"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Large language models (LLMs) bring world knowledge to user preference modeling in sequential recommendation, but generation-based recommenders express next-item predictions indirectly as text. Generated outputs may fail to identify a unique candidate item, depend on candidate presentation order in the prompt, and lack explicit confidence in the recommendation. Recent studies explore Jev, a model for fast option selection with explicit confidence. Inspired by Jev, we introduce decision-native recommendation, a new paradigm that jointly models item choice and recommendation confidence using LLM representations. It requires valid candidate selection, consistency under candidate reordering, and confidence that reflects recommendation accuracy. We propose Direct Item Choice Estimation (DICE), which learns a personalized next-item distribution over supplied candidates from user interaction history and recommends the highest-scoring item with calibrated confidence. Tree-structured attention shares history computation across isolated candidate branches for order-consistent candidate scoring in a single forward pass. On three recommendation datasets, DICE achieves higher top-one accuracy than all evaluated baselines. Separate evaluations show unchanged item choices under tested candidate reorderings and end-to-end speedups of up to approximately $6\\times$ over the evaluated generation-based methods. Its confidence estimates support selective recommendation by identifying more reliable predictions and guide additional computation for low-confidence examples in offline routing.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.34124",
+        "retrieved_at": "2026-10-31T23:04:07Z",
+        "license": null,
+        "source_title": "Decision-Native Recommendation with Large Language Models",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-10-25T07:46:40Z",
+        "updated_at": "2026-10-25T07:46:40Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.34124v1",
+        "verified_at": "2026-10-31T23:04:07Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "DICE directly estimates a next-item distribution and confidence over supplied candidates instead of expressing the choice as generated text. Tree-structured attention shares history computation while isolating candidate branches, enabling order-consistent scoring in one forward pass. On three recommendation datasets, it reports the highest top-one accuracy among evaluated baselines, unchanged choices under tested reorderings, and up to roughly sixfold end-to-end speedup over evaluated generation-based methods. Confidence supports selective recommendation and offline allocation of extra compute, offering a candidate-scoring design rather than a demonstrated full-catalog or online result.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-01",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.34124"
+          ]
+        },
+        "zh": {
+          "text": "DICE 直接对给定候选估计下一物品分布与置信度，省去用生成文本表达选择的过程。树状注意力让候选分支共享历史计算、彼此隔离，在一次前向中完成对候选顺序稳定的打分。三个推荐数据集上，作者报告所比较方法中最高的首位准确率，测试中的候选重排不改变选择，相对生成式方法端到端速度最高约为 6 倍。置信度还用于选择性推荐和离线分配额外计算；这些结果不等于全目录或线上验证。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-01",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.34124"
+          ]
+        }
+      },
+      "added_at": "2026-10-31T23:27:13Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.34124"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2610.37842",
+      "title": "Improving Data-Constrained Scaling with Hyperparameter Transfer and Ensembling",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "Princeton University; Q Labs; New York University",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.37842"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "As growing compute budgets outpace the growth of high-quality training data, large language models must be trained with both compute and data constraints in mind. Unfortunately, existing prescriptions for data-constrained scaling suffer from two important limitations. First, past works hold key hyperparameters such as weight decay fixed with scale, despite the fact that optimal hyperparameters vary wildly with model size and number of epochs. Second, past works neglect ensembling, a promising axis for scaling under data constraints. As a surprising consequence, prior prescriptions can lead to loss that increases with compute budget. We address both limitations by fitting power laws that prescribe how to transfer hyperparameters with scale and scaling laws that prescribe how to allocate compute with ensembling. Training on 100M tokens from FineWeb, our recipe reduces validation loss by over 0.15 nats compared to prior recipes, a 14% decrease in perplexity, and achieves monotonic improvements with compute through ensembling. These gains are achieved using prescriptions fit to smaller runs and validated at up to 12$\\times$ larger compute budgets.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.37842",
+        "retrieved_at": "2026-10-31T23:05:39Z",
+        "license": null,
+        "source_title": "Improving Data-Constrained Scaling with Hyperparameter Transfer and Ensembling",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-10-27T18:52:54Z",
+        "updated_at": "2026-10-27T18:52:54Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.37842v1",
+        "verified_at": "2026-10-31T23:05:39Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "This work improves data-constrained language-model scaling by fitting power laws for hyperparameter transfer and scaling laws for allocating compute to ensembles. On 100M FineWeb training tokens, the recipe reduces validation loss by over 0.15 nats, or perplexity by 14%, relative to prior recipes, and reports monotonic improvements with compute through ensembling. Prescriptions fitted to smaller runs are validated at up to 12-fold larger compute budgets. The method may inform data-limited ranking experiments, but transfer to CTR models and ensemble serving costs remain unverified here.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-01",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.37842"
+          ]
+        },
+        "zh": {
+          "text": "这项工作针对训练数据受限时的模型扩展，拟合超参数随规模迁移的幂律，并用 scaling law 分配集成模型的计算预算。在 FineWeb 的 1 亿训练 token 上，相比既有方案，验证损失降低超过 0.15 nats、困惑度降低 14%，且集成方案随计算预算增加持续改善。由小规模实验拟合的配置在最高 12 倍计算预算下得到验证。其方法可供数据受限的排序实验参考，但摘要未验证 CTR 迁移效果或集成模型的线上服务成本。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-01",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.37842"
+          ]
+        }
+      },
+      "added_at": "2026-10-31T23:27:13Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.37842"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2610.36617",
+      "title": "Balanced State Subspaces for Mamba-2 State Compression",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "Shaanxi Normal University",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.36617"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Mamba-2 compresses all context into a fixed-size recurrent state that dominates decoding memory and bandwidth. Existing compressors quantize state values or prune state coordinates, scoring each channel independently in the native basis. We examine trained Mamba-2 states and find that energy is almost rank-one, but the output does not read the energetic directions: energy concentrates in a bias-like direction accumulated by the recurrence, while the content the output reads lives in a low-dimensional subspace that is not aligned with the state's coordinates. Even output-aware scores are computed coordinate by coordinate, so they miss the directions that determine the input--output map. Compression should therefore target the write--read subspace rather than individual coordinates. We propose \\method{}, a post-training transform that instantiates balanced truncation with full controllability and observability Gramians and applies the rotation exactly via Mamba-2's scalar-identity transition. Because the useful rank varies widely across layers, we further introduce HARP, which allocates ranks per layer from the Hankel spectrum and protects retrieval-sensitive layers, improving both perplexity and retrieval over uniform budgets. Calibration takes a single forward pass, an order of magnitude faster than GHOST's released protocol, with lower peak memory. With HARP, \\method{} halves the state dimension at an average WikiText-2 perplexity increase of $0.3$ points ($1.8\\%$) across 130M--2.7B, versus $1.6$ ($9.3\\%$) for GHOST, and the gap widens at 25\\% retention.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.36617",
+        "retrieved_at": "2026-10-31T23:05:52Z",
+        "license": null,
+        "source_title": "Balanced State Subspaces for Mamba-2 State Compression",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-10-27T04:21:27Z",
+        "updated_at": "2026-10-27T04:21:27Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.36617v1",
+        "verified_at": "2026-10-31T23:05:52Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "This method compresses Mamba-2 states by targeting the subspace connecting state writes to output reads, rather than pruning coordinates independently. A post-training balanced-truncation transform rotates that subspace, while HARP allocates ranks across layers and protects retrieval-sensitive layers. One-forward-pass calibration is reported to be an order of magnitude faster than GHOST's released protocol; across 130M–2.7B models, halving state dimension raises average WikiText-2 perplexity by 0.3 points versus 1.6 for GHOST. It offers a state-compression design for long-history models, not demonstrated CTR gains.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-01",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.36617"
+          ]
+        },
+        "zh": {
+          "text": "这项方法压缩 Mamba-2 的循环状态时，保留连接写入与输出读取的低维子空间，而非逐坐标独立裁剪。训练后的平衡截断变换旋转状态空间，HARP 再按层分配保留维度，并保护对检索敏感的层。校准只需一次前向计算，摘要报告比 GHOST 公布的流程快一个数量级；在 1.3 亿至 27 亿参数模型上，状态维度减半后，WikiText-2 平均困惑度增加 0.3，GHOST 为 1.6。可借鉴的是长历史模型的状态压缩设计，尚无 CTR 效果验证。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-01",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.36617"
+          ]
+        }
+      },
+      "added_at": "2026-10-31T23:27:13Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.36617"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2610.33404",
+      "title": "COPE: Composable Performance Emulation for Mixture-of-Experts Offloading Policies",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "Shanghai Jiao Tong University",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.33404"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "As LLMs scale, mixture-of-experts (MoE) architectures increase model capacity while keeping per-token computation manageable through sparse expert activation. This sparsity also enables memory-efficient deployment by retaining most expert weights in CPU memory and transferring or executing only the routed experts on demand. Existing MoE offloading systems typically target specific model-platform configurations, yet differences in model sparsity, CPU and GPU throughput, VRAM capacity, and host-device bandwidth can change the policy ranking. Because implementing and exhaustively evaluating all candidate policies incurs substantial engineering cost, efficiently selecting the best-performing policy for each model-platform configuration remains a key challenge for practical MoE offloading. We present COPE (Composable Offloading Policy Emulator), which selects the best-performing MoE offloading policy for a target model-platform configuration before runtime integration. COPE comprises two components. Its Policy Matrix factors the design space into two independent axes, expert residency and MoE execution strategy, enabling mechanism reuse across candidate policies and exposing four new candidates. Its Virtual Heterogeneous Machine profiles combined-operator schedules on the target platform and combines these measurements with offline routing traces to estimate candidate performance. Compared with the evaluated baselines, COPE improves fastest-policy selection accuracy by 24%-100% and reduces performance-prediction error by $1.7\\times$ to $6.8\\times$. By identifying the preferred policy before integration, COPE further reduces policy-specific implementation effort by up to 74%.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.33404",
+        "retrieved_at": "2026-10-31T23:04:14Z",
+        "license": null,
+        "source_title": "COPE: Composable Performance Emulation for Mixture-of-Experts Offloading Policies",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-10-24T02:29:21Z",
+        "updated_at": "2026-10-24T02:29:21Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.33404v1",
+        "verified_at": "2026-10-31T23:04:14Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "COPE selects a MoE offloading policy for a target model and hardware platform before implementing it in the runtime. It separates expert residency from execution strategy, then combines profiles of operator schedules with offline routing traces to predict candidate performance. Against evaluated baselines, it reports better fastest-policy selection and lower prediction error, with policy-specific implementation effort reduced by up to 74%. The transferable idea is to choose offloading around actual memory, compute and bandwidth limits; the reported gains concern policy selection and integration effort, not model accuracy or CTR throughput.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-01",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.33404"
+          ]
+        },
+        "zh": {
+          "text": "COPE 在接入运行系统之前，为目标模型与硬件平台选择 MoE 卸载策略。它把专家驻留位置和执行方式分开组合，再结合算子调度的实测性能与离线路由轨迹，估计各候选方案的表现。相对所比较的基线，论文报告最佳策略选择更准、性能预测误差更低，特定策略的实现工作量最高减少 74%。可借鉴的是按实际内存、算力和带宽约束选方案；这些收益指策略选择与集成成本，不是模型准确率或 CTR 吞吐提升。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-01",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.33404"
+          ]
+        }
+      },
+      "added_at": "2026-10-31T23:27:13Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.33404"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2610.36778",
+      "title": "Does LLM Pre-Training Typically Occur at the Edge of Stability?",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "UC Berkeley; Tsinghua University; ByteDance Seed",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.36778"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Quadratic approximations provide a common lens for studying neural network optimization, but recent evidence challenges their predictive validity. In full-batch gradient descent with learning rate (LR) $\\eta$, Cohen et al. (2021) observed the Edge of Stability (EoS), where the largest Hessian eigenvalue concentrates near $2/\\eta$, seemingly at odds with classical stability conditions predicted by quadratic approximations. In this work, we revisit the fidelity of quadratic approximations as a model of neural network training dynamics, with a particular focus on their failure modes in LLM training. We first highlight a distinct failure mode of the quadratic approximation, where persistent negative curvature causes the quadratic dynamics to diverge regardless of the LR, even though the real dynamics remain stable. We term this phenomenon the Edge of Convexity (EoC). After removing the effect of this LR-independent instability, we then propose a generalized definition of Edge of Stability (EoS) for stochastic training with adaptive optimizers, based on whether increasing the LR induces significant divergence in the quadratic dynamics while leaving the real dynamics largely unchanged. Across different LLM pretraining runs with various model sizes up to 787M, we find that (1) EoC is always observed across LLM pretraining, and (2) EoS is also prevalent but not universal: it disappears when the LR becomes sufficiently small (e.g., after decay) or when the batch size falls below a critical threshold that has a positive correlation with the critical batch size. Together, these findings characterize when and how quadratic approximations fail and provide a foundation for future work on understanding training dynamics.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.36778",
+        "retrieved_at": "2026-10-31T23:05:46Z",
+        "license": null,
+        "source_title": "Does LLM Pre-Training Typically Occur at the Edge of Stability?",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-10-27T07:44:37Z",
+        "updated_at": "2026-10-27T07:44:37Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.36778v1",
+        "verified_at": "2026-10-31T23:05:46Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "This study tests when quadratic approximations misrepresent language-model training dynamics. Persistent negative curvature can make the approximate dynamics diverge at any learning rate while real training remains stable; after separating that effect, the authors define a stability-edge diagnostic for stochastic adaptive optimization. In pretraining runs up to 787M parameters, the learning-rate-dependent effect is common but disappears at sufficiently small learning rates or batch sizes. The results caution against equating local curvature-based instability with failed training; they do not provide a new optimizer or CTR evidence.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-01",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.36778"
+          ]
+        },
+        "zh": {
+          "text": "这项研究检验二次近似何时无法描述语言模型训练：持续的负曲率可能让近似动力学在任意学习率下都发散，而真实训练仍然稳定。分离这一影响后，作者提出适用于随机自适应优化的稳定性边缘诊断。在最大 7.87 亿参数的预训练实验中，与学习率相关的这种现象较常见，但学习率或批量足够小时会消失。可借鉴的是判断训练稳定性时，不把局部曲率近似的发散直接视为训练失败；论文未提出新优化器或验证 CTR 效果。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-01",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.36778"
+          ]
+        }
+      },
+      "added_at": "2026-10-31T23:27:13Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.36778"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2610.37442",
+      "title": "CRISP: Co-designing Pruning and Scheduling for Efficient MoE Inference on Edge Servers",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "Shandong University; TU Berlin; City University of Hong Kong",
+      "venue": "MobiCom",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.37442"
+        },
+        {
+          "label": "DOI",
+          "url": "https://doi.org/10.1145/3795866.3844472"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Mixture-of-Experts (MoE) inference on memory-constrained edge platforms is often dominated by expert-weight movement rather than computation. Although each token activates only a small subset of experts, routing is input-dependent, so all experts must remain accessible and memory movement dominates latency. Existing approaches such as uniform pruning and expert dropping overlook two properties of MoE execution: expert combinations are highly skewed in frequency, and experts contribute asymmetrically within each combination. We present CRISP, a combination-aware framework that co-designs pruning and runtime scheduling for efficient MoE serving on memory-constrained edge platforms. CRISP reorders neurons by importance so one stored expert can support multiple execution widths, assigns differentiated execution to hot, warm, and cold combinations based on frequency and expert role, and exploits heterogeneous widths to overlap expert loading with computation. Across Mixtral-8x7B and DeepSeek-MoE-16B, CRISP improves throughput by up to $2.1\\times$ at the same memory budget while limiting accuracy loss to 3.6\\% relative to full-width inference. Our results highlight that efficient edge MoE serving requires jointly optimizing which expert capacity is preserved and how expert execution is scheduled.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.37442",
+        "retrieved_at": "2026-10-31T23:04:10Z",
+        "license": null,
+        "source_title": "CRISP: Co-designing Pruning and Scheduling for Efficient MoE Inference on Edge Servers",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-10-27T15:51:14Z",
+        "updated_at": "2026-10-27T15:51:14Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.37442v1",
+        "verified_at": "2026-10-31T23:04:10Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "CRISP jointly designs expert pruning and runtime scheduling for memory-constrained MoE inference. Neuron reordering lets one stored expert execute at several widths; expert-combination frequency and each expert's role determine how much computation to retain, while heterogeneous widths help overlap weight loading with computation. On Mixtral-8x7B and DeepSeek-MoE-16B, it reports up to 2.1 times throughput at the same memory budget, with reported accuracy loss limited to 3.6% relative to full-width inference. The result informs sparse-model deployment with an explicit quality trade-off rather than demonstrating CTR gains.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-01",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.37442"
+          ]
+        },
+        "zh": {
+          "text": "CRISP 联合设计显存受限 MoE 推理的剪枝与调度。它先按重要性重排神经元，让同一份专家权重支持不同执行宽度，再根据专家组合出现频率及各专家的作用分配计算，并利用不同宽度把权重加载与计算重叠。在 Mixtral-8x7B 和 DeepSeek-MoE-16B 上，论文报告同等内存预算下吞吐最高达到 2.1 倍，相对全宽度推理的准确率损失控制在所报的 3.6% 范围内。这是带有效果折损的稀疏模型部署方案，未验证 CTR 收益。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-01",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.37442"
+          ]
+        }
+      },
+      "added_at": "2026-10-31T23:27:13Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.37442"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2610.34514",
+      "title": "Ambiguous Fits: The Rashomon Effect and Challenges in Scaling Law Estimation",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "University of Cambridge; Google DeepMind",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.34514"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Estimating neural scaling laws involves an end-to-end pipeline: designing a scaling recipe, training models across scales, evaluating models on a target metric, and deploying an algorithm to fit a scaling law to the resulting data. This final fitting stage is often treated as routine: standard procedures minimize a non-convex fitting loss using local optimization from a grid of initializations, and return the best solution found. Yet such heuristic searches can fail in two distinct ways: they offer no guarantee of returning a nearly optimal solution, and they obscure whether fundamentally different parameter choices fit the data nearly as well. Indeed, we show that standard scaling law fitting is subject to a Rashomon effect (Breiman, 2001): the sublevel sets of near-minimizers correspond to broad parameter regions whose extrapolations diverge substantially at scale. We resolve these issues with a deterministic branch-and-bound algorithm that guarantees nearly optimal fitting loss and exhaustively maps the near-minimizers to the implied range of scaling curves.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.34514",
+        "retrieved_at": "2026-10-31T23:03:50Z",
+        "license": null,
+        "source_title": "Ambiguous Fits: The Rashomon Effect and Challenges in Scaling Law Estimation",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-10-25T19:16:53Z",
+        "updated_at": "2026-10-25T19:16:53Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.34514v1",
+        "verified_at": "2026-10-31T23:03:50Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "Ambiguous Fits examines the final fitting stage of neural scaling laws, where different parameter settings can fit observed data nearly equally well yet diverge in large-scale extrapolation. It replaces heuristic local searches with deterministic branch-and-bound optimization that guarantees nearly optimal fitting loss and maps near-minimizers to a range of implied scaling curves. This provides a way to expose fitting ambiguity when planning ranking-model scale; the guarantee concerns fitting loss, not accurate extrapolation or demonstrated CTR performance.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-01",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.34514"
+          ]
+        },
+        "zh": {
+          "text": "Ambiguous Fits 关注 scaling law 的最后拟合环节：不同参数可能同样贴合已有实验数据，却对更大规模给出明显不同的预测。论文用确定性的分支定界算法替代启发式局部搜索，保证拟合损失接近最优，并把近似最优参数集合映射为一组可能的扩展曲线。它为规划排序模型规模时识别拟合歧义提供方法；保证针对的是拟合损失，并不保证外推准确，也未验证 CTR 效果。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-01",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.34514"
+          ]
+        }
+      },
+      "added_at": "2026-10-31T23:27:13Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.34514"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2610.34700",
+      "title": "DPE-Rec: Diversity-Preserving and Efficient Diffusion Language Model Recommendation for Bundle Construction",
+      "collection": "related",
+      "category": "generative-recommendation",
+      "affiliation": "Arizona State University; Stevens Institute of Technology",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.34700"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Generative bundle construction completes a partially observed bundle by generating its missing items from a large product catalog. Compared to autoregressive LLMs, diffusion LLM emerges as a natural fit for this unordered generation task. Their bidirectional attention provides an inductive bias better aligned with unordered bundle construction. Iterative denoising can reveal multiple tokens per step, potentially reducing inference latency. However, directly applying DLMs to this task presents two key challenges: 1 Despite its flexible reveal order, confidence-guided decoding tends to postpone semantic-fork decisions until refinement tokens constrain their choices, reducing bundle diversity. 2 Revealing more tokens per step can compromise recommendation quality, stifling the potential for faster inference. We introduce DPE-Rec, a diffusion framework for diversity preservation and efficient recommendation. DPE-Rec preserves diversity by introducing semantic-fork-aware GRPO, which prioritizes semantic-fork decisions via autoregressive rollouts. It improves efficiency through pseudo-trajectory distillation, which concentrates learning from the vast random corruption space onto the compact trajectory-induced subspace visited by high-quality decoding, unlocking reliable multi-token decoding. Together, these components enable diverse and accurate bundle construction with substantially fewer denoise steps. Experiments on multiple bundle construction benchmarks show that DPE-Rec improves recommendation performance by 63% on average, and its fast variant achieves 25.6$times$ faster inference on average than existing generative recommendation arts, with minimal loss in recommendation quality.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.34700",
+        "retrieved_at": "2026-10-31T23:04:04Z",
+        "license": null,
+        "source_title": "DPE-Rec: Diversity-Preserving and Efficient Diffusion Language Model Recommendation for Bundle Construction",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-10-26T01:45:00Z",
+        "updated_at": "2026-10-26T01:45:00Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.34700v1",
+        "verified_at": "2026-10-31T23:04:04Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "DPE-Rec uses diffusion language models to complete partially observed item bundles. Semantic-fork-aware GRPO prioritizes decisions that determine different bundle compositions, while pseudo-trajectory distillation concentrates training on states reached by high-quality decoding so more tokens can be revealed per step. Experiments report improved bundle recommendation, and a fast variant averages 25.6 times faster inference than evaluated generative recommenders with little quality loss. The evidence concerns bundle construction, offering a way to trade denoising steps against recommendation diversity and quality rather than a validated CTR speedup.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-01",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.34700"
+          ]
+        },
+        "zh": {
+          "text": "DPE-Rec 用扩散语言模型补全商品组合：针对会决定不同组合方向的关键选择设计 GRPO 训练，再用伪轨迹蒸馏聚焦高质量解码经过的状态，使每一步可以可靠地确定更多 token。组合推荐实验报告了效果改善，快速版本相对所比较的生成式推荐方法平均推理速度达到 25.6 倍，同时只损失少量质量。可借鉴的是协同调整去噪步数、多样性和推荐效果；这些证据来自组合构建任务，不能直接当作 CTR 加速。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-01",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.34700"
+          ]
+        }
+      },
+      "added_at": "2026-10-31T23:27:13Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.34700"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2610.37005",
+      "title": "Compote: Collapse-Resistant Multiple Hypothesis Learning For Sequential Recommendation",
+      "collection": "related",
+      "category": "other",
+      "affiliation": "Criteo AI Lab; Sorbonne Université; CNRS; ISIR",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.37005"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Next-item prediction is inherently ambiguous: a single interaction history often admits multiple plausible continuations across distinct catalogue regions. Standard sequential recommenders compress these alternatives into a single prediction, conflating user intents. We introduce COllapse-resistant Multiple hyPOThesis lEarning (COMPOTE), a multi-hypothesis transformer trained with an annealed objective that transitions from uniform supervision to a winner-takes-all assignment. This mechanism forces hypotheses to specialize into distinct catalogue regions, while inference relies on an efficient, normalizer-free max-similarity rule. Theoretically, we show that in the population case, the optimal solutions partition the conditional next-item distribution according to a max-entropy quantization principle, while pooled scores preserve the Bayes-optimal ranking. We also prove a generalization bound scaling logarithmically with the number of hypotheses. Across three Amazon Reviews 2023 benchmarks, COMPOTE outperforms strong ID-based, generative, and multi-interest baselines using item IDs alone. Matched-capacity ablations confirm that performance gains stem directly from the annealed objective, preventing the head collapse observed in conventional multi-head architectures, rather than added capacity, ensembling, or routing.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.37005",
+        "retrieved_at": "2026-10-31T23:03:53Z",
+        "license": null,
+        "source_title": "Compote: Collapse-Resistant Multiple Hypothesis Learning For Sequential Recommendation",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-10-27T10:50:08Z",
+        "updated_at": "2026-10-27T10:50:08Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.37005v1",
+        "verified_at": "2026-10-31T23:03:53Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "COMPOTE represents several plausible next-item continuations with a multi-hypothesis Transformer. An annealed objective moves from uniform supervision to winner-takes-all assignments so hypotheses specialize, while inference uses a normalizer-free maximum-similarity rule. Across three Amazon Reviews 2023 benchmarks, it outperforms evaluated ID-based, generative, and multi-interest baselines; matched-capacity ablations attribute the gains to the training objective rather than added capacity. It offers a way to reduce head collapse in multi-interest modeling, but does not establish a long-history or model-size scaling law.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-01",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.37005"
+          ]
+        },
+        "zh": {
+          "text": "COMPOTE 用多个假设表示同一段历史可能对应的不同下一物品意图，训练目标从均匀监督逐步转向赢家负责，促使不同假设形成分工；推理采用无需归一化的最大相似度打分。在 Amazon Reviews 2023 的三个基准中，作者报告优于所比较的 ID、生成式和多兴趣方法，等容量消融将收益归于训练目标，而非增加参数。可借鉴的是减少多兴趣表示中的预测头坍塌，论文未建立长历史或模型规模的 scaling law。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-01",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.37005"
+          ]
+        }
+      },
+      "added_at": "2026-10-31T23:27:13Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.37005"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2610.36000",
+      "title": "RELAY: One Query, Two Roles for Sequential Recommendation",
+      "collection": "related",
+      "category": "other",
+      "affiliation": "University of Chinese Academy of Sciences",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.36000"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Sequential recommendation must combine semantic preferences with behavioral associations to deliver accurate rankings at low inference cost. Sharing history selection connects preference representation directly to the behavioral evidence used in candidate scoring. We present RELAY, a compact sequential recommender built around one query, two roles: semantic readout and behavioral-memory routing. A single learned query forms a semantic preference representation and reuses its attention to route direct-history and transition evidence into candidate scores. Candidate-conditioned gates calibrate the two memory channels for each candidate. RELAY trains both roles with a single catalog likelihood and produces the final ranking in one forward pass. Full-catalog experiments on six datasets show that RELAY achieves the highest Recall@5 and NDCG@5 among the compared methods on every dataset, improving over the previous best model by 14.22% and 17.88% on average. With 2.044 million predictor parameters, RELAY reduces predictor size by 65.12% and achieves a 1.75~1.79$\\times$ inference speedup over the previous best model.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.36000",
+        "retrieved_at": "2026-10-31T23:04:00Z",
+        "license": null,
+        "source_title": "RELAY: One Query, Two Roles for Sequential Recommendation",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-10-26T13:44:01Z",
+        "updated_at": "2026-10-26T13:44:01Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.36000v1",
+        "verified_at": "2026-10-31T23:04:00Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "RELAY reuses one learned query for both semantic preference readout and routing behavioral evidence into candidate scores. Candidate-conditioned gates calibrate direct-history and transition memories, and a single catalog-likelihood objective trains the one-pass ranker. Across six full-catalog benchmarks, it reports average Recall@5 and NDCG@5 improvements of 14.22% and 17.88% over the previous best model. Its 2.044M-parameter predictor is 65.12% smaller and runs 1.75–1.79 times faster than that comparator, illustrating compact history-computation reuse rather than proven industrial scaling.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-01",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.36000"
+          ]
+        },
+        "zh": {
+          "text": "RELAY 复用一个学习得到的查询，既提取语义偏好，也把直接历史和行为转移两类证据送入候选打分，再用候选相关门控调整两类记忆。模型以同一个全目录似然目标训练，一次前向生成排名。在六个全目录评测数据集上，作者报告 Recall@5、NDCG@5 相对此前最佳模型平均提升 14.22%、17.88%。其预测器包含 204.4 万参数，规模减少 65.12%，推理速度为该对照的 1.75–1.79 倍，可供紧凑历史建模参考，尚非工业扩模验证。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-01",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.36000"
+          ]
+        }
+      },
+      "added_at": "2026-10-31T23:27:13Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.36000"
       },
       "change_history": [],
       "reading_tier": null

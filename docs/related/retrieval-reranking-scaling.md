@@ -6,7 +6,7 @@
 
 Scaling retrieval and reranking stages of recommendation pipelines.
 
-43 papers · Updated 2026-10-31
+44 papers · Updated 2026-11-01
 
 <a id="paper-2603-04816"></a>
 
@@ -106,7 +106,7 @@ Scaling retrieval and reranking stages of recommendation pipelines.
 
 <a id="paper-2607-29606"></a>
 
-- **QASP: Query-Adaptive Robust Vector Search Policy**: QASP predicts each query’s recall-progress curve with one upfront regression, then derives search depth for different recall targets. A lightweight reactive step adjusts depth from observed deviations without invoking the predictor again. The authors report lower per-query recall variance and reduced data access, including transfer across tested datasets and index configurations. This offers a way to allocate retrieval compute by query difficulty instead of a fixed search budget; extrapolation to production recommendation traffic requires calibration and validation. — [Paper](https://arxiv.org/abs/2607.29606) (Amazon; Tel Aviv University · arXiv 2026). Reading priority: Unrated.
+- **QASP: Query-Adaptive Robust Vector Search Policy**: QASP predicts each query’s recall-progress curve with one upfront regression, then derives search depth for different recall targets. A lightweight reactive step adjusts depth from observed deviations without invoking the predictor again. The authors report lower per-query recall variance and reduced data access, including transfer across tested datasets and index configurations. This offers a way to allocate retrieval compute by query difficulty instead of a fixed search budget; extrapolation to production recommendation traffic requires calibration and validation. — [Paper](https://arxiv.org/abs/2607.29606) (Amazon; Tel Aviv University · ICDE 2027). Reading priority: Unrated.
 
 <a id="paper-2610-21877"></a>
 
@@ -114,7 +114,7 @@ Scaling retrieval and reranking stages of recommendation pipelines.
 
 <a id="paper-2610-21030"></a>
 
-- **Learning When to Think: Utility-Guided Adaptive Reasoning for Efficient Text Retrieval**: AURA supervises intermediate query-reasoning states by their ability to separate relevant documents from hard distractors, then uses a lightweight utility estimator to decide when to stop reasoning. On BRIGHT, the reported 4B model obtains 34.7 average nDCG@10 with 2.8 reasoning steps and 96 generated tokens per query. Under matched deployment conditions, adaptive stopping lowers latency from 4.6 to 0.76 seconds relative to full-trajectory reasoning. For retrieval and ranking pipelines, the useful design principle is to allocate test-time computation according to predicted retrieval utility; these results do not establish CTR gains. — [Paper](https://arxiv.org/abs/2610.21030) (Carnegie Mellon University; University of Pittsburgh · arXiv 2026). Reading priority: Unrated.
+- **Learning When to Think: Utility-Guided Adaptive Reasoning for Efficient Text Retrieval**: AURA supervises intermediate query-reasoning states by their ability to separate relevant documents from hard distractors, then uses a lightweight utility estimator to decide when to stop reasoning. On BRIGHT, the reported 4B model obtains 34.7 average nDCG@10 with 2.8 reasoning steps and 96 generated tokens per query. Under matched deployment conditions, adaptive stopping lowers latency from 4.6 to 0.76 seconds relative to full-trajectory reasoning. For retrieval and ranking pipelines, the useful design principle is to allocate test-time computation according to predicted retrieval utility; these results do not establish CTR gains. — [Paper](https://arxiv.org/abs/2610.21030) (Carnegie Mellon University; University of Pittsburgh · EMNLP (Findings) 2026). Reading priority: Unrated.
 
 <a id="paper-2610-23510"></a>
 
@@ -179,3 +179,7 @@ Scaling retrieval and reranking stages of recommendation pipelines.
 <a id="paper-2610-40454"></a>
 
 - **Glance: The Generator Is Its Own Reranker**: Glance equips a generation backbone with a lightweight decision adapter and pointer head to rerank passages from one shared prefill, avoiding separate encoding of every query-passage pair. A single resident 9B model supports generation and reranking, with about 0.1 GiB of additional memory per decision skill. Initial evaluations on two retrieval datasets and one QA dataset report gains over the evaluated cross-encoder baselines; a scaling study scores up to 200 candidates from the shared context. This provides a computation-reuse design for reranking, with evidence limited to one backbone family. — [Paper](https://arxiv.org/abs/2610.40454) (Airun Intelligence Labs · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-34124"></a>
+
+- **Decision-Native Recommendation with Large Language Models**: DICE directly estimates a next-item distribution and confidence over supplied candidates instead of expressing the choice as generated text. Tree-structured attention shares history computation while isolating candidate branches, enabling order-consistent scoring in one forward pass. On three recommendation datasets, it reports the highest top-one accuracy among evaluated baselines, unchanged choices under tested reorderings, and up to roughly sixfold end-to-end speedup over evaluated generation-based methods. Confidence supports selective recommendation and offline allocation of extra compute, offering a candidate-scoring design rather than a demonstrated full-catalog or online result. — [Paper](https://arxiv.org/abs/2610.34124) (University of Science and Technology of China; Independent Researcher · arXiv 2026). Reading priority: Unrated.

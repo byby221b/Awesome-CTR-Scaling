@@ -16,13 +16,13 @@
 
 - [Long Sequence Modeling](related/long-sequence-modeling.md) (31) — Long-history modeling, memory and compression for user behavior sequences.
 - [Sample/Instance Compression for Sequence Modeling](related/sample-instance-compression-for-sequence-modeling.md) (4) — Compressing complete interactions and raw samples into sequence tokens.
-- [Generative Recommendation](related/generative-recommendation.md) (110) — Generative retrieval, recommendation and ranking beyond discriminative CTR.
+- [Generative Recommendation](related/generative-recommendation.md) (112) — Generative retrieval, recommendation and ranking beyond discriminative CTR.
 - [Generative Pre-training for CTR](related/generative-pre-training-for-ctr.md) (5) — Generative objectives and pre-training for discriminative CTR tasks.
 - [Knowledge Distillation & Compression](related/knowledge-distillation-compression.md) (11) — Transferring, compressing and deploying larger recommendation models.
 - [Engineering & Serving](related/engineering-serving.md) (48) — Systems, serving infrastructure and hardware-aware optimization.
-- [Retrieval & Reranking Scaling](related/retrieval-reranking-scaling.md) (43) — Scaling retrieval and reranking stages of recommendation pipelines.
-- [Architecture Innovations Beyond Recommendation](related/architecture-innovations-beyond-recommendation.md) (197) — Transferable ideas from general-purpose model architecture research.
-- [Other](related/other.md) (13) — Adjacent research, diagnostics and other relevant recommendation methods.
+- [Retrieval & Reranking Scaling](related/retrieval-reranking-scaling.md) (44) — Scaling retrieval and reranking stages of recommendation pipelines.
+- [Architecture Innovations Beyond Recommendation](related/architecture-innovations-beyond-recommendation.md) (206) — Transferable ideas from general-purpose model architecture research.
+- [Other](related/other.md) (15) — Adjacent research, diagnostics and other relevant recommendation methods.
 
 ## Tag vocabulary
 

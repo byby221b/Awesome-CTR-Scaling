@@ -6,7 +6,7 @@
 
 Generative retrieval, recommendation and ranking beyond discriminative CTR.
 
-110 papers · Updated 2026-10-31
+112 papers · Updated 2026-11-01
 
 <a id="paper-2605-12617"></a>
 
@@ -447,3 +447,11 @@ Generative retrieval, recommendation and ranking beyond discriminative CTR.
 <a id="paper-2610-39470"></a>
 
 - **RoFiGR: Coarse Routing, Fine Refinement via Level-Adaptive Distillation in Multimodal Generative Recommendation**: RoFiGR targets early routing errors in multimodal semantic-ID recommendation. It aligns coarse code representations with collaborative item embeddings and uses a sequential teacher to supervise valid generation branches, combining fixed coarse-level weights with bounded adaptive adjustments. Results on Instruments, Arts, and Games improve all five reported ranking metrics over evaluated external baselines, with corrected five-seed tests supporting the main NDCG@10 gains. It offers a design for preserving collaborative preferences during coarse-to-fine generation. — [Paper](https://arxiv.org/abs/2610.39470) (Beijing University of Posts and Telecommunications; Kuaishou Technology · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-36954"></a>
+
+- **When Diffusion Recommenders Stop Sampling: Preserving Generative Diversity**: DARTS separates representation learning, diffusion modeling, and discrete ranking to preserve alternative next-item samples. It freezes the latent space before diffusion training and postpones ranking supervision until decoding, addressing collapse associated with jointly learning representations and the denoiser or applying discrete losses inside denoising trajectories. On three Amazon Reviews 2023 categories, it reports greater sampling diversity and stronger ranking metrics than evaluated baselines. Aggregating several samples further improves ranking at a fixed slate size, suggesting a recommendation-specific way to use additional inference compute. — [Paper](https://arxiv.org/abs/2610.36954) (Criteo AI Lab; Sorbonne Université; CNRS; ISIR · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-34700"></a>
+
+- **DPE-Rec: Diversity-Preserving and Efficient Diffusion Language Model Recommendation for Bundle Construction**: DPE-Rec uses diffusion language models to complete partially observed item bundles. Semantic-fork-aware GRPO prioritizes decisions that determine different bundle compositions, while pseudo-trajectory distillation concentrates training on states reached by high-quality decoding so more tokens can be revealed per step. Experiments report improved bundle recommendation, and a fast variant averages 25.6 times faster inference than evaluated generative recommenders with little quality loss. The evidence concerns bundle construction, offering a way to trade denoising steps against recommendation diversity and quality rather than a validated CTR speedup. — [Paper](https://arxiv.org/abs/2610.34700) (Arizona State University; Stevens Institute of Technology · arXiv 2026). Reading priority: Unrated.

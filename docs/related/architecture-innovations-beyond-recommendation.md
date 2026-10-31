@@ -6,7 +6,7 @@
 
 Transferable ideas from general-purpose model architecture research.
 
-197 papers · Updated 2026-10-31
+206 papers · Updated 2026-11-01
 
 <a id="paper-2606-16825"></a>
 
@@ -306,7 +306,7 @@ Transferable ideas from general-purpose model architecture research.
 
 <a id="paper-2610-09342"></a>
 
-- **Shared Low-rank Basis Factorization for Data-free Mixture-of-Experts Compression**: Shared Low-rank Basis Factorization (SLBF) compresses MoE expert weights without calibration data, preserving expert identities and router parameters; compressed hidden states can still change later-layer routing. Shared rank-k bases enable richer cross-expert reconstruction under a fixed parameter budget, and gauge fixing removes redundant factor parameters. Experiments cover five MoE LLM architectures from 16B to 122B parameters and compare pruning, merging, and weight-reconstruction methods. — [Paper](https://arxiv.org/abs/2610.09342) (Kyoto University; The University of Tokyo; RIKEN AIP · arXiv 2026). Reading priority: Read as needed.
+- **Shared Low-rank Basis Factorization for Data-free Mixture-of-Experts Compression**: Shared Low-rank Basis Factorization (SLBF) compresses MoE expert weights without calibration data, preserving expert identities and router parameters; compressed hidden states can still change later-layer routing. Shared rank-k bases enable richer cross-expert reconstruction under a fixed parameter budget, and gauge fixing removes redundant factor parameters. Experiments cover five MoE LLM architectures from 16B to 122B parameters and compare pruning, merging, and weight-reconstruction methods. — [Paper](https://arxiv.org/abs/2610.09342) (Kyoto University; The University of Tokyo; RIKEN AIP · EMNLP (Findings) 2026). Reading priority: Read as needed.
 
 <a id="paper-2610-11317"></a>
 
@@ -622,7 +622,7 @@ Transferable ideas from general-purpose model architecture research.
 
 <a id="paper-2610-14688"></a>
 
-- **Accelerating Cross-Model LLM Inference via Attention Map Reuse**: MapFlow reuses attention maps across heterogeneous LLMs processing shared context, combining partial recomputation, lightweight layer/head translation, block-sparse compression and a fused retrieval kernel. Experiments report lower prefill latency and better end-to-end serving efficiency while preserving generation quality across tested model pairs and multi-turn routing workloads. Cross-model attention reuse could inform shared-context serving, with recommendation gains unverified. — [Paper](https://arxiv.org/abs/2610.14688) (Peking University · arXiv 2026). Reading priority: Unrated.
+- **Accelerating Cross-Model LLM Inference via Attention Map Reuse**: MapFlow reuses attention maps across heterogeneous LLMs processing shared context, combining partial recomputation, lightweight layer/head translation, block-sparse compression and a fused retrieval kernel. Experiments report lower prefill latency and better end-to-end serving efficiency while preserving generation quality across tested model pairs and multi-turn routing workloads. Cross-model attention reuse could inform shared-context serving, with recommendation gains unverified. — [Paper](https://arxiv.org/abs/2610.14688) (Peking University · SIGMOD 2027). Reading priority: Unrated.
 
 <a id="paper-2610-14423"></a>
 
@@ -646,7 +646,7 @@ Transferable ideas from general-purpose model architecture research.
 
 <a id="paper-2610-20418"></a>
 
-- **OrionMoE-v1.0: A Mixture-of-Experts Foundation Model for Tabular In-Context Learning**: OrionMoE-Small applies dataset-conditioned sparse expert routing along the feature axis of a dual-axis tabular Transformer. It is pretrained on synthetic classification tasks and predicts from labeled support tables without task-specific gradient updates. The authors report competitive results against larger tabular foundation models, especially for small contexts and high-dimensional data. Its heterogeneous-feature computation may inform recommendation models, but direct recommendation results are absent. — [Paper](https://arxiv.org/abs/2610.20418) (Lexsi Labs · arXiv 2026). Reading priority: Unrated.
+- **OrionMoE-v1.0: A Mixture-of-Experts Foundation Model for Tabular In-Context Learning**: OrionMoE-Small-v1.0 combines distribution-aware representations with dataset-conditioned sparse expert computation in a dual-axis tabular Transformer. The revised abstract describes routing as conditioned on individual cell representations and the wider dataset context, removing the earlier feature-axis-only wording. Synthetic-task pretraining enables prediction from labeled support tables without task-specific gradient updates, with competitive reported results against larger tabular foundation models. The revision corrects the mechanism description; it does not establish new recommendation results or new performance gains. — [Paper](https://arxiv.org/abs/2610.20418) (Lexsi Labs · arXiv 2026). Reading priority: Unrated.
 
 <a id="paper-2610-18162"></a>
 
@@ -714,7 +714,7 @@ Transferable ideas from general-purpose model architecture research.
 
 <a id="paper-2610-24998"></a>
 
-- **Block Recursive Transformers for Structured Parameter Sharing**: Block Recursive Transformers partition layers into contiguous blocks and repeatedly apply each block before proceeding to the next. This intermediate sharing pattern balances local refinement and depth-wise differentiation without adding routing, auxiliary states or objectives. Across decoder-only models up to 1.7B parameters, with encoder-decoder and encoder-only studies, it improves validation loss and downstream accuracy over static recursive-sharing baselines. Recommendation transfer is untested. — [Paper](https://arxiv.org/abs/2610.24998) (Sungkyunkwan University; Korea University · arXiv 2026). Reading priority: Unrated.
+- **Block Recursive Transformers for Structured Parameter Sharing**: Block Recursive Transformers partition layers into contiguous blocks and repeatedly apply each block before proceeding to the next. This intermediate sharing pattern balances local refinement and depth-wise differentiation without adding routing, auxiliary states or objectives. Across decoder-only models up to 1.7B parameters, with encoder-decoder and encoder-only studies, it improves validation loss and downstream accuracy over static recursive-sharing baselines. Recommendation transfer is untested. — [Paper](https://arxiv.org/abs/2610.24998) (Sungkyunkwan University; Korea University · EMNLP (Findings) 2026). Reading priority: Unrated.
 
 <a id="paper-2610-25250"></a>
 
@@ -795,3 +795,39 @@ Transferable ideas from general-purpose model architecture research.
 <a id="paper-2610-37720"></a>
 
 - **LRMoE: Demand-Side Load Re-Calibration for Efficient MoE Training on Memory-Constrained Nodes**: LRMoE reduces memory-constrained MoE training cost by jointly setting expert-placement and backward-retention quotas. It preserves all routed forward computations, then selects token-expert pairs for backpropagation according to estimated update contribution and routes retained pairs to instances of their original experts. Compact communication buffers and variable-size grouped matrix multiplications reduce backward work. On Qwen3-30B-A3B and GLM4.5-106B-A12B, cumulative MoE-layer time to fixed-loss targets falls by 21.2–44.8% versus SYMI, providing a systems reference for sparse scaling rather than a demonstrated recommendation gain. — [Paper](https://arxiv.org/abs/2610.37720) (JD.com · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-39663"></a>
+
+- **AB-Attention: Accurate Block Attention for Accelerating Video Diffusion Transformers**: AB-Attention approximates dense attention with dynamic block sparsity without retraining. It estimates block importance by clustering queries within each block, samples and reweights selected blocks by inclusion probability, and packs smaller key-value blocks into full tensor-core tiles. On Wan2.1 and HunyuanVideo, the abstract reports skipping 89–92% of attention and up to 2.23-fold end-to-end speedup. Its selection and kernel design may inform sparse long-sequence attention, but recommendation gains are not established. — [Paper](https://arxiv.org/abs/2610.39663) (InfRec; The Chinese University of Hong Kong, Shenzhen; Shandong University; The University of Tokyo; Fudan University; University of California, Berkeley; The Hong Kong University of Science and Technology; National University of Singapore · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-40305"></a>
+
+- **Rimuru: Unified Memory Management for Modern LLM Serving via Elastic Expert Offloading**: Rimuru pools memory for expert weights and attention states instead of reserving fixed regions for each. Tensor-specific memory views, a split-and-merge page allocator, and a page-table-aware MoE kernel allow capacity to move between heterogeneous tensors without copying expert weights into contiguous buffers. A workload-aware controller adjusts allocation at runtime. Implemented on vLLM, the system reports improved throughput and time to first token in its tested settings; the transferable idea is jointly managing sparse-model weights and request state, not an established recommendation-serving gain. — [Paper](https://arxiv.org/abs/2610.40305) (Sun Yat-sen University; Independent Researcher; EPFL; Peng Cheng Laboratory · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-40325"></a>
+
+- **How to Loop Your Transformer: Loop Scaling, Specialization, and Parallel Inference**: This study compares looped decoder-only Transformers under parameter, training-compute and decoding constraints, using models up to 1B parameters, 155B training tokens and 32 loops. Full-model looping generally works best at fixed parameter count, while middle-block looping gives better returns at fixed training FLOPs; additional loops can also saturate or destabilize training. Loop-specific low-rank adapters improve quality, and preserving the current-token embedding with separate normalization improves parallel-loop inference. The findings guide resource-aware shared-depth designs rather than establish recommendation gains. — [Paper](https://arxiv.org/abs/2610.40325) (FAIR at Meta; MIT · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-37842"></a>
+
+- **Improving Data-Constrained Scaling with Hyperparameter Transfer and Ensembling**: This work improves data-constrained language-model scaling by fitting power laws for hyperparameter transfer and scaling laws for allocating compute to ensembles. On 100M FineWeb training tokens, the recipe reduces validation loss by over 0.15 nats, or perplexity by 14%, relative to prior recipes, and reports monotonic improvements with compute through ensembling. Prescriptions fitted to smaller runs are validated at up to 12-fold larger compute budgets. The method may inform data-limited ranking experiments, but transfer to CTR models and ensemble serving costs remain unverified here. — [Paper](https://arxiv.org/abs/2610.37842) (Princeton University; Q Labs; New York University · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-36617"></a>
+
+- **Balanced State Subspaces for Mamba-2 State Compression**: This method compresses Mamba-2 states by targeting the subspace connecting state writes to output reads, rather than pruning coordinates independently. A post-training balanced-truncation transform rotates that subspace, while HARP allocates ranks across layers and protects retrieval-sensitive layers. One-forward-pass calibration is reported to be an order of magnitude faster than GHOST's released protocol; across 130M–2.7B models, halving state dimension raises average WikiText-2 perplexity by 0.3 points versus 1.6 for GHOST. It offers a state-compression design for long-history models, not demonstrated CTR gains. — [Paper](https://arxiv.org/abs/2610.36617) (Shaanxi Normal University · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-33404"></a>
+
+- **COPE: Composable Performance Emulation for Mixture-of-Experts Offloading Policies**: COPE selects a MoE offloading policy for a target model and hardware platform before implementing it in the runtime. It separates expert residency from execution strategy, then combines profiles of operator schedules with offline routing traces to predict candidate performance. Against evaluated baselines, it reports better fastest-policy selection and lower prediction error, with policy-specific implementation effort reduced by up to 74%. The transferable idea is to choose offloading around actual memory, compute and bandwidth limits; the reported gains concern policy selection and integration effort, not model accuracy or CTR throughput. — [Paper](https://arxiv.org/abs/2610.33404) (Shanghai Jiao Tong University · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-36778"></a>
+
+- **Does LLM Pre-Training Typically Occur at the Edge of Stability?**: This study tests when quadratic approximations misrepresent language-model training dynamics. Persistent negative curvature can make the approximate dynamics diverge at any learning rate while real training remains stable; after separating that effect, the authors define a stability-edge diagnostic for stochastic adaptive optimization. In pretraining runs up to 787M parameters, the learning-rate-dependent effect is common but disappears at sufficiently small learning rates or batch sizes. The results caution against equating local curvature-based instability with failed training; they do not provide a new optimizer or CTR evidence. — [Paper](https://arxiv.org/abs/2610.36778) (UC Berkeley; Tsinghua University; ByteDance Seed · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-37442"></a>
+
+- **CRISP: Co-designing Pruning and Scheduling for Efficient MoE Inference on Edge Servers**: CRISP jointly designs expert pruning and runtime scheduling for memory-constrained MoE inference. Neuron reordering lets one stored expert execute at several widths; expert-combination frequency and each expert's role determine how much computation to retain, while heterogeneous widths help overlap weight loading with computation. On Mixtral-8x7B and DeepSeek-MoE-16B, it reports up to 2.1 times throughput at the same memory budget, with reported accuracy loss limited to 3.6% relative to full-width inference. The result informs sparse-model deployment with an explicit quality trade-off rather than demonstrating CTR gains. — [Paper](https://arxiv.org/abs/2610.37442) · [DOI](https://doi.org/10.1145/3795866.3844472) (Shandong University; TU Berlin; City University of Hong Kong · MobiCom 2026). Reading priority: Unrated.
+
+<a id="paper-2610-34514"></a>
+
+- **Ambiguous Fits: The Rashomon Effect and Challenges in Scaling Law Estimation**: Ambiguous Fits examines the final fitting stage of neural scaling laws, where different parameter settings can fit observed data nearly equally well yet diverge in large-scale extrapolation. It replaces heuristic local searches with deterministic branch-and-bound optimization that guarantees nearly optimal fitting loss and maps near-minimizers to a range of implied scaling curves. This provides a way to expose fitting ambiguity when planning ranking-model scale; the guarantee concerns fitting loss, not accurate extrapolation or demonstrated CTR performance. — [Paper](https://arxiv.org/abs/2610.34514) (University of Cambridge; Google DeepMind · arXiv 2026). Reading priority: Unrated.
