@@ -3,7 +3,7 @@
     "reading_tiers_assigned": 339,
     "reading_tiers_unrated": 257,
     "known_added_dates": 596,
-    "papers_with_updates": 323,
+    "papers_with_updates": 324,
     "verified_source_dates": 596,
     "verified_abstracts": 596,
     "unavailable_abstracts": 0,
@@ -26,7 +26,7 @@
       "added_at_basis": "Earliest recorded inclusion in reachable repository main history; 50 records were present at its root commit. This is not the source publication date.",
       "backfill_policy": "Unknown historical instants remain null. Source-date imports and structural/UI migrations do not invent catalog change events."
     },
-    "catalog_sha256": "ce19a5f0137e8f7170fe9bdc67af7349a65eb6080f115d4e4d9529f4d195e385"
+    "catalog_sha256": "f877346c77929fcfa1b00cd1d53a703fc2311c3ecb575df7f60a9d83e251a978"
   },
   "categories": [
     {
@@ -5278,7 +5278,7 @@
       "collection": "core",
       "category": "unified-feature-sequence-modeling",
       "affiliation": "Industry",
-      "venue": "KDD UniRec Workshop",
+      "venue": "arXiv",
       "year": 2026,
       "tags": [
         "Unified FI+Seq",
@@ -5344,6 +5344,14 @@
             "venue"
           ],
           "source_url": "https://arxiv.org/abs/2608.16797"
+        },
+        {
+          "at": "2026-11-01T23:21:42Z",
+          "kind": "venue_update",
+          "fields": [
+            "venue"
+          ],
+          "source_url": "https://github.com/byby221b/Awesome-CTR-Scaling/commit/3f0c2a23e41903327e5044db15968539f882a196"
         }
       ],
       "source_dates": {
@@ -5472,7 +5480,7 @@
       "collection": "core",
       "category": "unified-feature-sequence-modeling",
       "affiliation": "Shandong University",
-      "venue": "TAAC-KDD Cup Workshop",
+      "venue": "arXiv",
       "year": 2026,
       "tags": [
         "Unified FI+Seq",
@@ -5539,6 +5547,14 @@
             "venue"
           ],
           "source_url": "https://arxiv.org/abs/2608.27005"
+        },
+        {
+          "at": "2026-11-01T23:21:42Z",
+          "kind": "venue_update",
+          "fields": [
+            "venue"
+          ],
+          "source_url": "https://github.com/byby221b/Awesome-CTR-Scaling/commit/3f0c2a23e41903327e5044db15968539f882a196"
         }
       ],
       "source_dates": {
@@ -5558,7 +5574,7 @@
       "collection": "core",
       "category": "unified-feature-sequence-modeling",
       "affiliation": "Academic",
-      "venue": "KDD Cup Workshop",
+      "venue": "arXiv",
       "year": 2026,
       "tags": [
         "Unified FI+Seq",
@@ -5626,6 +5642,14 @@
             "venue"
           ],
           "source_url": "https://arxiv.org/abs/2609.01655"
+        },
+        {
+          "at": "2026-11-01T23:21:42Z",
+          "kind": "venue_update",
+          "fields": [
+            "venue"
+          ],
+          "source_url": "https://github.com/byby221b/Awesome-CTR-Scaling/commit/3f0c2a23e41903327e5044db15968539f882a196"
         }
       ],
       "source_dates": {
@@ -31116,7 +31140,7 @@
       "category": "generative-recommendation",
       "id": "2610.15864",
       "title": "Personalized LLM Recommendation with Semantic IDs: Autoregressive Beam Search vs. Multi-Token Prediction",
-      "venue": "NeurIPS PALM Workshop",
+      "venue": "arXiv",
       "year": 2026,
       "tags": [],
       "links": [
@@ -31177,6 +31201,14 @@
             "venue"
           ],
           "source_url": "https://arxiv.org/abs/2610.15864"
+        },
+        {
+          "at": "2026-11-01T23:21:42Z",
+          "kind": "venue_update",
+          "fields": [
+            "venue"
+          ],
+          "source_url": "https://github.com/byby221b/Awesome-CTR-Scaling/commit/3f0c2a23e41903327e5044db15968539f882a196"
         }
       ],
       "reading_tier": null,
@@ -33461,7 +33493,7 @@
       "collection": "related",
       "category": "architecture-innovations-beyond-recommendation",
       "affiliation": "Independent Researcher",
-      "venue": "NeurIPS Long-Context Foundation Models Workshop (non-archival)",
+      "venue": "arXiv",
       "year": 2026,
       "tags": [],
       "links": [
@@ -33522,6 +33554,14 @@
             "venue"
           ],
           "source_url": "https://arxiv.org/abs/2610.15139"
+        },
+        {
+          "at": "2026-11-01T23:21:42Z",
+          "kind": "venue_update",
+          "fields": [
+            "venue"
+          ],
+          "source_url": "https://github.com/byby221b/Awesome-CTR-Scaling/commit/3f0c2a23e41903327e5044db15968539f882a196"
         }
       ],
       "reading_tier": null,
@@ -35524,7 +35564,7 @@
       "collection": "related",
       "category": "retrieval-reranking-scaling",
       "affiliation": "University of Amsterdam; Johns Hopkins University",
-      "venue": "SIGIR-AP",
+      "venue": "arXiv",
       "year": 2026,
       "tags": [],
       "links": [
@@ -35583,6 +35623,14 @@
             "venue"
           ],
           "source_url": "https://arxiv.org/abs/2610.23510"
+        },
+        {
+          "at": "2026-11-01T23:21:42Z",
+          "kind": "venue_update",
+          "fields": [
+            "venue"
+          ],
+          "source_url": "https://github.com/byby221b/Awesome-CTR-Scaling/commit/3f0c2a23e41903327e5044db15968539f882a196"
         }
       ],
       "reading_tier": null,
@@ -36981,8 +37029,8 @@
       "collection": "related",
       "category": "architecture-innovations-beyond-recommendation",
       "affiliation": "University of Wisconsin-Madison; Korea University; NVIDIA",
-      "venue": "ASPLOS",
-      "year": 2027,
+      "venue": "arXiv",
+      "year": 2026,
       "tags": [],
       "links": [
         {
@@ -37048,6 +37096,22 @@
             "year"
           ],
           "source_url": "https://arxiv.org/abs/2610.16890"
+        },
+        {
+          "at": "2026-11-01T23:21:42Z",
+          "kind": "venue_update",
+          "fields": [
+            "venue"
+          ],
+          "source_url": "https://github.com/byby221b/Awesome-CTR-Scaling/commit/3f0c2a23e41903327e5044db15968539f882a196"
+        },
+        {
+          "at": "2026-11-01T23:21:42Z",
+          "kind": "metadata_enrichment",
+          "fields": [
+            "year"
+          ],
+          "source_url": "https://github.com/byby221b/Awesome-CTR-Scaling/commit/3f0c2a23e41903327e5044db15968539f882a196"
         }
       ],
       "reading_tier": null,
@@ -38843,7 +38907,7 @@
       "collection": "related",
       "category": "retrieval-reranking-scaling",
       "affiliation": "Independent Researcher; The Pennsylvania State University",
-      "venue": "SIGIR-AP",
+      "venue": "arXiv",
       "year": 2026,
       "tags": [],
       "links": [
@@ -38905,6 +38969,14 @@
             "venue"
           ],
           "source_url": "https://arxiv.org/abs/2610.26938"
+        },
+        {
+          "at": "2026-11-01T23:21:42Z",
+          "kind": "venue_update",
+          "fields": [
+            "venue"
+          ],
+          "source_url": "https://github.com/byby221b/Awesome-CTR-Scaling/commit/3f0c2a23e41903327e5044db15968539f882a196"
         }
       ],
       "reading_tier": null,
@@ -44420,7 +44492,7 @@
       "collection": "related",
       "category": "other",
       "affiliation": "Skolkovo Institute of Science and Technology; Higher School of Economics; AXXX; Sber AI Lab",
-      "venue": "CIKM",
+      "venue": "arXiv",
       "year": 2026,
       "tags": [],
       "links": [
@@ -44469,13 +44541,30 @@
           ]
         }
       },
-      "doi": "10.1145/3799682.3841135",
+      "doi": "10.48550/arXiv.2610.35550",
       "added_at": "2026-11-01T23:12:46Z",
       "added_provenance": {
         "kind": "catalog_entry",
         "source_url": "https://arxiv.org/abs/2610.35550"
       },
-      "change_history": [],
+      "change_history": [
+        {
+          "at": "2026-11-01T23:21:42Z",
+          "kind": "venue_update",
+          "fields": [
+            "venue"
+          ],
+          "source_url": "https://github.com/byby221b/Awesome-CTR-Scaling/commit/3f0c2a23e41903327e5044db15968539f882a196"
+        },
+        {
+          "at": "2026-11-01T23:21:42Z",
+          "kind": "metadata_enrichment",
+          "fields": [
+            "doi"
+          ],
+          "source_url": "https://github.com/byby221b/Awesome-CTR-Scaling/commit/3f0c2a23e41903327e5044db15968539f882a196"
+        }
+      ],
       "reading_tier": null,
       "companies": [],
       "order": 589

@@ -350,7 +350,7 @@ Generative retrieval, recommendation and ranking beyond discriminative CTR.
 
 <a id="paper-2610-15864"></a>
 
-- **Personalized LLM Recommendation with Semantic IDs: Autoregressive Beam Search vs. Multi-Token Prediction**: In a multitask streaming-media recommender, this study compares autoregressive semantic-ID beam search with parallel multi-token prediction strengthened by an auxiliary ranking loss. With four-code IDs and Qwen3 backbones, beam search performs better on most ranking and content-QA metrics and costs about 1/2.6 as much to train at 8B scale; parallel prediction retains the inference-throughput advantage. The result motivates measuring quality, training cost, and serving throughput together, without assuming the same trade-off for much longer IDs or different task mixtures. — [Paper](https://arxiv.org/abs/2610.15864) (Netflix · NeurIPS PALM Workshop 2026). Reading priority: Unrated.
+- **Personalized LLM Recommendation with Semantic IDs: Autoregressive Beam Search vs. Multi-Token Prediction**: In a multitask streaming-media recommender, this study compares autoregressive semantic-ID beam search with parallel multi-token prediction strengthened by an auxiliary ranking loss. With four-code IDs and Qwen3 backbones, beam search performs better on most ranking and content-QA metrics and costs about 1/2.6 as much to train at 8B scale; parallel prediction retains the inference-throughput advantage. The result motivates measuring quality, training cost, and serving throughput together, without assuming the same trade-off for much longer IDs or different task mixtures. — [Paper](https://arxiv.org/abs/2610.15864) (Netflix · arXiv 2026). Reading priority: Unrated.
 
 <a id="paper-2610-17368"></a>
 

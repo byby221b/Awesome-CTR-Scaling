@@ -510,7 +510,7 @@ Transferable ideas from general-purpose model architecture research.
 
 <a id="paper-2610-15139"></a>
 
-- **When Dynamic Scaling Fails: A Scale-State Feedback Governs Recurrent-State Quantization in Linear-Attention and SSM LLMs**: This study separates numerical instability from information loss in quantized recurrent states. Scale–state feedback can cause norm growth, but controlling that scale alone recovers only part of lost performance; finer resolution and long decoding horizons still matter. In the tested settings, group-wise INT4 at 32K decode performs no better than discarding the state, and learned layer precision allocation reduces to protecting early layers under article-disjoint evaluation. The useful warning for compressed recommendation histories is to validate error accumulation over the intended horizon, rather than certify a bit width from short recall tests. — [Paper](https://arxiv.org/abs/2610.15139) (Independent Researcher · NeurIPS Long-Context Foundation Models Workshop (non-archival) 2026). Reading priority: Unrated.
+- **When Dynamic Scaling Fails: A Scale-State Feedback Governs Recurrent-State Quantization in Linear-Attention and SSM LLMs**: This study separates numerical instability from information loss in quantized recurrent states. Scale–state feedback can cause norm growth, but controlling that scale alone recovers only part of lost performance; finer resolution and long decoding horizons still matter. In the tested settings, group-wise INT4 at 32K decode performs no better than discarding the state, and learned layer precision allocation reduces to protecting early layers under article-disjoint evaluation. The useful warning for compressed recommendation histories is to validate error accumulation over the intended horizon, rather than certify a bit width from short recall tests. — [Paper](https://arxiv.org/abs/2610.15139) (Independent Researcher · arXiv 2026). Reading priority: Unrated.
 
 <a id="paper-2610-22130"></a>
 
@@ -670,7 +670,7 @@ Transferable ideas from general-purpose model architecture research.
 
 <a id="paper-2610-16890"></a>
 
-- **FORGE: Procedural Weight Generation for Sparse MoE Inference**: FORGE proposes a hardware unit that regenerates approximate MoE expert weights from compact rotor parameters instead of loading full tensors. With 30% of FFN layers replaced, the authors estimate 1.3–2.8x system throughput at matched GPU count and 1.10–1.15x lower short-context per-user decode latency, with downstream accuracy losses. The verified SystemVerilog design is a hardware proposal; these system estimates are not measured recommender deployment gains. — [Paper](https://arxiv.org/abs/2610.16890) (University of Wisconsin-Madison; Korea University; NVIDIA · ASPLOS 2027). Reading priority: Unrated.
+- **FORGE: Procedural Weight Generation for Sparse MoE Inference**: FORGE proposes a hardware unit that regenerates approximate MoE expert weights from compact rotor parameters instead of loading full tensors. With 30% of FFN layers replaced, the authors estimate 1.3–2.8x system throughput at matched GPU count and 1.10–1.15x lower short-context per-user decode latency, with downstream accuracy losses. The verified SystemVerilog design is a hardware proposal; these system estimates are not measured recommender deployment gains. — [Paper](https://arxiv.org/abs/2610.16890) (University of Wisconsin-Madison; Korea University; NVIDIA · arXiv 2026). Reading priority: Unrated.
 
 <a id="paper-2610-17425"></a>
 
