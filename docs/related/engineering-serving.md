@@ -6,7 +6,7 @@
 
 Systems, serving infrastructure and hardware-aware optimization.
 
-48 papers · Updated 2026-11-01
+48 papers · Updated 2026-11-02
 
 <a id="paper-2510-18239"></a>
 
@@ -78,11 +78,11 @@ Systems, serving infrastructure and hardware-aware optimization.
 
 <a id="paper-2610-02057"></a>
 
-- **Optimizing Effective Training Time for Large-Scale Recommendation Systems**: This fleet-scale study uses Effective Training Time (ETT%) to identify lifecycle overhead that prevents large recommendation-training jobs from advancing on new data. The framework guides optimizations to trainer initialization, PyTorch 2 compilation, checkpointing, model publishing and recovery. The abstract reports improved ETT% on every benchmark, reaching 85% on the largest workload, while fleet-wide ETT% rose from about 80% to above 90% after deployment. — [Paper](https://arxiv.org/abs/2610.02057) (Meta Platforms, Inc. · arXiv 2026). Reading priority: Read first.
+- **Optimizing Effective Training Time for Large-Scale Recommendation Systems**: Withdrawn by the authors on 29 October 2026 because data relating to the Effective Training Time experiments were incomplete and incorrect. The retained abstract describes the earlier study; its reported gains should not be treated as validated evidence. No PDF is available for the withdrawn version. — [Paper](https://arxiv.org/abs/2610.02057) (Meta Platforms, Inc. · arXiv 2026). Reading priority: Read first.
 
 <a id="paper-2609-39350"></a>
 
-- **HAPMoE: Heterogeneity-Aware Automatic Parallelism Planning for Mixture-of-Experts Models Training**: HAPMoE addresses automatic parallelization when mixture-of-experts models and heterogeneous accelerator clusters occur together, using a lightweight MoE-aware cost model and a six-dimensional parallelism search that emits Megatron-LM-deployable plans. The abstract reports end-to-end training throughput up to 3.2× that of baselines across heterogeneous clusters, with up to 78% additional gains from non-uniform pipeline partitioning. Its pruning-enhanced dynamic-programming search completes within one minute in the reported experiments. — [Paper](https://arxiv.org/abs/2609.39350) (Peking University / Infinigence AI / Tsinghua University · arXiv 2026). Reading priority: Worth reading.
+- **HAPMoE: Heterogeneity-Aware Automatic Parallelism Planning for Mixture-of-Experts Models Training**: HAPMoE addresses automatic parallelization when mixture-of-experts models and heterogeneous accelerator clusters occur together, using a lightweight MoE-aware cost model and a six-dimensional parallelism search that emits Megatron-LM-deployable plans. The abstract reports end-to-end training throughput up to 3.2× that of baselines across heterogeneous clusters, with up to 78% additional gains from non-uniform pipeline partitioning. Its pruning-enhanced dynamic-programming search completes within one minute in the reported experiments. — [Paper](https://arxiv.org/abs/2609.39350) (Peking University / Infinigence AI / Tsinghua University · Findings of EMNLP 2026). Reading priority: Worth reading.
 
 <a id="paper-2609-36070"></a>
 

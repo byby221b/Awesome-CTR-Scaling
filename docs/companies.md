@@ -555,7 +555,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [MegaFlux: Skew-Resilient MoE Megakernels via Pipelined Expert Replication](related/engineering-serving.md#paper-2610-00671) · 2026 · Related
 - [NCCL M2N: A Layout- and Topology-Aware Collective for Distributed Tensor Resharding](related/engineering-serving.md#paper-2610-07516) · 2026 · Related
 - [ReplaySSM: Cache SSM Inputs, Not State](related/architecture-innovations-beyond-recommendation.md#paper-2610-13778) · 2026 · Related
-- [FORGE: Procedural Weight Generation for Sparse MoE Inference](related/architecture-innovations-beyond-recommendation.md#paper-2610-16890) · 2026 · Related
+- [FORGE: Procedural Weight Generation for Sparse MoE Inference](related/architecture-innovations-beyond-recommendation.md#paper-2610-16890) · 2027 · Related
 - [KPage: Cross-Block Page Compaction for Hardware-Efficient Sparse Attention](related/engineering-serving.md#paper-2610-28096) · 2026 · Related
 - [Improving the Expressive Power of Hybrid Sequence Models via Multi-Hop Retrieval](related/architecture-innovations-beyond-recommendation.md#paper-2610-25250) · 2026 · Related
 
@@ -713,7 +713,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 
 ## Linkup
 
-- [Compact and Efficient Indexes for Learned Sparse Retrieval](related/retrieval-reranking-scaling.md#paper-2610-12300) · 2026 · Related
+- [Compact and Efficient Indexes for Learned Sparse Retrieval](related/retrieval-reranking-scaling.md#paper-2610-12300) · 2027 · Related
 
 <a id="company-kling-team"></a>
 

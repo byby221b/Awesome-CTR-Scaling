@@ -6,7 +6,7 @@
 
 Scaling retrieval and reranking stages of recommendation pipelines.
 
-44 papers · Updated 2026-11-01
+44 papers · Updated 2026-11-02
 
 <a id="paper-2603-04816"></a>
 
@@ -74,7 +74,7 @@ Scaling retrieval and reranking stages of recommendation pipelines.
 
 <a id="paper-2610-12300"></a>
 
-- **Compact and Efficient Indexes for Learned Sparse Retrieval**: This work compresses learned sparse-retrieval indexes at both candidate-selection and scoring stages. It replaces block summaries with document medoids and combines vocabulary reordering, fused decompression/dot products, and per-component 4-bit value codebooks. On MS MARCO with three sparse encoders, experiments compare speed and memory at matched retrieval accuracy. The techniques offer a systems-level reference for scaling sparse candidate retrieval; they do not establish gains in downstream CTR ranking. — [Paper](https://arxiv.org/abs/2610.12300) (ISTI–CNR; University of Pisa; Linkup · arXiv 2026). Reading priority: Unrated.
+- **Compact and Efficient Indexes for Learned Sparse Retrieval**: This work compresses learned sparse-retrieval indexes at both candidate-selection and scoring stages. It replaces block summaries with document medoids and combines vocabulary reordering, fused decompression/dot products, and per-component 4-bit value codebooks. On MS MARCO with three sparse encoders, experiments compare speed and memory at matched retrieval accuracy. The techniques offer a systems-level reference for scaling sparse candidate retrieval; they do not establish gains in downstream CTR ranking. — [Paper](https://arxiv.org/abs/2610.12300) (ISTI–CNR; University of Pisa; Linkup · ICDE 2027). Reading priority: Unrated.
 
 <a id="paper-2610-08716"></a>
 
@@ -118,7 +118,7 @@ Scaling retrieval and reranking stages of recommendation pipelines.
 
 <a id="paper-2610-23510"></a>
 
-- **LSNR: Learned Sparse News Recommendations with Attentive User Modeling**: LSNR separately encodes news articles, then combines attention-weighted sparse article vectors with a dense-projected user expansion. This avoids flattening and truncating concatenated histories. On MIND and EBNeRD it outperforms STAR, remains competitive with dense recommenders in standard settings, and performs better with short histories. Its serving index is an order of magnitude smaller than the evaluated uncompressed dense baseline. — [Paper](https://arxiv.org/abs/2610.23510) (University of Amsterdam; Johns Hopkins University · arXiv 2026). Reading priority: Unrated.
+- **LSNR: Learned Sparse News Recommendations with Attentive User Modeling**: LSNR separately encodes news articles, then combines attention-weighted sparse article vectors with a dense-projected user expansion. This avoids flattening and truncating concatenated histories. On MIND and EBNeRD it outperforms STAR, remains competitive with dense recommenders in standard settings, and performs better with short histories. Its serving index is an order of magnitude smaller than the evaluated uncompressed dense baseline. — [Paper](https://arxiv.org/abs/2610.23510) (University of Amsterdam; Johns Hopkins University · SIGIR-AP 2026). Reading priority: Unrated.
 
 <a id="paper-2610-14196"></a>
 
@@ -146,7 +146,7 @@ Scaling retrieval and reranking stages of recommendation pipelines.
 
 <a id="paper-2610-26938"></a>
 
-- **GRaSP: Latency-Aware Optimization for Geo-Distributed Retrieval-Augmented Generation**: GRaSP reranks retrieval candidates using relevance, network latency and optional transfer cost under regional caps, without retraining. Its benefit depends on content placement. On a five-node testbed, a moderate setting reduces P90 fetch latency by 41% while retaining 78% of relevance-only recall. End-to-end QA reduces context-fetch latency by 43% while staying within 0.062 absolute EM of relevance-only retrieval; this is a quality-latency trade-off. — [Paper](https://arxiv.org/abs/2610.26938) (Independent Researcher; The Pennsylvania State University · arXiv 2026). Reading priority: Unrated.
+- **GRaSP: Latency-Aware Optimization for Geo-Distributed Retrieval-Augmented Generation**: GRaSP reranks retrieval candidates using relevance, network latency and optional transfer cost under regional caps, without retraining. Its benefit depends on content placement. On a five-node testbed, a moderate setting reduces P90 fetch latency by 41% while retaining 78% of relevance-only recall. End-to-end QA reduces context-fetch latency by 43% while staying within 0.062 absolute EM of relevance-only retrieval; this is a quality-latency trade-off. — [Paper](https://arxiv.org/abs/2610.26938) (Independent Researcher; The Pennsylvania State University · SIGIR-AP 2026). Reading priority: Unrated.
 
 <a id="paper-2610-30941"></a>
 

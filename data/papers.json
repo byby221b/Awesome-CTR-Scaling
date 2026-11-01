@@ -5,7 +5,7 @@
     "description": "Scaling laws and scalable ranking models for industrial recommendation.",
     "repository_url": "https://github.com/byby221b/Awesome-CTR-Scaling",
     "site_url": "https://byby221b.github.io/Awesome-CTR-Scaling/",
-    "updated": "2026-11-01",
+    "updated": "2026-11-02",
     "source_commit": "31ad30becff83ca14a01f37fc99d52ba79f85565",
     "scope": "We cover papers that (1) study scaling laws for recommendation models, (2) propose scalable Transformer-based architectures for CTR/ranking, (3) address efficiency challenges in scaling up industrial ranking systems, or (4) explore novel paradigms (e.g., sparse scaling, generative pre-training, foundation models) for scalable recommendation.",
     "history": {
@@ -6052,7 +6052,7 @@
       "collection": "core",
       "category": "unified-feature-sequence-modeling",
       "affiliation": "Industry",
-      "venue": "arXiv",
+      "venue": "KDD UniRec Workshop",
       "year": 2026,
       "tags": [
         "Unified FI+Seq",
@@ -6110,6 +6110,14 @@
           ],
           "source_url": "https://github.com/byby221b/Awesome-CTR-Scaling/commit/a49e55867454f76e5a77114de99b196cb83fd797",
           "commit_sha": "a49e55867454f76e5a77114de99b196cb83fd797"
+        },
+        {
+          "at": "2026-11-01T23:12:46Z",
+          "kind": "venue_update",
+          "fields": [
+            "venue"
+          ],
+          "source_url": "https://arxiv.org/abs/2608.16797"
         }
       ],
       "source_dates": {
@@ -6232,7 +6240,7 @@
       "collection": "core",
       "category": "unified-feature-sequence-modeling",
       "affiliation": "Shandong University",
-      "venue": "arXiv",
+      "venue": "TAAC-KDD Cup Workshop",
       "year": 2026,
       "tags": [
         "Unified FI+Seq",
@@ -6291,6 +6299,14 @@
           ],
           "source_url": "https://github.com/byby221b/Awesome-CTR-Scaling/commit/a49e55867454f76e5a77114de99b196cb83fd797",
           "commit_sha": "a49e55867454f76e5a77114de99b196cb83fd797"
+        },
+        {
+          "at": "2026-11-01T23:12:46Z",
+          "kind": "venue_update",
+          "fields": [
+            "venue"
+          ],
+          "source_url": "https://arxiv.org/abs/2608.27005"
         }
       ],
       "source_dates": {
@@ -6308,7 +6324,7 @@
       "collection": "core",
       "category": "unified-feature-sequence-modeling",
       "affiliation": "Academic",
-      "venue": "arXiv",
+      "venue": "KDD Cup Workshop",
       "year": 2026,
       "tags": [
         "Unified FI+Seq",
@@ -6368,6 +6384,14 @@
           ],
           "source_url": "https://github.com/byby221b/Awesome-CTR-Scaling/commit/a49e55867454f76e5a77114de99b196cb83fd797",
           "commit_sha": "a49e55867454f76e5a77114de99b196cb83fd797"
+        },
+        {
+          "at": "2026-11-01T23:12:46Z",
+          "kind": "venue_update",
+          "fields": [
+            "venue"
+          ],
+          "source_url": "https://arxiv.org/abs/2609.01655"
         }
       ],
       "source_dates": {
@@ -22795,36 +22819,36 @@
         "status": "verified",
         "text": "Lifecycle overhead silently consumes accelerator capacity across large-scale recommendation training fleets. Our largest recommendation workloads process tens of billions train- ing examples per day on thousands of GPUs. Before this work, only 50-60% of their end-to-end wall time advanced training on new data. We present a fleet-scale study of this lifecycle overhead and a set of optimizations spanning the full training stack. We use Effective Training Time (ETT%) as an operational framework to instrument lost time, localize it to independently owned infrastructure components, and expose work repeated across job restarts. This analysis guides optimizations like communication elimination and pipeline overlap during trainer initialization; dynamic-shape handling, autotuning pruning, and reusable Py- Torch 2 compilation caches; asynchronous checkpointing; stan- dalone model publishing; and reductions in recovery cost. We evaluate the optimizations on representative models and measure their impacts in our training fleet. ETT% improves on every benchmark, by 15.5% on average, and reaches 85% on our largest workload. Fleet-wide ETT% rose from about 80% to above 90% after deployment.",
         "language": "en",
-        "source_url": "https://arxiv.org/abs/2610.02057v1",
-        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.02057v2",
+        "source_version": "v2",
         "source_title": "Optimizing Effective Training Time for Large-Scale Recommendation Systems",
-        "retrieved_at": "2026-10-09T12:27:07Z",
+        "retrieved_at": "2026-11-01T23:09:11Z",
         "license": "CC0-1.0"
       },
       "source_dates": {
         "published_at": "2026-10-01T17:02:16Z",
-        "updated_at": "2026-10-01T17:02:16Z",
-        "source_version": "v1",
-        "source_url": "https://arxiv.org/abs/2610.02057v1",
-        "verified_at": "2026-10-09T12:27:07Z"
+        "updated_at": "2026-10-29T09:37:24Z",
+        "source_version": "v2",
+        "source_url": "https://arxiv.org/abs/2610.02057v2",
+        "verified_at": "2026-11-01T23:12:46Z"
       },
       "summaries": {
         "en": {
-          "text": "This fleet-scale study uses Effective Training Time (ETT%) to identify lifecycle overhead that prevents large recommendation-training jobs from advancing on new data. The framework guides optimizations to trainer initialization, PyTorch 2 compilation, checkpointing, model publishing and recovery. The abstract reports improved ETT% on every benchmark, reaching 85% on the largest workload, while fleet-wide ETT% rose from about 80% to above 90% after deployment.",
+          "text": "Withdrawn by the authors on 29 October 2026 because data relating to the Effective Training Time experiments were incomplete and incorrect. The retained abstract describes the earlier study; its reported gains should not be treated as validated evidence. No PDF is available for the withdrawn version.",
           "basis": "original_abstract",
-          "method": "ai_assisted",
-          "updated_at": "2026-10-09",
+          "method": "editorial",
+          "updated_at": "2026-11-02",
           "source_urls": [
-            "https://arxiv.org/abs/2610.02057v1"
+            "https://arxiv.org/abs/2610.02057v2"
           ]
         },
         "zh": {
-          "text": "这项面向训练集群的研究使用有效训练时间占比（ETT%），定位大型推荐训练任务在处理新数据之外消耗的生命周期开销。该框架指导训练器初始化、PyTorch 2 编译、检查点、模型发布与故障恢复的优化。摘要报告所有基准的 ETT% 均有所提高，最大工作负载达到 85%，部署后整个训练集群的 ETT% 则从约 80% 升至 90% 以上。",
+          "text": "作者于2026年10月29日撤稿，说明ETT实验相关数据不完整且不正确。保留的原摘要仅用于追溯早期研究，原有效训练时间提升数字不应继续作为已验证结论引用；撤回版本没有可用PDF。",
           "basis": "original_abstract",
-          "method": "ai_assisted",
-          "updated_at": "2026-10-09",
+          "method": "editorial",
+          "updated_at": "2026-11-02",
           "source_urls": [
-            "https://arxiv.org/abs/2610.02057v1"
+            "https://arxiv.org/abs/2610.02057v2"
           ]
         }
       },
@@ -22833,7 +22857,19 @@
         "kind": "catalog_entry",
         "source_url": "https://arxiv.org/abs/2610.02057"
       },
-      "change_history": [],
+      "change_history": [
+        {
+          "at": "2026-11-01T23:12:46Z",
+          "kind": "paper_revision",
+          "fields": [
+            "original_abstract",
+            "source_dates",
+            "summaries"
+          ],
+          "source_url": "https://arxiv.org/abs/2610.02057v2",
+          "source_version": "v2"
+        }
+      ],
       "reading_tier": "prioritize"
     },
     {
@@ -23061,7 +23097,7 @@
       "collection": "related",
       "category": "engineering-serving",
       "affiliation": "Peking University / Infinigence AI / Tsinghua University",
-      "venue": "arXiv",
+      "venue": "Findings of EMNLP",
       "year": 2026,
       "tags": [],
       "links": [
@@ -23115,7 +23151,16 @@
         "kind": "catalog_entry",
         "source_url": "https://arxiv.org/abs/2609.39350"
       },
-      "change_history": [],
+      "change_history": [
+        {
+          "at": "2026-11-01T23:12:46Z",
+          "kind": "venue_update",
+          "fields": [
+            "venue"
+          ],
+          "source_url": "https://arxiv.org/abs/2609.39350"
+        }
+      ],
       "reading_tier": "consider"
     },
     {
@@ -28215,8 +28260,8 @@
       "collection": "related",
       "category": "retrieval-reranking-scaling",
       "affiliation": "ISTI–CNR; University of Pisa; Linkup",
-      "venue": "arXiv",
-      "year": 2026,
+      "venue": "ICDE",
+      "year": 2027,
       "tags": [],
       "links": [
         {
@@ -28266,7 +28311,24 @@
         "kind": "catalog_entry",
         "source_url": "https://arxiv.org/abs/2610.12300"
       },
-      "change_history": [],
+      "change_history": [
+        {
+          "at": "2026-11-01T23:12:46Z",
+          "kind": "venue_update",
+          "fields": [
+            "venue"
+          ],
+          "source_url": "https://arxiv.org/abs/2610.12300"
+        },
+        {
+          "at": "2026-11-01T23:12:46Z",
+          "kind": "metadata_enrichment",
+          "fields": [
+            "year"
+          ],
+          "source_url": "https://arxiv.org/abs/2610.12300"
+        }
+      ],
       "reading_tier": null
     },
     {
@@ -30702,7 +30764,7 @@
       "category": "generative-recommendation",
       "id": "2610.15864",
       "title": "Personalized LLM Recommendation with Semantic IDs: Autoregressive Beam Search vs. Multi-Token Prediction",
-      "venue": "arXiv",
+      "venue": "NeurIPS PALM Workshop",
       "year": 2026,
       "tags": [],
       "links": [
@@ -30755,7 +30817,16 @@
         "kind": "catalog_entry",
         "source_url": "https://arxiv.org/abs/2610.15864"
       },
-      "change_history": [],
+      "change_history": [
+        {
+          "at": "2026-11-01T23:12:46Z",
+          "kind": "venue_update",
+          "fields": [
+            "venue"
+          ],
+          "source_url": "https://arxiv.org/abs/2610.15864"
+        }
+      ],
       "reading_tier": null
     },
     {
@@ -31053,40 +31124,38 @@
       ],
       "original_abstract": {
         "status": "verified",
-        "text": "Semantic-ID-based generative recommendation unifies retrieval and ranking through autoregressive decoding but differs structurally from discriminative models, which can directly access rich target-item side features. The attributes are compressed into a finite codebook during quantization, while the target item remains undetermined during decoding and its features cannot be looked up. This target-side feature vacuum weakens generation at each semantic-ID level through high conditional entropy and cascading errors, and final ranking through missing target-side feature crossing. Existing methods interact with candidate representations or generate discrete attribute tokens, but none reconstructs a continuous target-side representation inside decoding to support both stepwise generation and ranking. We propose TacGR (Stepwise Target-Side Feature Anticipation and Crossing for Generative Recommendation). Before decoding each codeword, TacGR anticipates a continuous target-side feature vector and crosses it with the semantic prefix and user behavior sequence inside the decoder. The crossed representation conditions current-level generation and is directly used for ranking. Continuous-vector regression risks a learnable target collapsing with its prediction and prediction noise propagating into generation through attention. TacGR addresses these challenges with a semantic-anchoring auxiliary tower and a unidirectional visibility mask, respectively. For extremely long industrial behavior histories, it introduces gated convolutional denoising to suppress noise and adapts the pyramid memory funnel to reduce inference cost. Offline experiments on a large-scale Lazada dataset show significant gains over OneRec, UniRec, and UniSGR. Online A/B testing improves IPV, Order, and GMV by 0.79%, 5.55%, and 3.09%, respectively.",
+        "text": "Semantic-ID-based generative recommendation unifies retrieval and ranking through autoregressive decoding but differs structurally from discriminative models, which can directly access rich target-item side features. The attributes are compressed into a finite codebook during quantization, while the target item remains undetermined during decoding and its features cannot be looked up. This target-side feature vacuum weakens generation at each semantic-ID level through high conditional entropy and cascading errors, and final ranking through missing target-side feature crossing.\n  Existing methods interact with candidate representations or generate discrete attribute tokens, but none reconstructs a continuous target-side representation inside decoding to support both stepwise generation and ranking. We propose TacGR (Stepwise Target-Side Feature Anticipation and Crossing for Generative Recommendation). Before decoding each codeword, TacGR anticipates a continuous target-side feature vector and crosses it with the semantic prefix and user behavior sequence inside the decoder. The crossed representation conditions current-level generation and is directly used for ranking.\n  Continuous-vector regression risks a learnable target collapsing with its prediction and prediction noise propagating into generation through attention. TacGR addresses these challenges with a semantic-anchoring auxiliary tower and a unidirectional visibility mask, respectively. For extremely long industrial behavior histories, it introduces gated convolutional denoising to suppress noise and adapts the pyramid memory funnel to reduce inference cost. Offline experiments on a large-scale Lazada dataset show significant gains over OneRec, UniRec, and UniSGR. Online A/B testing improves IPV, Order, and GMV by 0.79%, 5.55%, and 3.09%, respectively.",
         "language": "en",
-        "source_url": "https://arxiv.org/abs/2610.16132v1",
-        "retrieved_at": "2026-10-14T23:21:00Z",
-        "license": null,
+        "source_url": "https://arxiv.org/abs/2610.16132v2",
+        "source_version": "v2",
         "source_title": "UniSGR-V2: Stepwise Target-Side Feature Anticipation and Crossing for Generative Recommendation",
-        "source_version": "v1"
+        "retrieved_at": "2026-11-01T23:09:39Z",
+        "license": "CC0-1.0"
       },
       "source_dates": {
         "published_at": "2026-10-12T03:48:56Z",
-        "updated_at": "2026-10-12T03:48:56Z",
-        "source_version": "v1",
-        "source_url": "https://arxiv.org/abs/2610.16132v1",
-        "verified_at": "2026-10-14T23:21:00Z"
+        "updated_at": "2026-10-28T09:57:20Z",
+        "source_version": "v2",
+        "source_url": "https://arxiv.org/abs/2610.16132v2",
+        "verified_at": "2026-11-01T23:12:46Z"
       },
       "summaries": {
         "en": {
           "text": "UniSGR-V2 presents TacGR, which predicts a continuous target-side feature vector before each semantic-ID codeword and crosses it with the semantic prefix and user history to support generation and ranking. An anchored auxiliary tower and one-way visibility mask limit collapse and prediction-noise propagation; gated denoising and a pyramid memory funnel handle long histories. In a Lazada homepage A/B test replacing the previous generative recall model, IPV, orders, and GMV rise relatively by 0.79%, 5.55%, and 3.09%; this is not a test replacing the entire CTR ranking stack.",
           "basis": "original_abstract",
           "method": "ai_assisted",
-          "updated_at": "2026-10-15",
+          "updated_at": "2026-11-02",
           "source_urls": [
-            "https://arxiv.org/abs/2610.16132v1",
-            "https://arxiv.org/pdf/2610.16132v1"
+            "https://arxiv.org/abs/2610.16132v2"
           ]
         },
         "zh": {
           "text": "UniSGR-V2提出TacGR，在每个语义ID码字生成前预测连续目标侧特征，并与语义前缀、用户历史交叉，用于生成和排序。锚定辅助塔与单向可见性掩码缓解坍塌和预测噪声传播，门控去噪及金字塔记忆漏斗处理长历史。在Lazada首页替换旧生成式召回模型的A/B测试中，商品详情页浏览量、订单量及成交总额分别相对提升0.79%、5.55%和3.09%；实验并未替换完整CTR精排链路。",
           "basis": "original_abstract",
           "method": "ai_assisted",
-          "updated_at": "2026-10-15",
+          "updated_at": "2026-11-02",
           "source_urls": [
-            "https://arxiv.org/abs/2610.16132v1",
-            "https://arxiv.org/pdf/2610.16132v1"
+            "https://arxiv.org/abs/2610.16132v2"
           ]
         }
       },
@@ -31095,7 +31164,19 @@
         "kind": "catalog_entry",
         "source_url": "https://arxiv.org/abs/2610.16132"
       },
-      "change_history": [],
+      "change_history": [
+        {
+          "at": "2026-11-01T23:12:46Z",
+          "kind": "paper_revision",
+          "fields": [
+            "original_abstract",
+            "source_dates",
+            "summaries"
+          ],
+          "source_url": "https://arxiv.org/abs/2610.16132v2",
+          "source_version": "v2"
+        }
+      ],
       "reading_tier": null
     },
     {
@@ -32921,7 +33002,7 @@
       "collection": "related",
       "category": "architecture-innovations-beyond-recommendation",
       "affiliation": "Independent Researcher",
-      "venue": "arXiv",
+      "venue": "NeurIPS Long-Context Foundation Models Workshop (non-archival)",
       "year": 2026,
       "tags": [],
       "links": [
@@ -32974,7 +33055,16 @@
         "kind": "catalog_entry",
         "source_url": "https://arxiv.org/abs/2610.15139"
       },
-      "change_history": [],
+      "change_history": [
+        {
+          "at": "2026-11-01T23:12:46Z",
+          "kind": "venue_update",
+          "fields": [
+            "venue"
+          ],
+          "source_url": "https://arxiv.org/abs/2610.15139"
+        }
+      ],
       "reading_tier": null
     },
     {
@@ -34885,7 +34975,7 @@
       "collection": "related",
       "category": "retrieval-reranking-scaling",
       "affiliation": "University of Amsterdam; Johns Hopkins University",
-      "venue": "arXiv",
+      "venue": "SIGIR-AP",
       "year": 2026,
       "tags": [],
       "links": [
@@ -34936,7 +35026,16 @@
         "kind": "catalog_entry",
         "source_url": "https://arxiv.org/abs/2610.23510"
       },
-      "change_history": [],
+      "change_history": [
+        {
+          "at": "2026-11-01T23:12:46Z",
+          "kind": "venue_update",
+          "fields": [
+            "venue"
+          ],
+          "source_url": "https://arxiv.org/abs/2610.23510"
+        }
+      ],
       "reading_tier": null
     },
     {
@@ -36063,7 +36162,7 @@
       "collection": "related",
       "category": "architecture-innovations-beyond-recommendation",
       "affiliation": "Luma AI; X School",
-      "venue": "arXiv",
+      "venue": "NeurIPS AXIOM Workshop",
       "year": 2026,
       "tags": [],
       "links": [
@@ -36125,6 +36224,14 @@
           ],
           "source_url": "https://arxiv.org/abs/2610.15146v2",
           "source_version": "v2"
+        },
+        {
+          "at": "2026-11-01T23:12:46Z",
+          "kind": "venue_update",
+          "fields": [
+            "venue"
+          ],
+          "source_url": "https://arxiv.org/abs/2610.15146"
         }
       ],
       "reading_tier": null
@@ -36264,8 +36371,8 @@
       "collection": "related",
       "category": "architecture-innovations-beyond-recommendation",
       "affiliation": "University of Wisconsin-Madison; Korea University; NVIDIA",
-      "venue": "arXiv",
-      "year": 2026,
+      "venue": "ASPLOS",
+      "year": 2027,
       "tags": [],
       "links": [
         {
@@ -36315,7 +36422,24 @@
         "kind": "catalog_entry",
         "source_url": "https://arxiv.org/abs/2610.16890"
       },
-      "change_history": [],
+      "change_history": [
+        {
+          "at": "2026-11-01T23:12:46Z",
+          "kind": "venue_update",
+          "fields": [
+            "venue"
+          ],
+          "source_url": "https://arxiv.org/abs/2610.16890"
+        },
+        {
+          "at": "2026-11-01T23:12:46Z",
+          "kind": "metadata_enrichment",
+          "fields": [
+            "year"
+          ],
+          "source_url": "https://arxiv.org/abs/2610.16890"
+        }
+      ],
       "reading_tier": null
     },
     {
@@ -38028,7 +38152,7 @@
       "collection": "related",
       "category": "retrieval-reranking-scaling",
       "affiliation": "Independent Researcher; The Pennsylvania State University",
-      "venue": "arXiv",
+      "venue": "SIGIR-AP",
       "year": 2026,
       "tags": [],
       "links": [
@@ -38082,7 +38206,16 @@
         "kind": "catalog_entry",
         "source_url": "https://arxiv.org/abs/2610.26938"
       },
-      "change_history": [],
+      "change_history": [
+        {
+          "at": "2026-11-01T23:12:46Z",
+          "kind": "venue_update",
+          "fields": [
+            "venue"
+          ],
+          "source_url": "https://arxiv.org/abs/2610.26938"
+        }
+      ],
       "reading_tier": null
     },
     {
@@ -38558,38 +38691,38 @@
       ],
       "original_abstract": {
         "status": "verified",
-        "text": "Standard implementations of softmax, log-softmax, and cross-entropy have two numerical bugs. The first bug, Softmax Collapse, rounds the target logit's gradient to zero if that one logit is much larger than the others, resulting in gradients that no longer sum to zero. The second bug, Softmax Cancellation, occurs when student logits are close to teacher logits, and produces non-zero gradients even when the student and teacher logits are equal. We present simple implementations of log-softmax, softmax, and cross-entropy that fix both bugs. Our fix eliminates the previously-observed \"Slingshot\" phenomenon, speeds up grokking with weight decay, prevents accuracy collapse without weight decay, stops student networks from drifting away from the teacher during distillation, and shows that after memorization, logit growth is bounded by an equilibrium between weight decay and Adam's $ε$ hyperparameter.",
+        "text": "Standard implementations of softmax, log-softmax, and cross-entropy have two numerical bugs. The first bug, Softmax Collapse, rounds the target logit's gradient to zero if that one logit is much larger than the others, resulting in gradients that no longer sum to zero. The second bug, Softmax Cancellation, occurs when student logits are close to teacher logits, and produces non-zero gradients even when the student and teacher logits are equal. We present simple implementations of log-softmax, softmax, and cross-entropy that fix both bugs. Our fix eliminates the previously observed \"slingshot\" phenomenon, speeds up grokking with weight decay, prevents accuracy collapse without weight decay, stops student networks from drifting away from the teacher during distillation, and shows that after memorization, logit growth is bounded by an equilibrium between weight decay and Adam's $ε$ hyperparameter.",
         "language": "en",
-        "source_url": "https://arxiv.org/abs/2610.31642v1",
-        "retrieved_at": "2026-10-27T02:34:36Z",
-        "license": null,
+        "source_url": "https://arxiv.org/abs/2610.31642v3",
+        "source_version": "v3",
         "source_title": "A Fix for Softmax and Cross-Entropy",
-        "source_version": "v1"
+        "retrieved_at": "2026-11-01T23:10:06Z",
+        "license": "CC0-1.0"
       },
       "source_dates": {
         "published_at": "2026-10-22T17:54:56Z",
-        "updated_at": "2026-10-22T17:54:56Z",
-        "source_version": "v1",
-        "source_url": "https://arxiv.org/abs/2610.31642v1",
-        "verified_at": "2026-10-27T02:40:54Z"
+        "updated_at": "2026-10-29T01:45:43Z",
+        "source_version": "v3",
+        "source_url": "https://arxiv.org/abs/2610.31642v3",
+        "verified_at": "2026-11-01T23:12:46Z"
       },
       "summaries": {
         "en": {
           "text": "This work identifies floating-point errors in softmax and cross-entropy: target gradients can round to zero, and near-matching teacher and student distributions can suffer cancellation. Revised implementations suppress the Slingshot effect and distillation drift in the reported experiments. The contribution improves numerical behavior of common training operators; recommendation-specific gains are not established.",
           "basis": "original_abstract",
           "method": "ai_assisted",
-          "updated_at": "2026-10-27",
+          "updated_at": "2026-11-02",
           "source_urls": [
-            "https://arxiv.org/abs/2610.31642v1"
+            "https://arxiv.org/abs/2610.31642v3"
           ]
         },
         "zh": {
           "text": "该研究指出 softmax 和交叉熵中的浮点误差：目标梯度可能被舍入为零，接近的教师与学生分布也可能出现相消误差。修正实现抑制了所报告实验中的 Slingshot 现象和蒸馏漂移。其意义在于改善常用训练算子的数值行为，尚未证明推荐任务上的收益。",
           "basis": "original_abstract",
           "method": "ai_assisted",
-          "updated_at": "2026-10-27",
+          "updated_at": "2026-11-02",
           "source_urls": [
-            "https://arxiv.org/abs/2610.31642v1"
+            "https://arxiv.org/abs/2610.31642v3"
           ]
         }
       },
@@ -38598,7 +38731,19 @@
         "kind": "catalog_entry",
         "source_url": "https://arxiv.org/abs/2610.31642"
       },
-      "change_history": [],
+      "change_history": [
+        {
+          "at": "2026-11-01T23:12:46Z",
+          "kind": "paper_revision",
+          "fields": [
+            "original_abstract",
+            "source_dates",
+            "summaries"
+          ],
+          "source_url": "https://arxiv.org/abs/2610.31642v3",
+          "source_version": "v3"
+        }
+      ],
       "reading_tier": null
     },
     {
@@ -43247,6 +43392,506 @@
       "added_provenance": {
         "kind": "catalog_entry",
         "source_url": "https://arxiv.org/abs/2610.36000"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2610.34192",
+      "title": "MIDA: Multi-Interest Decoding with Adaptive Aggregation for Session-based Recommendation",
+      "collection": "related",
+      "category": "long-sequence-modeling",
+      "affiliation": "University of Technology Sydney; City University of Macau; Education University of Hong Kong",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.34192"
+        }
+      ],
+      "aliases": [
+        "MIDA"
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Session-based recommendation (SBR) infers user interest from limited interaction sequences, yet current models show a consistent performance drop when longer histories are available. This degradation is associated with decoder designs that overemphasize recent items while underutilizing distant, yet semantically relevant, interactions, leading to poor modeling of long-range dependencies and multi-interest behaviors. To address this challenge, we introduce MIDA (Multi-Interest Decoding with Adaptive Aggregation for Session-based Recommendation), a lightweight and encoder-agnostic framework that provides a reformulation of the decoding stage. The central design principle is a two-space decoupling: clustering operates on raw item embeddings so that semantic groupings are not distorted by encoder-learned relational biases; encoder outputs are reserved for aggregation, where sequential context remains intact. Concretely, MIDA (i) employs differentiable multi-interest clustering on raw embeddings, preserving semantic structure that encoder representations would otherwise obscure, and (ii) fuses stability and plasticity branches through a gate conditioned on average cluster size, so that the inferred clustering structure directly governs aggregation behavior through a structural coupling across the two stages. Extensive experiments on multiple benchmark datasets demonstrate that MIDA consistently outperforms state-of-the-art methods, with meaningful accuracy improvements while remaining computationally practical.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.34192v1",
+        "source_version": "v1",
+        "source_title": "MIDA: Multi-Interest Decoding with Adaptive Aggregation for Session-based Recommendation",
+        "retrieved_at": "2026-11-01T23:12:46Z",
+        "license": "CC0-1.0"
+      },
+      "source_dates": {
+        "published_at": "2026-10-25T10:05:39Z",
+        "updated_at": "2026-10-25T10:05:39Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.34192v1",
+        "verified_at": "2026-11-01T23:12:46Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "Uses raw-embedding interest clustering and cluster-size-conditioned aggregation to improve session recommendation with longer histories. The encoder-agnostic decoder separates semantic grouping from contextual aggregation; reported gains are on benchmark datasets, not industrial online traffic.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-02",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.34192v1"
+          ]
+        },
+        "zh": {
+          "text": "针对较长会话中远期兴趣被忽略的问题，MIDA在原始物品嵌入上聚类，再按簇规模门控聚合编码器输出。语义分组与序列上下文分工处理，多个离线基准显示收益，可作为长历史兴趣聚合模块参考。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-02",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.34192v1"
+          ]
+        }
+      },
+      "added_at": "2026-11-01T23:12:46Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.34192"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2610.35550",
+      "title": "Cross-Domain Sequential Recommendation with Representation-Level User Transfer",
+      "collection": "related",
+      "category": "other",
+      "affiliation": "Skolkovo Institute of Science and Technology; Higher School of Economics; AXXX; Sber AI Lab",
+      "venue": "CIKM",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.35550"
+        }
+      ],
+      "aliases": [
+        "FLADRec"
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Cross-domain sequential recommendation aims to improve next-item prediction in a target domain by leveraging user behavior from auxiliary source domains. However, real-world deployment faces two critical challenges: business constraints that isolate interaction data across domains, and user heterogeneity, where many users lack cross-domain activity. This makes existing cross-domain methods difficult to apply. In this paper, we propose a simple and practical framework for cross-domain sequential recommendations that transfers information exclusively through learned user representations, without sharing raw interaction data or item embeddings across domains. We introduce a lightweight adapter that projects the source-domain user representation into the target-domain embedding space and integrates it with the target interaction sequence. Importantly, when source data is unavailable (i.e., the user observed only in the target domain), the model seamlessly defaults to a robust target-only sequential recommender, retaining benefits from joint training across all users. Extensive experiments were conducted under two setups; one targets benchmarking against previous baselines, while the other focuses on realistic and scalable conditions. Both sets of experiments demonstrate consistent performance gains for shared and unshared users.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.35550v1",
+        "source_version": "v1",
+        "source_title": "Cross-Domain Sequential Recommendation with Representation-Level User Transfer",
+        "retrieved_at": "2026-11-01T23:12:46Z",
+        "license": "CC0-1.0"
+      },
+      "source_dates": {
+        "published_at": "2026-10-26T14:55:24Z",
+        "updated_at": "2026-10-26T14:55:24Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.35550v1",
+        "verified_at": "2026-11-01T23:12:46Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "Transfers cross-domain information through learned user representations and a lightweight adapter, without sharing raw interactions or item embeddings. Shared and target-only users are trained jointly, with target-only fallback when source representations are unavailable; experiments cover benchmark and deployment-oriented settings.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-02",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.35550v1"
+          ]
+        },
+        "zh": {
+          "text": "跨域迁移仅交换用户表征，通过轻量适配器接入目标域序列，减少对原始行为和物品嵌入共享的依赖。源域信息缺失时回退为目标域模型，实验同时覆盖跨域活跃用户与单域用户，为受业务隔离约束的序列推荐提供实现思路。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-02",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.35550v1"
+          ]
+        }
+      },
+      "doi": "10.1145/3799682.3841135",
+      "added_at": "2026-11-01T23:12:46Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.35550"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2610.39931",
+      "title": "Low-Bit GDN Recurrent-State Quantization: Global Gradient-aware Allocation and Pure-Write Sliding Windows",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "Zhejiang University",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.39931"
+        }
+      ],
+      "aliases": [
+        "GGA",
+        "PW"
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Linear attention stores historical information in a recurrent state of fixed size, providing a compact memory representation for long-context inference. Reducing state precision further lowers per-request storage requirements, but quantized writeback errors enter subsequent recurrences, degrade prediction quality on long-reasoning tasks, and can be accompanied by repetitive generation and excessively long outputs. We propose Global Gradient-aware Allocation (GGA) and the Pure-Write Sliding Window (PW) to address precision allocation and recent-information maintenance. GGA combines candidate quantization residuals with gradient sensitivity to future prediction loss to allocate head bit widths under a model-wide mixed-precision budget. PW independently maintains recent pure writes as FP8 vector pairs, propagates them through the full GDN state transition, and merges them into the low-bit historical state only after they leave the window. Across seven evaluations on Qwen3.5-4B/9B, GGA allocation alone improves over STEPQuant@4 by 19.48/29.84 percentage points. Adding PW-S8 yields seven-task macro-averages of 69.83%/78.63%, improving over STEPQuant@4 by 38.39/41.21 percentage points, respectively. Both precision reallocation and window maintenance improve task scores while mitigating excessively long outputs: at @6, GGA reduces mean generation length, averaged equally across tasks, by 10.45%/14.65% relative to STEPQuant; adding PW-S8 to GGA@4 further reduces mean generation length by 32.32%/36.77%. Comparisons at similar storage budgets further show that using additional capacity to maintain recent writes yields higher task scores and shorter mean outputs than solely increasing the bit width of the accumulated state.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.39931v1",
+        "source_version": "v1",
+        "source_title": "Low-Bit GDN Recurrent-State Quantization: Global Gradient-aware Allocation and Pure-Write Sliding Windows",
+        "retrieved_at": "2026-11-01T23:12:46Z",
+        "license": "CC0-1.0"
+      },
+      "source_dates": {
+        "published_at": "2026-10-29T12:33:21Z",
+        "updated_at": "2026-10-29T12:33:21Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.39931v1",
+        "verified_at": "2026-11-01T23:12:46Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "Combines gradient-aware mixed-precision allocation with an FP8 window of recent pure writes for low-bit GDN recurrent states. On Qwen3.5-4B/9B, the combination improves long-reasoning task scores over the evaluated quantization baseline while reducing excessive generation; similar-storage comparisons motivate spending capacity on recent writes rather than only higher state precision.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-02",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.39931v1"
+          ]
+        },
+        "zh": {
+          "text": "针对低比特递归状态的写回误差，采用梯度敏感度分配各头位宽，并用FP8窗口保存近期纯写入。Qwen3.5两种规模的实验表明，组合设计可改善推理任务表现并缓解异常长输出；相近存储预算下，保留近期写入比单纯提高累积状态位宽更有效。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-02",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.39931v1"
+          ]
+        }
+      },
+      "added_at": "2026-11-01T23:12:46Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.39931"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2610.38981",
+      "title": "Why Speculative Decoding Works Better Than Predicted on Sparse MoE Models",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "Cohere",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.38981"
+        }
+      ],
+      "aliases": [],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Speculative decoding (SD) accelerates autoregressive inference by leveraging the memory bound nature of decoding, verifying multiple draft tokens in a single forward pass. For mixture-of-experts (MoE) models, prior work predicts a concave speedup-batch size relationship, with gains peaking at intermediate batch sizes due to expert saturation. We evaluate this across 10 sparse MoE models (30B--1T parameters, 8--512 experts) and find recent fine-grained models break this trend, showing higher speedup at low batch size. We find verification cost is governed not only by activated-expert bytes, but also by temporal overlap across draft tokens and GPU execution dynamics. At low batch size, MoE layers in fine-grained models account for a much smaller share of runtime than of weights; on H100, kernel profiling attributes this mainly to higher bandwidth utilization of MoE kernels relative to attention, with L2 absorbing repeated reads of co-routed experts. Across draft tokens, routing overlap further reduces the unique experts activated during verification relative to independence assumptions. We model this effect using a maximum-entropy Iterative Proportional Fitting (IPF) framework that predicts unique expert counts from routing-overlap statistics with less than 4\\% error, and substantially narrows the gap to real-model curves and captures the qualitative low-batch trend from synthetic routing.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.38981v1",
+        "source_version": "v1",
+        "source_title": "Why Speculative Decoding Works Better Than Predicted on Sparse MoE Models",
+        "retrieved_at": "2026-11-01T23:12:46Z",
+        "license": "CC0-1.0"
+      },
+      "source_dates": {
+        "published_at": "2026-10-28T22:04:53Z",
+        "updated_at": "2026-10-28T22:04:53Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.38981v1",
+        "verified_at": "2026-11-01T23:12:46Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "Studies speculative decoding across ten sparse MoE models and explains unexpectedly strong low-batch gains through expert routing overlap and kernel bandwidth utilization. An IPF model predicts unique activated experts with under 4% error in the reported evaluations, offering a more grounded cost model than parameter-byte counts alone.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-02",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.38981v1"
+          ]
+        },
+        "zh": {
+          "text": "在10个稀疏MoE模型上分析小批量推测解码，发现收益与草稿间专家重叠、内核带宽利用及缓存复用共同相关。利用路由重叠统计建立IPF模型，报告的独立激活专家数预测误差低于4%，为稀疏推荐模型的容量与延迟估算提供参考。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-02",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.38981v1"
+          ]
+        }
+      },
+      "added_at": "2026-11-01T23:12:46Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.38981"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2610.36009",
+      "title": "DuplexTune: Coupled-State Replay for Memory-Efficient Mixture-of-Experts Adaptation",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.36009"
+        }
+      ],
+      "aliases": [
+        "DuplexTune"
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Sparse expert execution does not remove the stored states needed to adapt a mixture-of-experts language model. We present DuplexTune, a framework for replaying coupled hidden states through pretrained attention and expert modules. Trainable width bridges connect two residual streams to the backbone. Bridge warm-up precedes backbone adaptation, with router weights kept frozen. We analyze the implicit state-recovery equation and identify the convergence and replay conditions needed for reconstruction. On Qwen1.5-MoE-A2.7B, the single-H800 evaluation reports 38.8 GB peak memory, versus 64.8 GB for supervised fine-tuning with checkpointing, and throughput of 25.1 versus 19.9 samples/s. DuplexTune achieves 67.2% MMLU, 75.6% GSM8K, and 7.69 MT-Bench, with a weaker multilingual score than the checkpointed baseline. The results characterize a configuration-dependent tradeoff among state storage, throughput, and adaptation quality.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.36009v1",
+        "source_version": "v1",
+        "source_title": "DuplexTune: Coupled-State Replay for Memory-Efficient Mixture-of-Experts Adaptation",
+        "retrieved_at": "2026-11-01T23:12:46Z",
+        "license": "CC0-1.0"
+      },
+      "source_dates": {
+        "published_at": "2026-10-26T16:17:33Z",
+        "updated_at": "2026-10-26T16:17:33Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.36009v1",
+        "verified_at": "2026-11-01T23:12:46Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "Replays coupled hidden states through pretrained attention and expert modules using trainable width bridges, with bridge warm-up and frozen routers. A single-H800 Qwen1.5-MoE experiment reports 38.8 versus 64.8 GB peak memory and higher throughput than checkpointed fine-tuning, with task-dependent quality tradeoffs including weaker multilingual performance.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-02",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.36009v1"
+          ]
+        },
+        "zh": {
+          "text": "以可训练宽度桥连接两条残差流，在预训练注意力和专家模块中重放耦合状态，降低MoE适配时的激活存储。单H800实验的峰值显存由检查点微调的64.8GB降至38.8GB，吞吐提高，但多语言指标较弱，适合借鉴状态重建与质量权衡。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-02",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.36009v1"
+          ]
+        }
+      },
+      "added_at": "2026-11-01T23:12:46Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.36009"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2610.34721",
+      "title": "Prefetch-Steered Routing: Deterministic Cache-Aware Expert Selection for Offloaded Mixture-of-Experts Decoding",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "Hong Kong University of Science and Technology (Guangzhou)",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.34721"
+        }
+      ],
+      "aliases": [
+        "PSR"
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "When a Mixture-of-Experts (MoE) model does not fit in GPU memory, batch-1 decoding is dominated by copying expert weights from host memory. Cache-aware routing reduces these copies by biasing the router toward resident experts, but combined with asynchronous prefetching it makes the model's outputs depend on transfer timing, so a harness that does not simulate that timing no longer evaluates the deployed model. We propose prefetch-steered routing (PSR): routing conditions on a deterministic logical cache, into which at most n experts predicted by the next layer's router are inserted per layer and token; physical copies affect only latency. On OLMoE-1B-7B with 50% and 25% of experts resident on an RTX 4090, PSR decodes 2.2-2.3x faster than exact routing with LRU and 25-30% faster than the Cache-Prior operating point, with mean benchmark differences of +0.1 and +0.5 points (95% lower bounds -0.8 and -0.3). In greedy generation its lead over Cache-Prior depends on the workload and reverses on HumanEval at 50% residency. On Moonlight-16B-A3B, PSR is 1.9x faster than exact routing with LRU at 37.5% residency and, at the latency of Cache-Prior, significantly better on three of eight benchmarks. On Qwen3.6-35B-A3B, where copies are cheap relative to computation, PSR keeps its advantage over Cache-Prior on the likelihood benchmarks but not its speed. Distillation-trained gates did not help. Speculative decoding with block-level expert selection was slower than PSR with a 1B autoregressive drafter on OLMoE, but with a block drafter on Qwen3.6 it was 2.1-2.9x faster than any autoregressive configuration with at most its GPU memory on the 64 prompts we timed.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.34721v1",
+        "source_version": "v1",
+        "source_title": "Prefetch-Steered Routing: Deterministic Cache-Aware Expert Selection for Offloaded Mixture-of-Experts Decoding",
+        "retrieved_at": "2026-11-01T23:12:46Z",
+        "license": "CC0-1.0"
+      },
+      "source_dates": {
+        "published_at": "2026-10-26T02:19:12Z",
+        "updated_at": "2026-10-26T02:19:12Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.34721v1",
+        "verified_at": "2026-11-01T23:12:46Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "Uses a deterministic logical expert cache to steer routing in offloaded MoE decoding, separating model decisions from physical transfer timing. Reported speed and quality tradeoffs vary by model, expert residency and workload; results provide a reproducible way to study cache-aware routing and prefetching together.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-02",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.34721v1"
+          ]
+        },
+        "zh": {
+          "text": "用确定性的逻辑专家缓存决定路由，让实际拷贝时序只影响延迟，避免异步预取改变模型输出。多模型实验比较专家驻留比例、速度和任务表现，为专家卸载、缓存感知路由与预取的联合评估提供可复现设计。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-02",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.34721v1"
+          ]
+        }
+      },
+      "added_at": "2026-11-01T23:12:46Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.34721"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2610.34440",
+      "title": "Speculative Decoding for Mixture-of-Experts Models: Expert Bytes, Kernel Bandwidth and the Best Draft Length",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "ReClan AI Studio, LLC",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.34440"
+        }
+      ],
+      "aliases": [],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Speculative decoding checks several drafted tokens in one verification pass. On a mixture-of-experts (MoE) model, consecutive tokens often select the same experts. A deduplicating engine reads each selected expert once per pass, so it requests fewer bytes than a per-slot engine, which reads it once per token. We write a step's time as the bytes each kernel requests over its effective bandwidth, plus fixed time. Under geometric acceptance, we derive from this step time when speculation is faster than plain decoding. The best draft length is a monotone staircase in the acceptance rate. We bound how a bandwidth error moves each result, and we check the main steps in Lean. Deduplication is faster exactly where its share $\\bar u(n)$ of the per-slot bytes is below its ratio $r(n)$ of the per-slot bandwidth. On llama.cpp Metal, MLX-LM and llama.cpp CUDA, which we modified to deduplicate, the per-slot kernel has the higher effective bandwidth (r = 0.32 to 0.75). Thus deduplication is faster only from 5 to 8 tokens per pass, or never. We fit the bandwidths on one layer's expert operation, run alone, in under an hour per model. Bytes from routing traces over these bandwidths predict the time that deduplication saves. The measured saving lies inside its error bound at every point on CUDA and MLX-LM and at 36 of 48 points on Metal. The crossover is the first pass size at which deduplication is faster. The prediction places it within one pass size in 10 of 12 configurations of engine, model and depth. We computed these predictions after the measurements. On DeepSeek-V2-Lite, operation times measured before its speculative runs give the best draft length on CUDA within one at all 22 acceptance values.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.34440v1",
+        "source_version": "v1",
+        "source_title": "Speculative Decoding for Mixture-of-Experts Models: Expert Bytes, Kernel Bandwidth and the Best Draft Length",
+        "retrieved_at": "2026-11-01T23:12:46Z",
+        "license": "CC0-1.0"
+      },
+      "source_dates": {
+        "published_at": "2026-10-25T16:55:48Z",
+        "updated_at": "2026-10-25T16:55:48Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.34440v1",
+        "verified_at": "2026-11-01T23:12:46Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "Models MoE speculative verification time using requested expert bytes, effective kernel bandwidth and fixed overhead. Measured engines show that deduplicating expert reads can lose bandwidth efficiency, so fewer bytes do not always mean lower latency; the model estimates crossover points and draft lengths with explicit error bounds.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-02",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.34440v1"
+          ]
+        },
+        "zh": {
+          "text": "把MoE推测验证时间拆为专家读取字节数、有效内核带宽和固定开销，推导去重读取的收益条件与草稿长度选择。多个执行引擎的实验说明去重也可能降低带宽效率，适用于专家复用优化前的延迟建模与实测校准。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-02",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.34440v1"
+          ]
+        }
+      },
+      "added_at": "2026-11-01T23:12:46Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.34440"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2610.39442",
+      "title": "Softmax Routing Dynamics in Mixture-of-Experts Models: Collapse and Recovery",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "Chinese University of Hong Kong; Beijing Normal-Hong Kong Baptist University; Guangzhou Nanfang College",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.39442"
+        }
+      ],
+      "aliases": [],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Softmax routing in mixture-of-experts models can concentrate probability on a subset of experts, suppressing access to the others. We study how this concentration forms, why it persists, and how suppressed probabilities recover. For fixed experts, a stationary-loss barrier identifies the face supporting the optimal routed output. In a common-target square-loss model with freely trainable expert outputs, slow adaptation tracks fixed-expert dynamics on finite horizons, while every fixed positive adaptation rate yields an interior routing limit. An exact normal-velocity decomposition separates complementary-expert covariance from relative gradient advantage. Under positive two-sided power bounds along recovery paths, uniform over initial masses, the resulting coefficient's order of vanishing gives logarithmic or power-law recovery times. Integrations of constructed fields reproduce these orders. An exact discrete log-odds identity relates neural updates to threshold crossing. In paired Transformer-MoE training, removing a class-conditional router-gradient contrast delays confirmed recovery and reduces accumulated log-odds on fixed tokens, both with and without capacity constraints.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.39442v1",
+        "source_version": "v1",
+        "source_title": "Softmax Routing Dynamics in Mixture-of-Experts Models: Collapse and Recovery",
+        "retrieved_at": "2026-11-01T23:12:46Z",
+        "license": "CC0-1.0"
+      },
+      "source_dates": {
+        "published_at": "2026-10-29T06:16:04Z",
+        "updated_at": "2026-10-29T06:16:04Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.39442v1",
+        "verified_at": "2026-11-01T23:12:46Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "Analyzes expert suppression and recovery in softmax routing through simplified fixed-expert and adapting-expert dynamics. Transformer-MoE interventions connect class-conditional router gradients to recovery delays, offering theoretical and experimental insight into routing collapse rather than a general guaranteed remedy.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-02",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.39442v1"
+          ]
+        },
+        "zh": {
+          "text": "分析softmax路由中专家概率集中、受抑专家恢复的动力学，用简化模型刻画恢复时间与梯度优势的关系。配对Transformer-MoE训练通过干预类别条件路由梯度验证恢复延迟，为诊断专家坍塌与负载恢复提供机制依据。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-02",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.39442v1"
+          ]
+        }
+      },
+      "added_at": "2026-11-01T23:12:46Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.39442"
       },
       "change_history": [],
       "reading_tier": null

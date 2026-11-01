@@ -6,7 +6,7 @@
 
 Long-history modeling, memory and compression for user behavior sequences.
 
-31 papers · Updated 2026-11-01
+32 papers · Updated 2026-11-02
 
 <a id="paper-2504-06780"></a>
 
@@ -131,3 +131,7 @@ Long-history modeling, memory and compression for user behavior sequences.
 <a id="paper-2610-36239"></a>
 
 - **BehaveRec: When Does Long-Term Behavioral History Help Sequential Recommendation? A Study with Session, History, and Community Signals**: BehaveRec gates together a causal session transformer, a 90-day history encoder and a behavioral-similarity user graph. On an industrial dataset with 137 million sequences from 12.6 million users, it reports a 3.2% R@5 gain over SASRec, with benefits increasing as histories become richer. Its roughly 20-interaction deployment rule concerns category-level intent prediction; item-level findings are mixed and history-sparse settings may favor session-only models. — [Paper](https://arxiv.org/abs/2610.36239) (Walmart Global Tech · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-34192"></a>
+
+- **MIDA: Multi-Interest Decoding with Adaptive Aggregation for Session-based Recommendation**: Uses raw-embedding interest clustering and cluster-size-conditioned aggregation to improve session recommendation with longer histories. The encoder-agnostic decoder separates semantic grouping from contextual aggregation; reported gains are on benchmark datasets, not industrial online traffic. — [Paper](https://arxiv.org/abs/2610.34192) (University of Technology Sydney; City University of Macau; Education University of Hong Kong · arXiv 2026). Reading priority: Unrated.

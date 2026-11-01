@@ -6,7 +6,7 @@
 
 Transferable ideas from general-purpose model architecture research.
 
-206 papers · Updated 2026-11-01
+212 papers · Updated 2026-11-02
 
 <a id="paper-2606-16825"></a>
 
@@ -510,7 +510,7 @@ Transferable ideas from general-purpose model architecture research.
 
 <a id="paper-2610-15139"></a>
 
-- **When Dynamic Scaling Fails: A Scale-State Feedback Governs Recurrent-State Quantization in Linear-Attention and SSM LLMs**: This study separates numerical instability from information loss in quantized recurrent states. Scale–state feedback can cause norm growth, but controlling that scale alone recovers only part of lost performance; finer resolution and long decoding horizons still matter. In the tested settings, group-wise INT4 at 32K decode performs no better than discarding the state, and learned layer precision allocation reduces to protecting early layers under article-disjoint evaluation. The useful warning for compressed recommendation histories is to validate error accumulation over the intended horizon, rather than certify a bit width from short recall tests. — [Paper](https://arxiv.org/abs/2610.15139) (Independent Researcher · arXiv 2026). Reading priority: Unrated.
+- **When Dynamic Scaling Fails: A Scale-State Feedback Governs Recurrent-State Quantization in Linear-Attention and SSM LLMs**: This study separates numerical instability from information loss in quantized recurrent states. Scale–state feedback can cause norm growth, but controlling that scale alone recovers only part of lost performance; finer resolution and long decoding horizons still matter. In the tested settings, group-wise INT4 at 32K decode performs no better than discarding the state, and learned layer precision allocation reduces to protecting early layers under article-disjoint evaluation. The useful warning for compressed recommendation histories is to validate error accumulation over the intended horizon, rather than certify a bit width from short recall tests. — [Paper](https://arxiv.org/abs/2610.15139) (Independent Researcher · NeurIPS Long-Context Foundation Models Workshop (non-archival) 2026). Reading priority: Unrated.
 
 <a id="paper-2610-22130"></a>
 
@@ -658,7 +658,7 @@ Transferable ideas from general-purpose model architecture research.
 
 <a id="paper-2610-15146"></a>
 
-- **Compute-Optimal Scaling Laws for Spiking Language Models**: This IsoFLOP study evaluates SpikeGPT-family language models across widths 384–1536 and compute budgets of 3×10^17–10^19 FLOPs. The compute-optimal parameter exponent is 0.56. Matched training comparisons separate an approximately 0.16-nat backbone loss cost from a spiking cost that decreases from 0.34 to 0.23 nats with compute. It quantifies accuracy trade-offs in the tested range; it does not measure recommendation performance or hardware energy savings. — [Paper](https://arxiv.org/abs/2610.15146) (Luma AI; X School · arXiv 2026). Reading priority: Unrated.
+- **Compute-Optimal Scaling Laws for Spiking Language Models**: This IsoFLOP study evaluates SpikeGPT-family language models across widths 384–1536 and compute budgets of 3×10^17–10^19 FLOPs. The compute-optimal parameter exponent is 0.56. Matched training comparisons separate an approximately 0.16-nat backbone loss cost from a spiking cost that decreases from 0.34 to 0.23 nats with compute. It quantifies accuracy trade-offs in the tested range; it does not measure recommendation performance or hardware energy savings. — [Paper](https://arxiv.org/abs/2610.15146) (Luma AI; X School · NeurIPS AXIOM Workshop 2026). Reading priority: Unrated.
 
 <a id="paper-2610-20951"></a>
 
@@ -670,7 +670,7 @@ Transferable ideas from general-purpose model architecture research.
 
 <a id="paper-2610-16890"></a>
 
-- **FORGE: Procedural Weight Generation for Sparse MoE Inference**: FORGE proposes a hardware unit that regenerates approximate MoE expert weights from compact rotor parameters instead of loading full tensors. With 30% of FFN layers replaced, the authors estimate 1.3–2.8x system throughput at matched GPU count and 1.10–1.15x lower short-context per-user decode latency, with downstream accuracy losses. The verified SystemVerilog design is a hardware proposal; these system estimates are not measured recommender deployment gains. — [Paper](https://arxiv.org/abs/2610.16890) (University of Wisconsin-Madison; Korea University; NVIDIA · arXiv 2026). Reading priority: Unrated.
+- **FORGE: Procedural Weight Generation for Sparse MoE Inference**: FORGE proposes a hardware unit that regenerates approximate MoE expert weights from compact rotor parameters instead of loading full tensors. With 30% of FFN layers replaced, the authors estimate 1.3–2.8x system throughput at matched GPU count and 1.10–1.15x lower short-context per-user decode latency, with downstream accuracy losses. The verified SystemVerilog design is a hardware proposal; these system estimates are not measured recommender deployment gains. — [Paper](https://arxiv.org/abs/2610.16890) (University of Wisconsin-Madison; Korea University; NVIDIA · ASPLOS 2027). Reading priority: Unrated.
 
 <a id="paper-2610-17425"></a>
 
@@ -831,3 +831,27 @@ Transferable ideas from general-purpose model architecture research.
 <a id="paper-2610-34514"></a>
 
 - **Ambiguous Fits: The Rashomon Effect and Challenges in Scaling Law Estimation**: Ambiguous Fits examines the final fitting stage of neural scaling laws, where different parameter settings can fit observed data nearly equally well yet diverge in large-scale extrapolation. It replaces heuristic local searches with deterministic branch-and-bound optimization that guarantees nearly optimal fitting loss and maps near-minimizers to a range of implied scaling curves. This provides a way to expose fitting ambiguity when planning ranking-model scale; the guarantee concerns fitting loss, not accurate extrapolation or demonstrated CTR performance. — [Paper](https://arxiv.org/abs/2610.34514) (University of Cambridge; Google DeepMind · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-39931"></a>
+
+- **Low-Bit GDN Recurrent-State Quantization: Global Gradient-aware Allocation and Pure-Write Sliding Windows**: Combines gradient-aware mixed-precision allocation with an FP8 window of recent pure writes for low-bit GDN recurrent states. On Qwen3.5-4B/9B, the combination improves long-reasoning task scores over the evaluated quantization baseline while reducing excessive generation; similar-storage comparisons motivate spending capacity on recent writes rather than only higher state precision. — [Paper](https://arxiv.org/abs/2610.39931) (Zhejiang University · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-38981"></a>
+
+- **Why Speculative Decoding Works Better Than Predicted on Sparse MoE Models**: Studies speculative decoding across ten sparse MoE models and explains unexpectedly strong low-batch gains through expert routing overlap and kernel bandwidth utilization. An IPF model predicts unique activated experts with under 4% error in the reported evaluations, offering a more grounded cost model than parameter-byte counts alone. — [Paper](https://arxiv.org/abs/2610.38981) (Cohere · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-36009"></a>
+
+- **DuplexTune: Coupled-State Replay for Memory-Efficient Mixture-of-Experts Adaptation**: Replays coupled hidden states through pretrained attention and expert modules using trainable width bridges, with bridge warm-up and frozen routers. A single-H800 Qwen1.5-MoE experiment reports 38.8 versus 64.8 GB peak memory and higher throughput than checkpointed fine-tuning, with task-dependent quality tradeoffs including weaker multilingual performance. — [Paper](https://arxiv.org/abs/2610.36009) (arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-34721"></a>
+
+- **Prefetch-Steered Routing: Deterministic Cache-Aware Expert Selection for Offloaded Mixture-of-Experts Decoding**: Uses a deterministic logical expert cache to steer routing in offloaded MoE decoding, separating model decisions from physical transfer timing. Reported speed and quality tradeoffs vary by model, expert residency and workload; results provide a reproducible way to study cache-aware routing and prefetching together. — [Paper](https://arxiv.org/abs/2610.34721) (Hong Kong University of Science and Technology (Guangzhou) · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-34440"></a>
+
+- **Speculative Decoding for Mixture-of-Experts Models: Expert Bytes, Kernel Bandwidth and the Best Draft Length**: Models MoE speculative verification time using requested expert bytes, effective kernel bandwidth and fixed overhead. Measured engines show that deduplicating expert reads can lose bandwidth efficiency, so fewer bytes do not always mean lower latency; the model estimates crossover points and draft lengths with explicit error bounds. — [Paper](https://arxiv.org/abs/2610.34440) (ReClan AI Studio, LLC · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-39442"></a>
+
+- **Softmax Routing Dynamics in Mixture-of-Experts Models: Collapse and Recovery**: Analyzes expert suppression and recovery in softmax routing through simplified fixed-expert and adapting-expert dynamics. Transformer-MoE interventions connect class-conditional router gradients to recovery delays, offering theoretical and experimental insight into routing collapse rather than a general guaranteed remedy. — [Paper](https://arxiv.org/abs/2610.39442) (Chinese University of Hong Kong; Beijing Normal-Hong Kong Baptist University; Guangzhou Nanfang College · arXiv 2026). Reading priority: Unrated.

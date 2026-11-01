@@ -6,7 +6,7 @@
 
 Transformer, mixer and sparse architectures built to scale industrial ranking.
 
-37 papers · Updated 2026-11-01
+37 papers · Updated 2026-11-02
 
 | Paper | Affiliation | Venue | Year | Tags | Links | Key Contribution |
 |:------|:------------|:------|:-----|:-----|:------|:-----------------|

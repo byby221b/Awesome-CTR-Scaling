@@ -6,7 +6,7 @@
 
 Adjacent research, diagnostics and other relevant recommendation methods.
 
-15 papers · Updated 2026-11-01
+16 papers · Updated 2026-11-02
 
 <a id="paper-2411-13700"></a>
 
@@ -67,3 +67,7 @@ Adjacent research, diagnostics and other relevant recommendation methods.
 <a id="paper-2610-36000"></a>
 
 - **RELAY: One Query, Two Roles for Sequential Recommendation**: RELAY reuses one learned query for both semantic preference readout and routing behavioral evidence into candidate scores. Candidate-conditioned gates calibrate direct-history and transition memories, and a single catalog-likelihood objective trains the one-pass ranker. Across six full-catalog benchmarks, it reports average Recall@5 and NDCG@5 improvements of 14.22% and 17.88% over the previous best model. Its 2.044M-parameter predictor is 65.12% smaller and runs 1.75–1.79 times faster than that comparator, illustrating compact history-computation reuse rather than proven industrial scaling. — [Paper](https://arxiv.org/abs/2610.36000) (University of Chinese Academy of Sciences · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-35550"></a>
+
+- **Cross-Domain Sequential Recommendation with Representation-Level User Transfer**: Transfers cross-domain information through learned user representations and a lightweight adapter, without sharing raw interactions or item embeddings. Shared and target-only users are trained jointly, with target-only fallback when source representations are unavailable; experiments cover benchmark and deployment-oriented settings. — [Paper](https://arxiv.org/abs/2610.35550) (Skolkovo Institute of Science and Technology; Higher School of Economics; AXXX; Sber AI Lab · CIKM 2026). Reading priority: Unrated.
