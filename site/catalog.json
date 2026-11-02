@@ -1,15 +1,15 @@
 {
   "coverage": {
     "reading_tiers_assigned": 339,
-    "reading_tiers_unrated": 257,
-    "known_added_dates": 596,
-    "papers_with_updates": 324,
-    "verified_source_dates": 596,
-    "verified_abstracts": 596,
+    "reading_tiers_unrated": 272,
+    "known_added_dates": 611,
+    "papers_with_updates": 326,
+    "verified_source_dates": 611,
+    "verified_abstracts": 611,
     "unavailable_abstracts": 0,
     "pending_abstracts": 0,
-    "english_summaries": 596,
-    "chinese_summaries": 596
+    "english_summaries": 611,
+    "chinese_summaries": 611
   },
   "schema_version": 4,
   "meta": {
@@ -17,7 +17,7 @@
     "description": "Scaling laws and scalable ranking models for industrial recommendation.",
     "repository_url": "https://github.com/byby221b/Awesome-CTR-Scaling",
     "site_url": "https://byby221b.github.io/Awesome-CTR-Scaling/",
-    "updated": "2026-11-02",
+    "updated": "2026-11-03",
     "source_commit": "31ad30becff83ca14a01f37fc99d52ba79f85565",
     "scope": "We cover papers that (1) study scaling laws for recommendation models, (2) propose scalable Transformer-based architectures for CTR/ranking, (3) address efficiency challenges in scaling up industrial ranking systems, or (4) explore novel paradigms (e.g., sparse scaling, generative pre-training, foundation models) for scalable recommendation.",
     "history": {
@@ -26,7 +26,7 @@
       "added_at_basis": "Earliest recorded inclusion in reachable repository main history; 50 records were present at its root commit. This is not the source publication date.",
       "backfill_policy": "Unknown historical instants remain null. Source-date imports and structural/UI migrations do not invent catalog change events."
     },
-    "catalog_sha256": "f877346c77929fcfa1b00cd1d53a703fc2311c3ecb575df7f60a9d83e251a978"
+    "catalog_sha256": "79d170e1aca5c7c83b61bace7d5c54e292f5a0cadd88d31e24a9909887603a4d"
   },
   "categories": [
     {
@@ -118,17 +118,17 @@
     {
       "id": "meta",
       "name": "Meta",
-      "count": 55
+      "count": 56
     },
     {
       "id": "bytedance-tiktok",
       "name": "ByteDance / TikTok",
-      "count": 24
+      "count": 25
     },
     {
       "id": "alibaba",
       "name": "Alibaba",
-      "count": 51
+      "count": 52
     },
     {
       "id": "meituan",
@@ -213,7 +213,7 @@
     {
       "id": "microsoft",
       "name": "Microsoft",
-      "count": 5
+      "count": 6
     },
     {
       "id": "walmart",
@@ -263,7 +263,7 @@
     {
       "id": "nvidia",
       "name": "NVIDIA",
-      "count": 7
+      "count": 8
     },
     {
       "id": "stepfun",
@@ -373,7 +373,7 @@
     {
       "id": "zyphra",
       "name": "Zyphra",
-      "count": 1
+      "count": 2
     },
     {
       "id": "airbnb",
@@ -44427,7 +44427,7 @@
       "collection": "related",
       "category": "long-sequence-modeling",
       "affiliation": "University of Technology Sydney; City University of Macau; Education University of Hong Kong",
-      "venue": "arXiv",
+      "venue": "TKDE",
       "year": 2026,
       "tags": [],
       "links": [
@@ -44481,8 +44481,26 @@
         "kind": "catalog_entry",
         "source_url": "https://arxiv.org/abs/2610.34192"
       },
-      "change_history": [],
+      "change_history": [
+        {
+          "at": "2026-11-02T23:18:57Z",
+          "kind": "venue_update",
+          "fields": [
+            "venue"
+          ],
+          "source_url": "https://api.crossref.org/works/10.1109/TKDE.2026.3740693"
+        },
+        {
+          "at": "2026-11-02T23:18:57Z",
+          "kind": "metadata_enrichment",
+          "fields": [
+            "doi"
+          ],
+          "source_url": "https://api.crossref.org/works/10.1109/TKDE.2026.3740693"
+        }
+      ],
       "reading_tier": null,
+      "doi": "10.1109/TKDE.2026.3740693",
       "companies": [],
       "order": 588
     },
@@ -44641,7 +44659,7 @@
       "collection": "related",
       "category": "architecture-innovations-beyond-recommendation",
       "affiliation": "Cohere",
-      "venue": "arXiv",
+      "venue": "NeurIPS",
       "year": 2026,
       "tags": [],
       "links": [
@@ -44693,7 +44711,16 @@
         "kind": "catalog_entry",
         "source_url": "https://arxiv.org/abs/2610.38981"
       },
-      "change_history": [],
+      "change_history": [
+        {
+          "at": "2026-11-02T23:18:57Z",
+          "kind": "venue_update",
+          "fields": [
+            "venue"
+          ],
+          "source_url": "https://neurips.cc/virtual/2026/poster/150811"
+        }
+      ],
       "reading_tier": null,
       "companies": [],
       "order": 591
@@ -44953,6 +44980,997 @@
       "reading_tier": null,
       "companies": [],
       "order": 595
+    },
+    {
+      "id": "2610.42147",
+      "title": "Latent Sparse Attention: Towards Subquadratic Ultra-Long Context Attention",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "Prefrontal AI; ETH Zurich",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.42147"
+        }
+      ],
+      "aliases": [
+        "LSA",
+        "D-LSA",
+        "N-LSA"
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Agentic workflows are increasingly shifting towards long-horizon tasks, such as open-ended scientific work, where models benefit from long context windows. However, at ultra-long context (above 1M tokens), full attention is prohibitively expensive. A promising approach is sparse attention, in which a dedicated indexer selects a subset of keys for the attention. Yet current methods of indexing either still have quadratic cost in context size or lose accuracy at ultra-long context scale. We address this with Latent Sparse Attention (LSA), an efficient attention method that maintains accuracy at ultra-long context. In LSA, keys are hierarchically clustered in a learned latent space, and queries score the hierarchy of clusters instead of scoring every key, making prefill, decode and training faster at long context. We propose two variants, Distilled-LSA (D-LSA), which can be applied to pre-trained models via distillation, and Native-LSA (N-LSA), which is trained natively on the next-token loss alone. On GLM-5.3-FLASH (QWEN-3.8-27B) at 10M tokens, D-LSA speeds up one attention layer by 22.7x (72.4x) in prefill and 4.6x (42.5x) in decode over its original sparse attention (full attention), while keeping similar accuracy across a variety of tasks. N-LSA matches the accuracy of full attention with a training speedup of 1.6x per layer at 128k tokens. LSA offers practical and efficient attention for models to benefit from ultra-long context.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.42147v1",
+        "source_version": "v1",
+        "source_title": "Latent Sparse Attention: Towards Subquadratic Ultra-Long Context Attention",
+        "retrieved_at": "2026-11-02T23:07:44Z",
+        "license": null
+      },
+      "source_dates": {
+        "published_at": "2026-10-30T17:59:34Z",
+        "updated_at": "2026-10-30T17:59:34Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.42147v1",
+        "verified_at": "2026-11-02T23:07:44Z"
+      },
+      "summaries": {
+        "zh": {
+          "text": "将键向量在学习得到的潜在空间中分层聚类，查询沿簇层级选择候选，减少超长上下文的索引成本。提供蒸馏和原生训练两种方案；1000万token实验报告单层注意力加速，原生方案在128K长度下实现单层训练1.6倍加速，可借鉴于超长行为序列的稀疏检索。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-03",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.42147v1"
+          ]
+        },
+        "en": {
+          "text": "Clusters keys hierarchically in a learned latent space so queries select clusters rather than score every key. Distilled and natively trained variants improve ultra-long-context attention; reported 10M-token speedups concern individual attention layers, while native training achieves a 1.6x per-layer speedup at 128K. The indexer offers a design reference for long-history retrieval.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-03",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.42147v1"
+          ]
+        }
+      },
+      "added_at": "2026-11-02T23:18:57Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.42147"
+      },
+      "change_history": [],
+      "reading_tier": null,
+      "companies": [],
+      "order": 596
+    },
+    {
+      "id": "2610.42128",
+      "title": "DecisionRank: On-Policy Distillation for Decision-Model Rerankers",
+      "collection": "related",
+      "category": "retrieval-reranking-scaling",
+      "affiliation": "Meta; Purdue University",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.42128"
+        }
+      ],
+      "aliases": [
+        "DecisionRank"
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Decision models target structured tasks by directly predicting choices or scores, avoiding autoregressive decoding latency. However, transferring a generative LLM's ranking knowledge to a decision model remains challenging: the teacher expresses preferences through a ranked list of document ID sequences, while the student determines the ranking using scores from the first-token position. To bridge this gap, we introduce DecisionRank, a decision model trained through item-space on-policy distillation (OPD). Item-space OPD constructs the student's rollout by sorting its document scores into a ranked sequence. A generative teacher takes the resulting ranking list as inputs and provides conditional feedback to directly supervise those scores. Combined with offline ranking supervision, DecisionRank achieves state-of-the-art performance on both general and reasoning-intensive retrieval benchmarks such as TREC DL, BEIR, and BRIGHT. Across four benchmarks, item-space OPD consistently outperforms alternative training objectives. Even at 1.7B parameters, DecisionRank surpasses its 27B generative teacher on TREC DL19--23. At 8B, it outperforms its generative listwise counterpart while running $24.5\\times$ faster on TREC DL and $16.7\\times$ faster on BRIGHT.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.42128v1",
+        "source_version": "v1",
+        "source_title": "DecisionRank: On-Policy Distillation for Decision-Model Rerankers",
+        "retrieved_at": "2026-11-02T23:07:44Z",
+        "license": null
+      },
+      "source_dates": {
+        "published_at": "2026-10-30T17:56:58Z",
+        "updated_at": "2026-10-30T17:56:58Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.42128v1",
+        "verified_at": "2026-11-02T23:07:44Z"
+      },
+      "summaries": {
+        "zh": {
+          "text": "将学生对文档的首token打分排序为列表，再由生成式教师沿该排序给出条件反馈，实现物品空间的在策略蒸馏。1.7B模型在TREC DL19–23超过27B教师；8B模型相对生成式列表重排在TREC DL和BRIGHT分别加速24.5倍和16.7倍，为低延迟重排提供训练路径。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-03",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.42128v1"
+          ]
+        },
+        "en": {
+          "text": "Sorts student first-token document scores into a ranking and obtains conditional feedback from a generative teacher for item-space on-policy distillation. A 1.7B student surpasses its 27B teacher on TREC DL19–23; the 8B model runs 24.5x faster on TREC DL and 16.7x faster on BRIGHT than its generative listwise counterpart, supporting efficient reranking.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-03",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.42128v1"
+          ]
+        }
+      },
+      "added_at": "2026-11-02T23:18:57Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.42128"
+      },
+      "change_history": [],
+      "reading_tier": null,
+      "companies": [
+        "meta"
+      ],
+      "order": 597
+    },
+    {
+      "id": "2610.42112",
+      "title": "Subquadratic Attention with a Hierarchical Tree-Structured Indexer",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "Zyphra Research",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.42112"
+        }
+      ],
+      "aliases": [
+        "ZHA"
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "The quadratic scaling of attention is a fundamental bottleneck limiting the long-context capabilities of large language models (LLMs). A variety of approaches have attempted to circumvent this, but they either fail to match attention's expressiveness (e.g., sliding-window or linear attention variants with fixed-size state) or only achieve constant-factor speedups (e.g., sparse attention methods whose indexers themselves scale quadratically). In this paper, we derive an asymptotically subquadratic sparse attention method based on a hierarchical, tree-structured indexer, which we call Zyphra Hierarchical Attention (ZHA). ZHA constructs a tree of recursively compressed key summaries over the KV cache, which future queries traverse from the top down to retrieve a sparse subset of keys. Crucially, by iteratively growing the tree's depth, the total cost including routing and final attention grows sublinearly in sequence length, resulting in overall subquadratic (but superlinear) scaling for attention. We demonstrate that ZHA can be cheaply applied to existing pretrained models with only a short KL distillation training stage over a few billion tokens, and maintains performance on long-context retrieval and challenging reasoning, mathematical, and agentic coding evaluation tasks. Moreover, we show that our method is highly robust to tree geometry including very deep trees of up to 6 levels. Finally, we develop a detailed performance model and show that our approach scales subquadratically, dramatically outperforms competing methods beyond 1 million context, and ultimately has the potential to extend effective context windows to the hundreds of millions or billions of tokens.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.42112v1",
+        "source_version": "v1",
+        "source_title": "Subquadratic Attention with a Hierarchical Tree-Structured Indexer",
+        "retrieved_at": "2026-11-02T23:07:44Z",
+        "license": null
+      },
+      "source_dates": {
+        "published_at": "2026-10-30T17:48:37Z",
+        "updated_at": "2026-10-30T17:48:37Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.42112v1",
+        "verified_at": "2026-11-02T23:07:44Z"
+      },
+      "summaries": {
+        "zh": {
+          "text": "对KV缓存递归压缩形成树形摘要，查询自顶向下检索少量键，使索引与注意力的整体计算呈次二次增长。通过少量KL蒸馏适配已有模型，并验证长上下文检索与推理能力；百万token以上的速度优势来自性能模型，为长序列稀疏索引提供可扩展设计。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-03",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.42112v1"
+          ]
+        },
+        "en": {
+          "text": "Builds a tree of compressed KV summaries and traverses it top-down to retrieve a sparse key subset, giving subquadratic overall attention cost. Short KL distillation adapts pretrained models while retaining evaluated retrieval and reasoning capabilities. Speed advantages beyond one million tokens are supported by a performance model, offering a scalable index design for long sequences.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-03",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.42112v1"
+          ]
+        }
+      },
+      "added_at": "2026-11-02T23:18:57Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.42112"
+      },
+      "change_history": [],
+      "reading_tier": null,
+      "companies": [
+        "zyphra"
+      ],
+      "order": 598
+    },
+    {
+      "id": "2610.42030",
+      "title": "There Is No Free Loop: When Does Looping a Trained Model Pay for Its Inference Compute?",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "Microsoft Applied Sciences Group",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.42030"
+        }
+      ],
+      "aliases": [],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Looping re-applies a block of layers so that each token passes through the block more than once. Adding a loop to a trained model is attractive because it leaves the parameter count, and hence the disk size, the memory footprint and the training cost unchanged. Unfortunately, every generated token pays for the loop. Re-applying m of N layers makes each token about (N+m)/N times as expensive. Loops that a model learns during large-scale pretraining justify this price, but whether loops added after pretraining justify this cost remains unclear. We compare a looped model with two simple baselines. We first compare it with the same model trained identically without the loop (equal parameters). Secondly, we compare it with the best unlooped use of the same inference floating-point operations (equal FLOPs). Across Qwen3 and Qwen3.5 models from 0.8B to 9B parameters, only the looped 0.8B model beats both baselines. At 4B and 9B, the looped model does not beat the first baseline, i.e. the same model trained without the loop. This is not because the benchmarks are too easy, since on the same benchmarks the unlooped 9B model still scores up to 13 points higher than the 4B model, showing that there is ample room for improvement. Introducing loops in an already pretrained model therefore only pays for small models with a fixed parameter budget.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.42030v1",
+        "source_version": "v1",
+        "source_title": "There Is No Free Loop: When Does Looping a Trained Model Pay for Its Inference Compute?",
+        "retrieved_at": "2026-11-02T23:07:44Z",
+        "license": null
+      },
+      "source_dates": {
+        "published_at": "2026-10-30T16:56:29Z",
+        "updated_at": "2026-10-30T16:56:29Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.42030v1",
+        "verified_at": "2026-11-02T23:07:44Z"
+      },
+      "summaries": {
+        "zh": {
+          "text": "研究给已训练模型添加共享层循环是否值得额外推理计算，同时设置等参数与等推理FLOPs基线。在Qwen3和Qwen3.5的0.8B至9B实验中，仅0.8B循环模型同时超过两类基线，为循环深度扩展的成本评估提供直接对照方法。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-03",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.42030v1"
+          ]
+        },
+        "en": {
+          "text": "Evaluates post-hoc layer looping against both equal-parameter and equal-inference-FLOP baselines. Across tested Qwen3 and Qwen3.5 models from 0.8B to 9B, only the 0.8B looped model beats both baselines. The controlled comparisons provide a practical methodology for assessing the compute return of shared-depth scaling.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-03",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.42030v1"
+          ]
+        }
+      },
+      "added_at": "2026-11-02T23:18:57Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.42030"
+      },
+      "change_history": [],
+      "reading_tier": null,
+      "companies": [
+        "microsoft"
+      ],
+      "order": 599
+    },
+    {
+      "id": "2610.41994",
+      "title": "DAMI: Dual-Axis Memory Initialization for Enhanced Long-Context Retrieval in Gated Linear Attention",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "SpeedAI; Beihang University",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.41994"
+        }
+      ],
+      "aliases": [
+        "DAMI"
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Linear attention scales linearly with sequence length, but its finite-state memory can limit long-context retrieval. In gated linear recurrences, memory retention depends on state decay, which is shaped jointly by gate parameters A_log and dt_bias and by input activations. In controlled Gated DeltaNet (GDN) experiments, both parameters remain highly correlated with their initial values after training, highlighting the importance of initialization. Therefore, we introduce Dual-Axis Memory Initialization (DAMI), which jointly configures these parameters before training. DAMI assigns geometric timescales across heads for varied retrieval distances and a low-high-low input-sensitivity profile across layers. A small activation sample calibrates the GDN-family implementation to match both behavioral targets without adding trainable parameters. Across GDN, KDA, GDN2, Mamba-2, and RWKV-7, DAMI improves average RULER-style retrieval accuracy by 5.29 to 16.71 percentage points over the corresponding random-initialization baselines. Performance on language modeling, commonsense reasoning, and 2K real-world retrieval remains broadly comparable to those baselines. Our code is available at https://speedai.com/research/dami.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.41994v1",
+        "source_version": "v1",
+        "source_title": "DAMI: Dual-Axis Memory Initialization for Enhanced Long-Context Retrieval in Gated Linear Attention",
+        "retrieved_at": "2026-11-02T23:07:44Z",
+        "license": null
+      },
+      "source_dates": {
+        "published_at": "2026-10-30T16:39:37Z",
+        "updated_at": "2026-10-30T16:39:37Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.41994v1",
+        "verified_at": "2026-11-02T23:07:44Z"
+      },
+      "summaries": {
+        "zh": {
+          "text": "在训练前联合设置门控线性注意力的衰减参数，使不同头覆盖不同记忆时间尺度，并沿深度配置输入敏感度。小规模激活校准无需新增可训练参数，在GDN、KDA、Mamba-2等架构上提升长距离检索准确率5.29至16.71个百分点，可参考用于长行为序列记忆初始化。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-03",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.41994v1"
+          ]
+        },
+        "en": {
+          "text": "Jointly initializes decay parameters to distribute memory timescales across heads and input sensitivity across depth. Small activation samples calibrate the initialization without adding trainable parameters. Reported RULER-style retrieval gains span 5.29–16.71 percentage points across gated recurrent architectures, suggesting an initialization strategy for long-history memory.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-03",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.41994v1"
+          ]
+        }
+      },
+      "added_at": "2026-11-02T23:18:57Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.41994"
+      },
+      "change_history": [],
+      "reading_tier": null,
+      "companies": [],
+      "order": 600
+    },
+    {
+      "id": "2610.41720",
+      "title": "UpLoop: Training Looped Transformers via Upcycling at No Extra Pretraining Compute",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "Shanghai Jiao Tong University; University of Science and Technology of China",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.41720"
+        }
+      ],
+      "aliases": [
+        "UpLoop"
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Looped language models can strengthen reasoning through repeated computation with shared weights, increasing execution depth without adding independent parameters. However, each additional pass increases training floating-point operations (FLOPs), making these gains more expensive to obtain. To address this cost, we propose UpLoop, a pretraining schedule that uses upcycling to train looped Transformers while exactly matching a standard dense baseline in final parameter count, total training tokens, and training FLOPs. Specifically, UpLoop begins with a shallow Transformer, progressively grows its depth by copying learned layers, and uses the computation saved early to support repeated execution of a shared middle block later in training. Experiments across model scales show improvements in language modeling and downstream performance, with the average score across 22 downstream tasks increasing from 22.99 to 27.52 at 1.3B parameters. These gains also extend to mathematical reasoning after supervised fine-tuning.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.41720v1",
+        "source_version": "v1",
+        "source_title": "UpLoop: Training Looped Transformers via Upcycling at No Extra Pretraining Compute",
+        "retrieved_at": "2026-11-02T23:07:44Z",
+        "license": null
+      },
+      "source_dates": {
+        "published_at": "2026-10-30T13:29:35Z",
+        "updated_at": "2026-10-30T13:29:35Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.41720v1",
+        "verified_at": "2026-11-02T23:07:44Z"
+      },
+      "summaries": {
+        "zh": {
+          "text": "先训练较浅网络，再复制已学习层逐步增加深度，将前期节省的计算用于后期共享中间层的循环执行。与普通Transformer匹配最终参数量、训练token和训练FLOPs后，1.3B模型在22项任务上的均分从22.99提升到27.52，为固定预算下的深度扩展提供训练方案。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-03",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.41720v1"
+          ]
+        },
+        "en": {
+          "text": "Starts with a shallow Transformer, grows it by copying learned layers, and spends the saved early compute on repeated execution of a shared middle block. With final parameters, training tokens and FLOPs matched to a dense baseline, the 1.3B model improves its mean score over 22 tasks from 22.99 to 27.52, providing a compute-budgeted depth-scaling schedule.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-03",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.41720v1"
+          ]
+        }
+      },
+      "added_at": "2026-11-02T23:18:57Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.41720"
+      },
+      "change_history": [],
+      "reading_tier": null,
+      "companies": [],
+      "order": 601
+    },
+    {
+      "id": "2610.41457",
+      "title": "RecIS: Unifying Sparse and Dense Computation for Efficient Recommendation Training",
+      "collection": "core",
+      "category": "efficiency-deployment",
+      "affiliation": "Alibaba; University of Chinese Academy of Sciences",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [
+        "Architecture",
+        "Embedding Design",
+        "Training Efficiency",
+        "Distributed"
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.41457"
+        }
+      ],
+      "aliases": [
+        "RecIS"
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Modern recommender models scale sparse representations and dense computation together. They process thousands of heterogeneous feature fields, long user-behavior sequences, and trillion-scale Embedding parameters, while their dense networks increasingly use large Transformer architectures. The resulting execution mismatch creates fine-grained operations within stages, load imbalance and synchronization delays across devices, and GPU resource bubbles between stages. As models grow, these costs become a primary limit to scalable recommender training. Although existing systems improve Embedding caching and data prefetching, these inefficiencies still coexist in the GPU-centric workloads we study and jointly limit end-to-end throughput.\n  We present RecIS, a unified framework for GPU-centric recommender training. RecIS treats the complete path from input features to dense computation as one optimization target and coordinates three complementary mechanisms. First, adaptive fusion combines fragmented feature transformations with vectorized memory access. Second, a GPU Embedding engine uses hash-based sharding and hierarchical communication to balance request placement and eliminate redundant transfers; it also specializes aggregation for forward and backward index structures. Third, a multistage pipeline overlaps input preparation for future iterations with dense computation in the current iteration. Together, these mechanisms reorganize a fragmented sparse front end into a dataflow that continuously feeds dense computation.\n  We evaluate RecIS on representative industrial recommender models across distributed training platforms. Compared with PICASSO and TorchRec, RecIS reaches up to $2.62\\times$ and $1.15\\times$ their throughput, respectively, while reducing step latency by up to 61.5\\% and 12.9\\%. RecIS provides an efficient and scalable training system for large recommender models.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.41457v1",
+        "source_version": "v1",
+        "source_title": "RecIS: Unifying Sparse and Dense Computation for Efficient Recommendation Training",
+        "retrieved_at": "2026-11-02T23:07:44Z",
+        "license": null
+      },
+      "source_dates": {
+        "published_at": "2026-10-30T09:02:26Z",
+        "updated_at": "2026-10-30T09:02:26Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.41457v1",
+        "verified_at": "2026-11-02T23:07:44Z"
+      },
+      "summaries": {
+        "zh": {
+          "text": "面向大规模推荐训练，统一优化特征处理、稀疏嵌入与稠密网络之间的执行开销。通过自适应算子融合、GPU嵌入分片与分层通信，以及多阶段流水线减少同步和资源空闲；实验吞吐最高达到PICASSO的2.62倍、TorchRec的1.15倍，为稀疏与稠密模型共同扩展提供系统支持。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-03",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.41457v1"
+          ]
+        },
+        "en": {
+          "text": "Coordinates feature processing, sparse embeddings and dense networks for scalable recommendation training. Adaptive feature-operation fusion, GPU embedding sharding with hierarchical communication, and multistage pipelining reduce synchronization and idle resources. Reported throughput reaches up to 2.62x PICASSO and 1.15x TorchRec, supporting joint sparse-and-dense model scaling.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-03",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.41457v1"
+          ]
+        }
+      },
+      "added_at": "2026-11-02T23:18:57Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.41457"
+      },
+      "change_history": [],
+      "reading_tier": null,
+      "companies": [
+        "alibaba"
+      ],
+      "order": 602
+    },
+    {
+      "id": "2610.41420",
+      "title": "SparseGDN: Chunk Sparse in Linear Attention",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "Zhejiang University; ByteDance",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.41420"
+        }
+      ],
+      "aliases": [
+        "SparseGDN"
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Gated Delta Networks (GDNs) offer linear-time sequence modeling, yet long-context prefill remains costly due to dense intra-chunk computation, recurrent-state updates, and intermediate state storage. We introduce SparseGDN, a hardware-aware framework that combines structured intra-chunk approximation with input-dependent recurrent-event selection while producing outputs for every token. A block-adjacent solver reduces local Delta-solve computation, while a dynamic selector allocates recurrent-update budgets across head pairs. The GPU implementation materializes updates only for selected events and reconstructs token outputs using compact state snapshots and group-local interactions, reducing computation and memory traffic. We evaluate SparseGDN on Qwen3.5-4B and Qwen3.5-9B across RULER tasks and context lengths from 4K to 128K. Retaining approximately 29% of recurrent events on average, SparseGDN achieves 1.50-1.94x GDN-core prefill speedups over native FLA kernels, including online selection overhead.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.41420v1",
+        "source_version": "v1",
+        "source_title": "SparseGDN: Chunk Sparse in Linear Attention",
+        "retrieved_at": "2026-11-02T23:07:44Z",
+        "license": null
+      },
+      "source_dates": {
+        "published_at": "2026-10-30T08:27:36Z",
+        "updated_at": "2026-10-30T08:27:36Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.41420v1",
+        "verified_at": "2026-11-02T23:07:44Z"
+      },
+      "summaries": {
+        "zh": {
+          "text": "用块邻接近似减少局部Delta求解，再按输入动态选择递归更新事件，并通过紧凑状态快照重建全部token输出。Qwen3.5的4B和9B实验平均保留约29%的递归事件，在4K至128K上下文获得1.50至1.94倍GDN核心预填充加速，包含在线选择开销。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-03",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.41420v1"
+          ]
+        },
+        "en": {
+          "text": "Combines a block-adjacent Delta solver with input-dependent recurrent-event selection, reconstructing every token output from compact state snapshots. On Qwen3.5-4B and 9B, retaining about 29% of recurrent events yields 1.50–1.94x GDN-core prefill speedups over native FLA kernels across 4K–128K contexts, including online selection overhead.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-03",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.41420v1"
+          ]
+        }
+      },
+      "added_at": "2026-11-02T23:18:57Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.41420"
+      },
+      "change_history": [],
+      "reading_tier": null,
+      "companies": [
+        "bytedance-tiktok"
+      ],
+      "order": 603
+    },
+    {
+      "id": "2610.41366",
+      "title": "What We Keep of What We Forget: Replacement Operators and Routing Semantics in Training-Free MoE Expert Pruning",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "National University of Sciences and Technology",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.41366"
+        }
+      ],
+      "aliases": [],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Training-free expert pruning makes two decisions: which experts to remove, and what the layer computes when its router still selects a removed expert. Published methods change both at once. Holding the mask fixed, we compare replacement operators from three families on OLMoE, DeepSeek-V2-Lite and Moonlight, with Granite as a fourth router, using paired, multiplicity-corrected tests. The largest effect is a choice usually left implicit: the survivors' gate scale. On routers trained without top-k renormalization, renormalizing the survivors' gates, a common implementation choice, costs 0.8-8.5 points and reverses whether rerouting beats MoNE's mean-output replacement; on two routers trained with renormalization, the trained scale wins at 50% pruning. We introduce the tilted novice, a closed-form low-rank map of the pruned expert's input whose rank-0 case is MoNE's constant. At 50% pruning it adds 1.2-1.8% parameters and gains 3.45 and 1.37 points over the constant on OLMoE and Moonlight, stable across calibration draws and largely unchanged by 4- and 3-bit quantization. No operator dominates: trained-scale rerouting is best on DeepSeek-V2-Lite, and a partial copy of each pruned expert is statistically indistinguishable from the tilted novice on two models. Evaluation can change conclusions: at 25% pruning MoNE's constant keeps 92-97% of dense multiple-choice accuracy but only 5-65% of GSM8K and 0-17% of code scores, and the calibration domain moves the mask 4-9 times more than resampling. We propose a five-item reporting checklist.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.41366v1",
+        "source_version": "v1",
+        "source_title": "What We Keep of What We Forget: Replacement Operators and Routing Semantics in Training-Free MoE Expert Pruning",
+        "retrieved_at": "2026-11-02T23:07:44Z",
+        "license": null
+      },
+      "source_dates": {
+        "published_at": "2026-10-30T07:31:53Z",
+        "updated_at": "2026-10-30T07:31:53Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.41366v1",
+        "verified_at": "2026-11-02T23:07:44Z"
+      },
+      "summaries": {
+        "zh": {
+          "text": "固定专家裁剪集合，单独比较被裁专家的替代计算与剩余专家的门控缩放，揭示路由实现对裁剪收益的影响。提出低秩输入映射tilted novice，在OLMoE和Moonlight上优于常量替代，为稀疏模型压缩时保留路由语义和选择校准方案提供依据。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-03",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.41366v1"
+          ]
+        },
+        "en": {
+          "text": "Holds pruning masks fixed to isolate replacement operators and surviving-expert gate scales. Introduces the tilted novice, a closed-form low-rank input map that improves over constant replacement on OLMoE and Moonlight. Experiments show that preserving trained routing scale and choosing calibration data materially affect pruning results, informing practical sparse-model compression.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-03",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.41366v1"
+          ]
+        }
+      },
+      "added_at": "2026-11-02T23:18:57Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.41366"
+      },
+      "change_history": [],
+      "reading_tier": null,
+      "companies": [],
+      "order": 604
+    },
+    {
+      "id": "2610.41236",
+      "title": "Experts Exhibit Structured Redundancy: Structure-Preserving Expert Pruning for Mixture-of-Experts Large Language Models",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "Peking University; Shanghai Jiao Tong University; Qilu University of Technology; Shandong Computer Science Center",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.41236"
+        }
+      ],
+      "aliases": [
+        "PEEP",
+        "DCEP"
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Sparse MoE mechanism significantly improves the trade-off between model capacity and inference efficiency. However, practical deployment still requires storing all experts, resulting in substantial memory overhead. We show that expert outputs in MoE layers exhibit structured redundancy. Across different models and task categories, the stable rank and entropy effective rank of expert outputs are consistently far below the nominal number of experts, while expert output distributions also exhibit fewer effective modes. Motivated by these observations, we reformulate expert pruning as a structure-preserving expert subset selection problem and efficiently optimize it via a greedy strategy, rather than only independently scoring and ranking individual experts or exhaustively searching over expert combinations. We propose two expert pruning methods under the unified structure-preserving framework: Projection Energy Expert Pruning (PEEP), which preserves the functional subspace by maximizing weighted projection energy, and Distributional Coverage Expert Pruning (DCEP), which preserves the distributional geometry by minimizing weighted coverage error. Both methods incorporate router-derived weights as priors, enabling them to jointly preserve the global structural relationships among experts while accounting for the local importance of individual experts. Experiments on DeepSeek-V2-Lite and Qwen3-30B-A3B demonstrate that, at the expert retention ratios of 75% and 50%, our methods outperform the state-of-the-art baselines on the majority of benchmarks and consistently achieve the best average performance across both general tasks and mathematical reasoning tasks.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.41236v1",
+        "source_version": "v1",
+        "source_title": "Experts Exhibit Structured Redundancy: Structure-Preserving Expert Pruning for Mixture-of-Experts Large Language Models",
+        "retrieved_at": "2026-11-02T23:07:44Z",
+        "license": null
+      },
+      "source_dates": {
+        "published_at": "2026-10-30T04:21:25Z",
+        "updated_at": "2026-10-30T04:21:25Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.41236v1",
+        "verified_at": "2026-11-02T23:07:44Z"
+      },
+      "summaries": {
+        "zh": {
+          "text": "将专家裁剪转化为保持整体结构的子集选择：PEEP保留输出子空间的投影能量，DCEP覆盖专家输出的分布几何，并引入路由权重。贪心选择在DeepSeek-V2-Lite和Qwen3-30B-A3B保留75%或50%专家时取得较好平均表现，为降低MoE存储开销提供方法。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-03",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.41236v1"
+          ]
+        },
+        "en": {
+          "text": "Treats expert pruning as structure-preserving subset selection: PEEP preserves weighted projection energy, while DCEP preserves distributional coverage with router-derived weights. Greedy selection achieves the best reported average results at 75% and 50% expert retention on DeepSeek-V2-Lite and Qwen3-30B-A3B, targeting MoE storage cost.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-03",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.41236v1"
+          ]
+        }
+      },
+      "added_at": "2026-11-02T23:18:57Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.41236"
+      },
+      "change_history": [],
+      "reading_tier": null,
+      "companies": [],
+      "order": 605
+    },
+    {
+      "id": "2610.39876",
+      "title": "Turing LLM Post-Training: Calibrated Distillation and Efficient Dynamic-MoE Execution",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "XPeng",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.39876"
+        }
+      ],
+      "aliases": [
+        "Turing",
+        "C-MOPD"
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "We study post-training for dynamically routed mixture-of-experts (MoE) models, focusing on integrating independently optimized specialists while keeping consolidation efficient. Our approach combines calibrated multi-teacher on-policy distillation (C-MOPD), which matches each selected teacher on a local Top-$K$ support with teacher-wise loss normalization and clipping, with an execution path that uses post-capacity bounded-width dispatch, final-route replay, and asynchronous rollout--training overlap. On Turing-20B-A2B, the selected model achieves a four-domain normalized integration score of 0.9988 and retains at least 90.16\\% of the measured specialist gain in every domain. At matched $K=32$, the full calibration objective scores 0.9962, compared with 0.9724 without calibration and 0.9834 without clipping. At a matched 8K response cap, the model exceeds both shared SFT and Qwen3-8B on all four reasoning-enabled mathematics and code benchmarks (unweighted mean: 85.92, versus 80.33 for Qwen3-8B and 74.21 for SFT), and improves over SFT on ten of twelve broader evaluation metrics. In a PPU-based profile, the combined execution configuration reduces consolidation step time from 398.7 to 139.3 seconds, an observed 2.86$\\times$ speedup over serial execution. These results demonstrate strong specialist integration alongside more efficient consolidation, while reflecting the complete training and execution framework rather than any single component.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.39876v2",
+        "source_version": "v2",
+        "source_title": "Turing LLM Post-Training: Calibrated Distillation and Efficient Dynamic-MoE Execution",
+        "retrieved_at": "2026-11-02T23:07:44Z",
+        "license": null
+      },
+      "source_dates": {
+        "published_at": "2026-10-29T11:52:20Z",
+        "updated_at": "2026-10-30T06:38:50Z",
+        "source_version": "v2",
+        "source_url": "https://arxiv.org/abs/2610.39876v2",
+        "verified_at": "2026-11-02T23:07:44Z"
+      },
+      "summaries": {
+        "zh": {
+          "text": "通过教师局部Top-K匹配、损失归一化与裁剪，将多领域专家蒸馏到动态MoE学生；执行端结合容量限制后的定宽分发、最终路由回放及异步流水线。Turing-20B-A2B保留各领域至少90.16%的专家增益，完整执行配置在PPU测量中将整合步骤从398.7秒降至139.3秒。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-03",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.39876v2"
+          ]
+        },
+        "en": {
+          "text": "Combines calibrated multi-teacher on-policy distillation with bounded-width dispatch, final-route replay and asynchronous rollout–training overlap. Turing-20B-A2B retains at least 90.16% of measured specialist gains in each domain. The complete PPU execution configuration reduces consolidation step time from 398.7 to 139.3 seconds, illustrating coordinated routing and training-system optimization.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-03",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.39876v2"
+          ]
+        }
+      },
+      "added_at": "2026-11-02T23:18:57Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.39876"
+      },
+      "change_history": [],
+      "reading_tier": null,
+      "companies": [],
+      "order": 606
+    },
+    {
+      "id": "2610.41074",
+      "title": "Where, When, and How Many Bits? Scaling Laws for SGD with Stochastic Rounding",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "University of California, Berkeley; ICSI; Lawrence Berkeley National Laboratory",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.41074"
+        }
+      ],
+      "aliases": [],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Low-precision training reduces computation but introduces additional rounding error. We theoretically study how stochastic rounding (SR) affects prediction risk as model size, training time, and precision change. We consider a two-layer linear network with a fixed random first layer, trained by mini-batch SGD on fresh Gaussian data with power-law spectra. At each SGD step, the features used in forward and backward computations are rounded independently. We prove matched upper and lower bounds on prediction error for the final model and for uniform parameter averaging, with general learning-rate and precision schedules chosen before training. For fixed precisions and constant learning rates with parameter averaging, we derive how the smallest prediction error decreases with compute, and we identify model sizes and training times that achieve this optimal-compute scaling. Rounding only the forward features preserves the compute scaling of exact arithmetic, while rounding backward features changes it. Averaging parameters can change which computation needs higher precision and when higher precision is useful. Our results also give bit requirements for a given accuracy tolerance and show how backward rounding can change learning-rate schedule design. At a fixed compute budget, lower precision can improve prediction when the benefit of a larger model or longer training outweighs the additional SR-induced error. Model simulations illustrate these tradeoffs, and experiments with an MLP and a small transformer examine rounding choices beyond the theoretical model.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.41074v1",
+        "source_version": "v1",
+        "source_title": "Where, When, and How Many Bits? Scaling Laws for SGD with Stochastic Rounding",
+        "retrieved_at": "2026-11-02T23:07:48Z",
+        "license": null
+      },
+      "source_dates": {
+        "published_at": "2026-10-29T23:42:46Z",
+        "updated_at": "2026-10-29T23:42:46Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.41074v1",
+        "verified_at": "2026-11-02T23:07:48Z"
+      },
+      "summaries": {
+        "zh": {
+          "text": "在固定随机首层的两层线性网络中，联合分析模型宽度、训练时长和随机舍入精度，区分前向与反向舍入对误差及计算最优尺度律的影响。推导给定精度目标下的位数与调度要求，并用MLP和小型Transformer实验检验精度分配，为低精度训练预算设计提供参考。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-03",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.41074v1"
+          ]
+        },
+        "en": {
+          "text": "Derives stochastic-rounding scaling laws in a two-layer linear model with a fixed random first layer, distinguishing forward and backward rounding and parameter averaging. The analysis connects width, training time and precision budgets, with MLP and small-Transformer experiments examining rounding choices beyond the theoretical setting. It informs low-precision training allocation.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-03",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.41074v1"
+          ]
+        }
+      },
+      "added_at": "2026-11-02T23:18:57Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.41074"
+      },
+      "change_history": [],
+      "reading_tier": null,
+      "companies": [],
+      "order": 607
+    },
+    {
+      "id": "2610.40943",
+      "title": "Kernel-based Interpolatory Methods for Context Compression of Attention Mechanisms",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "Paul Scherrer Institute; EPFL",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.40943"
+        }
+      ],
+      "aliases": [
+        "GAIM",
+        "Q-DAIM"
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "The bottleneck of attention mechanisms, which are the fundamental building block of modern language models, is their quadratic complexity in terms of context size. There has thus been an increasing interest in the compression of the context, also called KV-cache compression. In this article, we consider the problem of compressing the context of attention mechanisms by first formulating it in the Hilbert space associated with its kernel. In this formalism, attention can be represented as the ratio of two linear maps whose interpolant is also the ratio of interpolants, this allows us to consider the interpolation of the linear maps directly. We thus introduce two novel KV-cache compression methods which we call GAIM and Q-DAIM, based on the Generalized Empirical Interpolation Method (GEIM) and the Q-Discrete Empirical Interpolation Method (Q-DEIM), respectively. As the cost of these methods is quadratic in terms of context length, we propose surrogate models based on the Taylor series, the Performer and the Random Fourier Features method which allow the compression to be done in linear time. Finally, we extend this result to the streaming attention setting, providing new methods which allow one to penalize the selection of interpolation nodes based on the previously interpolated context and to update the previous interpolation based on new information. We then provide numerical results on the convergence of the residuals and the output error in future queries and preliminary results on the LongBench-E benchmark showing performance comparable to the state-of-the-art methods. These experiments suggest that the range revealed by our Q-DAIM method could help identify where information is concentrated in the KV cache, thus enabling an efficient compression.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.40943v1",
+        "source_version": "v1",
+        "source_title": "Kernel-based Interpolatory Methods for Context Compression of Attention Mechanisms",
+        "retrieved_at": "2026-11-02T23:07:48Z",
+        "license": null
+      },
+      "source_dates": {
+        "published_at": "2026-10-29T20:21:13Z",
+        "updated_at": "2026-10-29T20:21:13Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.40943v1",
+        "verified_at": "2026-11-02T23:07:48Z"
+      },
+      "summaries": {
+        "zh": {
+          "text": "把注意力写成两个线性映射之比，通过经验插值选择代表性KV信息，提出GAIM与Q-DAIM压缩方法。进一步采用核近似将压缩开销降为线性，并支持流式历史更新；数值实验与初步LongBench-E结果为长序列缓存压缩提供数值分析视角。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-03",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.40943v1"
+          ]
+        },
+        "en": {
+          "text": "Expresses attention as a ratio of linear maps and uses empirical interpolation to build GAIM and Q-DAIM KV-cache compression. Kernel surrogates reduce compression cost to linear time, and streaming variants update compressed history. Numerical experiments and preliminary LongBench-E results offer a numerical-analysis approach to long-context memory reduction.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-03",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.40943v1"
+          ]
+        }
+      },
+      "added_at": "2026-11-02T23:18:57Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.40943"
+      },
+      "change_history": [],
+      "reading_tier": null,
+      "companies": [],
+      "order": 608
+    },
+    {
+      "id": "2610.38095",
+      "title": "Nemotron 3.5 Super and Lightning: Open, Efficient Mixture-of-Experts Hybrid Mamba-Transformer Models for Agentic AI",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "NVIDIA",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.38095"
+        }
+      ],
+      "aliases": [
+        "Nemotron 3.5"
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "We introduce Nemotron 3.5 Super and Nemotron 3.5 Lightning, open and efficient Mixture-of-Experts Hybrid Mamba-Transformer models designed for reasoning, long-context understanding, and agentic workloads. Super is a 120B-parameter, 12B-active multimodal model, while Lightning is a smaller 30B-parameter, 3B-active text model; both designed for efficient deployment. Both models combine large-scale distillation, long-context training, and native speculative decoding, while Super further incorporates Indic continued pretraining and agentic software-engineering mid-training. We develop a comprehensive post-training pipeline spanning supervised fine-tuning and reinforcement learning (RLVR and RLHF), complemented in Super by specialized teacher training and multi- teacher on-policy distillation (MOPD). This transforms Super from a text-only base model into a multimodal agent capable of reasoning over text, images, video, and interactive tool environments. We further explore test-time scaling through parallel agent execution and self-verification. Across training and deployment, we jointly optimize capability and efficiency. Indic continued pretraining improves Indian-language benchmarks by up to 9.82 percentage points, while agentic mid-training strengthens software-engineering capabilities and robustness across agent harnesses. The post-trained Super model achieves 51.78% on SWE-bench Pro, surpassing Nemotron 3 Ultra despite using approximately 4.6x fewer active parameters. Post-training MTP boosting improves speculative- decoding acceptance length by up to 21.8% under probabilistic draft sampling, while NVFP4 quantization achieves 99.62% median accuracy recovery relative to BF16. Inference optimizations enable up to 4,856 output tokens/s/GPU on GB200 while sustaining at least 50 tokens/s/user.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.38095v1",
+        "source_version": "v1",
+        "source_title": "Nemotron 3.5 Super and Lightning: Open, Efficient Mixture-of-Experts Hybrid Mamba-Transformer Models for Agentic AI",
+        "retrieved_at": "2026-11-02T23:07:48Z",
+        "license": null
+      },
+      "source_dates": {
+        "published_at": "2026-10-28T00:28:08Z",
+        "updated_at": "2026-10-28T00:28:08Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.38095v1",
+        "verified_at": "2026-11-02T23:07:48Z"
+      },
+      "summaries": {
+        "zh": {
+          "text": "报告120B总参数、12B激活参数的Super与30B总参数、3B激活参数的Lightning，结合Mamba-Transformer混合架构、MoE、蒸馏和原生推测解码。NVFP4量化的准确率恢复中位数达到BF16的99.62%，展示稀疏架构、缓存管理与部署精度协同优化的工程路径。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-03",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.38095v1"
+          ]
+        },
+        "en": {
+          "text": "Presents the 120B/12B-active Super and 30B/3B-active Lightning hybrid Mamba-Transformer MoE models, combining distillation, long-context training and native speculative decoding. NVFP4 quantization reports 99.62% median accuracy recovery relative to BF16. The report provides engineering recipes connecting sparse architecture, cache management and deployment precision.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-03",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.38095v1"
+          ]
+        }
+      },
+      "added_at": "2026-11-02T23:18:57Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.38095"
+      },
+      "change_history": [],
+      "reading_tier": null,
+      "companies": [
+        "nvidia"
+      ],
+      "order": 609
+    },
+    {
+      "id": "2610.41850",
+      "title": "Dynamical Memory Transformer: Selective Recurrent Memories with Constant Cost Attention",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "Inria, University of Bordeaux",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.41850"
+        }
+      ],
+      "aliases": [
+        "DMT"
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Transformers retain an explicit history of the sequence, allowing attention to directly retrieve past representations. However, the size of the KV-Cache and the cost of a new token increase with the context length. State Space Models compress the past into a fixed-size recurrent state, at the cost of reduced addressability. We present the Dynamical Memory Transformer (DMT), a hybrid architecture that separates sequence encoding from information reading. The encoder uses several memory units, each implemented by a dynamical system with a complex diagonal recurrent matrix. An input-dependent leak rate controls their updates. The decoder then uses attention to read and combine their outputs, without going through the token history. The formulation of the recurrence allows an associative scan with O(T ) total work and O(log T ) parallel depth, with fixed dimensions. During autoregressive inference, the recurrent states and the convolution cache remain fixed in size. We compare DMT with Mamba and Transformer on cognitive and language modeling tasks, and show its strengths and limitations: DMT achieves the best results on several cognitive tasks and language modeling performance close to that of Transformer, but remains behind Mamba in language modeling. On selective copy, DMT also shows stronger length extrapolation than Mamba and Transformer. These results demonstrate that parallel dynamical memory units are a promising mechanism for retaining and using information over sequences.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.41850v1",
+        "source_version": "v1",
+        "source_title": "Dynamical Memory Transformer: Selective Recurrent Memories with Constant Cost Attention",
+        "retrieved_at": "2026-11-02T23:07:44Z",
+        "license": null
+      },
+      "source_dates": {
+        "published_at": "2026-10-30T15:06:37Z",
+        "updated_at": "2026-10-30T15:06:37Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.41850v1",
+        "verified_at": "2026-11-02T23:07:44Z"
+      },
+      "summaries": {
+        "zh": {
+          "text": "将序列编码与信息读取分离：多个带输入相关更新率的递归记忆单元压缩历史，再由注意力读取这些单元的当前输出。固定维度下采用线性总工作量的并行扫描，推理状态大小保持固定；认知任务与选择性复制显示优势，语言建模接近Transformer而落后于Mamba，为长序列记忆设计提供参考。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-03",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.41850v1"
+          ]
+        },
+        "en": {
+          "text": "Separates recurrent sequence encoding from attention-based reading of memory-unit outputs. Input-dependent updates and diagonal complex recurrence permit linear-work associative scans with fixed-size inference state. Cognitive tasks and selective-copy extrapolation show benefits; language modeling is close to the evaluated Transformer but trails Mamba, offering an alternative long-sequence memory design.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-03",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.41850v1"
+          ]
+        }
+      },
+      "added_at": "2026-11-02T23:18:57Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.41850"
+      },
+      "change_history": [],
+      "reading_tier": null,
+      "companies": [],
+      "order": 610
     }
   ]
 }

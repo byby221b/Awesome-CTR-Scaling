@@ -6,7 +6,7 @@
 
 Scaling retrieval and reranking stages of recommendation pipelines.
 
-44 papers · Updated 2026-11-02
+45 papers · Updated 2026-11-03
 
 <a id="paper-2603-04816"></a>
 
@@ -183,3 +183,7 @@ Scaling retrieval and reranking stages of recommendation pipelines.
 <a id="paper-2610-34124"></a>
 
 - **Decision-Native Recommendation with Large Language Models**: DICE directly estimates a next-item distribution and confidence over supplied candidates instead of expressing the choice as generated text. Tree-structured attention shares history computation while isolating candidate branches, enabling order-consistent scoring in one forward pass. On three recommendation datasets, it reports the highest top-one accuracy among evaluated baselines, unchanged choices under tested reorderings, and up to roughly sixfold end-to-end speedup over evaluated generation-based methods. Confidence supports selective recommendation and offline allocation of extra compute, offering a candidate-scoring design rather than a demonstrated full-catalog or online result. — [Paper](https://arxiv.org/abs/2610.34124) (University of Science and Technology of China; Independent Researcher · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-42128"></a>
+
+- **DecisionRank: On-Policy Distillation for Decision-Model Rerankers**: Sorts student first-token document scores into a ranking and obtains conditional feedback from a generative teacher for item-space on-policy distillation. A 1.7B student surpasses its 27B teacher on TREC DL19–23; the 8B model runs 24.5x faster on TREC DL and 16.7x faster on BRIGHT than its generative listwise counterpart, supporting efficient reranking. — [Paper](https://arxiv.org/abs/2610.42128) (Meta; Purdue University · arXiv 2026). Reading priority: Unrated.

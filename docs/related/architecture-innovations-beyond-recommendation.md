@@ -6,7 +6,7 @@
 
 Transferable ideas from general-purpose model architecture research.
 
-212 papers · Updated 2026-11-02
+225 papers · Updated 2026-11-03
 
 <a id="paper-2606-16825"></a>
 
@@ -838,7 +838,7 @@ Transferable ideas from general-purpose model architecture research.
 
 <a id="paper-2610-38981"></a>
 
-- **Why Speculative Decoding Works Better Than Predicted on Sparse MoE Models**: Studies speculative decoding across ten sparse MoE models and explains unexpectedly strong low-batch gains through expert routing overlap and kernel bandwidth utilization. An IPF model predicts unique activated experts with under 4% error in the reported evaluations, offering a more grounded cost model than parameter-byte counts alone. — [Paper](https://arxiv.org/abs/2610.38981) (Cohere · arXiv 2026). Reading priority: Unrated.
+- **Why Speculative Decoding Works Better Than Predicted on Sparse MoE Models**: Studies speculative decoding across ten sparse MoE models and explains unexpectedly strong low-batch gains through expert routing overlap and kernel bandwidth utilization. An IPF model predicts unique activated experts with under 4% error in the reported evaluations, offering a more grounded cost model than parameter-byte counts alone. — [Paper](https://arxiv.org/abs/2610.38981) (Cohere · NeurIPS 2026). Reading priority: Unrated.
 
 <a id="paper-2610-36009"></a>
 
@@ -855,3 +855,55 @@ Transferable ideas from general-purpose model architecture research.
 <a id="paper-2610-39442"></a>
 
 - **Softmax Routing Dynamics in Mixture-of-Experts Models: Collapse and Recovery**: Analyzes expert suppression and recovery in softmax routing through simplified fixed-expert and adapting-expert dynamics. Transformer-MoE interventions connect class-conditional router gradients to recovery delays, offering theoretical and experimental insight into routing collapse rather than a general guaranteed remedy. — [Paper](https://arxiv.org/abs/2610.39442) (Chinese University of Hong Kong; Beijing Normal-Hong Kong Baptist University; Guangzhou Nanfang College · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-42147"></a>
+
+- **Latent Sparse Attention: Towards Subquadratic Ultra-Long Context Attention**: Clusters keys hierarchically in a learned latent space so queries select clusters rather than score every key. Distilled and natively trained variants improve ultra-long-context attention; reported 10M-token speedups concern individual attention layers, while native training achieves a 1.6x per-layer speedup at 128K. The indexer offers a design reference for long-history retrieval. — [Paper](https://arxiv.org/abs/2610.42147) (Prefrontal AI; ETH Zurich · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-42112"></a>
+
+- **Subquadratic Attention with a Hierarchical Tree-Structured Indexer**: Builds a tree of compressed KV summaries and traverses it top-down to retrieve a sparse key subset, giving subquadratic overall attention cost. Short KL distillation adapts pretrained models while retaining evaluated retrieval and reasoning capabilities. Speed advantages beyond one million tokens are supported by a performance model, offering a scalable index design for long sequences. — [Paper](https://arxiv.org/abs/2610.42112) (Zyphra Research · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-42030"></a>
+
+- **There Is No Free Loop: When Does Looping a Trained Model Pay for Its Inference Compute?**: Evaluates post-hoc layer looping against both equal-parameter and equal-inference-FLOP baselines. Across tested Qwen3 and Qwen3.5 models from 0.8B to 9B, only the 0.8B looped model beats both baselines. The controlled comparisons provide a practical methodology for assessing the compute return of shared-depth scaling. — [Paper](https://arxiv.org/abs/2610.42030) (Microsoft Applied Sciences Group · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-41994"></a>
+
+- **DAMI: Dual-Axis Memory Initialization for Enhanced Long-Context Retrieval in Gated Linear Attention**: Jointly initializes decay parameters to distribute memory timescales across heads and input sensitivity across depth. Small activation samples calibrate the initialization without adding trainable parameters. Reported RULER-style retrieval gains span 5.29–16.71 percentage points across gated recurrent architectures, suggesting an initialization strategy for long-history memory. — [Paper](https://arxiv.org/abs/2610.41994) (SpeedAI; Beihang University · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-41720"></a>
+
+- **UpLoop: Training Looped Transformers via Upcycling at No Extra Pretraining Compute**: Starts with a shallow Transformer, grows it by copying learned layers, and spends the saved early compute on repeated execution of a shared middle block. With final parameters, training tokens and FLOPs matched to a dense baseline, the 1.3B model improves its mean score over 22 tasks from 22.99 to 27.52, providing a compute-budgeted depth-scaling schedule. — [Paper](https://arxiv.org/abs/2610.41720) (Shanghai Jiao Tong University; University of Science and Technology of China · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-41420"></a>
+
+- **SparseGDN: Chunk Sparse in Linear Attention**: Combines a block-adjacent Delta solver with input-dependent recurrent-event selection, reconstructing every token output from compact state snapshots. On Qwen3.5-4B and 9B, retaining about 29% of recurrent events yields 1.50–1.94x GDN-core prefill speedups over native FLA kernels across 4K–128K contexts, including online selection overhead. — [Paper](https://arxiv.org/abs/2610.41420) (Zhejiang University; ByteDance · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-41366"></a>
+
+- **What We Keep of What We Forget: Replacement Operators and Routing Semantics in Training-Free MoE Expert Pruning**: Holds pruning masks fixed to isolate replacement operators and surviving-expert gate scales. Introduces the tilted novice, a closed-form low-rank input map that improves over constant replacement on OLMoE and Moonlight. Experiments show that preserving trained routing scale and choosing calibration data materially affect pruning results, informing practical sparse-model compression. — [Paper](https://arxiv.org/abs/2610.41366) (National University of Sciences and Technology · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-41236"></a>
+
+- **Experts Exhibit Structured Redundancy: Structure-Preserving Expert Pruning for Mixture-of-Experts Large Language Models**: Treats expert pruning as structure-preserving subset selection: PEEP preserves weighted projection energy, while DCEP preserves distributional coverage with router-derived weights. Greedy selection achieves the best reported average results at 75% and 50% expert retention on DeepSeek-V2-Lite and Qwen3-30B-A3B, targeting MoE storage cost. — [Paper](https://arxiv.org/abs/2610.41236) (Peking University; Shanghai Jiao Tong University; Qilu University of Technology; Shandong Computer Science Center · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-39876"></a>
+
+- **Turing LLM Post-Training: Calibrated Distillation and Efficient Dynamic-MoE Execution**: Combines calibrated multi-teacher on-policy distillation with bounded-width dispatch, final-route replay and asynchronous rollout–training overlap. Turing-20B-A2B retains at least 90.16% of measured specialist gains in each domain. The complete PPU execution configuration reduces consolidation step time from 398.7 to 139.3 seconds, illustrating coordinated routing and training-system optimization. — [Paper](https://arxiv.org/abs/2610.39876) (XPeng · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-41074"></a>
+
+- **Where, When, and How Many Bits? Scaling Laws for SGD with Stochastic Rounding**: Derives stochastic-rounding scaling laws in a two-layer linear model with a fixed random first layer, distinguishing forward and backward rounding and parameter averaging. The analysis connects width, training time and precision budgets, with MLP and small-Transformer experiments examining rounding choices beyond the theoretical setting. It informs low-precision training allocation. — [Paper](https://arxiv.org/abs/2610.41074) (University of California, Berkeley; ICSI; Lawrence Berkeley National Laboratory · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-40943"></a>
+
+- **Kernel-based Interpolatory Methods for Context Compression of Attention Mechanisms**: Expresses attention as a ratio of linear maps and uses empirical interpolation to build GAIM and Q-DAIM KV-cache compression. Kernel surrogates reduce compression cost to linear time, and streaming variants update compressed history. Numerical experiments and preliminary LongBench-E results offer a numerical-analysis approach to long-context memory reduction. — [Paper](https://arxiv.org/abs/2610.40943) (Paul Scherrer Institute; EPFL · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-38095"></a>
+
+- **Nemotron 3.5 Super and Lightning: Open, Efficient Mixture-of-Experts Hybrid Mamba-Transformer Models for Agentic AI**: Presents the 120B/12B-active Super and 30B/3B-active Lightning hybrid Mamba-Transformer MoE models, combining distillation, long-context training and native speculative decoding. NVFP4 quantization reports 99.62% median accuracy recovery relative to BF16. The report provides engineering recipes connecting sparse architecture, cache management and deployment precision. — [Paper](https://arxiv.org/abs/2610.38095) (NVIDIA · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-41850"></a>
+
+- **Dynamical Memory Transformer: Selective Recurrent Memories with Constant Cost Attention**: Separates recurrent sequence encoding from attention-based reading of memory-unit outputs. Input-dependent updates and diagonal complex recurrence permit linear-work associative scans with fixed-size inference state. Cognitive tasks and selective-copy extrapolation show benefits; language modeling is close to the evaluated Transformer but trails Mamba, offering an alternative long-sequence memory design. — [Paper](https://arxiv.org/abs/2610.41850) (Inria, University of Bordeaux · arXiv 2026). Reading priority: Unrated.

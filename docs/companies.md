@@ -6,9 +6,9 @@
 
 Company membership follows recorded affiliation aliases and preserved company-overview mentions. A paper may appear under multiple companies. This structural migration does not independently reverify affiliations or publication claims.
 
-- [Meta](#company-meta) (55)
-- [ByteDance / TikTok](#company-bytedance-tiktok) (24)
-- [Alibaba](#company-alibaba) (51)
+- [Meta](#company-meta) (56)
+- [ByteDance / TikTok](#company-bytedance-tiktok) (25)
+- [Alibaba](#company-alibaba) (52)
 - [Meituan](#company-meituan) (11)
 - [Tencent](#company-tencent) (26)
 - [Google](#company-google) (22)
@@ -25,7 +25,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [Yandex](#company-yandex) (6)
 - [JD](#company-jd) (7)
 - [VK](#company-vk) (1)
-- [Microsoft](#company-microsoft) (5)
+- [Microsoft](#company-microsoft) (6)
 - [Walmart](#company-walmart) (2)
 - [Snap](#company-snap) (4)
 - [Xiaohongshu](#company-xiaohongshu) (7)
@@ -35,7 +35,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [Liquid AI](#company-liquid-ai) (3)
 - [IBM (MIT-IBM Computing Research Lab)](#company-ibm-mit-ibm-computing-research-lab) (5)
 - [Perplexity AI](#company-perplexity-ai) (1)
-- [NVIDIA](#company-nvidia) (7)
+- [NVIDIA](#company-nvidia) (8)
 - [StepFun](#company-stepfun) (1)
 - [Adobe Research](#company-adobe-research) (2)
 - [Unbox AI](#company-unbox-ai) (1)
@@ -57,7 +57,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [Criteo](#company-criteo) (3)
 - [Q Labs](#company-q-labs) (2)
 - [Spotify](#company-spotify) (1)
-- [Zyphra](#company-zyphra) (1)
+- [Zyphra](#company-zyphra) (2)
 - [Airbnb](#company-airbnb) (2)
 - [SenseTime](#company-sensetime) (1)
 - [Linkup](#company-linkup) (1)
@@ -145,6 +145,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [Read More, Reason Deeper: Latent Workspaces for Long-Sequence Recommendation](topics/scalable-architecture.md#paper-2610-39188) · 2026 · Core
 - [PRISM: Personalized Item Representations in User History](related/sample-instance-compression-for-sequence-modeling.md#paper-2610-39175) · 2026 · Related
 - [How to Loop Your Transformer: Loop Scaling, Specialization, and Parallel Inference](related/architecture-innovations-beyond-recommendation.md#paper-2610-40325) · 2026 · Related
+- [DecisionRank: On-Policy Distillation for Decision-Model Rerankers](related/retrieval-reranking-scaling.md#paper-2610-42128) · 2026 · Related
 
 <a id="company-bytedance-tiktok"></a>
 
@@ -174,6 +175,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [LEMUR: Large scale End-to-end MUltimodal Recommendation](topics/scalable-architecture.md#paper-2511-10962) · 2026 · Core
 - [RemoteANN: A Native Vector Search Engine for Cloud Object Storage](related/retrieval-reranking-scaling.md#paper-2610-25172) · 2026 · Related
 - [Does LLM Pre-Training Typically Occur at the Edge of Stability?](related/architecture-innovations-beyond-recommendation.md#paper-2610-36778) · 2026 · Related
+- [SparseGDN: Chunk Sparse in Linear Attention](related/architecture-innovations-beyond-recommendation.md#paper-2610-41420) · 2026 · Related
 
 <a id="company-alibaba"></a>
 
@@ -230,6 +232,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [KL-MOPD: Discrepancy-Aware Multi-Objective On-Policy Distillation for Generative Recommendation](related/generative-recommendation.md#paper-2610-36973) · 2026 · Related
 - [UGR: Unified Generative Ranking for Heterogeneous E-commerce Recommendation](topics/foundation-models-multi-scenario.md#paper-2610-39426) · 2026 · Core
 - [PFA: Attention Can Be Progressively Focused in Long-Sequence Generative Recommendation](topics/efficiency-deployment.md#paper-2610-39273) · 2026 · Core
+- [RecIS: Unifying Sparse and Dense Computation for Efficient Recommendation Training](topics/efficiency-deployment.md#paper-2610-41457) · 2026 · Core
 
 <a id="company-meituan"></a>
 
@@ -469,6 +472,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [Simple Linear Corrections for Compression in Late Interaction](related/retrieval-reranking-scaling.md#paper-2610-14196) · 2026 · Related
 - [The Vocabulary Is Already Here: Adapting Pretrained Interpretable Features for Generative Recommendation](related/generative-recommendation.md#paper-2610-36763) · 2026 · Related
 - [xPRT: Cross-Passage Retrieval Pretraining](related/retrieval-reranking-scaling.md#paper-2610-40122) · 2026 · Related
+- [There Is No Free Loop: When Does Looping a Trained Model Pay for Its Inference Compute?](related/architecture-innovations-beyond-recommendation.md#paper-2610-42030) · 2026 · Related
 
 <a id="company-walmart"></a>
 
@@ -558,6 +562,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [FORGE: Procedural Weight Generation for Sparse MoE Inference](related/architecture-innovations-beyond-recommendation.md#paper-2610-16890) · 2026 · Related
 - [KPage: Cross-Block Page Compaction for Hardware-Efficient Sparse Attention](related/engineering-serving.md#paper-2610-28096) · 2026 · Related
 - [Improving the Expressive Power of Hybrid Sequence Models via Multi-Hop Retrieval](related/architecture-innovations-beyond-recommendation.md#paper-2610-25250) · 2026 · Related
+- [Nemotron 3.5 Super and Lightning: Open, Efficient Mixture-of-Experts Hybrid Mamba-Transformer Models for Agentic AI](related/architecture-innovations-beyond-recommendation.md#paper-2610-38095) · 2026 · Related
 
 <a id="company-stepfun"></a>
 
@@ -695,6 +700,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 ## Zyphra
 
 - [Expert Coupling in MoE Pretraining: Reducing All-to-All Overhead with Correlated Placement and Token Shuffling](related/engineering-serving.md#paper-2610-09372) · 2026 · Related
+- [Subquadratic Attention with a Hierarchical Tree-Structured Indexer](related/architecture-innovations-beyond-recommendation.md#paper-2610-42112) · 2026 · Related
 
 <a id="company-airbnb"></a>
 
