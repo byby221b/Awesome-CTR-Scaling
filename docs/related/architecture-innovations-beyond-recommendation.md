@@ -6,7 +6,7 @@
 
 Transferable ideas from general-purpose model architecture research.
 
-225 papers · Updated 2026-11-03
+242 papers · Updated 2026-11-04
 
 <a id="paper-2606-16825"></a>
 
@@ -290,7 +290,7 @@ Transferable ideas from general-purpose model architecture research.
 
 <a id="paper-2610-09025"></a>
 
-- **SPIN: Shadow Predictive Indexer for Sparse Attention**: SPIN predicts important KV-cache blocks from recent indexing history, avoiding full-cache scoring at every decoding step. Its block-based indexer accounts for speculative decoding and reduces indexing work while preserving evaluated task quality. vLLM experiments report serving improvements; the transferable lesson is to optimize selection overhead as well as sparse attention itself. — [Paper](https://arxiv.org/abs/2610.09025) (arXiv 2026). Reading priority: Read as needed.
+- **SPIN: Shadow Predictive Indexer for Sparse Attention**: SPIN predicts important KV blocks from recent indexing scores, refreshes skipped blocks through random exploration and allocates per-layer block budgets by measured miss rates. The revised MRCRv2 experiments retain near-baseline quality at 50–57% effective block sparsity; vLLM serving reports up to 13.9% higher output throughput and 13.6% lower median inter-token latency. — [Paper](https://arxiv.org/abs/2610.09025) (arXiv 2026). Reading priority: Read as needed.
 
 <a id="paper-2610-07207"></a>
 
@@ -354,7 +354,7 @@ Transferable ideas from general-purpose model architecture research.
 
 <a id="paper-2610-06116"></a>
 
-- **ORCA: The Annealed Spectral Conditioning Optimizer for Faster, Better LLM Training**: ORCA adds temporary soft orthogonality regularization to Muon early in training and removes it later, aiming to broaden useful weight directions without constraining the final solution. The authors report lower validation loss across LLaMA, Qwen3 and fine-grained MoE models from 130M to 8B parameters. This suggests an optimizer intervention for dense ranking projections, not verified CTR gains; embeddings and one-dimensional parameters retain their original AdamW updates. — [Paper](https://arxiv.org/abs/2610.06116) (Peking University; Kling Team · arXiv 2026). Reading priority: Unrated.
+- **ORCA: The Annealed Spectral Conditioning Optimizer for Faster, Better LLM Training**: ORCA temporarily adds soft orthogonality regularization to Muon during early training, then removes it to let weights adapt freely. Experiments across LLaMA, Qwen3 and fine-grained MoE models from 130M to 8B parameters report improved optimization and validation loss with minimal overhead and no architectural changes. — [Paper](https://arxiv.org/abs/2610.06116) (Peking University; Kling Team · arXiv 2026). Reading priority: Unrated.
 
 <a id="paper-2610-11134"></a>
 
@@ -862,7 +862,7 @@ Transferable ideas from general-purpose model architecture research.
 
 <a id="paper-2610-42112"></a>
 
-- **Subquadratic Attention with a Hierarchical Tree-Structured Indexer**: Builds a tree of compressed KV summaries and traverses it top-down to retrieve a sparse key subset, giving subquadratic overall attention cost. Short KL distillation adapts pretrained models while retaining evaluated retrieval and reasoning capabilities. Speed advantages beyond one million tokens are supported by a performance model, offering a scalable index design for long sequences. — [Paper](https://arxiv.org/abs/2610.42112) (Zyphra Research · arXiv 2026). Reading priority: Unrated.
+- **Subquadratic Attention with a Hierarchical Tree-Structured Indexer**: ZHA builds a tree of compressed KV summaries and retrieves keys top-down, giving subquadratic indexing and attention cost. The revision specifies a one-billion-token KL-distillation stage to adapt pretrained models while retaining evaluated retrieval and reasoning capabilities. Advantages beyond one million context tokens are projections from a performance model. — [Paper](https://arxiv.org/abs/2610.42112) (Zyphra Research · arXiv 2026). Reading priority: Unrated.
 
 <a id="paper-2610-42030"></a>
 
@@ -907,3 +907,71 @@ Transferable ideas from general-purpose model architecture research.
 <a id="paper-2610-41850"></a>
 
 - **Dynamical Memory Transformer: Selective Recurrent Memories with Constant Cost Attention**: Separates recurrent sequence encoding from attention-based reading of memory-unit outputs. Input-dependent updates and diagonal complex recurrence permit linear-work associative scans with fixed-size inference state. Cognitive tasks and selective-copy extrapolation show benefits; language modeling is close to the evaluated Transformer but trails Mamba, offering an alternative long-sequence memory design. — [Paper](https://arxiv.org/abs/2610.41850) (Inria, University of Bordeaux · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-03577"></a>
+
+- **Sonar-MoE: In-Backward Expert Updates for Memory-Efficient Mixture-of-Experts Training**: Sonar-MoE updates batched expert tensors during backpropagation and releases their gradients immediately, limiting resident expert gradients to one layer. BF16 fine-tuning of two MoE models reduces peak memory by 19–22%; updates match standard training bitwise without expert gradient clipping, while step time falls 17–23% relative to global-norm-clipped training. — [Paper](https://arxiv.org/abs/2611.03577) (Microsoft; Singapore Institute of Technology; Indian Institute of Technology Kanpur; Indian Institute of Technology Delhi; Indraprastha Institute of Information Technology Delhi; Nanyang Technological University · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-03526"></a>
+
+- **Library of Layers (LoL): Adaptively Ordering Transformer Layers at Runtime**: Library of Layers dynamically selects the order of Transformer blocks from a shared library at inference. Library size interpolates between parameter reuse and sparse computation; text pretraining is competitive with dense, recurrent and MoE baselines, while synthetic and multilingual studies expose input-dependent layer ordering. — [Paper](https://arxiv.org/abs/2611.03526) (EPFL; New York University; Columbia University; University of Maryland · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-03344"></a>
+
+- **FLAMIA: FLAsh MIcroscaling Attention for Fast and Causally Safe Training on Blackwell**: FLAMIA co-designs microscaling quantization, consistent forward/backward numerics and packed-document scheduling for Blackwell attention training. Including quantization, its MXFP8 path accelerates combined forward and backward attention by 1.10–1.40× on B200 and 1.06–1.42× on B300 against the fastest evaluated baseline per workload, with Llama-style pretraining checks. — [Paper](https://arxiv.org/abs/2611.03344) (arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-03200"></a>
+
+- **CISA: Retrofitting Dense Attention Models with Chunk-Indexed Sparse Attention**: CISA retrofits dense attention without gradient updates by selecting fixed-size KV chunks using compact key summaries and sharing selections across queries. A four-B300 Nemotron 3 Ultra NVFP4 serving test reports 2.29× end-to-end throughput; tighter chunk budgets increase speed while widening quality gaps. — [Paper](https://arxiv.org/abs/2611.03200) (NVIDIA · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-03173"></a>
+
+- **PagedMoE: Cross-Precision Expert Caching for Token-Level Dynamic Precision in SSD-Resident MoE Inference**: PagedMoE stores each SSD-resident expert in a prefix-compatible codebook and bitplane layout so cached low-bit representations can be extended rather than refetched. At 2.5-bit average routed-expert precision and a 24 GiB expert cache, Qwen3.5 reaches 8.89 tokens/s, 1.33× independent-precision objects and 1.56× uniform 4-bit execution, with quality close to GPTQ-INT4. — [Paper](https://arxiv.org/abs/2611.03173) (Tsinghua University · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-02508"></a>
+
+- **AttentionIndex: Accelerating Learned Sparse Attention with a Causal Inverted-File Index**: AttentionIndex uses a causal inverted-file index to avoid scoring every key in learned sparse attention. At one million tokens on GLM-5.3 and DeepSeek-V4-Flash, prefill throughput is 1.3–1.8× exhaustive selection; at throughput within 5% of HiSA it recovers 17 and 10 percentage points more of exhaustive top-k respectively. — [Paper](https://arxiv.org/abs/2611.02508) (NVIDIA · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-02436"></a>
+
+- **M3Former: Fine-Grained Cross-Layer Mixing for Transformers**: M3Former lets query, key, value and residual roles read separate token-dependent mixtures of earlier layers, further separating groups of hidden dimensions. It initializes as an exact residual connection and can add only 1.4% parameters and 1.8% FLOPs; experiments from 100M to 1.4B parameters report gains over conventional and coarser cross-layer connections, with extensions to sparse MoE. — [Paper](https://arxiv.org/abs/2611.02436) (Tsinghua University; Shanghai Jiao Tong University; Shanghai AI Laboratory; Institute of Automation, Chinese Academy of Sciences; Nanyang Technological University · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-01940"></a>
+
+- **ReWY: Faster Gradient Computation for Delta-Rule Attention Family**: ReWY algebraically simplifies the backward pass of DeltaNet, GDN, KDA and GDN2, reducing seven local WY matrix products to three while preserving exact-arithmetic gradients. GPU and Ascend implementations exploit further contraction reuse; matched-policy GPU tests report 1.15–1.81× geometric-mean low-level backward speedups. — [Paper](https://arxiv.org/abs/2611.01940) (Tianjin University · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-00421"></a>
+
+- **RankLane: Efficient MoE Prefill on Accelerators with Ranked Expert Capacities**: RankLane assigns dynamically ranked expert loads to fixed-capacity execution lanes, combining static shapes with runtime expert selection and full-capacity overflow recovery. Four Cloud AI 100 Ultra SoCs with MXFP6 weights show full-model prefill speedups of 1.27–4.18× for Qwen3-30B-A3B and 1.93–3.46× for Gemma 4 26B-A4B over the evaluated dense baseline. — [Paper](https://arxiv.org/abs/2611.00421) (University of California, San Diego; Qualcomm AI Research · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-01704"></a>
+
+- **MatMoE: Matryoshka Mixture-of-Experts with Dynamic Mixed-Precision Quantization for Efficient Inference**: MatMoE combines nested multi-precision expert representations, floor-and-compensation quantization and routing-aware dynamic bit allocation for changing latency budgets. Implemented in llama.cpp, it reports 1.3–3.7× speedups on Raspberry Pi 5 and 1.2–1.3× on RTX 4090 and Jetson AGX Orin, alongside accuracy gains over the tested static mixed-precision method. — [Paper](https://arxiv.org/abs/2611.01704) · [Program](https://confcats-event-sessions.s3.us-east-1.amazonaws.com/iccad26/uploads/ICCAD_2026_Program_v17.pdf) (Peking University; Beijing Advanced Innovation Center for Integrated Circuits; Sun Yat-sen University; Southeast University · ICCAD 2026). Reading priority: Unrated.
+
+<a id="paper-2611-01426"></a>
+
+- **FlyWheel: Attention Kernels Built for the TPU**: FlyWheel reduces vector work and repeated matrix-operand loads in TPU softmax and linear attention, then overlaps independent computation. Tests on TPU v6e/v7x report up to 4.14× softmax-kernel and 3.61× Gated DeltaNet prefill speedups; Qwen3.8-27B integration improves serving prefill throughput by up to 1.56× with comparable accuracy. — [Paper](https://arxiv.org/abs/2611.01426) (New York University; New York University Shanghai; Google · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-01182"></a>
+
+- **Fast and Exact Relative-Position Attention via Structure-Aware Kernels**: This work integrates additive relative-position attention into exact FlashAttention-style tiling using offset-aware reuse and sharded gradient aggregation. At 8K tokens it reports 1.8–6.4× forward and 2.0–21× backward speedups over the strongest evaluated baseline for each mechanism; a transcription integration is 1.8× faster and uses 2.4× less memory. — [Paper](https://arxiv.org/abs/2611.01182) (INSAIT, Sofia University · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-01022"></a>
+
+- **Jet-QSparse: Accelerating Agentic LLM Inference with 4-Bit Sparse Attention**: Jet-QSparse combines NVFP4 KV storage and native FP4 key scoring with sparse higher-precision value aggregation on Blackwell. A 128-block budget shows no detected loss on evaluated tasks; a separate 64-block setting gives Qwen3.8-27B a 1.94× decode speedup at 128K context and batch 16 on one GB300. — [Paper](https://arxiv.org/abs/2611.01022) (Carnegie Mellon University; Virginia Tech; Massachusetts Institute of Technology; NVIDIA; Sungkyunkwan University; University of California, Berkeley · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-41819"></a>
+
+- **ElTab: Elastically Looped Tabular Transformers**: ElTab trains one looped tabular Transformer with randomly sampled early exits to serve multiple compute budgets. Across 30 OpenML classification datasets it matches six depth-specific looped models with less than half their training cost and matches a 12-layer TabPFN-style baseline using 25% fewer inference FLOPs. — [Paper](https://arxiv.org/abs/2610.41819) (Technical University of Darmstadt; University of Texas at Dallas; Hessian Center for Artificial Intelligence; German Research Center for Artificial Intelligence · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-38331"></a>
+
+- **Multi-Token Prediction Done Right**: Soft-MTP separates a useful KL self-distillation gradient from a noisy residual in multi-token prediction. Straight-through routing recovers the KL gradient from existing cross-entropy computations without vocabulary-sized logit matrices; 167M–1.2B language-model experiments report improved next-token perplexity, speculative decoding and zero-shot accuracy over standard MTP. — [Paper](https://arxiv.org/abs/2610.38331) (Massachusetts Institute of Technology · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-36950"></a>
+
+- **DCKV: Learned Transform Coding of the Prompt KV Cache in Hybrid Language Models**: DCKV jointly trains a transform, quantizer and conditional entropy model to compress the prompt KV cache against a frozen hybrid language model. On Qwen3.5-2B it reports over 55× fewer bytes per compressed token with at most 1.8-point loss on three long-context benchmarks, or over 100× compression with at most 3.6-point loss. — [Paper](https://arxiv.org/abs/2610.36950) (MIL Team; DAIMLD · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-02270"></a>
+
+- **Hinted Scaling Laws**: Hinted Scaling Laws uses privileged hints to make difficult evaluations informative for small models, then extrapolates performance across hint levels and compute scales. On pretraining and post-training model families, the reported median forecast error on GSM8K, AIME and HLE falls from 21 to 4.3 percentage points, offering a model-development tool rather than a validated recommendation scaling law. — [Paper](https://arxiv.org/abs/2611.02270) (Stanford University · arXiv 2026). Reading priority: Unrated.

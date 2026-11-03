@@ -6,7 +6,7 @@
 
 Scaling retrieval and reranking stages of recommendation pipelines.
 
-45 papers · Updated 2026-11-03
+46 papers · Updated 2026-11-04
 
 <a id="paper-2603-04816"></a>
 
@@ -187,3 +187,7 @@ Scaling retrieval and reranking stages of recommendation pipelines.
 <a id="paper-2610-42128"></a>
 
 - **DecisionRank: On-Policy Distillation for Decision-Model Rerankers**: Sorts student first-token document scores into a ranking and obtains conditional feedback from a generative teacher for item-space on-policy distillation. A 1.7B student surpasses its 27B teacher on TREC DL19–23; the 8B model runs 24.5x faster on TREC DL and 16.7x faster on BRIGHT than its generative listwise counterpart, supporting efficient reranking. — [Paper](https://arxiv.org/abs/2610.42128) (Meta; Purdue University · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-00530"></a>
+
+- **WeSearch: A Unified Model-Centric Retrieval Framework for WeChat Search**: WeSearch retrieves query-relevant clusters before ranking atomic documents, decoupling candidate pruning from document relevance. Compact representations and incremental updates support frequent refreshes; the authors report full deployment in WeChat Search, with a month-long test showing +0.68% CTR, +2.27% per-user article clicks, 41% lower retrieval resource cost and 19 ms lower graphic-text retrieval latency. — [Paper](https://arxiv.org/abs/2611.00530) (Tencent · arXiv 2026). Reading priority: Unrated.

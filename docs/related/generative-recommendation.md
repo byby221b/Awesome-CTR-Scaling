@@ -6,7 +6,7 @@
 
 Generative retrieval, recommendation and ranking beyond discriminative CTR.
 
-112 papers · Updated 2026-11-03
+116 papers · Updated 2026-11-04
 
 <a id="paper-2605-12617"></a>
 
@@ -455,3 +455,19 @@ Generative retrieval, recommendation and ranking beyond discriminative CTR.
 <a id="paper-2610-34700"></a>
 
 - **DPE-Rec: Diversity-Preserving and Efficient Diffusion Language Model Recommendation for Bundle Construction**: DPE-Rec uses diffusion language models to complete partially observed item bundles. Semantic-fork-aware GRPO prioritizes decisions that determine different bundle compositions, while pseudo-trajectory distillation concentrates training on states reached by high-quality decoding so more tokens can be revealed per step. Experiments report improved bundle recommendation, and a fast variant averages 25.6 times faster inference than evaluated generative recommenders with little quality loss. The evidence concerns bundle construction, offering a way to trade denoising steps against recommendation diversity and quality rather than a validated CTR speedup. — [Paper](https://arxiv.org/abs/2610.34700) (Arizona State University; Stevens Institute of Technology · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-01136"></a>
+
+- **SIDRec: End-to-End Semantic ID Representation and Modeling for Recommendation**: SIDRec jointly learns content and collaborative semantic IDs with recommendation supervision. Self-updating representation fusion and an MMoE-inspired differentiable-quantization objective address semantic and training-objective mismatch; three public datasets show AUC and GAUC improvements, with up to 5.15% relative gains over the strongest baselines. — [Paper](https://arxiv.org/abs/2611.01136) (The Hong Kong Polytechnic University; University of Electronic Science and Technology of China; Southwest Jiaotong University; Kuaishou Technology · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-01072"></a>
+
+- **Where Beam Search Loses Top-Ranked Items:First-Step Coverage in Generative Recommendation**: A controlled TIGER study finds that exact top-10 paths lost by beam search are first pruned at the initial semantic-ID step in six tested settings. Reallocating capacity to that step reproduces Beam-100 output at a nominal budget of 151 rather than 301, while matched-output decoder latency improves by only 6.35–6.39%. — [Paper](https://arxiv.org/abs/2611.01072) (Ant Group; Independent Researcher · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-00323"></a>
+
+- **Beyond Semantic IDs: Atomic Creator Tokens for Large-Scale Generative Recommendation**: Atomic Creator Token assigns each creator a unique, end-to-end-trained vocabulary token instead of a frozen quantized semantic ID. A controlled production-data comparison reports a 19.8-point Recall@15 gain and about 2.7× lower per-user latency; public-data gains require enough training examples per creator, and online metrics are reported as directionally positive. — [Paper](https://arxiv.org/abs/2611.00323) (Meta · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-02981"></a>
+
+- **Utility-Aware Generative Recommendation: Utility-Enriched Semantic Codes and Utility-Guided Decoding**: UAGR incorporates post-exposure utility into semantic codes and beam scoring without increasing semantic-ID length or vocabulary size. Incremental utility updates and utility-guided decoding aim to retain valuable candidates early; the authors report full Kuaishou deployment and a 0.206% online watch-time increase. — [Paper](https://arxiv.org/abs/2611.02981) (Kuaishou Technology · arXiv 2026). Reading priority: Unrated.

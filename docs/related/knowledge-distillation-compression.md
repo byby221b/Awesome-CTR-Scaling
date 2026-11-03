@@ -6,7 +6,7 @@
 
 Transferring, compressing and deploying larger recommendation models.
 
-11 papers · Updated 2026-11-03
+15 papers · Updated 2026-11-04
 
 <a id="paper-2411-16122"></a>
 
@@ -51,3 +51,19 @@ Transferring, compressing and deploying larger recommendation models.
 <a id="paper-2610-36267"></a>
 
 - **Preserving rare-item recall under a storage budget: quantization, distillation, and the limits of teacher fidelity**: Under a fixed embedding-storage budget, the study compares low-dimensional models, distilled students and higher-rank low-precision factorizations across seven dataset-backbone cells. A rank-300 4-bit factorization uses 13% of teacher storage while retaining 95–103% of tail recall@20 and 93–97% of NDCG@20, at 7.5 times the arithmetic per score. Teacher-hit retention can misrank candidates, so the authors recommend assessing total rare-item recall directly. — [Paper](https://arxiv.org/abs/2610.36267) (University of Texas at Austin; Unaffiliated · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-03272"></a>
+
+- **Diverse-Teacher On-Policy Distillation for Generative Recommendation**: HERO routes popular and long-tail training examples to specialized teachers and supplements rare student-generated semantic-ID paths. Only the student serves inference; the authors report offline improvements and a 3.412% GMV increase in a 15-day 1688 A/B test. — [Paper](https://arxiv.org/abs/2611.03272) (University of Science and Technology of China; National University of Singapore; Alibaba Group · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-02457"></a>
+
+- **Multi-Teacher Reasoning Distillation for LLM Recommendation with Self-Exploration**: MUSE combines reasoning from multiple teachers with student self-exploration and scores trajectories by full-catalog rank improvement. Dual-level contrastive objectives teach the generator to prefer useful reasoning and the recommendation encoder to exploit it; experiments cover three datasets. — [Paper](https://arxiv.org/abs/2611.02457) (The Hong Kong Polytechnic University; Nanyang Technological University · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-01568"></a>
+
+- **Search-Aware On-Policy Self-Distillation with Sibling Alignment for Generative Recommendation**: SA-OPSD targets the beam-search states most vulnerable to pruning under a fixed distillation budget. It combines evolving-boundary sampling with confidence-decoupled branch distillation to preserve sibling preferences from a privileged self-teacher, reporting gains on an industrial dataset and two public domains. — [Paper](https://arxiv.org/abs/2611.01568) (Kuaishou Technology; University of Amsterdam; Huazhong University of Science and Technology · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-01129"></a>
+
+- **HiGenTrans: Hierarchical LLM Knowledge Transfer for Generative Recommendation**: HiGenTrans transfers LLM knowledge into semantic-ID recommendation through a user semantic prior, depth-aligned hidden representations and a lightweight MoE beam-output calibrator. Prefix-only semantic features can be cached offline; three benchmarks show up to 12.9% Recall@10 and 33.7% NDCG@10 improvements over the strongest baselines. — [Paper](https://arxiv.org/abs/2611.01129) (The Hong Kong Polytechnic University; Kuaishou Technology · arXiv 2026). Reading priority: Unrated.

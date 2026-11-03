@@ -6,7 +6,7 @@
 
 Long-history modeling, memory and compression for user behavior sequences.
 
-32 papers · Updated 2026-11-03
+33 papers · Updated 2026-11-04
 
 <a id="paper-2504-06780"></a>
 
@@ -135,3 +135,7 @@ Long-history modeling, memory and compression for user behavior sequences.
 <a id="paper-2610-34192"></a>
 
 - **MIDA: Multi-Interest Decoding with Adaptive Aggregation for Session-based Recommendation**: Uses raw-embedding interest clustering and cluster-size-conditioned aggregation to improve session recommendation with longer histories. The encoder-agnostic decoder separates semantic grouping from contextual aggregation; reported gains are on benchmark datasets, not industrial online traffic. — [Paper](https://arxiv.org/abs/2610.34192) (University of Technology Sydney; City University of Macau; Education University of Hong Kong · TKDE 2026). Reading priority: Unrated.
+
+<a id="paper-2611-03068"></a>
+
+- **PACERec: Progressive Adaptation of LLM Item Embeddings with Collaborative Evidence for Recommendation**: PACERec uses frequency-weighted flow matching to adapt static LLM item embeddings toward collaborative behavioral targets. A shared velocity field transfers preceding-interaction patterns from frequent to long-tail items, with improvements reported across three datasets and three sequential backbones. — [Paper](https://arxiv.org/abs/2611.03068) (Northeastern University; Ant Group · arXiv 2026). Reading priority: Unrated.

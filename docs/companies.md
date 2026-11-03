@@ -6,15 +6,15 @@
 
 Company membership follows recorded affiliation aliases and preserved company-overview mentions. A paper may appear under multiple companies. This structural migration does not independently reverify affiliations or publication claims.
 
-- [Meta](#company-meta) (56)
-- [ByteDance / TikTok](#company-bytedance-tiktok) (25)
-- [Alibaba](#company-alibaba) (52)
+- [Meta](#company-meta) (57)
+- [ByteDance / TikTok](#company-bytedance-tiktok) (26)
+- [Alibaba](#company-alibaba) (54)
 - [Meituan](#company-meituan) (11)
-- [Tencent](#company-tencent) (26)
-- [Google](#company-google) (22)
+- [Tencent](#company-tencent) (28)
+- [Google](#company-google) (23)
 - [LinkedIn](#company-linkedin) (7)
 - [NetEase](#company-netease) (2)
-- [Kuaishou](#company-kuaishou) (31)
+- [Kuaishou](#company-kuaishou) (35)
 - [Huawei](#company-huawei) (10)
 - [Baidu](#company-baidu) (10)
 - [Shopee](#company-shopee) (4)
@@ -25,7 +25,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [Yandex](#company-yandex) (6)
 - [JD](#company-jd) (7)
 - [VK](#company-vk) (1)
-- [Microsoft](#company-microsoft) (6)
+- [Microsoft](#company-microsoft) (7)
 - [Walmart](#company-walmart) (2)
 - [Snap](#company-snap) (4)
 - [Xiaohongshu](#company-xiaohongshu) (7)
@@ -35,12 +35,12 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [Liquid AI](#company-liquid-ai) (3)
 - [IBM (MIT-IBM Computing Research Lab)](#company-ibm-mit-ibm-computing-research-lab) (5)
 - [Perplexity AI](#company-perplexity-ai) (1)
-- [NVIDIA](#company-nvidia) (8)
+- [NVIDIA](#company-nvidia) (11)
 - [StepFun](#company-stepfun) (1)
 - [Adobe Research](#company-adobe-research) (2)
 - [Unbox AI](#company-unbox-ai) (1)
 - [Kimi](#company-kimi) (1)
-- [Qualcomm AI Research](#company-qualcomm-ai-research) (1)
+- [Qualcomm AI Research](#company-qualcomm-ai-research) (2)
 - [Apple](#company-apple) (2)
 - [Infinigence AI](#company-infinigence-ai) (1)
 - [Orbital Industries](#company-orbital-industries) (1)
@@ -66,7 +66,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [Artefact Research Center](#company-artefact) (2)
 - [Umans AI](#company-umans-ai) (1)
 - [D. E. Shaw Research](#company-de-shaw-research) (1)
-- [Ant Group](#company-ant-group) (1)
+- [Ant Group](#company-ant-group) (4)
 - [d-Matrix](#company-d-matrix) (1)
 - [Glance](#company-glance) (1)
 - [eBay](#company-ebay) (2)
@@ -146,6 +146,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [PRISM: Personalized Item Representations in User History](related/sample-instance-compression-for-sequence-modeling.md#paper-2610-39175) · 2026 · Related
 - [How to Loop Your Transformer: Loop Scaling, Specialization, and Parallel Inference](related/architecture-innovations-beyond-recommendation.md#paper-2610-40325) · 2026 · Related
 - [DecisionRank: On-Policy Distillation for Decision-Model Rerankers](related/retrieval-reranking-scaling.md#paper-2610-42128) · 2026 · Related
+- [Beyond Semantic IDs: Atomic Creator Tokens for Large-Scale Generative Recommendation](related/generative-recommendation.md#paper-2611-00323) · 2026 · Related
 
 <a id="company-bytedance-tiktok"></a>
 
@@ -176,6 +177,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [RemoteANN: A Native Vector Search Engine for Cloud Object Storage](related/retrieval-reranking-scaling.md#paper-2610-25172) · 2026 · Related
 - [Does LLM Pre-Training Typically Occur at the Edge of Stability?](related/architecture-innovations-beyond-recommendation.md#paper-2610-36778) · 2026 · Related
 - [SparseGDN: Chunk Sparse in Linear Attention](related/architecture-innovations-beyond-recommendation.md#paper-2610-41420) · 2026 · Related
+- [USDB: Scaling Storage for Next-Generation Recommender Systems at ByteDance](related/engineering-serving.md#paper-2611-02618) · 2026 · Related
 
 <a id="company-alibaba"></a>
 
@@ -233,6 +235,8 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [UGR: Unified Generative Ranking for Heterogeneous E-commerce Recommendation](topics/foundation-models-multi-scenario.md#paper-2610-39426) · 2026 · Core
 - [PFA: Attention Can Be Progressively Focused in Long-Sequence Generative Recommendation](topics/efficiency-deployment.md#paper-2610-39273) · 2026 · Core
 - [RecIS: Unifying Sparse and Dense Computation for Efficient Recommendation Training](topics/efficiency-deployment.md#paper-2610-41457) · 2026 · Core
+- [Diverse-Teacher On-Policy Distillation for Generative Recommendation](related/knowledge-distillation-compression.md#paper-2611-03272) · 2026 · Related
+- [Numerical Embeddings for CTR Prediction: A Taxonomy, Unified Benchmark, and Open-Source FuxiCTR Extension](related/other.md#paper-2611-01090) · 2026 · Related
 
 <a id="company-meituan"></a>
 
@@ -280,6 +284,8 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [HyScale: Scaling Long-Context Training for Learned Sparse Attention](related/engineering-serving.md#paper-2610-32057) · 2026 · Related
 - [Rethinking Positional Encoding and Interaction Granularity for CTR Prediction](topics/unified-feature-sequence-modeling.md#paper-2610-37140) · 2026 · Core
 - [GistRank: Gist-Compressed Listwise Ranking with Large Language Models](related/retrieval-reranking-scaling.md#paper-2610-39610) · 2026 · Related
+- [WeSearch: A Unified Model-Centric Retrieval Framework for WeChat Search](related/retrieval-reranking-scaling.md#paper-2611-00530) · 2026 · Related
+- [SparseLift: Automatically Optimizing Opaque Sparse Paths in Industrial-Scale Recommendation Model Training](topics/efficiency-deployment.md#paper-2611-01702) · 2026 · Core
 
 <a id="company-google"></a>
 
@@ -307,6 +313,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [AgenticTagger: Structured Item Representation for Recommendation with LLM Agents](related/generative-recommendation.md#paper-2602-05945) · 2026 · Related
 - [EmbeddingGemma 2: Unified and Efficient Multimodal Representations](related/retrieval-reranking-scaling.md#paper-2610-37364) · 2026 · Related
 - [Ambiguous Fits: The Rashomon Effect and Challenges in Scaling Law Estimation](related/architecture-innovations-beyond-recommendation.md#paper-2610-34514) · 2026 · Related
+- [FlyWheel: Attention Kernels Built for the TPU](related/architecture-innovations-beyond-recommendation.md#paper-2611-01426) · 2026 · Related
 
 <a id="company-linkedin"></a>
 
@@ -362,6 +369,10 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [R2QRec: Learning Recommendation Queries from Retrieval Feedback](related/generative-recommendation.md#paper-2610-39984) · 2026 · Related
 - [RoFiGR: Coarse Routing, Fine Refinement via Level-Adaptive Distillation in Multimodal Generative Recommendation](related/generative-recommendation.md#paper-2610-39470) · 2026 · Related
 - [Towards Reliable, Scalable, and Value-Aligned Generative Recommendation for Large-Scale Advertising](topics/efficiency-deployment.md#paper-2610-38378) · 2026 · Core
+- [SIDRec: End-to-End Semantic ID Representation and Modeling for Recommendation](related/generative-recommendation.md#paper-2611-01136) · 2026 · Related
+- [Utility-Aware Generative Recommendation: Utility-Enriched Semantic Codes and Utility-Guided Decoding](related/generative-recommendation.md#paper-2611-02981) · 2026 · Related
+- [Search-Aware On-Policy Self-Distillation with Sibling Alignment for Generative Recommendation](related/knowledge-distillation-compression.md#paper-2611-01568) · 2026 · Related
+- [HiGenTrans: Hierarchical LLM Knowledge Transfer for Generative Recommendation](related/knowledge-distillation-compression.md#paper-2611-01129) · 2026 · Related
 
 <a id="company-huawei"></a>
 
@@ -473,6 +484,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [The Vocabulary Is Already Here: Adapting Pretrained Interpretable Features for Generative Recommendation](related/generative-recommendation.md#paper-2610-36763) · 2026 · Related
 - [xPRT: Cross-Passage Retrieval Pretraining](related/retrieval-reranking-scaling.md#paper-2610-40122) · 2026 · Related
 - [There Is No Free Loop: When Does Looping a Trained Model Pay for Its Inference Compute?](related/architecture-innovations-beyond-recommendation.md#paper-2610-42030) · 2026 · Related
+- [Sonar-MoE: In-Backward Expert Updates for Memory-Efficient Mixture-of-Experts Training](related/architecture-innovations-beyond-recommendation.md#paper-2611-03577) · 2026 · Related
 
 <a id="company-walmart"></a>
 
@@ -563,6 +575,9 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [KPage: Cross-Block Page Compaction for Hardware-Efficient Sparse Attention](related/engineering-serving.md#paper-2610-28096) · 2026 · Related
 - [Improving the Expressive Power of Hybrid Sequence Models via Multi-Hop Retrieval](related/architecture-innovations-beyond-recommendation.md#paper-2610-25250) · 2026 · Related
 - [Nemotron 3.5 Super and Lightning: Open, Efficient Mixture-of-Experts Hybrid Mamba-Transformer Models for Agentic AI](related/architecture-innovations-beyond-recommendation.md#paper-2610-38095) · 2026 · Related
+- [CISA: Retrofitting Dense Attention Models with Chunk-Indexed Sparse Attention](related/architecture-innovations-beyond-recommendation.md#paper-2611-03200) · 2026 · Related
+- [AttentionIndex: Accelerating Learned Sparse Attention with a Causal Inverted-File Index](related/architecture-innovations-beyond-recommendation.md#paper-2611-02508) · 2026 · Related
+- [Jet-QSparse: Accelerating Agentic LLM Inference with 4-Bit Sparse Attention](related/architecture-innovations-beyond-recommendation.md#paper-2611-01022) · 2026 · Related
 
 <a id="company-stepfun"></a>
 
@@ -594,6 +609,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 ## Qualcomm AI Research
 
 - [The Key to Going Linear](related/architecture-innovations-beyond-recommendation.md#paper-2607-07706) · 2026 · Related
+- [RankLane: Efficient MoE Prefill on Accelerators with Ranked Expert Capacities](related/architecture-innovations-beyond-recommendation.md#paper-2611-00421) · 2026 · Related
 
 <a id="company-apple"></a>
 
@@ -757,6 +773,9 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 ## Ant Group
 
 - [SparseDecoding: Decoding-Aware Pruning for Accurate and Efficient LLM Inference](related/architecture-innovations-beyond-recommendation.md#paper-2610-12327) · 2026 · Related
+- [PACERec: Progressive Adaptation of LLM Item Embeddings with Collaborative Evidence for Recommendation](related/long-sequence-modeling.md#paper-2611-03068) · 2026 · Related
+- [Numerical Embeddings for CTR Prediction: A Taxonomy, Unified Benchmark, and Open-Source FuxiCTR Extension](related/other.md#paper-2611-01090) · 2026 · Related
+- [Where Beam Search Loses Top-Ranked Items:First-Step Coverage in Generative Recommendation](related/generative-recommendation.md#paper-2611-01072) · 2026 · Related
 
 <a id="company-d-matrix"></a>
 

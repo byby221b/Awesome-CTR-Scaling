@@ -6,7 +6,7 @@
 
 Adjacent research, diagnostics and other relevant recommendation methods.
 
-16 papers · Updated 2026-11-03
+17 papers · Updated 2026-11-04
 
 <a id="paper-2411-13700"></a>
 
@@ -71,3 +71,7 @@ Adjacent research, diagnostics and other relevant recommendation methods.
 <a id="paper-2610-35550"></a>
 
 - **Cross-Domain Sequential Recommendation with Representation-Level User Transfer**: Transfers cross-domain information through learned user representations and a lightweight adapter, without sharing raw interactions or item embeddings. Shared and target-only users are trained jointly, with target-only fallback when source representations are unavailable; experiments cover benchmark and deployment-oriented settings. — [Paper](https://arxiv.org/abs/2610.35550) (Skolkovo Institute of Science and Technology; Higher School of Economics; AXXX; Sber AI Lab · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-01090"></a>
+
+- **Numerical Embeddings for CTR Prediction: A Taxonomy, Unified Benchmark, and Open-Source FuxiCTR Extension**: NumEmbBench compares 18 numerical-embedding configurations across six mechanism families using a shared FuxiCTR interface, three datasets, nine backbones and five seeds. Native-scale evaluation changes the winner in 11 of 27 settings, highlighting dependence on preprocessing and the need to measure both accuracy and inference latency. — [Paper](https://arxiv.org/abs/2611.01090) (Ant Group; Independent Researcher; Alibaba Inc.; Henan Polytechnic University · arXiv 2026). Reading priority: Unrated.

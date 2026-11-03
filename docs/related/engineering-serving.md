@@ -6,7 +6,7 @@
 
 Systems, serving infrastructure and hardware-aware optimization.
 
-48 papers · Updated 2026-11-03
+49 papers · Updated 2026-11-04
 
 <a id="paper-2510-18239"></a>
 
@@ -199,3 +199,7 @@ Systems, serving infrastructure and hardware-aware optimization.
 <a id="paper-2610-36383"></a>
 
 - **From Generation to Scoring: Scaling LLM-Based Semantic Labeling at LinkedIn**: LinkedIn replaces packed YES/NO label generation with single-candidate semantic scores from a prefill-only pass, and masks attention between candidates to score hundreds together with Multiple-Item Scoring. Candidate reordering changes at most 0.01% of decisions. Compared with the deployed stack, throughput rises 1.24x offline and 1.9x in serving under a one-second p99 target. The application is profile qualification labeling, not an online CTR gain. — [Paper](https://arxiv.org/abs/2610.36383) (LinkedIn · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-02618"></a>
+
+- **USDB: Scaling Storage for Next-Generation Recommender Systems at ByteDance**: USDB addresses the mismatch between small streaming updates and repeated long-history reads in recommendation storage. CascadeLSM compaction, shared-file replicas, partial dumps and a hybrid columnar format reuse maintenance work across ingestion, serving and training; production records report 85.8% lower mean write latency and normalized accounting reports 42.1% lower infrastructure cost. — [Paper](https://arxiv.org/abs/2611.02618) (ByteDance; Nanyang Technological University · arXiv 2026). Reading priority: Unrated.
