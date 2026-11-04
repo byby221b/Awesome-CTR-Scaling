@@ -973,33 +973,108 @@
     });
   }
 
-  function showError() {
-    ui.papers.replaceChildren();
+  // An old HTML document can encounter the new script during a Pages rollout.
+  if (!$('catalog-version') || !$('catalog-bytes') || !$('load-status')) {
+    const notice = element('p', '', tr('The page version has changed. Refresh to open the library.', '页面版本已更新，请刷新后打开论文库。'));
+    const refresh = element('button', 'button button-secondary', tr('Refresh page version', '刷新页面版本'));
+    refresh.type = 'button';
+    refresh.addEventListener('click', () => window.location.reload());
+    ui.papers.replaceChildren(notice, refresh);
+    ui.papers.setAttribute('aria-busy', 'false');
+    return;
+  }
+
+  const expectedVersion = $('catalog-version').getAttribute('content');
+  const expectedBytes = $('catalog-bytes').getAttribute('content');
+  const catalogURL = './catalog.json?v=' + expectedBytes;
+  const cacheKey = new URL('./catalog.json', window.location.href).href;
+  let loading = false, controlsInitialized = false;
+
+  async function within(promise, milliseconds, onTimeout = () => {}) {
+    let timer;
+    try {
+      return await Promise.race([promise, new Promise((_, reject) => {
+        timer = setTimeout(() => { onTimeout(); reject(new Error('Loading timed out')); }, milliseconds);
+      })]);
+    } finally { clearTimeout(timer); }
+  }
+
+  async function validateCatalog(body, requireHash) {
+    if (window.crypto?.subtle) {
+      const bytes = await window.crypto.subtle.digest('SHA-256', body);
+      const hash = Array.from(new Uint8Array(bytes), byte => byte.toString(16).padStart(2, '0')).join('');
+      if (hash !== expectedBytes) throw new Error('Catalog version changed; refresh this page');
+    } else if (requireHash) throw new Error('Cache verification unavailable');
+    const data = JSON.parse(new TextDecoder('utf-8', { fatal: true }).decode(body));
+    if (data.schema_version !== 4 || data.meta?.catalog_sha256 !== expectedVersion
+      || !Array.isArray(data.papers) || !data.papers.length || !Array.isArray(data.categories)
+      || !Array.isArray(data.companies) || new Set(data.papers.map(paper => paper.id)).size !== data.papers.length
+      || data.papers.some(paper => !paper || typeof paper.id !== 'string' || typeof paper.title !== 'string'
+        || !Array.isArray(paper.links) || !Array.isArray(paper.tags) || !Array.isArray(paper.companies))) {
+      throw new Error('Invalid catalog or page version; refresh this page');
+    }
+    return data;
+  }
+
+  async function loadCatalog() {
+    // A single public response per site; optional storage never blocks networking.
+    let cache;
+    try {
+      if (window.crypto?.subtle && window.caches) {
+        cache = await within(window.caches.open('ctr-public-catalog-v1-' + new URL('.', window.location.href).pathname), 1000);
+        const hit = await within(cache.match(cacheKey), 1000);
+        if (hit?.ok) return await within(hit.arrayBuffer().then(body => validateCatalog(body, true)), 1000);
+      }
+    } catch (_) { /* Corrupt, obsolete, denied or slow cache: use the network. */ }
+    const controller = new AbortController();
+    return within((async () => {
+      const response = await fetch(catalogURL, { signal: controller.signal });
+      if (!response.ok) throw new Error('Catalog request failed');
+      const body = await response.arrayBuffer();
+      const data = await validateCatalog(body, false);
+      if (controller.signal.aborted) throw new Error('Loading timed out');
+      if (cache && window.crypto?.subtle) {
+        // Overwrite the one slot only after byte and schema validation. Quota errors are harmless.
+        void Promise.resolve().then(() => cache.put(cacheKey,
+          new Response(body, { headers: { 'Content-Type': 'application/json' } }))).catch(() => {});
+      }
+      return data;
+    })(), 15000, () => controller.abort());
+  }
+
+  function showError(error) {
+    $('load-status').hidden = false;
+    document.querySelectorAll('[data-catalog-control]').forEach(control => { control.disabled = true; });
+    $('load-status').replaceChildren();
     ui.papers.setAttribute('aria-busy', 'false');
     const empty = element('div', 'empty-state');
-    empty.append(element('h3', '', tr('The library couldn’t be loaded', '论文库暂时无法加载')), element('p', '', tr('Please try again, or browse the complete reading list on GitHub.', '请重试，或在 GitHub 查看完整阅读清单。')));
+    empty.append(element('h3', '', tr('The library couldn’t be loaded', '论文库暂时无法加载')), element('p', '', /version/i.test(error.message)
+      ? tr('The page and catalog versions differ. Refresh the page version to continue; the preview remains available.', '页面与目录版本不一致，请刷新页面版本。预览仍可阅读。')
+      : tr('Please retry. The preview remains available, and the complete reading list is on GitHub.', '请重试。预览仍可阅读，也可在 GitHub 查看完整阅读清单。')));
     const button = element('button', 'button button-secondary', tr('Try again', '重试'));
     button.type = 'button';
-    button.addEventListener('click', () => window.location.reload());
+    button.addEventListener('click', () => start());
+    const refresh = element('button', 'button button-secondary', tr('Refresh page version', '刷新页面版本'));
+    refresh.type = 'button';
+    refresh.addEventListener('click', () => window.location.reload());
     const link = element('a', 'paper-link', tr('Read on GitHub', '在 GitHub 阅读'));
     link.href = 'https://github.com/byby221b/Awesome-CTR-Scaling';
     const actions = element('div', 'paper-links');
     actions.style.justifyContent = 'center';
-    actions.append(button, link);
+    actions.append(button, refresh, link);
     empty.append(actions);
-    ui.papers.append(empty);
+    $('load-status').append(empty);
     ui.status.textContent = tr('The catalog could not be loaded. Please retry or use the repository README.', '目录无法加载。请重试或查看仓库 README。');
     $('result-count').textContent = '—';
   }
 
   async function start() {
-    initializeReadingControls();
-    syncLanguageLink();
+    if (loading) return;
+    loading = true;
+    $('load-status').textContent = tr('Preview of the latest 30 papers. Full abstracts, search and filters are loading; URL filters are not applied to this preview.', '预览最新30篇论文。完整摘要、全库搜索和筛选正在加载；预览不应用网址中的筛选条件。');
+    ui.papers.setAttribute('aria-busy', 'true');
     try {
-      const response = await fetch('./catalog.json');
-      if (!response.ok) throw new Error('Catalog request failed');
-      catalog = await response.json();
-      if (!Array.isArray(catalog.papers) || !Array.isArray(catalog.categories)) throw new Error('Invalid catalog');
+      catalog = await loadCatalog();
       categories = catalog.categories;
       companies = Array.isArray(catalog.companies) ? catalog.companies : [];
       papers = catalog.papers.map((paper, index) => {
@@ -1047,16 +1122,23 @@
       $('coverage-note').textContent = tr(
         `Original abstracts: ${coverage.verified_abstracts || 0}/${papers.length} verified · English summaries: ${coverage.english_summaries || 0}/${papers.length} · Chinese summaries: ${coverage.chinese_summaries || 0}/${papers.length}. Gaps are labeled below.`,
         `原始摘要：已核实 ${coverage.verified_abstracts || 0}/${papers.length} 篇 · 英文总结：${coverage.english_summaries || 0}/${papers.length} · 中文总结：${coverage.chinese_summaries || 0}/${papers.length}。未补齐的内容会明确标注。`);
-      initializeControls();
+      if (!controlsInitialized) {
+        initializeControls();
+        controlsInitialized = true;
+      }
+      document.querySelectorAll('[data-catalog-control]').forEach(control => { control.disabled = false; });
       state = readURL();
       syncControls();
       render();
       revealHash();
+      $('load-status').hidden = true;
     } catch (error) {
       console.error('Unable to load research catalog:', error);
-      showError();
-    }
+      showError(error);
+    } finally { loading = false; }
   }
 
+  initializeReadingControls();
+  syncLanguageLink();
   start();
 })();

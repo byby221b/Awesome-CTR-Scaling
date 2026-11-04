@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import argparse
 import hashlib
+from html import escape
 import json
 import re
 import sys
@@ -512,7 +513,7 @@ def generate(data, source_bytes, root=ROOT):
                    "papers": [{**paper, "companies": memberships[paper["id"]], "order": i} for i, paper in enumerate(public_fields["papers"])]}
     # Transport whitespace only: preserve every field, record and source text.
     outputs["site/catalog.json"] = json.dumps(public_data, ensure_ascii=False, separators=(",", ":")) + "\n"
-    substitutions = {"TOTAL": len(data["papers"]), "CORE": counts["core"], "RELATED": counts["related"], "UPDATED": data["meta"]["updated"], "CATALOG_SHA256": source_hash}
+    substitutions = {"TOTAL": len(data["papers"]), "CORE": counts["core"], "RELATED": counts["related"], "UPDATED": data["meta"]["updated"], "CATALOG_SHA256": source_hash, "APP_SHA256": digest((root / "web/app.js").read_bytes()), "CATALOG_BYTES_SHA256": digest(outputs["site/catalog.json"].encode()), "PREVIEW": preview_html(public_data["papers"])}
     for name in ("index.html", "zh.html", "styles.css", "app.js", "favicon.svg"):
         content = (root / "web" / name).read_text(encoding="utf-8")
         for key, value in substitutions.items():
@@ -526,6 +527,30 @@ def generate(data, source_bytes, root=ROOT):
                 "files": {path: digest(content.encode()) for path, content in sorted(outputs.items())}}
     outputs["generated-manifest.json"] = json_text(manifest)
     return outputs
+
+
+def preview_papers(papers):
+    # Catalog IDs are validated numeric arXiv IDs; match the browser's numeric sort.
+    def key(p):
+        match = ID_PATTERN.search(p["id"])
+        if not match:
+            match = next((ID_PATTERN.search(link["url"]) for link in p.get("links", []) if "arxiv.org/" in link["url"] and ID_PATTERN.search(link["url"])), None)
+        identifier = match.group() if match else p["id"].removeprefix("paper-")
+        natural = tuple(int(part) if part.isdigit() else part for part in re.split(r"(\d+)", identifier))
+        return (int(p.get("year") or 0), natural, -p["order"])
+    return sorted(papers, key=key, reverse=True)[:30]
+
+
+def preview_html(papers):
+    cards = []
+    for paper in preview_papers(papers):
+        links = [link for link in paper.get("links", []) if safe_url(link["url"])]
+        primary = next((link for link in links if re.search("paper|arxiv", link["label"], re.I)), links[0] if links else None)
+        title = escape(paper["title"])
+        if primary:
+            title = f'<a href="{escape(primary["url"], quote=True)}" target="_blank" rel="noopener noreferrer">{title}</a>'
+        cards.append(f'<article class="paper-card" data-preview-id="{escape(paper["id"], quote=True)}"><div class="paper-rail"><span class="paper-year">{escape(str(paper.get("year") or ""))}</span></div><div class="paper-body"><h3 class="paper-title">{title}</h3></div><div class="paper-metadata">{escape(paper.get("affiliation") or "")}</div></article>')
+    return "\n".join(cards)
 
 
 def main():

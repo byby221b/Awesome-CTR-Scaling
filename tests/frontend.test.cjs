@@ -4,6 +4,7 @@ const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
 const vm = require('node:vm');
+const { createHash } = require('node:crypto');
 const ROOT = path.resolve(__dirname, '..');
 const catalog = JSON.parse(fs.readFileSync(path.join(ROOT, 'site/catalog.json'), 'utf8'));
 const source = fs.readFileSync(path.join(ROOT, 'web/app.js'), 'utf8');
@@ -50,17 +51,25 @@ async function boot(initialURL = 'https://example.test/Awesome-CTR-Scaling/', fa
   function walk(node) { return [node, ...node.children.flatMap(walk)]; }
   for (const match of template.matchAll(/\bid="([^"]+)"/g)) { const node = new Element('div'); node.id = match[1]; roots.set(node.id, node); }
   for (const value of ['all', 'core', 'related']) { const input = new Element('input'); input.value = value; inputs.push(input); }
+  const payload = options.payload || JSON.stringify(data);
+  roots.get('catalog-version').attrs.content = options.expectedVersion || data.meta.catalog_sha256;
+  roots.get('catalog-bytes').attrs.content = createHash('sha256').update(options.expectedPayload || payload).digest('hex');
+  if (options.legacyPage) { roots.delete('catalog-version'); roots.delete('catalog-bytes'); roots.delete('load-status'); }
+  const controls = [...roots.values()].filter(node => /search-input|filter|sort-select|recent-|change-kind|load-more/.test(node.id)).concat(inputs);
+  for (const control of controls) control.disabled = true;
+  if (options.preview) roots.get('papers').append(new Element('article'));
   const document = {
     activeElement: null,
     getElementById: id => roots.get(id) || [...roots.values()].flatMap(walk).find(x => x.id === id),
     createElement: tag => new Element(tag),
     createDocumentFragment: () => Object.assign(new Element('fragment'), { fragment: true }),
-    querySelectorAll: selector => selector === 'input[name="collection"]' ? inputs : [],
+    querySelectorAll: selector => selector === 'input[name="collection"]' ? inputs : selector === '[data-catalog-control]' ? controls : [],
     addEventListener: (type, handler) => { (events[type] ||= []).push(handler); }
   };
   const fireWindow = type => { for (const handler of events[type] || []) handler(); };
   const window = {
     location: new URL(initialURL), scrollY: 0, innerHeight: 800,
+    crypto: options.crypto, caches: options.caches,
     addEventListener: (type, handler) => { (events[type] ||= []).push(handler); },
     matchMedia: query => ({ matches: query === '(prefers-reduced-motion: reduce)' && layout.reducedMotion }),
     scrollTo: options => { scrollCalls.push(options); window.scrollY = options.top; fireWindow('scroll'); }
@@ -75,12 +84,13 @@ async function boot(initialURL = 'https://example.test/Awesome-CTR-Scaling/', fa
     static now() { return options.now; }
   };
   const context = vm.createContext({ document, window, URL, URLSearchParams, Date: TestDate,
-    fetch: async () => ({ ok: !failFetch, json: async () => structuredClone(data) }),
+    fetch: options.fetch || (async () => ({ ok: !failFetch, text: async () => payload, arrayBuffer: async () => new TextEncoder().encode(payload).buffer, json: async () => structuredClone(data) })),
+    AbortController, Response, TextEncoder, TextDecoder,
     console: { error: (...args) => logs.push(args.join(' ')) },
-    setTimeout: fn => { timers.set(++timerID, fn); return timerID; },
+    setTimeout: (fn, ms) => { timers.set(++timerID, { fn, ms }); return timerID; },
     clearTimeout: id => timers.delete(id), requestAnimationFrame: fn => fn()
   });
-  vm.runInContext(options.source || source, context);
+  vm.runInContext((options.source || source).replace('\n  start();', '\n  window.catalogStarted = start();'), context);
   await new Promise(resolve => setImmediate(resolve));
   const $ = id => document.getElementById(id);
   return { $, inputs, window, logs, walk, scrollCalls, metrics,
@@ -92,7 +102,7 @@ async function boot(initialURL = 'https://example.test/Awesome-CTR-Scaling/', fa
     search: text => { $('search-input').value = text; $('search-form').fire('submit'); },
     back() { if (historyIndex > 0) window.location = new URL(history[--historyIndex]); for (const fn of events.popstate || []) fn(); },
     forward() { if (historyIndex < history.length - 1) window.location = new URL(history[++historyIndex]); for (const fn of events.popstate || []) fn(); },
-    flush() { for (const [id, fn] of timers) { timers.delete(id); fn(); } }
+    flush(ms) { for (const [id, entry] of timers) { if (ms !== undefined && entry.ms !== ms) continue; timers.delete(id); entry.fn(); } }
   };
 }
 
@@ -100,6 +110,7 @@ module.exports = { boot, catalog };
 
 if (require.main === module) (async () => {
   await require('./search.test.cjs')();
+  await require('./loading.test.cjs')();
   for (const route of ['', 'zh.html']) {
     const paging = await boot('https://example.test/Awesome-CTR-Scaling/' + route);
     const first = paging.cards()[0];
@@ -237,7 +248,7 @@ if (require.main === module) (async () => {
   app = await boot('https://example.test/Awesome-CTR-Scaling/?collection=related&company=invalid#paper-2208-08489');
   assert(app.$('paper-2208-08489').scrolled); assert.equal(app.$('company-filter').value, '');
   app = await boot('https://example.test/Awesome-CTR-Scaling/', true);
-  assert.match(app.$('papers').textContent, /couldn’t be loaded/); assert.equal(app.$('papers').getAttribute('aria-busy'), 'false');
+  assert.match(app.$('load-status').textContent, /couldn’t be loaded/); assert.equal(app.$('papers').getAttribute('aria-busy'), 'false');
   // Both languages are real entry points; navigation keeps current filters and anchors.
   app = await boot('https://example.test/Awesome-CTR-Scaling/zh.html?q=Wukong&collection=core');
   assert(app.$('language-switch').href.includes('/index.html?q=Wukong&collection=core'));
@@ -260,7 +271,7 @@ if (require.main === module) (async () => {
   app = await boot('https://example.test/Awesome-CTR-Scaling/?q=HeMix');
   assert(app.cards().some(card => card.id === 'paper-2602-09387'));
   app = await boot('https://example.test/Awesome-CTR-Scaling/zh.html', true);
-  assert(app.$('papers').textContent.includes('暂时无法加载'));
+  assert(app.$('load-status').textContent.includes('暂时无法加载'));
   // The technical grid keeps complete records, stable anchors and controls in both templates.
   for (const route of ['', 'zh.html']) {
     app = await boot('https://example.test/Awesome-CTR-Scaling/' + route + '?sort=original');
@@ -632,8 +643,8 @@ if (require.main === module) (async () => {
     assert.equal(app.$('reading-tier-filter').value, 'prioritize');
     app.change('reading-tier-filter', 'unrated'); assert.equal(app.cards().length, tierFixture.papers.length);
     const html = fs.readFileSync(path.join(ROOT, 'web', route || 'index.html'), 'utf8');
-    assert.match(html, /<label[^>]*for="reading-tier-filter">[^<]+<\/label><select id="reading-tier-filter" aria-describedby="reading-tier-note">/);
-    assert.match(html, /<select id="sort-select" aria-describedby="reading-sort-note">.*<option value="reading_priority">/);
+    assert.match(html, /<label[^>]*for="reading-tier-filter">[^<]+<\/label><select data-catalog-control disabled id="reading-tier-filter" aria-describedby="reading-tier-note">/);
+    assert.match(html, /<select data-catalog-control disabled id="sort-select" aria-describedby="reading-sort-note">.*<option value="reading_priority">/);
     assert(html.includes(zh ? '并非论文客观质量评价' : 'not objective paper quality'));
   }
   const pagedTiers = structuredClone(catalog);

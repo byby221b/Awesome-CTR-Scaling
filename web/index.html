@@ -3,14 +3,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="catalog-sha256" content="{{CATALOG_SHA256}}">
+  <meta id="catalog-version" name="catalog-sha256" content="{{CATALOG_SHA256}}">
+  <meta id="catalog-bytes" name="catalog-bytes-sha256" content="{{CATALOG_BYTES_SHA256}}">
   <meta name="theme-color" content="#15222d">
   <meta name="description" content="A curated research library on scaling laws, architectures, and deployment for industrial CTR and recommendation models.">
   <title>Awesome CTR Scaling · Research Library</title>
   <link rel="icon" type="image/svg+xml" sizes="any" href="./favicon.svg">
   <link rel="stylesheet" href="./styles.css">
-  <link rel="preload" href="./catalog.json" as="fetch" crossorigin>
-  <script src="./app.js" defer></script>
+  <script src="./app.js?v={{APP_SHA256}}" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#research">Skip to research papers</a>
@@ -23,15 +23,15 @@
       <nav class="header-actions" aria-label="Language and source"><a id="language-switch" class="language-switch" href="./zh.html" lang="zh-CN" hreflang="zh-CN">中文</a><a class="source-link" href="https://github.com/byby221b/Awesome-CTR-Scaling" target="_blank" rel="noopener noreferrer">GitHub <span class="external-arrow" aria-hidden="true"></span></a></nav>
       <p class="collection-overview"><span><strong id="total-stat">{{TOTAL}}</strong> papers</span><span><b id="core-stat">{{CORE}}</b> core / <b id="related-stat">{{RELATED}}</b> related</span></p>
     </header>
-      <button id="filter-toggle" class="filter-toggle" type="button" aria-expanded="false" aria-controls="filter-panel"><span aria-hidden="true">☷</span> Browse & filter <span id="mobile-filter-count" class="mobile-filter-count" hidden></span></button>
+      <button data-catalog-control disabled id="filter-toggle" class="filter-toggle" type="button" aria-expanded="false" aria-controls="filter-panel"><span aria-hidden="true">☷</span> Browse & filter <span id="mobile-filter-count" class="mobile-filter-count" hidden></span></button>
       <aside class="sidebar" id="filter-panel" aria-label="Research filters">
-        <div class="sidebar-heading"><h2>PAPER INDEX</h2><button id="reset-sidebar" class="text-button" type="button">Reset</button></div>
+        <div class="sidebar-heading"><h2>PAPER INDEX</h2><button data-catalog-control disabled id="reset-sidebar" class="text-button" type="button">Reset</button></div>
         <fieldset class="collection-fieldset">
           <legend class="filter-label">Collection</legend>
           <div class="collection-options" id="collection-options">
-            <label class="collection-option"><input type="radio" name="collection" value="all" checked><span class="option-name">All research</span><span id="all-count" class="option-count">{{TOTAL}}</span></label>
-            <label class="collection-option"><input type="radio" name="collection" value="core"><span class="option-name">Core papers</span><span id="core-count" class="option-count">{{CORE}}</span></label>
-            <label class="collection-option"><input type="radio" name="collection" value="related"><span class="option-name">Related work</span><span id="related-count" class="option-count">{{RELATED}}</span></label>
+            <label class="collection-option"><input data-catalog-control disabled type="radio" name="collection" value="all" checked><span class="option-name">All research</span><span id="all-count" class="option-count">{{TOTAL}}</span></label>
+            <label class="collection-option"><input data-catalog-control disabled type="radio" name="collection" value="core"><span class="option-name">Core papers</span><span id="core-count" class="option-count">{{CORE}}</span></label>
+            <label class="collection-option"><input data-catalog-control disabled type="radio" name="collection" value="related"><span class="option-name">Related work</span><span id="related-count" class="option-count">{{RELATED}}</span></label>
           </div>
         </fieldset>
         <fieldset class="category-fieldset">
@@ -39,10 +39,10 @@
           <div id="category-options" class="category-options"><p class="muted">Loading research areas…</p></div>
         </fieldset>
         <div class="select-filters">
-          <div class="filter-field reading-tier-field"><label class="filter-label" for="reading-tier-filter">Reading priority</label><select id="reading-tier-filter" aria-describedby="reading-tier-note"><option value="">All reading priorities</option></select></div>
-          <div class="filter-field"><label class="filter-label" for="year-filter">Publication year</label><select id="year-filter"><option value="">All years</option></select></div>
-          <div class="filter-field"><label class="filter-label" for="tag-filter">Research tag</label><select id="tag-filter" aria-describedby="tag-help"><option value="">All tags</option></select><p id="tag-help" class="filter-help">Tags are curated for core papers.</p></div>
-          <div class="filter-field"><label class="filter-label" for="company-filter">Company / affiliation</label><select id="company-filter"><option value="">All companies</option></select></div>
+          <div class="filter-field reading-tier-field"><label class="filter-label" for="reading-tier-filter">Reading priority</label><select data-catalog-control disabled id="reading-tier-filter" aria-describedby="reading-tier-note"><option value="">All reading priorities</option></select></div>
+          <div class="filter-field"><label class="filter-label" for="year-filter">Publication year</label><select data-catalog-control disabled id="year-filter"><option value="">All years</option></select></div>
+          <div class="filter-field"><label class="filter-label" for="tag-filter">Research tag</label><select data-catalog-control disabled id="tag-filter" aria-describedby="tag-help"><option value="">All tags</option></select><p id="tag-help" class="filter-help">Tags are curated for core papers.</p></div>
+          <div class="filter-field"><label class="filter-label" for="company-filter">Company / affiliation</label><select data-catalog-control disabled id="company-filter"><option value="">All companies</option></select></div>
         </div>
       </aside>
       <section class="research" id="research" aria-labelledby="results-heading" tabindex="-1">
@@ -51,18 +51,18 @@
         <form class="search-form" role="search" id="search-form">
           <label class="sr-only" for="search-input">Search paper titles, IDs, abstracts, English or Chinese summaries, aliases, DOIs, affiliations, venues, and tags</label>
           <svg class="search-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8" stroke="currentColor" stroke-width="1.7"/><path d="m16 16 4.5 4.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
-          <input id="search-input" type="search" name="q" autocomplete="off" placeholder="Search papers, ideas, or organizations…">
+          <input data-catalog-control disabled id="search-input" aria-describedby="load-status" type="search" name="q" autocomplete="off" placeholder="Search papers, ideas, or organizations…">
           <kbd class="search-shortcut" aria-hidden="true">/</kbd>
         </form>
         </div>
         <div class="recent-toolbar" aria-label="Catalog activity">
-          <div class="recent-tabs" role="group" aria-label="Catalog view"><button id="recent-all" type="button" aria-pressed="true">All papers</button><button id="recent-added" type="button" aria-pressed="false">Recently added</button><button id="recent-updated" type="button" aria-pressed="false">Recently updated</button></div>
-          <div id="recent-options" class="recent-options" hidden><label class="sr-only" for="recent-window">Time window</label><select id="recent-window"><option value="7">Past 7 days</option><option value="30">Past 30 days</option><option value="all">All time</option></select><label class="sr-only" for="change-kind">Update type</label><select id="change-kind" hidden><option value="substantive">Paper information updates</option><option value="all">All update types</option><option value="paper_revision">Paper revision</option><option value="venue_update">Venue update</option><option value="metadata_enrichment">Metadata enrichment</option></select></div>
+          <div class="recent-tabs" role="group" aria-label="Catalog view"><button data-catalog-control disabled id="recent-all" type="button" aria-pressed="true">All papers</button><button data-catalog-control disabled id="recent-added" type="button" aria-pressed="false">Recently added</button><button data-catalog-control disabled id="recent-updated" type="button" aria-pressed="false">Recently updated</button></div>
+          <div id="recent-options" class="recent-options" hidden><label class="sr-only" for="recent-window">Time window</label><select data-catalog-control disabled id="recent-window"><option value="7">Past 7 days</option><option value="30">Past 30 days</option><option value="all">All time</option></select><label class="sr-only" for="change-kind">Update type</label><select data-catalog-control disabled id="change-kind" hidden><option value="substantive">Paper information updates</option><option value="all">All update types</option><option value="paper_revision">Paper revision</option><option value="venue_update">Venue update</option><option value="metadata_enrichment">Metadata enrichment</option></select></div>
         </div>
         <p id="recent-note" class="recent-note" hidden></p>
         <div class="results-toolbar">
           <p class="updated-label">Updated <time id="updated-at">{{UPDATED}}</time></p>
-          <div class="sort-field"><label for="sort-select">Sort by</label><select id="sort-select" aria-describedby="reading-sort-note"><option value="relevance">Best match (newest when browsing)</option><option value="newest">Publication newest</option><option value="reading_priority">Reading priority</option><option value="added">Latest catalog addition</option><option value="updated">Latest catalog update</option><option value="title">Title A–Z</option><option value="original">Reading-list order</option></select></div>
+          <div class="sort-field"><label for="sort-select">Sort by</label><select data-catalog-control disabled id="sort-select" aria-describedby="reading-sort-note"><option value="relevance">Best match (newest when browsing)</option><option value="newest">Publication newest</option><option value="reading_priority">Reading priority</option><option value="added">Latest catalog addition</option><option value="updated">Latest catalog update</option><option value="title">Title A–Z</option><option value="original">Reading-list order</option></select></div>
         </div>
         <p id="reading-tier-note" class="reading-tier-note">Reading priorities guide what to read next, not objective paper quality. Unrated means no reading priority has been assigned.</p>
         <p id="reading-sort-note" class="reading-sort-note" hidden></p>
@@ -71,8 +71,9 @@
         <div id="active-filters" class="active-filters" aria-label="Active filters" hidden></div>
         <p class="sr-only" id="results-status" role="status" aria-live="polite" aria-atomic="true">Loading papers</p>
         <div class="grid-head" aria-hidden="true"><span>YEAR</span><span>PAPER / ABSTRACT</span><span>METADATA</span></div>
-        <div id="papers" class="paper-list" aria-busy="true"><div class="loading-state"><span class="loading-orbit" aria-hidden="true"></span><p>Opening the library…</p></div></div>
-        <div class="pagination" id="pagination" hidden><p id="showing-count"></p><button id="load-more" class="button button-secondary" type="button">Load more papers</button></div>
+        <div id="load-status" role="status"><p>Preview of the latest 30 papers. Full abstracts, library search and filters are loading; URL filters are not applied to this preview.</p></div>
+        <div id="papers" class="paper-list" aria-busy="true">{{PREVIEW}}</div>
+        <div class="pagination" id="pagination" hidden><p id="showing-count"></p><button data-catalog-control disabled id="load-more" class="button button-secondary" type="button">Load more papers</button></div>
         <noscript><div class="empty-state"><h3>This library uses JavaScript for browsing</h3><p>You can read every paper and summary in the <a href="https://github.com/byby221b/Awesome-CTR-Scaling">repository README</a>.</p></div></noscript>
       </section>
     <footer class="site-footer"><p>English / 中文</p><div><a href="https://github.com/byby221b/Awesome-CTR-Scaling#contributing" target="_blank" rel="noopener noreferrer">Contribute a paper <span class="external-arrow" aria-hidden="true"></span></a><a href="./catalog.json">Download dataset</a></div></footer>

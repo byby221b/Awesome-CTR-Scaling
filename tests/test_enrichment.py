@@ -29,7 +29,7 @@ class EnrichmentTests(unittest.TestCase):
         for name in ('site/index.html', 'site/zh.html'):
             self.assertIn(f'content="{digest}"', outputs[name])
             self.assertIn('href="./styles.css"', outputs[name])
-            self.assertIn('src="./app.js"', outputs[name])
+            self.assertRegex(outputs[name], r'src="\./app\.js\?v=[a-f0-9]{64}"')
             self.assertNotIn('{{', outputs[name])
 
     def test_coverage_is_record_based(self):

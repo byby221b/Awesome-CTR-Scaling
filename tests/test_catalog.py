@@ -140,15 +140,29 @@ class CatalogTests(unittest.TestCase):
                 for key, value in paper.items():
                     self.assertEqual(public_papers[paper["id"]][key], value)
 
-    def test_catalog_transport_is_compact_and_preloaded_in_both_languages(self):
+    def test_catalog_transport_is_compact_and_byte_versioned_in_both_languages(self):
         text = self.outputs["site/catalog.json"]
         public = json.loads(text)
         self.assertEqual(text, json.dumps(public, ensure_ascii=False, separators=(",", ":")) + "\n")
         self.assertLess(len(text.encode()), len(generate.json_text(public).encode()))
         for language in ("index.html", "zh.html"):
             html = self.outputs[f"site/{language}"]
-            self.assertEqual(html.count('<link rel="preload" href="./catalog.json" as="fetch" crossorigin>'), 1)
-            self.assertLess(html.index('rel="preload"'), html.index('<script'))
+            self.assertIn(hashlib.sha256(text.encode()).hexdigest(), html)
+            self.assertNotIn('as="fetch"', html)  # Avoid downloading a catalog already in verified storage.
+
+    def test_static_preview_without_javascript(self):
+        public = json.loads(self.outputs["site/catalog.json"])
+        expected = [p["id"] for p in generate.preview_papers(public["papers"])]
+        self.assertEqual(len(expected), 30)
+        for language in ("index.html", "zh.html"):
+            html = self.outputs[f"site/{language}"]
+            self.assertEqual(re.findall(r'data-preview-id="([^"]+)"', html), expected)
+            self.assertIn(hashlib.sha256(self.outputs["site/catalog.json"].encode()).hexdigest(), html)
+            self.assertRegex(html, r'<input data-catalog-control disabled id="search-input"')
+            self.assertIn('完整摘要' if language == 'zh.html' else 'Full abstracts', html)
+        hostile = copy.deepcopy(public["papers"][:1])
+        hostile[0]["title"] = '<script>alert("x")</script>'
+        self.assertNotIn('<script>', generate.preview_html(hostile))
 
     def test_core_pages_keep_seven_columns(self):
         for path, content in self.outputs.items():
@@ -215,7 +229,7 @@ class CatalogTests(unittest.TestCase):
         parser.feed(self.outputs["site/index.html"])
         for path in parser.links:
             self.assertTrue(path.startswith("./"), path)
-            self.assertIn("site/" + path[2:], self.outputs)
+            self.assertIn("site/" + urlsplit(path).path[2:], self.outputs)
         self.assertNotIn("@import", self.outputs["site/styles.css"])
         self.assertNotIn("innerHTML", self.outputs["site/app.js"])
         self.assertNotRegex(self.outputs["site/index.html"], r"\{\{[A-Z_]+\}\}")
