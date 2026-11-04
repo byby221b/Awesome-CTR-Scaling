@@ -46,6 +46,24 @@
   const expandedReadings = new Set();
   let categoryRenderKey = null, renderedPapers = [], composingSearch = false;
   const searchPatterns = new Map();
+  const fuzzyVocabulary = new Map(), strictSearchTerms = new Set(), conceptCache = new Map();
+  let spellingMatches = new Map();
+  // Explicit domain vocabulary only: no inferred synonyms or acronym expansion.
+  const SEARCH_CONCEPTS = [
+    ['moe', 'mixture of experts', 'mixture-of-experts', 'mixtures of experts', '混合专家'],
+    ['knowledge distillation', 'knowledge-distillation', '知识蒸馏'],
+    ['long sequence modeling', 'long-sequence modeling', 'long sequence', 'long-sequence', '长序列建模', '长序列'],
+    ['transformer', 'transformers', '变换器'],
+    ['scaling law', 'scaling laws', '规模规律'],
+    ['linear attention', 'linear-attention', '线性注意力'],
+    ['post-training quantization', 'post training quantization', '训练后量化'],
+    ['vector quantization', 'vector quantisation', '向量量化'],
+    ['quantization', 'quantisation', '量化']
+  ];
+  const conceptPhrases = SEARCH_CONCEPTS.flatMap(terms => terms.map(text => ({ text, terms })))
+    .sort((a, b) => b.text.length - a.text.length);
+  const controlledTerms = new Set(conceptPhrases.map(phrase => phrase.text));
+  const SPELLING_MIN_RESULTS = 10, MAX_SPELLING_ALTERNATIVES = 8, MAX_CACHED_CONCEPTS = 32;
 
   function element(tag, className, text) {
     const node = document.createElement(tag);
@@ -282,23 +300,156 @@
       .replace(/[()[\]{}:：,，;；!?！？"“”‘’]/g, ' ').replace(/\s+/g, ' ').trim();
   }
 
-  function includesSearchTerm(text, term) {
-    // Short Latin queries are usually acronyms. EST must not match test or interest.
-    // Longer words, identifiers and Chinese retain substring/full-text search.
-    if (!searchPatterns.has(term)) searchPatterns.set(term, /^[a-z]{1,4}$/.test(term)
-      ? new RegExp(`(^|[^a-z0-9])${term}(?=$|[^a-z0-9])`) : null);
-    const pattern = searchPatterns.get(term);
-    return pattern ? pattern.test(text) : text.includes(term);
+  function normalizeSearchQuery(value) {
+    const raw = String(value || '').normalize('NFKC').trim();
+    const id = raw.match(/^(\d{4}\.\d{4,5})(?:v[1-9]\d*)?$/i);
+    if (id) return id[1];
+    try {
+      const url = new URL(raw);
+      if (['http:', 'https:'].includes(url.protocol) && /^(?:www\.|export\.)?arxiv\.org$/i.test(url.hostname)) {
+        const path = url.pathname.match(/^\/(?:abs|pdf|html)\/(\d{4}\.\d{4,5})(?:v[1-9]\d*)?(?:\.pdf)?\/?$/i);
+        if (path) return path[1];
+      }
+    } catch (_) { /* Ordinary keyword query. */ }
+    return normalizeSearch(raw);
   }
 
-  function searchRank(paper, query, words) {
-    if (!query) return 0;
-    if (paper.searchIDs.includes(query)) return 100;
-    if (paper.searchTitles.includes(query)) return 90;
-    if (paper.searchTitles.some((title) => includesSearchTerm(title, query))) return 80;
-    const titleMatches = words.filter((word) => paper.searchTitles.some((title) => includesSearchTerm(title, word))).length;
-    if (titleMatches === words.length) return 60;
-    return titleMatches ? 40 + titleMatches / words.length : 0;
+  function searchMatcher(term) {
+    // Compile once per term, not once per paper/field. Never use global regexes.
+    if (!searchPatterns.has(term)) {
+      let match;
+      if (/^\d{4}\.\d{4,5}$/.test(term)) match = text => text === term;
+      else if (/^[a-z][a-z0-9]{0,3}$/.test(term) ||
+          (strictSearchTerms.has(term) && /^[a-z0-9]+$/.test(term)) ||
+          (controlledTerms.has(term) && /^[a-z -]+$/.test(term))) {
+        const pattern = new RegExp(`(^|[^a-z0-9])${term}(?=$|[^a-z0-9])`);
+        match = text => pattern.test(text);
+      } else match = text => text.includes(term);
+      searchPatterns.set(term, match);
+    }
+    return searchPatterns.get(term);
+  }
+
+  function parseSearchConcepts(query) {
+    const concepts = [];
+    let pending = '';
+    const flush = () => {
+      pending.split(/\s+/).filter(Boolean).forEach(text => concepts.push({ text, terms: [text] }));
+      pending = '';
+    };
+    for (let pos = 0; pos < query.length;) {
+      // Longest phrase wins; Latin phrases may not start/end inside a token.
+      const phrase = conceptPhrases.find(({ text }) => query.startsWith(text, pos) &&
+        (!/^[a-z]/.test(text) || !/[a-z0-9]/.test(query[pos - 1] || '')) &&
+        (!/[a-z]$/.test(text) || !/[a-z0-9]/.test(query[pos + text.length] || '')));
+      if (phrase) {
+        flush(); concepts.push(phrase); pos += phrase.text.length;
+      } else pending += query[pos++];
+    }
+    flush();
+    return concepts;
+  }
+
+  function fieldWeight(paper, term) {
+    const match = searchMatcher(term);
+    return paper.searchFields.find(field => field.texts.some(match))?.weight || 0;
+  }
+
+  function conceptMatch(paper, concept) {
+    const direct = fieldWeight(paper, concept.text);
+    if (direct) return { level: 0, weight: direct };
+    const expanded = Math.max(0, ...concept.terms.filter(term => term !== concept.text).map(term => fieldWeight(paper, term)));
+    return expanded ? { level: 1, weight: expanded } : null;
+  }
+
+  function oneSpellingEdit(left, right) {
+    // Bounded linear scan: one insertion/deletion/substitution or adjacent swap.
+    // Callers supply only 6–24 letter query words and title/alias/tag vocabulary.
+    if (Math.abs(left.length - right.length) > 1) return false;
+    let i = 0;
+    while (i < Math.min(left.length, right.length) && left[i] === right[i]) i++;
+    if (i === Math.min(left.length, right.length)) return left.length !== right.length;
+    if (left.length === right.length) return left.slice(i + 1) === right.slice(i + 1) ||
+      (left[i] === right[i + 1] && left[i + 1] === right[i] && left.slice(i + 2) === right.slice(i + 2));
+    return left.length > right.length ? left.slice(i + 1) === right.slice(i) : left.slice(i) === right.slice(i + 1);
+  }
+
+  function indexSpellingWords(paper, texts, weight) {
+    for (const text of texts) {
+      for (const word of String(text || '').match(/\b[A-Za-z]{6,24}\b/g) || []) {
+        // Do not turn model acronyms or mixed-case identifiers into typo targets.
+        if (!/^(?:[a-z]+|[A-Z][a-z]+)$/.test(word)) continue;
+        const token = word.toLowerCase();
+        if (!fuzzyVocabulary.has(token.length)) fuzzyVocabulary.set(token.length, new Map());
+        const bucket = fuzzyVocabulary.get(token.length);
+        if (!bucket.has(token)) bucket.set(token, new Map());
+        const postings = bucket.get(token);
+        postings.set(paper.id, Math.max(postings.get(paper.id) || 0, weight));
+      }
+    }
+  }
+
+  function searchPapers(candidates, query) {
+    spellingMatches = new Map();
+    if (!query) return { results: candidates, ranks: new Map() };
+    const concepts = parseSearchConcepts(query);
+    const uppercase = new Set((state.q.normalize('NFKC').match(/[A-Za-z]+/g) || [])
+      .filter(word => word === word.toUpperCase()).map(word => word.toLowerCase()));
+    const plans = concepts.map(concept => {
+      // Catalog text is immutable during a page visit; filters affect only the
+      // intersection below. Bound cached postings, including empty query terms.
+      const cacheKey = `${uppercase.has(concept.text) ? 'strict' : 'word'}:${concept.text}`;
+      if (conceptCache.has(cacheKey)) {
+        const cached = conceptCache.get(cacheKey);
+        conceptCache.delete(cacheKey);
+        conceptCache.set(cacheKey, cached);
+        return cached;
+      }
+      const hits = new Map();
+      for (const paper of papers) {
+        const hit = conceptMatch(paper, concept);
+        if (hit) hits.set(paper.id, hit);
+      }
+      const term = concept.text;
+      // Eligibility depends ONLY on this concept against the whole catalog.
+      // Adding an AND concept or changing a filter cannot activate a wider fallback.
+      if (hits.size < SPELLING_MIN_RESULTS && concept.terms.length === 1 &&
+          /^[a-z]{6,24}$/.test(term) && !uppercase.has(term) && !strictSearchTerms.has(term)) {
+        const alternatives = [];
+        for (const length of [term.length - 1, term.length, term.length + 1]) {
+          for (const [word, postings] of fuzzyVocabulary.get(length) || []) {
+            if (!strictSearchTerms.has(word) && oneSpellingEdit(term, word)) alternatives.push({ word, postings });
+          }
+        }
+        alternatives.sort((a, b) => a.word.localeCompare(b.word));
+        for (const { word, postings } of alternatives.slice(0, MAX_SPELLING_ALTERNATIVES)) {
+          for (const [id, weight] of postings) {
+            const existing = hits.get(id);
+            if (!existing || (existing.level === 2 && weight > existing.weight)) {
+              hits.set(id, { level: 2, weight, correction: `${term} → ${word}` });
+            }
+          }
+        }
+      }
+      if (conceptCache.size >= MAX_CACHED_CONCEPTS) conceptCache.delete(conceptCache.keys().next().value);
+      conceptCache.set(cacheKey, hits);
+      return hits;
+    });
+    const ranks = new Map();
+    const results = candidates.filter(paper => {
+      const hits = plans.map(plan => plan.get(paper.id));
+      if (hits.some(hit => !hit)) return false; // concepts AND; terms within each concept OR
+      const spelling = hits.filter(hit => hit.level === 2);
+      if (spelling.length > 1) return false; // never repair two concepts in one result
+      if (spelling.length) spellingMatches.set(paper.id, spelling[0].correction);
+      const level = Math.max(...hits.map(hit => hit.level));
+      let rank = (3 - level) * 1000 + hits.reduce((sum, hit) => sum + hit.weight, 0) / hits.length;
+      if (paper.searchIDs.includes(query)) rank = 10000;
+      else if (paper.searchTitles.includes(query)) rank = 9000;
+      ranks.set(paper.id, rank);
+      return true;
+    });
+    return { results, ranks };
   }
 
   function newestFirst(a, b) {
@@ -334,7 +485,7 @@
     return Number.isFinite(stamp) ? new Date(stamp + 8 * 3600000).toISOString().slice(0, 10) : tr('Unknown', '未知');
   }
 
-  function matches(paper, words) {
+  function matches(paper) {
     if (state.recent && !inRecentWindow(activityInstant(paper, state.recent))) return false;
     if (state.collection !== 'all' && paper.collection !== state.collection) return false;
     if (state.category && paper.category !== state.category) return false;
@@ -342,7 +493,7 @@
     if (state.tag && !paper.tags.includes(state.tag)) return false;
     if (state.company && !companyMatches(paper, state.company)) return false;
     if (state.tier && paper.reading_tier !== state.tier) return false;
-    return words.every((word) => includesSearchTerm(paper.searchText, word));
+    return true;
   }
 
   function renderActiveFilters() {
@@ -610,6 +761,8 @@
     if (primaryLink) title.append(createLink(paper.title, primaryLink.url, ''));
     else title.textContent = paper.title;
     body.append(title);
+    if (spellingMatches.has(paper.id)) body.append(element('p', 'provenance spelling-match',
+      `${tr('Possible spelling match', '可能的拼写匹配')}: ${spellingMatches.get(paper.id)}`));
     if (paper.affiliation || paper.venue) {
       const meta = element('div', 'paper-meta');
       if (paper.affiliation) meta.append(element('span', 'paper-affiliation', paper.affiliation));
@@ -737,9 +890,9 @@
   function render() {
     // Only query terms from this render are retained; no unbounded query cache.
     searchPatterns.clear();
-    const query = normalizeSearch(state.q);
-    const words = query.split(/\s+/).filter(Boolean);
-    filtered = papers.filter((paper) => matches(paper, words));
+    const query = normalizeSearchQuery(state.q);
+    const { results, ranks } = searchPapers(papers.filter(matches), query);
+    filtered = results;
     if (state.sort === 'title') filtered.sort((a, b) => a.title.localeCompare(b.title));
     else if (state.sort === 'reading_priority') filtered.sort((a, b) => READING_TIERS.indexOf(a.reading_tier) - READING_TIERS.indexOf(b.reading_tier) || newestFirst(a, b));
     else if (['added', 'updated'].includes(state.sort)) filtered.sort((a, b) => {
@@ -747,8 +900,7 @@
       return (left === right ? 0 : left < right ? 1 : -1) || newestFirst(a, b);
     });
     else if (state.sort === 'original') filtered.sort((a, b) => a.order - b.order);
-    else if (state.sort === 'relevance' && words.length) {
-      const ranks = new Map(filtered.map((paper) => [paper.id, searchRank(paper, query, words)]));
+    else if (state.sort === 'relevance' && query) {
       filtered.sort((a, b) => ranks.get(b.id) - ranks.get(a.id) || newestFirst(a, b));
     } else filtered.sort(newestFirst);
     $('reading-sort-note').hidden = state.sort !== 'reading_priority';
@@ -829,7 +981,28 @@
         normalized.sortID = arxivID(paper);
         normalized.searchIDs = [paper.id, arxivID(paper), paper.doi].filter(Boolean).map(normalizeSearch);
         normalized.searchTitles = [paper.title, paper.original_abstract?.source_title, ...(Array.isArray(paper.aliases) ? paper.aliases : [])].filter(Boolean).map(normalizeSearch);
-        normalized.searchText = normalizeSearch([paper.id, paper.title, ...(Array.isArray(paper.aliases) ? paper.aliases : []), paper.doi, paper.original_abstract?.text, paper.original_abstract?.source_title, verifiedSummary(paper, 'en')?.text, verifiedSummary(paper, 'zh')?.text, CATEGORY_ZH[paper.category]?.join(' '), paper.affiliation, paper.venue, paper.year, categoryLabel(paper.category), ...normalized.tags, ...normalized.tags.map(tagLabel), ...normalized.companies.map(companyLabel), ...normalized.links.map((link) => link.url)].filter(Boolean).join(' '));
+        const titleTexts = [paper.title, paper.original_abstract?.source_title, ...(Array.isArray(paper.aliases) ? paper.aliases : [])].filter(Boolean);
+        const tagTexts = [...normalized.tags, ...normalized.tags.map(tag => TAG_ZH[tag]).filter(Boolean)];
+        const category = categories.find(item => item.id === paper.category);
+        const normalizeTexts = texts => texts.filter(value => value !== undefined && value !== null && value !== '').map(normalizeSearch);
+        // Separate values prevent phrase matches across field/alias boundaries.
+        // Both languages are indexed identically, independent of the UI language.
+        normalized.searchFields = [
+          { weight: 100, texts: normalized.searchIDs },
+          { weight: 80, texts: normalized.searchTitles },
+          { weight: 70, texts: normalizeTexts(tagTexts) },
+          { weight: 30, texts: normalizeTexts([paper.affiliation, paper.venue, paper.year, category?.title,
+            category?.description, ...(CATEGORY_ZH[paper.category] || []),
+            ...normalized.companies.map(companyLabel), ...normalized.links.map(link => link.url)]) },
+          { weight: 10, texts: normalizeTexts([paper.original_abstract?.text,
+            verifiedSummary(paper, 'en')?.text, verifiedSummary(paper, 'zh')?.text]) }
+        ];
+        for (const text of titleTexts) {
+          for (const token of String(text).match(/\b[A-Z][A-Z0-9]{1,}\b/g) || []) strictSearchTerms.add(token.toLowerCase());
+        }
+        for (const alias of paper.aliases || []) if (/^[a-z]+$/i.test(alias)) strictSearchTerms.add(alias.toLowerCase());
+        indexSpellingWords(normalized, titleTexts, 80);
+        indexSpellingWords(normalized, normalized.tags, 70);
         return normalized;
       });
       const coreCount = papers.filter((paper) => paper.collection === 'core').length;

@@ -99,6 +99,7 @@ async function boot(initialURL = 'https://example.test/Awesome-CTR-Scaling/', fa
 module.exports = { boot, catalog };
 
 if (require.main === module) (async () => {
+  await require('./search.test.cjs')();
   for (const route of ['', 'zh.html']) {
     const paging = await boot('https://example.test/Awesome-CTR-Scaling/' + route);
     const first = paging.cards()[0];
