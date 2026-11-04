@@ -300,6 +300,24 @@
       .replace(/[()[\]{}:：,，;；!?！？"“”‘’]/g, ' ').replace(/\s+/g, ' ').trim();
   }
 
+  function sourceTextForSearch(value) {
+    const source = String(value || '');
+    if (!source.includes('\\')) return source;
+    // Reuse the display parser with lightweight text sinks, never DOM nodes.
+    // Keep unknown commands visible; preserve adjacency across formatting runs.
+    const textSink = (_tag, _className, text = '') => ({
+      textContent: String(text),
+      append(...nodes) { for (const node of nodes) this.textContent += node.textContent; }
+    });
+    const sink = textSink();
+    appendSourceText(sink, source, textSink);
+    return sink.textContent;
+  }
+
+  function normalizeIndexedText(value) {
+    return normalizeSearch(sourceTextForSearch(value));
+  }
+
   function normalizeSearchQuery(value) {
     const raw = String(value || '').normalize('NFKC').trim();
     const id = raw.match(/^(\d{4}\.\d{4,5})(?:v[1-9]\d*)?$/i);
@@ -556,14 +574,15 @@
   // Small, text-only TeX display layer. The exact author text stays in catalog.json.
   // It supports the source typography and simple inline formulas without executing markup.
   // Unknown author macros remain visible as source notation rather than being guessed.
-  function appendSourceText(parent, source) {
+  function appendSourceText(parent, source, makeElement = element) {
     const symbols = {times: '×', sim: '∼', gg: '≫', star: '⋆', approx: '≈', dagger: '†',
       alpha: 'α', beta: 'β', gamma: 'γ', delta: 'δ', lambda: 'λ', mu: 'μ', sigma: 'σ', theta: 'θ',
       leq: '≤', geq: '≥', cdot: '·', infty: '∞', log: 'log', exp: 'exp'};
     const formats = {textbf: 'strong', textit: 'em', emph: 'em', textsc: 'span',
       mathbf: 'strong', mathrm: 'span', text: 'span', uline: 'span'};
+    const syntax = /[\\${}^_]/g;
     let pos = 0;
-    function appendText(node, text) { if (text) node.append(element('span', '', text)); }
+    function appendText(node, text) { if (text) node.append(makeElement('span', '', text)); }
     function parse(node, stop = '', math = false) {
       let buffer = '';
       const flush = () => { appendText(node, buffer); buffer = ''; };
@@ -578,36 +597,43 @@
             appendText(node, escaped === '!' ? '' : escaped === ',' || escaped === ';' ? ' ' : escaped);
           } else {
             const name = command[0]; pos += name.length;
-            if (symbols[name]) appendText(node, symbols[name]);
-            else if (formats[name] && source[pos] === '{') {
-              pos++; const formatted = element(formats[name], name === 'textsc' ? 'small-caps' : '');
+            if (Object.hasOwn(symbols, name)) appendText(node, symbols[name]);
+            else if (Object.hasOwn(formats, name) && source[pos] === '{') {
+              pos++; const formatted = makeElement(formats[name], name === 'textsc' ? 'small-caps' : '');
               parse(formatted, '}', math); node.append(formatted);
             } else if (name === 'href' && source[pos] === '{') {
-              pos++; const destination = element('span'); parse(destination, '}', false);
+              pos++; const destination = makeElement('span'); parse(destination, '}', false);
               if (source[pos] === '{') { pos++; parse(node, '}', math); }
               else appendText(node, destination.textContent);
             } else {
-              const macro = element('code', 'source-macro', '\\' + name);
+              const macro = makeElement('code', 'source-macro', '\\' + name);
               macro.title = tr('Unexpanded notation in the author source', '作者原文中未展开的宏');
               node.append(macro);
             }
           }
         } else if (char === '$') {
           flush(); pos++;
-          const formula = element('span', 'inline-math');
+          const formula = makeElement('span', 'inline-math');
           parse(formula, '$', true); node.append(formula);
         } else if (char === '{') {
           flush(); pos++; parse(node, '}', math);
         } else if (math && (char === '^' || char === '_')) {
-          flush(); pos++; const script = element(char === '^' ? 'sup' : 'sub');
+          flush(); pos++; const script = makeElement(char === '^' ? 'sup' : 'sub');
           if (source[pos] === '{') { pos++; parse(script, '}', true); }
           else if (source[pos] === '\\') {
             const command = source.slice(pos + 1).match(/^[A-Za-z]+/);
-            if (command) { pos += command[0].length + 1; appendText(script, symbols[command[0]] || '\\' + command[0]); }
+            if (command) { pos += command[0].length + 1; appendText(script, Object.hasOwn(symbols, command[0]) ? symbols[command[0]] : '\\' + command[0]); }
             else appendText(script, source[pos++]);
           } else if (pos < source.length) appendText(script, source[pos++]);
           node.append(script);
-        } else { buffer += char; pos++; }
+        } else {
+          // Consume ordinary prose in one slice, including literal ^/_ outside math.
+          syntax.lastIndex = pos + 1;
+          const next = syntax.exec(source);
+          const end = next ? next.index : source.length;
+          buffer += source.slice(pos, end);
+          pos = end;
+        }
       }
       flush();
     }
@@ -980,17 +1006,18 @@
         const normalized = { ...paper, reading_tier: readingTier(paper.reading_tier), year: paper.year || '', tags: Array.isArray(paper.tags) ? paper.tags : [], companies: Array.isArray(paper.companies) ? paper.companies : [], links: Array.isArray(paper.links) ? paper.links : [], order: Number.isFinite(paper.order) ? paper.order : index };
         normalized.sortID = arxivID(paper);
         normalized.searchIDs = [paper.id, arxivID(paper), paper.doi].filter(Boolean).map(normalizeSearch);
-        normalized.searchTitles = [paper.title, paper.original_abstract?.source_title, ...(Array.isArray(paper.aliases) ? paper.aliases : [])].filter(Boolean).map(normalizeSearch);
-        const titleTexts = [paper.title, paper.original_abstract?.source_title, ...(Array.isArray(paper.aliases) ? paper.aliases : [])].filter(Boolean);
-        const tagTexts = [...normalized.tags, ...normalized.tags.map(tag => TAG_ZH[tag]).filter(Boolean)];
+        const aliases = (Array.isArray(paper.aliases) ? paper.aliases : []).map(sourceTextForSearch);
+        const titleTexts = [paper.title, paper.original_abstract?.source_title].filter(Boolean).map(sourceTextForSearch).concat(aliases);
+        normalized.searchTitles = titleTexts.map(normalizeSearch);
+        const tagTexts = [...normalized.tags, ...normalized.tags.map(tag => TAG_ZH[tag]).filter(Boolean)].map(sourceTextForSearch);
         const category = categories.find(item => item.id === paper.category);
-        const normalizeTexts = texts => texts.filter(value => value !== undefined && value !== null && value !== '').map(normalizeSearch);
+        const normalizeTexts = texts => texts.filter(value => value !== undefined && value !== null && value !== '').map(normalizeIndexedText);
         // Separate values prevent phrase matches across field/alias boundaries.
         // Both languages are indexed identically, independent of the UI language.
         normalized.searchFields = [
           { weight: 100, texts: normalized.searchIDs },
           { weight: 80, texts: normalized.searchTitles },
-          { weight: 70, texts: normalizeTexts(tagTexts) },
+          { weight: 70, texts: tagTexts.map(normalizeSearch) },
           { weight: 30, texts: normalizeTexts([paper.affiliation, paper.venue, paper.year, category?.title,
             category?.description, ...(CATEGORY_ZH[paper.category] || []),
             ...normalized.companies.map(companyLabel), ...normalized.links.map(link => link.url)]) },
@@ -1000,9 +1027,9 @@
         for (const text of titleTexts) {
           for (const token of String(text).match(/\b[A-Z][A-Z0-9]{1,}\b/g) || []) strictSearchTerms.add(token.toLowerCase());
         }
-        for (const alias of paper.aliases || []) if (/^[a-z]+$/i.test(alias)) strictSearchTerms.add(alias.toLowerCase());
+        for (const alias of aliases) if (/^[a-z]+$/i.test(alias)) strictSearchTerms.add(alias.toLowerCase());
         indexSpellingWords(normalized, titleTexts, 80);
-        indexSpellingWords(normalized, normalized.tags, 70);
+        indexSpellingWords(normalized, tagTexts, 70);
         return normalized;
       });
       const coreCount = papers.filter((paper) => paper.collection === 'core').length;

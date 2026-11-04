@@ -1,6 +1,8 @@
 /* Search policy regressions: synthetic adversarial records plus real catalog anchors. */
 'use strict';
 const assert = require('node:assert/strict');
+const fs = require('node:fs');
+const path = require('node:path');
 const { boot, catalog } = require('./frontend.test.cjs');
 
 function ids(app, query) {
@@ -12,6 +14,75 @@ function ids(app, query) {
 const sorted = values => [...values].sort();
 
 async function testSearch() {
+  // Exercise the shared parser directly, without adding any production exports.
+  const parserSource = fs.readFileSync(path.join(__dirname, '../web/app.js'), 'utf8').replace('  start();', `
+    window.sourceTextForTest = sourceTextForSearch;
+    window.displayTextForTest = value => {
+      const node = element('p'); appendSourceText(node, value); return node.textContent;
+    };
+    start();`);
+  const parserApp = await boot(undefined, false, undefined, {source: parserSource});
+  const formatting = [
+    [String.raw`\textbf{T}est-Time`, 'Test-Time'],
+    [String.raw`\textbf{E\emph{S}T}`, 'EST'],
+    [String.raw`\textbf{EST}`, 'EST'],
+    [String.raw`\emph{EST}(KDD)`, 'EST(KDD)'],
+    [String.raw`\textit{T}\textbf{e}st`, 'Test'],
+    [String.raw`\mathrm{E}ST`, 'EST'],
+    [String.raw`\text{EST}imator`, 'ESTimator'],
+    [String.raw`\unknown{T}est`, String.raw`\unknownTest`],
+    [String.raw`E\unknown{}ST`, String.raw`E\unknownST`],
+    [String.raw`\textbf{\unknown{E}ST}`, String.raw`\unknownEST`],
+    [String.raw`\constructor{E}ST`, String.raw`\constructorEST`],
+    [String.raw`\toString{E}ST`, String.raw`\toStringEST`],
+    [String.raw`\\textbf{T}est`, String.raw`\textbfTest`],
+    [String.raw`\href{https://example.test/EST}{Test-Time}`, 'Test-Time'],
+    ['EST(KDD)', 'EST(KDD)'],
+    [String.raw`<script>alert(1)</script> \emph{EST}`, '<script>alert(1)</script> EST']
+  ];
+  for (const [input, expected] of formatting) {
+    const created = parserApp.metrics.elements;
+    assert.equal(parserApp.window.sourceTextForTest(input), expected, input);
+    assert.equal(parserApp.metrics.elements, created, 'index conversion must not create DOM nodes');
+    assert.equal(parserApp.window.displayTextForTest(input), expected, 'display and index parser agree');
+  }
+  assert.equal(parserApp.logs.length, 0);
+
+  const formatted = structuredClone(catalog);
+  const sourceExamples = [
+    String.raw`\textbf{T}est-Time Understan\emph{din}g Com\textbf{ple}te gra\emph{dien}t`,
+    String.raw`We compare \textbf{EST}.`,
+    String.raw`We compare \textbf{E\emph{S}T}.`,
+    'EST(KDD)',
+    String.raw`\unknown{E}ST and E\unknown{}ST`,
+    String.raw`\text{EST}imator`,
+    String.raw`\href{https://example.test/EST}{A source link}`,
+    'Neutral source text.'
+  ];
+  formatted.papers = sourceExamples.map((text, index) => {
+    const id = `2601.${91000 + index}`;
+    return {...structuredClone(catalog.papers[0]), id, title: 'Formatting fixture ' + index,
+      aliases: [], tags: [], companies: [], summaries: {},
+      links: [{label: 'Paper', url: `https://arxiv.org/abs/${id}`}],
+      original_abstract: {...structuredClone(catalog.papers[0].original_abstract), text, source_title: 'Formatting fixture ' + index}};
+  });
+  // Formatting also applies to title/alias/tag/summary indexes and fuzzy vocabulary.
+  Object.assign(formatted.papers[7], {title: String.raw`\textbf{T}est-Time`,
+    aliases: [String.raw`\emph{T}est`], tags: [String.raw`\textbf{T}est-Time`],
+    summaries: {en: {basis: 'original_abstract', text: String.raw`\textbf{T}est-Time`},
+      zh: {basis: 'original_abstract', text: String.raw`\emph{T}est-Time`}}});
+  for (const route of ['', 'zh.html']) {
+    const app = await boot('https://example.test/Awesome-CTR-Scaling/' + route, false, formatted);
+    assert.deepEqual(sorted(ids(app, 'EST')), ['2601.91001', '2601.91002', '2601.91003']);
+    assert.deepEqual(ids(app, 'EST KDD'), ['2601.91003'], 'ordinary parentheses still separate query words');
+    for (const term of ['DIN', 'PLE', 'DIEN']) assert.deepEqual(ids(app, term), [], 'formatting cannot split a word into ' + term);
+    assert(ids(app, 'Test-Time').includes('2601.91000'), 'joined original word stays searchable');
+    assert(ids(app, 'Test-Time').includes('2601.91007'), 'formatted high fields stay searchable');
+    assert(ids(app, 'unknown').includes('2601.91004'), 'unknown command names are retained');
+    const before = app.$('paper-2601-91004-abstract').textContent;
+    assert(before.includes(String.raw`\unknownEST`) && before.includes(String.raw`E\unknownST`));
+  }
+
   const fixture = structuredClone(catalog);
   fixture.categories = [{id: 'test', title: 'Test area', collection: 'core', description: ''}];
   fixture.companies = [];
@@ -166,7 +237,7 @@ async function testSearch() {
     const queries = ['EST', 'DIN', 'PLE', 'DIEN', 'HSTV', 'MoE', '混合专家', '知识蒸馏', 'knowledge distillation',
       '长序列', 'long sequence', '长序列 知识蒸馏', '线性注意力 量化', 'FP8 训练后量化', 'transfromer', 'qzxvunknownzzz'];
     const results = Object.fromEntries(queries.map(query => [query, ids(app, query)]));
-    assert.equal(results.EST[0], '2602.10811');
+    assert.deepEqual(results.EST, ['2602.10811'], 'real EST remains; formatted Test-Time in 2610.32098 must not match');
     assert(results.DIN.includes('2605.25583'), 'LENS has a genuine standalone DIN mention');
     for (const acronym of ['DIN', 'PLE', 'DIEN']) {
       for (const id of results[acronym]) {
