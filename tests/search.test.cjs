@@ -3,7 +3,8 @@
 const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
-const { boot, catalog } = require('./frontend.test.cjs');
+const { boot: baseBoot, catalog } = require('./frontend.test.cjs');
+let boot = baseBoot;
 
 function ids(app, query) {
   app.search(query);
@@ -13,7 +14,8 @@ function ids(app, query) {
 }
 const sorted = values => [...values].sort();
 
-async function testSearch() {
+async function testSearch(options = {}) {
+  boot = options.layered ? (url, fail, data, config = {}) => baseBoot(url, fail, data, {...config, layeredFixture: true}) : baseBoot;
   // Exercise the shared parser directly, without adding any production exports.
   const parserSource = fs.readFileSync(path.join(__dirname, '../web/app.js'), 'utf8').replace('  start();', `
     window.sourceTextForTest = sourceTextForSearch;

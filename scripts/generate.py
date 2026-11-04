@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build every catalog view from data/papers.json using Python's standard library."""
+"""Build every catalog view from data/papers.json with Python stdlib and shared Node.js text normalization."""
 from __future__ import annotations
 
 import argparse
@@ -8,6 +8,7 @@ from html import escape
 import json
 import re
 import sys
+import subprocess
 import unicodedata
 from collections import Counter
 from datetime import date, datetime
@@ -513,7 +514,39 @@ def generate(data, source_bytes, root=ROOT):
                    "papers": [{**paper, "companies": memberships[paper["id"]], "order": i} for i, paper in enumerate(public_fields["papers"])]}
     # Transport whitespace only: preserve every field, record and source text.
     outputs["site/catalog.json"] = json.dumps(public_data, ensure_ascii=False, separators=(",", ":")) + "\n"
-    substitutions = {"TOTAL": len(data["papers"]), "CORE": counts["core"], "RELATED": counts["related"], "UPDATED": data["meta"]["updated"], "CATALOG_SHA256": source_hash, "APP_SHA256": digest((root / "web/app.js").read_bytes()), "CATALOG_BYTES_SHA256": digest(outputs["site/catalog.json"].encode()), "PREVIEW": preview_html(public_data["papers"])}
+    # Every application resource derives from the same public-field projection.
+    def asset(kind, value):
+        content = json.dumps(value, ensure_ascii=False, separators=(",", ":")) + "\n"
+        sha = digest(content.encode())
+        path = f"assets/{kind}-{sha}.json"
+        outputs["site/" + path] = content
+        return {"path": path, "sha256": sha}
+
+    envelope = {"schema": 1, "search_version": 1, "catalog_sha256": source_hash}
+    detail_groups = []
+    by_month = {}
+    for paper in public_data["papers"]:
+        by_month.setdefault(paper["id"].split(".")[0], []).append(paper)
+    for month, members in sorted(by_month.items()):
+        members.sort(key=lambda paper: paper["id"])
+        for offset in range(0, len(members), 24):
+            group = members[offset:offset + 24]
+            rows = [{"id": p["id"], **{key: p[key] for key in ("original_abstract", "summaries") if key in p}} for p in group]
+            detail_groups.append({**asset("details", {**envelope, "papers": rows}), "ids": [p["id"] for p in group]})
+    index_rows = json.loads(subprocess.run(
+        ["node", str(Path(__file__).with_name("search_index.cjs")), str(root / "web/app.js")],
+        input=json.dumps(public_data["papers"], ensure_ascii=False), text=True,
+        capture_output=True, check=True).stdout)
+    search_asset = asset("search", {**envelope, "papers": index_rows})
+    directory_papers = []
+    for paper in public_data["papers"]:
+        row = {key: value for key, value in paper.items() if key not in ("original_abstract", "summaries")}
+        row["original_abstract"] = {key: value for key, value in paper.get("original_abstract", {}).items() if key in ("status", "source_title", "language")}
+        directory_papers.append(row)
+    directory_asset = asset("directory", {**public_data, **envelope, "papers": directory_papers})
+    version_asset = asset("version", {**envelope, "directory": directory_asset,
+        "search": search_asset, "details": detail_groups, "paper_count": len(directory_papers)})
+    substitutions = {"TOTAL": len(data["papers"]), "CORE": counts["core"], "RELATED": counts["related"], "UPDATED": data["meta"]["updated"], "CATALOG_SHA256": source_hash, "VERSION_PATH": version_asset["path"], "VERSION_SHA256": version_asset["sha256"], "APP_SHA256": digest((root / "web/app.js").read_bytes()), "CATALOG_BYTES_SHA256": digest(outputs["site/catalog.json"].encode()), "PREVIEW": preview_html(public_data["papers"])}
     for name in ("index.html", "zh.html", "styles.css", "app.js", "favicon.svg"):
         content = (root / "web" / name).read_text(encoding="utf-8")
         for key, value in substitutions.items():
@@ -553,6 +586,17 @@ def preview_html(papers):
     return "\n".join(cards)
 
 
+def retired_assets(root, outputs):
+    """Only unchanged content-addressed assets owned by the previous manifest."""
+    manifest = root / "generated-manifest.json"
+    if not manifest.exists():
+        return []
+    previous = json.loads(manifest.read_text())
+    return [name for name, sha in previous.get("files", {}).items()
+            if name not in outputs and re.fullmatch(r"site/assets/(?:version|directory|search|details)-[a-f0-9]{64}\.json", name)
+            and (root / name).is_file() and digest((root / name).read_bytes()) == sha]
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--check", action="store_true", help="fail if any generated file is missing, stale or unexpected")
@@ -571,6 +615,9 @@ def main():
                 return 1
             print(f"Synchronized: {len(outputs)} generated files, {len(json.loads(source_bytes)['papers'])} unique papers")
         else:
+            for path in retired_assets(ROOT, outputs):
+                (ROOT / path).unlink()
+                unexpected.remove(path)
             for path, content in outputs.items():
                 target = ROOT / path
                 target.parent.mkdir(parents=True, exist_ok=True)

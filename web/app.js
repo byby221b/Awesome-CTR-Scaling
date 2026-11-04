@@ -195,7 +195,7 @@
     selectOptions(ui.tier, READING_TIERS.map(tier => ({ value: tier, label: tierLabel(tier) })), tr('All reading priorities', '全部阅读优先级'));
     const scheduleSearch = () => {
       clearTimeout(searchTimer);
-      if (composingSearch) return;
+      if (composingSearch || !searchReady) return;
       searchTimer = setTimeout(() => {
         update({ q: ui.search.value }, { replace: !initialSearchEntry });
         initialSearchEntry = false;
@@ -213,7 +213,7 @@
     ui.search.addEventListener('blur', () => { initialSearchEntry = true; });
     $('search-form').addEventListener('submit', (event) => {
       event.preventDefault();
-      if (composingSearch) return;
+      if (composingSearch || !searchReady) return;
       update({ q: ui.search.value }, { replace: !initialSearchEntry });
       initialSearchEntry = false;
     });
@@ -823,7 +823,7 @@
       dates.append(history);
     }
     metadata.append(dates);
-    appendReadingContent(body, paper, card.id);
+    appendLazyReading(body, paper, card.id);
     const tags = element('div', 'paper-tags');
     if (paper.tags.length) {
       tags.setAttribute('aria-label', tr('Research tags', '研究标签'));
@@ -895,6 +895,7 @@
     const firstNew = keep ? renderedPapers.length : 0;
     if (!keep) {
       readingPreviews = [];
+      detailObserver?.disconnect();
       ui.papers.replaceChildren();
     }
     const firstPreview = readingPreviews.length;
@@ -916,6 +917,17 @@
   function render() {
     // Only query terms from this render are retained; no unbounded query cache.
     searchPatterns.clear();
+    if (layered && !searchReady && state.q) {
+      readingPreviews = [];
+      detailObserver?.disconnect();
+      ui.papers.replaceChildren(element('p', 'loading-state', tr('Preparing full-library search…', '正在准备全库全文搜索…')));
+      ui.pagination.hidden = true;
+      $('result-count').textContent = '…';
+      ui.status.textContent = tr('Preparing full-library search', '正在准备全库全文搜索');
+      renderCategories();
+      renderActiveFilters(); syncLanguageLink();
+      return;
+    }
     const query = normalizeSearchQuery(state.q);
     const { results, ranks } = searchPapers(papers.filter(matches), query);
     filtered = results;
@@ -945,6 +957,7 @@
   }
 
   function revealHash() {
+    if (layered && !searchReady && state.q) return;
     if (!window.location.hash.startsWith('#paper-')) return;
     let hash;
     try { hash = decodeURIComponent(window.location.hash.slice(1)); } catch (_) { return; }
@@ -1016,6 +1029,180 @@
     return data;
   }
 
+  const layered = Boolean($('asset-version')?.getAttribute('data-path'));
+  let versionManifest, searchReady = !layered, searchFlight = null;
+  const detailGroups = new Map(), detailData = new Map(), detailFlights = new Map();
+  let detailActive = 0;
+  const detailQueue = [];
+
+  function validDescriptor(item) {
+    return item && /^[a-f0-9]{64}$/.test(item.sha256) &&
+      /^assets\/(?:version|directory|search|details)-[a-f0-9]{64}\.json$/.test(item.path) &&
+      item.path.endsWith(item.sha256 + '.json');
+  }
+
+  async function readAsset(descriptor, kind) {
+    if (!validDescriptor(descriptor)) throw new Error('Invalid asset descriptor');
+    if (!window.crypto?.subtle) throw new Error('Browser cannot verify this library version');
+    const slot = descriptor.path.startsWith('assets/version-') ? 0
+      : descriptor.path.startsWith('assets/directory-') ? 1
+      : descriptor.path.startsWith('assets/search-') ? 2
+      : 3 + parseInt(descriptor.sha256.slice(0, 8), 16) % 61;
+    const cacheSlot = new URL('cache-slot/' + slot, window.location.href).href;
+    const url = new URL(descriptor.path, window.location.href).href;
+    async function decode(body) {
+      if (!window.crypto?.subtle) throw new Error('Browser cannot verify this library version');
+      const hash = Array.from(new Uint8Array(await window.crypto.subtle.digest('SHA-256', body)),
+        byte => byte.toString(16).padStart(2, '0')).join('');
+      if (hash !== descriptor.sha256) throw new Error('Asset version mismatch; refresh page');
+      const value = JSON.parse(new TextDecoder('utf-8', { fatal: true }).decode(body));
+      if (value.schema !== 1 || value.search_version !== 1 || value.catalog_sha256 !== expectedVersion)
+        throw new Error('Asset schema or catalog version mismatch');
+      return value;
+    }
+    let cache;
+    try {
+      if (window.caches) {
+        cache = await within(window.caches.open('ctr-layered-public-v2-' + new URL('.', window.location.href).pathname), 500);
+        const hit = await within(cache.match(cacheSlot), 500);
+        if (hit?.ok) return await within(hit.arrayBuffer().then(decode), 1000);
+      }
+    } catch (_) { /* Storage is optional; only verified assets are usable. */ }
+    const controller = new AbortController();
+    return within((async () => {
+      const response = await fetch(url, { signal: controller.signal, priority: kind === 'search' ? 'low' : 'auto' });
+      if (!response.ok) throw new Error('Resource request failed');
+      const body = await response.arrayBuffer(), value = await decode(body);
+      if (controller.signal.aborted) throw new Error('Loading timed out');
+      if (cache) {
+        // Fixed slots bound storage even when eviction is unavailable. Version,
+        // directory and search have dedicated slots; detail collisions are verified misses.
+        void Promise.resolve().then(() => cache.put(cacheSlot, new Response(body))).catch(() => {});
+      }
+      return value;
+    })(), 15000, () => controller.abort());
+  }
+
+  async function loadDirectory() {
+    const node = $('asset-version');
+    versionManifest = await readAsset({ path: node.getAttribute('data-path'), sha256: node.getAttribute('content') }, 'version');
+    if (!validDescriptor(versionManifest.directory) || !validDescriptor(versionManifest.search) || !Array.isArray(versionManifest.details))
+      throw new Error('Invalid version manifest');
+    const directory = await readAsset(versionManifest.directory, 'directory');
+    if (!Array.isArray(directory.papers) || directory.papers.length !== versionManifest.paper_count ||
+      new Set(directory.papers.map(p => p.id)).size !== directory.papers.length) throw new Error('Invalid directory');
+    detailGroups.clear();
+    for (const group of versionManifest.details) {
+      if (!validDescriptor(group) || !Array.isArray(group.ids)) throw new Error('Invalid detail map');
+      for (const id of group.ids) {
+        if (detailGroups.has(id)) throw new Error('Duplicate detail ID');
+        detailGroups.set(id, group);
+      }
+    }
+    if (detailGroups.size !== directory.papers.length || directory.papers.some(p => !detailGroups.has(p.id))) throw new Error('Incomplete detail map');
+    return directory;
+  }
+
+  function searchStatus(failed = false) {
+    if (!layered || searchReady) return;
+    const node = $('search-status');
+    node.replaceChildren(element('p', '', failed
+      ? tr('Full-text search could not load. Browsing and filters remain available.', '全文索引加载失败，仍可浏览和筛选目录。')
+      : tr('Preparing full-library search. Browsing and filters are available; queries will run when the complete index is ready.', '正在准备全库全文搜索。可先浏览和筛选，完整索引就绪后才执行查询。')));
+    const button = element('button', 'button button-secondary', failed ? tr('Retry full-text search', '重试全文搜索') : tr('Clear pending query', '清空待执行查询'));
+    button.type = 'button';
+    button.addEventListener('click', () => failed ? loadSearch() : update({ q: '' }));
+    node.append(button);
+    if (failed) {
+      const refresh = element('button', 'button button-secondary', tr('Refresh page version', '刷新页面版本'));
+      refresh.type = 'button'; refresh.addEventListener('click', () => window.location.reload()); node.append(refresh);
+    }
+  }
+
+  async function loadSearch() {
+    if (searchReady || searchFlight) return searchFlight;
+    searchStatus();
+    searchFlight = (async () => {
+      try {
+        const index = await readAsset(versionManifest.search, 'search');
+        if (!Array.isArray(index.papers) || index.papers.length !== papers.length) throw new Error('Incomplete search index');
+        const fields = new Map(index.papers.map(row => [row.id, row.texts]));
+        if (fields.size !== papers.length || papers.some(p => !Array.isArray(fields.get(p.id)) || fields.get(p.id).some(text => typeof text !== 'string')))
+          throw new Error('Invalid search index');
+        for (const paper of papers) paper.searchFields.find(field => field.weight === 10).texts = fields.get(paper.id);
+        conceptCache.clear();
+        searchReady = true;
+        ui.search.disabled = false;
+        $('search-status').hidden = true;
+        // Read the current state, never a query captured before the request.
+        if (state.q) { render(); revealHash(); }
+      } catch (_) { searchStatus(true); }
+      finally { searchFlight = null; }
+    })();
+    return searchFlight;
+  }
+
+  function getDetails(group) {
+    if (detailData.has(group.path)) return Promise.resolve(detailData.get(group.path));
+    if (detailFlights.has(group.path)) return detailFlights.get(group.path);
+    const flight = new Promise((resolve, reject) => {
+      detailQueue.push(async () => {
+        try {
+          const result = await readAsset(group, 'details');
+          const rows = new Map((result.papers || []).map(p => [p.id, p]));
+          if (rows.size !== group.ids.length || group.ids.some(id => !rows.has(id))) throw new Error('Invalid details');
+          detailData.set(group.path, rows); resolve(rows);
+        } catch (error) { reject(error); }
+        finally { detailActive--; detailFlights.delete(group.path); pumpDetails(); }
+      });
+    });
+    detailFlights.set(group.path, flight); pumpDetails();
+    return flight;
+  }
+  function pumpDetails() {
+    while (detailActive < 3 && detailQueue.length) { detailActive++; detailQueue.shift()(); }
+  }
+
+  const detailObserver = typeof IntersectionObserver === 'function' ? new IntersectionObserver(entries => {
+    for (const entry of entries) if (entry.isIntersecting) { detailObserver.unobserve(entry.target); entry.target.loadDetails(); }
+  }, { rootMargin: '300px' }) : null;
+
+  function appendLazyReading(parent, paper, cardID) {
+    if (!layered) { appendReadingContent(parent, paper, cardID); return; }
+    const cached = detailData.get(detailGroups.get(paper.id).path)?.get(paper.id);
+    if (cached) { appendReadingContent(parent, { ...paper, ...cached }, cardID); return; }
+    const host = element('div', 'detail-content');
+    host.append(element('p', 'provenance', tr('Abstracts load when this paper is visible.', '摘要将在此论文可见时加载。')));
+    parent.append(host);
+    let pending = false, done = false;
+    host.loadDetails = async () => {
+      if (pending || done) return;
+      pending = true;
+      if (host.contains(document.activeElement)) { host.tabIndex = -1; host.focus({ preventScroll: true }); }
+      host.replaceChildren(element('p', 'provenance', tr('Loading abstract and summaries…', '正在加载原摘要和总结…')));
+      try {
+        const rows = await getDetails(detailGroups.get(paper.id));
+        if (!ui.papers.contains(host)) return; // Removed/reordered list: never attach to a stale card.
+        const first = readingPreviews.length;
+        const restoreFocus = host.contains(document.activeElement);
+        host.replaceChildren();
+        appendReadingContent(host, { ...paper, ...rows.get(paper.id) }, cardID);
+        done = true;
+        if (restoreFocus) { host.tabIndex = -1; host.focus({ preventScroll: true }); }
+        refreshReadingPreviews(readingPreviews.slice(first));
+      } catch (_) {
+        if (!ui.papers.contains(host)) return;
+        host.replaceChildren(element('p', 'missing-content', tr('Abstract download failed.', '摘要下载失败。')));
+        const retry = element('button', 'button button-secondary', tr('Retry abstracts', '重试摘要'));
+        retry.type = 'button'; retry.addEventListener('click', () => host.loadDetails()); host.append(retry);
+        const refresh = element('button', 'button button-secondary', tr('Refresh page version', '刷新页面版本'));
+        refresh.type = 'button'; refresh.addEventListener('click', () => window.location.reload()); host.append(refresh);
+      } finally { pending = false; }
+    };
+    if (detailObserver) detailObserver.observe(host);
+    else requestAnimationFrame(() => host.loadDetails());
+  }
+
   async function loadCatalog() {
     // A single public response per site; optional storage never blocks networking.
     let cache;
@@ -1074,7 +1261,7 @@
     $('load-status').textContent = tr('Preview of the latest 30 papers. Full abstracts, search and filters are loading; URL filters are not applied to this preview.', '预览最新30篇论文。完整摘要、全库搜索和筛选正在加载；预览不应用网址中的筛选条件。');
     ui.papers.setAttribute('aria-busy', 'true');
     try {
-      catalog = await loadCatalog();
+      catalog = layered ? await loadDirectory() : await loadCatalog();
       categories = catalog.categories;
       companies = Array.isArray(catalog.companies) ? catalog.companies : [];
       papers = catalog.papers.map((paper, index) => {
@@ -1132,6 +1319,11 @@
       render();
       revealHash();
       $('load-status').hidden = true;
+      if (layered && !searchReady) {
+        ui.search.disabled = true;
+        searchStatus();
+        requestAnimationFrame(() => { void loadSearch(); });
+      }
     } catch (error) {
       console.error('Unable to load research catalog:', error);
       showError(error);

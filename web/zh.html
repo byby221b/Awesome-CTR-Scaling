@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta id="catalog-version" name="catalog-sha256" content="{{CATALOG_SHA256}}">
+  <meta id="asset-version" data-path="{{VERSION_PATH}}" content="{{VERSION_SHA256}}">
   <meta id="catalog-bytes" name="catalog-bytes-sha256" content="{{CATALOG_BYTES_SHA256}}">
   <meta name="theme-color" content="#15222d">
   <meta name="description" content="关于工业级 CTR 与推荐模型的规模规律、架构及部署研究，提供原始摘要和中文总结。">
@@ -71,6 +72,7 @@
         <div id="active-filters" class="active-filters" aria-label="已选筛选条件" hidden></div>
         <p class="sr-only" id="results-status" role="status" aria-live="polite" aria-atomic="true">正在加载论文</p>
         <div class="grid-head" aria-hidden="true"><span>年份</span><span>论文 / 摘要</span><span>元信息</span></div>
+        <div id="search-status" role="status"></div>
         <div id="load-status" role="status"><p>预览最新30篇论文。完整摘要、全库搜索和筛选正在加载；预览不应用网址中的筛选条件。</p></div>
         <div id="papers" class="paper-list" aria-busy="true">{{PREVIEW}}</div>
         <div class="pagination" id="pagination" hidden><p id="showing-count"></p><button data-catalog-control disabled id="load-more" class="button button-secondary" type="button">加载更多论文</button></div>

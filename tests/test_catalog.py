@@ -49,7 +49,7 @@ class CatalogTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
             files = dict(self.outputs)
-            for source in ("scripts/generate.py", "data/papers.json", "web/index.html", "web/zh.html", "web/styles.css", "web/app.js", "web/favicon.svg"):
+            for source in ("scripts/generate.py", "scripts/search_index.cjs", "data/papers.json", "web/index.html", "web/zh.html", "web/styles.css", "web/app.js", "web/favicon.svg"):
                 files[source] = (ROOT / source).read_text(encoding="utf-8")
             for path, content in files.items():
                 target = root / path

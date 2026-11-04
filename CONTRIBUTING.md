@@ -19,7 +19,7 @@ node --check web/app.js
 node tests/frontend.test.cjs
 ```
 
-Python 3.10+ is sufficient; no Python packages or JavaScript dependencies are required. CI uses Python 3.12. Frontend unit tests use Node.js 18+ with a small in-memory DOM harness; they do not replace browser/layout QA. Generation uses no network access or wall-clock timestamps.
+Generation requires Python 3.10+ and Node.js 18+; no Python packages or JavaScript dependencies are required. The generator reuses the frontend text/TeX normalization to build the separate full-text index. CI uses Python 3.12. Frontend unit tests use Node.js 18+ with a small in-memory DOM harness; they do not replace browser/layout QA. Generation uses no network access or wall-clock timestamps.
 
 Keep text files UTF-8 with LF line endings (`.gitattributes` enforces LF in Git). The generator writes UTF-8/LF explicitly so its output is reproducible across platforms.
 

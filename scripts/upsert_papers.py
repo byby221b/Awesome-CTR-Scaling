@@ -137,12 +137,14 @@ def _apply_patch_file(patch_path, root=ROOT, expect_sha256=None, updated=None, w
         data["meta"]["updated"] = maintenance_day
     text = generate.json_text(data)
     outputs = generate.generate(data, text.encode(), root)
+    retired = generate.retired_assets(root, outputs)
     unexpected = [str(path.relative_to(root)) for folder in ("site", "docs/topics", "docs/related")
-                  for path in (root / folder).rglob("*") if path.is_file() and str(path.relative_to(root)) not in outputs]
+                  for path in (root / folder).rglob("*") if path.is_file() and str(path.relative_to(root)) not in outputs and str(path.relative_to(root)) not in retired]
     if unexpected:
         raise ValueError("unexpected generated files require explicit cleanup: " + ", ".join(unexpected))
     changed = ["data/papers.json"] if text.encode() != raw else []
     changed += [name for name, content in outputs.items() if not (root / name).is_file() or (root / name).read_text(encoding="utf-8") != content]
+    changed += retired
     if write and changed:
         # All validation/rendering finishes before any mutation. Refuse stale local bytes.
         # Callers must serialize writers; remote publication additionally checks the parent commit.
@@ -150,6 +152,8 @@ def _apply_patch_file(patch_path, root=ROOT, expect_sha256=None, updated=None, w
             raise ValueError("catalog changed while preparing update; retry from current data")
         for name, content in outputs.items():
             atomic_write(root / name, content)
+        for name in retired:
+            (root / name).unlink()
         atomic_write(canonical, text)
     return {"mode": "written" if write else "dry-run", "before_sha256": before,
             "catalog_sha256": hashlib.sha256(text.encode()).hexdigest(), "paper_count": len(data["papers"]),

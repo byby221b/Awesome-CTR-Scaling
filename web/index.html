@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta id="catalog-version" name="catalog-sha256" content="{{CATALOG_SHA256}}">
+  <meta id="asset-version" data-path="{{VERSION_PATH}}" content="{{VERSION_SHA256}}">
   <meta id="catalog-bytes" name="catalog-bytes-sha256" content="{{CATALOG_BYTES_SHA256}}">
   <meta name="theme-color" content="#15222d">
   <meta name="description" content="A curated research library on scaling laws, architectures, and deployment for industrial CTR and recommendation models.">
@@ -71,6 +72,7 @@
         <div id="active-filters" class="active-filters" aria-label="Active filters" hidden></div>
         <p class="sr-only" id="results-status" role="status" aria-live="polite" aria-atomic="true">Loading papers</p>
         <div class="grid-head" aria-hidden="true"><span>YEAR</span><span>PAPER / ABSTRACT</span><span>METADATA</span></div>
+        <div id="search-status" role="status"></div>
         <div id="load-status" role="status"><p>Preview of the latest 30 papers. Full abstracts, library search and filters are loading; URL filters are not applied to this preview.</p></div>
         <div id="papers" class="paper-list" aria-busy="true">{{PREVIEW}}</div>
         <div class="pagination" id="pagination" hidden><p id="showing-count"></p><button data-catalog-control disabled id="load-more" class="button button-secondary" type="button">Load more papers</button></div>

@@ -51,6 +51,20 @@ async function boot(initialURL = 'https://example.test/Awesome-CTR-Scaling/', fa
   function walk(node) { return [node, ...node.children.flatMap(walk)]; }
   for (const match of template.matchAll(/\bid="([^"]+)"/g)) { const node = new Element('div'); node.id = match[1]; roots.set(node.id, node); }
   for (const value of ['all', 'core', 'related']) { const input = new Element('input'); input.value = value; inputs.push(input); }
+  if (options.layeredFixture) {
+    const fixture = require('./layer-fixture.cjs')(data);
+    options = {...options, layered: true, fixture, fetch: async url => {
+      const key = new URL(url).pathname.split('/').slice(-2).join('/');
+      const body = fixture.files.get(key);
+      return {ok: body !== undefined, arrayBuffer: async () => new TextEncoder().encode(body).buffer};
+    }};
+  }
+  if (options.layered) {
+    const html = fs.readFileSync(path.join(ROOT, 'site/index.html'), 'utf8');
+    const match = html.match(/id="asset-version" data-path="([^"]+)" content="([^"]+)"/);
+    roots.get('asset-version').attrs['data-path'] = options.fixture?.version.path || match[1];
+    roots.get('asset-version').attrs.content = options.fixture?.version.sha256 || match[2];
+  }
   const payload = options.payload || JSON.stringify(data);
   roots.get('catalog-version').attrs.content = options.expectedVersion || data.meta.catalog_sha256;
   roots.get('catalog-bytes').attrs.content = createHash('sha256').update(options.expectedPayload || payload).digest('hex');
@@ -69,7 +83,7 @@ async function boot(initialURL = 'https://example.test/Awesome-CTR-Scaling/', fa
   const fireWindow = type => { for (const handler of events[type] || []) handler(); };
   const window = {
     location: new URL(initialURL), scrollY: 0, innerHeight: 800,
-    crypto: options.crypto, caches: options.caches,
+    crypto: options.layered && !Object.hasOwn(options, 'crypto') ? require('node:crypto').webcrypto : options.crypto, caches: options.caches,
     addEventListener: (type, handler) => { (events[type] ||= []).push(handler); },
     matchMedia: query => ({ matches: query === '(prefers-reduced-motion: reduce)' && layout.reducedMotion }),
     scrollTo: options => { scrollCalls.push(options); window.scrollY = options.top; fireWindow('scroll'); }
@@ -85,17 +99,24 @@ async function boot(initialURL = 'https://example.test/Awesome-CTR-Scaling/', fa
   };
   const context = vm.createContext({ document, window, URL, URLSearchParams, Date: TestDate,
     fetch: options.fetch || (async () => ({ ok: !failFetch, text: async () => payload, arrayBuffer: async () => new TextEncoder().encode(payload).buffer, json: async () => structuredClone(data) })),
-    AbortController, Response, TextEncoder, TextDecoder,
+    AbortController, Response, TextEncoder, TextDecoder, IntersectionObserver: options.IntersectionObserver,
     console: { error: (...args) => logs.push(args.join(' ')) },
     setTimeout: (fn, ms) => { timers.set(++timerID, { fn, ms }); return timerID; },
     clearTimeout: id => timers.delete(id), requestAnimationFrame: fn => fn()
   });
-  vm.runInContext((options.source || source).replace('\n  start();', '\n  window.catalogStarted = start();'), context);
+  const instrumented = (options.source || source).replace(/start\(\);(?=\s*\}\)\(\);)/,
+    'window.settleLayers = async () => { await searchFlight; await Promise.all([...detailFlights.values()]); }; window.catalogStarted = start();');
+  vm.runInContext(instrumented, context);
   await new Promise(resolve => setImmediate(resolve));
+  if (options.layeredFixture) {
+    await window.catalogStarted;
+    await window.settleLayers();
+  }
   const $ = id => document.getElementById(id);
   return { $, inputs, window, logs, walk, scrollCalls, metrics,
     active: () => document.activeElement,
     scroll: top => { window.scrollY = top; fireWindow('scroll'); },
+    hash: value => { window.location.hash = value; fireWindow('hashchange'); },
     resize: charsPerLine => { layout.charsPerLine = charsPerLine; fireWindow('resize'); },
     cards: () => $('papers').children.filter(x => x.tagName === 'ARTICLE'),
     change: (id, value) => { $(id).value = value; $(id).fire('change'); },
@@ -110,6 +131,8 @@ module.exports = { boot, catalog };
 
 if (require.main === module) (async () => {
   await require('./search.test.cjs')();
+  await require('./search.test.cjs')({layered:true});
+  await require('./layered.test.cjs')();
   await require('./loading.test.cjs')();
   for (const route of ['', 'zh.html']) {
     const paging = await boot('https://example.test/Awesome-CTR-Scaling/' + route);
