@@ -510,7 +510,8 @@ def generate(data, source_bytes, root=ROOT):
     public_fields = project_public_fields(data)
     public_data = {"coverage": coverage, "schema_version": public_fields["schema_version"], "meta": {**public_fields["meta"], "catalog_sha256": source_hash}, "categories": public_fields["categories"], "companies": public_companies,
                    "papers": [{**paper, "companies": memberships[paper["id"]], "order": i} for i, paper in enumerate(public_fields["papers"])]}
-    outputs["site/catalog.json"] = json_text(public_data)
+    # Transport whitespace only: preserve every field, record and source text.
+    outputs["site/catalog.json"] = json.dumps(public_data, ensure_ascii=False, separators=(",", ":")) + "\n"
     substitutions = {"TOTAL": len(data["papers"]), "CORE": counts["core"], "RELATED": counts["related"], "UPDATED": data["meta"]["updated"], "CATALOG_SHA256": source_hash}
     for name in ("index.html", "zh.html", "styles.css", "app.js", "favicon.svg"):
         content = (root / "web" / name).read_text(encoding="utf-8")

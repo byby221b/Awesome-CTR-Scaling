@@ -15,9 +15,12 @@ async function boot(initialURL = 'https://example.test/Awesome-CTR-Scaling/', fa
   // Synthetic line metrics exercise overflow decisions; actual wrapping/ellipsis needs browser QA.
   const layout = { charsPerLine: 80, reducedMotion: false, ...options };
   const scrollCalls = [];
+  const metrics = { elements: 0, articles: 0, previewReads: 0 };
   let timerID = 0;
   class Element {
     constructor(tag) {
+      metrics.elements++;
+      if (tag === 'article') metrics.articles++;
       this.tagName = tag.toUpperCase(); this.children = []; this.listeners = {};
       this.attrs = {}; this.value = ''; this.hidden = false; this.style = {}; this.className = ''; this._text = '';
       this.classList = {
@@ -30,7 +33,7 @@ async function boot(initialURL = 'https://example.test/Awesome-CTR-Scaling/', fa
     set textContent(text) { this._text = String(text); this.children = []; }
     get textContent() { return this._text + this.children.map(x => x.textContent).join(''); }
     get scrollHeight() { return Math.ceil(this.textContent.length / layout.charsPerLine) * 33.3; }
-    get clientHeight() { return this.classList.contains('is-collapsed') ? Math.min(this.scrollHeight, 4 * 33.3) : this.scrollHeight; }
+    get clientHeight() { metrics.previewReads++; return this.classList.contains('is-collapsed') ? Math.min(this.scrollHeight, 4 * 33.3) : this.scrollHeight; }
     get firstElementChild() { return this.children[0] || null; }
     append(...nodes) { for (const node of nodes) this.children.push(...(node.fragment ? node.children : [node])); }
     replaceChildren(...nodes) { this.children = []; this._text = ''; this.append(...nodes); }
@@ -77,10 +80,10 @@ async function boot(initialURL = 'https://example.test/Awesome-CTR-Scaling/', fa
     setTimeout: fn => { timers.set(++timerID, fn); return timerID; },
     clearTimeout: id => timers.delete(id), requestAnimationFrame: fn => fn()
   });
-  vm.runInContext(source, context);
+  vm.runInContext(options.source || source, context);
   await new Promise(resolve => setImmediate(resolve));
   const $ = id => document.getElementById(id);
-  return { $, inputs, window, logs, walk, scrollCalls,
+  return { $, inputs, window, logs, walk, scrollCalls, metrics,
     active: () => document.activeElement,
     scroll: top => { window.scrollY = top; fireWindow('scroll'); },
     resize: charsPerLine => { layout.charsPerLine = charsPerLine; fireWindow('resize'); },
@@ -93,7 +96,50 @@ async function boot(initialURL = 'https://example.test/Awesome-CTR-Scaling/', fa
   };
 }
 
-(async () => {
+module.exports = { boot, catalog };
+
+if (require.main === module) (async () => {
+  for (const route of ['', 'zh.html']) {
+    const paging = await boot('https://example.test/Awesome-CTR-Scaling/' + route);
+    const first = paging.cards()[0];
+    const disclosure = paging.walk(first).find(node => node.tagName === 'DETAILS');
+    assert(disclosure, 'fixture includes catalog history');
+    disclosure.open = true;
+    const before = { ...paging.metrics };
+    for (let page = 0; page < 4; page++) paging.$('load-more').fire('click');
+    assert.equal(paging.cards()[0], first, 'load more retains existing card DOM');
+    assert.equal(disclosure.open, true, 'open catalog history survives paging');
+    assert.equal(paging.metrics.articles - before.articles, 120, 'only new cards are built');
+    assert(paging.metrics.previewReads - before.previewReads <= 240, 'only new previews are measured');
+    while (!paging.$('load-more').hidden) paging.$('load-more').fire('click');
+    const expected = [...catalog.papers].sort((a,b) => Number(b.year || 0) - Number(a.year || 0)
+      || b.id.localeCompare(a.id, undefined, { numeric: true }) || a.order - b.order);
+    assert.deepEqual(paging.cards().map(card => card.id), expected.map(p => 'paper-' + p.id.replace('.', '-')),
+      'all records remain reachable, unique, and in the unchanged numeric ID order');
+    paging.search('EST');
+    const categories = paging.$('category-options').children.slice();
+    paging.search('Wukong');
+    assert.deepEqual(paging.$('category-options').children, categories, 'search preserves unchanged category buttons');
+    paging.inputs[1].fire('change');
+    assert.notEqual(paging.$('category-options').children[0], categories[0], 'collection change refreshes category counts');
+
+    const input = paging.$('search-input');
+    input.fire('blur'); // Begin a new search session after changing a filter.
+    const url = paging.window.location.href;
+    input.value = 'pending'; input.fire('input');
+    input.fire('compositionstart');
+    input.value = '推'; input.fire('input', { isComposing: true }); paging.flush();
+    assert.equal(paging.window.location.href, url, 'composition cancels a queued search');
+    paging.$('search-form').fire('submit');
+    assert.equal(paging.window.location.href, url, 'IME confirmation does not submit partial input');
+    input.value = '推荐'; input.fire('compositionend'); input.fire('input'); paging.flush();
+    assert.equal(new URL(paging.window.location).searchParams.get('q'), '推荐', 'search runs after composition');
+    const committedURL = paging.window.location.href;
+    paging.back();
+    assert.equal(paging.window.location.href, url, 'one completed composition creates one history entry');
+    paging.forward(); assert.equal(paging.window.location.href, committedURL);
+    assert.equal(paging.logs.length, 0);
+  }
   let app = await boot();
   assert.equal(app.$('result-count').textContent, String(catalog.papers.length));
   assert.equal(app.cards().length, 30);

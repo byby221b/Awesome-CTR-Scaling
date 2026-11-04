@@ -140,6 +140,16 @@ class CatalogTests(unittest.TestCase):
                 for key, value in paper.items():
                     self.assertEqual(public_papers[paper["id"]][key], value)
 
+    def test_catalog_transport_is_compact_and_preloaded_in_both_languages(self):
+        text = self.outputs["site/catalog.json"]
+        public = json.loads(text)
+        self.assertEqual(text, json.dumps(public, ensure_ascii=False, separators=(",", ":")) + "\n")
+        self.assertLess(len(text.encode()), len(generate.json_text(public).encode()))
+        for language in ("index.html", "zh.html"):
+            html = self.outputs[f"site/{language}"]
+            self.assertEqual(html.count('<link rel="preload" href="./catalog.json" as="fetch" crossorigin>'), 1)
+            self.assertLess(html.index('rel="preload"'), html.index('<script'))
+
     def test_core_pages_keep_seven_columns(self):
         for path, content in self.outputs.items():
             if not path.startswith("docs/topics/"):

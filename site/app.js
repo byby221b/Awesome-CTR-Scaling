@@ -3,6 +3,8 @@
   'use strict';
 
   const PAGE_SIZE = 30;
+  // localeCompare with options constructs a collator on every sort comparison.
+  const idCollator = new Intl.Collator(undefined, { numeric: true });
   const LANG = /(?:^|\/)zh(?:\.html|\/)?$/.test(window.location.pathname) ? 'zh' : 'en';
   const tr = (en, zh) => LANG === 'zh' ? zh : en;
   const CATEGORY_ZH = {
@@ -42,6 +44,8 @@
   let initialSearchEntry = true;
   let readingPreviews = [], readingLayoutPending = false;
   const expandedReadings = new Set();
+  let categoryRenderKey = null, renderedPapers = [], composingSearch = false;
+  const searchPatterns = new Map();
 
   function element(tag, className, text) {
     const node = document.createElement(tag);
@@ -171,16 +175,27 @@
     selectOptions(ui.tag, tags.map((tag) => ({ value: tag, label: tagLabel(tag) })), tr('All tags', '全部标签'));
     selectOptions(ui.company, [...companies].sort((a, b) => a.name.localeCompare(b.name)).map((company) => ({ value: company.id, label: `${company.name} (${company.count})` })), tr('All companies', '全部公司'));
     selectOptions(ui.tier, READING_TIERS.map(tier => ({ value: tier, label: tierLabel(tier) })), tr('All reading priorities', '全部阅读优先级'));
-    ui.search.addEventListener('input', () => {
+    const scheduleSearch = () => {
       clearTimeout(searchTimer);
+      if (composingSearch) return;
       searchTimer = setTimeout(() => {
         update({ q: ui.search.value }, { replace: !initialSearchEntry });
         initialSearchEntry = false;
       }, 180);
+    };
+    ui.search.addEventListener('compositionstart', () => {
+      composingSearch = true;
+      clearTimeout(searchTimer);
     });
+    ui.search.addEventListener('compositionend', () => {
+      composingSearch = false;
+      scheduleSearch();
+    });
+    ui.search.addEventListener('input', scheduleSearch);
     ui.search.addEventListener('blur', () => { initialSearchEntry = true; });
     $('search-form').addEventListener('submit', (event) => {
       event.preventDefault();
+      if (composingSearch) return;
       update({ q: ui.search.value }, { replace: !initialSearchEntry });
       initialSearchEntry = false;
     });
@@ -193,7 +208,7 @@
     ui.more.addEventListener('click', () => {
       const firstNew = visibleCount;
       visibleCount += PAGE_SIZE;
-      renderPapers();
+      renderPapers(true);
       const firstCard = ui.papers.children[firstNew];
       if (firstCard) firstCard.focus({ preventScroll: true });
     });
@@ -232,6 +247,9 @@
   }
 
   function renderCategories() {
+    const key = `${state.collection}/${state.category}`;
+    if (key === categoryRenderKey) return;
+    categoryRenderKey = key;
     ui.categories.replaceChildren();
     function addCategory(id, title, count) {
       const button = element('button', 'category-button');
@@ -267,9 +285,10 @@
   function includesSearchTerm(text, term) {
     // Short Latin queries are usually acronyms. EST must not match test or interest.
     // Longer words, identifiers and Chinese retain substring/full-text search.
-    return /^[a-z]{1,4}$/.test(term)
-      ? new RegExp(`(^|[^a-z0-9])${term}(?=$|[^a-z0-9])`).test(text)
-      : text.includes(term);
+    if (!searchPatterns.has(term)) searchPatterns.set(term, /^[a-z]{1,4}$/.test(term)
+      ? new RegExp(`(^|[^a-z0-9])${term}(?=$|[^a-z0-9])`) : null);
+    const pattern = searchPatterns.get(term);
+    return pattern ? pattern.test(text) : text.includes(term);
   }
 
   function searchRank(paper, query, words) {
@@ -284,7 +303,7 @@
 
   function newestFirst(a, b) {
     return Number(b.year || 0) - Number(a.year || 0)
-      || arxivID(b).localeCompare(arxivID(a), undefined, { numeric: true })
+      || idCollator.compare(b.sortID, a.sortID)
       || a.order - b.order || String(a.id).localeCompare(String(b.id));
   }
 
@@ -482,14 +501,14 @@
     button.setAttribute('aria-label', `${button.textContent} · ${label}`);
   }
 
-  function refreshReadingPreviews() {
+  function refreshReadingPreviews(previews = readingPreviews) {
     // Measure real wrapping at the current width, including formatted source text.
     // Batch the writes and reads so large result sets need only one layout pass.
-    readingPreviews.forEach(({ prose }) => prose.classList.add('is-collapsed'));
-    readingPreviews.forEach((preview) => {
+    previews.forEach(({ prose }) => prose.classList.add('is-collapsed'));
+    previews.forEach((preview) => {
       preview.overflowing = preview.prose.scrollHeight > preview.prose.clientHeight + 1;
     });
-    readingPreviews.forEach(syncReadingPreview);
+    previews.forEach(syncReadingPreview);
   }
 
   function initializeReadingControls() {
@@ -688,17 +707,26 @@
     ui.papers.append(empty);
   }
 
-  function renderPapers() {
+  function renderPapers(appendOnly = false) {
     const shown = filtered.slice(0, visibleCount);
-    readingPreviews = [];
-    ui.papers.replaceChildren();
+    // Paging/hash reveal only extends the same result set. Keep existing DOM,
+    // focus, open history disclosures and expanded text; measure new rows only.
+    const keep = appendOnly && renderedPapers.length > 0 &&
+      renderedPapers.every((paper, index) => shown[index] === paper);
+    const firstNew = keep ? renderedPapers.length : 0;
+    if (!keep) {
+      readingPreviews = [];
+      ui.papers.replaceChildren();
+    }
+    const firstPreview = readingPreviews.length;
     if (!shown.length) renderEmpty();
     else {
       const fragment = document.createDocumentFragment();
-      shown.forEach((paper) => fragment.append(paperCard(paper)));
+      shown.slice(firstNew).forEach((paper) => fragment.append(paperCard(paper)));
       ui.papers.append(fragment);
     }
-    refreshReadingPreviews();
+    renderedPapers = shown;
+    refreshReadingPreviews(readingPreviews.slice(firstPreview));
     ui.papers.setAttribute('aria-busy', 'false');
     ui.pagination.hidden = filtered.length === 0;
     ui.more.hidden = shown.length >= filtered.length;
@@ -707,6 +735,8 @@
   }
 
   function render() {
+    // Only query terms from this render are retained; no unbounded query cache.
+    searchPatterns.clear();
     const query = normalizeSearch(state.q);
     const words = query.split(/\s+/).filter(Boolean);
     filtered = papers.filter((paper) => matches(paper, words));
@@ -754,7 +784,7 @@
     }
     if (index >= visibleCount) {
       visibleCount = Math.ceil((index + 1) / PAGE_SIZE) * PAGE_SIZE;
-      renderPapers();
+      renderPapers(true);
     }
     requestAnimationFrame(() => {
       const target = $(hash);
@@ -796,6 +826,7 @@
       companies = Array.isArray(catalog.companies) ? catalog.companies : [];
       papers = catalog.papers.map((paper, index) => {
         const normalized = { ...paper, reading_tier: readingTier(paper.reading_tier), year: paper.year || '', tags: Array.isArray(paper.tags) ? paper.tags : [], companies: Array.isArray(paper.companies) ? paper.companies : [], links: Array.isArray(paper.links) ? paper.links : [], order: Number.isFinite(paper.order) ? paper.order : index };
+        normalized.sortID = arxivID(paper);
         normalized.searchIDs = [paper.id, arxivID(paper), paper.doi].filter(Boolean).map(normalizeSearch);
         normalized.searchTitles = [paper.title, paper.original_abstract?.source_title, ...(Array.isArray(paper.aliases) ? paper.aliases : [])].filter(Boolean).map(normalizeSearch);
         normalized.searchText = normalizeSearch([paper.id, paper.title, ...(Array.isArray(paper.aliases) ? paper.aliases : []), paper.doi, paper.original_abstract?.text, paper.original_abstract?.source_title, verifiedSummary(paper, 'en')?.text, verifiedSummary(paper, 'zh')?.text, CATEGORY_ZH[paper.category]?.join(' '), paper.affiliation, paper.venue, paper.year, categoryLabel(paper.category), ...normalized.tags, ...normalized.tags.map(tagLabel), ...normalized.companies.map(companyLabel), ...normalized.links.map((link) => link.url)].filter(Boolean).join(' '));
