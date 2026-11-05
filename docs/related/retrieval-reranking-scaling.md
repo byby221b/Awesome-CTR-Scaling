@@ -6,7 +6,7 @@
 
 Scaling retrieval and reranking stages of recommendation pipelines.
 
-47 papers · Updated 2026-11-05
+48 papers · Updated 2026-11-06
 
 <a id="paper-2603-04816"></a>
 
@@ -195,3 +195,7 @@ Scaling retrieval and reranking stages of recommendation pipelines.
 <a id="paper-2611-04979"></a>
 
 - **Scaling Laws For Data-Constrained Dense Retrieval**: Studies scaling when supervised retrieval data are limited and reused across epochs. Across 35 BERT-family retrievers fine-tuned on MS MARCO subsets, minimum achievable evaluation loss (MAEL) follows a multiplicative power law in non-embedding parameters and unique samples more closely than additive alternatives. The paper also models steps to MAEL and relates optimal weight decay to an approximately invariant EMA timescale. In the observed regime, increasing pretrained model size is approximately 1.46 times as fine-tuning-compute-efficient as increasing unique in-domain data for reducing MAEL. CTR scaling takeaway: test joint model/data/optimization scaling under repeated-data training; the reported law and efficiency ratio are retrieval-specific findings, not established CTR results. — [Paper](https://arxiv.org/abs/2611.04979) (Tsinghua University; Xi’an Jiaotong University · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-05908"></a>
+
+- **Optimal Re-Ranking Depth**: This study treats reranking depth as query-dependent rather than fixed. Dense LLM relevance judgments reveal saturation or degradation beyond each query's preferred depth, while common query-performance predictors transfer poorly. An IR-DCG@10 predictor based on LLM-assessed first-stage quality reduces mean reranking depth by up to 3x while preserving effectiveness in the evaluated pipelines. Larger oracle improvements are upper bounds, and the judgments introduce a dependency on LLM assessment quality. — [Paper](https://arxiv.org/abs/2611.05908) (University of Waterloo; University of Glasgow · arXiv 2026). Reading priority: Unrated.

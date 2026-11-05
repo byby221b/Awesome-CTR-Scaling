@@ -6,16 +6,16 @@
 
 Company membership follows recorded affiliation aliases and preserved company-overview mentions. A paper may appear under multiple companies. This structural migration does not independently reverify affiliations or publication claims.
 
-- [Meta](#company-meta) (57)
+- [Meta](#company-meta) (60)
 - [ByteDance / TikTok](#company-bytedance-tiktok) (28)
 - [Alibaba](#company-alibaba) (55)
 - [Meituan](#company-meituan) (11)
 - [Tencent](#company-tencent) (28)
-- [Google](#company-google) (23)
+- [Google](#company-google) (24)
 - [LinkedIn](#company-linkedin) (7)
 - [NetEase](#company-netease) (2)
 - [Kuaishou](#company-kuaishou) (37)
-- [Huawei](#company-huawei) (10)
+- [Huawei](#company-huawei) (11)
 - [Baidu](#company-baidu) (10)
 - [Shopee](#company-shopee) (4)
 - [Coupang](#company-coupang) (2)
@@ -148,6 +148,9 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [How to Loop Your Transformer: Loop Scaling, Specialization, and Parallel Inference](related/architecture-innovations-beyond-recommendation.md#paper-2610-40325) · 2026 · Related
 - [DecisionRank: On-Policy Distillation for Decision-Model Rerankers](related/retrieval-reranking-scaling.md#paper-2610-42128) · 2026 · Related
 - [Beyond Semantic IDs: Atomic Creator Tokens for Large-Scale Generative Recommendation](related/generative-recommendation.md#paper-2611-00323) · 2026 · Related
+- [Data-Efficient Scaling-Law Discovery for Recommendation Systems via Coupled Hyperparameter Scaling](topics/scaling-law-theory.md#paper-2611-05643) · 2026 · Core
+- [Towards Efficient Whole Page Ranking with One-Pass Inference](topics/efficiency-deployment.md#paper-2611-05542) · 2026 · Core
+- [Item Representations Matter: Bridging Hard Semantic IDs and Soft Prototype Mixtures for Generative Retrieval](related/generative-recommendation.md#paper-2611-05799) · 2026 · Related
 
 <a id="company-bytedance-tiktok"></a>
 
@@ -318,6 +321,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [EmbeddingGemma 2: Unified and Efficient Multimodal Representations](related/retrieval-reranking-scaling.md#paper-2610-37364) · 2026 · Related
 - [Ambiguous Fits: The Rashomon Effect and Challenges in Scaling Law Estimation](related/architecture-innovations-beyond-recommendation.md#paper-2610-34514) · 2026 · Related
 - [FlyWheel: Attention Kernels Built for the TPU](related/architecture-innovations-beyond-recommendation.md#paper-2611-01426) · 2026 · Related
+- [Systolic Linear Attention: Co-Designing Tile-Grouped Gated Delta Attention for TPUs](related/architecture-innovations-beyond-recommendation.md#paper-2611-06828) · 2026 · Related
 
 <a id="company-linkedin"></a>
 
@@ -394,6 +398,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [Kronecker Product Attention: Memory-Efficient KV Compression via Structured Factorization](related/architecture-innovations-beyond-recommendation.md#paper-2610-12657) · 2026 · Related
 - [DuoRate: Two-Rate Per-Expert Precision Allocation for Mixture-of-Experts Serving](related/architecture-innovations-beyond-recommendation.md#paper-2610-13328) · 2026 · Related
 - [INC-MoE: Overlapping In-Network Collectives and Expert Computation for Expert-Parallel Mixture-of-Experts Inference](related/engineering-serving.md#paper-2610-36339) · 2026 · Related
+- [Aligning Training and Rollout Policies for End-to-End FP4 RL on Mixture-of-Experts LLMs](related/architecture-innovations-beyond-recommendation.md#paper-2611-04376) · 2026 · Related
 
 <a id="company-baidu"></a>
 

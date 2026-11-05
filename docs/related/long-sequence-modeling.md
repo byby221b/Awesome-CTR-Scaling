@@ -6,7 +6,7 @@
 
 Long-history modeling, memory and compression for user behavior sequences.
 
-33 papers · Updated 2026-11-05
+34 papers · Updated 2026-11-06
 
 <a id="paper-2504-06780"></a>
 
@@ -139,3 +139,7 @@ Long-history modeling, memory and compression for user behavior sequences.
 <a id="paper-2611-03068"></a>
 
 - **PACERec: Progressive Adaptation of LLM Item Embeddings with Collaborative Evidence for Recommendation**: PACERec uses frequency-weighted flow matching to adapt static LLM item embeddings toward collaborative behavioral targets. A shared velocity field transfers preceding-interaction patterns from frequent to long-tail items, with improvements reported across three datasets and three sequential backbones. — [Paper](https://arxiv.org/abs/2611.03068) (Northeastern University; Ant Group · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-06521"></a>
+
+- **Deliberate Latent Reasoning for Sequential Recommendation**: DESRec adapts latent reasoning to different user histories in sequential recommendation. During training it selects each sequence's most informative reasoning step and self-distills that state into the final step used for ranking. Progressive preference extraction also segments histories into a variable number of periods and summarizes them into latent milestones. Experiments span six public datasets, four backbone recommenders and eight baselines; the paper reports improved recommendation performance rather than an industrial scaling-law result. — [Paper](https://arxiv.org/abs/2611.06521) (Renmin University of China; Beijing Normal University · arXiv 2026). Reading priority: Unrated.

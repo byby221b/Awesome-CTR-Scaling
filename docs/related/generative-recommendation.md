@@ -6,7 +6,7 @@
 
 Generative retrieval, recommendation and ranking beyond discriminative CTR.
 
-116 papers · Updated 2026-11-05
+117 papers · Updated 2026-11-06
 
 <a id="paper-2605-12617"></a>
 
@@ -471,3 +471,7 @@ Generative retrieval, recommendation and ranking beyond discriminative CTR.
 <a id="paper-2611-02981"></a>
 
 - **Utility-Aware Generative Recommendation: Utility-Enriched Semantic Codes and Utility-Guided Decoding**: UAGR incorporates post-exposure utility into semantic codes and beam scoring without increasing semantic-ID length or vocabulary size. Incremental utility updates and utility-guided decoding aim to retain valuable candidates early; the authors report full Kuaishou deployment and a 0.206% online watch-time increase. — [Paper](https://arxiv.org/abs/2611.02981) (Kuaishou Technology · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-05799"></a>
+
+- **Item Representations Matter: Bridging Hard Semantic IDs and Soft Prototype Mixtures for Generative Retrieval**: CAP-Mix gives continuous generative retrieval shared item structure without a hard discrete bottleneck. Each item combines a soft mixture of shared prototypes with an item-specific vector; assignments, prototypes and vectors train jointly and remain soft at inference, with optional semantic-ID priors or content initialization. Matched comparisons examine sparse Amazon and Steam settings. Across six benchmarks the authors report average HR@5 and NDCG@5 gains of 6.9% and 13.6% over each metric's best evaluated baseline, with throughput depending on the discrete baseline. — [Paper](https://arxiv.org/abs/2611.05799) (Meta; Texas A&M University · arXiv 2026). Reading priority: Unrated.

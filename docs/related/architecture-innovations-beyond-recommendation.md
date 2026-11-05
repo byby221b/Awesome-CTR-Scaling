@@ -6,7 +6,7 @@
 
 Transferable ideas from general-purpose model architecture research.
 
-247 papers · Updated 2026-11-05
+252 papers · Updated 2026-11-06
 
 <a id="paper-2606-16825"></a>
 
@@ -995,3 +995,23 @@ Transferable ideas from general-purpose model architecture research.
 <a id="paper-2611-04401"></a>
 
 - **LiquidCP: Decoupling Attention Tasks from Communication and Kernel Boundaries in Context Parallelism**: LiquidCP schedules context-parallel attention as tile-dependent transfer, compute, and reduction tasks rather than tying execution to communication and kernel boundaries. MegaRing balances token and attention loads for training/prefill, while MegaDCP schedules history-KV splits for decoding. On eight H100s, MegaRing improves core-attention forward/backward speed by 1.23×/1.18× and Transformer-layer speed by 1.08–1.16×. Its load balancing and overlap mechanisms are relevant to distributed long-history rankers, with recommendation-specific benefits still unverified. — [Paper](https://arxiv.org/abs/2611.04401) (Shanghai Jiao Tong University; Sun Yat-sen University; National University of Singapore; Guizhou University · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-06828"></a>
+
+- **Systolic Linear Attention: Co-Designing Tile-Grouped Gated Delta Attention for TPUs**: SLA co-designs gated-delta linear attention for TPU systolic units: 256-wide keys shared by grouped value heads, tile-grouped decay gates and matrix-based chunk solves in a fused kernel. On TPU v7x, SLA-R4 layers are reported 1.6–2.5x faster than the open Tokamax KDA kernel. In a 2,048-chip study of 6.5B–63.1B sparse MoE models, training is 11–24% faster at similar perplexity. The results concern TPU-aligned attention design, not measured recommendation gains. — [Paper](https://arxiv.org/abs/2611.06828) (Google · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-05906"></a>
+
+- **CHARM+: Cross-Hardware Attention with Re-Merge Multistream Mechanism**: CHARM+ reorganizes distributed long-sequence attention communication into levels to overlap transfers and computation. It separates cross-NUMA or cross-node exchanges from local communication to reduce synchronization under unequal bandwidth. Relative to Ring-Attention, reported average forward/backward speedups are 1.3x/1.7x on dual-NUMA PCIe and 2.8x/2.9x on dual-node NVLink systems. These are attention implementation measurements, with potential relevance to distributed long-history model training. — [Paper](https://arxiv.org/abs/2611.05906) (Lenovo Research · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-04671"></a>
+
+- **LeanSparse: Memory-Efficient Serving for Native Sparse-Attention LLMs**: LeanSparse reduces both persistent decode memory and temporary prefill memory for native sparse-attention models. It streams prefill histories through two reusable GPU buffers and uses compact coarse-to-fine indexing to fetch original indexer keys only for candidate refinement, with separate indexer and KV caches. Implemented in SGLang on DeepSeek-V4-Flash, it reports 2.95x concurrency and 2.14x decode throughput over HiSparse at 950K context, plus lower multi-turn latency in the evaluated traces. — [Paper](https://arxiv.org/abs/2611.04671) (University of California San Diego · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-03768"></a>
+
+- **Multi-layer Indexer: Overlapping Selection and Attention in DeepSeek Sparse Attention**: MLI overlaps sparse-attention selection and computation by letting a layer attend to the previous indexer layer's selected tokens while its own indexer runs. It composes with IndexCache's cross-layer reuse and needs no retraining or new weights for its default implementation. In SGLang evaluations on DeepSeek-V3.2 and GLM-5, equal-retention decode gains reach 14.5% and 9.8%, respectively; LongBench and RULER quality stays within a few percentage points of IndexCache. It trades selection freshness for overlap rather than proving exact equivalence. — [Paper](https://arxiv.org/abs/2611.03768) (Writer · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-04376"></a>
+
+- **Aligning Training and Rollout Policies for End-to-End FP4 RL on Mixture-of-Experts LLMs**: MoEResQ studies quantization recovery for end-to-end FP4 reinforcement-learning post-training of MoE models. Discrete expert routing makes train–rollout alignment sensitive to applying recovery corrections on only one side; the proposed recipe applies them symmetrically. The paper reports restored probability and routing alignment and a smaller accuracy gap to full precision. This is a transferable warning for low-precision sparse routing, not a recommendation-system benchmark. — [Paper](https://arxiv.org/abs/2611.04376) (Huawei · arXiv 2026). Reading priority: Unrated.

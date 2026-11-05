@@ -4,13 +4,13 @@
 
 A curated library of **scaling laws and scalable ranking/CTR models** for industrial recommendation systems.
 
-**651 papers** · **118 core** · **533 related** · Updated 2026-11-05
+**661 papers** · **120 core** · **541 related** · Updated 2026-11-06
 
 <a id="table-of-contents"></a>
 
 [**Search the paper library →**](https://byby221b.github.io/Awesome-CTR-Scaling/) · [**中文页面**](https://byby221b.github.io/Awesome-CTR-Scaling/zh.html) · [All topics](docs/README.md) · [Company index](docs/companies.md) · [Contribute](CONTRIBUTING.md)
 
-Reading priority: **339 assigned** · **312 unrated**. Filter or sort by Read first, Worth reading, or Read as needed on the website. These are reading suggestions, not objective quality ratings; unrated papers have not been assigned a tier.
+Reading priority: **339 assigned** · **322 unrated**. Filter or sort by Read first, Worth reading, or Read as needed on the website. These are reading suggestions, not objective quality ratings; unrated papers have not been assigned a tier.
 
 > **Scope:** We cover papers that (1) study scaling laws for recommendation models, (2) propose scalable Transformer-based architectures for CTR/ranking, (3) address efficiency challenges in scaling up industrial ranking systems, or (4) explore novel paradigms (e.g., sparse scaling, generative pre-training, foundation models) for scalable recommendation.
 
@@ -22,7 +22,7 @@ Five focused reading paths. Each topic keeps the complete seven-column catalog: 
 
 ### Scaling Law & Theory
 
-Empirical laws, scaling recipes and theoretical limits for recommendation models. [Browse 18 papers →](docs/topics/scaling-law-theory.md)
+Empirical laws, scaling recipes and theoretical limits for recommendation models. [Browse 19 papers →](docs/topics/scaling-law-theory.md)
 
 <a id="scalable-architecture"></a>
 
@@ -46,20 +46,20 @@ Shared foundations, multi-task learning and transfer across scenarios. [Browse 2
 
 ### Efficiency & Deployment
 
-Training, inference and deployment techniques that make model scaling practical. [Browse 22 papers →](docs/topics/efficiency-deployment.md)
+Training, inference and deployment techniques that make model scaling practical. [Browse 23 papers →](docs/topics/efficiency-deployment.md)
 
 ## Related Work
 
 Adjacent research is grouped separately to keep the core CTR scaling signal clear.
 
-- <a id="long-sequence-modeling"></a>[Long Sequence Modeling](docs/related/long-sequence-modeling.md) · 33 papers
+- <a id="long-sequence-modeling"></a>[Long Sequence Modeling](docs/related/long-sequence-modeling.md) · 34 papers
 - <a id="sampleinstance-compression-for-sequence-modeling"></a>[Sample/Instance Compression for Sequence Modeling](docs/related/sample-instance-compression-for-sequence-modeling.md) · 4 papers
-- <a id="generative-recommendation"></a>[Generative Recommendation](docs/related/generative-recommendation.md) · 116 papers
+- <a id="generative-recommendation"></a>[Generative Recommendation](docs/related/generative-recommendation.md) · 117 papers
 - <a id="generative-pre-training-for-ctr"></a>[Generative Pre-training for CTR](docs/related/generative-pre-training-for-ctr.md) · 5 papers
 - <a id="knowledge-distillation--compression"></a>[Knowledge Distillation & Compression](docs/related/knowledge-distillation-compression.md) · 15 papers
 - <a id="engineering--serving"></a>[Engineering & Serving](docs/related/engineering-serving.md) · 49 papers
-- <a id="retrieval--reranking-scaling"></a>[Retrieval & Reranking Scaling](docs/related/retrieval-reranking-scaling.md) · 47 papers
-- <a id="architecture-innovations-beyond-recommendation"></a>[Architecture Innovations Beyond Recommendation](docs/related/architecture-innovations-beyond-recommendation.md) · 247 papers
+- <a id="retrieval--reranking-scaling"></a>[Retrieval & Reranking Scaling](docs/related/retrieval-reranking-scaling.md) · 48 papers
+- <a id="architecture-innovations-beyond-recommendation"></a>[Architecture Innovations Beyond Recommendation](docs/related/architecture-innovations-beyond-recommendation.md) · 252 papers
 - <a id="other"></a>[Other](docs/related/other.md) · 17 papers
 
 ## Company Overview

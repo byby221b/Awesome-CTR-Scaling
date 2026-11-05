@@ -5,7 +5,7 @@
     "description": "Scaling laws and scalable ranking models for industrial recommendation.",
     "repository_url": "https://github.com/byby221b/Awesome-CTR-Scaling",
     "site_url": "https://byby221b.github.io/Awesome-CTR-Scaling/",
-    "updated": "2026-11-05",
+    "updated": "2026-11-06",
     "source_commit": "31ad30becff83ca14a01f37fc99d52ba79f85565",
     "scope": "We cover papers that (1) study scaling laws for recommendation models, (2) propose scalable Transformer-based architectures for CTR/ranking, (3) address efficiency challenges in scaling up industrial ranking systems, or (4) explore novel paradigms (e.g., sparse scaling, generative pre-training, foundation models) for scalable recommendation.",
     "history": {
@@ -47539,6 +47539,646 @@
       "added_provenance": {
         "kind": "catalog_entry",
         "source_url": "https://arxiv.org/abs/2611.04401"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2611.05643",
+      "title": "Data-Efficient Scaling-Law Discovery for Recommendation Systems via Coupled Hyperparameter Scaling",
+      "collection": "core",
+      "category": "scaling-law-theory",
+      "affiliation": "Meta",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [
+        "Scaling Law",
+        "Training Efficiency",
+        "Ads"
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2611.05643"
+        }
+      ],
+      "aliases": [
+        "Axia"
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Large-scale ranking and recommendation models of Web platforms benefit from increased compute much as large language models do, and their scaling behavior is broadly power-law in form. Yet ranking models have heterogeneous architectures which makes their scaling law less straightforward than that of LLMs. We address how to discover the scaling law of an arbitrary ranking model efficiently. We introduce a scaling layer, which groups primitive architecture parameters into semantically coherent groups and defines how they co-vary, inducing a mapping from a low-dimensional space of hyper-hyperparameters into the full architecture space. On top of it, Axia fits scaling-informed surrogates, selects configurations by a posterior-based acquisition criterion, and returns a Pareto frontier from which per-model operating points are validated -- replacing exhaustive sweeps with a small number of informative runs. A fleet-level evaluation protocol, computed on a fixed representative model set under matched trial budgets, makes refinements to either component measurable. Our contribution is an automated system that learns model-specific complexity-quality relationships and gives uncertainty-aware guidance for allocating compute across a heterogeneous model ecosystem. Across 34 model iterations in two development cycles on Meta's ads ranking and retrieval system, the workflow yielded a mean 0.66% offline normalized-entropy improvement and 0.36% cumulative online lift.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2611.05643v1",
+        "retrieved_at": "2026-11-05T23:10:10Z",
+        "license": "CC0-1.0",
+        "source_title": "Data-Efficient Scaling-Law Discovery for Recommendation Systems via Coupled Hyperparameter Scaling",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-11-03T21:27:46Z",
+        "updated_at": "2026-11-03T21:27:46Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2611.05643v1",
+        "verified_at": "2026-11-05T23:10:10Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "Axia learns model-specific quality–compute relationships for heterogeneous recommendation and ranking architectures with fewer trial runs. A scaling layer couples related architecture parameters into low-dimensional controls; scaling-informed surrogate models and posterior-based acquisition select informative configurations and construct a Pareto frontier. Across 34 model iterations in two Meta development cycles, the authors report a mean 0.66% offline normalized-entropy improvement and 0.36% cumulative online lift.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-06",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.05643v1"
+          ]
+        },
+        "zh": {
+          "text": "针对推荐排序模型结构异构、穷举扩模成本高的问题，Axia先把相关架构参数组合成少量联动的扩模控制量，再利用带规模规律先验的代理模型与后验采集策略选择实验，形成质量与计算成本的帕累托前沿。作者在Meta两个开发周期、34次模型迭代中报告平均0.66%的离线归一化熵改善和累计0.36%的线上提升，为有限实验预算下的扩模和算力分配提供方法。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-06",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.05643v1"
+          ]
+        }
+      },
+      "added_at": "2026-11-05T23:10:10Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2611.05643"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2611.05542",
+      "title": "Towards Efficient Whole Page Ranking with One-Pass Inference",
+      "collection": "core",
+      "category": "efficiency-deployment",
+      "affiliation": "Meta",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [
+        "Architecture",
+        "Serving",
+        "Ads",
+        "Multi-task"
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2611.05542"
+        }
+      ],
+      "aliases": [
+        "MIS",
+        "Multi-Item Scoring"
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Whole-page ranking jointly optimizes advertisements and organic content to balance business outcomes and user engagement under complex layout and business constraints. Existing non-autoregressive (NAR) approaches enable efficient page generation but typically score candidate items independently of previously selected items, limiting their ability to capture order-dependent interactions. Autoregressive (AR) methods address this limitation through sequential conditioning, but incur substantial inference overhead that challenges large-scale deployment. Bridging this quality-efficiency gap remains a challenge in industrial whole-page ranking.\n  We propose Multi-Item Scoring (MIS), a prefix-aware NAR-style framework that incorporates sequential context into efficient multi-item scoring. MIS integrates global candidate interactions, localized prefix conditioning, and position-aware scoring within a shared representation architecture. By computing reusable representations once per request and performing lightweight prefix-conditioned scoring during constrained beam search, MIS captures important sequential dependencies without repeated full-model inference.\n  Experiments on KuaiRand-1K and RL4RS demonstrate that MIS approaches the generation quality of an autoregressive CGA baseline while achieving 4.07x and 3.54x faster CPU decoding, respectively. In a randomized evaluation on a large-scale social-video platform, MIS improves the realization metric by 0.104% and watch time by 0.058%, while reducing ranking-service CPU consumption by 9.73%. These results demonstrate that prefix-aware multi-item scoring can narrow the quality gap between NAR and AR generation while retaining the efficiency required for industrial scalability.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2611.05542v1",
+        "retrieved_at": "2026-11-05T23:10:10Z",
+        "license": "CC0-1.0",
+        "source_title": "Towards Efficient Whole Page Ranking with One-Pass Inference",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-11-03T19:33:22Z",
+        "updated_at": "2026-11-03T19:33:22Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2611.05542v1",
+        "verified_at": "2026-11-05T23:10:10Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "MIS targets the quality–latency trade-off in whole-page ads–organic ranking. It computes shared candidate representations once, then combines global interactions, prefix conditioning and position-aware lightweight scoring during constrained beam search. On KuaiRand-1K and RL4RS it approaches an autoregressive CGA baseline's generation quality with 4.07x and 3.54x faster CPU decoding; the reported randomized industrial evaluation improves realization by 0.104% and watch time by 0.058% while reducing ranking-service CPU use by 9.73%.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-06",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.05542v1"
+          ]
+        },
+        "zh": {
+          "text": "MIS面向广告与自然内容混排，把候选表示在每个请求内只计算一次，再在约束束搜索中用轻量前缀条件打分复用这些表示，同时保留候选交互和位置关系。在KuaiRand-1K与RL4RS上，生成质量接近自回归CGA基线，CPU解码分别加速4.07倍和3.54倍；作者报告的线上随机实验中，realization指标提高0.104%、观看时长提高0.058%，排序服务CPU消耗降低9.73%。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-06",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.05542v1"
+          ]
+        }
+      },
+      "added_at": "2026-11-05T23:10:10Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2611.05542"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2611.06521",
+      "title": "Deliberate Latent Reasoning for Sequential Recommendation",
+      "collection": "related",
+      "category": "long-sequence-modeling",
+      "affiliation": "Renmin University of China; Beijing Normal University",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2611.06521"
+        }
+      ],
+      "aliases": [
+        "DESRec"
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Sequential recommenders are widely applied in real-world scenarios to model user preferences and behavior patterns based on user interactions. Recent advances in sequential recommendation enhance transformer-based models with latent reasoning to refine user representations by autoregressively generating intermediate reasoning vectors. However, exploring the optimal reasoning depth for diverse user histories remains challenging: existing methods typically employ a fixed number of reasoning steps for all users. This ``one-size-fits-all'' strategy often leads to suboptimal representation learning due to over-thinking in simple histories or under-thinking in complex ones. To address this issue, we propose DESRec, a deliberate latent reasoning framework that performs personalized latent reasoning to learn more informative reasoning states and enhance user modeling for sequential recommendation. Specifically, it designs a reasoning step selection module that identifies the optimal reasoning step for each user sequence during the training phase. Through a self-distillation mechanism, it compresses this most informative state into the final reasoning step, which serves as the final user representation for item ranking during inference. Moreover, it introduces a progressive preference extraction mechanism for personalized reasoning, which dynamically segments a user's history into a variable number of periods and summarizes each into a latent milestone representing the user's preference for that period. It will be used as the input of the subsequent reasoning. The number of milestones varies with the users' history, enabling a personalized reasoning over users' evolving interests. Extensive experimental results on six public datasets and four backbone recommenders demonstrate the superiority of DESRec over eight baseline models.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2611.06521v1",
+        "retrieved_at": "2026-11-05T23:10:10Z",
+        "license": "CC0-1.0",
+        "source_title": "Deliberate Latent Reasoning for Sequential Recommendation",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-11-04T13:47:30Z",
+        "updated_at": "2026-11-04T13:47:30Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2611.06521v1",
+        "verified_at": "2026-11-05T23:10:10Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "DESRec adapts latent reasoning to different user histories in sequential recommendation. During training it selects each sequence's most informative reasoning step and self-distills that state into the final step used for ranking. Progressive preference extraction also segments histories into a variable number of periods and summarizes them into latent milestones. Experiments span six public datasets, four backbone recommenders and eight baselines; the paper reports improved recommendation performance rather than an industrial scaling-law result.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-06",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.06521v1"
+          ]
+        },
+        "zh": {
+          "text": "DESRec针对固定隐式推理步数难以适配不同用户历史的问题，在训练时为每条序列选择信息最充分的推理状态，再通过自蒸馏将其压入最终推理步骤。它还把用户历史动态分段，生成数量可变的偏好里程碑作为推理输入。论文在六个公开数据集、四种推荐骨干上与八个基线比较，为序列建模中的推理深度选择和知识压缩提供参考。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-06",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.06521v1"
+          ]
+        }
+      },
+      "added_at": "2026-11-05T23:10:10Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2611.06521"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2611.06828",
+      "title": "Systolic Linear Attention: Co-Designing Tile-Grouped Gated Delta Attention for TPUs",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "Google",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2611.06828"
+        }
+      ],
+      "aliases": [
+        "SLA",
+        "Systolic Linear Attention"
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Gated-delta linear attention layers such as Gated DeltaNet (GDN), Kimi Delta Attention (KDA), and GDN-2 are tuned for GPUs, where small tensor-core tiles and fast vector registers make per-channel decay rescaling and sequential in-block solves cheap. On Google TPUs, which concentrate compute in wide $256 \\times 256$ systolic matrix units backed by a slower vector unit, porting these layers directly leaves half of each matrix tile empty and bottlenecks on vector operations. We present \\textbf{Systolic Linear Attention (SLA)}, which reshapes gated delta attention around the matrix unit by widening keys to $256$ with grouped value heads, grouping decay gates into four $64$-channel tiles, and computing the chunk solve entirely with block matrix products in a single fused kernel. On TPU v7x, a full \\texttt{SLA-R4} layer runs $1.6\\times$--$2.5\\times$ faster than the open-source Tokamax KDA kernel ($1.4\\times$--$2.4\\times$ with exact chunk inversion), driven primarily by head sharing and kernel fusion. Across a $2{,}048$-chip TPU v7x pre-training study of sparse Mixture-of-Experts (MoE) models from $6.5\\text{B}$ to $63.1\\text{B}$ parameters, SLA trains $11\\%$--$24\\%$ faster than KDA at similar perplexity, and reaches slightly lower perplexity than KDA in smaller matched-seed runs.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2611.06828v1",
+        "retrieved_at": "2026-11-05T23:10:10Z",
+        "license": "CC0-1.0",
+        "source_title": "Systolic Linear Attention: Co-Designing Tile-Grouped Gated Delta Attention for TPUs",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-11-04T17:42:58Z",
+        "updated_at": "2026-11-04T17:42:58Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2611.06828v1",
+        "verified_at": "2026-11-05T23:10:10Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "SLA co-designs gated-delta linear attention for TPU systolic units: 256-wide keys shared by grouped value heads, tile-grouped decay gates and matrix-based chunk solves in a fused kernel. On TPU v7x, SLA-R4 layers are reported 1.6–2.5x faster than the open Tokamax KDA kernel. In a 2,048-chip study of 6.5B–63.1B sparse MoE models, training is 11–24% faster at similar perplexity. The results concern TPU-aligned attention design, not measured recommendation gains.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-06",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.06828v1"
+          ]
+        },
+        "zh": {
+          "text": "SLA把门控Delta线性注意力与TPU矩阵单元共同设计：使用256维宽键并共享给多组值头，将衰减门按块组织，再把块内求解转成融合核中的矩阵运算。论文报告TPU v7x上单层较Tokamax KDA加速1.6—2.5倍，在2048芯片、6.5B至63.1B稀疏MoE预训练中以相近困惑度获得11%—24%的训练提速。可借鉴之处是按硬件形状重构序列算子，推荐任务收益仍需验证。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-06",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.06828v1"
+          ]
+        }
+      },
+      "added_at": "2026-11-05T23:10:10Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2611.06828"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2611.05906",
+      "title": "CHARM+: Cross-Hardware Attention with Re-Merge Multistream Mechanism",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "Lenovo Research",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2611.05906"
+        }
+      ],
+      "aliases": [
+        "CHARM+"
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "As sequence lengths continue to grow, distributed attention based on sequence parallel (e.g., Ring-Attention) has become a mainstream solution for large language models (LLMs). Nevertheless, inherent communication dependencies limit computation-communication overlap, reducing GPU utilization. Moreover, in cross-hardware (NUMA or node) architectures, due to imbalanced communication bandwidth, frequent communication synchronization will limit overall performance. Based on these insights, we propose CHARM+, Cross-Hardware Attention with Re-Merge Multistream Mechanism. We reorganize sequential communications into several levels and achieve intra-level parallelism and computation overlap. Furthermore, we decouple cross-hardware communication from intra-hardware communication, eliminating synchronization overhead caused by bandwidth imbalance. Forward and backward algorithms were evaluated on multiple hardware architectures and consistently outperformed state-of-the-art methods. Compared to Ring-Attention, our forward and backward algorithms achieve average speedups of 1.3x and 1.7x on a dual-NUMA PCIe architecture, and 2.8x and 2.9x on a dual-node NVLink architecture, respectively.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2611.05906v1",
+        "retrieved_at": "2026-11-05T23:10:10Z",
+        "license": "CC0-1.0",
+        "source_title": "CHARM+: Cross-Hardware Attention with Re-Merge Multistream Mechanism",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-11-04T03:57:56Z",
+        "updated_at": "2026-11-04T03:57:56Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2611.05906v1",
+        "verified_at": "2026-11-05T23:10:10Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "CHARM+ reorganizes distributed long-sequence attention communication into levels to overlap transfers and computation. It separates cross-NUMA or cross-node exchanges from local communication to reduce synchronization under unequal bandwidth. Relative to Ring-Attention, reported average forward/backward speedups are 1.3x/1.7x on dual-NUMA PCIe and 2.8x/2.9x on dual-node NVLink systems. These are attention implementation measurements, with potential relevance to distributed long-history model training.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-06",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.05906v1"
+          ]
+        },
+        "zh": {
+          "text": "CHARM+把分布式长序列注意力的串行通信重排成多个层级，增加同层并发与计算重叠，并把跨NUMA或跨节点交换同局部通信解耦，减少带宽不均造成的同步等待。相对Ring-Attention，作者报告双NUMA PCIe配置前向与反向平均加速1.3倍和1.7倍，双节点NVLink配置为2.8倍和2.9倍。这类通信调度可供长历史模型训练参考，数字对应论文的Attention实现实验。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-06",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.05906v1"
+          ]
+        }
+      },
+      "added_at": "2026-11-05T23:10:10Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2611.05906"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2611.05908",
+      "title": "Optimal Re-Ranking Depth",
+      "collection": "related",
+      "category": "retrieval-reranking-scaling",
+      "affiliation": "University of Waterloo; University of Glasgow",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2611.05908"
+        }
+      ],
+      "aliases": [],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Second-stage neural rankers are commonly applied with a fixed re-ranking depth, assuming that retrieval effectiveness saturates as depth increases. Prior research has questioned the assumption that increasing the re-ranking depth yields linear performance gains, further suggesting that optimal re-ranking depth varies considerably from query to query. In the past, studying such phenomena was methodologically difficult given the scale of manual annotation required. With the advent of LLM-based relevance judgments we can now more easily undertake such studies, in this case to pinpoint the optimal re-ranking depth on a per-query basis. Using dense LLM-based relevance judgments over a typical re-ranking pipeline, we show that many queries exhibit a well-defined optimal re-ranking depth, beyond which effectiveness stagnates or degrades. We formulate re-ranking depth as a query-specific property and study whether it can be predicted a priori from first-stage retrieval characteristics. Through a large-scale analysis, we find that most standard query performance prediction (QPP) methods are ineffective for this task. In contrast, a predictor derived from LLM-assessed first-stage ranking quality, which we term IR-DCG@10, can reduce the average re-ranking depth by up to a factor of 3 while preserving overall effectiveness, depending on the specific first- and second-stage rankers used. Under oracle selection of optimal depths, we further show that retrieval effectiveness can improve by more than 7% while reducing the average re-ranking depth by a factor of 5 on the MSMARCO DEV collection. Given our promising preliminary findings, we would encourage the use of automatic judgments to facilitate research otherwise infeasible under manual annotation. Towards this point, we release relevance judgments, our codebase, and experimental artefacts to support reproducibility and further research.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2611.05908v1",
+        "retrieved_at": "2026-11-05T23:10:10Z",
+        "license": "CC0-1.0",
+        "source_title": "Optimal Re-Ranking Depth",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-11-04T04:00:27Z",
+        "updated_at": "2026-11-04T04:00:27Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2611.05908v1",
+        "verified_at": "2026-11-05T23:10:10Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "This study treats reranking depth as query-dependent rather than fixed. Dense LLM relevance judgments reveal saturation or degradation beyond each query's preferred depth, while common query-performance predictors transfer poorly. An IR-DCG@10 predictor based on LLM-assessed first-stage quality reduces mean reranking depth by up to 3x while preserving effectiveness in the evaluated pipelines. Larger oracle improvements are upper bounds, and the judgments introduce a dependency on LLM assessment quality.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-06",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.05908v1"
+          ]
+        },
+        "zh": {
+          "text": "论文把重排深度视为查询相关的决策，借助密集LLM相关性标注发现：增加候选数量可能出现收益饱和甚至效果下降，常见查询性能预测方法也难以直接预测最优深度。由首阶段排序质量构造的IR-DCG@10预测器，在所测排序组合中最多把平均重排深度降低到约三分之一并保持效果。对推荐系统的启发是按请求分配重排计算量；Oracle结果仅代表上界，标注质量依赖LLM判断。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-06",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.05908v1"
+          ]
+        }
+      },
+      "added_at": "2026-11-05T23:10:10Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2611.05908"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2611.04671",
+      "title": "LeanSparse: Memory-Efficient Serving for Native Sparse-Attention LLMs",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "University of California San Diego",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2611.04671"
+        }
+      ],
+      "aliases": [
+        "LeanSparse"
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Sparse attention limits the history read by each query, but serving long contexts still requires substantial GPU memory. Existing KV offloading systems retain the full history of indexer keys on GPU, limiting decode concurrency. Prefill's temporary memory demand can further delay admission even when enough memory remains for the same request's subsequent decode. We present LeanSparse, a serving system that reduces both decode's persistent memory use and prefill's temporary memory demand. Our design exploits two observations: prefill consumes historical data one layer at a time, and decode can identify promising candidates before comparing their original indexer scores. During prefill, LeanSparse streams layer histories through two reusable GPU buffers, overlapping next-layer loading with ongoing model computation. During decode, coarse-to-fine indexing searches compact representations and retrieves original indexer keys only for candidate refinement. Separate indexer key and KV caches reuse data across generation steps. We implement LeanSparse in SGLang and evaluate it on DeepSeek-V4-Flash. At 950K context length, LeanSparse supports 2.95$\\times$ as many concurrent requests and achieves 2.14$\\times$ decode throughput over HiSparse. On multi-turn Open-SWE traces, it reduces median time to first token from 21.6 to 0.6s and median session completion time by 17.7% relative to ECHO.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2611.04671v1",
+        "retrieved_at": "2026-11-05T23:10:10Z",
+        "license": "CC0-1.0",
+        "source_title": "LeanSparse: Memory-Efficient Serving for Native Sparse-Attention LLMs",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-11-03T10:55:47Z",
+        "updated_at": "2026-11-03T10:55:47Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2611.04671v1",
+        "verified_at": "2026-11-05T23:10:10Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "LeanSparse reduces both persistent decode memory and temporary prefill memory for native sparse-attention models. It streams prefill histories through two reusable GPU buffers and uses compact coarse-to-fine indexing to fetch original indexer keys only for candidate refinement, with separate indexer and KV caches. Implemented in SGLang on DeepSeek-V4-Flash, it reports 2.95x concurrency and 2.14x decode throughput over HiSparse at 950K context, plus lower multi-turn latency in the evaluated traces.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-06",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.04671v1"
+          ]
+        },
+        "zh": {
+          "text": "LeanSparse同时处理原生稀疏注意力的解码常驻内存与预填充临时内存：预填充按层用两个GPU缓冲区交替加载历史，解码先用紧凑表示粗筛，再仅取候选的原始索引键精排，并分别缓存索引键与KV。其SGLang实现基于DeepSeek-V4-Flash，在950K上下文下相对HiSparse支持2.95倍并发、达到2.14倍解码吞吐。分层流式加载与粗细两级检索可供超长行为历史服务设计参考。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-06",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.04671v1"
+          ]
+        }
+      },
+      "added_at": "2026-11-05T23:10:10Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2611.04671"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2611.03768",
+      "title": "Multi-layer Indexer: Overlapping Selection and Attention in DeepSeek Sparse Attention",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "Writer",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2611.03768"
+        }
+      ],
+      "aliases": [
+        "MLI",
+        "Multi-layer Indexer"
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Sparse attention cuts the cost of long-context inference by making the attention matrix sparse: each query attends only a subset of the sequence, chosen by a fixed pattern or, in recent production LLMs, learned per query. In DeepSeek Sparse Attention (DSA), the attention of DeepSeek-V3.2 and the GLM-5 family, every layer is preceded by a lightning indexer that scores the whole cache and keeps the k=2048 highest-scoring tokens for the layer to attend. At long context this indexer scan, not the sparse attention it feeds, is where the decode time goes. But adjacent layers select nearly the same tokens, so a layer can attend the selection of the previous indexer layer instead of its own. This removes the dependency: each indexer then runs concurrently with the attention of its layer. The resulting Multi-layer Indexer (MLI) needs no retraining and no new weights. Its default realization changes no kernel, running inside SGLang's production decode graph; an optional fused decode kernel accelerates it further on DeepSeek-V3.2. MLI composes with IndexCache (the cross-layer reuse GLM-5.2 ships as IndexShare): IndexCache drops the indexer from some layers, and MLI hides the scan on the rest. We serve DeepSeek-V3.2 and GLM-5 under IndexCache's protocol at retentions 1/2 to 1/32 (the fraction of layers that keep an indexer) and contexts 10K to 195K. At equal retention the composition decodes faster than IndexCache: up to 14.5% faster on DeepSeek-V3.2 and 9.8% on GLM-5 at 1/2, and 7.9% and 5.1% at 1/4, largest where IndexCache keeps the most indexers and growing with context. At retention 1/r it is faster still than IndexCache at 1/(2r) while keeping twice the fresh selections: at 128K it reaches 1.32x the unmodified model's decode throughput at 1/4, above IndexCache's 1.28x at 1/8. Its LongBench, RULER and LongBench v2 accuracy stays within a few percentage points of IndexCache's.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2611.03768v1",
+        "retrieved_at": "2026-11-05T23:10:10Z",
+        "license": "CC0-1.0",
+        "source_title": "Multi-layer Indexer: Overlapping Selection and Attention in DeepSeek Sparse Attention",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-11-02T15:46:01Z",
+        "updated_at": "2026-11-02T15:46:01Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2611.03768v1",
+        "verified_at": "2026-11-05T23:10:10Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "MLI overlaps sparse-attention selection and computation by letting a layer attend to the previous indexer layer's selected tokens while its own indexer runs. It composes with IndexCache's cross-layer reuse and needs no retraining or new weights for its default implementation. In SGLang evaluations on DeepSeek-V3.2 and GLM-5, equal-retention decode gains reach 14.5% and 9.8%, respectively; LongBench and RULER quality stays within a few percentage points of IndexCache. It trades selection freshness for overlap rather than proving exact equivalence.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-06",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.03768v1"
+          ]
+        },
+        "zh": {
+          "text": "MLI利用相邻层选择token高度相似的特点，让当前层先使用上一索引层的候选做注意力计算，同时运行当前索引器，从而打断选择与计算的串行依赖。它可与IndexCache跨层复用叠加，默认实现无需重新训练或新增权重。在DeepSeek-V3.2和GLM-5的SGLang评测中，同索引保留率下解码最多分别提速14.5%和9.8%；LongBench及RULER等质量与IndexCache相差数个百分点，收益来自候选新鲜度与并行度的取舍。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-06",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.03768v1"
+          ]
+        }
+      },
+      "added_at": "2026-11-05T23:10:10Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2611.03768"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2611.04376",
+      "title": "Aligning Training and Rollout Policies for End-to-End FP4 RL on Mixture-of-Experts LLMs",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "Huawei",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2611.04376"
+        }
+      ],
+      "aliases": [
+        "MoEResQ"
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "In this work, we study end-to-end FP4 reinforcement learning (RL) post-training for Mixture-of-Experts (MoE) large language models. Recent work on FP4 RL has introduced effective recovery recipes that restore accuracy under aggressive low-precision quantization for dense models, but we find that the same approach yields no improvement over the naive FP4 baseline in the MoE setting. We conduct an in-depth study to understand why. Our analysis identifies the root cause in the routing mechanism unique to MoE: because the router makes discrete expert-selection decisions, training-inference policy alignment becomes acutely sensitive to whether the same recovery technique is applied symmetrically on the training and inference sides. When an asymmetric recipe is used-including the dense-model approach, which corrects only the rollout-training-inference alignment deteriorates sharply, as measured by the Pearson correlation coefficient between training and inference probabilities, and router selection matching rates. Building on this finding, we propose MoEResQ, a quantization-recovery recipe for MoE RL post-training that enforces symmetry between the training- and inference-side corrections. MoEResQ restores training-inference alignment and substantially closes the accuracy gap to full precision, establishing symmetric recovery as the key principle in FP4 RL for MoE models.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2611.04376v2",
+        "retrieved_at": "2026-11-05T23:10:10Z",
+        "license": "CC0-1.0",
+        "source_title": "Aligning Training and Rollout Policies for End-to-End FP4 RL on Mixture-of-Experts LLMs",
+        "source_version": "v2"
+      },
+      "source_dates": {
+        "published_at": "2026-11-03T06:03:38Z",
+        "updated_at": "2026-11-04T03:54:17Z",
+        "source_version": "v2",
+        "source_url": "https://arxiv.org/abs/2611.04376v2",
+        "verified_at": "2026-11-05T23:10:10Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "MoEResQ studies quantization recovery for end-to-end FP4 reinforcement-learning post-training of MoE models. Discrete expert routing makes train–rollout alignment sensitive to applying recovery corrections on only one side; the proposed recipe applies them symmetrically. The paper reports restored probability and routing alignment and a smaller accuracy gap to full precision. This is a transferable warning for low-precision sparse routing, not a recommendation-system benchmark.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-06",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.04376v2"
+          ]
+        },
+        "zh": {
+          "text": "MoEResQ研究MoE模型端到端FP4强化学习后训练中的量化恢复。离散专家选择使训练与采样两侧对校正不对称格外敏感，沿用只校正采样侧的稠密模型配方可能破坏概率与路由一致性；作者改为两侧对称校正，恢复一致性并缩小与全精度的精度差距。对低精度稀疏推荐模型的参考点是同时检查训练、推理与专家选择的一致性，论文自身评测对象是语言模型。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-06",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.04376v2"
+          ]
+        }
+      },
+      "added_at": "2026-11-05T23:10:10Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2611.04376"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2611.05799",
+      "title": "Item Representations Matter: Bridging Hard Semantic IDs and Soft Prototype Mixtures for Generative Retrieval",
+      "collection": "related",
+      "category": "generative-recommendation",
+      "affiliation": "Meta; Texas A&M University",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2611.05799"
+        }
+      ],
+      "aliases": [
+        "CAP-Mix"
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Modern recommender systems rely on generative retrieval techniques to predict the next item either as discrete codes or as a continuous vector. On the one hand, Semantic IDs (SIDs) give discrete models shared parameters and pretrained semantic structure, but discretizing items into hard codes discards some information from the original content embeddings. On the other hand, continuous models avoid quantization, yet typically use flat item lookup tables with no explicit parameter tying across items. We ask whether a continuous recommender can introduce shared structure without making it a discrete bottleneck. We propose CAP-Mix, a flow recommender that represents each item as a soft mixture of shared prototypes plus an item-specific vector. The assignments, prototypes, and item vectors are trained jointly, and the soft representation is retained at inference. Pretrained information is optional: SID responsibilities can serve as a prior over assignments, while a full content embedding can initialize the item-specific vector without changing the initial flat table. In matched comparisons on three datasets, CAP-Mix improves over a flat table on the two sparse Amazon datasets and yields a small gain on Steam when trained without pretrained information. Given only an offline SID, it outperforms a hard table built from the same tokenizer by 4.45-14.90% in HR@5. Given the full content embedding, it matches or improves a strong flat table while hard assignments regress on the sparse Amazon datasets. Overall, averaged across six benchmarks, CAP-Mix improves HR@5 and NDCG@5 by 6.9% and 13.6% relative to the best evaluated baseline for each dataset and metric, while delivering 1.4-161x the inference throughput of the discrete baselines in our experiments.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2611.05799v1",
+        "retrieved_at": "2026-11-05T23:10:10Z",
+        "license": "CC0-1.0",
+        "source_title": "Item Representations Matter: Bridging Hard Semantic IDs and Soft Prototype Mixtures for Generative Retrieval",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-11-04T01:14:01Z",
+        "updated_at": "2026-11-04T01:14:01Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2611.05799v1",
+        "verified_at": "2026-11-05T23:10:10Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "CAP-Mix gives continuous generative retrieval shared item structure without a hard discrete bottleneck. Each item combines a soft mixture of shared prototypes with an item-specific vector; assignments, prototypes and vectors train jointly and remain soft at inference, with optional semantic-ID priors or content initialization. Matched comparisons examine sparse Amazon and Steam settings. Across six benchmarks the authors report average HR@5 and NDCG@5 gains of 6.9% and 13.6% over each metric's best evaluated baseline, with throughput depending on the discrete baseline.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-06",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.05799v1"
+          ]
+        },
+        "zh": {
+          "text": "CAP-Mix用共享原型的软混合加物品专属向量来表示物品，让连续生成召回获得跨物品参数共享，同时保留推理时的软表示。分配权重、原型和物品向量联合训练，也可用语义ID先验或内容向量初始化。论文通过稀疏Amazon与Steam上的对齐实验分析软结构的收益，并在六个基准上报告相对各数据集最佳所测基线的平均HR@5和NDCG@5提升为6.9%与13.6%；吞吐优势依比较的离散基线而变。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-06",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.05799v1"
+          ]
+        }
+      },
+      "added_at": "2026-11-05T23:10:10Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2611.05799"
       },
       "change_history": [],
       "reading_tier": null
