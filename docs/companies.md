@@ -7,14 +7,14 @@
 Company membership follows recorded affiliation aliases and preserved company-overview mentions. A paper may appear under multiple companies. This structural migration does not independently reverify affiliations or publication claims.
 
 - [Meta](#company-meta) (57)
-- [ByteDance / TikTok](#company-bytedance-tiktok) (26)
-- [Alibaba](#company-alibaba) (54)
+- [ByteDance / TikTok](#company-bytedance-tiktok) (28)
+- [Alibaba](#company-alibaba) (55)
 - [Meituan](#company-meituan) (11)
 - [Tencent](#company-tencent) (28)
 - [Google](#company-google) (23)
 - [LinkedIn](#company-linkedin) (7)
 - [NetEase](#company-netease) (2)
-- [Kuaishou](#company-kuaishou) (35)
+- [Kuaishou](#company-kuaishou) (37)
 - [Huawei](#company-huawei) (10)
 - [Baidu](#company-baidu) (10)
 - [Shopee](#company-shopee) (4)
@@ -85,6 +85,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [DoorDash](#company-doordash) (1)
 - [DualverseAI](#company-dualverseai) (1)
 - [InfRec](#company-infrec) (1)
+- [Preferred Networks](#company-preferred-networks) (1)
 
 <a id="company-meta"></a>
 
@@ -178,6 +179,8 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [Does LLM Pre-Training Typically Occur at the Edge of Stability?](related/architecture-innovations-beyond-recommendation.md#paper-2610-36778) · 2026 · Related
 - [SparseGDN: Chunk Sparse in Linear Attention](related/architecture-innovations-beyond-recommendation.md#paper-2610-41420) · 2026 · Related
 - [USDB: Scaling Storage for Next-Generation Recommender Systems at ByteDance](related/engineering-serving.md#paper-2611-02618) · 2026 · Related
+- [OneTrans-GSR: A Generative Slate Ranking Paradigm Unifying Reranking and Mix-Ranking with One Autoregressive Transformer](topics/scalable-architecture.md#paper-2611-04720) · 2026 · Core
+- [Hierarchical Residuals: A Minimalist Decoupling of Residual Width from Compute Width](related/architecture-innovations-beyond-recommendation.md#paper-2610-41711) · 2026 · Related
 
 <a id="company-alibaba"></a>
 
@@ -237,6 +240,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [RecIS: Unifying Sparse and Dense Computation for Efficient Recommendation Training](topics/efficiency-deployment.md#paper-2610-41457) · 2026 · Core
 - [Diverse-Teacher On-Policy Distillation for Generative Recommendation](related/knowledge-distillation-compression.md#paper-2611-03272) · 2026 · Related
 - [Numerical Embeddings for CTR Prediction: A Taxonomy, Unified Benchmark, and Open-Source FuxiCTR Extension](related/other.md#paper-2611-01090) · 2026 · Related
+- [ReuseGR: Offline--Online Decoupled Generative Retrieval via Adaptive Prefix Reuse](topics/efficiency-deployment.md#paper-2611-04259) · 2026 · Core
 
 <a id="company-meituan"></a>
 
@@ -373,6 +377,8 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [Utility-Aware Generative Recommendation: Utility-Enriched Semantic Codes and Utility-Guided Decoding](related/generative-recommendation.md#paper-2611-02981) · 2026 · Related
 - [Search-Aware On-Policy Self-Distillation with Sibling Alignment for Generative Recommendation](related/knowledge-distillation-compression.md#paper-2611-01568) · 2026 · Related
 - [HiGenTrans: Hierarchical LLM Knowledge Transfer for Generative Recommendation](related/knowledge-distillation-compression.md#paper-2611-01129) · 2026 · Related
+- [ZeroGR: Filtering-First Constrained Decoding for Generative Recommendation](topics/efficiency-deployment.md#paper-2611-04715) · 2026 · Core
+- [OneLatent: Latent Reasoning for Efficient Foundation Recommendation Models](topics/efficiency-deployment.md#paper-2610-30675) · 2026 · Core
 
 <a id="company-huawei"></a>
 
@@ -402,7 +408,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [RoLaQ: Joint Rotation and Range Calibration for 2-Bit KV Caches in Multi-Head Latent Attention](related/architecture-innovations-beyond-recommendation.md#paper-2610-20686) · 2026 · Related
 - [Prism Attention: Proposal-Refined Index Sharing Mechanism for Efficient LLMs Inference](related/architecture-innovations-beyond-recommendation.md#paper-2610-22985) · 2026 · Related
 - [PRIME: Frequency-Aware Unified Pruning and Merging for MoE Compression](related/architecture-innovations-beyond-recommendation.md#paper-2610-13982) · 2026 · Related
-- [Multi-View MoE: Letting Every Router Shape Expert Computation](related/architecture-innovations-beyond-recommendation.md#paper-2610-40577) · 2026 · Related
+- [Multi-View Latent MoE: Letting Every Router Shape Expert Computation](related/architecture-innovations-beyond-recommendation.md#paper-2610-40577) · 2026 · Related
 
 <a id="company-shopee"></a>
 
@@ -889,3 +895,9 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 ## InfRec
 
 - [AB-Attention: Accurate Block Attention for Accelerating Video Diffusion Transformers](related/architecture-innovations-beyond-recommendation.md#paper-2610-39663) · 2026 · Related
+
+<a id="company-preferred-networks"></a>
+
+## Preferred Networks
+
+- [Coarse Semantic Blocks for Efficient Training-Free Sparse Attention](related/architecture-innovations-beyond-recommendation.md#paper-2611-04313) · 2026 · Related

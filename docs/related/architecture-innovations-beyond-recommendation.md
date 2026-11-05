@@ -6,7 +6,7 @@
 
 Transferable ideas from general-purpose model architecture research.
 
-242 papers · Updated 2026-11-04
+247 papers · Updated 2026-11-05
 
 <a id="paper-2606-16825"></a>
 
@@ -782,7 +782,7 @@ Transferable ideas from general-purpose model architecture research.
 
 <a id="paper-2610-40577"></a>
 
-- **Multi-View MoE: Letting Every Router Shape Expert Computation**: Multi-View MoE combines several routers to select experts and uses their relative preferences to mix latent views into each selected expert's input. Each selected expert runs once, preserving the active-expert count, expert FLOPs and all-to-all communication volume. On a 24-layer model with 10B total and 1B active parameters trained on 708B tokens, it improves the mean across nine downstream tasks by 1.18 percentage points. The design is relevant to sparse ranking architectures that seek more expressive routing under a fixed expert-computation budget; it does not establish CTR gains. — [Paper](https://arxiv.org/abs/2610.40577) (Baidu · arXiv 2026). Reading priority: Unrated.
+- **Multi-View Latent MoE: Letting Every Router Shape Expert Computation**: Multi-View MoE combines several routers to select experts and uses their relative preferences to mix latent views into each selected expert's input. Each selected expert runs once, preserving the active-expert count, expert FLOPs and all-to-all communication volume. On a 24-layer model with 10B total and 1B active parameters trained on 708B tokens, it improves the mean across nine downstream tasks by 1.18 percentage points. The design is relevant to sparse ranking architectures that seek more expressive routing under a fixed expert-computation budget; it does not establish CTR gains. — [Paper](https://arxiv.org/abs/2610.40577) (Baidu · arXiv 2026). Reading priority: Unrated.
 
 <a id="paper-2610-37914"></a>
 
@@ -975,3 +975,23 @@ Transferable ideas from general-purpose model architecture research.
 <a id="paper-2611-02270"></a>
 
 - **Hinted Scaling Laws**: Hinted Scaling Laws uses privileged hints to make difficult evaluations informative for small models, then extrapolates performance across hint levels and compute scales. On pretraining and post-training model families, the reported median forecast error on GSM8K, AIME and HLE falls from 21 to 4.3 percentage points, offering a model-development tool rather than a validated recommendation scaling law. — [Paper](https://arxiv.org/abs/2611.02270) (Stanford University · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2610-41711"></a>
+
+- **Hierarchical Residuals: A Minimalist Decoupling of Residual Width from Compute Width**: HiRes separates residual-state width from per-layer compute width: narrow Transformer layers operate inside blocks, while learned read/write projections connect a wider outer residual stream. Experiments report 1.30× FLOPs efficiency from fitted scaling laws and a 1.14-point downstream gain for OLMoE-1B-7B after 500B training tokens. This provides a practical capacity-scaling direction for Transformer rankers without widening every layer; CTR gains remain untested. — [Paper](https://arxiv.org/abs/2610.41711) (Tsinghua University; ByteDance Seed · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-05234"></a>
+
+- **ARLoop: Fully-Open Pre-trained Looped Transformers with Attention Residuals**: ARLoop combines shared-layer recurrence with attention residuals that selectively reuse representations across depth. Sliding-window depth attention matches or exceeds full-history attention at larger recurrent depths, with gains observed in controlled 140M/370M experiments and 0.6B/1.2B pretraining. The design suggests a parameter-efficient way to scale ranking-model depth while limiting residual-history access; the reported evaluations are language-model tasks, not CTR. — [Paper](https://arxiv.org/abs/2611.05234) (The Ohio State University; Saarland University · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-04327"></a>
+
+- **Anchor: Augmented Cross-Layer Recurrent State for Long-Context Retrieval in Test-Time Training**: Anchor finds that long-context retrieval in sliding-window-attention/TTT hybrids concentrates in a few layers. It places recurrent memory at these anchor layers and shares a state that is written once and read through layer-specific maps. On Llama-3.1-8B and Mistral-7B, it reports 2.3–3.1× higher recall than LoLCATs with a 10× smaller recurrent state and up to 4.3× lower latency than softmax attention. Shared memory is a promising direction for long user-history rankers, although recommendation transfer is not evaluated. — [Paper](https://arxiv.org/abs/2611.04327) (University of Arizona · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-04313"></a>
+
+- **Coarse Semantic Blocks for Efficient Training-Free Sparse Attention**: This training-free sparse-attention method clusters noncontiguous keys into large semantic blocks, selects blocks using centroid scores, and groups queries that access the same block. Including indexing overhead, Qwen3.5 models achieve 2.3–2.4× whole-model prefill speedups at 512K tokens on one H200; the 35B-A3B model remains close to dense attention on several long-context benchmarks. Semantic block selection and grouped execution could reduce long behavior-history attention cost, but CTR accuracy and production ranking latency are untested. — [Paper](https://arxiv.org/abs/2611.04313) (Preferred Networks · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-04401"></a>
+
+- **LiquidCP: Decoupling Attention Tasks from Communication and Kernel Boundaries in Context Parallelism**: LiquidCP schedules context-parallel attention as tile-dependent transfer, compute, and reduction tasks rather than tying execution to communication and kernel boundaries. MegaRing balances token and attention loads for training/prefill, while MegaDCP schedules history-KV splits for decoding. On eight H100s, MegaRing improves core-attention forward/backward speed by 1.23×/1.18× and Transformer-layer speed by 1.08–1.16×. Its load balancing and overlap mechanisms are relevant to distributed long-history rankers, with recommendation-specific benefits still unverified. — [Paper](https://arxiv.org/abs/2611.04401) (Shanghai Jiao Tong University; Sun Yat-sen University; National University of Singapore; Guizhou University · arXiv 2026). Reading priority: Unrated.

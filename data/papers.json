@@ -5,7 +5,7 @@
     "description": "Scaling laws and scalable ranking models for industrial recommendation.",
     "repository_url": "https://github.com/byby221b/Awesome-CTR-Scaling",
     "site_url": "https://byby221b.github.io/Awesome-CTR-Scaling/",
-    "updated": "2026-11-04",
+    "updated": "2026-11-05",
     "source_commit": "31ad30becff83ca14a01f37fc99d52ba79f85565",
     "scope": "We cover papers that (1) study scaling laws for recommendation models, (2) propose scalable Transformer-based architectures for CTR/ranking, (3) address efficiency challenges in scaling up industrial ranking systems, or (4) explore novel paradigms (e.g., sparse scaling, generative pre-training, foundation models) for scalable recommendation.",
     "history": {
@@ -1485,6 +1485,14 @@
       "name": "InfRec",
       "affiliation_aliases": [
         "InfRec"
+      ],
+      "legacy_entries": []
+    },
+    {
+      "id": "preferred-networks",
+      "name": "Preferred Networks",
+      "affiliation_aliases": [
+        "Preferred Networks"
       ],
       "legacy_entries": []
     }
@@ -25557,7 +25565,7 @@
       "collection": "core",
       "category": "efficiency-deployment",
       "affiliation": "Kuaishou Technology; The University of Hong Kong; Peking University",
-      "venue": "arXiv",
+      "venue": "FRecSys @ ATC (Workshop)",
       "year": 2026,
       "tags": [
         "Attention",
@@ -25612,7 +25620,16 @@
         "kind": "catalog_entry",
         "source_url": "https://arxiv.org/abs/2609.12399"
       },
-      "change_history": [],
+      "change_history": [
+        {
+          "at": "2026-11-04T23:04:01Z",
+          "kind": "venue_update",
+          "fields": [
+            "venue"
+          ],
+          "source_url": "https://atcworkshop-rec.github.io/#program"
+        }
+      ],
       "reading_tier": "prioritize"
     },
     {
@@ -42408,7 +42425,7 @@
     },
     {
       "id": "2610.40577",
-      "title": "Multi-View MoE: Letting Every Router Shape Expert Computation",
+      "title": "Multi-View Latent MoE: Letting Every Router Shape Expert Computation",
       "collection": "related",
       "category": "architecture-innovations-beyond-recommendation",
       "affiliation": "Baidu",
@@ -42463,7 +42480,16 @@
         "kind": "catalog_entry",
         "source_url": "https://arxiv.org/abs/2610.40577"
       },
-      "change_history": [],
+      "change_history": [
+        {
+          "at": "2026-11-04T23:02:48Z",
+          "kind": "metadata_enrichment",
+          "fields": [
+            "title"
+          ],
+          "source_url": "https://arxiv.org/abs/2610.40577v2"
+        }
+      ],
       "reading_tier": null
     },
     {
@@ -44430,7 +44456,7 @@
       "collection": "core",
       "category": "efficiency-deployment",
       "affiliation": "Alibaba; University of Chinese Academy of Sciences",
-      "venue": "arXiv",
+      "venue": "FRecSys @ ATC (Workshop)",
       "year": 2026,
       "tags": [
         "Architecture",
@@ -44489,7 +44515,16 @@
         "kind": "catalog_entry",
         "source_url": "https://arxiv.org/abs/2610.41457"
       },
-      "change_history": [],
+      "change_history": [
+        {
+          "at": "2026-11-04T23:04:01Z",
+          "kind": "venue_update",
+          "fields": [
+            "venue"
+          ],
+          "source_url": "https://atcworkshop-rec.github.io/#program"
+        }
+      ],
       "reading_tier": null
     },
     {
@@ -46885,6 +46920,625 @@
       "added_provenance": {
         "kind": "catalog_entry",
         "source_url": "https://arxiv.org/abs/2611.02270v1"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2611.04979",
+      "title": "Scaling Laws For Data-Constrained Dense Retrieval",
+      "collection": "related",
+      "category": "retrieval-reranking-scaling",
+      "affiliation": "Tsinghua University; Xi’an Jiaotong University",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2611.04979"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Dense retrieval models are typically obtained by fine-tuning pretrained language models on supervised retrieval data, where high-quality annotations or interaction logs are often limited and reused across many epochs. This data-constrained regime differs from the abundant-data setting assumed by standard scaling laws, making it unclear how the best attainable retrieval performance changes with model size and unique fine-tuning data. We study this question through the minimum achievable evaluation loss (MAEL), defined as the lowest evaluation loss reached during training under fixed model-size and data-budget constraints. We first show that learning-rate choices strongly affect optimization trajectories but have little effect on the final attainable MAEL: after rescaling the optimization-step axis, learning curves collapse across learning rates, and CKA analysis shows that checkpoints reaching MAEL learn highly similar representations. We then fine-tune 35 BERT-family dense retrievers on MS MARCO subsets and find that MAEL is accurately described by a simple multiplicative power law over non-embedding parameters and unique samples, outperforming commonly used additive scaling formulations. We further derive a scaling law for the training step at which MAEL is reached and show that optimal weight decay follows an approximately invariant EMA timescale, yielding lower MAEL and stronger retrieval performance on both in-domain and out-of-domain benchmarks. Finally, combining loss and step scaling suggests that, in our observed regime, increasing pretrained model size is approximately 1.46 times as fine-tuning-compute-efficient as increasing unique in-domain data for reducing MAEL.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2611.04979v1",
+        "retrieved_at": "2026-11-04T23:02:48Z",
+        "license": "CC0-1.0",
+        "source_title": "Scaling Laws For Data-Constrained Dense Retrieval",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-11-03T14:33:11Z",
+        "updated_at": "2026-11-03T14:33:11Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2611.04979v1",
+        "verified_at": "2026-11-04T23:02:48Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "Studies scaling when supervised retrieval data are limited and reused across epochs. Across 35 BERT-family retrievers fine-tuned on MS MARCO subsets, minimum achievable evaluation loss (MAEL) follows a multiplicative power law in non-embedding parameters and unique samples more closely than additive alternatives. The paper also models steps to MAEL and relates optimal weight decay to an approximately invariant EMA timescale. In the observed regime, increasing pretrained model size is approximately 1.46 times as fine-tuning-compute-efficient as increasing unique in-domain data for reducing MAEL. CTR scaling takeaway: test joint model/data/optimization scaling under repeated-data training; the reported law and efficiency ratio are retrieval-specific findings, not established CTR results.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-05",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.04979v1"
+          ]
+        },
+        "zh": {
+          "text": "研究监督检索数据有限、需要跨多个 epoch 重复使用时的扩展规律。在 MS MARCO 子集上微调的 35 个 BERT 系列检索模型中，以非嵌入参数量和独立样本数构建的乘法幂律，比加法形式更好地拟合最低可达评估损失（MAEL）。论文还建模达到 MAEL 所需的训练步数，并将最优权重衰减与近似不变的 EMA 时间尺度联系起来。在其观测范围内，为降低 MAEL，扩大预训练模型的微调算力效率约为增加独立域内数据的 1.46 倍。对 CTR scaling 的启发：在数据重复训练条件下联合考察模型、数据与优化配置；该规律与效率比例尚不能直接视为 CTR 结论。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-05",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.04979v1"
+          ]
+        }
+      },
+      "added_at": "2026-11-04T23:02:48Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2611.04979"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2611.04720",
+      "title": "OneTrans-GSR: A Generative Slate Ranking Paradigm Unifying Reranking and Mix-Ranking with One Autoregressive Transformer",
+      "collection": "core",
+      "category": "scalable-architecture",
+      "affiliation": "ByteDance",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [
+        "Architecture",
+        "Generative Rec",
+        "Test-time Compute",
+        "E-commerce"
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2611.04720"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Industrial recommender systems allocate substantial computation to pointwise candidate scoring, yet separate reranking and mix-ranking stages still assemble the final exposure slate using hand-crafted rules and specialized low-capacity models. Mix-ranking combines product cards, short videos, livestreams, and advertising cards supplied by distinct upstream business channels. Although these rules and models encode valuable domain knowledge, they are inherently limited in leveraging additional data and computation. They constrain the combinatorial space of candidate slates and determine objective trade-offs through manual tuning. To enable scalable and effective slate generation, we reformulate reranking and mix-ranking as a unified learning problem whose performance can improve with computation. Specifically, we instantiate this formulation across the reranking and mix-ranking stages and propose OneTrans-GSR, a single decoder-only policy that extends our deployed OneTrans backbone to generate the exposure slate end-to-end. During training, a reward model evaluates complete slates and guides reinforcement learning toward slate-level and long-term objectives. During decoding, business constraints are explicitly enforced. Offline evaluation shows that slate quality consistently improves as reward-model and policy compute increase. Deployed in a large-scale industrial recommendation system, OneTrans-GSR mixes heterogeneous content types within a unified slate. In online A/B tests, it improves GMV/u by 2.63%, advertiser value by 2.06%, and repurchase rate by 2.03%, while reducing end-to-end latency across the reranking and mix-ranking stages by 13%. These results mark a paradigm shift in slate generation: moving beyond human-engineered heuristics toward a general learned policy creates a scalable path for further algorithmic optimization and compute-driven improvement.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2611.04720v1",
+        "retrieved_at": "2026-11-04T23:02:48Z",
+        "license": "CC0-1.0",
+        "source_title": "OneTrans-GSR: A Generative Slate Ranking Paradigm Unifying Reranking and Mix-Ranking with One Autoregressive Transformer",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-11-03T11:42:02Z",
+        "updated_at": "2026-11-03T11:42:02Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2611.04720v1",
+        "verified_at": "2026-11-04T23:02:48Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "Replaces separately engineered reranking and heterogeneous-content mix-ranking with one decoder-only slate-generation policy. A complete-slate reward model guides reinforcement learning toward slate-level and long-term objectives, while decoding explicitly enforces business constraints. Offline slate quality improves with reward-model and policy compute. Industrial online A/B tests report gains of 2.63% in GMV/u, 2.06% in advertiser value and 2.03% in repurchase rate, with 13% lower end-to-end latency across reranking and mix-ranking. CTR scaling takeaway: move beyond pointwise scoring toward compute-scalable slate optimization, while measuring business outcomes and constraints; the abstract reports no CTR gain or fitted scaling law.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-05",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.04720v1"
+          ]
+        },
+        "zh": {
+          "text": "将分别设计的重排和异构内容混排统一为单个 decoder-only 列表生成策略。完整列表奖励模型通过强化学习引导列表级和长期目标，解码时显式执行业务约束。离线结果显示，奖励模型和策略计算量增加时，列表质量持续改善。工业在线 A/B 测试报告 GMV/u 提升 2.63%、广告主价值提升 2.06%、复购率提升 2.03%，重排与混排阶段的端到端延迟下降 13%。对 CTR scaling 的启发：从逐候选打分拓展到可随算力增长的列表优化，同时评估业务指标与约束；摘要未报告 CTR 增益或拟合的 scaling law。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-05",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.04720v1"
+          ]
+        }
+      },
+      "added_at": "2026-11-04T23:02:48Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2611.04720"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2611.04715",
+      "title": "ZeroGR: Filtering-First Constrained Decoding for Generative Recommendation",
+      "collection": "core",
+      "category": "efficiency-deployment",
+      "affiliation": "The University of Hong Kong; Peking University; Kuaishou Technology; Huazhong University of Science and Technology",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [
+        "Architecture",
+        "Generative Rec",
+        "Serving"
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2611.04715"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Generative recommendation is gaining traction in production, retrieving items by generating their identifiers one token at a time. The generated sequences must identify relevant catalog items, so constrained decoding couples relevance scoring with validity filtering. Because most possible sequences are invalid, scoring before filtering wastes computation on candidates that will be discarded. Our evaluation shows that filtering first can avoid this work with negligible impact on recommendation quality. We present ZeroGR, a filtering-first constrained decoding system for generative recommendation. ZeroGR uses a step-sliced filtering index to reduce GPU memory use by tailoring data representations to each decoding step. Its execution engine adopts shared-slot execution to accelerate data exchange across stages and hybrid projection to adapt computation to workload patterns, thereby reducing execution overhead. During index refreshes, ZeroGR applies layout-guided streaming construction to speed up updates and limit serving interference. Extensive evaluation shows that ZeroGR accelerates the filtering and scoring pipeline by up to $9.9\\times$ over representative baselines while reducing GPU index memory use and accelerating index reconstruction.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2611.04715v1",
+        "retrieved_at": "2026-11-04T23:02:48Z",
+        "license": "CC0-1.0",
+        "source_title": "ZeroGR: Filtering-First Constrained Decoding for Generative Recommendation",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-11-03T11:36:55Z",
+        "updated_at": "2026-11-03T11:36:55Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2611.04715v1",
+        "verified_at": "2026-11-04T23:02:48Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "Targets wasted computation in generative recommendation when invalid identifier sequences are scored before being filtered. ZeroGR filters first, uses a step-sliced index to reduce GPU memory, and combines shared-slot execution, workload-adaptive hybrid projection and layout-guided streaming index construction. Evaluations report up to 9.9× acceleration of the filtering-and-scoring pipeline over representative baselines, with negligible recommendation-quality impact, lower GPU index memory and faster reconstruction. CTR scaling takeaway: validity-aware execution can free serving budget for larger generative retrieval models; the maximum speedup applies to this pipeline, not demonstrated end-to-end CTR serving or CTR quality gains.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-05",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.04715v1"
+          ]
+        },
+        "zh": {
+          "text": "针对生成式推荐中先评分、再过滤无效标识符序列造成的计算浪费，ZeroGR 将过滤前置，并采用按解码步切分的索引降低 GPU 内存占用，结合共享槽位执行、适配负载的混合投影和布局引导的流式索引构建。评估中，过滤与评分流水线相对代表性基线最高加速 9.9 倍，推荐质量影响很小，同时降低 GPU 索引内存并加快索引重建。对 CTR scaling 的启发：面向有效候选的执行方式可能为更大的生成式召回模型释放服务预算；最高加速比仅对应这段流水线，并非已验证的端到端 CTR 服务加速或 CTR 指标提升。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-05",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.04715v1"
+          ]
+        }
+      },
+      "added_at": "2026-11-04T23:02:48Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2611.04715"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2611.04259",
+      "title": "ReuseGR: Offline--Online Decoupled Generative Retrieval via Adaptive Prefix Reuse",
+      "collection": "core",
+      "category": "efficiency-deployment",
+      "affiliation": "Alibaba International Digital Commerce Group; Xidian University",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [
+        "Knowledge Distillation",
+        "Generative Rec",
+        "Serving",
+        "Ads"
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2611.04259"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Larger generative retrieval models can improve retrieval quality, but their decoding cost makes low-latency serving difficult. When different users submit the same query, generating complete Semantic IDs (SIDs) for every request repeats computation, while their interaction histories call for different results. The challenge is to reuse large-model computation across requests while keeping retrieval personalized.\n  We propose \\textbf{ReuseGR}, which separates query-level candidate planning from request-level personalized completion. A 7B offline planner generates SID prefix sets shared across requests with the same query. A 0.5B online model uses each request's history to select prefixes and generate the remaining tokens. ReuseCut chooses a cache depth for each query based on historical coverage, balancing computation reuse and candidate coverage. To strengthen online completion, we transfer 7B suffix-scoring knowledge to 0.5B through path-level knowledge distillation (Path KD). BudgetCut then selects scored branches to improve final top-100 recall under a fixed branch budget. Its selection policy is initialized by on-policy distillation (OPD) and refined through group-relative policy optimization (GRPO).\n  On an industrial search-advertising dataset with approximately 2M query--item records and 3.38M catalog items, ReuseGR improves query-level HR@100 by 3.83 percentage points and reduces mean online latency by 38.9\\% relative to an all-online 0.5B baseline when prefixes are prepared. It achieves HR@100 comparable to an all-online 7B baseline with 57.7\\% lower online latency. A 14-day user-level online A/B test against the 0.5B baseline shows relative gains of 0.93\\% in click-through rate and 1.05\\% in revenue per thousand requests.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2611.04259v1",
+        "retrieved_at": "2026-11-04T23:02:48Z",
+        "license": "CC0-1.0",
+        "source_title": "ReuseGR: Offline--Online Decoupled Generative Retrieval via Adaptive Prefix Reuse",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-11-03T03:51:38Z",
+        "updated_at": "2026-11-03T03:51:38Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2611.04259v1",
+        "verified_at": "2026-11-04T23:02:48Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "Separates reusable query-level planning from personalized online completion: a 7B offline model generates Semantic-ID prefixes, and a 0.5B online model selects and completes them using user history. Adaptive cache depth, path-level distillation and branch-budget selection balance reuse, coverage and cost. On an industrial search-ad dataset, with prefixes prepared, query-level HR@100 rises by 3.83 percentage points and mean online latency falls 38.9% versus all-online 0.5B; HR@100 is comparable to all-online 7B at 57.7% lower online latency. A 14-day user-level A/B test versus 0.5B reports relative CTR and revenue-per-thousand-request gains of 0.93% and 1.05%. CTR scaling takeaway: amortize large-model compute across repeated queries while retaining request-level personalization; online-latency gains do not include the full offline planning cost.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-05",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.04259v1"
+          ]
+        },
+        "zh": {
+          "text": "将可复用的查询级规划与个性化在线补全解耦：7B 离线模型生成 Semantic ID 前缀，0.5B 在线模型根据用户历史选择前缀并补全。自适应缓存深度、路径级知识蒸馏与分支预算选择共同平衡复用、覆盖和计算成本。在工业搜索广告数据上，前缀已准备好的条件下，相比全在线 0.5B，查询级 HR@100 提升 3.83 个百分点、平均在线延迟下降 38.9%；相较全在线 7B，HR@100 相当、在线延迟下降 57.7%。为期 14 天的用户级 A/B 测试中，相比 0.5B 基线，CTR 和每千次请求收入分别相对提升 0.93% 和 1.05%。对 CTR scaling 的启发：跨重复查询摊销大模型计算，同时保留请求级个性化；在线延迟收益不包含完整离线规划成本。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-05",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.04259v1"
+          ]
+        }
+      },
+      "added_at": "2026-11-04T23:02:48Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2611.04259"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2610.30675",
+      "title": "OneLatent: Latent Reasoning for Efficient Foundation Recommendation Models",
+      "collection": "core",
+      "category": "efficiency-deployment",
+      "affiliation": "Kuaishou Technology",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [
+        "Tokenization",
+        "Foundation Model",
+        "Serving",
+        "Ads"
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.30675"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Large language models (LLMs) have demonstrated strong reasoning capabilities, motivating their use as the backbone of foundation recommendation models (FRMs). Existing methods enhance recommendations through explicit Chain-of-Thought (CoT) reasoning under a Think-then-Answer paradigm. However, explicit CoT incurs substantial inference overhead by generating lengthy reasoning traces and relies on manually designed templates that struggle to capture diverse, dynamic user interests. We propose OneLatent, an efficient latent reasoning framework that compresses explicit reasoning traces into several learnable latent tokens, enabling Latent-Reason-then-Answer inference without generating verbose traces. OneLatent first introduces Multi-View Adaptive CoT (MV-ACoT), which creates diverse, high-quality teacher-generated supervision by exploring user interests from multiple perspectives and automatically adapting reasoning complexity to each instance. Building on pretrained FRMs, it then uses a three-stage latent-token alignment paradigm to progressively internalize CoT traces into learnable latent tokens. Finally, a multistage curriculum-based post-training strategy activates latent-token reasoning for downstream recommendation tasks. Experiments on an industrial-scale Kuaishou dataset and the public Kuaishou LLM-Rec benchmark show that OneLatent consistently outperforms explicit CoT-based methods and traditional baselines. Compared with the Think and No-Think variants of FRMs, OneLatent improves SID@64 by 17.44% and 9.33%, respectively, while achieving over 17x higher online inference throughput. We further develop a production serving system for scalable, real-time FRM inference. An online A/B test in Kuaishou's local-services advertising scenario shows that deploying OneLatent with this system yields an estimated 9.6% revenue lift over strong online baselines, including OneRec and OneReason.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.30675v2",
+        "retrieved_at": "2026-11-04T23:02:48Z",
+        "license": "CC0-1.0",
+        "source_title": "OneLatent: Latent Reasoning for Efficient Foundation Recommendation Models",
+        "source_version": "v2"
+      },
+      "source_dates": {
+        "published_at": "2026-10-22T03:39:38Z",
+        "updated_at": "2026-11-02T12:40:33Z",
+        "source_version": "v2",
+        "source_url": "https://arxiv.org/abs/2610.30675v2",
+        "verified_at": "2026-11-04T23:02:48Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "Compresses explicit recommendation Chain-of-Thought into a few learnable latent tokens to reduce reasoning-generation overhead. Multi-view adaptive teacher reasoning supplies supervision; three-stage latent-token alignment and curriculum-based post-training internalize and activate that reasoning. On industrial Kuaishou data and Kuaishou LLM-Rec, OneLatent reports SID@64 improvements of 17.44% and 9.33% over Think and No-Think FRM variants, respectively, alongside over 17× higher online inference throughput. An online local-services advertising test of OneLatent plus its production serving system estimates a 9.6% revenue lift over strong baselines including OneRec and OneReason. CTR scaling takeaway: latent reasoning offers a route to spend model capacity without long generated traces; SID and combined-system revenue results do not establish a CTR gain or isolate model-only online impact.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-05",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.30675v2"
+          ]
+        },
+        "zh": {
+          "text": "将推荐任务的显式思维链压缩为少量可学习隐式 token，以降低生成推理文本的开销。方法先通过多视角自适应教师推理生成监督，再用三阶段隐式 token 对齐和课程式后训练内化并激活推理能力。在快手工业数据和 Kuaishou LLM-Rec 上，OneLatent 相比 FRM 的 Think、No-Think 变体，SID@64 分别提升 17.44% 和 9.33%，并报告在线推理吞吐量提高超过 17 倍。快手本地生活广告在线测试中，OneLatent 与配套生产服务系统联合部署，相对包含 OneRec、OneReason 的强基线取得估计 9.6% 的收入提升。对 CTR scaling 的启发：隐式推理有望在不生成长推理文本的情况下利用模型能力；SID 指标和联合系统收入收益不能直接证明 CTR 提升，也不能单独归因于模型。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-05",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.30675v2"
+          ]
+        }
+      },
+      "added_at": "2026-11-04T23:02:48Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.30675"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2610.41711",
+      "title": "Hierarchical Residuals: A Minimalist Decoupling of Residual Width from Compute Width",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "Tsinghua University; ByteDance Seed",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2610.41711"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Residual connections underpin Transformers, but they implicitly tie the residual width carried through depth to the compute width used inside each layer. We introduce Hierarchical Residuals (HiRes), a minimalist architectural change that decouples these dimensions, widening the residual state while keeping per-layer compute width fixed. HiRes groups layers into blocks: standard d-dimensional PreNorm layers operate inside each block, while a wider D-dimensional PostNorm outer residual connects blocks. Learned read/write projections bridge the two spaces at block boundaries, leaving individual Transformer layers unchanged. Across different model sizes and depths, HiRes consistently outperforms vanilla residual addition, with fitted scaling laws indicating a 1.30-fold improvement in FLOPs efficiency. On OLMoE-1B-7B pretraining for 500B tokens, HiRes achieves 0.0208 lower training loss and 1.14-point higher downstream accuracy. HiRes is also competitive with other residual expansion methods such as VWN, mHC and AttnRes with less activation memory and I/O costs. Built from only dense projections and normalizations, it requires neither specialized kernels nor infrastructure-level optimizations. HiRes thus exposes residual width as a practical scaling variable using only standard operators.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2610.41711v1",
+        "retrieved_at": "2026-11-04T23:02:48Z",
+        "license": "CC0-1.0",
+        "source_title": "Hierarchical Residuals: A Minimalist Decoupling of Residual Width from Compute Width",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-10-30T13:18:22Z",
+        "updated_at": "2026-10-30T13:18:22Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2610.41711v1",
+        "verified_at": "2026-11-04T23:02:48Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "HiRes separates residual-state width from per-layer compute width: narrow Transformer layers operate inside blocks, while learned read/write projections connect a wider outer residual stream. Experiments report 1.30× FLOPs efficiency from fitted scaling laws and a 1.14-point downstream gain for OLMoE-1B-7B after 500B training tokens. This provides a practical capacity-scaling direction for Transformer rankers without widening every layer; CTR gains remain untested.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-05",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.41711v1"
+          ]
+        },
+        "zh": {
+          "text": "HiRes 将残差状态宽度与单层计算宽度解耦：块内使用较窄的 Transformer 层，通过可学习的读写投影连接更宽的外层残差流。实验拟合的缩放规律显示 FLOPs 效率提升至 1.30 倍，OLMoE-1B-7B 在训练 500B token 后的下游准确率提升 1.14 个百分点。该方法为 Transformer 排序模型提供了无需加宽每层的容量扩展方向，但尚未验证 CTR 收益。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-05",
+          "source_urls": [
+            "https://arxiv.org/abs/2610.41711v1"
+          ]
+        }
+      },
+      "added_at": "2026-11-04T23:02:48Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2610.41711"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2611.05234",
+      "title": "ARLoop: Fully-Open Pre-trained Looped Transformers with Attention Residuals",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "The Ohio State University; Saarland University",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2611.05234"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Looped transformers increase effective depth by repeatedly applying a shared set of transformer layers, offering a parameter-efficient way to scale computation. However, standard residual connections aggregate information across recurrent depth into a single stream, providing limited control over which intermediate representations from preceding layers should be reused. In this paper, we introduce ARLoop, a looped transformer architecture based on attention residuals, where the input of each layer is selectively aggregated through attention over model depth. Distinct from standard transformers, we find that looped transformers do not require access to the full residual history: sliding-window depth attention matches or outperforms full-history attention at larger recurrent depths. Across controlled experiments with multiple parameter scales (140M and 370M) and recurrent depths (R = 1 to 5), ARLoop consistently outperforms prior residual designs for looped transformers. More importantly, we further scale ARLoop to 0.6B and 1.2B parameters under a realistic LLM pretraining recipe, demonstrating that the gains transfer to realistic pretraining, with particularly strong improvements on math and coding tasks. Our 1.2B model, pretrained on only 0.5T tokens with three recurrences, outperforms Huginn-3.5B (the only fully-open looped LLM as of our release date) across all evaluated tasks and is competitive with similar-sized non-looped models such as Qwen3.5-2B despite being trained on substantially less data.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2611.05234v1",
+        "retrieved_at": "2026-11-04T23:02:48Z",
+        "license": "CC0-1.0",
+        "source_title": "ARLoop: Fully-Open Pre-trained Looped Transformers with Attention Residuals",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-11-03T17:18:33Z",
+        "updated_at": "2026-11-03T17:18:33Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2611.05234v1",
+        "verified_at": "2026-11-04T23:02:48Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "ARLoop combines shared-layer recurrence with attention residuals that selectively reuse representations across depth. Sliding-window depth attention matches or exceeds full-history attention at larger recurrent depths, with gains observed in controlled 140M/370M experiments and 0.6B/1.2B pretraining. The design suggests a parameter-efficient way to scale ranking-model depth while limiting residual-history access; the reported evaluations are language-model tasks, not CTR.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-05",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.05234v1"
+          ]
+        },
+        "zh": {
+          "text": "ARLoop 将共享层循环与注意力残差结合，选择性复用不同深度的表示。在较大循环深度下，滑动窗口式深度注意力达到或超过完整历史注意力，收益同时出现在 140M/370M 参数的受控实验及 0.6B/1.2B 参数的预训练中。该设计为排序模型提供了参数高效的深度扩展方式，并可限制残差历史访问范围；论文评测针对语言模型任务，而非 CTR。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-05",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.05234v1"
+          ]
+        }
+      },
+      "added_at": "2026-11-04T23:02:48Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2611.05234"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2611.04327",
+      "title": "Anchor: Augmented Cross-Layer Recurrent State for Long-Context Retrieval in Test-Time Training",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "University of Arizona",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2611.04327"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Parameter-efficient linearization turns a pretrained autoregressive Transformer into an efficient model by hybridizing sliding-window attention (SWA) with a constant-size recurrent memory. But does every layer's recurrent state contribute to long-context retrieval? Investigating an SWA and Test-Time Training (TTT) hybrid, we find that retrieval is sparse across depth, concentrated in a few anchor layers, and that the remaining states hold similar information expressed through layer-specific transformations. We exploit both observations in Anchor: TTT memory placed only at the anchor layers, and a cross-layer recurrent state written once and read by many layers, each through its own learned read map that realizes a layer-specific stretch and rotation, along with demonstrated generalization to other hybrid attentions. On Llama-3.1-8B and Mistral-7B, Anchor delivers 2.3-3.1x higher recall and 6.7-8.9 points higher MMLU accuracy than LoLCATs with a 10x smaller recurrent state, retains 91-95% of the teacher's MMLU accuracy, and cuts end-to-end latency by up to 4.3x relative to softmax attention.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2611.04327v1",
+        "retrieved_at": "2026-11-04T23:02:48Z",
+        "license": "CC0-1.0",
+        "source_title": "Anchor: Augmented Cross-Layer Recurrent State for Long-Context Retrieval in Test-Time Training",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-11-03T05:07:50Z",
+        "updated_at": "2026-11-03T05:07:50Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2611.04327v1",
+        "verified_at": "2026-11-04T23:02:48Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "Anchor finds that long-context retrieval in sliding-window-attention/TTT hybrids concentrates in a few layers. It places recurrent memory at these anchor layers and shares a state that is written once and read through layer-specific maps. On Llama-3.1-8B and Mistral-7B, it reports 2.3–3.1× higher recall than LoLCATs with a 10× smaller recurrent state and up to 4.3× lower latency than softmax attention. Shared memory is a promising direction for long user-history rankers, although recommendation transfer is not evaluated.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-05",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.04327v1"
+          ]
+        },
+        "zh": {
+          "text": "Anchor 发现，滑动窗口注意力与 TTT 混合模型的长上下文检索能力集中在少数层。它仅在这些锚点层设置循环记忆，并共享一次写入、经各层专属映射读取的状态。在 Llama-3.1-8B 和 Mistral-7B 上，相比 LoLCATs，其循环状态缩小至十分之一，召回率达到 2.3–3.1 倍；相比 softmax 注意力，延迟最多降低至约四分之一。共享记忆可为长用户行为序列排序提供思路，但论文未验证推荐场景迁移。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-05",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.04327v1"
+          ]
+        }
+      },
+      "added_at": "2026-11-04T23:02:48Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2611.04327"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2611.04313",
+      "title": "Coarse Semantic Blocks for Efficient Training-Free Sparse Attention",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "Preferred Networks",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2611.04313"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "We introduce a training-free sparse attention method that builds a prompt-specific key index to accelerate both prefill and decoding. The method clusters the keys into large semantic blocks that group tokens from noncontiguous positions. Each query position selects blocks by scoring their centroids and attends to the original keys and values within them. Queries that select the same block are processed together, so prefill stays fast even though each query chooses its own blocks. Large blocks make centroid scoring and this grouped processing cheap, so each query can attend to more tokens in the same time. Larger blocks with a larger token budget can thus be both faster and more accurate on long-context tasks than smaller blocks with a smaller budget. We evaluate two hybrid LLMs, Qwen3.5-4B and 35B-A3B, on one NVIDIA H200. Including the cost of building and using the index, whole-model wall-clock speedups over dense attention are 2.3-2.4x for prefill and 1.7-2.0x for decoding at 512K tokens, and 2.9-3.0x for prefill at 1M. The 35B-A3B model stays close to dense attention on five RULER tasks through 1M, on LongBench-v2 overall, and on MRCR through 256K. The 4B model loses accuracy mainly on multi-key retrieval, yet outperforms dense Qwen3.5-2B, whose latency is similar at 512K, on all three benchmarks.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2611.04313v1",
+        "retrieved_at": "2026-11-04T23:02:48Z",
+        "license": "CC0-1.0",
+        "source_title": "Coarse Semantic Blocks for Efficient Training-Free Sparse Attention",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-11-03T04:46:30Z",
+        "updated_at": "2026-11-03T04:46:30Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2611.04313v1",
+        "verified_at": "2026-11-04T23:02:48Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "This training-free sparse-attention method clusters noncontiguous keys into large semantic blocks, selects blocks using centroid scores, and groups queries that access the same block. Including indexing overhead, Qwen3.5 models achieve 2.3–2.4× whole-model prefill speedups at 512K tokens on one H200; the 35B-A3B model remains close to dense attention on several long-context benchmarks. Semantic block selection and grouped execution could reduce long behavior-history attention cost, but CTR accuracy and production ranking latency are untested.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-05",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.04313v1"
+          ]
+        },
+        "zh": {
+          "text": "该免训练稀疏注意力方法将非连续位置的 key 聚成较大的语义块，通过质心评分选择块，并合并访问同一块的 query 执行计算。计入建索引开销后，Qwen3.5 模型在单张 H200、512K token 场景中的整模型 prefill 加速达到 2.3–2.4 倍；35B-A3B 模型在多项长上下文评测中接近稠密注意力。语义块筛选与分组执行可为长行为序列注意力降本提供参考，但尚未测试 CTR 精度和线上排序延迟。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-05",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.04313v1"
+          ]
+        }
+      },
+      "added_at": "2026-11-04T23:02:48Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2611.04313"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2611.04401",
+      "title": "LiquidCP: Decoupling Attention Tasks from Communication and Kernel Boundaries in Context Parallelism",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "Shanghai Jiao Tong University; Sun Yat-sen University; National University of Singapore; Guizhou University",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2611.04401"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Context parallelism (CP) partitions long sequences across GPUs for LLM training and inference. For variable-length training and full prefill, attention-balanced placement can leave token loads uneven, while ring execution repeats overhead at each computation and communication step. In stage-serialized decode CP (DCP), long-running tasks delay dependent work and leave substantial GPU hardware idle. We propose LiquidCP, which unifies training and inference through a common model of Transfer, Compute, and Reduction tasks with tile-level dependencies, decoupling attention tasks from communication and kernel boundaries. For training and full prefill, MegaRing incorporates BuddyRing placement to balance attention and token loads, and coalesces ready KV regions during forward attention to amortize overhead. For decoding and mixed batches, MegaDCP selects history-KV splits by jointly modeling the completion of attention and its dependent reductions. A shared persistent GPU-resident engine executes both designs. Compared with the fastest baseline per configuration on eight H100 GPUs, MegaRing achieves geometric-mean core-attention speedups of $1.23\\times$ forward and $1.18\\times$ backward, and accelerates a Transformer layer by $1.08$--$1.16\\times$. MegaDCP achieves geometric-mean core-attention speedups of $1.20\\times$ for decode-only and $1.35\\times$ for mixed batches. In vLLM serving with KV prefix cache, it achieves an average time-to-first-token speedup of $1.22\\times$.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2611.04401v1",
+        "retrieved_at": "2026-11-04T23:02:48Z",
+        "license": "CC0-1.0",
+        "source_title": "LiquidCP: Decoupling Attention Tasks from Communication and Kernel Boundaries in Context Parallelism",
+        "source_version": "v1"
+      },
+      "source_dates": {
+        "published_at": "2026-11-03T06:39:49Z",
+        "updated_at": "2026-11-03T06:39:49Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2611.04401v1",
+        "verified_at": "2026-11-04T23:02:48Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "LiquidCP schedules context-parallel attention as tile-dependent transfer, compute, and reduction tasks rather than tying execution to communication and kernel boundaries. MegaRing balances token and attention loads for training/prefill, while MegaDCP schedules history-KV splits for decoding. On eight H100s, MegaRing improves core-attention forward/backward speed by 1.23×/1.18× and Transformer-layer speed by 1.08–1.16×. Its load balancing and overlap mechanisms are relevant to distributed long-history rankers, with recommendation-specific benefits still unverified.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-05",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.04401v1"
+          ]
+        },
+        "zh": {
+          "text": "LiquidCP 将上下文并行注意力拆分为具有 tile 级依赖的传输、计算和归约任务，避免执行被通信步骤与 kernel 边界绑定。MegaRing 为训练及 prefill 平衡 token 和注意力负载，MegaDCP 则调度解码阶段的历史 KV 分片。在八张 H100 上，MegaRing 的核心注意力前向与反向分别加速至 1.23 倍和 1.18 倍，Transformer 层加速至 1.08–1.16 倍。其负载均衡和通信计算重叠机制适用于分布式长行为序列排序的优化探索，但推荐场景收益仍待验证。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-05",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.04401v1"
+          ]
+        }
+      },
+      "added_at": "2026-11-04T23:02:48Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2611.04401"
       },
       "change_history": [],
       "reading_tier": null

@@ -6,7 +6,7 @@
 
 Scaling retrieval and reranking stages of recommendation pipelines.
 
-46 papers · Updated 2026-11-04
+47 papers · Updated 2026-11-05
 
 <a id="paper-2603-04816"></a>
 
@@ -191,3 +191,7 @@ Scaling retrieval and reranking stages of recommendation pipelines.
 <a id="paper-2611-00530"></a>
 
 - **WeSearch: A Unified Model-Centric Retrieval Framework for WeChat Search**: WeSearch retrieves query-relevant clusters before ranking atomic documents, decoupling candidate pruning from document relevance. Compact representations and incremental updates support frequent refreshes; the authors report full deployment in WeChat Search, with a month-long test showing +0.68% CTR, +2.27% per-user article clicks, 41% lower retrieval resource cost and 19 ms lower graphic-text retrieval latency. — [Paper](https://arxiv.org/abs/2611.00530) (Tencent · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-04979"></a>
+
+- **Scaling Laws For Data-Constrained Dense Retrieval**: Studies scaling when supervised retrieval data are limited and reused across epochs. Across 35 BERT-family retrievers fine-tuned on MS MARCO subsets, minimum achievable evaluation loss (MAEL) follows a multiplicative power law in non-embedding parameters and unique samples more closely than additive alternatives. The paper also models steps to MAEL and relates optimal weight decay to an approximately invariant EMA timescale. In the observed regime, increasing pretrained model size is approximately 1.46 times as fine-tuning-compute-efficient as increasing unique in-domain data for reducing MAEL. CTR scaling takeaway: test joint model/data/optimization scaling under repeated-data training; the reported law and efficiency ratio are retrieval-specific findings, not established CTR results. — [Paper](https://arxiv.org/abs/2611.04979) (Tsinghua University; Xi’an Jiaotong University · arXiv 2026). Reading priority: Unrated.
