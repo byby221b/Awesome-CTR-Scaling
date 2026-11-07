@@ -8,13 +8,13 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 
 - [Meta](#company-meta) (60)
 - [ByteDance / TikTok](#company-bytedance-tiktok) (28)
-- [Alibaba](#company-alibaba) (57)
+- [Alibaba](#company-alibaba) (58)
 - [Meituan](#company-meituan) (11)
-- [Tencent](#company-tencent) (29)
+- [Tencent](#company-tencent) (30)
 - [Google](#company-google) (26)
 - [LinkedIn](#company-linkedin) (7)
 - [NetEase](#company-netease) (2)
-- [Kuaishou](#company-kuaishou) (38)
+- [Kuaishou](#company-kuaishou) (40)
 - [Huawei](#company-huawei) (11)
 - [Baidu](#company-baidu) (10)
 - [Shopee](#company-shopee) (4)
@@ -247,6 +247,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [ReuseGR: Offline--Online Decoupled Generative Retrieval via Adaptive Prefix Reuse](topics/efficiency-deployment.md#paper-2611-04259) · 2026 · Core
 - [Generative Retrieval under Real-Time Supply Constraints in Local Commerce](related/generative-recommendation.md#paper-2611-06323) · 2026 · Related
 - [From Waste to Discovery: Recycling High-Scored Unexposed Candidates in Taobao Feed Recommendation](related/engineering-serving.md#paper-2611-05997) · 2026 · Related
+- [Beyond Independent Predictions: Learning the Browsing Journey for Sequence-Level Re-ranking](related/retrieval-reranking-scaling.md#paper-2611-07591) · 2026 · Related
 
 <a id="company-meituan"></a>
 
@@ -297,6 +298,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [WeSearch: A Unified Model-Centric Retrieval Framework for WeChat Search](related/retrieval-reranking-scaling.md#paper-2611-00530) · 2026 · Related
 - [SparseLift: Automatically Optimizing Opaque Sparse Paths in Industrial-Scale Recommendation Model Training](topics/efficiency-deployment.md#paper-2611-01702) · 2026 · Core
 - [Do Recommenders Need to Think in Words? Latent Reasoning for Efficient LLM-Based Recommendation](related/generative-recommendation.md#paper-2611-07866) · 2026 · Related
+- [OneRanker: Unified Generation and Ranking with One Model in Industrial Advertising Recommendation](topics/foundation-models-multi-scenario.md#paper-2603-02999) · 2026 · Core
 
 <a id="company-google"></a>
 
@@ -390,6 +392,8 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [ZeroGR: Filtering-First Constrained Decoding for Generative Recommendation](topics/efficiency-deployment.md#paper-2611-04715) · 2026 · Core
 - [OneLatent: Latent Reasoning for Efficient Foundation Recommendation Models](topics/efficiency-deployment.md#paper-2610-30675) · 2026 · Core
 - [BRIDGE: Bridging the Semantic Quantization Gap for Generative Recommendation](related/generative-recommendation.md#paper-2611-07425) · 2026 · Related
+- [TAGR: Temporally Adaptive Generative Recommendation for Industrial Live-Streaming Advertising](related/generative-recommendation.md#paper-2608-24034) · 2026 · Related
+- [MuonRec: Shifting the Optimizer Paradigm Beyond Adam in Scalable Generative Recommendation](topics/efficiency-deployment.md#paper-2603-00416) · 2026 · Core
 
 <a id="company-huawei"></a>
 

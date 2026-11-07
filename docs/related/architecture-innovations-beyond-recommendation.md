@@ -6,7 +6,7 @@
 
 Transferable ideas from general-purpose model architecture research.
 
-267 papers · Updated 2026-11-07
+267 papers · Updated 2026-11-08
 
 <a id="paper-2606-16825"></a>
 
@@ -510,7 +510,7 @@ Transferable ideas from general-purpose model architecture research.
 
 <a id="paper-2610-15139"></a>
 
-- **When Dynamic Scaling Fails: A Scale-State Feedback Governs Recurrent-State Quantization in Linear-Attention and SSM LLMs**: This study separates numerical instability from information loss in quantized recurrent states. Scale–state feedback can cause norm growth, but controlling that scale alone recovers only part of lost performance; finer resolution and long decoding horizons still matter. In the tested settings, group-wise INT4 at 32K decode performs no better than discarding the state, and learned layer precision allocation reduces to protecting early layers under article-disjoint evaluation. The useful warning for compressed recommendation histories is to validate error accumulation over the intended horizon, rather than certify a bit width from short recall tests. — [Paper](https://arxiv.org/abs/2610.15139) (Independent Researcher · arXiv 2026). Reading priority: Unrated.
+- **When Dynamic Scaling Fails: A Scale-State Feedback Governs Recurrent-State Quantization in Linear-Attention and SSM LLMs**: This study separates numerical instability from information loss in quantized recurrent states. Scale–state feedback can cause norm growth, but controlling that scale alone recovers only part of lost performance; finer resolution and long decoding horizons still matter. In the tested settings, group-wise INT4 at 32K decode performs no better than discarding the state, and learned layer precision allocation reduces to protecting early layers under article-disjoint evaluation. The useful warning for compressed recommendation histories is to validate error accumulation over the intended horizon, rather than certify a bit width from short recall tests. In the tested per-step quantization setting, outlier-aware schemes underperform persistent scaling; this comparison is specific to those schemes and that setting. — [Paper](https://arxiv.org/abs/2610.15139) (Independent Researcher · arXiv 2026). Reading priority: Unrated.
 
 <a id="paper-2610-22130"></a>
 
@@ -682,7 +682,7 @@ Transferable ideas from general-purpose model architecture research.
 
 <a id="paper-2610-26030"></a>
 
-- **Truncate or Not? A Scaling Study of Looped Transformers with Truncated Backpropagation**: Across nearly 600 looped-Transformer training runs, the study models the joint effects of model size, data, forward loops and backward loops. When both loop counts are optimized under matched compute, full backpropagation through fewer loops outperforms truncation. With model size also variable, two fully trained loops achieve lower loss than the compute-optimal non-looped model using about 27% fewer non-embedding parameters and 8% more training compute. The result informs loop-training budget allocation within the studied language-model regime, not validated CTR scaling. — [Paper](https://arxiv.org/abs/2610.26030) (The University of Hong Kong; Yale University · arXiv 2026). Reading priority: Unrated.
+- **Truncate or Not? A Scaling Study of Looped Transformers with Truncated Backpropagation**: Across nearly 600 looped-Transformer training runs, the study models the joint effects of model size, data, forward loops and backward loops. When both loop counts are optimized under matched compute, full backpropagation through fewer loops outperforms truncation. With model size also variable, two fully trained loops achieve lower validation loss than the compute-optimal non-looped model using about 27% fewer non-embedding parameters and 8% more training compute. The result informs loop-training budget allocation within the studied language-model regime, not validated CTR scaling. — [Paper](https://arxiv.org/abs/2610.26030) (The University of Hong Kong; Yale University · arXiv 2026). Reading priority: Unrated.
 
 <a id="paper-2610-25717"></a>
 

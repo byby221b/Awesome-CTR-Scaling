@@ -6,7 +6,7 @@
 
 Generative retrieval, recommendation and ranking beyond discriminative CTR.
 
-120 papers · Updated 2026-11-07
+121 papers · Updated 2026-11-08
 
 <a id="paper-2605-12617"></a>
 
@@ -487,3 +487,7 @@ Generative retrieval, recommendation and ranking beyond discriminative CTR.
 <a id="paper-2611-06323"></a>
 
 - **Generative Retrieval under Real-Time Supply Constraints in Local Commerce**: This retrieval pipeline constrains semantic-ID generation to a request-time snapshot of serviceable local merchants. Eligible IDs are compiled into a compressed sparse row prefix index, overlapped with model prefill and shared across beams while preserving original-model probabilities for legal expansions. A matched-beam daily-constraint case reduces filtered merchants from 170/299 to 29/299; remaining distance violations motivate request-specific constraints. A separate, different-host test with 30,000 entries adds 0.6 ms of service-side latency, excluding additional client costs. The implementation informs dynamic constrained retrieval, but validity is snapshot-relative and compute savings at matched retrieval quality are not established. — [Paper](https://arxiv.org/abs/2611.06323) (Rajax Network Technology (Taobao Shangou of Alibaba) · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2608-24034"></a>
+
+- **TAGR: Temporally Adaptive Generative Recommendation for Industrial Live-Streaming Advertising**: TAGR adapts generative recommendation to rapidly changing live-stream ads at three levels: refreshed semantic-collaborative item IDs, multi-timescale user-intent modeling, and intermittent on-policy preference optimization interleaved with supervised training. A production deployment reports 8.5% higher live-room entry rate, 7.4% higher shopping-cart click rate and 16.1% higher revenue versus its production baseline. The method illustrates how token freshness and optimization cadence can be coordinated in industrial generative recommendation. — [Paper](https://arxiv.org/abs/2608.24034) (Kuaishou; Tsinghua University · arXiv 2026). Reading priority: Unrated.

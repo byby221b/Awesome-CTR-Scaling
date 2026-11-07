@@ -6,7 +6,7 @@
 
 Adjacent research, diagnostics and other relevant recommendation methods.
 
-17 papers · Updated 2026-11-07
+18 papers · Updated 2026-11-08
 
 <a id="paper-2411-13700"></a>
 
@@ -70,8 +70,12 @@ Adjacent research, diagnostics and other relevant recommendation methods.
 
 <a id="paper-2610-35550"></a>
 
-- **Cross-Domain Sequential Recommendation with Representation-Level User Transfer**: Transfers cross-domain information through learned user representations and a lightweight adapter, without sharing raw interactions or item embeddings. Shared and target-only users are trained jointly, with target-only fallback when source representations are unavailable; experiments cover benchmark and deployment-oriented settings. — [Paper](https://arxiv.org/abs/2610.35550) (Skolkovo Institute of Science and Technology; Higher School of Economics; AXXX; Sber AI Lab · arXiv 2026). Reading priority: Unrated.
+- **Cross-Domain Sequential Recommendation with Representation-Level User Transfer**: Transfers cross-domain information through learned user representations and a lightweight adapter, without sharing raw interactions or item embeddings. Shared and target-only users are trained jointly, with target-only fallback when source representations are unavailable; experiments cover benchmark and deployment-oriented settings. — [Paper](https://arxiv.org/abs/2610.35550) (Skolkovo Institute of Science and Technology; Higher School of Economics; AXXX; Sber AI Lab · CIKM 2026). Reading priority: Unrated.
 
 <a id="paper-2611-01090"></a>
 
 - **Numerical Embeddings for CTR Prediction: A Taxonomy, Unified Benchmark, and Open-Source FuxiCTR Extension**: NumEmbBench compares 18 numerical-embedding configurations across six mechanism families using a shared FuxiCTR interface, three datasets, nine backbones and five seeds. Native-scale evaluation changes the winner in 11 of 27 settings, highlighting dependence on preprocessing and the need to measure both accuracy and inference latency. — [Paper](https://arxiv.org/abs/2611.01090) (Ant Group; Independent Researcher; Alibaba Inc.; Henan Polytechnic University · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-07523"></a>
+
+- **OptST: Optimizing Semantic Tokenization for LLM-Enhanced Recommendation**: OptST adapts semantic tokenization of LLM-derived user profiles to downstream recommendation. A regularized low-rank transformation changes token assignments while keeping the pretrained encoder and base codebooks fixed; a straight-through estimator supplies training gradients, and an interaction-conditioned prefix selects semantic detail. It reports the highest AUC among evaluated conventional and LLM-enhanced baselines on four public datasets, with gains across backbones. The transferable idea is a task-aware interface between profile semantics and recommendation features. — [Paper](https://arxiv.org/abs/2611.07523) (Shenzhen Technology University; The Hong Kong Polytechnic University; McGill University; Shenzhen University · arXiv 2026). Reading priority: Unrated.

@@ -6,7 +6,7 @@
 
 Scaling retrieval and reranking stages of recommendation pipelines.
 
-49 papers · Updated 2026-11-07
+50 papers · Updated 2026-11-08
 
 <a id="paper-2603-04816"></a>
 
@@ -203,3 +203,7 @@ Scaling retrieval and reranking stages of recommendation pipelines.
 <a id="paper-2611-08306"></a>
 
 - **GINGER: Spicing Up Graph-Based Vector Search**: GINGER improves the speed and memory use of graph-based approximate nearest-neighbor search. Nested TurboQuant stores low-precision navigation and high-precision reranking information in one code, while graph reordering and AdaptiveGap compress graph links. The quantized representation approaches floating-point precision with 2.6x less memory. At 95% recall, query throughput averages 1.8x that of each dataset's fastest competing library. The combination of compact navigation and more precise reranking is directly relevant to large recommendation retrieval indexes; the abstract does not specify benchmark hardware. — [Paper](https://arxiv.org/abs/2611.08306) (Google Research; Karlsruhe Institute of Technology; University of Maryland; Carnegie Mellon University; EPFL · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-07591"></a>
+
+- **Beyond Independent Predictions: Learning the Browsing Journey for Sequence-Level Re-ranking**: ICE evaluates candidate recommendation lists by modeling display, impression and click jointly. It predicts browsing depth, uses impression probabilities to reduce context from unseen items, and matches the click distribution across the list. A 14-day Taobao A/B test reports 0.70% more clicks and 3.67% more revenue. This improves the evaluator in a generator–evaluator reranking pipeline; it addresses sequence utility rather than establishing a model-size scaling law. — [Paper](https://arxiv.org/abs/2611.07591) · [Venue](https://cikm2026.diag.uniroma1.it/program/) (Alibaba; Xi’an Jiaotong University · CIKM (Applied Research) 2026). Reading priority: Unrated.

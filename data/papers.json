@@ -5,7 +5,7 @@
     "description": "Scaling laws and scalable ranking models for industrial recommendation.",
     "repository_url": "https://github.com/byby221b/Awesome-CTR-Scaling",
     "site_url": "https://byby221b.github.io/Awesome-CTR-Scaling/",
-    "updated": "2026-11-07",
+    "updated": "2026-11-08",
     "source_commit": "31ad30becff83ca14a01f37fc99d52ba79f85565",
     "scope": "We cover papers that (1) study scaling laws for recommendation models, (2) propose scalable Transformer-based architectures for CTR/ranking, (3) address efficiency challenges in scaling up industrial ranking systems, or (4) explore novel paradigms (e.g., sparse scaling, generative pre-training, foundation models) for scalable recommendation.",
     "history": {
@@ -33092,40 +33092,38 @@
       ],
       "original_abstract": {
         "status": "verified",
-        "text": "Linear-attention and state-space LLMs carry long context in a fixed-size recurrent state, and quantizing that state is the natural way to cut its cost during long decode. Unlike a weight tensor, the state is rewritten at every step, so a quantizer applied at each step sits inside the recurrence and its errors compound. INT4 that leaves synthetic recall perfectly intact at the start destroys it a thousand steps later. The mechanism is a feedback between the quantizer scale and the state it is derived from. Yoking that scale to a full-precision reference removes the resulting norm explosion entirely, yet recovers only 1.8 of the 5.4 nats lost, so numerical instability and functional degradation are separable failures. The remainder is a resolution problem that locating outliers does not solve, since every outlier-aware scheme here loses to plain persistent scaling. Allocating bits across layers does help, but under article-disjoint splits a learned allocation collapses onto the trivial rule of protecting the first few layers. Run out to 32K, group-wise INT4 is worth no more than discarding the state. Contain the scale rather than locate outliers, and report the decode horizon at which a bit-width was certified.",
+        "text": "Linear-attention and state-space LLMs carry long context in a fixed-size recurrent state, and quantizing that state is the natural way to cut its cost during long decode. Unlike a weight tensor, the state is rewritten at every step, so a quantizer applied at each step sits inside the recurrence and its errors compound. INT4 that leaves synthetic recall perfectly intact at the start destroys it a thousand steps later. The mechanism is a feedback between the quantizer scale and the state it is derived from. Yoking that scale to a full-precision reference removes the resulting norm explosion entirely, yet recovers only 1.8 of the 5.4 nats lost, so numerical instability and functional degradation are separable failures. The remainder is resolution-dependent, and in our per-step setting every outlier-aware scheme we test loses to plain persistent scaling. Allocating bits across layers does help, but under article-disjoint splits a learned allocation collapses onto the trivial rule of protecting the first few layers. Run out to 32K, group-wise INT4 is worth no more than discarding the state. Contain the scale rather than locate outliers, and report the decode horizon at which a bit-width was certified.",
         "language": "en",
-        "source_url": "https://arxiv.org/abs/2610.15139v1",
-        "retrieved_at": "2026-10-15T23:17:00Z",
-        "license": null,
+        "source_url": "https://arxiv.org/abs/2610.15139v2",
         "source_title": "When Dynamic Scaling Fails: A Scale-State Feedback Governs Recurrent-State Quantization in Linear-Attention and SSM LLMs",
-        "source_version": "v1"
+        "source_version": "v2",
+        "retrieved_at": "2026-11-07T23:10:19Z",
+        "license": null
       },
       "source_dates": {
         "published_at": "2026-10-10T19:30:50Z",
-        "updated_at": "2026-10-10T19:30:50Z",
-        "source_version": "v1",
-        "source_url": "https://arxiv.org/abs/2610.15139v1",
-        "verified_at": "2026-10-15T23:17:00Z"
+        "updated_at": "2026-10-20T16:15:23Z",
+        "source_version": "v2",
+        "source_url": "https://arxiv.org/abs/2610.15139v2",
+        "verified_at": "2026-11-07T23:10:19Z"
       },
       "summaries": {
         "en": {
-          "text": "This study separates numerical instability from information loss in quantized recurrent states. Scale–state feedback can cause norm growth, but controlling that scale alone recovers only part of lost performance; finer resolution and long decoding horizons still matter. In the tested settings, group-wise INT4 at 32K decode performs no better than discarding the state, and learned layer precision allocation reduces to protecting early layers under article-disjoint evaluation. The useful warning for compressed recommendation histories is to validate error accumulation over the intended horizon, rather than certify a bit width from short recall tests.",
+          "text": "This study separates numerical instability from information loss in quantized recurrent states. Scale–state feedback can cause norm growth, but controlling that scale alone recovers only part of lost performance; finer resolution and long decoding horizons still matter. In the tested settings, group-wise INT4 at 32K decode performs no better than discarding the state, and learned layer precision allocation reduces to protecting early layers under article-disjoint evaluation. The useful warning for compressed recommendation histories is to validate error accumulation over the intended horizon, rather than certify a bit width from short recall tests. In the tested per-step quantization setting, outlier-aware schemes underperform persistent scaling; this comparison is specific to those schemes and that setting.",
           "basis": "original_abstract",
           "method": "ai_assisted",
-          "updated_at": "2026-10-16",
+          "updated_at": "2026-11-08",
           "source_urls": [
-            "https://arxiv.org/abs/2610.15139v1",
-            "https://arxiv.org/html/2610.15139v1"
+            "https://arxiv.org/abs/2610.15139v2"
           ]
         },
         "zh": {
-          "text": "研究把循环状态量化的数值不稳定与信息损失分开检查：量化尺度和状态之间的反馈可能放大范数，但只控制尺度只能恢复部分损失，量化分辨率和持续解码长度仍重要。在所测设置中，分组INT4持续解码到32K时不优于丢弃状态；按文章隔离评估后，学习得到的逐层精度分配退化为优先保护前几层。对推荐历史压缩的警示是按实际使用长度检查误差积累，不能只凭短序列召回测试认定某比特宽度可靠。",
+          "text": "研究把循环状态量化的数值不稳定与信息损失分开检查：量化尺度和状态之间的反馈可能放大范数，但只控制尺度只能恢复部分损失，量化分辨率和持续解码长度仍重要。在所测设置中，分组INT4持续解码到32K时不优于丢弃状态；按文章隔离评估后，学习得到的逐层精度分配退化为优先保护前几层。对推荐历史压缩的警示是按实际使用长度检查误差积累，不能只凭短序列召回测试认定某比特宽度可靠。 在所测逐步量化设置中，异常值感知方案不及固定尺度方案；这一比较限定于论文测试的方案和设置。",
           "basis": "original_abstract",
           "method": "ai_assisted",
-          "updated_at": "2026-10-16",
+          "updated_at": "2026-11-08",
           "source_urls": [
-            "https://arxiv.org/abs/2610.15139v1",
-            "https://arxiv.org/html/2610.15139v1"
+            "https://arxiv.org/abs/2610.15139v2"
           ]
         }
       },
@@ -33150,6 +33148,17 @@
             "venue"
           ],
           "source_url": "https://github.com/byby221b/Awesome-CTR-Scaling/commit/3f0c2a23e41903327e5044db15968539f882a196"
+        },
+        {
+          "at": "2026-11-07T23:10:19Z",
+          "kind": "paper_revision",
+          "fields": [
+            "original_abstract",
+            "source_dates",
+            "summaries"
+          ],
+          "source_url": "https://arxiv.org/abs/2610.15139v2",
+          "source_version": "v2"
         }
       ],
       "reading_tier": null
@@ -37135,38 +37144,38 @@
       "aliases": [],
       "original_abstract": {
         "status": "verified",
-        "text": "Looped transformers reuse a shared block of layers to increase computational depth without increasing the number of trainable parameters. They are trained with backpropagation through time (BPTT). To save training compute, BPTT is often truncated to the last few loops, although this may weaken the benefit of looping. To study this tradeoff systematically, we jointly vary model size, training tokens, and forward and backward loop counts across nearly 600 training runs and fit a unified scaling law that captures the effects of looping and truncation through effective parameters. Despite the training-compute savings of truncation, our fitted law favors full BPTT when forward and backward loop counts are jointly optimized. In matched-compute runs, full BPTT through fewer loops consistently outperforms truncated settings of the same compute. The law further shows that at fixed model size, the compute-optimal loop count and training-token budget both grow with compute. When model size is also free, the law identifies two fully trained loops as the best looped setting. Experimentally, this setting achieves lower loss than the compute-optimal non-looped model with about 27% fewer non-embedding parameters and only 8% more training compute.",
+        "text": "Looped transformers reuse a shared block of layers to increase computational depth without increasing the number of trainable parameters. They are trained with backpropagation through time (BPTT). To save training compute, BPTT is often truncated to the last few loops, but truncation yields biased gradients that may weaken the benefit of looping. In this work, we study the value of truncation in looped transformer training in a systematic way: we jointly vary model size, training tokens, and forward and backward loop counts across nearly 600 training runs and fit a unified scaling law that captures the effects of looping and truncation through effective parameters. Despite the training-compute savings of truncation, our fitted law favors full BPTT when forward and backward loop counts are jointly optimized. In matched-compute runs, full BPTT through fewer loops consistently outperforms truncated settings of the same compute. The law further shows that at fixed model size, the compute-optimal loop count and training-token budget both grow with compute. When model size is also free, the law identifies two fully trained loops as the best looped setting. Experimentally, this setting achieves lower validation loss than the compute-optimal non-looped model with about 27% fewer non-embedding parameters and only 8% more training compute.",
         "language": "en",
-        "source_url": "https://arxiv.org/abs/2610.26030v1",
-        "retrieved_at": "2026-10-20T23:06:02Z",
-        "license": "CC0-1.0",
+        "source_url": "https://arxiv.org/abs/2610.26030v2",
         "source_title": "Truncate or Not? A Scaling Study of Looped Transformers with Truncated Backpropagation",
-        "source_version": "v1"
+        "source_version": "v2",
+        "retrieved_at": "2026-11-07T23:10:19Z",
+        "license": null
       },
       "source_dates": {
         "published_at": "2026-10-19T08:52:29Z",
-        "updated_at": "2026-10-19T08:52:29Z",
-        "source_version": "v1",
-        "source_url": "https://arxiv.org/abs/2610.26030v1",
-        "verified_at": "2026-10-20T23:06:02Z"
+        "updated_at": "2026-10-20T17:28:49Z",
+        "source_version": "v2",
+        "source_url": "https://arxiv.org/abs/2610.26030v2",
+        "verified_at": "2026-11-07T23:10:19Z"
       },
       "summaries": {
         "en": {
-          "text": "Across nearly 600 looped-Transformer training runs, the study models the joint effects of model size, data, forward loops and backward loops. When both loop counts are optimized under matched compute, full backpropagation through fewer loops outperforms truncation. With model size also variable, two fully trained loops achieve lower loss than the compute-optimal non-looped model using about 27% fewer non-embedding parameters and 8% more training compute. The result informs loop-training budget allocation within the studied language-model regime, not validated CTR scaling.",
+          "text": "Across nearly 600 looped-Transformer training runs, the study models the joint effects of model size, data, forward loops and backward loops. When both loop counts are optimized under matched compute, full backpropagation through fewer loops outperforms truncation. With model size also variable, two fully trained loops achieve lower validation loss than the compute-optimal non-looped model using about 27% fewer non-embedding parameters and 8% more training compute. The result informs loop-training budget allocation within the studied language-model regime, not validated CTR scaling.",
           "basis": "original_abstract",
           "method": "ai_assisted",
-          "updated_at": "2026-10-21",
+          "updated_at": "2026-11-08",
           "source_urls": [
-            "https://arxiv.org/abs/2610.26030v1"
+            "https://arxiv.org/abs/2610.26030v2"
           ]
         },
         "zh": {
-          "text": "研究通过近 600 次循环 Transformer 训练，联合分析模型大小、数据量及前向和反向循环次数。在相同计算预算下同时优化两种循环次数时，较少循环配合完整反向传播优于截断反向传播。允许调整模型大小后，两次完整训练循环相比计算最优的非循环模型，以约少 27% 的非嵌入参数和多 8% 的训练计算获得更低损失。结论可用于所研究语言模型范围内的循环训练预算分配，尚未在 CTR 上验证。",
+          "text": "研究通过近 600 次循环 Transformer 训练，联合分析模型大小、数据量及前向和反向循环次数。在相同计算预算下同时优化两种循环次数时，较少循环配合完整反向传播优于截断反向传播。允许调整模型大小后，两次完整训练循环相比计算最优的非循环模型，以约少 27% 的非嵌入参数和多 8% 的训练计算获得更低验证损失。结论可用于所研究语言模型范围内的循环训练预算分配，尚未在 CTR 上验证。",
           "basis": "original_abstract",
           "method": "ai_assisted",
-          "updated_at": "2026-10-21",
+          "updated_at": "2026-11-08",
           "source_urls": [
-            "https://arxiv.org/abs/2610.26030v1"
+            "https://arxiv.org/abs/2610.26030v2"
           ]
         }
       },
@@ -37175,7 +37184,19 @@
         "kind": "catalog_entry",
         "source_url": "https://arxiv.org/abs/2610.26030"
       },
-      "change_history": [],
+      "change_history": [
+        {
+          "at": "2026-11-07T23:10:19Z",
+          "kind": "paper_revision",
+          "fields": [
+            "original_abstract",
+            "source_dates",
+            "summaries"
+          ],
+          "source_url": "https://arxiv.org/abs/2610.26030v2",
+          "source_version": "v2"
+        }
+      ],
       "reading_tier": null
     },
     {
@@ -43646,7 +43667,7 @@
       "collection": "related",
       "category": "other",
       "affiliation": "Skolkovo Institute of Science and Technology; Higher School of Economics; AXXX; Sber AI Lab",
-      "venue": "arXiv",
+      "venue": "CIKM",
       "year": 2026,
       "tags": [],
       "links": [
@@ -43717,6 +43738,14 @@
             "doi"
           ],
           "source_url": "https://github.com/byby221b/Awesome-CTR-Scaling/commit/3f0c2a23e41903327e5044db15968539f882a196"
+        },
+        {
+          "at": "2026-11-07T23:10:19Z",
+          "kind": "venue_update",
+          "fields": [
+            "venue"
+          ],
+          "source_url": "https://cikm2026.diag.uniroma1.it/program/"
         }
       ],
       "reading_tier": null
@@ -49447,6 +49476,319 @@
       "added_provenance": {
         "kind": "catalog_entry",
         "source_url": "https://arxiv.org/abs/2611.05804"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2603.02999",
+      "title": "OneRanker: Unified Generation and Ranking with One Model in Industrial Advertising Recommendation",
+      "collection": "core",
+      "category": "foundation-models-multi-scenario",
+      "affiliation": "Tencent",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [
+        "Architecture",
+        "Multi-task",
+        "Generative Rec",
+        "Ads"
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2603.02999"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "The end-to-end generative paradigm is revolutionizing advertising recommendation systems, driving a shift from traditional cascaded architectures towards unified modeling. However, practical deployment faces three core challenges: the misalignment between interest objectives and business value, the target-agnostic limitation of generative processes, and the disconnection between generation and ranking stages. Existing solutions often fall into a dilemma where single-stage fusion induces optimization tension, while stage decoupling causes irreversible information loss. To address this, we propose OneRanker, achieving architectural-level deep integration of generation and ranking. First, we design a value-aware multi-task decoupling architecture. By leveraging task token sequences and causal mask, we separate interest coverage and value optimization spaces within shared representations, effectively alleviating target conflicts. Second, we construct a coarse-to-fine collaborative target awareness mechanism, utilizing Fake Item Tokens for implicit awareness during generation and a ranking decoder for explicit value alignment at the candidate level. Finally, we propose input-output dual-side consistency guarantees. Through Key/Value pass-through mechanisms and Distribution Consistency (DC) Constraint Loss, we achieve end-to-end collaborative optimization between generation and ranking. The full deployment on Tencent's WeiXin channels advertising system has shown a significant improvement in key business metrics (GMV - Normal +1.34\\%), providing a new paradigm with industrial feasibility for generative advertising recommendations.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2603.02999v4",
+        "source_title": "OneRanker: Unified Generation and Ranking with One Model in Industrial Advertising Recommendation",
+        "source_version": "v4",
+        "retrieved_at": "2026-11-07T23:10:19Z",
+        "license": null
+      },
+      "source_dates": {
+        "published_at": "2026-03-03T13:50:22Z",
+        "updated_at": "2026-11-05T09:01:25Z",
+        "source_version": "v4",
+        "source_url": "https://arxiv.org/abs/2603.02999v4",
+        "verified_at": "2026-11-07T23:10:19Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "OneRanker jointly models candidate generation and ranking for advertising. Task-token sequences and causal masks separate interest coverage from value optimization; implicit target tokens, an explicit ranking decoder, shared key/value representations and a distribution-consistency loss connect the two stages. Deployment on Tencent Weixin Channels reports a 1.34% GMV-Normal improvement. It offers a concrete design for unifying generation and value-aware ranking rather than optimizing two disconnected models.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-08",
+          "source_urls": [
+            "https://arxiv.org/abs/2603.02999v4"
+          ]
+        },
+        "zh": {
+          "text": "OneRanker 将广告候选生成与排序放进同一模型。任务 token 和因果掩码分开处理兴趣覆盖与商业价值，再通过隐式目标 token、显式排序解码器、键值表征传递和分布一致性损失连接两阶段。微信视频号广告部署报告 GMV-Normal 提升 1.34%。这项设计可供生成式推荐与价值排序的联合建模参考。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-08",
+          "source_urls": [
+            "https://arxiv.org/abs/2603.02999v4"
+          ]
+        }
+      },
+      "added_at": "2026-11-07T23:10:19Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2603.02999"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2611.07591",
+      "title": "Beyond Independent Predictions: Learning the Browsing Journey for Sequence-Level Re-ranking",
+      "collection": "related",
+      "category": "retrieval-reranking-scaling",
+      "affiliation": "Alibaba; Xi’an Jiaotong University",
+      "venue": "CIKM (Applied Research)",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2611.07591"
+        },
+        {
+          "label": "Venue",
+          "url": "https://cikm2026.diag.uniroma1.it/program/"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Re-ranking aims to present users with an ordered list that maximizes sequence-level utility. Industrial deployments widely adopt the Generator--Evaluator framework, where the generator proposes candidate sequences, and the evaluator scores them to select the best one for display. The fidelity of the evaluator's utility estimates thus directly governs recommendation quality. However, existing evaluators predominantly follow the \\textbf{Independent Behavior Modeling (IBM)} paradigm, which simplifies the continuous user \\emph{browsing journey} into independent per-item predictions (e.g., CTR). This oversimplification ignores two physical realities: (i) a click can occur only after the item has been reached and impressed, and (ii) items compete for finite user attention. As a result, IBM produces systematically biased evaluations and suboptimal sequence selection. To address this, we propose a \\textbf{Joint Behavior Modeling (JBM)} perspective that explicitly models the \\emph{display} $\\rightarrow$ \\emph{impression} $\\rightarrow$ \\emph{click} process to capture causal and competitive dependencies within a sequence. Building on JBM, we develop the \\textbf{Impression-Click Evaluator (ICE)}, a plug-and-play framework that (i) predicts a browsing-depth distribution to estimate per-position impression probabilities, (ii) leverages predicted impressions to suppress spurious context from unexposed items during click modeling, and (iii) introduces a click distribution matching objective to capture intra-sequence dependencies. Extensive offline experiments across diverse backbones, together with a 14-day online A/B test in the Taobao App (+0.70\\% clicks, +3.67\\% revenue) and full-traffic deployment, validate the effectiveness and robustness of our approach.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2611.07591v1",
+        "source_title": "Beyond Independent Predictions: Learning the Browsing Journey for Sequence-Level Re-ranking",
+        "source_version": "v1",
+        "retrieved_at": "2026-11-07T23:10:19Z",
+        "license": null
+      },
+      "source_dates": {
+        "published_at": "2026-11-05T07:41:22Z",
+        "updated_at": "2026-11-05T07:41:22Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2611.07591v1",
+        "verified_at": "2026-11-07T23:10:19Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "ICE evaluates candidate recommendation lists by modeling display, impression and click jointly. It predicts browsing depth, uses impression probabilities to reduce context from unseen items, and matches the click distribution across the list. A 14-day Taobao A/B test reports 0.70% more clicks and 3.67% more revenue. This improves the evaluator in a generator–evaluator reranking pipeline; it addresses sequence utility rather than establishing a model-size scaling law.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-08",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.07591v1"
+          ]
+        },
+        "zh": {
+          "text": "ICE 用“展示列表→用户实际看到→点击”的过程评估候选列表。它先预测浏览深度，再用曝光概率减弱未看到物品的干扰，并学习列表内的点击分布。淘宝 14 天线上实验报告点击量提升 0.70%、收入提升 3.67%。可借鉴点是改进生成器—评估器重排中的序列价值估计；论文没有建立模型规模的扩展规律。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-08",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.07591v1"
+          ]
+        }
+      },
+      "added_at": "2026-11-07T23:10:19Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2611.07591"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2611.07523",
+      "title": "OptST: Optimizing Semantic Tokenization for LLM-Enhanced Recommendation",
+      "collection": "related",
+      "category": "other",
+      "affiliation": "Shenzhen Technology University; The Hong Kong Polytechnic University; McGill University; Shenzhen University",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2611.07523"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Semantic information can enrich the identifiers and structured fields used by recommender systems. Semantic tokenization provides a structured representation of this information by converting LLM-derived user profiles into discrete tokens. In the common two-stage pipeline, the tokenizer is trained before the recommender. Its token assignments are then treated as fixed input features during recommendation training. As a result, the downstream recommender can learn how to use the assigned indices, but it cannot revise the semantic partition that produced them. Making this partition task-aware is difficult because nearest-code assignment is discrete, and unconstrained adaptation may also distort the geometry learned during pretraining. Moreover, a fixed token depth exposes the same semantic resolution to every interaction. We thus propose OptST (Optimizing Semantic Tokenization), which makes a pretrained tokenizer responsive to downstream recommendation. To revise token assignments without directly updating the pretrained encoder or base codebooks, OptST learns a low-rank deformation whose drift is limited by an anchor regularizer. Recommendation supervision reaches this transformation through a straight-through estimator, while prediction retains hard nearest-code assignments. Beyond adapting the assignments themselves, OptST selects an interaction-conditioned prefix to control how much residual detail is exposed to the recommender. Experiments on four public datasets show that OptST achieves the highest AUC among conventional and LLM-enhanced baselines. Its improvements also persist across different recommendation backbones. These results establish task-aware semantic tokenization as an effective interface between LLM-derived profiles and downstream recommendation models.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2611.07523v1",
+        "source_title": "OptST: Optimizing Semantic Tokenization for LLM-Enhanced Recommendation",
+        "source_version": "v1",
+        "retrieved_at": "2026-11-07T23:10:19Z",
+        "license": null
+      },
+      "source_dates": {
+        "published_at": "2026-11-05T06:34:53Z",
+        "updated_at": "2026-11-05T06:34:53Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2611.07523v1",
+        "verified_at": "2026-11-07T23:10:19Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "OptST adapts semantic tokenization of LLM-derived user profiles to downstream recommendation. A regularized low-rank transformation changes token assignments while keeping the pretrained encoder and base codebooks fixed; a straight-through estimator supplies training gradients, and an interaction-conditioned prefix selects semantic detail. It reports the highest AUC among evaluated conventional and LLM-enhanced baselines on four public datasets, with gains across backbones. The transferable idea is a task-aware interface between profile semantics and recommendation features.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-08",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.07523v1"
+          ]
+        },
+        "zh": {
+          "text": "OptST 让大模型用户画像的语义分词随推荐任务调整。它固定预训练编码器和基础码本，用受约束的低秩变换调整 token 分配；训练时通过直通估计器传递梯度，再按当前交互选择保留多少层语义细节。在四个公开数据集和多种推荐骨干上，方法取得优于所比较基线的 AUC。它为语义画像与推荐特征之间的任务适配提供了具体接口。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-08",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.07523v1"
+          ]
+        }
+      },
+      "added_at": "2026-11-07T23:10:19Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2611.07523"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2608.24034",
+      "title": "TAGR: Temporally Adaptive Generative Recommendation for Industrial Live-Streaming Advertising",
+      "collection": "related",
+      "category": "generative-recommendation",
+      "affiliation": "Kuaishou; Tsinghua University",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2608.24034"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Live-streaming advertising is an important monetization channel on short-video and e-commerce platforms, where rapidly changing live content, promoted products, and user feedback impose strong freshness requirements on recommendation models. Existing generative recommenders designed for static domains fail at three levels: static semantic IDs (SID) cannot track evolving live ads; single-scale behavior modeling misses shifting intent; preference optimization conflicts between fresh on-policy feedback and training stability. We propose TAGR, a generative recommendation framework with temporal adaptation at three levels: live-ad tokenization, user intent modeling, and preference alignment. At the token level, Live Semantic-Collaborative ID (LSID) periodically refreshes each active ad's SID based on its current live scene and promoted products, while retaining a stable hierarchical token vocabulary for autoregressive generation. At the intent level, Intent-Aware Generation (IAG) models live-room entry histories at multiple temporal granularities as the primary intent sequence, keeps auxiliary behaviors as separate inputs, and weights next-token prediction (NTP) using post-request intent evidence and business value. At the alignment level, Intermittent On-Policy Preference Optimization (IOPO) periodically samples fresh candidate groups from the current policy and performs behavior- and value-aligned preference updates interleaved with supervised NTP maintenance to preserve learned behavior distribution. Deployed on a large-scale e-commerce live-stream advertising platform, TAGR improves live-room entry and shopping-cart click rates by 8.5% and 7.4%, respectively, and achieves a 16.1% revenue lift over the production baseline. These results demonstrate the effectiveness and industrial viability of temporally adaptive generative recommendation for live-stream advertising.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2608.24034v2",
+        "source_title": "TAGR: Temporally Adaptive Generative Recommendation for Industrial Live-Streaming Advertising",
+        "source_version": "v2",
+        "retrieved_at": "2026-11-07T23:10:19Z",
+        "license": null
+      },
+      "source_dates": {
+        "published_at": "2026-08-25T03:47:52Z",
+        "updated_at": "2026-11-04T02:12:07Z",
+        "source_version": "v2",
+        "source_url": "https://arxiv.org/abs/2608.24034v2",
+        "verified_at": "2026-11-07T23:10:19Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "TAGR adapts generative recommendation to rapidly changing live-stream ads at three levels: refreshed semantic-collaborative item IDs, multi-timescale user-intent modeling, and intermittent on-policy preference optimization interleaved with supervised training. A production deployment reports 8.5% higher live-room entry rate, 7.4% higher shopping-cart click rate and 16.1% higher revenue versus its production baseline. The method illustrates how token freshness and optimization cadence can be coordinated in industrial generative recommendation.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-08",
+          "source_urls": [
+            "https://arxiv.org/abs/2608.24034v2"
+          ]
+        },
+        "zh": {
+          "text": "TAGR 针对直播广告的快速变化，同时调整物品标识、用户意图和训练反馈：定期更新语义协同 ID，用多种时间尺度建模意图，并把新策略反馈的偏好优化与监督训练交替执行。线上部署相对原生产基线报告进房率提升 8.5%、购物车点击率提升 7.4%、收入提升 16.1%。可借鉴点是把 token 的更新速度与模型优化节奏一起设计。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-08",
+          "source_urls": [
+            "https://arxiv.org/abs/2608.24034v2"
+          ]
+        }
+      },
+      "added_at": "2026-11-07T23:10:19Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2608.24034"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2603.00416",
+      "title": "MuonRec: Shifting the Optimizer Paradigm Beyond Adam in Scalable Generative Recommendation",
+      "collection": "core",
+      "category": "efficiency-deployment",
+      "affiliation": "Shanghai Jiao Tong University; Kuaishou",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [
+        "Architecture",
+        "Training Efficiency",
+        "Generative Rec"
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2603.00416"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Recommender systems (RecSys) are increasingly emphasizing scaling, leveraging larger architectures and more interaction data to improve personalization. Yet, despite the optimizer's pivotal role in training, modern RecSys pipelines almost universally default to Adam/AdamW, with limited scrutiny of whether these choices are truly optimal for recommendation. In this work, we revisit optimizer design for scalable recommendation and introduce MuonRec, the first framework that brings the recently proposed Muon optimizer to RecSys training. Muon performs orthogonalized momentum updates for 2D weight matrices via Newton-Schulz iteration, promoting diverse update directions and improving optimization efficiency. We develop an open-source training recipe for recommendation models and evaluate it across both traditional sequential recommenders and modern generative recommenders. Extensive experiments demonstrate that MuonRec reduces converged training steps by an average of 32.4\\% while simultaneously improving final ranking quality. Specifically, MuonRec yields consistent relative gains in NDCG@10, averaging 12.6\\% across all settings, with particularly pronounced improvements in generative recommendation models. These results consistently outperform strong Adam/AdamW baselines, positioning Muon as a promising new optimizer standard for RecSys training. Our code is available.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2603.00416v2",
+        "source_title": "MuonRec: Shifting the Optimizer Paradigm Beyond Adam in Scalable Generative Recommendation",
+        "source_version": "v2",
+        "retrieved_at": "2026-11-07T23:10:19Z",
+        "license": null
+      },
+      "source_dates": {
+        "published_at": "2026-02-28T02:32:44Z",
+        "updated_at": "2026-11-03T07:53:07Z",
+        "source_version": "v2",
+        "source_url": "https://arxiv.org/abs/2603.00416v2",
+        "verified_at": "2026-11-07T23:10:19Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "MuonRec studies optimizer choice for sequential and generative recommendation. It applies orthogonalized momentum updates to two-dimensional weight matrices via Newton–Schulz iteration and provides a recommendation training recipe. Across the reported settings, it reduces steps to convergence by 32.4% on average while improving NDCG@10 by 12.6% relative to Adam/AdamW baselines. These are convergence-step and ranking-quality results, not equivalent wall-clock speedups; they motivate checking optimizer efficiency when scaling recommender training.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-08",
+          "source_urls": [
+            "https://arxiv.org/abs/2603.00416v2"
+          ]
+        },
+        "zh": {
+          "text": "MuonRec 研究序列推荐和生成式推荐的优化器选择。它通过 Newton–Schulz 迭代，对二维权重矩阵的动量更新做正交化，并给出推荐训练配方。所报告设置相对 Adam/AdamW 平均减少 32.4% 的收敛步数，NDCG@10 平均相对提升 12.6%。这些结果衡量收敛步数和排序质量，不能直接换算为训练耗时收益；扩展推荐模型时值得把优化器纳入比较。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-08",
+          "source_urls": [
+            "https://arxiv.org/abs/2603.00416v2"
+          ]
+        }
+      },
+      "added_at": "2026-11-07T23:10:19Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2603.00416"
       },
       "change_history": [],
       "reading_tier": null
