@@ -6,7 +6,7 @@
 
 Scaling retrieval and reranking stages of recommendation pipelines.
 
-48 papers · Updated 2026-11-06
+49 papers · Updated 2026-11-07
 
 <a id="paper-2603-04816"></a>
 
@@ -199,3 +199,7 @@ Scaling retrieval and reranking stages of recommendation pipelines.
 <a id="paper-2611-05908"></a>
 
 - **Optimal Re-Ranking Depth**: This study treats reranking depth as query-dependent rather than fixed. Dense LLM relevance judgments reveal saturation or degradation beyond each query's preferred depth, while common query-performance predictors transfer poorly. An IR-DCG@10 predictor based on LLM-assessed first-stage quality reduces mean reranking depth by up to 3x while preserving effectiveness in the evaluated pipelines. Larger oracle improvements are upper bounds, and the judgments introduce a dependency on LLM assessment quality. — [Paper](https://arxiv.org/abs/2611.05908) (University of Waterloo; University of Glasgow · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-08306"></a>
+
+- **GINGER: Spicing Up Graph-Based Vector Search**: GINGER improves the speed and memory use of graph-based approximate nearest-neighbor search. Nested TurboQuant stores low-precision navigation and high-precision reranking information in one code, while graph reordering and AdaptiveGap compress graph links. The quantized representation approaches floating-point precision with 2.6x less memory. At 95% recall, query throughput averages 1.8x that of each dataset's fastest competing library. The combination of compact navigation and more precise reranking is directly relevant to large recommendation retrieval indexes; the abstract does not specify benchmark hardware. — [Paper](https://arxiv.org/abs/2611.08306) (Google Research; Karlsruhe Institute of Technology; University of Maryland; Carnegie Mellon University; EPFL · arXiv 2026). Reading priority: Unrated.

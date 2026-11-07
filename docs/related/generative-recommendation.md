@@ -6,7 +6,7 @@
 
 Generative retrieval, recommendation and ranking beyond discriminative CTR.
 
-117 papers · Updated 2026-11-06
+120 papers · Updated 2026-11-07
 
 <a id="paper-2605-12617"></a>
 
@@ -475,3 +475,15 @@ Generative retrieval, recommendation and ranking beyond discriminative CTR.
 <a id="paper-2611-05799"></a>
 
 - **Item Representations Matter: Bridging Hard Semantic IDs and Soft Prototype Mixtures for Generative Retrieval**: CAP-Mix gives continuous generative retrieval shared item structure without a hard discrete bottleneck. Each item combines a soft mixture of shared prototypes with an item-specific vector; assignments, prototypes and vectors train jointly and remain soft at inference, with optional semantic-ID priors or content initialization. Matched comparisons examine sparse Amazon and Steam settings. Across six benchmarks the authors report average HR@5 and NDCG@5 gains of 6.9% and 13.6% over each metric's best evaluated baseline, with throughput depending on the discrete baseline. — [Paper](https://arxiv.org/abs/2611.05799) (Meta; Texas A&M University · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-07866"></a>
+
+- **Do Recommenders Need to Think in Words? Latent Reasoning for Efficient LLM-Based Recommendation**: LatentRec moves recommendation reasoning supervision into training to avoid generating extra reasoning tokens at inference. A 2.5M-parameter module iterates over the LLM hidden state, aligns hidden states with input embeddings and supervises each step against the first target semantic-ID token. The module is discarded at deployment. On three Amazon benchmarks, HR@10 improves by 4.0–5.0% relative to a CoT-distilled baseline, with 18.3x lower latency at batch size 1. The useful design is training-only intermediate supervision; the latency result does not establish industrial batched throughput. — [Paper](https://arxiv.org/abs/2611.07866) · [DOI](https://doi.org/10.1145/3799682.3840048) (Tencent · CIKM (Short) 2026). Reading priority: Unrated.
+
+<a id="paper-2611-07425"></a>
+
+- **BRIDGE: Bridging the Semantic Quantization Gap for Generative Recommendation**: BRIDGE addresses the semantic information lost when a generative recommender sees only discrete semantic IDs. It supplies frozen codebook centroids as reasoning anchors, distills neighborhood structure through a privileged EMA teacher and allocates more recurrent computation to difficult early ID levels. Across three Amazon benchmarks, average Recall@10 and NDCG@10 improve by 10.9% and 9.7% over the strongest baseline. A one-week, 5%-traffic e-commerce advertising A/B test reports a 0.65% eCPM gain. The method suggests preserving quantizer geometry and varying compute by ID depth; the abstract gives no matched-budget efficiency result. — [Paper](https://arxiv.org/abs/2611.07425) (Kuaishou Technology · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-06323"></a>
+
+- **Generative Retrieval under Real-Time Supply Constraints in Local Commerce**: This retrieval pipeline constrains semantic-ID generation to a request-time snapshot of serviceable local merchants. Eligible IDs are compiled into a compressed sparse row prefix index, overlapped with model prefill and shared across beams while preserving original-model probabilities for legal expansions. A matched-beam daily-constraint case reduces filtered merchants from 170/299 to 29/299; remaining distance violations motivate request-specific constraints. A separate, different-host test with 30,000 entries adds 0.6 ms of service-side latency, excluding additional client costs. The implementation informs dynamic constrained retrieval, but validity is snapshot-relative and compute savings at matched retrieval quality are not established. — [Paper](https://arxiv.org/abs/2611.06323) (Rajax Network Technology (Taobao Shangou of Alibaba) · arXiv 2026). Reading priority: Unrated.

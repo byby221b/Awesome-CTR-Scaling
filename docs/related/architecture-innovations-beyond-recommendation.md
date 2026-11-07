@@ -6,7 +6,7 @@
 
 Transferable ideas from general-purpose model architecture research.
 
-252 papers · Updated 2026-11-06
+267 papers · Updated 2026-11-07
 
 <a id="paper-2606-16825"></a>
 
@@ -782,7 +782,7 @@ Transferable ideas from general-purpose model architecture research.
 
 <a id="paper-2610-40577"></a>
 
-- **Multi-View Latent MoE: Letting Every Router Shape Expert Computation**: Multi-View MoE combines several routers to select experts and uses their relative preferences to mix latent views into each selected expert's input. Each selected expert runs once, preserving the active-expert count, expert FLOPs and all-to-all communication volume. On a 24-layer model with 10B total and 1B active parameters trained on 708B tokens, it improves the mean across nine downstream tasks by 1.18 percentage points. The design is relevant to sparse ranking architectures that seek more expressive routing under a fixed expert-computation budget; it does not establish CTR gains. — [Paper](https://arxiv.org/abs/2610.40577) (Baidu · arXiv 2026). Reading priority: Unrated.
+- **Multi-View Latent MoE: Letting Every Router Shape Expert Computation**: Multi-View Latent MoE combines several routers to select experts and uses their relative preferences to mix latent views into each selected expert’s input. Each selected expert runs once, preserving the active-expert count, expert FLOPs and all-to-all communication volume. On a 24-layer model with 10B total and 1B active parameters trained on 708B tokens, it improves the mean across nine downstream tasks by 1.18 percentage points over the baseline. The design is relevant to sparse ranking architectures that seek more expressive routing under a fixed expert-computation budget; it does not establish CTR gains. — [Paper](https://arxiv.org/abs/2610.40577) (Baidu · arXiv 2026). Reading priority: Unrated.
 
 <a id="paper-2610-37914"></a>
 
@@ -938,7 +938,7 @@ Transferable ideas from general-purpose model architecture research.
 
 <a id="paper-2611-01940"></a>
 
-- **ReWY: Faster Gradient Computation for Delta-Rule Attention Family**: ReWY algebraically simplifies the backward pass of DeltaNet, GDN, KDA and GDN2, reducing seven local WY matrix products to three while preserving exact-arithmetic gradients. GPU and Ascend implementations exploit further contraction reuse; matched-policy GPU tests report 1.15–1.81× geometric-mean low-level backward speedups. — [Paper](https://arxiv.org/abs/2611.01940) (Tianjin University · arXiv 2026). Reading priority: Unrated.
+- **ReWY: Faster Backpropagation for Delta-Rule Attention - From 7 to 3 Matrix Multiplications**: ReWY algebraically simplifies the backward pass of DeltaNet, GDN, KDA and GDN2, reducing seven local WY matrix products to three while preserving exact-arithmetic gradients. GPU and Ascend implementations exploit further contraction reuse; matched-policy GPU tests report 1.15–1.81× geometric-mean low-level backward speedups. — [Paper](https://arxiv.org/abs/2611.01940) (Tianjin University · arXiv 2026). Reading priority: Unrated.
 
 <a id="paper-2611-00421"></a>
 
@@ -1015,3 +1015,63 @@ Transferable ideas from general-purpose model architecture research.
 <a id="paper-2611-04376"></a>
 
 - **Aligning Training and Rollout Policies for End-to-End FP4 RL on Mixture-of-Experts LLMs**: MoEResQ studies quantization recovery for end-to-end FP4 reinforcement-learning post-training of MoE models. Discrete expert routing makes train–rollout alignment sensitive to applying recovery corrections on only one side; the proposed recipe applies them symmetrically. The paper reports restored probability and routing alignment and a smaller accuracy gap to full precision. This is a transferable warning for low-precision sparse routing, not a recommendation-system benchmark. — [Paper](https://arxiv.org/abs/2611.04376) (Huawei · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-08376"></a>
+
+- **Muir: Linear Attention with Sensitivity-Allocated Gating and Matched-Filter Readout**: Muir addresses uneven sensitivity in linear-attention erase and write gates and interference from slow-decaying state rows. It combines low-rank gate projections, a matched-filter readout and a numerically stable parallel update, reallocating saved parameters to the feed-forward network. Across 166M–1.34B models, it reports 1.8–2.0% lower perplexity than GDN-2 while matching its throughput; at 32K context, training is 2.7x faster than Transformer. Its 1.34B model also extrapolates from 4K training sequences to 10M-token streams without perplexity drift. Sensitivity-aware state updates offer a direction for long-history recommendation, which is not evaluated here. — [Paper](https://arxiv.org/abs/2611.08376) (University of Texas at Austin; Google · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-07552"></a>
+
+- **SPARE: Fast Linear Attention Decoding with Compact Recurrent States**: SPARE targets the memory traffic of linear attention's recurrent states, whose size grows quadratically with representation width. Without retraining, it uses fixed low-dimensional subspaces, heterogeneous ranks and write compensation to read and update compressed states directly, avoiding online decomposition and dense reconstruction. The abstract reports 2.55x full-model decode speedup, 7.49x lower recurrent-kernel DRAM traffic and 3.31x lower peak GPU memory, but does not identify the speed baseline or hardware. Associative retrieval is better than structured pruning at matched memory budgets. The mechanism offers a candidate approach for compact long-history states. — [Paper](https://arxiv.org/abs/2611.07552) (University of Virginia · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-07496"></a>
+
+- **ZYFA: Speed and Accuracy of FP8 FlashAttention on AMD CDNA4**: ZYFA targets the softmax and scheduling bottlenecks that limit FP8 attention on AMD MI355X. It combines direct score-to-FP8 probability conversion, overlapping matrix multiplication with softmax, and blockwise probability scaling before rounding. On activations captured from three models at sustained clock speeds, its prefill kernels deliver 1.16–1.76x AITER throughput. At head dimension 128, numerical error is close to Composable Kernel and Triton and lower than AITER. The paper also shows why random-input benchmarks can mispredict real-activation throughput on this hardware. This is a hardware-specific attention-kernel result, not an end-to-end recommendation speedup. — [Paper](https://arxiv.org/abs/2611.07496) (Zyphra · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-07256"></a>
+
+- **TriAttention: Unified Sparse Mixed-Precision Attention for Long-Context LLM Inference**: TriAttention jointly chooses which attention tiles to retain and whether to compute them at 4 or 8 bits. Two diagonal-distance boundaries per head encode the policy; offline calibration and model-wide allocation select boundaries under a shared compute budget. A fused prefill kernel combines both precisions, and decoding reuses the compressed KV cache. The abstract reports up to 2.65x end-to-end generation speedup over a BF16 baseline, with comparable general and long-context task quality, but does not specify the hardware or baseline implementation. Joint retention and precision allocation could inform long-sequence serving beyond LLMs. — [Paper](https://arxiv.org/abs/2611.07256) (University of North Texas; Saint Louis University · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-07232"></a>
+
+- **Recursive Sparse Attention: Million-Token Length Extrapolation at Logarithmic Cost**: RecSA builds a tree over the KV cache and recursively selects candidates, combining exact tokens with summaries of unselected subtrees in one softmax. A per-layer pooler shared across tree levels and level-relative positions keep selection and reads logarithmic in sequence length while supporting length extrapolation. Starting from Qwen3-4B, training uses 0.62B tokens at 32K length. At 1M tokens, RULER scores 60.5 versus 40.0 for the best baseline, Dense + DCA. At 524K on one H200, prefill and decoding are 3.2x and 3.8x faster than dense attention. Hierarchical retrieval offers a transferable long-history design, without recommendation evaluation. — [Paper](https://arxiv.org/abs/2611.07232) (University of California, San Diego; Carnegie Mellon University · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-07226"></a>
+
+- **Loopback Transformer: Towards a Unified View of Residual Looped Transformers**: Loopback separates the shared stack's input from individual residual updates, avoiding the repeated reweighting of history carried inside full block outputs. Geometric decay controls total update weight and recency, while attention allocates weight across updates. On ClimbMix, with training tokens and executed depth matched, it reaches lower validation loss than standard Transformers using 40–75% of their Transformer parameters, excluding embeddings and the output head, at reference scales of 191M–3B. It also improves mean accuracy on 13 tasks at 1.4B and 3B. The result informs parameter-efficient recurrent depth, not a demonstrated FLOP or latency reduction. — [Paper](https://arxiv.org/abs/2611.07226) (University of Wisconsin–Madison; University of California, Santa Barbara; California Institute of Technology; Microsoft · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-07149"></a>
+
+- **FastAFD: When Does Attention-FFN Disaggregation Pay on Rack-Scale NVLink?**: FastAFD tests when separating attention and MoE experts pays off on GB200 NVL72. It overlaps attention and expert computation across microbatches and compares against the best vLLM wide-expert-parallel configuration. Throughput gains reach 1.17x on Qwen3 and 1.16x on Qwen3.5, while MiniMax-M2.5 is matched. A model using colocated profiles predicts throughput within 3% and separates batch-size gains, overlap gains and the GPU cost of disaggregation. This gives a hardware-specific decision framework for sparse-model serving; the larger projected speedup with future SRAM-resident expert accelerators is not a measured result. — [Paper](https://arxiv.org/abs/2611.07149) (University of California, San Diego · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-07084"></a>
+
+- **DMuon: Scaling Matrix Optimizers in Data Parallelism with Topology-Aware Matrix Ownership and Communication**: DMuon reconciles whole-matrix optimization with sharded data-parallel training. Each matrix has one cost-balanced owner for its optimizer update; global ownership under HSDP avoids replicated optimizer work and state, while readiness-driven collectives follow the network topology. Across three dense LLMs and two VLA models on up to 256 H100s, it reports median throughput of 1.05x PyTorch FSDP2 with AdamW at 256 GPUs and 2.1x a gather-then-replicate Muon baseline. Matrix-level ownership and communication scheduling could help scale matrix optimizers for recommendation, but no recommendation or model-quality benefit is established here. — [Paper](https://arxiv.org/abs/2611.07084) (X Square Robot · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-06984"></a>
+
+- **Resource-Efficient Reinforcement Learning Post-Training through Elastic Expert Parallelism**: FlexFloor reduces the time MoE rollout workers remain occupied after finishing their own responses because other workers still need their experts. Historical response lengths and memory limits guide batching and prompt placement; the system then releases workers progressively while preserving expert availability and communication correctness. Against verl, it reports 65.40% more response tokens per unit of occupied compute time and 52.74% higher generation throughput, with little observed rollout-reward variation. The transferable idea is to adapt expert-parallel resources to uneven request lengths; hardware and model scope are not specified in the abstract, and recommendation serving is not evaluated. — [Paper](https://arxiv.org/abs/2611.06984) (Tsinghua University · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-06133"></a>
+
+- **Accelerating Long-Context Decoding in Large-Scale Hybrid LLMs Without Retraining**: This method sparsifies the remaining full-attention layers in hybrid LLMs without retraining or changing weights. Each layer retains a recent window, a pinned prefix and a fixed budget of relevant context tokens, with per-layer settings chosen by multi-objective search. Across six models from three families, spanning 4B–397B parameters, selected configurations preserve baseline accuracy on 21 long-context datasets. At 256K context, reported decoding speedups reach 2.22x on Qwen3.5-4B, 2.23x on Qwen3.5-122B-A10B and 2.06x on Ornith-1.0-397B. Layer-specific sparse budgets offer a design to test for hybrid recommendation models, not an established recommendation result. — [Paper](https://arxiv.org/abs/2611.06133) (RIKEN Center for Computational Science · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-06057"></a>
+
+- **vExpert: Virtualizing Expert Storage for Adaptive Load Balancing in Distributed MoE Inference**: vExpert addresses the mismatch between static expert placement and dynamic MoE routing. It keeps fully redundant expert storage in host DRAM, virtualizes GPU expert slots and uses a performance model covering host-to-device transfers, PCIe contention and load imbalance to choose mappings. A separate manager reduces multiprocess host-memory overhead. On DeepSeek-V3.1 in an eight-node H100 cluster, the system reports up to 55% improvement in its load-balance ratio and 1.2x end-to-end speedup. The design offers a systems approach to dynamic expert placement; its recommendation applicability and behavior on other interconnects remain untested in the abstract. — [Paper](https://arxiv.org/abs/2611.06057) (Tsinghua University; Infinigence AI; BNRist · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-05984"></a>
+
+- **On the Design of Hyper-Connections: Simplification, Stability, and Scalability**: SimpleHC studies which Hyper-Connection components justify their training cost. It removes residual mixing while retaining learned read/write gates, then shares memory access through batched reads and deferred writes with scalar corrections that preserve preceding update contributions. Across 15B–30B MoE models, it maintains performance comparable to mHC; at the largest tested scale, end-to-end training takes only 2.4% longer than a vanilla residual baseline. It also reports smoother training gradients and stability under stress. Separating useful residual-state structure from expensive memory access could guide deeper recommendation architectures, which are not tested here. — [Paper](https://arxiv.org/abs/2611.05984) (Shanghai Jiao Tong University; Dots Studio, Xiaohongshu; Peking University; Independent Researcher; Nanyang Technological University · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-04222"></a>
+
+- **GC-MoE: Overlapping Expert-Parallel Token Dispatch with FP8/FP4 Grouped GEMM via CUDA Green Contexts**: GC-MoE separates expert-parallel dispatch and grouped GEMM onto communication and compute partitions using CUDA Green Contexts. Independent kernels, a token-ring handshake and double-buffered counters overlap work without the usual trailing cross-rank barrier. At matched accuracy, the operator beats Mega MoE across all 54 measured points. On eight H20s, reported DeepSeek-V4.1-Flash decode speedup averages 1.188x in both routed and shared-expert suites; on eight B300s, GLM-5.2 and DeepSeek-V4.1-Flash average 1.106x, or 1.123x with fused shared experts. This supports hardware-aware partitioning for sparse inference, not a general recommendation throughput claim. — [Paper](https://arxiv.org/abs/2611.04222) (arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-03590"></a>
+
+- **A Scaling Theory of Multi-Epoch Pretraining: Late-Time Overfitting and Ensembling**: This study asks how to allocate compute between repeated training and ensembling when data are fixed. FineWeb language-model experiments show that logit averaging can reduce late-training deterioration and outperform wider or deeper single models at matched parameter-token budgets over a common training horizon. A dynamical mean-field theory for power-law random-feature ensembles links the benefit to reduced prediction variance and derives allocation laws at fixed data and individual model sizes. Data-limited recommendation may benefit from testing this trade-off, but the theoretical model is not a universal LLM scaling law, and inference cost is not matched by the stated training-budget comparison. — [Paper](https://arxiv.org/abs/2611.03590) (University of Texas at Austin; Carnegie Mellon University · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-05804"></a>
+
+- **Matching the Training-Time Weight Rule in Inference-Time Expert Deactivation**: This study isolates how expert deactivation interacts with the router weighting rule used in training. It compares removal, freezing, remaining-expert renormalization and unnormalized rerouting on identical disabled sets across five instruction-tuned checkpoints from four families, plus a base OLMoE model. With half the experts disabled, retaining the training rule yields perplexity of 1.4–73x the intact baseline; mismatches yield 14–28,740x. Even matching the rule does not guarantee task quality: OLMoE GSM8K strict-match accuracy falls to zero under all four implementations. Expert compression therefore needs routing-scale and task-level checks, not just expert importance rankings. — [Paper](https://arxiv.org/abs/2611.05804) (Zhejiang Gongshang University; University of Sussex; Chang’an University · arXiv 2026). Reading priority: Unrated.

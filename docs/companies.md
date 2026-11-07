@@ -8,13 +8,13 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 
 - [Meta](#company-meta) (60)
 - [ByteDance / TikTok](#company-bytedance-tiktok) (28)
-- [Alibaba](#company-alibaba) (55)
+- [Alibaba](#company-alibaba) (57)
 - [Meituan](#company-meituan) (11)
-- [Tencent](#company-tencent) (28)
-- [Google](#company-google) (24)
+- [Tencent](#company-tencent) (29)
+- [Google](#company-google) (26)
 - [LinkedIn](#company-linkedin) (7)
 - [NetEase](#company-netease) (2)
-- [Kuaishou](#company-kuaishou) (37)
+- [Kuaishou](#company-kuaishou) (38)
 - [Huawei](#company-huawei) (11)
 - [Baidu](#company-baidu) (10)
 - [Shopee](#company-shopee) (4)
@@ -25,10 +25,10 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [Yandex](#company-yandex) (6)
 - [JD](#company-jd) (7)
 - [VK](#company-vk) (1)
-- [Microsoft](#company-microsoft) (7)
+- [Microsoft](#company-microsoft) (8)
 - [Walmart](#company-walmart) (2)
 - [Snap](#company-snap) (4)
-- [Xiaohongshu](#company-xiaohongshu) (7)
+- [Xiaohongshu](#company-xiaohongshu) (8)
 - [Amazon](#company-amazon) (6)
 - [Capital One](#company-capital-one) (2)
 - [Shopify](#company-shopify) (2)
@@ -42,7 +42,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [Kimi](#company-kimi) (1)
 - [Qualcomm AI Research](#company-qualcomm-ai-research) (2)
 - [Apple](#company-apple) (2)
-- [Infinigence AI](#company-infinigence-ai) (1)
+- [Infinigence AI](#company-infinigence-ai) (2)
 - [Orbital Industries](#company-orbital-industries) (1)
 - [Cursor Research](#company-cursor-research) (1)
 - [SB Intuitions](#company-sb-intuitions) (1)
@@ -57,7 +57,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [Criteo](#company-criteo) (3)
 - [Q Labs](#company-q-labs) (2)
 - [Spotify](#company-spotify) (1)
-- [Zyphra](#company-zyphra) (2)
+- [Zyphra](#company-zyphra) (3)
 - [Airbnb](#company-airbnb) (2)
 - [SenseTime](#company-sensetime) (1)
 - [Linkup](#company-linkup) (1)
@@ -86,6 +86,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [DualverseAI](#company-dualverseai) (1)
 - [InfRec](#company-infrec) (1)
 - [Preferred Networks](#company-preferred-networks) (1)
+- [X Square Robot](#company-x-square-robot) (1)
 
 <a id="company-meta"></a>
 
@@ -244,6 +245,8 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [Diverse-Teacher On-Policy Distillation for Generative Recommendation](related/knowledge-distillation-compression.md#paper-2611-03272) · 2026 · Related
 - [Numerical Embeddings for CTR Prediction: A Taxonomy, Unified Benchmark, and Open-Source FuxiCTR Extension](related/other.md#paper-2611-01090) · 2026 · Related
 - [ReuseGR: Offline--Online Decoupled Generative Retrieval via Adaptive Prefix Reuse](topics/efficiency-deployment.md#paper-2611-04259) · 2026 · Core
+- [Generative Retrieval under Real-Time Supply Constraints in Local Commerce](related/generative-recommendation.md#paper-2611-06323) · 2026 · Related
+- [From Waste to Discovery: Recycling High-Scored Unexposed Candidates in Taobao Feed Recommendation](related/engineering-serving.md#paper-2611-05997) · 2026 · Related
 
 <a id="company-meituan"></a>
 
@@ -293,6 +296,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [GistRank: Gist-Compressed Listwise Ranking with Large Language Models](related/retrieval-reranking-scaling.md#paper-2610-39610) · 2026 · Related
 - [WeSearch: A Unified Model-Centric Retrieval Framework for WeChat Search](related/retrieval-reranking-scaling.md#paper-2611-00530) · 2026 · Related
 - [SparseLift: Automatically Optimizing Opaque Sparse Paths in Industrial-Scale Recommendation Model Training](topics/efficiency-deployment.md#paper-2611-01702) · 2026 · Core
+- [Do Recommenders Need to Think in Words? Latent Reasoning for Efficient LLM-Based Recommendation](related/generative-recommendation.md#paper-2611-07866) · 2026 · Related
 
 <a id="company-google"></a>
 
@@ -322,6 +326,8 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [Ambiguous Fits: The Rashomon Effect and Challenges in Scaling Law Estimation](related/architecture-innovations-beyond-recommendation.md#paper-2610-34514) · 2026 · Related
 - [FlyWheel: Attention Kernels Built for the TPU](related/architecture-innovations-beyond-recommendation.md#paper-2611-01426) · 2026 · Related
 - [Systolic Linear Attention: Co-Designing Tile-Grouped Gated Delta Attention for TPUs](related/architecture-innovations-beyond-recommendation.md#paper-2611-06828) · 2026 · Related
+- [Muir: Linear Attention with Sensitivity-Allocated Gating and Matched-Filter Readout](related/architecture-innovations-beyond-recommendation.md#paper-2611-08376) · 2026 · Related
+- [GINGER: Spicing Up Graph-Based Vector Search](related/retrieval-reranking-scaling.md#paper-2611-08306) · 2026 · Related
 
 <a id="company-linkedin"></a>
 
@@ -383,6 +389,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [HiGenTrans: Hierarchical LLM Knowledge Transfer for Generative Recommendation](related/knowledge-distillation-compression.md#paper-2611-01129) · 2026 · Related
 - [ZeroGR: Filtering-First Constrained Decoding for Generative Recommendation](topics/efficiency-deployment.md#paper-2611-04715) · 2026 · Core
 - [OneLatent: Latent Reasoning for Efficient Foundation Recommendation Models](topics/efficiency-deployment.md#paper-2610-30675) · 2026 · Core
+- [BRIDGE: Bridging the Semantic Quantization Gap for Generative Recommendation](related/generative-recommendation.md#paper-2611-07425) · 2026 · Related
 
 <a id="company-huawei"></a>
 
@@ -496,6 +503,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [xPRT: Cross-Passage Retrieval Pretraining](related/retrieval-reranking-scaling.md#paper-2610-40122) · 2026 · Related
 - [There Is No Free Loop: When Does Looping a Trained Model Pay for Its Inference Compute?](related/architecture-innovations-beyond-recommendation.md#paper-2610-42030) · 2026 · Related
 - [Sonar-MoE: In-Backward Expert Updates for Memory-Efficient Mixture-of-Experts Training](related/architecture-innovations-beyond-recommendation.md#paper-2611-03577) · 2026 · Related
+- [Loopback Transformer: Towards a Unified View of Residual Looped Transformers](related/architecture-innovations-beyond-recommendation.md#paper-2611-07226) · 2026 · Related
 
 <a id="company-walmart"></a>
 
@@ -524,6 +532,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [LIFT: A Lifecycle-aware Interaction Factorization Transformer for Unified Retrieval and Ranking](topics/foundation-models-multi-scenario.md#paper-2610-10556) · 2026 · Core
 - [Multi-Stream Attention Residuals](related/architecture-innovations-beyond-recommendation.md#paper-2610-13630) · 2026 · Related
 - [DoSA: Dots Sparse Attention](related/architecture-innovations-beyond-recommendation.md#paper-2610-13990) · 2026 · Related
+- [On the Design of Hyper-Connections: Simplification, Stability, and Scalability](related/architecture-innovations-beyond-recommendation.md#paper-2611-05984) · 2026 · Related
 
 <a id="company-amazon"></a>
 
@@ -634,6 +643,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 ## Infinigence AI
 
 - [HAPMoE: Heterogeneity-Aware Automatic Parallelism Planning for Mixture-of-Experts Models Training](related/engineering-serving.md#paper-2609-39350) · 2026 · Related
+- [vExpert: Virtualizing Expert Storage for Adaptive Load Balancing in Distributed MoE Inference](related/architecture-innovations-beyond-recommendation.md#paper-2611-06057) · 2026 · Related
 
 <a id="company-orbital-industries"></a>
 
@@ -728,6 +738,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 
 - [Expert Coupling in MoE Pretraining: Reducing All-to-All Overhead with Correlated Placement and Token Shuffling](related/engineering-serving.md#paper-2610-09372) · 2026 · Related
 - [Subquadratic Attention with a Hierarchical Tree-Structured Indexer](related/architecture-innovations-beyond-recommendation.md#paper-2610-42112) · 2026 · Related
+- [ZYFA: Speed and Accuracy of FP8 FlashAttention on AMD CDNA4](related/architecture-innovations-beyond-recommendation.md#paper-2611-07496) · 2026 · Related
 
 <a id="company-airbnb"></a>
 
@@ -906,3 +917,9 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 ## Preferred Networks
 
 - [Coarse Semantic Blocks for Efficient Training-Free Sparse Attention](related/architecture-innovations-beyond-recommendation.md#paper-2611-04313) · 2026 · Related
+
+<a id="company-x-square-robot"></a>
+
+## X Square Robot
+
+- [DMuon: Scaling Matrix Optimizers in Data Parallelism with Topology-Aware Matrix Ownership and Communication](related/architecture-innovations-beyond-recommendation.md#paper-2611-07084) · 2026 · Related

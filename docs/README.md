@@ -16,12 +16,12 @@
 
 - [Long Sequence Modeling](related/long-sequence-modeling.md) (34) — Long-history modeling, memory and compression for user behavior sequences.
 - [Sample/Instance Compression for Sequence Modeling](related/sample-instance-compression-for-sequence-modeling.md) (4) — Compressing complete interactions and raw samples into sequence tokens.
-- [Generative Recommendation](related/generative-recommendation.md) (117) — Generative retrieval, recommendation and ranking beyond discriminative CTR.
+- [Generative Recommendation](related/generative-recommendation.md) (120) — Generative retrieval, recommendation and ranking beyond discriminative CTR.
 - [Generative Pre-training for CTR](related/generative-pre-training-for-ctr.md) (5) — Generative objectives and pre-training for discriminative CTR tasks.
 - [Knowledge Distillation & Compression](related/knowledge-distillation-compression.md) (15) — Transferring, compressing and deploying larger recommendation models.
-- [Engineering & Serving](related/engineering-serving.md) (49) — Systems, serving infrastructure and hardware-aware optimization.
-- [Retrieval & Reranking Scaling](related/retrieval-reranking-scaling.md) (48) — Scaling retrieval and reranking stages of recommendation pipelines.
-- [Architecture Innovations Beyond Recommendation](related/architecture-innovations-beyond-recommendation.md) (252) — Transferable ideas from general-purpose model architecture research.
+- [Engineering & Serving](related/engineering-serving.md) (50) — Systems, serving infrastructure and hardware-aware optimization.
+- [Retrieval & Reranking Scaling](related/retrieval-reranking-scaling.md) (49) — Scaling retrieval and reranking stages of recommendation pipelines.
+- [Architecture Innovations Beyond Recommendation](related/architecture-innovations-beyond-recommendation.md) (267) — Transferable ideas from general-purpose model architecture research.
 - [Other](related/other.md) (17) — Adjacent research, diagnostics and other relevant recommendation methods.
 
 ## Tag vocabulary

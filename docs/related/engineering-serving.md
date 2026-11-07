@@ -6,7 +6,7 @@
 
 Systems, serving infrastructure and hardware-aware optimization.
 
-49 papers · Updated 2026-11-06
+50 papers · Updated 2026-11-07
 
 <a id="paper-2510-18239"></a>
 
@@ -182,7 +182,7 @@ Systems, serving infrastructure and hardware-aware optimization.
 
 <a id="paper-2610-32057"></a>
 
-- **HyScale: Scaling Long-Context Training for Learned Sparse Attention**: HyScale targets the selection bottleneck in learned sparse-attention training. HyTopK computes exact top-k indices without materializing the score table, and selection replay reuses forward selections during recomputation. With other system optimizations, it speeds up million-token GLM-5.1 training by 2.07 times over Megatron-LM on 512 H20 GPUs; additional results measure individual attention layers on 32 H800 GPUs. The selection and recomputation design is relevant to long-sequence training engineering, with no CTR benchmark claimed. — [Paper](https://arxiv.org/abs/2610.32057) (University of Edinburgh; Tencent Hunyuan · arXiv 2026). Reading priority: Unrated.
+- **HyScale: Scaling Long-Context Training for Learned Sparse Attention**: HyScale targets the selection bottleneck in learned sparse-attention training. FlashTopK computes exact top-k indices without materializing the score table, and selection replay reuses forward selections during recomputation. With other system optimizations, it speeds up million-token GLM-5.1 training by 2.07 times over Megatron-LM on 512 H20 GPUs; additional results measure individual attention layers on 32 H800 GPUs. The selection and recomputation design is relevant to long-sequence training engineering, with no CTR benchmark claimed. — [Paper](https://arxiv.org/abs/2610.32057) (University of Edinburgh; Tencent Hunyuan · arXiv 2026). Reading priority: Unrated.
 
 <a id="paper-2610-36339"></a>
 
@@ -203,3 +203,7 @@ Systems, serving infrastructure and hardware-aware optimization.
 <a id="paper-2611-02618"></a>
 
 - **USDB: Scaling Storage for Next-Generation Recommender Systems at ByteDance**: USDB addresses the mismatch between small streaming updates and repeated long-history reads in recommendation storage. CascadeLSM compaction, shared-file replicas, partial dumps and a hybrid columnar format reuse maintenance work across ingestion, serving and training; production records report 85.8% lower mean write latency and normalized accounting reports 42.1% lower infrastructure cost. — [Paper](https://arxiv.org/abs/2611.02618) (ByteDance; Nanyang Technological University · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-05997"></a>
+
+- **From Waste to Discovery: Recycling High-Scored Unexposed Candidates in Taobao Feed Recommendation**: URED reuses high-scored but unexposed items instead of injecting poorly understood cold candidates for discovery. A 30-day pool feeds a training-free recall pipeline with one O(1) lookup per request and under 1% added latency. In Taobao feed A/B tests, discovered categories rise 3.47% and completed video views rise 2.62%; the 0.36% total-view increase is not statistically significant. Shortening the pool to one day or removing score filtering removes the reliable discovery gain. The system illustrates how existing ranking signals can support exploration without another model, rather than demonstrating model-scaling gains. — [Paper](https://arxiv.org/abs/2611.05997) (Taobao & Tmall Group of Alibaba · arXiv 2026). Reading priority: Unrated.
