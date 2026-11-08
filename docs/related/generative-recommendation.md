@@ -6,7 +6,7 @@
 
 Generative retrieval, recommendation and ranking beyond discriminative CTR.
 
-121 papers · Updated 2026-11-08
+122 papers · Updated 2026-11-09
 
 <a id="paper-2605-12617"></a>
 
@@ -491,3 +491,7 @@ Generative retrieval, recommendation and ranking beyond discriminative CTR.
 <a id="paper-2608-24034"></a>
 
 - **TAGR: Temporally Adaptive Generative Recommendation for Industrial Live-Streaming Advertising**: TAGR adapts generative recommendation to rapidly changing live-stream ads at three levels: refreshed semantic-collaborative item IDs, multi-timescale user-intent modeling, and intermittent on-policy preference optimization interleaved with supervised training. A production deployment reports 8.5% higher live-room entry rate, 7.4% higher shopping-cart click rate and 16.1% higher revenue versus its production baseline. The method illustrates how token freshness and optimization cadence can be coordinated in industrial generative recommendation. — [Paper](https://arxiv.org/abs/2608.24034) (Kuaishou; Tsinghua University · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-07588"></a>
+
+- **What Gets Hacked in a Collaborative Reward for LLM Recommenders: The Part That Does Not Depend on the User**: The study diagnoses exposure collapse when collaborative-filtering scores reward an LLM recommender during reinforcement learning. It separates an item’s average score across users from its user-specific residual, then centers or standardizes the reward per item. Controlled experiments on two datasets with two identifier schemes yield up to 9.8 times as many distinct top-ranked items as the uncorrected reward while retaining comparable ranking accuracy. The result offers a concrete reward-design check for generative recommendation, rather than a model-scaling law or an industrial deployment result. — [Paper](https://arxiv.org/abs/2611.07588) (University of California, San Diego; Google; University of Virginia; University of Melbourne; University of California, Davis · arXiv 2026). Reading priority: Unrated.

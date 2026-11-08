@@ -6,7 +6,7 @@
 
 Scaling retrieval and reranking stages of recommendation pipelines.
 
-50 papers · Updated 2026-11-08
+51 papers · Updated 2026-11-09
 
 <a id="paper-2603-04816"></a>
 
@@ -207,3 +207,7 @@ Scaling retrieval and reranking stages of recommendation pipelines.
 <a id="paper-2611-07591"></a>
 
 - **Beyond Independent Predictions: Learning the Browsing Journey for Sequence-Level Re-ranking**: ICE evaluates candidate recommendation lists by modeling display, impression and click jointly. It predicts browsing depth, uses impression probabilities to reduce context from unseen items, and matches the click distribution across the list. A 14-day Taobao A/B test reports 0.70% more clicks and 3.67% more revenue. This improves the evaluator in a generator–evaluator reranking pipeline; it addresses sequence utility rather than establishing a model-size scaling law. — [Paper](https://arxiv.org/abs/2611.07591) · [Venue](https://cikm2026.diag.uniroma1.it/program/) (Alibaba; Xi’an Jiaotong University · CIKM (Applied Research) 2026). Reading priority: Unrated.
+
+<a id="paper-2611-07298"></a>
+
+- **Reducing Representational Interference in Retrieval Embeddings with Trainable Prefix Tokens**: The method prepends trainable \[DUMP\] tokens during embedding-model training to reduce residual, low-information token signals in the final retrieval representation. The backbone, pooling and loss remain unchanged; the added prefixes learn through the standard contrastive retrieval objective. Tests on standard and long-context retrieval benchmarks improve over fine-tuned baselines for both encoder and decoder embedding models. The approach provides a lightweight retrieval-representation intervention, rather than a scaling law or a demonstrated recommendation-system gain. — [Paper](https://arxiv.org/abs/2611.07298) · [DOI](https://doi.org/10.1145/3799682.3840002) (Korea University; Soongsil University · CIKM (Short) 2026). Reading priority: Unrated.

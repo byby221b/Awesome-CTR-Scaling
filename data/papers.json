@@ -5,7 +5,7 @@
     "description": "Scaling laws and scalable ranking models for industrial recommendation.",
     "repository_url": "https://github.com/byby221b/Awesome-CTR-Scaling",
     "site_url": "https://byby221b.github.io/Awesome-CTR-Scaling/",
-    "updated": "2026-11-08",
+    "updated": "2026-11-09",
     "source_commit": "31ad30becff83ca14a01f37fc99d52ba79f85565",
     "scope": "We cover papers that (1) study scaling laws for recommendation models, (2) propose scalable Transformer-based architectures for CTR/ranking, (3) address efficiency challenges in scaling up industrial ranking systems, or (4) explore novel paradigms (e.g., sparse scaling, generative pre-training, foundation models) for scalable recommendation.",
     "history": {
@@ -47904,7 +47904,7 @@
       "collection": "related",
       "category": "architecture-innovations-beyond-recommendation",
       "affiliation": "Lenovo Research",
-      "venue": "arXiv",
+      "venue": "NeurIPS",
       "year": 2026,
       "tags": [],
       "links": [
@@ -47958,7 +47958,16 @@
         "kind": "catalog_entry",
         "source_url": "https://arxiv.org/abs/2611.05906"
       },
-      "change_history": [],
+      "change_history": [
+        {
+          "at": "2026-11-08T23:24:31Z",
+          "kind": "venue_update",
+          "fields": [
+            "venue"
+          ],
+          "source_url": "https://neurips.cc/static/virtual/data/neurips-2026-orals-posters.json"
+        }
+      ],
       "reading_tier": null
     },
     {
@@ -49126,7 +49135,7 @@
       "collection": "related",
       "category": "architecture-innovations-beyond-recommendation",
       "affiliation": "Tsinghua University; Infinigence AI; BNRist",
-      "venue": "arXiv",
+      "venue": "NeurIPS",
       "year": 2026,
       "tags": [],
       "links": [
@@ -49177,7 +49186,16 @@
         "kind": "catalog_entry",
         "source_url": "https://arxiv.org/abs/2611.06057"
       },
-      "change_history": [],
+      "change_history": [
+        {
+          "at": "2026-11-08T23:24:31Z",
+          "kind": "venue_update",
+          "fields": [
+            "venue"
+          ],
+          "source_url": "https://neurips.cc/static/virtual/data/neurips-2026-orals-posters.json"
+        }
+      ],
       "reading_tier": null
     },
     {
@@ -49789,6 +49807,613 @@
       "added_provenance": {
         "kind": "catalog_entry",
         "source_url": "https://arxiv.org/abs/2603.00416"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2611.07588",
+      "title": "What Gets Hacked in a Collaborative Reward for LLM Recommenders: The Part That Does Not Depend on the User",
+      "collection": "related",
+      "category": "generative-recommendation",
+      "affiliation": "University of California, San Diego; Google; University of Virginia; University of Melbourne; University of California, Davis",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2611.07588"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Collaborative-filtering (CF) scores provide graded, personalized rewards for training large language model (LLM) recommenders through reinforcement learning. However, these rewards can cause exposure collapse: even though the CF model itself produces diverse top recommendations across users, an LLM optimized with its rewards concentrates on fewer items. We decompose each score into an item-mean component, the item's average CF score across user histories, and a residual component, the current user's score deviation from the average. Through controlled interventions, we identify the item-mean component as a contributor to exposure collapse. Accordingly, we propose two reward corrections: per-item centering removes each item's estimated mean score, while per-item standardization further rescales the residual using its estimated standard deviation. Experiments on two datasets with two identifier schemes show that both corrections substantially improve catalog coverage and exposure evenness. Compared with training on the uncorrected CF reward, our corrections increase the number of distinct items ranked first across users by up to $9.8\\times$, while maintaining comparable ranking accuracy. Code is available at https://anonymous.4open.science/r/LLM4Rec-CF-Bias-27EF/.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2611.07588v1",
+        "source_title": "What Gets Hacked in a Collaborative Reward for LLM Recommenders: The Part That Does Not Depend on the User",
+        "source_version": "v1",
+        "retrieved_at": "2026-11-08T23:15:00Z",
+        "license": "CC0-1.0"
+      },
+      "source_dates": {
+        "published_at": "2026-11-05T07:39:28Z",
+        "updated_at": "2026-11-05T07:39:28Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2611.07588v1",
+        "verified_at": "2026-11-08T23:15:00Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "The study diagnoses exposure collapse when collaborative-filtering scores reward an LLM recommender during reinforcement learning. It separates an item’s average score across users from its user-specific residual, then centers or standardizes the reward per item. Controlled experiments on two datasets with two identifier schemes yield up to 9.8 times as many distinct top-ranked items as the uncorrected reward while retaining comparable ranking accuracy. The result offers a concrete reward-design check for generative recommendation, rather than a model-scaling law or an industrial deployment result.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-09",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.07588v1"
+          ]
+        },
+        "zh": {
+          "text": "这项研究分析了用协同过滤分数奖励大模型推荐器时的曝光集中现象。它把物品跨用户的平均分与当前用户的个性化残差分开，再按物品对奖励做中心化或标准化。在两个数据集、两种物品标识方案的受控实验中，排名首位的不同物品数最高达到未修正奖励时的 9.8 倍，同时保持相近的排序准确性。其借鉴点是检查生成式推荐奖励中与用户无关的分量，论文没有建立模型扩展定律或报告工业部署。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-09",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.07588v1"
+          ]
+        }
+      },
+      "added_at": "2026-11-08T23:24:31Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2611.07588"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2611.07298",
+      "title": "Reducing Representational Interference in Retrieval Embeddings with Trainable Prefix Tokens",
+      "collection": "related",
+      "category": "retrieval-reranking-scaling",
+      "affiliation": "Korea University; Soongsil University",
+      "venue": "CIKM (Short)",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2611.07298"
+        },
+        {
+          "label": "DOI",
+          "url": "https://doi.org/10.1145/3799682.3840002"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Embedding models compress variable-length text into fixed-size vector representations, but this compression can entangle semantic content with residual token-level information, such as artifacts arising from attention sink behavior. We propose a simple method that prepends trainable [DUMP] tokens to the input during embedding model training. The method keeps the model architecture, pooling strategy, and training loss unchanged, while optimizing the added tokens through the standard contrastive retrieval objective. By introducing trainable prefix positions that interact with regular tokens during encoding, [DUMP] tokens help reduce the influence of residual or uninformative token-level signals on the final retrieval representation. Experiments on standard retrieval and long-context benchmarks show that our method consistently improves over finetuned baselines across encoder and decoder embedding models. Further analysis shows that [DUMP] tokens alter token-level activation and attention patterns associated with low-information tokens. These results suggest that trainable prefix tokens provide a lightweight way to improve retrieval representations.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2611.07298v1",
+        "source_title": "Reducing Representational Interference in Retrieval Embeddings with Trainable Prefix Tokens",
+        "source_version": "v1",
+        "retrieved_at": "2026-11-08T23:15:00Z",
+        "license": "CC0-1.0"
+      },
+      "source_dates": {
+        "published_at": "2026-11-05T01:30:28Z",
+        "updated_at": "2026-11-05T01:30:28Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2611.07298v1",
+        "verified_at": "2026-11-08T23:15:00Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "The method prepends trainable [DUMP] tokens during embedding-model training to reduce residual, low-information token signals in the final retrieval representation. The backbone, pooling and loss remain unchanged; the added prefixes learn through the standard contrastive retrieval objective. Tests on standard and long-context retrieval benchmarks improve over fine-tuned baselines for both encoder and decoder embedding models. The approach provides a lightweight retrieval-representation intervention, rather than a scaling law or a demonstrated recommendation-system gain.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-09",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.07298v1"
+          ]
+        },
+        "zh": {
+          "text": "该方法在嵌入模型训练时加入可训练的 [DUMP] 前缀 token，减弱低信息量 token 的残余信号对最终检索向量的干扰。骨干结构、池化方式和损失保持不变，前缀通过原有对比检索目标学习。标准检索和长上下文检索实验中，encoder 与 decoder 嵌入模型均优于对应微调基线。它提供了轻量的检索表征修正方法，尚未建立扩展规律或验证推荐系统收益。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-09",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.07298v1"
+          ]
+        }
+      },
+      "doi": "10.1145/3799682.3840002",
+      "added_at": "2026-11-08T23:24:31Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2611.07298"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2611.05304",
+      "title": "LoopVQ: Sub 1-bit KV Cache Quantization for Looped Transformers",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "Seoul National University",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2611.05304"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Looped transformers are a parameter-efficient alternative to standard transformers for language modeling. By reapplying the same layers across multiple loop steps, recent looped language models match the performance of non-looped models several times their size. While this architecture effectively reduces parameter memory, each loop step still stores its own keys and values, so the key-value (KV) cache grows linearly with the number of loop steps and becomes the main memory bottleneck. We observe that the KV cache of looped models is highly redundant along the loop axis and that the loop steps differ substantially in their sensitivity to quantization. Based on these observations, we propose $\\textbf{LoopVQ}$, a KV cache vector quantization method for looped transformers that codes channels of multiple loop steps jointly, and fine-tunes the codebooks to match the output of the full-precision model. At 0.5 bits per element, LoopVQ outperforms existing KV cache vector quantization methods for standard LLMs on general, long chain-of-thought reasoning, and long-context retrieval tasks with Ouro and Huginn models. Its design is orthogonal to these methods, and combined with TaSQ, it retains much of the BF16 accuracy even at 0.25 bits per element. We also implement LoopVQ in SGLang, where it nearly halves the decode latency at a 32K-token context and raises the peak serving throughput by up to $4.3\\times$ and $6.1\\times$ on the 1.4B and 2.6B Ouro models compared to the BF16 baseline.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2611.05304v1",
+        "source_title": "LoopVQ: Sub 1-bit KV Cache Quantization for Looped Transformers",
+        "source_version": "v1",
+        "retrieved_at": "2026-11-08T23:15:00Z",
+        "license": "CC0-1.0"
+      },
+      "source_dates": {
+        "published_at": "2026-11-03T18:16:29Z",
+        "updated_at": "2026-11-03T18:16:29Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2611.05304v1",
+        "verified_at": "2026-11-08T23:15:00Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "LoopVQ addresses KV-cache growth in looped Transformers by jointly vector-quantizing channels across loop steps and tuning codebooks to match full-precision outputs. On Ouro and Huginn, it outperforms standard-model KV quantizers at 0.5 bits per element; combining it with TaSQ retains much of BF16 accuracy at 0.25 bits. Its SGLang implementation nearly halves decode latency at 32K context and reports peak throughput gains up to 4.3×/6.1× on Ouro 1.4B/2.6B relative to BF16. The design is relevant to the cache costs of recurrent-depth generation, but recommendation performance is not evaluated.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-09",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.05304v1"
+          ]
+        },
+        "zh": {
+          "text": "LoopVQ 针对循环 Transformer 的 KV 缓存随循环次数增长的问题，跨循环步骤联合向量量化缓存通道，并调整码本以匹配全精度输出。在 Ouro 和 Huginn 上，它以每元素 0.5 比特优于面向普通模型的 KV 量化方法；与 TaSQ 结合后，0.25 比特设置仍保留较多 BF16 精度。SGLang 实现将 32K 上下文下的解码延迟近乎减半，Ouro 1.4B/2.6B 的峰值吞吐最高分别达到 BF16 基线的 4.3/6.1 倍。它可供循环深度生成模型的缓存设计参考，尚未验证推荐任务效果。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-09",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.05304v1"
+          ]
+        }
+      },
+      "added_at": "2026-11-08T23:24:31Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2611.05304"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2611.07211",
+      "title": "Not All Loops Cost the Same: Phase-Dependent Depth for Serving Looped Transformers",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "Duke University",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2611.07211"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Looped transformers scale inference-time reasoning by repeatedly reusing a shared core, increasing computation without increasing parameter count. Serving prefilling and decoding with a uniform loop budget couples their costs. We present LoopDuet, a phase-dependent depth and training-free serving approach that selects the two budgets jointly while preserving decoding depth at prefilling boundaries. Our vLLM implementation gathers tokens requiring further recurrence into compact batches, turning the selected allocation into executable savings with existing weights and attention kernels. At runtime, a queue-age controller adjusts prefilling depth to retain quality as demand changes. Experiments on the full HotpotQA dataset with one A100-80GB demonstrate two benefits of this flexibility. First, separate phase budgets improve the quality--throughput trade-off: Huginn delivers 19\\% more throughput than the fastest tested uniform setting meeting the same accuracy criterion, while a higher-throughput operating point gains 6.04 EM points over uniform depth eight at 97\\% of its throughput. Second, the same execution mechanism retains more quality under load: on two evaluated OLMo arrival traces, adaptive prefilling gains 0.92--1.35 EM points over the most accurate tested fixed-depth controls at the same 100\\% attainment of a one-second time-to-first-token target. Together, these results establish LoopDuet as a practical way to turn flexible model computation into higher serving capacity and better quality under load.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2611.07211v1",
+        "source_title": "Not All Loops Cost the Same: Phase-Dependent Depth for Serving Looped Transformers",
+        "source_version": "v1",
+        "retrieved_at": "2026-11-08T23:15:00Z",
+        "license": "CC0-1.0"
+      },
+      "source_dates": {
+        "published_at": "2026-11-04T22:59:51Z",
+        "updated_at": "2026-11-04T22:59:51Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2611.07211v1",
+        "verified_at": "2026-11-08T23:15:00Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "LoopDuet independently selects prefill and decode loop budgets for pretrained looped Transformers, compacts tokens needing further recurrence, and adapts prefill depth using queue age. In a vLLM evaluation on full HotpotQA with one A100-80GB, Huginn achieves 19% higher throughput than the fastest tested uniform-depth setting meeting the same accuracy criterion. Two tested OLMo arrival traces show better answer accuracy while all requests meet a one-second time-to-first-token target. These results concern the reported QA serving settings and motivate, but do not validate, phase-specific compute allocation for recommendation.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-09",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.07211v1"
+          ]
+        },
+        "zh": {
+          "text": "LoopDuet 为已有循环 Transformer 分别选择预填充和解码的循环预算，把仍需循环的 token 压紧成批，并根据队列等待时间调整预填充深度。在单张 A100-80GB、完整 HotpotQA 的 vLLM 实验中，Huginn 相比满足同一准确率条件的最快已测统一深度设置，吞吐提高 19%。两条已测 OLMo 到达流量轨迹中，所有请求满足一秒首 token 延迟目标的同时，答案准确性更高。这些问答服务结果可启发推荐中的分阶段算力分配，不能直接视为推荐收益。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-09",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.07211v1"
+          ]
+        }
+      },
+      "added_at": "2026-11-08T23:24:31Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2611.07211"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2611.03998",
+      "title": "Dory1.0-4B: A Looped Normalized-GPT",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "NVIDIA",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2611.03998"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "We introduce Dory1.0-4B, a 4-billion-parameter looped (latent-recurrent) language model with elastic depth: a single checkpoint serves different inference compute budgets. Dory1.0-4B is built on a normalized Transformer (nGPT) backbone with interleaved sliding-window and full-attention layers, organized into an input block, a shared recurrent block, and an output block. At inference, the recurrent block can be applied a variable number of times. We pre-trained Dory1.0-4B on 6 trillion tokens. The first 4.5 trillion tokens were trained in NVFP4, and additional pre-training then extended the context length to 256K tokens. Next, we post-trained the model using Supervised Fine-Tuning (SFT) and Reinforcement Learning with Verifiable Rewards (RLVR), with a difficulty-aware loop curriculum that routes harder prompts to deeper loops. Increasing the loop count improves accuracy, with the largest gains on coding, agentic, and long-context benchmarks. With two or more loops, Dory1.0-4B outperforms larger models such as Qwen3.5-9B, Gemma 4 12B, and Gemma 4 26B-A4B on average across 12 benchmarks. Looping also makes Dory1.0-4B more token-efficient on agentic benchmarks: with four loops, it generates 1.3-2.5x fewer tokens than with one loop, as the extra computation is spent in latent space rather than on longer outputs. To reduce memory during looping, Dory1.0-4B caches keys and values only from the last loop, keeping its KV-cache footprint equal to that of a non-looped model at any loop count while retaining most of the accuracy gains. We open-source the BF16, MXFP8, NVFP4, and GGUF quantized checkpoints.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2611.03998v1",
+        "source_title": "Dory1.0-4B: A Looped Normalized-GPT",
+        "source_version": "v1",
+        "retrieved_at": "2026-11-08T23:15:00Z",
+        "license": "CC0-1.0"
+      },
+      "source_dates": {
+        "published_at": "2026-11-02T21:38:49Z",
+        "updated_at": "2026-11-02T21:38:49Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2611.03998v1",
+        "verified_at": "2026-11-08T23:15:00Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "Dory1.0-4B combines a normalized Transformer backbone, interleaved sliding-window/full attention and a shared recurrent block to vary inference depth from one checkpoint. Training uses six trillion tokens followed by supervised and verifiable-reward post-training with a difficulty-aware loop curriculum. More loops improve the reported coding, agentic and long-context results. Keeping only the final loop’s keys and values prevents KV-cache size from growing with loop count while retaining most reported accuracy gains. This supplies an elastic-depth and cache-management design for further study, not evidence of recommendation performance.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-09",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.03998v1"
+          ]
+        },
+        "zh": {
+          "text": "Dory1.0-4B 将 normalized Transformer 骨干、交错的滑动窗口/完整注意力和共享循环块结合，使同一检查点适配不同推理深度。模型经过六万亿 token 预训练，再采用监督微调、可验证奖励强化学习和按难度分配循环次数的课程。增加循环改善了论文报告的代码、智能体和长上下文结果；仅保留最后一轮的 KV，使缓存不随循环次数增长，同时保留大部分已报告精度收益。这提供了弹性深度与缓存管理的具体设计，尚无推荐性能证据。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-09",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.03998v1"
+          ]
+        }
+      },
+      "added_at": "2026-11-08T23:24:31Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2611.03998"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2611.03142",
+      "title": "DepthGraft: Structural Regularization through Hierarchical Cross-Layer KV Reconstruction",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "Shanghai Jiao Tong University; Shanghai Innovation Institute; Xiaohongshu",
+      "venue": "NeurIPS",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2611.03142"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Scaling depth is a key route to stronger large language models, but Pre-LN architectures often suffer from depth-wise information dilution, limiting the effective use of deep layers. While cross-layer connectivity has proven effective at mitigating this problem, existing designs usually introduce additional computation or memory access. We revisit cross-layer KV sharing as an efficient form of such connectivity. Beyond cache compression, each KV reuse edge creates a direct gradient path from deep layers to source KV projections, turning KV sharing into an implicit structural regularizer for KV representation geometry. We provide a systematic analysis of this mechanism, showing that proper sharing topologies sharpen key retrieval directions while enriching the value content subspace, whereas existing adjacent or global-anchor designs do not fully exploit this effect. Motivated by this, we propose DepthGraft, a hierarchical KV-sharing architecture that reconstructs deep-layer KV from stride-aligned shallow-middle source pairs. DepthGraft distributes non-local gradient flow across source layers, while preserving prefill early completion and reducing KV cache by roughly one third. Experiments on dense and MoE models from 0.5B to 16B parameters show consistent downstream improvements under both GQA and MLA. Notably, on the 16B MoE model, DepthGraft achieves a 7.0% absolute improvement on MMLU-Pro, along with gains of 6.6% on CMMLU and 6.4% on C3. These results validate the potential of DepthGraft as a scalable design for large-scale pretraining. The project page is available at https://github.com/jianke0604/DepthGraft.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2611.03142v1",
+        "source_title": "DepthGraft: Structural Regularization through Hierarchical Cross-Layer KV Reconstruction",
+        "source_version": "v1",
+        "retrieved_at": "2026-11-08T23:15:00Z",
+        "license": "CC0-1.0"
+      },
+      "source_dates": {
+        "published_at": "2026-11-02T13:52:03Z",
+        "updated_at": "2026-11-02T13:52:03Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2611.03142v1",
+        "verified_at": "2026-11-08T23:15:00Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "DepthGraft uses hierarchical cross-layer KV sharing to address depth-wise information dilution in Pre-LN models. Reconstructing deeper KV from stride-aligned shallow and middle layers creates non-local gradient paths to the source projections, while retaining early completion of prefill and reducing the KV cache by roughly one third. Experiments on 0.5B–16B dense and MoE language models report downstream improvements under GQA and MLA. The design links cross-layer representation learning with cache efficiency; its benefit to deeper recommendation models remains to be tested.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-09",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.03142v1"
+          ]
+        },
+        "zh": {
+          "text": "DepthGraft 用分层跨层 KV 共享缓解 Pre-LN 模型随深度增加的信息稀释。它从按步距对齐的浅层和中层重建深层 KV，为源投影引入非局部梯度路径，同时保留预填充提前完成能力，并将 KV 缓存减少约三分之一。0.5B–16B 稠密和 MoE 语言模型实验在 GQA、MLA 设置下均报告下游改进。该设计把跨层表征学习与缓存效率联系起来，是否有利于更深的推荐模型仍需测试。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-09",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.03142v1"
+          ]
+        }
+      },
+      "added_at": "2026-11-08T23:24:31Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2611.03142"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2611.04449",
+      "title": "Near-Zero Token Embeddings Silently Stall Training in Gated Sequence Models",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2611.04449"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Among 291 surveyed open-weight language model repositories (280 distinct embedding tables), 52.6% of untied gated and hybrid checkpoints (20/38) contain reachable input embeddings with norms below $10^{-6}$, compared with 0% of weight-tied models. Such near-zero rows can arise during pretraining when unseen rare or template tokens receive zero input gradients while AdamW weight decay shrinks untied embeddings. In tested Transformer configurations, non-initial positions or a BOS token prevent this failure mode. In gated sequence models (Mamba, Gated DeltaNet, xLSTM), a near-zero token can amplify input-embedding gradients by more than 30 orders of magnitude (up to 35). At zero input, current-token readout factors (SiLU gates or linear queries) vanish, suppressing historical-state readout. Residual RMS values can then fall below the square root of the RMSNorm floor across consecutive layers, causing Pre-RMSNorm to amplify backward gradients by up to $10^3$ per layer. When a gradient entry exceeds $1.84 \\times 10^{19}$, FP32 global-norm clipping in PyTorch, Hugging Face Trainer, and FSDP2 can overflow to infinity and zero the current batch's gradients. In Telugu continual pretraining of Nemotron-3-Nano-4B, this discards updates on approximately 20% of steps and leaves triggered rows frozen. We propose two remedies. For released checkpoints, GroupClip decouples input-embedding clipping using a 64-bit or rescaled norm; its rescaled implementation eliminates update loss and heals triggered rows in one step with negligible measured end-to-end overhead. For pretraining, GateFloor ($\\mathrm{SiLU}(z) + δ$, $δ\\in [0.01, 0.1]$) keeps the gate positive at zero input, reducing near-zero gradients by 28 orders of magnitude in experiments up to 370M parameters, with perplexity comparable to the baseline.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2611.04449v1",
+        "source_title": "Near-Zero Token Embeddings Silently Stall Training in Gated Sequence Models",
+        "source_version": "v1",
+        "retrieved_at": "2026-11-08T23:15:00Z",
+        "license": "CC0-1.0"
+      },
+      "source_dates": {
+        "published_at": "2026-11-03T07:39:19Z",
+        "updated_at": "2026-11-03T07:39:19Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2611.04449v1",
+        "verified_at": "2026-11-08T23:15:00Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "The paper traces a training failure in gated sequence models to near-zero input embeddings: vanishing current-token readout can suppress history, allowing repeated Pre-RMSNorm amplification to produce extreme gradients and overflow FP32 global-norm clipping. GroupClip isolates embedding clipping with a 64-bit or rescaled norm; GateFloor prevents a zero-valued SiLU gate at zero input during pretraining. The reported language-model experiments show recovery of discarded updates and reduced gradient amplification. These checks may inform long-sequence model training, but the failure and remedies have not been demonstrated in recommender systems.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-09",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.04449v1"
+          ]
+        },
+        "zh": {
+          "text": "论文追踪了门控序列模型的一类训练故障：接近零的输入嵌入使当前 token 的读出因子消失，削弱历史状态读出，随后连续 Pre-RMSNorm 放大梯度，最终可能让 FP32 全局梯度范数裁剪溢出并丢弃整批更新。GroupClip 将嵌入梯度单独裁剪，采用 64 位或重缩放范数；GateFloor 则在预训练时避免 SiLU 门在零输入处取零。语言模型实验报告恢复被丢弃的更新并减弱梯度放大。这些检查可供长序列模型训练参考，但尚未在推荐系统中验证。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-09",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.04449v1"
+          ]
+        }
+      },
+      "added_at": "2026-11-08T23:24:31Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2611.04449"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2611.01864",
+      "title": "Quantizing Recurrent Language Models Is Easier Than You Think",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "Max Planck Institute for Intelligent Systems; ETH Zürich; Tübingen AI Center; ELLIS Institute Tübingen; MIT CSAIL; Liquid AI",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2611.01864"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Linear recurrences are becoming an increasingly common building block in large language models, replacing the growing KV cache of softmax attention with a fixed-size recurrent state that enables efficient decoding. However, the quantization stack has largely been developed around softmax Transformers, whose numerical properties and inference state differ from those of recurrent models. Our goal is to understand these differences and study the design space of quantization methods for recurrent models. In our analysis, we differentiate between two targets. First, extra-state quantization concerns weights and activations outside the recurrent state, whose distributions are shaped indirectly by the sequence mixer during training. In controlled 1.3B parameter models, we find that decayed recurrences develop weaker residual outlier channels than softmax attention and are therefore easier to quantize without incoherence processing. Second, intra-state quantization concerns the recurrent state itself during decode, where repeated updates create a different numerical problem from KV cache quantization. We instantiate our findings as LoReS, a state quantization pipeline combining value-axis scale grouping to match output channel magnitude, decay-based mixed-precision to protect slowly decaying heads or channels, and stochastic rounding to limit error accumulation under repeated requantization. Across Qwen-3.5 9B, Nemotron-H 8B, and Kimi-Linear 48B-A3B, LoReS supports robust 8-bit state quantization and lower effective precision on shorter decode horizons. We implement LoReS in vLLM and demonstrate end-to-end decode speedups.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2611.01864v1",
+        "source_title": "Quantizing Recurrent Language Models Is Easier Than You Think",
+        "source_version": "v1",
+        "retrieved_at": "2026-11-08T23:15:00Z",
+        "license": "CC0-1.0"
+      },
+      "source_dates": {
+        "published_at": "2026-11-01T12:55:09Z",
+        "updated_at": "2026-11-01T12:55:09Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2611.01864v1",
+        "verified_at": "2026-11-08T23:15:00Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "This study separates recurrent-model quantization into weights/activations outside the state and the repeatedly updated decode state. Controlled 1.3B models show weaker residual outlier channels with decayed recurrences than with softmax attention. Its LoReS pipeline groups scales along the value axis, protects slowly decaying heads or channels with mixed precision, and uses stochastic rounding to limit repeated-quantization error. Experiments on Qwen-3.5 9B, Nemotron-H 8B and Kimi-Linear 48B-A3B support robust 8-bit states, with lower effective precision on shorter decode horizons and end-to-end vLLM speedups. Recommendation deployment remains to be tested.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-09",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.01864v1"
+          ]
+        },
+        "zh": {
+          "text": "论文把循环模型量化分为两部分：状态之外的权重与激活，以及解码时不断更新的循环状态。受控的 1.3B 模型比较显示，带衰减的循环结构比 softmax 注意力产生更弱的残差异常通道。LoReS 沿 value 轴分组设置尺度，为慢衰减头或通道保留较高精度，并用随机舍入限制反复量化的误差累积。在 Qwen-3.5 9B、Nemotron-H 8B 和 Kimi-Linear 48B-A3B 上，8 位状态较稳健，较短解码范围可使用更低有效精度，vLLM 实现也报告端到端加速。其推荐部署效果仍需验证。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-09",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.01864v1"
+          ]
+        }
+      },
+      "added_at": "2026-11-08T23:24:31Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2611.01864"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2611.07217",
+      "title": "TileQuant: Tile as the Precision-Allocation Unit for LLM Mixed-Precision Post-Training Quantization",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "University of North Texas; Saint Louis University",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2611.07217"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Post-training quantization (PTQ) reduces large language model (LLM) deployment costs, but preserving quality requires accounting for uneven weight sensitivity. Uniform PTQ uses one weight bit-width, importance-aware PTQ adjusts scales or reconstructs weights within that width, and column-wise mixed precision retains selected columns at higher precision. However, sensitivity varies within columns, so whole-column retention also protects less sensitive weights, while runtime outlier detection adds decoding overhead. We therefore introduce TileQuant, a training-free framework that assigns precision to hardware-aligned 2D weight tiles. Offline calibration provides input-activation-aware scoring from forward statistics for lower calibration cost and gradient-informed scoring from loss sensitivity for stronger quality preservation. Within each projection's retention budget, the highest-scoring tiles remain at 16-bit and the rest use 8-bit. The resulting map guides reconstruction into compact weight buffers, which the kernel reuses for native integer and 16-bit computation with local accumulation to reduce memory traffic. Experiments show that TileQuant reaches 2.66x the original model's generation throughput. Across language modeling, reasoning, long-context retrieval, and question answering, it preserves quality and surpasses quantized and original models on multiple tasks. These results support selecting precision units that capture local sensitivity while enabling efficient hardware execution. The implementation is: https://github.com/HanzhiZhang-Ulrica/TileQuant",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2611.07217v1",
+        "source_title": "TileQuant: Tile as the Precision-Allocation Unit for LLM Mixed-Precision Post-Training Quantization",
+        "source_version": "v1",
+        "retrieved_at": "2026-11-08T23:15:00Z",
+        "license": "CC0-1.0"
+      },
+      "source_dates": {
+        "published_at": "2026-11-04T23:09:34Z",
+        "updated_at": "2026-11-04T23:09:34Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2611.07217v1",
+        "verified_at": "2026-11-08T23:15:00Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "TileQuant allocates post-training precision to hardware-aligned 2D weight tiles rather than whole columns. Offline activation- or gradient-based sensitivity scoring selects tiles to retain at 16-bit, while the remaining tiles use 8-bit. Compact buffers and a mixed integer/16-bit kernel reduce memory traffic without runtime outlier detection. In the reported Llama-3.2-3B test on an A100-40GB with batch size one, generation throughput reaches 2.66× the original model; separate evaluations cover language modeling, reasoning, retrieval and QA quality. Its contribution is the joint choice of sensitivity granularity and execution layout; gains for recommendation models are untested.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-09",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.07217v1",
+            "https://arxiv.org/pdf/2611.07217v1"
+          ]
+        },
+        "zh": {
+          "text": "TileQuant 以硬件对齐的二维权重 tile 分配后训练量化精度，避免为了少量敏感权重而整列保留高精度。离线校准根据激活统计或梯度敏感度选择保留 16 位的 tile，其余使用 8 位，再通过紧凑缓冲区和整数/16 位混合内核减少访存，无需运行时检测异常值。Llama-3.2-3B 在 A100-40GB、批大小为一的测试中，生成吞吐达到原模型的 2.66 倍；质量评估另覆盖语言建模、推理、检索和问答。其借鉴点是联合设计敏感度粒度与执行布局，推荐模型收益尚待验证。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-09",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.07217v1",
+            "https://arxiv.org/pdf/2611.07217v1"
+          ]
+        }
+      },
+      "added_at": "2026-11-08T23:24:31Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2611.07217"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2611.04887",
+      "title": "FourSight: Stable FP4 RL Post-Training via Sequence Filtering and Sparse Channel Compensation",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "Hong Kong University of Science and Technology; Hong Kong University of Science and Technology (Guangzhou); Alibaba Group",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2611.04887"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Reinforcement learning (RL) post-training increasingly targets low-bit deployment, with NVFP4 weight-and activation quantization (W4A4) becoming the state-of-the-practice format. However, integrating NVFP4 into RL degrades rollout quality and amplifies cross-engine training-inference mismatch (TIM), destabilizing training. We show that these failures are concentrated rather than uniform - severely mismatched tail tokens concentrate in a few outlier sequences, while policy weights remain largely intact and quantization error concentrates in a few high-variance activation channels. Guided by this, we present FourSight, an algorithm-system co-design with two targeted solutions: TIM-aware sequence filtering that excludes drifted trajectories from policy updates, and sparse precision compensation that keeps only top-variance channels in BF16 while retaining native NVFP4 elsewhere. We further design a fused SpliceGEMM kernel with specialized prefill and decode datapaths to minimize overhead. FourSight sustains near-BF16 accuracy and strong FP4 deployment quality across models and engines, while improving step-to-accuracy by 1.76-2.60x and staying within 2.3% of FP4 step time up to 120B-scale models.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2611.04887v1",
+        "source_title": "FourSight: Stable FP4 RL Post-Training via Sequence Filtering and Sparse Channel Compensation",
+        "source_version": "v1",
+        "retrieved_at": "2026-11-08T23:15:00Z",
+        "license": "CC0-1.0"
+      },
+      "source_dates": {
+        "published_at": "2026-11-03T13:33:46Z",
+        "updated_at": "2026-11-03T13:33:46Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2611.04887v1",
+        "verified_at": "2026-11-08T23:15:00Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "FourSight targets concentrated errors in NVFP4 W4A4 reinforcement-learning post-training: it filters trajectories with severe training–inference mismatch and retains high-variance activation channels in BF16 while using native FP4 elsewhere. Its fused SpliceGEMM kernel separates prefill and decode paths. Reported quality evaluations retain near-BF16 accuracy; system evaluations extend to 120B-scale models with at most 2.3% additional step-time overhead over the uncompensated FP4 baseline. The approach offers a concrete way to investigate low-bit training mismatch; its effectiveness in generative recommendation remains untested.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-09",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.04887v1"
+          ]
+        },
+        "zh": {
+          "text": "FourSight 针对 NVFP4 W4A4 强化学习后训练中的集中误差，过滤训练与推理不一致严重的轨迹，把高方差激活通道保留为 BF16，其余使用原生 FP4；融合的 SpliceGEMM 内核分别优化预填充与解码。质量评估报告接近 BF16 的准确性；系统评估覆盖最高至 120B 规模的模型，相对未补偿的 FP4 基线，单步耗时的额外开销不超过 2.3%。它为排查低比特训练不一致提供了具体方案，生成式推荐效果仍需验证。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-09",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.04887v1"
+          ]
+        }
+      },
+      "added_at": "2026-11-08T23:24:31Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2611.04887"
       },
       "change_history": [],
       "reading_tier": null

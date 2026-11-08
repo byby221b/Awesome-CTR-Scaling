@@ -8,10 +8,10 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 
 - [Meta](#company-meta) (60)
 - [ByteDance / TikTok](#company-bytedance-tiktok) (28)
-- [Alibaba](#company-alibaba) (58)
+- [Alibaba](#company-alibaba) (59)
 - [Meituan](#company-meituan) (11)
 - [Tencent](#company-tencent) (30)
-- [Google](#company-google) (26)
+- [Google](#company-google) (27)
 - [LinkedIn](#company-linkedin) (7)
 - [NetEase](#company-netease) (2)
 - [Kuaishou](#company-kuaishou) (40)
@@ -28,14 +28,14 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [Microsoft](#company-microsoft) (8)
 - [Walmart](#company-walmart) (2)
 - [Snap](#company-snap) (4)
-- [Xiaohongshu](#company-xiaohongshu) (8)
+- [Xiaohongshu](#company-xiaohongshu) (9)
 - [Amazon](#company-amazon) (6)
 - [Capital One](#company-capital-one) (2)
 - [Shopify](#company-shopify) (2)
-- [Liquid AI](#company-liquid-ai) (3)
+- [Liquid AI](#company-liquid-ai) (4)
 - [IBM (MIT-IBM Computing Research Lab)](#company-ibm-mit-ibm-computing-research-lab) (5)
 - [Perplexity AI](#company-perplexity-ai) (1)
-- [NVIDIA](#company-nvidia) (11)
+- [NVIDIA](#company-nvidia) (12)
 - [StepFun](#company-stepfun) (1)
 - [Adobe Research](#company-adobe-research) (2)
 - [Unbox AI](#company-unbox-ai) (1)
@@ -248,6 +248,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [Generative Retrieval under Real-Time Supply Constraints in Local Commerce](related/generative-recommendation.md#paper-2611-06323) · 2026 · Related
 - [From Waste to Discovery: Recycling High-Scored Unexposed Candidates in Taobao Feed Recommendation](related/engineering-serving.md#paper-2611-05997) · 2026 · Related
 - [Beyond Independent Predictions: Learning the Browsing Journey for Sequence-Level Re-ranking](related/retrieval-reranking-scaling.md#paper-2611-07591) · 2026 · Related
+- [FourSight: Stable FP4 RL Post-Training via Sequence Filtering and Sparse Channel Compensation](related/architecture-innovations-beyond-recommendation.md#paper-2611-04887) · 2026 · Related
 
 <a id="company-meituan"></a>
 
@@ -330,6 +331,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [Systolic Linear Attention: Co-Designing Tile-Grouped Gated Delta Attention for TPUs](related/architecture-innovations-beyond-recommendation.md#paper-2611-06828) · 2026 · Related
 - [Muir: Linear Attention with Sensitivity-Allocated Gating and Matched-Filter Readout](related/architecture-innovations-beyond-recommendation.md#paper-2611-08376) · 2026 · Related
 - [GINGER: Spicing Up Graph-Based Vector Search](related/retrieval-reranking-scaling.md#paper-2611-08306) · 2026 · Related
+- [What Gets Hacked in a Collaborative Reward for LLM Recommenders: The Part That Does Not Depend on the User](related/generative-recommendation.md#paper-2611-07588) · 2026 · Related
 
 <a id="company-linkedin"></a>
 
@@ -537,6 +539,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [Multi-Stream Attention Residuals](related/architecture-innovations-beyond-recommendation.md#paper-2610-13630) · 2026 · Related
 - [DoSA: Dots Sparse Attention](related/architecture-innovations-beyond-recommendation.md#paper-2610-13990) · 2026 · Related
 - [On the Design of Hyper-Connections: Simplification, Stability, and Scalability](related/architecture-innovations-beyond-recommendation.md#paper-2611-05984) · 2026 · Related
+- [DepthGraft: Structural Regularization through Hierarchical Cross-Layer KV Reconstruction](related/architecture-innovations-beyond-recommendation.md#paper-2611-03142) · 2026 · Related
 
 <a id="company-amazon"></a>
 
@@ -570,6 +573,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [T-RoPE: Time-Aware Rotary Position Embedding for Sequential Recommendation](related/long-sequence-modeling.md#paper-2609-30576) · 2026 · Related
 - [On State Reduction in Linear Attention](related/architecture-innovations-beyond-recommendation.md#paper-2602-04852) · 2026 · Related
 - [Depth Memory](related/architecture-innovations-beyond-recommendation.md#paper-2610-18809) · 2026 · Related
+- [Quantizing Recurrent Language Models Is Easier Than You Think](related/architecture-innovations-beyond-recommendation.md#paper-2611-01864) · 2026 · Related
 
 <a id="company-ibm-mit-ibm-computing-research-lab"></a>
 
@@ -602,6 +606,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [CISA: Retrofitting Dense Attention Models with Chunk-Indexed Sparse Attention](related/architecture-innovations-beyond-recommendation.md#paper-2611-03200) · 2026 · Related
 - [AttentionIndex: Accelerating Learned Sparse Attention with a Causal Inverted-File Index](related/architecture-innovations-beyond-recommendation.md#paper-2611-02508) · 2026 · Related
 - [Jet-QSparse: Accelerating Agentic LLM Inference with 4-Bit Sparse Attention](related/architecture-innovations-beyond-recommendation.md#paper-2611-01022) · 2026 · Related
+- [Dory1.0-4B: A Looped Normalized-GPT](related/architecture-innovations-beyond-recommendation.md#paper-2611-03998) · 2026 · Related
 
 <a id="company-stepfun"></a>
 

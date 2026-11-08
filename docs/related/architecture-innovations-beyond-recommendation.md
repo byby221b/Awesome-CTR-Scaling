@@ -6,7 +6,7 @@
 
 Transferable ideas from general-purpose model architecture research.
 
-267 papers · Updated 2026-11-08
+275 papers · Updated 2026-11-09
 
 <a id="paper-2606-16825"></a>
 
@@ -1002,7 +1002,7 @@ Transferable ideas from general-purpose model architecture research.
 
 <a id="paper-2611-05906"></a>
 
-- **CHARM+: Cross-Hardware Attention with Re-Merge Multistream Mechanism**: CHARM+ reorganizes distributed long-sequence attention communication into levels to overlap transfers and computation. It separates cross-NUMA or cross-node exchanges from local communication to reduce synchronization under unequal bandwidth. Relative to Ring-Attention, reported average forward/backward speedups are 1.3x/1.7x on dual-NUMA PCIe and 2.8x/2.9x on dual-node NVLink systems. These are attention implementation measurements, with potential relevance to distributed long-history model training. — [Paper](https://arxiv.org/abs/2611.05906) (Lenovo Research · arXiv 2026). Reading priority: Unrated.
+- **CHARM+: Cross-Hardware Attention with Re-Merge Multistream Mechanism**: CHARM+ reorganizes distributed long-sequence attention communication into levels to overlap transfers and computation. It separates cross-NUMA or cross-node exchanges from local communication to reduce synchronization under unequal bandwidth. Relative to Ring-Attention, reported average forward/backward speedups are 1.3x/1.7x on dual-NUMA PCIe and 2.8x/2.9x on dual-node NVLink systems. These are attention implementation measurements, with potential relevance to distributed long-history model training. — [Paper](https://arxiv.org/abs/2611.05906) (Lenovo Research · NeurIPS 2026). Reading priority: Unrated.
 
 <a id="paper-2611-04671"></a>
 
@@ -1058,7 +1058,7 @@ Transferable ideas from general-purpose model architecture research.
 
 <a id="paper-2611-06057"></a>
 
-- **vExpert: Virtualizing Expert Storage for Adaptive Load Balancing in Distributed MoE Inference**: vExpert addresses the mismatch between static expert placement and dynamic MoE routing. It keeps fully redundant expert storage in host DRAM, virtualizes GPU expert slots and uses a performance model covering host-to-device transfers, PCIe contention and load imbalance to choose mappings. A separate manager reduces multiprocess host-memory overhead. On DeepSeek-V3.1 in an eight-node H100 cluster, the system reports up to 55% improvement in its load-balance ratio and 1.2x end-to-end speedup. The design offers a systems approach to dynamic expert placement; its recommendation applicability and behavior on other interconnects remain untested in the abstract. — [Paper](https://arxiv.org/abs/2611.06057) (Tsinghua University; Infinigence AI; BNRist · arXiv 2026). Reading priority: Unrated.
+- **vExpert: Virtualizing Expert Storage for Adaptive Load Balancing in Distributed MoE Inference**: vExpert addresses the mismatch between static expert placement and dynamic MoE routing. It keeps fully redundant expert storage in host DRAM, virtualizes GPU expert slots and uses a performance model covering host-to-device transfers, PCIe contention and load imbalance to choose mappings. A separate manager reduces multiprocess host-memory overhead. On DeepSeek-V3.1 in an eight-node H100 cluster, the system reports up to 55% improvement in its load-balance ratio and 1.2x end-to-end speedup. The design offers a systems approach to dynamic expert placement; its recommendation applicability and behavior on other interconnects remain untested in the abstract. — [Paper](https://arxiv.org/abs/2611.06057) (Tsinghua University; Infinigence AI; BNRist · NeurIPS 2026). Reading priority: Unrated.
 
 <a id="paper-2611-05984"></a>
 
@@ -1075,3 +1075,35 @@ Transferable ideas from general-purpose model architecture research.
 <a id="paper-2611-05804"></a>
 
 - **Matching the Training-Time Weight Rule in Inference-Time Expert Deactivation**: This study isolates how expert deactivation interacts with the router weighting rule used in training. It compares removal, freezing, remaining-expert renormalization and unnormalized rerouting on identical disabled sets across five instruction-tuned checkpoints from four families, plus a base OLMoE model. With half the experts disabled, retaining the training rule yields perplexity of 1.4–73x the intact baseline; mismatches yield 14–28,740x. Even matching the rule does not guarantee task quality: OLMoE GSM8K strict-match accuracy falls to zero under all four implementations. Expert compression therefore needs routing-scale and task-level checks, not just expert importance rankings. — [Paper](https://arxiv.org/abs/2611.05804) (Zhejiang Gongshang University; University of Sussex; Chang’an University · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-05304"></a>
+
+- **LoopVQ: Sub 1-bit KV Cache Quantization for Looped Transformers**: LoopVQ addresses KV-cache growth in looped Transformers by jointly vector-quantizing channels across loop steps and tuning codebooks to match full-precision outputs. On Ouro and Huginn, it outperforms standard-model KV quantizers at 0.5 bits per element; combining it with TaSQ retains much of BF16 accuracy at 0.25 bits. Its SGLang implementation nearly halves decode latency at 32K context and reports peak throughput gains up to 4.3×/6.1× on Ouro 1.4B/2.6B relative to BF16. The design is relevant to the cache costs of recurrent-depth generation, but recommendation performance is not evaluated. — [Paper](https://arxiv.org/abs/2611.05304) (Seoul National University · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-07211"></a>
+
+- **Not All Loops Cost the Same: Phase-Dependent Depth for Serving Looped Transformers**: LoopDuet independently selects prefill and decode loop budgets for pretrained looped Transformers, compacts tokens needing further recurrence, and adapts prefill depth using queue age. In a vLLM evaluation on full HotpotQA with one A100-80GB, Huginn achieves 19% higher throughput than the fastest tested uniform-depth setting meeting the same accuracy criterion. Two tested OLMo arrival traces show better answer accuracy while all requests meet a one-second time-to-first-token target. These results concern the reported QA serving settings and motivate, but do not validate, phase-specific compute allocation for recommendation. — [Paper](https://arxiv.org/abs/2611.07211) (Duke University · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-03998"></a>
+
+- **Dory1.0-4B: A Looped Normalized-GPT**: Dory1.0-4B combines a normalized Transformer backbone, interleaved sliding-window/full attention and a shared recurrent block to vary inference depth from one checkpoint. Training uses six trillion tokens followed by supervised and verifiable-reward post-training with a difficulty-aware loop curriculum. More loops improve the reported coding, agentic and long-context results. Keeping only the final loop’s keys and values prevents KV-cache size from growing with loop count while retaining most reported accuracy gains. This supplies an elastic-depth and cache-management design for further study, not evidence of recommendation performance. — [Paper](https://arxiv.org/abs/2611.03998) (NVIDIA · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-03142"></a>
+
+- **DepthGraft: Structural Regularization through Hierarchical Cross-Layer KV Reconstruction**: DepthGraft uses hierarchical cross-layer KV sharing to address depth-wise information dilution in Pre-LN models. Reconstructing deeper KV from stride-aligned shallow and middle layers creates non-local gradient paths to the source projections, while retaining early completion of prefill and reducing the KV cache by roughly one third. Experiments on 0.5B–16B dense and MoE language models report downstream improvements under GQA and MLA. The design links cross-layer representation learning with cache efficiency; its benefit to deeper recommendation models remains to be tested. — [Paper](https://arxiv.org/abs/2611.03142) (Shanghai Jiao Tong University; Shanghai Innovation Institute; Xiaohongshu · NeurIPS 2026). Reading priority: Unrated.
+
+<a id="paper-2611-04449"></a>
+
+- **Near-Zero Token Embeddings Silently Stall Training in Gated Sequence Models**: The paper traces a training failure in gated sequence models to near-zero input embeddings: vanishing current-token readout can suppress history, allowing repeated Pre-RMSNorm amplification to produce extreme gradients and overflow FP32 global-norm clipping. GroupClip isolates embedding clipping with a 64-bit or rescaled norm; GateFloor prevents a zero-valued SiLU gate at zero input during pretraining. The reported language-model experiments show recovery of discarded updates and reduced gradient amplification. These checks may inform long-sequence model training, but the failure and remedies have not been demonstrated in recommender systems. — [Paper](https://arxiv.org/abs/2611.04449) (arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-01864"></a>
+
+- **Quantizing Recurrent Language Models Is Easier Than You Think**: This study separates recurrent-model quantization into weights/activations outside the state and the repeatedly updated decode state. Controlled 1.3B models show weaker residual outlier channels with decayed recurrences than with softmax attention. Its LoReS pipeline groups scales along the value axis, protects slowly decaying heads or channels with mixed precision, and uses stochastic rounding to limit repeated-quantization error. Experiments on Qwen-3.5 9B, Nemotron-H 8B and Kimi-Linear 48B-A3B support robust 8-bit states, with lower effective precision on shorter decode horizons and end-to-end vLLM speedups. Recommendation deployment remains to be tested. — [Paper](https://arxiv.org/abs/2611.01864) (Max Planck Institute for Intelligent Systems; ETH Zürich; Tübingen AI Center; ELLIS Institute Tübingen; MIT CSAIL; Liquid AI · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-07217"></a>
+
+- **TileQuant: Tile as the Precision-Allocation Unit for LLM Mixed-Precision Post-Training Quantization**: TileQuant allocates post-training precision to hardware-aligned 2D weight tiles rather than whole columns. Offline activation- or gradient-based sensitivity scoring selects tiles to retain at 16-bit, while the remaining tiles use 8-bit. Compact buffers and a mixed integer/16-bit kernel reduce memory traffic without runtime outlier detection. In the reported Llama-3.2-3B test on an A100-40GB with batch size one, generation throughput reaches 2.66× the original model; separate evaluations cover language modeling, reasoning, retrieval and QA quality. Its contribution is the joint choice of sensitivity granularity and execution layout; gains for recommendation models are untested. — [Paper](https://arxiv.org/abs/2611.07217) (University of North Texas; Saint Louis University · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-04887"></a>
+
+- **FourSight: Stable FP4 RL Post-Training via Sequence Filtering and Sparse Channel Compensation**: FourSight targets concentrated errors in NVFP4 W4A4 reinforcement-learning post-training: it filters trajectories with severe training–inference mismatch and retains high-variance activation channels in BF16 while using native FP4 elsewhere. Its fused SpliceGEMM kernel separates prefill and decode paths. Reported quality evaluations retain near-BF16 accuracy; system evaluations extend to 120B-scale models with at most 2.3% additional step-time overhead over the uncompensated FP4 baseline. The approach offers a concrete way to investigate low-bit training mismatch; its effectiveness in generative recommendation remains untested. — [Paper](https://arxiv.org/abs/2611.04887) (Hong Kong University of Science and Technology; Hong Kong University of Science and Technology (Guangzhou); Alibaba Group · arXiv 2026). Reading priority: Unrated.
