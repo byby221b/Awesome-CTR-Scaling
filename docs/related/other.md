@@ -6,7 +6,7 @@
 
 Adjacent research, diagnostics and other relevant recommendation methods.
 
-18 papers · Updated 2026-11-09
+20 papers · Updated 2026-11-10
 
 <a id="paper-2411-13700"></a>
 
@@ -79,3 +79,11 @@ Adjacent research, diagnostics and other relevant recommendation methods.
 <a id="paper-2611-07523"></a>
 
 - **OptST: Optimizing Semantic Tokenization for LLM-Enhanced Recommendation**: OptST adapts semantic tokenization of LLM-derived user profiles to downstream recommendation. A regularized low-rank transformation changes token assignments while keeping the pretrained encoder and base codebooks fixed; a straight-through estimator supplies training gradients, and an interaction-conditioned prefix selects semantic detail. It reports the highest AUC among evaluated conventional and LLM-enhanced baselines on four public datasets, with gains across backbones. The transferable idea is a task-aware interface between profile semantics and recommendation features. — [Paper](https://arxiv.org/abs/2611.07523) (Shenzhen Technology University; The Hong Kong Polytechnic University; McGill University; Shenzhen University · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-09294"></a>
+
+- **Orthogonal Norm Growth in Two-Tower Retrieval: A Popularity Mechanism for Unified Discovery**: This study identifies conditions under which cosine-loss updates increase item-vector norms and alter raw-dot-product retrieval exposure. It distinguishes output gradients from actual encoder-induced vector movement, so the result is conditional rather than a general theorem about joint SGD. MovieLens 32M and Amazon Books ablations connect near-tangent movement, popularity-related norm growth and additional head-item exposure. Removing one norm-growth component also reduces recommendation utility. The work provides a diagnostic for shared search/recommendation representations, not a proven mitigation; experiments are recommendation-only, leaving joint-traffic prevalence open. — [Paper](https://arxiv.org/abs/2611.09294) (Wildberries and Russ · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-09728"></a>
+
+- **SAGE-PAIR: Source-Pretrained Routed Residual Adaptation for Sparse-Feedback Recommendation**: SAGE-PAIR adapts a recommender to a new serving window with only 0.05–1.0% target feedback. It pretrains a low-dimensional residual correction on an adjacent source period and adds user-conditioned routing over residual experts; scarce target outcomes calibrate this existing correction space. On a locked KuaiSAR-v2 test split, the full method reports a 1.77% relative NDCG@10 gain over target-only PAIR. A separate core-protocol comparison isolates a further 0.25% gain from routed experts. It suggests reducing adaptation degrees of freedom before spending scarce labels, with evidence limited to the evaluated protocol. — [Paper](https://arxiv.org/abs/2611.09728) (Southwest Jiaotong University; Peking University; Guangzhou University · arXiv 2026). Reading priority: Unrated.

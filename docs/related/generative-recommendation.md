@@ -6,7 +6,7 @@
 
 Generative retrieval, recommendation and ranking beyond discriminative CTR.
 
-122 papers · Updated 2026-11-09
+124 papers · Updated 2026-11-10
 
 <a id="paper-2605-12617"></a>
 
@@ -495,3 +495,11 @@ Generative retrieval, recommendation and ranking beyond discriminative CTR.
 <a id="paper-2611-07588"></a>
 
 - **What Gets Hacked in a Collaborative Reward for LLM Recommenders: The Part That Does Not Depend on the User**: The study diagnoses exposure collapse when collaborative-filtering scores reward an LLM recommender during reinforcement learning. It separates an item’s average score across users from its user-specific residual, then centers or standardizes the reward per item. Controlled experiments on two datasets with two identifier schemes yield up to 9.8 times as many distinct top-ranked items as the uncorrected reward while retaining comparable ranking accuracy. The result offers a concrete reward-design check for generative recommendation, rather than a model-scaling law or an industrial deployment result. — [Paper](https://arxiv.org/abs/2611.07588) (University of California, San Diego; Google; University of Virginia; University of Melbourne; University of California, Davis · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-08790"></a>
+
+- **SteerGR: Steering Generative Recommendation via Sparse Autoencoders for Controllable Game Discovery**: SteerGR makes generative game recommendations controllable through sparse-autoencoder features. It first grounds human-readable play concepts, then finds associated internal features and selects them by their measured steering effect. Amplifying or suppressing selected features changes recommendations without retraining the recommender. Experiments use two industrial generative models on a real game dataset and show movement toward or away from target concepts. This adds a concept-level control interface to a shared recommendation model; it does not establish a scaling law or an online business lift. — [Paper](https://arxiv.org/abs/2611.08790) (Sungkyunkwan University; Roblox · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-09006"></a>
+
+- **Rethinking Latent Reasoning for Generative Recommendation: Beyond Teacher-Generated CoT and Recurrent Hidden-State Feedback**: PHiT reduces two costs of latent reasoning for recommendation: teacher-generated chain-of-thought supervision and recurrent hidden-state feedback. It derives semantic targets directly from cached sparse item encodings in observed histories, then supervises distinct thought-token states. All thought tokens enter a single causal prefill as ordinary input IDs. Supervised fine-tuning outperforms the compared baselines on four recommendation benchmarks, with training time comparable to the recommendation-only thought-token baseline. The useful design choice is to align intermediate supervision with available history while retaining a conventional inference interface. — [Paper](https://arxiv.org/abs/2611.09006) (Beihang University; Baidu · arXiv 2026). Reading priority: Unrated.

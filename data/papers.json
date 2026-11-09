@@ -5,7 +5,7 @@
     "description": "Scaling laws and scalable ranking models for industrial recommendation.",
     "repository_url": "https://github.com/byby221b/Awesome-CTR-Scaling",
     "site_url": "https://byby221b.github.io/Awesome-CTR-Scaling/",
-    "updated": "2026-11-09",
+    "updated": "2026-11-10",
     "source_commit": "31ad30becff83ca14a01f37fc99d52ba79f85565",
     "scope": "We cover papers that (1) study scaling laws for recommendation models, (2) propose scalable Transformer-based architectures for CTR/ranking, (3) address efficiency challenges in scaling up industrial ranking systems, or (4) explore novel paradigms (e.g., sparse scaling, generative pre-training, foundation models) for scalable recommendation.",
     "history": {
@@ -1501,6 +1501,54 @@
       "name": "X Square Robot",
       "affiliation_aliases": [
         "X Square Robot"
+      ],
+      "legacy_entries": []
+    },
+    {
+      "id": "workday",
+      "name": "Workday",
+      "affiliation_aliases": [
+        "Workday"
+      ],
+      "legacy_entries": []
+    },
+    {
+      "id": "roblox",
+      "name": "Roblox",
+      "affiliation_aliases": [
+        "Roblox"
+      ],
+      "legacy_entries": []
+    },
+    {
+      "id": "wildberries",
+      "name": "Wildberries and Russ",
+      "affiliation_aliases": [
+        "Wildberries"
+      ],
+      "legacy_entries": []
+    },
+    {
+      "id": "amd",
+      "name": "AMD",
+      "affiliation_aliases": [
+        "Advanced Micro Devices"
+      ],
+      "legacy_entries": []
+    },
+    {
+      "id": "together-ai",
+      "name": "Together AI",
+      "affiliation_aliases": [
+        "Together AI"
+      ],
+      "legacy_entries": []
+    },
+    {
+      "id": "lenovo",
+      "name": "Lenovo",
+      "affiliation_aliases": [
+        "Lenovo"
       ],
       "legacy_entries": []
     }
@@ -47976,13 +48024,17 @@
       "collection": "related",
       "category": "retrieval-reranking-scaling",
       "affiliation": "University of Waterloo; University of Glasgow",
-      "venue": "arXiv",
+      "venue": "SIGIR (Short)",
       "year": 2026,
       "tags": [],
       "links": [
         {
           "label": "Paper",
           "url": "https://arxiv.org/abs/2611.05908"
+        },
+        {
+          "label": "Venue",
+          "url": "https://sigir2026.org/en-AU/pages/program/accepted-papers"
         }
       ],
       "aliases": [],
@@ -48028,7 +48080,24 @@
         "kind": "catalog_entry",
         "source_url": "https://arxiv.org/abs/2611.05908"
       },
-      "change_history": [],
+      "change_history": [
+        {
+          "at": "2026-11-09T23:13:02Z",
+          "kind": "venue_update",
+          "fields": [
+            "venue"
+          ],
+          "source_url": "https://sigir2026.org/en-AU/pages/program/accepted-papers"
+        },
+        {
+          "at": "2026-11-09T23:13:02Z",
+          "kind": "metadata_enrichment",
+          "fields": [
+            "links"
+          ],
+          "source_url": "https://sigir2026.org/en-AU/pages/program/accepted-papers"
+        }
+      ],
       "reading_tier": null
     },
     {
@@ -50414,6 +50483,1118 @@
       "added_provenance": {
         "kind": "catalog_entry",
         "source_url": "https://arxiv.org/abs/2611.04887"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2611.08519",
+      "title": "RedMall: Generative Recommendation for Large-Scale E-commerce",
+      "collection": "core",
+      "category": "scalable-architecture",
+      "affiliation": "Xiaohongshu; Tongji University",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [
+        "MoE",
+        "Generative Rec",
+        "E-commerce",
+        "Ads"
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2611.08519"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Generative recommendation has shown considerable potential in industrial recommendation systems. However, the performance of existing generative methods is limited by several challenges. 1) Semantic IDs (SIDs) are treated as one-dimensional sequences, overlooking the hierarchical dependencies among different layers. 2) Next-token prediction used is unable to explicitly optimize session-wise recommendation. 3) Although reinforcement learning has been applied to align generated recommendations with user preferences, few existing methods explicitly optimize the ranking of positive items in session-wise recommendation. To address the above issues, we propose RedMall, a generative recommender designed for large-scale e-commerce. Firstly, RedMall constructs hierarchical SIDs through residual quantization over multimodal representations. Secondly, RedMall introduces a lightweight SID encoder to explicitly model layer-wise dependencies in SIDs. Moreover, RedMall incorporates sparse mixture-of-experts, dual gated attention, and multi-target prediction to scale model size, enhance user interest representation, and optimize session-wise recommendation. We further design an exposure-aware loss that treats exposed but unclicked items as negative feedback. To better align user preferences and list-wise ranking objectives, we combine Group Relative Policy Optimization with an auxiliary LambdaRank loss, using both real user feedback and item ranking to guide optimization. Experiments on four public datasets-Amazon Beauty, Amazon Toys, Amazon Food, and MovieLens-1M---show that RedMall outperforms the evaluated baselines across all reported Recall and NDCG metrics. Online A/B tests show improvements of 2.24% in advertiser value (ADVV) and 0.59% in click-through rate (CTR) for e-commerce advertising, as well as gains of 1.08% in GMV and 0.95% in daily active buyers (DAB) for e-commerce recommendations.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2611.08519v1",
+        "source_title": "RedMall: Generative Recommendation for Large-Scale E-commerce",
+        "source_version": "v1",
+        "retrieved_at": "2026-11-09T23:08:02Z",
+        "license": "CC-BY-4.0"
+      },
+      "source_dates": {
+        "published_at": "2026-10-26T08:36:38Z",
+        "updated_at": "2026-10-26T08:36:38Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2611.08519v1",
+        "verified_at": "2026-11-09T23:08:02Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "RedMall combines hierarchical semantic IDs with a lightweight ID encoder, sparse experts, dual gated attention and multi-target prediction for large-scale e-commerce recommendation. Exposure-aware training uses unclicked impressions as negative feedback; group-relative policy optimization and an auxiliary LambdaRank loss align generated lists with user feedback and item order. It outperforms the evaluated baselines on four public datasets. Online tests report 2.24% higher advertiser value and 0.59% higher CTR for advertising, plus 1.08% higher GMV for recommendations. It provides a concrete architecture and training recipe for scaling generative recommendation; these gains belong to the reported deployment settings.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-10",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.08519v1"
+          ]
+        },
+        "zh": {
+          "text": "RedMall 用分层语义 ID 表示商品，再结合轻量 ID 编码器、稀疏专家、双门控注意力和多目标预测扩展电商推荐。训练把曝光未点击作为负反馈，并结合组相对策略优化与 LambdaRank 损失，让生成结果兼顾用户反馈和列表顺序。四个公开数据集上优于所比较基线；线上广告实验报告广告主价值提升 2.24%、CTR 提升 0.59%，推荐场景 GMV 提升 1.08%。它提供了生成式推荐扩模的架构与训练方案，收益限于论文所测部署条件。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-10",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.08519v1"
+          ]
+        }
+      },
+      "added_at": "2026-11-09T23:13:02Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2611.08519"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2611.08566",
+      "title": "CascadeRec: Deployed Adaptive LLM Compute Allocation for Multi-Tenant Content Recommendation",
+      "collection": "core",
+      "category": "efficiency-deployment",
+      "affiliation": "Workday AI Research",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [
+        "Test-time Compute",
+        "Serving",
+        "User Modeling"
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2611.08566"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Large language models (LLMs) are attractive rerankers for recommendation. Running an expensive model on every request is costly, and for users with sparse interaction histories it often lowers quality. We present CascadeRec, a two-tier LLM reranking cascade deployed in production at a large financial planning and analysis (FP&A) SaaS provider. It serves content recommendations to enterprise tenants on AWS EKS and GKE. A lightweight Tier-1 model reranks every request. A router escalates only the requests where extra inference-time compute is likely to help, and sends them to a more expensive Tier-2 procedure (self-consistency sampling, multi-path reasoning, or a larger model). The system has run in a production A/B experiment for over a month. Compared with uniform use of the expensive tier, CascadeRec has reduced inference cost by about 10%, with minimal latency impact and no quality regression observed to date. Tenant data cannot be released, so we also evaluate the pipeline on public benchmarks (MovieLens-1M and Amazon-Electronics). Segment-level analysis with paired-bootstrap confidence intervals shows that uniform LLM reranking lowers NDCG@10 for sparse-history users by up to 30%, and its only statistically significant gain appears on the segment with the longest histories. Escalating cold users can make the loss larger instead of repairing it. Which segments benefit from escalation depends on the domain, and this motivates the segment-gated rollout we use in production. We describe the deployment architecture, the measured benefits, and lessons learned, including inter-tenant load imbalance as a driver for cascading and the handling of LLM output-parsing failures at the serving layer.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2611.08566v1",
+        "source_title": "CascadeRec: Deployed Adaptive LLM Compute Allocation for Multi-Tenant Content Recommendation",
+        "source_version": "v1",
+        "retrieved_at": "2026-11-09T23:08:04Z",
+        "license": "CC-BY-4.0"
+      },
+      "source_dates": {
+        "published_at": "2026-11-05T17:30:58Z",
+        "updated_at": "2026-11-05T17:30:58Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2611.08566v1",
+        "verified_at": "2026-11-09T23:08:04Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "CascadeRec runs a lightweight LLM reranker on every request and routes only promising requests to a more expensive model or reasoning procedure. A production A/B experiment lasting over a month reports about 10% lower inference cost than uniformly using the expensive tier, with minimal latency impact and no observed quality regression so far. Public MovieLens and Amazon experiments show that extra LLM computation can instead harm sparse-history users. The practical lesson for ranking compute allocation is to measure benefit by user segment and domain before escalation, rather than treating more inference as uniformly helpful.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-10",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.08566v1"
+          ]
+        },
+        "zh": {
+          "text": "CascadeRec 先用轻量大模型重排所有请求，只把预计能受益的请求交给更贵的模型或推理过程。持续一个多月的生产 A/B 实验中，相比统一使用昂贵层，推理成本约降 10%，延迟变化较小，暂未观察到质量退化。MovieLens 和 Amazon 实验则发现，额外的大模型计算可能伤害历史稀疏用户。它为排序计算分配提供了具体做法：先按用户群和业务验证收益，再决定哪些请求值得升级推理。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-10",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.08566v1"
+          ]
+        }
+      },
+      "added_at": "2026-11-09T23:13:02Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2611.08566"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2611.08804",
+      "title": "Generative Search and Recommendation at Shopify",
+      "collection": "core",
+      "category": "foundation-models-multi-scenario",
+      "affiliation": "Shopify; Liquid AI",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [
+        "Tokenization",
+        "Multi-task",
+        "Generative Rec",
+        "Serving"
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2611.08804"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Search and recommendation at Shopify require retrieving relevant products from a changing catalog of billions of products under strict latency constraints. We present SID-LLM, which casts both tasks as generating semantic IDs: short sequences of content-derived tokens representing products. We jointly pre-train SID-LLM on catalog and behavioral data, giving search and recommendation a shared representation and training objective. We show that reinforcement learning further improves judged search relevance. Furthermore, distillation from task-specific experts improves recommendation quality over joint supervised fine-tuning without a statistically detected loss in search quality. Finally, for efficient serving, we pair multi-token prediction with a lightweight ranker, improving retrieval quality over our autoregressive baseline while reducing latency. We evaluate SID-LLM both as a standalone retriever and as a component of Shopify's production search and recommendation systems. As a standalone search system, SID-LLM achieves quality comparable to Shopify's existing multi-model search stack while meeting production latency requirements. Integrating SID-LLM into the search and recommendation stacks provides significant gains in both offline evaluations and online A/B tests. Together, these results demonstrate the practical value of semantic-ID generation as a unified approach to product discovery at scale.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2611.08804v1",
+        "source_title": "Generative Search and Recommendation at Shopify",
+        "source_version": "v1",
+        "retrieved_at": "2026-11-09T23:08:14Z",
+        "license": null
+      },
+      "source_dates": {
+        "published_at": "2026-11-05T23:56:02Z",
+        "updated_at": "2026-11-05T23:56:02Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2611.08804v1",
+        "verified_at": "2026-11-09T23:08:14Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "SID-LLM unifies product search and recommendation as generation of short content-derived semantic IDs over a changing catalog of billions of products. Joint catalog-and-behavior pretraining supplies a shared representation; reinforcement learning improves judged search relevance, while task-expert distillation improves recommendation without a statistically detected search-quality loss. Multi-token prediction with a lightweight ranker improves retrieval quality and latency over the autoregressive baseline. Standalone search quality is comparable to the existing multi-model stack; production integration reports offline and online gains. It offers an industrial example of sharing a generative backbone while addressing task interference and serving cost.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-10",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.08804v1"
+          ]
+        },
+        "zh": {
+          "text": "SID-LLM 把搜索与推荐统一为生成商品语义 ID，服务不断变化的数十亿商品目录。商品内容与行为数据联合预训练提供共享表示；强化学习改善搜索相关性，任务专家蒸馏提升推荐质量，且未检测到搜索质量的显著下降。服务端结合多 token 预测和轻量排序器，相比逐 token 生成基线改善检索质量与延迟。独立搜索质量接近现有多模型方案，接入生产系统后报告离线和线上收益，可借鉴其共享骨干、处理任务干扰并控制服务成本的做法。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-10",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.08804v1"
+          ]
+        }
+      },
+      "added_at": "2026-11-09T23:13:02Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2611.08804"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2611.08790",
+      "title": "SteerGR: Steering Generative Recommendation via Sparse Autoencoders for Controllable Game Discovery",
+      "collection": "related",
+      "category": "generative-recommendation",
+      "affiliation": "Sungkyunkwan University; Roblox",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2611.08790"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Generative recommendation aims to predict item identifiers from user interaction histories, but explicit control over the properties of recommended items remains underexplored. A key challenge is to connect human-readable concepts to internal features whose interventions effectively change the recommended items. To address this, we propose Steerable Generative Recommender (SteerGR), a framework that uses sparse autoencoders for concept-level control in game discovery. SteerGR proceeds through three stages: (i) Concept Definition and Grounding for defining play concepts with an LLM; (ii) Feature Discovery and Selection for discovering candidate features by their concept associations and selecting one by its steering effect; and (iii) Sparse Feature Intervention for amplifying or suppressing selected features to steer recommendations without retraining the recommender. Extensive experiments with two industrial generative recommendation models on a real-world game dataset show that the selected features successfully steer recommendations toward or away from target concepts. We believe this work takes a first step to extend SAE-based steering from LLMs to industrial generative recommendation.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2611.08790v1",
+        "source_title": "SteerGR: Steering Generative Recommendation via Sparse Autoencoders for Controllable Game Discovery",
+        "source_version": "v1",
+        "retrieved_at": "2026-11-09T23:08:08Z",
+        "license": "CC-BY-NC-SA-4.0"
+      },
+      "source_dates": {
+        "published_at": "2026-11-05T23:25:08Z",
+        "updated_at": "2026-11-05T23:25:08Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2611.08790v1",
+        "verified_at": "2026-11-09T23:08:08Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "SteerGR makes generative game recommendations controllable through sparse-autoencoder features. It first grounds human-readable play concepts, then finds associated internal features and selects them by their measured steering effect. Amplifying or suppressing selected features changes recommendations without retraining the recommender. Experiments use two industrial generative models on a real game dataset and show movement toward or away from target concepts. This adds a concept-level control interface to a shared recommendation model; it does not establish a scaling law or an online business lift.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-10",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.08790v1"
+          ]
+        },
+        "zh": {
+          "text": "SteerGR 用稀疏自编码器特征控制生成式游戏推荐。它先把可读的游戏概念与内容对应起来，再寻找相关内部特征，按实际引导效果选择干预对象；放大或抑制这些特征即可改变推荐，无需重新训练推荐模型。两个工业生成模型在真实游戏数据上的实验表明，推荐结果可以朝目标概念靠近或远离。可借鉴点是给共享推荐模型增加概念级控制接口，论文未建立扩展规律，也未证明线上业务收益。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-10",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.08790v1"
+          ]
+        }
+      },
+      "added_at": "2026-11-09T23:13:02Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2611.08790"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2611.09006",
+      "title": "Rethinking Latent Reasoning for Generative Recommendation: Beyond Teacher-Generated CoT and Recurrent Hidden-State Feedback",
+      "collection": "related",
+      "category": "generative-recommendation",
+      "affiliation": "Beihang University; Baidu",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2611.09006"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Latent reasoning in generative recommendation faces two practical barriers: constructing teacher-generated chain-of-thought (CoT) supervision is costly, and recurrent hidden-state feedback requires a specialized execution loop. We revisit both the supervision source and the computation interface. A step-level diagnosis measures how recommendation CoT supports next-item prediction and trace coherence. In the analyzed traces, history analysis is the only step with positive mean contributions on both dimensions, while later preference and intent steps have negative mean answer contributions. Guided by this finding, we propose PHiT (Prefilled, History-Informed Thought Tokens), which learns intermediate states from semantic targets extracted directly from observed item histories. PHiT aggregates cached sparse item encodings to construct these targets and supervises the contextual states of distinct vocabulary thought tokens. All thought tokens are supplied together as ordinary input IDs during a single causal prefill, removing the need for recurrent final-state feedback. With supervised fine-tuning alone, PHiT outperforms the compared baselines across four recommendation benchmarks. Controlled ablations support the value of input-matched semantic supervision, while cost measurements show fast target construction with training time comparable to the recommendation-only thought-token baseline.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2611.09006v1",
+        "source_title": "Rethinking Latent Reasoning for Generative Recommendation: Beyond Teacher-Generated CoT and Recurrent Hidden-State Feedback",
+        "source_version": "v1",
+        "retrieved_at": "2026-11-09T23:08:16Z",
+        "license": null
+      },
+      "source_dates": {
+        "published_at": "2026-11-06T05:33:51Z",
+        "updated_at": "2026-11-06T05:33:51Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2611.09006v1",
+        "verified_at": "2026-11-09T23:08:16Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "PHiT reduces two costs of latent reasoning for recommendation: teacher-generated chain-of-thought supervision and recurrent hidden-state feedback. It derives semantic targets directly from cached sparse item encodings in observed histories, then supervises distinct thought-token states. All thought tokens enter a single causal prefill as ordinary input IDs. Supervised fine-tuning outperforms the compared baselines on four recommendation benchmarks, with training time comparable to the recommendation-only thought-token baseline. The useful design choice is to align intermediate supervision with available history while retaining a conventional inference interface.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-10",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.09006v1"
+          ]
+        },
+        "zh": {
+          "text": "PHiT 针对推荐隐式推理的两项开销：生成教师思维链，以及循环回传隐藏状态。它直接聚合用户历史中缓存的稀疏商品编码，构造语义监督目标；不同思考 token 一次性作为普通输入进入因果预填充。仅用监督微调便在四个推荐基准上优于所比较方法，训练时间与只做推荐训练的思考 token 基线相近。它把中间监督对齐到已有历史信息，同时保留常规推理接口，可供低成本推理增强推荐参考。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-10",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.09006v1"
+          ]
+        }
+      },
+      "added_at": "2026-11-09T23:13:02Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2611.09006"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2611.09040",
+      "title": "MV-IVF: Multi-Vector Retrieval via Multi-Vector Clustering",
+      "collection": "related",
+      "category": "retrieval-reranking-scaling",
+      "affiliation": "University of Maryland; Google Research",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2611.09040"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Multi-vector retrieval represents each query and document as a set of embeddings and scores relevance via fine-grained set-to-set interactions such as MaxSim (Chamfer similarity). This expressiveness improves retrieval quality over single-vector representations, but makes search substantially more expensive. Existing systems address this challenge primarily through proxy representations or filter-and-rerank pipelines that reduce candidate generation to single-vector search. We study the complementary direction of building a native IVF-style index directly over multi-vector data.\nWe introduce MV-IVF, an inverted-file index for multi-vector retrieval built on MV-Lloyd, a new Lloyd-style algorithm for clustering point clouds under a Chamfer objective. Our key observation is that once point clouds are assigned to clusters, the center-update step reduces to standard single-vector clustering over the flattened embeddings in each cluster. This enables efficient construction of a hierarchical IVF tree with center point clouds at internal nodes.\nAt query time, MV-IVF performs best-first beam search over the tree to identify promising leaf clusters, then scores the documents in those leaves. We further accelerate search using low-bit quantization, query compression, and cache-efficient batched search. We implement MV-IVF in MVSIC, an optimized C++ library and unified evaluation framework for multi-vector retrieval that includes several major approaches. Across BEIR and LoTTE text retrieval benchmarks, MV-IVF achieves strong latency--recall tradeoffs, the best batched throughput frontiers, and favorable build-time and index-size profiles. At $90\\%$ Recall-$10$@$10$, MV-IVF achieves up to $8.03\\times$ lower single-query latency and up to $173.5\\times$ higher QPS than the baselines, demonstrating that native IVF-style indexing is practical and effective for scalable multi-vector retrieval.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2611.09040v1",
+        "source_title": "MV-IVF: Multi-Vector Retrieval via Multi-Vector Clustering",
+        "source_version": "v1",
+        "retrieved_at": "2026-11-09T23:08:22Z",
+        "license": "CC-BY-4.0"
+      },
+      "source_dates": {
+        "published_at": "2026-11-06T06:13:30Z",
+        "updated_at": "2026-11-06T06:13:30Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2611.09040v1",
+        "verified_at": "2026-11-09T23:08:22Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "MV-IVF builds an inverted-file index directly over multi-vector representations. Its MV-Lloyd clustering turns center updates into ordinary clustering over flattened embeddings, producing a hierarchical tree of point-cloud centers. Search traverses promising leaves, with low-bit quantization, query compression and cache-efficient batching reducing cost. On BEIR and LoTTE, the reported comparisons show strong latency–recall and batched-throughput tradeoffs. The transferable idea is to index the multi-vector scoring structure itself rather than only using a single-vector proxy; benefits for recommendation retrieval require separate validation.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-10",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.09040v1"
+          ]
+        },
+        "zh": {
+          "text": "MV-IVF 直接为多向量表示建立倒排索引。MV-Lloyd 聚类把中心更新转成对展开后的向量做普通聚类，从而构建以向量集合为中心的层次树；查询优先访问有希望的叶节点，再配合低比特量化、查询压缩和批量访问减少开销。BEIR 与 LoTTE 实验报告较好的延迟—召回率和吞吐权衡。它为多兴趣、多向量召回提供了直接索引思路，但推荐场景收益仍需单独验证。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-10",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.09040v1"
+          ]
+        }
+      },
+      "added_at": "2026-11-09T23:13:02Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2611.09040"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2611.09294",
+      "title": "Orthogonal Norm Growth in Two-Tower Retrieval: A Popularity Mechanism for Unified Discovery",
+      "collection": "related",
+      "category": "other",
+      "affiliation": "Wildberries and Russ",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2611.09294"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Unified search and recommendation systems may update the same item vectors from both interaction streams. We study how repeated updates can increase an item vector's norm and affect retrieval under an unnormalized dot product. A cosine-only loss makes the output gradient perpendicular to the current item vector - tangent to its constant-norm sphere. Training changes encoder parameters, however, so the realized item-vector movement need not remain tangent. We derive sufficient conditions under which it does; every nonzero update then increases squared norm by its squared length. When the tasks share an item encoder, sequential updates from both can accumulate in the same norm, which raw-inner-product serving can expose for either task. This conditional result is not a theorem about joint SGD. Controlled ablations test these conditions. On MovieLens 32M and Amazon Books, accumulated tangent movement accompanies frequency-norm association and additional head-item exposure under raw-dot rather than normalized-item ranking. In a nonlinear tower combining a per-item ID vector with a shared content encoding, active item movement remains near-tangent. We separate its norm change into the ID-update contribution and other output changes, then use a matched training intervention that removes immediate norm growth caused by the ID-row update. The intervention reduces norm-related exposure but also recommendation utility, so it is diagnostic rather than a proposed mitigation. Our logs are recommendation-only: the formulation supplies a shared-representation audit, while prevalence in joint traffic remains open.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2611.09294v1",
+        "source_title": "Orthogonal Norm Growth in Two-Tower Retrieval: A Popularity Mechanism for Unified Discovery",
+        "source_version": "v1",
+        "retrieved_at": "2026-11-09T23:08:25Z",
+        "license": null
+      },
+      "source_dates": {
+        "published_at": "2026-11-06T10:47:38Z",
+        "updated_at": "2026-11-06T10:47:38Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2611.09294v1",
+        "verified_at": "2026-11-09T23:08:25Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "This study identifies conditions under which cosine-loss updates increase item-vector norms and alter raw-dot-product retrieval exposure. It distinguishes output gradients from actual encoder-induced vector movement, so the result is conditional rather than a general theorem about joint SGD. MovieLens 32M and Amazon Books ablations connect near-tangent movement, popularity-related norm growth and additional head-item exposure. Removing one norm-growth component also reduces recommendation utility. The work provides a diagnostic for shared search/recommendation representations, not a proven mitigation; experiments are recommendation-only, leaving joint-traffic prevalence open.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-10",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.09294v1"
+          ]
+        },
+        "zh": {
+          "text": "论文分析余弦损失更新在什么条件下会增大商品向量范数，并影响原始内积召回的曝光。它区分输出梯度与编码器实际造成的向量移动，因此结论有明确条件，不能推广为联合 SGD 的一般定理。MovieLens 32M 与 Amazon Books 消融把近切向移动、热门商品范数增长和头部曝光联系起来；去掉一部分范数增长也降低了推荐效用。它提供共享搜索与推荐表示的诊断方法，而非已验证的修复方案；实验仅含推荐日志。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-10",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.09294v1"
+          ]
+        }
+      },
+      "added_at": "2026-11-09T23:13:02Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2611.09294"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2611.09680",
+      "title": "SPARSEUP: Towards Better Recipes for Training Modern Learned Sparse Retrievers",
+      "collection": "related",
+      "category": "retrieval-reranking-scaling",
+      "affiliation": "Linkup",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2611.09680"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Learned sparse embeddings are a powerful alternative to dense retrieval, yet they have fallen behind single-vector and late interaction models. One reason for their limited adoption is that they are notoriously difficult to train, generally requiring very tight conditions to converge. We present a recipe for training Splade-like encoders on modern backbones and data that achieves a better efficiency-effectiveness trade-off. We discuss the role of logit distribution and its impact on the training stability and the final sparsity of the encoder. We also introduce a new per-position fan-out control - a hard cap on how many vocabulary dimensions each position may emit. We further apply a simple vocabulary merging strategy that removes redundant entries - such as case and word-boundary variants of the same word - which are common in cased BPE-based backbones. We apply our recipe to the LateOn backbone and training data, obtaining SPARSEUP, a sparse encoder that reaches 56.4 average nDCG@10 on BEIR-13, the highest we know of among public vocabulary-based sparse encoders below 150M parameters.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2611.09680v1",
+        "source_title": "SPARSEUP: Towards Better Recipes for Training Modern Learned Sparse Retrievers",
+        "source_version": "v1",
+        "retrieved_at": "2026-11-09T23:08:27Z",
+        "license": "CC-BY-4.0"
+      },
+      "source_dates": {
+        "published_at": "2026-11-06T16:27:29Z",
+        "updated_at": "2026-11-06T16:27:29Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2611.09680v1",
+        "verified_at": "2026-11-09T23:08:27Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "SPARSEUP develops a training recipe for vocabulary-based sparse retrievers on modern backbones. It studies how logit distributions affect convergence and sparsity, caps the number of vocabulary dimensions emitted at each position, and merges redundant vocabulary variants. Applied to the LateOn backbone and training data, it reports 56.4 average nDCG@10 on BEIR-13 for an encoder below 150M parameters. For scalable retrieval, the useful connection is between stable training, explicit emission sparsity and index cost; the reported evidence concerns text retrieval rather than recommendation ranking.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-10",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.09680v1"
+          ]
+        },
+        "zh": {
+          "text": "SPARSEUP 改进现代骨干上的词表稀疏检索训练：分析 logit 分布对收敛和稀疏度的影响，限制每个位置能激活的词表维度数，并合并大小写、词边界等冗余词项。应用于 LateOn 骨干与训练数据后，低于 150M 参数的编码器在 BEIR-13 上达到平均 56.4 nDCG@10。可借鉴点是把训练稳定性、显式稀疏约束与索引成本一起设计；现有证据来自文本检索，尚非推荐排序实验。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-10",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.09680v1"
+          ]
+        }
+      },
+      "added_at": "2026-11-09T23:13:02Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2611.09680"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2611.09728",
+      "title": "SAGE-PAIR: Source-Pretrained Routed Residual Adaptation for Sparse-Feedback Recommendation",
+      "collection": "related",
+      "category": "other",
+      "affiliation": "Southwest Jiaotong University; Peking University; Guangzhou University",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2611.09728"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Recommendation systems often enter a new serving window before enough outcomes are available to retrain the deployed model. We study this regime with 0.05-1.0% target feedback, a range that spans our stress tests while keeping supervision far below the degrees of freedom of the source recommender. At this scale, existing fine-tuning and meta-learning methods still estimate target-specific updates from extremely sparse feedback, leaving the update direction weakly identified. SAGE-PAIR instead transfers a source-supported residual correction space and only calibrates this space using target outcomes. We introduce SAGE-PAIR, a staged adapter that pretrains a low-dimensional global residual on an adjacent source period and adds a soft router over residual experts conditioned on source user profiles. Target feedback then calibrates this residual state rather than relearning the recommender. On a locked test split of KuaiSAR-v2, SAGE-PAIR (Full) achieves a 1.77% relative improvement in NDCG@10, while a core-protocol comparison shows a further 0.25% gain from routed experts beyond source-pretrained PAIR. Matched source-pretrained LoRA and Adapter-Tuning baselines remain near the source model, supporting the need for a different adaptation space. Thus, SAGE-PAIR improves ranking quality with millisecond-scale adaptation and inference costs. Sparse-feedback adaptation is fundamentally governed by the identifiability of the update space rather than by label count alone. Source pretraining supplies estimable correction directions for scarce labels, while user-conditioned routing contributes a consistent, differentiated cross-user correction on top of the global correction. Our code is available at this https URL.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2611.09728v1",
+        "source_title": "SAGE-PAIR: Source-Pretrained Routed Residual Adaptation for Sparse-Feedback Recommendation",
+        "source_version": "v1",
+        "retrieved_at": "2026-11-09T23:08:31Z",
+        "license": "CC-BY-4.0"
+      },
+      "source_dates": {
+        "published_at": "2026-11-06T17:06:10Z",
+        "updated_at": "2026-11-06T17:06:10Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2611.09728v1",
+        "verified_at": "2026-11-09T23:08:31Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "SAGE-PAIR adapts a recommender to a new serving window with only 0.05–1.0% target feedback. It pretrains a low-dimensional residual correction on an adjacent source period and adds user-conditioned routing over residual experts; scarce target outcomes calibrate this existing correction space. On a locked KuaiSAR-v2 test split, the full method reports a 1.77% relative NDCG@10 gain over target-only PAIR. A separate core-protocol comparison isolates a further 0.25% gain from routed experts. It suggests reducing adaptation degrees of freedom before spending scarce labels, with evidence limited to the evaluated protocol.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-10",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.09728v1"
+          ]
+        },
+        "zh": {
+          "text": "SAGE-PAIR 面向新服务时段只有 0.05%–1.0% 目标反馈的推荐适配。它先在相邻源时段预训练低维残差修正，再按用户特征路由到残差专家；少量目标反馈只校准已有修正空间。在固定的 KuaiSAR-v2 测试集上，完整方法相对仅用目标数据的 PAIR，NDCG@10 提升 1.77%；另一套核心协议对比中，专家路由比源预训练 PAIR 再提升 0.25%。其启发是先限制适配自由度，再使用稀缺反馈，结论限于所测协议。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-10",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.09728v1"
+          ]
+        }
+      },
+      "added_at": "2026-11-09T23:13:02Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2611.09728"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2611.09700",
+      "title": "Attend at the Right Resolution: Head-Adaptive Sparse Attention via Query-Key Interaction Structure",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "University of Houston; University of Oklahoma",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2611.09700"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Attention is a major scalability bottleneck in large language models (LLMs), with its computational cost and key-value (KV) memory traffic becoming increasingly prohibitive as context length grows. Sparse attention addresses this bottleneck by restricting each query to a subset of the context, but its effectiveness hinges on identifying relevant regions both cheaply and reliably. Existing training-free methods primarily rely on runtime relevance estimates, with selection dimensionality and granularity typically governed by fixed heuristics rather than the intrinsic interaction structure of pretrained attention heads. We take a different perspective: the query-key operator of each pretrained head defines a characteristic response structure that determines the resolution needed for sparse selection, both across feature directions and across context tokens. Building on this insight, we propose Head-Adaptive Sparse Attention (HASA), a training-free sparse attention framework that jointly adapts selection resolution along these two dimensions. Along the feature dimension, the singular spectrum of each head's query-key operator determines an effective rank, yielding a compact, head-specific response space. Along the sequence dimension, neighboring regions are progressively merged according to the directional coherence of their token responses in this same space, while heterogeneous regions remain separate. Exact attention is then computed using the original full-dimensional KV states of the selected regions. HASA captures 88.1% of dense-attention mass and, compared with UNIQUE, a strong recent sparse-attention baseline, improves accuracy by up to 3.47 and 2.57 points on RULER and LongBench-Pro, respectively, and accelerates self-attention by up to 1.32x, while achieving up to 14.07x speedup over dense attention.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2611.09700v1",
+        "source_title": "Attend at the Right Resolution: Head-Adaptive Sparse Attention via Query-Key Interaction Structure",
+        "source_version": "v1",
+        "retrieved_at": "2026-11-09T23:08:34Z",
+        "license": "CC-BY-SA-4.0"
+      },
+      "source_dates": {
+        "published_at": "2026-11-06T16:45:26Z",
+        "updated_at": "2026-11-06T16:45:26Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2611.09700v1",
+        "verified_at": "2026-11-09T23:08:34Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "HASA makes training-free sparse attention selection depend on each pretrained head’s query-key interaction structure. The operator’s singular spectrum determines a compact response space, while neighboring sequence regions are merged according to response coherence. Attention then uses the original full-dimensional keys and values for selected regions. The paper reports improved long-context benchmark accuracy and attention speed relative to a recent sparse baseline. Its practical contribution is joint control of feature-space selection cost and sequence granularity, rather than a fixed token-selection heuristic. Applying this design to long user histories or ranking models still requires recommendation-specific evaluation.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-10",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.09700v1",
+            "https://arxiv.org/pdf/2611.09700v1"
+          ]
+        },
+        "zh": {
+          "text": "HASA 根据预训练注意力头的查询—键交互结构选择稀疏计算范围：用算子的奇异值谱确定紧凑响应空间，再按响应方向的一致性合并相邻序列区域；最终仍用选中区域的完整键值计算注意力。论文在长上下文基准上报告了相对近期稀疏方法的精度与注意力加速收益。主要价值是同时调整特征选择维度和序列粒度，减少固定选择规则的局限。能否用于长行为序列或排序模型，仍需推荐实验验证。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-10",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.09700v1",
+            "https://arxiv.org/pdf/2611.09700v1"
+          ]
+        }
+      },
+      "added_at": "2026-11-09T23:13:02Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2611.09700"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2611.08924",
+      "title": "ResQAdam: Residual-Preserving Adaptive Optimization for Memory-Efficient Quantization Aware Training",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "Mohamed bin Zayed University of Artificial Intelligence; King Abdullah University of Science and Technology; Advanced Micro Devices; Carnegie Mellon University",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2611.08924"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Quantization-aware training (QAT) is the most reliable way to obtain accurate low-bit large language models (LLMs), but training with AdamW keeps two dense FP32 states for every weight matrix. We find that low-rank memory-efficient optimizers such as GaLore and LDAdam degrade substantially in QAT. A considerable part of the QAT momentum lies outside its top-r singular subspace, and projection-based methods discard this part at every step. We further observe that this residual remains useful when only its sign is kept. Based on these observations, we propose ResQAdam. It keeps a single BF16 momentum, applies Adam only to the r x r coordinates of the principal subspace, and adds a normalized sign update computed from the residual. We evaluate ResQAdam with two from-scratch QAT methods and three QAT fine-tuning pipelines, with weights quantized down to 2 bits. It reduces optimizer-state memory by 71% to 74% relative to AdamW, stays close to AdamW in most settings, and lowers training throughput by less than 2%.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2611.08924v1",
+        "source_title": "ResQAdam: Residual-Preserving Adaptive Optimization for Memory-Efficient Quantization Aware Training",
+        "source_version": "v1",
+        "retrieved_at": "2026-11-09T23:08:37Z",
+        "license": "CC-BY-4.0"
+      },
+      "source_dates": {
+        "published_at": "2026-11-06T03:12:45Z",
+        "updated_at": "2026-11-06T03:12:45Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2611.08924v1",
+        "verified_at": "2026-11-09T23:08:37Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "ResQAdam targets the optimizer-state cost of quantization-aware training. It retains one BF16 momentum tensor, applies Adam updates within a low-dimensional principal subspace, and preserves information outside that subspace through a normalized residual-sign update. This addresses the loss of useful momentum caused by repeatedly discarding low-rank projection residuals. Across from-scratch and fine-tuning QAT pipelines, including weights down to two bits, the authors report 71–74% lower optimizer-state memory than AdamW with less than 2% training-throughput reduction. The memory accounting excludes embeddings and the output head; these are optimizer-state savings, not total training-memory savings. Benefits for large recommendation models remain untested.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-10",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.08924v1",
+            "https://arxiv.org/pdf/2611.08924v1"
+          ]
+        },
+        "zh": {
+          "text": "ResQAdam 面向量化感知训练的优化器显存开销，保留一份 BF16 动量，在低维主子空间内执行 Adam 更新，并用归一化残差符号补回投影外的信息，避免低秩方法反复丢弃有效动量。论文覆盖从头训练和微调式量化，最低至二比特权重；报告相对 AdamW 减少 71%–74% 的优化器状态显存，训练吞吐下降低于 2%。显存统计不含嵌入与输出头，该数字不等于总训练显存降幅，大规模推荐模型上的收益仍待验证。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-10",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.08924v1",
+            "https://arxiv.org/pdf/2611.08924v1"
+          ]
+        }
+      },
+      "added_at": "2026-11-09T23:13:02Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2611.08924"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2611.09412",
+      "title": "MIRA: Mitigating Pole Geometry Bias in Recurrent Language Models",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "University of Galway; Research Ireland D-REAL; Université Laval; Canada–CIFAR AI Chair; Mila; University of California, Merced",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2611.09412"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "We show that the Transformer's recurrent successors --- such as selective state-space models (SSMs), Receptance Weighted Key Value (RWKV), and Retentive Network (RetNet) --- can be characterized as infinite-impulse-response (IIR) systems. The zero--pole geometries of these IIR systems characterize the temporal modes they can represent. However, to trade parallelism, the algebraic structures of the parameterizations of these recurrent systems often give rise to poles constrained to the real axis, thereby inducing an architectural bias in their recurrent dynamics. To unify these recurrent architectures and eliminate their pole geometry bias, inspired by the lattice--ladder realization of general IIR systems, we present \\textsc{Mira} (\\textbf{M}odal \\textbf{I}IR \\textbf{R}ecurrent \\textbf{A}rchitecture), a unified family of linear-time recurrent architectures for building large language models (LLMs) with a highly parallel algebraic structure. Each \\textsc{Mira} block realizes a higher-order IIR system that represents temporal modes from token streams through a lattice--ladder structure, followed by a feed-forward network (FFN). This realization enables the model to represent the temporal modes associated with both real and complex-conjugate poles. We pretrain \\textsc{Mira-S}, a 12-layer small-scale LLM with 0.14B parameters composed entirely of \\textsc{Mira} blocks. Throughout the pretraining, \\textsc{Mira-S} achieves lower perplexity than strong recurrent baselines, exhibits stronger context-window generalization beyond the training length, and attains higher throughput with a dedicated CUDA kernel.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2611.09412v1",
+        "source_title": "MIRA: Mitigating Pole Geometry Bias in Recurrent Language Models",
+        "source_version": "v1",
+        "retrieved_at": "2026-11-09T23:08:41Z",
+        "license": "CC-BY-4.0"
+      },
+      "source_dates": {
+        "published_at": "2026-11-06T12:44:53Z",
+        "updated_at": "2026-11-06T12:44:53Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2611.09412v1",
+        "verified_at": "2026-11-09T23:08:41Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "MIRA approaches recurrent language modeling as an infinite-impulse-response system. Its lattice–ladder realization supports temporal modes associated with both real and complex-conjugate poles, avoiding the real-axis restriction of several recurrent parameterizations while retaining linear-time sequence processing and parallel computation. The authors pretrain a 12-layer, 0.14B-parameter MIRA-S model and report lower perplexity, better context-length generalization, and higher throughput than recurrent baselines, with a dedicated CUDA kernel. This suggests an alternative sequence-mixing design for long behavioral histories, but the evidence is small-scale language modeling rather than industrial recommendation or large-model scaling.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-10",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.09412v1",
+            "https://arxiv.org/pdf/2611.09412v1"
+          ]
+        },
+        "zh": {
+          "text": "MIRA 将循环语言模型视为无限冲激响应系统，用格型—梯形结构同时表达实极点和复共轭极点对应的时间模式，缓解部分循环参数化只能覆盖实轴极点的限制，并保留线性时间处理与并行计算能力。论文预训练了 12 层、0.14B 参数的 MIRA-S，报告困惑度、上下文长度外推及专用 CUDA 内核吞吐优于循环基线。它为长行为序列提供了另一种混合结构，但证据仍限于小规模语言模型，尚未验证工业推荐或更大模型扩展。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-10",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.09412v1",
+            "https://arxiv.org/pdf/2611.09412v1"
+          ]
+        }
+      },
+      "added_at": "2026-11-09T23:13:02Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2611.09412"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2611.09722",
+      "title": "FOSCAR: Accelerating Decode Attention over 2- and 4-Bit KV Caches through Affine Folding",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "Together AI; University of Sydney",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2611.09722"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Large-language-model decode attention streams the key-value (KV) cache for every generated token. Packing that cache into 2-bit or 4-bit quantized integers reduces memory traffic but does not automatically translate into latency saving. Existing 2-bit fused kernels reach under 31%/15% of peak HBM throughput on H100/B200. Converting each value and applying its scale and offset before feeding Tensor Cores is a major bottleneck because instruction-issue throughput is scarce on modern GPUs. Instead of applying scale and offset to each KV value, FOSCAR uses affine folding to apply them to the other operand or the output of decode-attention matrix products, depending on the quantization scheme (token-wise or channel-wise). This reduces scale-and-offset operations by up to two orders of magnitude while preserving the dequantized attention output in exact arithmetic. FOSCAR also uses bit manipulation to feed KV operands to Tensor Cores efficiently, requiring only 1 and 0.19 ALU instructions per INT2 element on H100 and B200, respectively. Finally, FOSCAR builds warp-specialized GPU pipelines for Hopper (H100) and Blackwell (B200) using wgmma and tcgen05. On H100, FOSCAR INT2 and INT4 kernels achieve geo-mean speedups of $3.36\\times$ and $2.83\\times$ over FlashInfer BF16, and $2.03\\times$ and $1.71\\times$ over TensorRT-LLM FP8. On B200, the corresponding INT2 and INT4 speedups are $2.67\\times$ and $2.30\\times$ over FlashInfer BF16, $1.48\\times$ and $1.28\\times$ over TensorRT-LLM FP8, and $1.16\\times$ and $1.00\\times$ over TensorRT-LLM NVFP4. We integrate FOSCAR into SGLang to benchmark serving efficiency. On long-context serving workloads, FOSCAR increases peak aggregate throughput by up to 170% and 341% over 2-bit and 16-bit baselines, respectively. We open-source FOSCAR as a kernel library at this https URL.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2611.09722v1",
+        "source_title": "FOSCAR: Accelerating Decode Attention over 2- and 4-Bit KV Caches through Affine Folding",
+        "source_version": "v1",
+        "retrieved_at": "2026-11-09T23:08:44Z",
+        "license": "CC-BY-4.0"
+      },
+      "source_dates": {
+        "published_at": "2026-11-06T17:00:25Z",
+        "updated_at": "2026-11-06T17:00:25Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2611.09722v1",
+        "verified_at": "2026-11-09T23:08:44Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "FOSCAR accelerates decode attention over two- and four-bit KV caches by moving quantization scales and offsets into the other matrix operand or the output, rather than dequantizing each element separately. This affine folding reduces instruction overhead while preserving the dequantized result in exact arithmetic. Hardware-specific pipelines target Hopper and Blackwell GPUs, and an SGLang integration evaluates long-context serving. The distinction between kernel speed and end-to-end throughput matters when interpreting its gains. The technique is relevant to bandwidth-limited generative recommendation serving, but recommendation-specific quantization quality and serving performance remain untested.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-10",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.09722v1",
+            "https://arxiv.org/pdf/2611.09722v1"
+          ]
+        },
+        "zh": {
+          "text": "FOSCAR 针对二比特、四比特 KV 缓存解码，把量化尺度和偏移折叠到矩阵乘法的另一操作数或输出，减少逐元素反量化的指令开销；在精确算术下保持反量化后的计算结果。实现分别优化 Hopper、Blackwell 流水线，并接入 SGLang 测试长上下文服务。评估时应区分内核加速与端到端吞吐。它对带宽受限的生成式推荐服务有参考价值，但现有实验没有验证推荐负载的速度或低比特质量。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-10",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.09722v1",
+            "https://arxiv.org/pdf/2611.09722v1"
+          ]
+        }
+      },
+      "added_at": "2026-11-09T23:13:02Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2611.09722"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2611.09825",
+      "title": "BitDecoding-FP4: Native FP4 KV Cache Decoding via Algorithm-System Co-Design",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "University of Edinburgh; Tencent Hunyuan",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2611.09825"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "The key-value (KV) cache dominates memory capacity and bandwidth in long-context LLM serving. While 4-bit microscaling formats (NVFP4, MXFP4) shrink the cache and run attention on FP4 Tensor Cores, a fundamental gap remains between algorithmic quantization and system-aware acceleration: existing FP4 KV systems use vanilla quantization that causes severe accuracy drops, whereas accuracy-oriented 4-bit algorithms rely on vector codebooks whose lookup overhead degrades decoding throughput. We present BitDecoding-FP4, an algorithm--system co-design for accurate and efficient native FP4 KV decoding. We mitigate three error sources: Dual-Residual Query Quantization splits queries into two FP4 tensors, cutting query logit error from 60% to 1%; Underflow-Aware Probability Scaling prevents E4M3 scales from rounding long-context probabilities to zero; and Outlier-Aware Key Quantization combines static smoothing, Hadamard rotation, and scale search to suppress key outliers under token-wise scaling. At the system level, we remove the softmax bottleneck via transposed softmax with fused probability quantization and stacked query MMA on paged KV caches. Across dense and MoE models with GQA and MLA, BitDecoding-FP4 stays within 0.5 points of BF16 KV accuracy with NVFP4 (1 point with MXFP4), and tracks BF16 KV in RL training rollouts. In end-to-end serving on NVIDIA B300 with Qwen3-4B and Qwen3-30B-A3B, it delivers 2.4-3.0$\\times$ higher peak serving throughput than BF16 KV. The implementation is available at this https URL.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2611.09825v1",
+        "source_title": "BitDecoding-FP4: Native FP4 KV Cache Decoding via Algorithm-System Co-Design",
+        "source_version": "v1",
+        "retrieved_at": "2026-11-09T23:08:47Z",
+        "license": null
+      },
+      "source_dates": {
+        "published_at": "2026-11-06T18:13:54Z",
+        "updated_at": "2026-11-06T18:13:54Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2611.09825v1",
+        "verified_at": "2026-11-09T23:08:47Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "BitDecoding-FP4 co-designs quantization and GPU kernels for native FP4 KV-cache decoding. It separates queries into two FP4 residual components, rescales attention probabilities to avoid underflow, and suppresses key outliers through smoothing, rotation, and scale search. A fused transposed-softmax implementation supports paged caches. The paper evaluates dense and MoE models with GQA and MLA and reports close-to-BF16 quality; B300 serving experiments on two Qwen3 models show higher peak throughput. These hardware- and workload-specific results suggest techniques for low-bit generative recommendation, but do not demonstrate recommendation accuracy or serving gains.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-10",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.09825v1",
+            "https://arxiv.org/pdf/2611.09825v1"
+          ]
+        },
+        "zh": {
+          "text": "BitDecoding-FP4 联合设计量化方法与 GPU 内核：把查询拆成两份 FP4 残差，缩放注意力概率以避免下溢，并结合平滑、旋转和尺度搜索处理键向量离群值；融合的转置 softmax 支持分页缓存。论文覆盖采用 GQA、MLA 的稠密和 MoE 模型，报告接近 BF16 的质量，并在 B300 上用两款 Qwen3 模型验证峰值服务吞吐提升。这些结果受硬件与负载条件约束，生成式推荐的准确率及服务收益尚待验证。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-10",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.09825v1",
+            "https://arxiv.org/pdf/2611.09825v1"
+          ]
+        }
+      },
+      "added_at": "2026-11-09T23:13:02Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2611.09825"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2611.09598",
+      "title": "Transformer-FSQ: Discrete Latents for Extreme KV-Cache Compression",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "University of Edinburgh",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2611.09598"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Private, personalised language models must run on local consumer devices, where large, frontier models cannot fit, and retaining long contexts is non-trivial. Sequential memory---the key-value (KV) cache---grows linearly with context length, quickly dwarfing the model itself: for Qwen3-1.7B-Base, 200,000 retained entries require 21 GiB, 6.6 times more than the model weights. Yet the KV-cache compression methods we measured fail beyond moderate compression ratios. We introduce Transformer-FSQ, addressing extreme KV-cache compression by replacing standard key and value projections with a finite scalar quantisation bottleneck. Our cache stores a packed vector of discrete integer codes per token, with no per-token quantisation metadata. Converting a pretrained transformer trains only these projections on 0.25 tokens per original parameter. We evaluate Transformer-FSQ against five baseline families on models from 0.6B to 8B parameters. On long-context retrieval (RULER), from 12$\\times$ to 97.5$\\times$ Transformer-FSQ is the most accurate method we evaluate, across scales. A fused Triton kernel decodes directly from the integer codes; with baselines given their authors' kernels where available, it decodes at $1.01\\times$ (95% interval $0.98$--$1.05$) the throughput of native SDPA attention on the uncompressed Qwen3-8B-Base at $32\\times$ and $1.54\\times$ at $97.5\\times$. Extreme KV-cache compression is therefore a practical way to extend how much context a fixed device can hold.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2611.09598v1",
+        "source_title": "Transformer-FSQ: Discrete Latents for Extreme KV-Cache Compression",
+        "source_version": "v1",
+        "retrieved_at": "2026-11-09T23:08:50Z",
+        "license": "CC-BY-4.0"
+      },
+      "source_dates": {
+        "published_at": "2026-11-06T15:27:24Z",
+        "updated_at": "2026-11-06T15:27:24Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2611.09598v1",
+        "verified_at": "2026-11-09T23:08:50Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "Transformer-FSQ replaces standard key and value projections with a finite-scalar-quantization bottleneck. Each cached token is stored as packed integer codes without per-token quantization metadata, and adapting a pretrained model trains only those projections. A fused Triton kernel consumes the compressed codes directly. Experiments across 0.6B–8B language models examine extreme compression and long-context retrieval, with strong accuracy relative to evaluated compression baselines. The contribution is extending retained context under a fixed memory budget, not uniformly accelerating every configuration. Applying the approach to persistent user histories would require projection adaptation and recommendation-specific quality checks.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-10",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.09598v1",
+            "https://arxiv.org/pdf/2611.09598v1"
+          ]
+        },
+        "zh": {
+          "text": "Transformer-FSQ 用有限标量量化瓶颈替换键和值投影，将每个缓存位置保存为打包整数编码，不再存储逐位置量化元数据；转换预训练模型时只训练这些投影，融合 Triton 内核直接读取压缩编码。论文在 0.6B–8B 语言模型上评估极高压缩率和长上下文检索，相对所测压缩基线保持较好精度。其重点是在固定显存下保留更多上下文，并非所有配置都更快。用于长期用户历史仍需投影适配与推荐质量验证。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-10",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.09598v1",
+            "https://arxiv.org/pdf/2611.09598v1"
+          ]
+        }
+      },
+      "added_at": "2026-11-09T23:13:02Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2611.09598"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2611.09109",
+      "title": "DARIC: A Position-Independent KV Cache Reuse System with Distribution-Aware Recomputation",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "Lenovo Research",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2611.09109"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "The context lengths of large language models (LLMs) are rapidly increasing in real-world applications such as agentic systems and retrieval-augmented generation (RAG). To accelerate LLM inference in these scenarios, reusing position-independent key-value (KV) caches across requests has emerged as a promising approach. This technique typically relies on recomputing a selected subset of tokens to restore cross-chunk interactions. However, existing solutions suffer from critical limitations in both algorithmic efficiency and system deployment. Algorithmically, they overlook the distribution of KV cache deviations, leading to either high token-selection overhead or degraded generation quality. At the system level, the reliance on custom LLM execution flows for recomputation complicates deployment and prevents seamless integration with highly optimized inference engines. In this paper, we propose DARIC (\\textbf{D}istribution-\\textbf{A}ware \\textbf{R}ecomputation for \\textbf{I}ndependent KV \\textbf{C}ache Reuse), a novel KV cache reuse method based on system-algorithm co-design. At its core, DARIC introduces a distribution-aware token selection strategy that adaptively schedules token recomputation based on empirical KV deviation patterns, striking an optimal balance between generation quality and computational efficiency. Moreover, DARIC is built on a lightweight system architecture that enables independent KV cache generation and recomputation with minimal integration overhead, fully preserving existing system-level optimizations of standard inference engines. Comprehensive experiments across various datasets and LLMs demonstrate that DARIC consistently outperforms state-of-the-art methods, achieving a 1.1$\\times$--4.5$\\times$ speedup in time-to-first-token (TTFT) with negligible loss in generation quality. Code is available at this https URL.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2611.09109v1",
+        "source_title": "DARIC: A Position-Independent KV Cache Reuse System with Distribution-Aware Recomputation",
+        "source_version": "v1",
+        "retrieved_at": "2026-11-09T23:08:53Z",
+        "license": "CC-BY-4.0"
+      },
+      "source_dates": {
+        "published_at": "2026-11-06T07:41:55Z",
+        "updated_at": "2026-11-06T07:41:55Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2611.09109v1",
+        "verified_at": "2026-11-09T23:08:53Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "DARIC reuses position-independent KV caches while selectively recomputing tokens to restore interactions between cached chunks. Its selection rule follows observed distributions of cache deviations, balancing recomputation overhead against generation quality. A lightweight system design aims to preserve existing inference-engine optimizations rather than requiring a separate execution path. Across the evaluated language models and datasets, the paper reports faster time to first token with little quality loss. Reusing shared content or user-history segments could be useful for generative recommendation, but the applicable sharing patterns, cache-management costs, and recommendation quality have not been established.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-10",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.09109v1",
+            "https://arxiv.org/pdf/2611.09109v1"
+          ]
+        },
+        "zh": {
+          "text": "DARIC 复用与位置无关的 KV 缓存，并选择性重算部分 token，恢复缓存片段之间的交互。选择规则依据观测到的缓存偏差分布，权衡重算开销与生成质量；轻量系统设计尽量保留现有推理引擎优化，避免另建执行流程。论文在所测语言模型和数据集上报告首 token 延迟下降、质量损失较小。该方法可启发共享内容或用户历史片段的复用，但哪些推荐请求能有效共享、缓存管理成本多大、质量是否稳定，仍需专门验证。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-10",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.09109v1",
+            "https://arxiv.org/pdf/2611.09109v1"
+          ]
+        }
+      },
+      "added_at": "2026-11-09T23:13:02Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2611.09109"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2607.00466",
+      "title": "ELDR: Expert-Locality-Aware Decode Routing for PD-Disaggregated MoE Serving",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "KAIST; Microsoft Research; Shanghai Xingyunzhili Artificial Intelligence Institute",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2607.00466"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Equal load does not mean equal decode latency in prefill-decode (PD) disaggregated mixture-of-experts (MoE) serving. In bandwidth-bound decode, more distinct experts mean more weight loads and higher latency. We present ELDR, a lossless, expert-locality-aware decode router. Prefill signatures predict decode expert usage. Balanced $K$-means fits per-decoder centroids with background refitting. Locality-band routing selects the least-loaded worker among close matches. A block-granular cache keeps signatures exact under prefix caching. We evaluate ELDR in vLLM on up to 40 GPUs. Across three MoE models on 12 public task benchmarks and multilingual WildChat, it reduces median time-per-output-token (TPOT) by 5.4-14.5% on average across request rates and up to 17.8% over the best of four load-balancing baselines, preserving model outputs and token-to-expert assignments.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2607.00466v3",
+        "source_title": "ELDR: Expert-Locality-Aware Decode Routing for PD-Disaggregated MoE Serving",
+        "source_version": "v3",
+        "retrieved_at": "2026-11-09T23:08:56Z",
+        "license": "CC-BY-4.0"
+      },
+      "source_dates": {
+        "published_at": "2026-07-01T05:34:38Z",
+        "updated_at": "2026-11-06T08:44:07Z",
+        "source_version": "v3",
+        "source_url": "https://arxiv.org/abs/2607.00466v3",
+        "verified_at": "2026-11-09T23:08:56Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "ELDR routes decode requests by expert locality in prefill–decode-disaggregated MoE serving. Prefill signatures predict later expert use, balanced clustering builds worker profiles, and a locality-band policy chooses a lightly loaded worker among close matches. A block-granular signature cache supports prefix reuse. In vLLM experiments using up to 40 GPUs, the method lowers median time per output token while preserving model outputs and token-to-expert assignments. This is a serving-layer placement improvement, not a change to the model router. Its usefulness for sparse recommendation models depends on comparable workload structure and remains unverified.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-10",
+          "source_urls": [
+            "https://arxiv.org/abs/2607.00466v3",
+            "https://arxiv.org/pdf/2607.00466v3"
+          ]
+        },
+        "zh": {
+          "text": "ELDR 在预填充与解码分离的 MoE 服务中按专家局部性分配请求：用预填充签名预测后续专家使用，通过均衡聚类建立节点画像，再从相近节点中选择负载较低者；块级签名缓存支持前缀复用。论文在最多 40 张 GPU 的 vLLM 实验中降低输出 token 的中位耗时，并保持模型输出及 token—专家分配不变。改动发生在服务请求放置层，不是模型内部路由；稀疏推荐模型能否受益，取决于负载结构，仍待验证。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-10",
+          "source_urls": [
+            "https://arxiv.org/abs/2607.00466v3",
+            "https://arxiv.org/pdf/2607.00466v3"
+          ]
+        }
+      },
+      "added_at": "2026-11-09T23:13:02Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2607.00466"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2605.22791",
+      "title": "Gated DeltaNet-2: Decoupling Erase and Write in Linear Attention",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "NVIDIA",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2605.22791"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Linear attention replaces the unbounded cache of softmax attention with a fixed-size recurrent state, reducing sequence mixing to linear time and decoding to constant memory. The hard part is not just what to forget, but how to edit this compressed memory without scrambling existing associations. Delta-rule models subtract the current read before writing a new value, and Kimi Delta Attention (KDA) sharpens forgetting with channel-wise decay. But the active edit still uses a single scalar gate to control two different things: how much old content to erase on the key side and how much new content to commit on the value side. We introduce Gated DeltaNet-2, which generalizes both Gated DeltaNet and KDA by inheriting adaptive forgetting and channel-wise decay while addressing their shared limitation, the scalar tie between erasing and writing. Gated Delta Rule-2 separates these roles with a channel-wise erase gate b_t and a channel-wise write gate w_t, reducing to KDA when both gates collapse to the same scalar and to Gated DeltaNet when the decay also collapses. We derive a fast-weight update view, a chunkwise WY algorithm with channel-wise decay absorbed into asymmetric erase factors, and a gate-aware backward pass that preserves efficient parallel training. At 1.3B parameters trained on 100B FineWeb-Edu tokens, Gated DeltaNet-2 achieves the strongest overall results among Mamba-2, Gated DeltaNet, KDA, and Mamba-3 variants across language modeling, commonsense reasoning, and retrieval. Its advantage is most pronounced on long-context RULER needle-in-a-haystack benchmarks, where it improves the evaluated multi-key retrieval setting and remains strong in both recurrent and hybrid settings. Code is available at this https URL.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2605.22791v2",
+        "source_title": "Gated DeltaNet-2: Decoupling Erase and Write in Linear Attention",
+        "source_version": "v2",
+        "retrieved_at": "2026-11-09T23:09:00Z",
+        "license": "CC-BY-SA-4.0"
+      },
+      "source_dates": {
+        "published_at": "2026-05-21T17:44:57Z",
+        "updated_at": "2026-11-06T06:08:17Z",
+        "source_version": "v2",
+        "source_url": "https://arxiv.org/abs/2605.22791v2",
+        "verified_at": "2026-11-09T23:09:00Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "Gated DeltaNet-2 separates the channel-wise gates that erase old associations and write new values in a linear-attention recurrent state. It retains adaptive forgetting and channel-wise decay, while providing a chunkwise WY algorithm and gate-aware backward pass for parallel training. At 1.3B parameters trained on 100B FineWeb-Edu tokens, the paper compares language modeling, commonsense reasoning, and retrieval against recurrent baselines, with particular gains on long-context retrieval. The design offers a concrete memory-update mechanism for exploring long user sequences. Its recommendation accuracy and throughput on industrial ranking workloads remain untested.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-10",
+          "source_urls": [
+            "https://arxiv.org/abs/2605.22791v2",
+            "https://arxiv.org/pdf/2605.22791v2"
+          ]
+        },
+        "zh": {
+          "text": "Gated DeltaNet-2 将线性注意力循环状态中擦除旧关联、写入新值的通道级门控分开，同时保留自适应遗忘和通道衰减，并给出分块 WY 算法与门控感知反传以支持并行训练。论文在 1.3B 参数、100B FineWeb-Edu token 条件下比较语言建模、常识推理和检索，长上下文检索收益较突出。该设计为长期用户序列提供了具体的记忆更新机制，但推荐准确率及工业排序负载下的吞吐尚未验证。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-10",
+          "source_urls": [
+            "https://arxiv.org/abs/2605.22791v2",
+            "https://arxiv.org/pdf/2605.22791v2"
+          ]
+        }
+      },
+      "added_at": "2026-11-09T23:13:02Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2605.22791"
       },
       "change_history": [],
       "reading_tier": null

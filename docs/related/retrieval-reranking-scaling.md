@@ -6,7 +6,7 @@
 
 Scaling retrieval and reranking stages of recommendation pipelines.
 
-51 papers · Updated 2026-11-09
+53 papers · Updated 2026-11-10
 
 <a id="paper-2603-04816"></a>
 
@@ -198,7 +198,7 @@ Scaling retrieval and reranking stages of recommendation pipelines.
 
 <a id="paper-2611-05908"></a>
 
-- **Optimal Re-Ranking Depth**: This study treats reranking depth as query-dependent rather than fixed. Dense LLM relevance judgments reveal saturation or degradation beyond each query's preferred depth, while common query-performance predictors transfer poorly. An IR-DCG@10 predictor based on LLM-assessed first-stage quality reduces mean reranking depth by up to 3x while preserving effectiveness in the evaluated pipelines. Larger oracle improvements are upper bounds, and the judgments introduce a dependency on LLM assessment quality. — [Paper](https://arxiv.org/abs/2611.05908) (University of Waterloo; University of Glasgow · arXiv 2026). Reading priority: Unrated.
+- **Optimal Re-Ranking Depth**: This study treats reranking depth as query-dependent rather than fixed. Dense LLM relevance judgments reveal saturation or degradation beyond each query's preferred depth, while common query-performance predictors transfer poorly. An IR-DCG@10 predictor based on LLM-assessed first-stage quality reduces mean reranking depth by up to 3x while preserving effectiveness in the evaluated pipelines. Larger oracle improvements are upper bounds, and the judgments introduce a dependency on LLM assessment quality. — [Paper](https://arxiv.org/abs/2611.05908) · [Venue](https://sigir2026.org/en-AU/pages/program/accepted-papers) (University of Waterloo; University of Glasgow · SIGIR (Short) 2026). Reading priority: Unrated.
 
 <a id="paper-2611-08306"></a>
 
@@ -211,3 +211,11 @@ Scaling retrieval and reranking stages of recommendation pipelines.
 <a id="paper-2611-07298"></a>
 
 - **Reducing Representational Interference in Retrieval Embeddings with Trainable Prefix Tokens**: The method prepends trainable \[DUMP\] tokens during embedding-model training to reduce residual, low-information token signals in the final retrieval representation. The backbone, pooling and loss remain unchanged; the added prefixes learn through the standard contrastive retrieval objective. Tests on standard and long-context retrieval benchmarks improve over fine-tuned baselines for both encoder and decoder embedding models. The approach provides a lightweight retrieval-representation intervention, rather than a scaling law or a demonstrated recommendation-system gain. — [Paper](https://arxiv.org/abs/2611.07298) · [DOI](https://doi.org/10.1145/3799682.3840002) (Korea University; Soongsil University · CIKM (Short) 2026). Reading priority: Unrated.
+
+<a id="paper-2611-09040"></a>
+
+- **MV-IVF: Multi-Vector Retrieval via Multi-Vector Clustering**: MV-IVF builds an inverted-file index directly over multi-vector representations. Its MV-Lloyd clustering turns center updates into ordinary clustering over flattened embeddings, producing a hierarchical tree of point-cloud centers. Search traverses promising leaves, with low-bit quantization, query compression and cache-efficient batching reducing cost. On BEIR and LoTTE, the reported comparisons show strong latency–recall and batched-throughput tradeoffs. The transferable idea is to index the multi-vector scoring structure itself rather than only using a single-vector proxy; benefits for recommendation retrieval require separate validation. — [Paper](https://arxiv.org/abs/2611.09040) (University of Maryland; Google Research · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-09680"></a>
+
+- **SPARSEUP: Towards Better Recipes for Training Modern Learned Sparse Retrievers**: SPARSEUP develops a training recipe for vocabulary-based sparse retrievers on modern backbones. It studies how logit distributions affect convergence and sparsity, caps the number of vocabulary dimensions emitted at each position, and merges redundant vocabulary variants. Applied to the LateOn backbone and training data, it reports 56.4 average nDCG@10 on BEIR-13 for an encoder below 150M parameters. For scalable retrieval, the useful connection is between stable training, explicit emission sparsity and index cost; the reported evidence concerns text retrieval rather than recommendation ranking. — [Paper](https://arxiv.org/abs/2611.09680) (Linkup · arXiv 2026). Reading priority: Unrated.
