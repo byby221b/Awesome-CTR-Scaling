@@ -6,7 +6,7 @@
 
 Long-history modeling, memory and compression for user behavior sequences.
 
-34 papers · Updated 2026-11-10
+36 papers · Updated 2026-11-11
 
 <a id="paper-2504-06780"></a>
 
@@ -143,3 +143,11 @@ Long-history modeling, memory and compression for user behavior sequences.
 <a id="paper-2611-06521"></a>
 
 - **Deliberate Latent Reasoning for Sequential Recommendation**: DESRec adapts latent reasoning to different user histories in sequential recommendation. During training it selects each sequence's most informative reasoning step and self-distills that state into the final step used for ranking. Progressive preference extraction also segments histories into a variable number of periods and summarizes them into latent milestones. Experiments span six public datasets, four backbone recommenders and eight baselines; the paper reports improved recommendation performance rather than an industrial scaling-law result. — [Paper](https://arxiv.org/abs/2611.06521) (Renmin University of China; Beijing Normal University · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-11675"></a>
+
+- **Query- and Candidate-Aware Long User Sequence Modeling for Sponsored Product Ranking in Search**: This sponsored-product ranking framework supplements recent actions with long-term history retrieved through two channels: nearest neighbors of the current query and of the candidate product. Dedicated query/candidate tokens and candidate-aware early fusion condition the selected behavior sequence. Offline ablations improve ranking metrics over the production baseline, and an online A/B test increases CTR, attributed conversion rate and orders per impression. It offers a practical way to select relevant portions of long histories before applying a more expressive ranking model. — [Paper](https://arxiv.org/abs/2611.11675) (Wayfair LLC · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2609-37311"></a>
+
+- **ReMem: Rethinking Perception and Memory in Long-Context Recommendation Agents**: ReMem combines screenshot/OCR-based item perception with a bounded textual memory that updates sequentially over chunks of long recommendation histories. With fixed chunk and memory budgets, update calls grow linearly with history length. A multi-memory group-relative policy optimization variant trains the updater using recommendation-specific and end-task rewards. On three Amazon-derived datasets under a controlled post-retrieval protocol, the authors report an average relative 7.58% gain over the strongest reported baseline across search, ranking and judging. It offers a bounded-memory history-processing idea, with results limited to that experimental protocol. — [Paper](https://arxiv.org/abs/2609.37311) (The Hong Kong Polytechnic University; Nanyang Technological University · arXiv 2026). Reading priority: Unrated.

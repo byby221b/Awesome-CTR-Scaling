@@ -6,7 +6,7 @@
 
 Scaling retrieval and reranking stages of recommendation pipelines.
 
-53 papers · Updated 2026-11-10
+56 papers · Updated 2026-11-11
 
 <a id="paper-2603-04816"></a>
 
@@ -219,3 +219,15 @@ Scaling retrieval and reranking stages of recommendation pipelines.
 <a id="paper-2611-09680"></a>
 
 - **SPARSEUP: Towards Better Recipes for Training Modern Learned Sparse Retrievers**: SPARSEUP develops a training recipe for vocabulary-based sparse retrievers on modern backbones. It studies how logit distributions affect convergence and sparsity, caps the number of vocabulary dimensions emitted at each position, and merges redundant vocabulary variants. Applied to the LateOn backbone and training data, it reports 56.4 average nDCG@10 on BEIR-13 for an encoder below 150M parameters. For scalable retrieval, the useful connection is between stable training, explicit emission sparsity and index cost; the reported evidence concerns text retrieval rather than recommendation ranking. — [Paper](https://arxiv.org/abs/2611.09680) (Linkup · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-10405"></a>
+
+- **Yuanbao-Reranker: Document-Grounded Synthesis and Preference Distillation for Text Reranking**: Yuanbao-Reranker combines document-grounded synthetic supervision, quality filtering and teacher-margin negative selection to train 0.6B, 4B and 8B dense rerankers. A joint pointwise and bounded pairwise loss transfers preferences across candidate tiers, followed by adaptive layer merging. Across five text-retrieval benchmark groups, the authors report strong results at every tested scale, including a 4B model outperforming its 8B teacher on the aggregate score. Its relevance to CTR scaling is a data-curation and distillation recipe for smaller ranking models; the reported evaluations concern text retrieval rather than CTR prediction. — [Paper](https://arxiv.org/abs/2611.10405) (Yuanbao Search, Tencent Inc. · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2608-00916"></a>
+
+- **Tevatron Meets Megatron: Expert-Parallel LLM Reranker Training on an Academic Budget**: Tevatron 3.0 adds Megatron-Core as a reranker training backend while retaining existing data/evaluation pipelines and checkpoint format. Expert parallelism enables training of a 30B MoE reranker on two nodes. A controlled BEIR-15 study reports dense-8B-level quality with less than half the activated parameters and higher inference throughput. Dense-8B training trades roughly twice the peak memory for approximately 4% lower epoch time under matched settings, or about 22% in the recommended configuration. The lesson for scalable ranking is to evaluate training and serving trade-offs jointly rather than equate sparsity with automatic efficiency. — [Paper](https://arxiv.org/abs/2608.00916) (University of Utah; University of Waterloo; The University of Queensland; Carnegie Mellon University; University of Virginia · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2608-08809"></a>
+
+- **Tevatron-Elastic: A Unified Abstraction for Training Elastic Retrievers and Rerankers**: Tevatron-Elastic trains one retriever or reranker checkpoint to support multiple layer counts, upper-layer token budgets and embedding dimensions. A shared configuration/schedule abstraction covers existing elastic methods and a new Matryoshka token-compression variant across encoder and decoder backbones. Tests of 20 checkpoints on three backbones and two tasks report smooth quality trade-offs, full-size quality close to single-size training and measured wall-clock gains. It provides a practical approach to adapting ranking cost to deployment budgets without maintaining a separate model for every operating point. — [Paper](https://arxiv.org/abs/2608.08809) (University of Utah; The University of Queensland; University of Waterloo; The Pennsylvania State University · arXiv 2026). Reading priority: Unrated.

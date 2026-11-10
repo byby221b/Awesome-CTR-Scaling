@@ -6,7 +6,7 @@
 
 Generative retrieval, recommendation and ranking beyond discriminative CTR.
 
-124 papers · Updated 2026-11-10
+128 papers · Updated 2026-11-11
 
 <a id="paper-2605-12617"></a>
 
@@ -503,3 +503,19 @@ Generative retrieval, recommendation and ranking beyond discriminative CTR.
 <a id="paper-2611-09006"></a>
 
 - **Rethinking Latent Reasoning for Generative Recommendation: Beyond Teacher-Generated CoT and Recurrent Hidden-State Feedback**: PHiT reduces two costs of latent reasoning for recommendation: teacher-generated chain-of-thought supervision and recurrent hidden-state feedback. It derives semantic targets directly from cached sparse item encodings in observed histories, then supervises distinct thought-token states. All thought tokens enter a single causal prefill as ordinary input IDs. Supervised fine-tuning outperforms the compared baselines on four recommendation benchmarks, with training time comparable to the recommendation-only thought-token baseline. The useful design choice is to align intermediate supervision with available history while retaining a conventional inference interface. — [Paper](https://arxiv.org/abs/2611.09006) (Beihang University; Baidu · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-11549"></a>
+
+- **Not All Branches Are Equal: Adaptive Semantic ID Construction for Generative Recommendation**: Adaptive Silhouette Tree constructs semantic IDs as hierarchical paths whose tokens depend on their prefixes. Instead of a fixed branching factor, top-down clustering selects each node’s branching count using the silhouette coefficient; constrained variants maintain minimum probability mass to strengthen long-tail supervision. The authors report improvements over strong baselines on five Amazon Review datasets. The transferable design insight is to adapt identifier capacity to local item structure before scaling a generative recommender, rather than assume fixed-codebook quantization matches every region of the catalog. — [Paper](https://arxiv.org/abs/2611.11549) · [Venue](https://recsys.acm.org/recsys26/session-1/) · [DOI](https://doi.org/10.1145/3773078.3831756) (Ben-Gurion University of the Negev · RecSys 2026). Reading priority: Unrated.
+
+<a id="paper-2611-12180"></a>
+
+- **TS-GEAR: Taobao Shangou GEnerative Ad Retrieval**: TS-GEAR addresses delivery-range validity and set-level value in generative ad retrieval. Geographic prefixes and semantic suffixes make reachability part of the identifier target; query-and-location-conditioned attention selects user-history signals, while group marginal policy optimization discourages redundant candidates through group rewards. The authors report deployment of a 0.1B model on over 150 million daily Taobao Shangou queries, with ad impressions and revenue increasing by 3.8% and 4.2%. It is a concrete industrial recipe for building location constraints and candidate-set value into generative retrieval. — [Paper](https://arxiv.org/abs/2611.12180) (Alibaba Group · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2608-10187"></a>
+
+- **ConnectionMind: Leveraging Social Networks and Large Language Models for Personalized Recommendation at Meta**: ConnectionMind models users, items, friends, groups and creator pages as a heterogeneous graph, and uses an LLM policy to reason over paths from users to candidate items. Supervised learning on interaction trajectories initializes the policy before reinforcement-learning refinement. The authors report gains over representative baselines and a 0.43% video-watch-time improvement in a Meta production A/B test. Its relevance is integrating social-graph structure into reasoning-based recommendation at production scale, with staged policy training providing a concrete implementation path. — [Paper](https://arxiv.org/abs/2608.10187) · [Venue](https://cikm2026.diag.uniroma1.it/cikm-program/CIKM2026_program.html) · [DOI](https://doi.org/10.1145/3799682.3840157) (Meta Platforms, Inc.; Michigan State University · CIKM (Applied) 2026). Reading priority: Unrated.
+
+<a id="paper-2609-14493"></a>
+
+- **VARG: Value-Aware and Ranking-Aligned Generative Retrieval for Dynamic E-commerce Search**: VARG generates candidates directly for an existing final ranker in Tmall search. Semantic prefixes plus a value-ordered final token encode item addresses; staged supervised training and prefix-aware group-relative optimization align generation with relevance, personalization and business value. Daily item/model updates preserve existing addresses. The authors report a 14-day A/B test on 20% of traffic with 1.45% higher GMV, 0.22% higher per-user IPV and 0.31% higher PCTR. It illustrates how ranking-aligned generative retrieval can retain stable identifiers as the product catalog changes. — [Paper](https://arxiv.org/abs/2609.14493) (Taobao & Tmall Group of Alibaba; University of Science and Technology of China; Nankai University · arXiv 2026). Reading priority: Unrated.

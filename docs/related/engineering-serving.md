@@ -6,7 +6,7 @@
 
 Systems, serving infrastructure and hardware-aware optimization.
 
-50 papers · Updated 2026-11-10
+51 papers · Updated 2026-11-11
 
 <a id="paper-2510-18239"></a>
 
@@ -207,3 +207,7 @@ Systems, serving infrastructure and hardware-aware optimization.
 <a id="paper-2611-05997"></a>
 
 - **From Waste to Discovery: Recycling High-Scored Unexposed Candidates in Taobao Feed Recommendation**: URED reuses high-scored but unexposed items instead of injecting poorly understood cold candidates for discovery. A 30-day pool feeds a training-free recall pipeline with one O(1) lookup per request and under 1% added latency. In Taobao feed A/B tests, discovered categories rise 3.47% and completed video views rise 2.62%; the 0.36% total-view increase is not statistically significant. Shortening the pool to one day or removing score filtering removes the reliable discovery gain. The system illustrates how existing ranking signals can support exploration without another model, rather than demonstrating model-scaling gains. — [Paper](https://arxiv.org/abs/2611.05997) (Taobao & Tmall Group of Alibaba · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-11031"></a>
+
+- **Hybrid Product Search Without the Copy: Lexical, Semantic and Filtered Retrieval Served Directly from a Data Lake**: This system serves lexical, vector and filtered product search directly from Iceberg/Parquet lakehouse data through Apache Pinot, adding BM25 statistics and rank fusion without copying the catalog into separate search databases. It matches the reported exact-retrieval quality on Amazon ESCI and evaluates a 277-million-product, brand-sorted lake on one 16-vCPU node. Its scaling value is reduced duplication and synchronization work alongside measured search latency and data freshness. The large-lake latency figures concern brand-scoped queries, not unrestricted search over every product. — [Paper](https://arxiv.org/abs/2611.11031) (StarTree Inc. · arXiv 2026). Reading priority: Unrated.
