@@ -6,7 +6,7 @@
 
 Generative retrieval, recommendation and ranking beyond discriminative CTR.
 
-128 papers · Updated 2026-11-11
+128 papers · Updated 2026-11-12
 
 <a id="paper-2605-12617"></a>
 

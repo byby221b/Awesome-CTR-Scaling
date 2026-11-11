@@ -6,7 +6,7 @@
 
 Transferable ideas from general-purpose model architecture research.
 
-301 papers · Updated 2026-11-11
+312 papers · Updated 2026-11-12
 
 <a id="paper-2606-16825"></a>
 
@@ -1211,3 +1211,47 @@ Transferable ideas from general-purpose model architecture research.
 <a id="paper-2611-05927"></a>
 
 - **Modality-Aware Expert Pruning for MoE-Based Multimodal Large Language Models**: MAEP prunes multimodal MoE experts without training by separating their vision and text importance in one forward pass. It combines a redistribution-aware output-change metric with low-attention vision-token signals, preserving text-important experts while ranking pruning candidates globally across layers. Across three multimodal MoE models, it beats modality-agnostic baselines on most multimodal benchmarks while remaining competitive on text tasks, reducing BF16 expert weights by about 27 GB so an approximately 58 GB weight footprint fits on a 40 GB GPU. Modality-aware capacity allocation may inform multimodal recommendation, but no CTR benefit or full runtime-memory guarantee is established. — [Paper](https://arxiv.org/abs/2611.05927) · [Venue](https://neurips.cc/Downloads/2026) (Nota Inc. · NeurIPS 2026). Reading priority: Unrated.
+
+<a id="paper-2611-13378"></a>
+
+- **Looping Deeper Without Growing the KV Cache: Recurrent Depth for Causal Encoder-Decoders**: Looped CED places recurrent computation in the encoder of a causal encoder-decoder, where a few layers create the global key-value cache. Stochastic recurrence training allows rounds to share the final round’s cache, avoiding cache growth with recurrent depth. Language-modeling experiments and a DeepSeek-V4.1-Flash serving analysis examine the quality-memory tradeoff. The design suggests a way to deepen computation over long histories under a fixed cache budget; recommendation quality remains untested. — [Paper](https://arxiv.org/abs/2611.13378) (University of California, San Diego; Tsinghua University; Nanjing University · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-13293"></a>
+
+- **Decode Token Parallelism: Memory-Efficient Distributed Attention Parallelism for Scalable LLM Decoding**: Decode Token Parallelism separates model-weight placement from request-specific attention and key-value cache ownership. Layers are balanced across nodes, while each request’s attention and cache stay local; only token activations cross nodes. Experiments on Llama-3.1-405B and Nemotron-4-340B use up to 64 H100 GPUs and compare completion throughput at matched GPU counts. Local cache ownership may inform large generative recommenders, although the reported gains are from language-model serving. — [Paper](https://arxiv.org/abs/2611.13293) (NVIDIA; Texas A&M University · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-13188"></a>
+
+- **One-Sided Expert-Parallel All-to-All for Mixture-of-Experts Inference over NVLink**: NVLinkOneSided sends routed tokens directly into buffers organized by source rank and lets grouped matrix multiplication consume them in place. This removes metadata exchange and extra copies before expert computation. Separate synchronization modes target throughput and latency. Blackwell experiments report faster dispatch, combine and MoE-layer execution than evaluated baselines, especially for small batches. The idea is relevant to sparse recommendation serving, but its gains depend on the NVLink hardware and routing workload. — [Paper](https://arxiv.org/abs/2611.13188) (NVIDIA · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-13975"></a>
+
+- **Understanding Mixture-of-Experts Language Models Beyond Expert Boundaries**: RAMP measures neuron contributions weighted by expert routing to study specialization inside MoE models. Domain-associated neuron sets extend across expert boundaries, and neuron rankings can change even when expert rankings remain stable. RAMPr uses this finer view to prune neurons across experts. Evaluations on six models examine quality, resident memory and prefill throughput at different retention levels. Neuron-level capacity allocation could inform sparse recommenders, but no recommendation result is established. — [Paper](https://arxiv.org/abs/2611.13975) (Nanyang Technological University; Tencent; National University of Singapore · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-14051"></a>
+
+- **Can KV Cache Be Reused Across Model Updates? A DeepSeek-V4-Flash Case Study**: This study tests whether an old model’s key-value cache remains useful after a model update. Across four updates, utility and fidelity behave differently: reused caches can reduce time to first token on some question-answering tasks when caches already exist, yet cause large retrieval losses in other settings. Functional Cache Divergence compares next-token distributions to diagnose incompatibility. The work suggests checking cached-history compatibility during model refreshes rather than assuming reuse is safe; recommendation workloads are not evaluated. — [Paper](https://arxiv.org/abs/2611.14051) (Rank Computing · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-12362"></a>
+
+- **Release Sooner, Expose Less: Offloading MoE Dispatch in NCCL-EP under Dual-Batch Overlap**: The paper offloads MoE dispatch progression so GPU resources can be released earlier and communication can overlap another microbatch’s computation. Three NCCL-EP research configurations move work toward network-interface or host-side progression. GB300 NVL72 experiments examine the computation window needed to hide communication and report lower median time per output token in vLLM. This is a concrete communication-computation overlap technique for sparse-model serving, with results tied to the evaluated hardware and batching conditions. — [Paper](https://arxiv.org/abs/2611.12362) (NVIDIA · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-12956"></a>
+
+- **ADIndex: Layer-Adaptive Sparse Attention Indexing via Group-Level Distillation**: ADIndex reduces sparse-attention indexing cost by calibrating query overlap per layer, distilling group-level indexers and sharing candidate token banks with query-specific refinement. Experiments on DeepSeek-V3.2 and GLM-5.1 evaluate long-context quality and serving speed. Kernel acceleration is larger than the reported end-to-end improvement, so the two should be distinguished. Sharing indexing work may help long-sequence generative recommendation, but its recommendation accuracy and serving benefit have not been tested. — [Paper](https://arxiv.org/abs/2611.12956) (Nanjing University; Alibaba Group · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-11533"></a>
+
+- **Ostinato: Fast CPU-GPU MoE Inference for Local Agents via Resident Experts in Every Forward Pass**: Ostinato keeps frequently used experts resident on GPUs while offloading other MoE work to CPUs. It adapts execution to short and long prefills and uses fixed CUDA graphs for decoding. DeepSeek-V4-Flash agent-session experiments on four RTX 4090D GPUs report shorter waits after tool outputs and faster session completion than evaluated CPU-GPU baselines, without changing model outputs. The execution design may inform limited-memory sparse recommendation deployments, although recommendation workloads were not studied. — [Paper](https://arxiv.org/abs/2611.11533) (Beijing Normal-Hong Kong Baptist University · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-11402"></a>
+
+- **A Per-Step Load-Balancing Engine for Expert-Parallel MoE Serving**: Relief balances token assignments across replicated experts at every decoding step. A pairwise integer-halving relaxation avoids solving an expensive optimization problem online, and the paper evaluates GPU, FPGA and on-die implementations. Its reported utilization improvements concern expert-parallel execution and should not be equated with end-to-end throughput gains. The method offers a hardware-oriented approach to per-step load balancing that could be tested in sparse recommendation serving. — [Paper](https://arxiv.org/abs/2611.11402) (The University of Hong Kong; The Hong Kong University of Science and Technology · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-09225"></a>
+
+- **Fused-Softmax for efficient quantized attention**: Fused-Softmax redesigns approximate softmax for quantized attention so more work runs on matrix cores instead of vector units. AMD CDNA 4 kernels cover MXFP8, MXFP6 and MXFP4, with additional approximation error below the tested operand-quantization error. Wan2.2 video-generation experiments provide an end-to-end evaluation alongside kernel benchmarks. The system illustrates how low-bit attention requires joint arithmetic and kernel design; gains on recommendation models remain unverified. — [Paper](https://arxiv.org/abs/2611.09225) (Advanced Micro Devices · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-07542"></a>
+
+- **FlashOffloading: Low-Latency KV Cache Offloading for Long-Context LLM Serving**: FlashOffloading stores the complete key-value cache in host DRAM while using GPU or accelerator memory for a rolling working set. It overlaps bulk transfers during prefill and fetches sparse-index-selected entries during decode, reducing lookup and transfer overhead. GLM-5.2 experiments on Ascend 910C examine both phases under a latency target. The design may support longer recommendation histories under limited device memory, but the reported speedups are specific to the evaluated language-model system. — [Paper](https://arxiv.org/abs/2611.07542) (Huawei Technologies; Huawei Ascend Computing Technology Development; Shanghai Jiao Tong University · arXiv 2026). Reading priority: Unrated.

@@ -6,7 +6,7 @@
 
 Adjacent research, diagnostics and other relevant recommendation methods.
 
-20 papers · Updated 2026-11-11
+21 papers · Updated 2026-11-12
 
 <a id="paper-2411-13700"></a>
 
@@ -87,3 +87,7 @@ Adjacent research, diagnostics and other relevant recommendation methods.
 <a id="paper-2611-09728"></a>
 
 - **SAGE-PAIR: Source-Pretrained Routed Residual Adaptation for Sparse-Feedback Recommendation**: SAGE-PAIR adapts a recommender to a new serving window with only 0.05–1.0% target feedback. It pretrains a low-dimensional residual correction on an adjacent source period and adds user-conditioned routing over residual experts; scarce target outcomes calibrate this existing correction space. On a locked KuaiSAR-v2 test split, the full method reports a 1.77% relative NDCG@10 gain over target-only PAIR. A separate core-protocol comparison isolates a further 0.25% gain from routed experts. It suggests reducing adaptation degrees of freedom before spending scarce labels, with evidence limited to the evaluated protocol. — [Paper](https://arxiv.org/abs/2611.09728) (Southwest Jiaotong University; Peking University; Guangzhou University · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-13069"></a>
+
+- **INTENT: Out-of-Sample, Out-of-Time, and Cold-Start Evaluation on User Event Sequences**: INTENT evaluates next-action models across seven cells separating seen and unseen users, past and future periods, and seen and new target items. It audits 59 public dataset families and retains five with usable global timelines and sufficient coverage. Reference results change substantially by cell: a transformer leads on seen future items but fails on new items, where repeating the last item wins on four datasets. The benchmark helps distinguish sequence-model scaling from split artifacts and changes in user behavior. — [Paper](https://arxiv.org/abs/2611.13069) (KTH AI Society; Unbox AI; Massachusetts Institute of Technology · arXiv 2026). Reading priority: Unrated.

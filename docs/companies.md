@@ -6,16 +6,16 @@
 
 Company membership follows recorded affiliation aliases and preserved company-overview mentions. A paper may appear under multiple companies. This structural migration does not independently reverify affiliations or publication claims.
 
-- [Meta](#company-meta) (63)
+- [Meta](#company-meta) (64)
 - [ByteDance / TikTok](#company-bytedance-tiktok) (29)
-- [Alibaba](#company-alibaba) (62)
+- [Alibaba](#company-alibaba) (63)
 - [Meituan](#company-meituan) (11)
-- [Tencent](#company-tencent) (32)
+- [Tencent](#company-tencent) (33)
 - [Google](#company-google) (28)
 - [LinkedIn](#company-linkedin) (7)
 - [NetEase](#company-netease) (2)
 - [Kuaishou](#company-kuaishou) (41)
-- [Huawei](#company-huawei) (12)
+- [Huawei](#company-huawei) (13)
 - [Baidu](#company-baidu) (11)
 - [Shopee](#company-shopee) (4)
 - [Coupang](#company-coupang) (2)
@@ -35,10 +35,10 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [Liquid AI](#company-liquid-ai) (5)
 - [IBM (MIT-IBM Computing Research Lab)](#company-ibm-mit-ibm-computing-research-lab) (5)
 - [Perplexity AI](#company-perplexity-ai) (1)
-- [NVIDIA](#company-nvidia) (14)
+- [NVIDIA](#company-nvidia) (17)
 - [StepFun](#company-stepfun) (1)
 - [Adobe Research](#company-adobe-research) (2)
-- [Unbox AI](#company-unbox-ai) (1)
+- [Unbox AI](#company-unbox-ai) (2)
 - [Kimi](#company-kimi) (1)
 - [Qualcomm AI Research](#company-qualcomm-ai-research) (2)
 - [Apple](#company-apple) (2)
@@ -90,13 +90,14 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [Workday](#company-workday) (1)
 - [Roblox](#company-roblox) (1)
 - [Wildberries and Russ](#company-wildberries) (1)
-- [AMD](#company-amd) (1)
+- [AMD](#company-amd) (2)
 - [Together AI](#company-together-ai) (1)
 - [Lenovo](#company-lenovo) (2)
 - [Uber](#company-uber) (1)
 - [Wayfair](#company-wayfair) (1)
 - [StarTree](#company-startree) (1)
 - [Nota](#company-nota) (1)
+- [Rank Computing](#company-rank-computing) (1)
 
 <a id="company-meta"></a>
 
@@ -165,6 +166,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [ConnectionMind: Leveraging Social Networks and Large Language Models for Personalized Recommendation at Meta](related/generative-recommendation.md#paper-2608-10187) · 2026 · Related
 - [SGA-Sparse: Training Native SwiGLU Gates for Activation-Sparse and Low-Bit LLMs](related/architecture-innovations-beyond-recommendation.md#paper-2611-11223) · 2026 · Related
 - [HybridSpec: Throughput-Aware Speculative Decoding for Hybrid GDN-MoE Models](related/architecture-innovations-beyond-recommendation.md#paper-2611-04055) · 2026 · Related
+- [Exploiting Feature-invariant Scaling Laws for Efficient A/B Experimentation in Recommendation Systems](topics/scaling-law-theory.md#paper-2611-13539) · 2026 · Core
 
 <a id="company-bytedance-tiktok"></a>
 
@@ -266,6 +268,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [TS-GEAR: Taobao Shangou GEnerative Ad Retrieval](related/generative-recommendation.md#paper-2611-12180) · 2026 · Related
 - [VARG: Value-Aware and Ranking-Aligned Generative Retrieval for Dynamic E-commerce Search](related/generative-recommendation.md#paper-2609-14493) · 2026 · Related
 - [OverlapAdvisor: Modeling and Adapting Computation-Communication Overlap for Distributed MoE Serving](related/architecture-innovations-beyond-recommendation.md#paper-2611-11857) · 2026 · Related
+- [ADIndex: Layer-Adaptive Sparse Attention Indexing via Group-Level Distillation](related/architecture-innovations-beyond-recommendation.md#paper-2611-12956) · 2026 · Related
 
 <a id="company-meituan"></a>
 
@@ -319,6 +322,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [OneRanker: Unified Generation and Ranking with One Model in Industrial Advertising Recommendation](topics/foundation-models-multi-scenario.md#paper-2603-02999) · 2026 · Core
 - [BitDecoding-FP4: Native FP4 KV Cache Decoding via Algorithm-System Co-Design](related/architecture-innovations-beyond-recommendation.md#paper-2611-09825) · 2026 · Related
 - [Yuanbao-Reranker: Document-Grounded Synthesis and Preference Distillation for Text Reranking](related/retrieval-reranking-scaling.md#paper-2611-10405) · 2026 · Related
+- [Understanding Mixture-of-Experts Language Models Beyond Expert Boundaries](related/architecture-innovations-beyond-recommendation.md#paper-2611-13975) · 2026 · Related
 
 <a id="company-google"></a>
 
@@ -434,6 +438,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [INC-MoE: Overlapping In-Network Collectives and Expert Computation for Expert-Parallel Mixture-of-Experts Inference](related/engineering-serving.md#paper-2610-36339) · 2026 · Related
 - [Aligning Training and Rollout Policies for End-to-End FP4 RL on Mixture-of-Experts LLMs](related/architecture-innovations-beyond-recommendation.md#paper-2611-04376) · 2026 · Related
 - [MACaQ: Fast, Model Agnostic Calibrated Quantization for Low-Precision Weights and Activations](related/architecture-innovations-beyond-recommendation.md#paper-2611-10649) · 2026 · Related
+- [FlashOffloading: Low-Latency KV Cache Offloading for Long-Context LLM Serving](related/architecture-innovations-beyond-recommendation.md#paper-2611-07542) · 2026 · Related
 
 <a id="company-baidu"></a>
 
@@ -637,6 +642,9 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [Dory1.0-4B: A Looped Normalized-GPT](related/architecture-innovations-beyond-recommendation.md#paper-2611-03998) · 2026 · Related
 - [Gated DeltaNet-2: Decoupling Erase and Write in Linear Attention](related/architecture-innovations-beyond-recommendation.md#paper-2605-22791) · 2026 · Related
 - [ISER-MoE: Dynamic In-Switch Replication of Hot Experts for Load Balancing in Expert-Parallel](related/architecture-innovations-beyond-recommendation.md#paper-2611-09008) · 2026 · Related
+- [Decode Token Parallelism: Memory-Efficient Distributed Attention Parallelism for Scalable LLM Decoding](related/architecture-innovations-beyond-recommendation.md#paper-2611-13293) · 2026 · Related
+- [One-Sided Expert-Parallel All-to-All for Mixture-of-Experts Inference over NVLink](related/architecture-innovations-beyond-recommendation.md#paper-2611-13188) · 2026 · Related
+- [Release Sooner, Expose Less: Offloading MoE Dispatch in NCCL-EP under Dual-Batch Overlap](related/architecture-innovations-beyond-recommendation.md#paper-2611-12362) · 2026 · Related
 
 <a id="company-stepfun"></a>
 
@@ -656,6 +664,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 ## Unbox AI
 
 - [Scaling Laws for Behavioral Foundation Models over User Event Sequences](topics/scaling-law-theory.md#paper-2606-05257) · 2026 · Core
+- [INTENT: Out-of-Sample, Out-of-Time, and Cold-Start Evaluation on User Event Sequences](related/other.md#paper-2611-13069) · 2026 · Related
 
 <a id="company-kimi"></a>
 
@@ -987,6 +996,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 ## AMD
 
 - [ResQAdam: Residual-Preserving Adaptive Optimization for Memory-Efficient Quantization Aware Training](related/architecture-innovations-beyond-recommendation.md#paper-2611-08924) · 2026 · Related
+- [Fused-Softmax for efficient quantized attention](related/architecture-innovations-beyond-recommendation.md#paper-2611-09225) · 2026 · Related
 
 <a id="company-together-ai"></a>
 
@@ -1024,3 +1034,9 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 ## Nota
 
 - [Modality-Aware Expert Pruning for MoE-Based Multimodal Large Language Models](related/architecture-innovations-beyond-recommendation.md#paper-2611-05927) · 2026 · Related
+
+<a id="company-rank-computing"></a>
+
+## Rank Computing
+
+- [Can KV Cache Be Reused Across Model Updates? A DeepSeek-V4-Flash Case Study](related/architecture-innovations-beyond-recommendation.md#paper-2611-14051) · 2026 · Related

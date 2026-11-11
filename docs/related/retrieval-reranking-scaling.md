@@ -6,7 +6,7 @@
 
 Scaling retrieval and reranking stages of recommendation pipelines.
 
-56 papers · Updated 2026-11-11
+57 papers · Updated 2026-11-12
 
 <a id="paper-2603-04816"></a>
 
@@ -231,3 +231,7 @@ Scaling retrieval and reranking stages of recommendation pipelines.
 <a id="paper-2608-08809"></a>
 
 - **Tevatron-Elastic: A Unified Abstraction for Training Elastic Retrievers and Rerankers**: Tevatron-Elastic trains one retriever or reranker checkpoint to support multiple layer counts, upper-layer token budgets and embedding dimensions. A shared configuration/schedule abstraction covers existing elastic methods and a new Matryoshka token-compression variant across encoder and decoder backbones. Tests of 20 checkpoints on three backbones and two tasks report smooth quality trade-offs, full-size quality close to single-size training and measured wall-clock gains. It provides a practical approach to adapting ranking cost to deployment budgets without maintaining a separate model for every operating point. — [Paper](https://arxiv.org/abs/2608.08809) (University of Utah; The University of Queensland; University of Waterloo; The Pennsylvania State University · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-02556"></a>
+
+- **OctEx: Billion-Scale Vector Search by Precomputed Lattice Neighbor Lists on GPUs**: OctEx trades index memory and preprocessing for parallel vector search. Multiple random projections map vectors into lattice cells with precomputed neighbor lists; queries read candidate lists in parallel, rank their union with an int8 sketch and perform one exact rerank. Four-H100 experiments include billion-vector datasets and compare throughput at high recall against graph and inverted-file indexes. It offers a retrieval-stage scaling option when the index-memory budget is large enough, without establishing downstream recommendation gains. — [Paper](https://arxiv.org/abs/2611.02556) (arXiv 2026). Reading priority: Unrated.

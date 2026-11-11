@@ -4,13 +4,13 @@
 
 A curated library of **scaling laws and scalable ranking/CTR models** for industrial recommendation systems.
 
-**746 papers** · **130 core** · **616 related** · Updated 2026-11-11
+**760 papers** · **131 core** · **629 related** · Updated 2026-11-12
 
 <a id="table-of-contents"></a>
 
 [**Search the paper library →**](https://byby221b.github.io/Awesome-CTR-Scaling/) · [**中文页面**](https://byby221b.github.io/Awesome-CTR-Scaling/zh.html) · [All topics](docs/README.md) · [Company index](docs/companies.md) · [Contribute](CONTRIBUTING.md)
 
-Reading priority: **339 assigned** · **407 unrated**. Filter or sort by Read first, Worth reading, or Read as needed on the website. These are reading suggestions, not objective quality ratings; unrated papers have not been assigned a tier.
+Reading priority: **339 assigned** · **421 unrated**. Filter or sort by Read first, Worth reading, or Read as needed on the website. These are reading suggestions, not objective quality ratings; unrated papers have not been assigned a tier.
 
 > **Scope:** We cover papers that (1) study scaling laws for recommendation models, (2) propose scalable Transformer-based architectures for CTR/ranking, (3) address efficiency challenges in scaling up industrial ranking systems, or (4) explore novel paradigms (e.g., sparse scaling, generative pre-training, foundation models) for scalable recommendation.
 
@@ -22,7 +22,7 @@ Five focused reading paths. Each topic keeps the complete seven-column catalog: 
 
 ### Scaling Law & Theory
 
-Empirical laws, scaling recipes and theoretical limits for recommendation models. [Browse 19 papers →](docs/topics/scaling-law-theory.md)
+Empirical laws, scaling recipes and theoretical limits for recommendation models. [Browse 20 papers →](docs/topics/scaling-law-theory.md)
 
 <a id="scalable-architecture"></a>
 
@@ -58,9 +58,9 @@ Adjacent research is grouped separately to keep the core CTR scaling signal clea
 - <a id="generative-pre-training-for-ctr"></a>[Generative Pre-training for CTR](docs/related/generative-pre-training-for-ctr.md) · 5 papers
 - <a id="knowledge-distillation--compression"></a>[Knowledge Distillation & Compression](docs/related/knowledge-distillation-compression.md) · 15 papers
 - <a id="engineering--serving"></a>[Engineering & Serving](docs/related/engineering-serving.md) · 51 papers
-- <a id="retrieval--reranking-scaling"></a>[Retrieval & Reranking Scaling](docs/related/retrieval-reranking-scaling.md) · 56 papers
-- <a id="architecture-innovations-beyond-recommendation"></a>[Architecture Innovations Beyond Recommendation](docs/related/architecture-innovations-beyond-recommendation.md) · 301 papers
-- <a id="other"></a>[Other](docs/related/other.md) · 20 papers
+- <a id="retrieval--reranking-scaling"></a>[Retrieval & Reranking Scaling](docs/related/retrieval-reranking-scaling.md) · 57 papers
+- <a id="architecture-innovations-beyond-recommendation"></a>[Architecture Innovations Beyond Recommendation](docs/related/architecture-innovations-beyond-recommendation.md) · 312 papers
+- <a id="other"></a>[Other](docs/related/other.md) · 21 papers
 
 ## Company Overview
 
