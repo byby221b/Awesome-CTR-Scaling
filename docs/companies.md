@@ -18,18 +18,18 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [Huawei](#company-huawei) (13)
 - [Baidu](#company-baidu) (11)
 - [Shopee](#company-shopee) (4)
-- [Coupang](#company-coupang) (2)
+- [Coupang](#company-coupang) (3)
 - [Netflix](#company-netflix) (3)
 - [Tubi](#company-tubi) (1)
 - [Pinterest](#company-pinterest) (6)
 - [Yandex](#company-yandex) (6)
 - [JD](#company-jd) (7)
 - [VK](#company-vk) (1)
-- [Microsoft](#company-microsoft) (10)
+- [Microsoft](#company-microsoft) (11)
 - [Walmart](#company-walmart) (2)
 - [Snap](#company-snap) (4)
 - [Xiaohongshu](#company-xiaohongshu) (10)
-- [Amazon](#company-amazon) (6)
+- [Amazon](#company-amazon) (7)
 - [Capital One](#company-capital-one) (2)
 - [Shopify](#company-shopify) (3)
 - [Liquid AI](#company-liquid-ai) (5)
@@ -98,6 +98,9 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [StarTree](#company-startree) (1)
 - [Nota](#company-nota) (1)
 - [Rank Computing](#company-rank-computing) (1)
+- [Hostinger](#company-hostinger) (2)
+- [Intellifusion](#company-intellifusion) (1)
+- [Shanghai Smart Logic Technology](#company-shanghai-smart-logic) (1)
 
 <a id="company-meta"></a>
 
@@ -471,6 +474,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 
 - [On the Practice of Scaling Search Conversion Rate Prediction](topics/scaling-law-theory.md#paper-2605-29232) · 2026 · Core
 - [Evolving Semantic Indexes for Generative Retrieval](related/generative-recommendation.md#paper-2610-28568) · 2026 · Related
+- [SeqFold: Timestamp-Addressable Compressed States for User Action Sequence Backbones](topics/efficiency-deployment.md#paper-2611-13704) · 2026 · Core
 
 <a id="company-netflix"></a>
 
@@ -540,6 +544,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [Loopback Transformer: Towards a Unified View of Residual Looped Transformers](related/architecture-innovations-beyond-recommendation.md#paper-2611-07226) · 2026 · Related
 - [ELDR: Expert-Locality-Aware Decode Routing for PD-Disaggregated MoE Serving](related/architecture-innovations-beyond-recommendation.md#paper-2607-00466) · 2026 · Related
 - [Multi-GPU MoE Inference with Adaptive Expert Offloading](related/architecture-innovations-beyond-recommendation.md#paper-2611-10219) · 2026 · Related
+- [BridgeKV: Large-Model Prefill and Small-Model Decoding for LLM Inference via KV Cache Translation](related/architecture-innovations-beyond-recommendation.md#paper-2611-11761) · 2026 · Related
 
 <a id="company-walmart"></a>
 
@@ -582,6 +587,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [STAPLE: Static Sparse Upcycling of Pretrained Checkpoints via Embedding Modules](related/architecture-innovations-beyond-recommendation.md#paper-2610-12599) · 2026 · Related
 - [Mixed Precision Scaling Laws for Quantized Pretraining](related/architecture-innovations-beyond-recommendation.md#paper-2610-17637) · 2026 · Related
 - [QASP: Query-Adaptive Robust Vector Search Policy](related/retrieval-reranking-scaling.md#paper-2607-29606) · 2027 · Related
+- [User Embeddings are Superpositions of Interpretable Behavioral Modes](related/other.md#paper-2611-08487) · 2026 · Related
 
 <a id="company-capital-one"></a>
 
@@ -1040,3 +1046,22 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 ## Rank Computing
 
 - [Can KV Cache Be Reused Across Model Updates? A DeepSeek-V4-Flash Case Study](related/architecture-innovations-beyond-recommendation.md#paper-2611-14051) · 2026 · Related
+
+<a id="company-hostinger"></a>
+
+## Hostinger
+
+- [Prune, Don't Merge: Expert Compression of Mixture-of-Experts LLMs on Multilingual Production Tasks](related/architecture-innovations-beyond-recommendation.md#paper-2611-12240) · 2026 · Related
+- [Translating KV Caches Between Hybrid-Attention Language Models: MLA Latents, Linear-Attention States and Sparse-Attention Indexers](related/architecture-innovations-beyond-recommendation.md#paper-2611-12062) · 2026 · Related
+
+<a id="company-intellifusion"></a>
+
+## Intellifusion
+
+- [CALFA-KV: Joint Calibration and Fisher-Guided Anchors for 1-Bit KV Cache Compression](related/architecture-innovations-beyond-recommendation.md#paper-2611-10511) · 2026 · Related
+
+<a id="company-shanghai-smart-logic"></a>
+
+## Shanghai Smart Logic Technology
+
+- [Beyond the Log-Linear Frontier: Pre-Asymptotic Analysis of Finite-Budget Neural Scaling Laws](related/architecture-innovations-beyond-recommendation.md#paper-2611-13534) · 2026 · Related

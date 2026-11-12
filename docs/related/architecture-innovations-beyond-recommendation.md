@@ -6,7 +6,7 @@
 
 Transferable ideas from general-purpose model architecture research.
 
-312 papers · Updated 2026-11-12
+320 papers · Updated 2026-11-13
 
 <a id="paper-2606-16825"></a>
 
@@ -1255,3 +1255,35 @@ Transferable ideas from general-purpose model architecture research.
 <a id="paper-2611-07542"></a>
 
 - **FlashOffloading: Low-Latency KV Cache Offloading for Long-Context LLM Serving**: FlashOffloading stores the complete key-value cache in host DRAM while using GPU or accelerator memory for a rolling working set. It overlaps bulk transfers during prefill and fetches sparse-index-selected entries during decode, reducing lookup and transfer overhead. GLM-5.2 experiments on Ascend 910C examine both phases under a latency target. The design may support longer recommendation histories under limited device memory, but the reported speedups are specific to the evaluated language-model system. — [Paper](https://arxiv.org/abs/2611.07542) (Huawei Technologies; Huawei Ascend Computing Technology Development; Shanghai Jiao Tong University · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-12240"></a>
+
+- **Prune, Don't Merge: Expert Compression of Mixture-of-Experts LLMs on Multilingual Production Tasks**: The study compares expert pruning and merging on five multilingual production tasks using two 30B MoE models, matched calibration data, and 25% or 50% expert removal. Pruning is significantly better in 16 of 20 comparisons, while merging wins in two. Much of the observed generative degradation comes from output-contract failures such as invalid JSON and broken layouts, which academic scores can conceal. The practical lesson for compressing sparse recommenders is to validate the downstream output contract as well as quality; recommendation workloads were not tested. — [Paper](https://arxiv.org/abs/2611.12240) (Hostinger Research · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-12062"></a>
+
+- **Translating KV Caches Between Hybrid-Attention Language Models: MLA Latents, Linear-Attention States and Sparse-Attention Indexers**: This work translates cached context across hybrid language models, covering compressed attention latents, recurrent states and sparse-attention indexer keys. Linear maps handle some latent caches, while recurrent transfer uses correction or replay of the target recurrence; exact long-range recall also requires token identity. Experiments on 16–48B hybrid pairs examine quality and time to first token, and segment-wise transfer avoids failures of naive repeated translation. The recipes may inform model switching over shared user histories; extension to 300B-plus models is a hypothesis, not a demonstrated result. — [Paper](https://arxiv.org/abs/2611.12062) (Hostinger Research · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-11761"></a>
+
+- **BridgeKV: Large-Model Prefill and Small-Model Decoding for LLM Inference via KV Cache Translation**: BridgeKV uses a large model for prompt prefill and a smaller model from the same family for decoding. A learned cache adapter mixes nearby layers and separately maps keys and values while both base models remain frozen; an optional second stage adds low-rank adapters. Across six model pairs and five datasets it beats matched-trainable-budget small-model baselines. A single-A40 experiment reports a threefold request speedup over the large model; larger gains come from simulation. The approach offers a quality-cost tradeoff to investigate for generative recommendation. — [Paper](https://arxiv.org/abs/2611.11761) (Georgia Institute of Technology; Microsoft · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-11696"></a>
+
+- **Direct GPU Energy Measurements of Batch-Level Sharing in Mixture-of-Experts and Recurrent Models**: The paper measures GPU energy directly when batch rows share computation in recurrent policies and MoE language models. Recurrent-policy masking does not produce savings in the evaluated implementation. For Qwen3-30B-A3B, batch-aware routing reads fewer expert weights and lowers energy per token by 12–18% in a fused forward pass, with benchmark changes within noise on 500 items. A persistence-aware rule reduces expert churn but has no energy measurement yet. These single-GPU-type pilot results motivate measuring energy rather than inferring savings from operation counts. — [Paper](https://arxiv.org/abs/2611.11696) (Loughborough University London; Aston University · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-10511"></a>
+
+- **CALFA-KV: Joint Calibration and Fisher-Guided Anchors for 1-Bit KV Cache Compression**: CALFA-KV combines offline codebook calibration with selective high-precision cache states. It fits quantization parameters against the frozen model’s attention output, then uses gradient-derived channel sensitivities to rank reconstruction errors and retain important states under a fixed anchor budget. Three-model experiments compare nominal one-bit baselines across seven benchmarks. A higher-rate variant narrows the BF16 quality gap, but additional FP16 anchors mean nominal index bits are not total storage cost. The method is relevant to long-history serving; recommendation quality and throughput remain untested. — [Paper](https://arxiv.org/abs/2611.10511) (Shenzhen Intellifusion Technologies · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-07749"></a>
+
+- **ConvPE: Convolutional Position Embedding Improves Transformers**: ConvPE adds a local, content-dependent bias to attention scores using a lightweight causal convolution over projected hidden states. It remains compatible with rotary position embeddings, attention masks and cache concatenation, and also supports higher-dimensional positional structure. Reported experiments cover language modeling, context extension and vision, with comparisons against one- and two-dimensional baselines. The plug-in offers a concrete way to combine local structure with attention for sequence models; recommendation gains have not been established. — [Paper](https://arxiv.org/abs/2611.07749) (Nanjing University · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-08133"></a>
+
+- **Beyond K/V Caches: Cross-Model State Handoff in Hybrid Linear-Attention LLMs**: Hybrid State Transfer handles full-attention caches, recurrent states and convolution histories when switching between hybrid linear-attention models. It uses structured recurrent-state maps, preserves temporal order during convolution alignment and calibrates adapters on the frozen target’s continuation outputs. Qwen3.5 transfer experiments evaluate five benchmarks; separate synthetic-input timings assume source caches already exist. The work identifies state types that a reusable-history interface must preserve, but its handoff speedups are not end-to-end recommendation measurements. — [Paper](https://arxiv.org/abs/2611.08133) (South China University of Technology · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-13534"></a>
+
+- **Beyond the Log-Linear Frontier: Pre-Asymptotic Analysis of Finite-Budget Neural Scaling Laws**: The paper studies why scaling curves and compute allocations depart from simple power laws at finite budgets. It connects spectral and data-domain heterogeneity to curved learning curves, proposes an initialization method for small pilot grids and derives budget-dependent data mixing and model-data allocation rules. Evaluations use operator spectra and Pythia, Chinchilla and RegMix data. The practical connection to CTR scaling is to check finite-budget curvature before extrapolating from small experiments; the reported fits do not validate these laws for recommendation workloads. — [Paper](https://arxiv.org/abs/2611.13534) (LingQiong AI Lab; Shanghai Smart Logic Technology · arXiv 2026). Reading priority: Unrated.

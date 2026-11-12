@@ -6,7 +6,7 @@
 
 Adjacent research, diagnostics and other relevant recommendation methods.
 
-21 papers · Updated 2026-11-12
+22 papers · Updated 2026-11-13
 
 <a id="paper-2411-13700"></a>
 
@@ -91,3 +91,7 @@ Adjacent research, diagnostics and other relevant recommendation methods.
 <a id="paper-2611-13069"></a>
 
 - **INTENT: Out-of-Sample, Out-of-Time, and Cold-Start Evaluation on User Event Sequences**: INTENT evaluates next-action models across seven cells separating seen and unseen users, past and future periods, and seen and new target items. It audits 59 public dataset families and retains five with usable global timelines and sufficient coverage. Reference results change substantially by cell: a transformer leads on seen future items but fails on new items, where repeating the last item wins on four datasets. The benchmark helps distinguish sequence-model scaling from split artifacts and changes in user behavior. — [Paper](https://arxiv.org/abs/2611.13069) (KTH AI Society; Unbox AI; Massachusetts Institute of Technology · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-08487"></a>
+
+- **User Embeddings are Superpositions of Interpretable Behavioral Modes**: The paper treats user embeddings as superpositions of sparse behavioral modes. Sparse dictionary learning, including sparse autoencoders, recovers modes that can be named and queried in natural language. Synthetic experiments test recovery against known ground truth, while two real datasets cover classical and transformer-based user representations. The labels support zero-shot audience retrieval over embeddings not trained on text. This post-hoc interface may make shared user representations easier to inspect and reuse without changing the upstream model; it does not establish a ranking lift. — [Paper](https://arxiv.org/abs/2611.08487) (Amazon · arXiv 2026). Reading priority: Unrated.

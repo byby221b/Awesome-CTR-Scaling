@@ -5,7 +5,7 @@
     "description": "Scaling laws and scalable ranking models for industrial recommendation.",
     "repository_url": "https://github.com/byby221b/Awesome-CTR-Scaling",
     "site_url": "https://byby221b.github.io/Awesome-CTR-Scaling/",
-    "updated": "2026-11-12",
+    "updated": "2026-11-13",
     "source_commit": "31ad30becff83ca14a01f37fc99d52ba79f85565",
     "scope": "We cover papers that (1) study scaling laws for recommendation models, (2) propose scalable Transformer-based architectures for CTR/ranking, (3) address efficiency challenges in scaling up industrial ranking systems, or (4) explore novel paradigms (e.g., sparse scaling, generative pre-training, foundation models) for scalable recommendation.",
     "history": {
@@ -1589,6 +1589,30 @@
       "name": "Rank Computing",
       "affiliation_aliases": [
         "Rank Computing"
+      ],
+      "legacy_entries": []
+    },
+    {
+      "id": "hostinger",
+      "name": "Hostinger",
+      "affiliation_aliases": [
+        "Hostinger"
+      ],
+      "legacy_entries": []
+    },
+    {
+      "id": "intellifusion",
+      "name": "Intellifusion",
+      "affiliation_aliases": [
+        "Shenzhen Intellifusion Technologies"
+      ],
+      "legacy_entries": []
+    },
+    {
+      "id": "shanghai-smart-logic",
+      "name": "Shanghai Smart Logic Technology",
+      "affiliation_aliases": [
+        "Shanghai Smart Logic Technology"
       ],
       "legacy_entries": []
     }
@@ -54580,6 +54604,692 @@
       "added_provenance": {
         "kind": "catalog_entry",
         "source_url": "https://arxiv.org/abs/2611.02556"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2611.13704",
+      "title": "SeqFold: Timestamp-Addressable Compressed States for User Action Sequence Backbones",
+      "collection": "core",
+      "category": "efficiency-deployment",
+      "affiliation": "Coupang",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [
+        "Embedding Design",
+        "Long Sequence",
+        "Serving"
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2611.13704"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Existing sequential user modeling methods mainly focus on improving the backbone encoder or learning task-specific user representations for a single prediction objective. We instead study how to export the multi-layer user states of a frozen long-history backbone as compact, timestamp-addressable representations for downstream training backfill and serving. In this setting, the user state at a given timestamp summarizes the user's actions before that time, so downstream systems need only the state aligned to each target timestamp rather than the full hidden-state timeline. To this end, we present \\texttt{SeqFold}, a compressed-state interface that combines learned multi-channel fusion, channel-specific temporal decay, and Lookup-Free Quantization (LFQ) to produce compact discrete codes from frozen backbone states. Task-specific decoders then map these shared codes into flexible embedding spaces for downstream models. To make timestamp-addressable export practical at scale, we further develop a fused streaming implementation that updates the fusion recurrence after every action while materializing states only at target timestamps. On large-scale proprietary datasets, SeqFold reduces per-state representation storage by $3{,}400\\times$ while preserving most of the downstream ranking performance of the uncompressed model, showing that SeqFold is an effective interface for reusing long-history sequence backbones in downstream models.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2611.13704v1",
+        "source_title": "SeqFold: Timestamp-Addressable Compressed States for User Action Sequence Backbones",
+        "source_version": "v1",
+        "retrieved_at": "2026-11-12T23:05:26Z",
+        "license": null
+      },
+      "source_dates": {
+        "published_at": "2026-11-10T07:55:16Z",
+        "updated_at": "2026-11-10T07:55:16Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2611.13704v1",
+        "verified_at": "2026-11-12T23:05:26Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "SeqFold exports compact, timestamp-addressable states from a frozen long-history user backbone. It combines learned channel fusion, channel-specific temporal decay and lookup-free quantization; downstream decoders adapt the shared codes to their own embedding spaces. A fused streaming implementation updates state after every action but materializes it only at requested timestamps. Proprietary-data experiments report 3,400-fold lower per-state storage while preserving most downstream ranking performance. This provides a concrete interface for reusing sequence backbones across training backfill and serving; the storage ratio is not an end-to-end speedup.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-13",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.13704v1",
+            "https://arxiv.org/pdf/2611.13704v1"
+          ]
+        },
+        "zh": {
+          "text": "SeqFold 将冻结的长历史用户骨干状态导出为可按时间戳读取的紧凑表示。它结合多通道融合、各通道的时间衰减和免查表量化，再由下游解码器适配各任务的表示空间。融合流式实现每次行为后都更新状态，只在目标时间戳导出。在私有数据上，每个状态的存储减少约 3,400 倍，同时保留大部分下游排序效果，为训练回填和服务复用序列骨干提供了具体接口；存储压缩比不等于端到端加速比。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-13",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.13704v1",
+            "https://arxiv.org/pdf/2611.13704v1"
+          ]
+        }
+      },
+      "added_at": "2026-11-12T23:07:34Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2611.13704"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2611.12240",
+      "title": "Prune, Don't Merge: Expert Compression of Mixture-of-Experts LLMs on Multilingual Production Tasks",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "Hostinger Research",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2611.12240"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Mixture-of-Experts language models are cheap to run per token but expensive to hold in GPU memory, which drives the cost of serving them in production. One-shot expert compression shrinks them after a single calibration pass. Its two current state-of-the-art methods are REAP for expert pruning, which deletes the least salient experts, and REAM for expert merging, which merges them into the most salient ones. Both have been evaluated only on academic benchmarks. We compare the two on five multilingual production tasks of a web-hosting company, from classification to the generation of marketing HTML email templates, with two 30B-parameter models (Qwen3-30B-A3B-Instruct-2507 and the hybrid Mamba-attention Nemotron-3.5-Lightning) at 25% and 50% of experts removed and the same calibration data. Pruning wins: on the same rows, REAP is significantly better in 16 of 20 comparisons and REAM in 2. At 25%, REAP keeps 93.6% of Qwen3-30B's generative quality and REAM 62.5%, although on benchmarks the two are within a point for the same model. The damage concentrates in the output contract rather than the content: 89.8-95.2% of each significant loss on email templates comes from hard-gate failures such as invalid JSON, broken mobile layouts and runaway generation, and most failed non-English domain descriptions copy the prompt's English opening phrase. Cross-perplexity and logit divergence, two diagnostics from the REAP paper, also track production quality, as does the rate of repetition loops; n-gram diversity does not. We close with practical guidance for compressing MoE models for production.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2611.12240v1",
+        "source_title": "Prune, Don't Merge: Expert Compression of Mixture-of-Experts LLMs on Multilingual Production Tasks",
+        "source_version": "v1",
+        "retrieved_at": "2026-11-12T23:05:33Z",
+        "license": null
+      },
+      "source_dates": {
+        "published_at": "2026-11-09T11:30:23Z",
+        "updated_at": "2026-11-09T11:30:23Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2611.12240v1",
+        "verified_at": "2026-11-12T23:05:33Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "The study compares expert pruning and merging on five multilingual production tasks using two 30B MoE models, matched calibration data, and 25% or 50% expert removal. Pruning is significantly better in 16 of 20 comparisons, while merging wins in two. Much of the observed generative degradation comes from output-contract failures such as invalid JSON and broken layouts, which academic scores can conceal. The practical lesson for compressing sparse recommenders is to validate the downstream output contract as well as quality; recommendation workloads were not tested.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-13",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.12240v1",
+            "https://arxiv.org/pdf/2611.12240v1"
+          ]
+        },
+        "zh": {
+          "text": "论文用两款 30B MoE 模型，在相同校准数据、移除 25% 或 50% 专家的条件下，对比五类多语言生产任务中的专家裁剪与合并。20 组比较中，裁剪显著更好有 16 组，合并更好有两组。生成质量损失大量来自 JSON 无效、布局破坏等输出格式问题，学术基准分数可能掩盖这些缺陷。压缩稀疏推荐模型时也应验证下游接口约束，但论文没有测试推荐负载。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-13",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.12240v1",
+            "https://arxiv.org/pdf/2611.12240v1"
+          ]
+        }
+      },
+      "added_at": "2026-11-12T23:07:34Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2611.12240"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2611.12062",
+      "title": "Translating KV Caches Between Hybrid-Attention Language Models: MLA Latents, Linear-Attention States and Sparse-Attention Indexers",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "Hostinger Research",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2611.12062"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "A model that takes over another model's conversation must normally re-read the whole history; a text hand-off shortens the re-read only by dropping content. KV-cache translation instead maps the source's cache into the target's own format, so the target continues from the full context without re-reading it. It works for grouped-query attention (GQA), but open-weights frontier models now cache compressed latents (MLA), sparse-attention indexer keys and fixed-size linear-attention states. We replicate KV-Lingo on a GQA pair and then give, for each of these objects, where to capture and inject it and a mechanism that reaches native quality. We study two hybrid pairs at 16-48B scale in both directions, Kimi-VL-A3B - Kimi-Linear-48B (MLA - MLA + Kimi Delta Attention) and Qwen3.5-27B - Qwen3.8-27B (Gated DeltaNet hybrids), plus a sparse-attention target (Qwen3.8-27B - Qwen3.8-Flash-Next). MLA latents translate with token-wise linear maps; recurrent states are copied with a closed-form correction or synthesised by replaying the target's own recurrence. Exact long-range recall needs token identity: decoding token ids from the source's layer-0 MLA latent raises needle recall from 0.09 to 0.99 at 2-32K and to 0.83-1.00 at 64K, eight times the longest training prompt. The hybrid full-MLA direction is within the paired confidence interval of native quality on every task metric, and same-shape GDN hybrids reach the native level in both directions (apart from 6% refusals inherited from the source), with time to first token 18.7 and 46.8 times shorter than a re-read at 64K tokens. Segment-wise multi-turn transfer stays at the re-prefill level; naive re-translation collapses. On the sparse-attention target, predicted indexer keys recall the needle as well as the target's own keys (one seed). We state as a hypothesis how the recipes transfer to 300B+ hybrid flagships.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2611.12062v1",
+        "source_title": "Translating KV Caches Between Hybrid-Attention Language Models: MLA Latents, Linear-Attention States and Sparse-Attention Indexers",
+        "source_version": "v1",
+        "retrieved_at": "2026-11-12T23:05:40Z",
+        "license": null
+      },
+      "source_dates": {
+        "published_at": "2026-11-09T08:37:12Z",
+        "updated_at": "2026-11-09T08:37:12Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2611.12062v1",
+        "verified_at": "2026-11-12T23:05:40Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "This work translates cached context across hybrid language models, covering compressed attention latents, recurrent states and sparse-attention indexer keys. Linear maps handle some latent caches, while recurrent transfer uses correction or replay of the target recurrence; exact long-range recall also requires token identity. Experiments on 16–48B hybrid pairs examine quality and time to first token, and segment-wise transfer avoids failures of naive repeated translation. The recipes may inform model switching over shared user histories; extension to 300B-plus models is a hypothesis, not a demonstrated result.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-13",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.12062v1",
+            "https://arxiv.org/pdf/2611.12062v1"
+          ]
+        },
+        "zh": {
+          "text": "这项工作研究混合注意力模型之间的上下文缓存转换，覆盖压缩注意力表示、循环状态和稀疏索引键。部分缓存可用线性映射转换，循环状态则需要校正或重放目标模型递推；精确远距离回忆还依赖 token 身份。16–48B 模型对的实验考察质量和首 token 延迟，分段转移避免了简单重复转换的失效。方法可启发共享用户历史上的模型切换，扩展至 300B 以上模型仍是待验证假设。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-13",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.12062v1",
+            "https://arxiv.org/pdf/2611.12062v1"
+          ]
+        }
+      },
+      "added_at": "2026-11-12T23:07:34Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2611.12062"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2611.11761",
+      "title": "BridgeKV: Large-Model Prefill and Small-Model Decoding for LLM Inference via KV Cache Translation",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "Georgia Institute of Technology; Microsoft",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2611.11761"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "LLM inference has two phases with different bottlenecks: LLM prefill runs once per request and is compute-intensive. Decoding repeats for every output token and is limited by memory bandwidth. To address the challenges associated with this issue, different solutions have been proposed. All of these solutions use the same model for both prefill and decode phases. We propose BridgeKV, which uses a larger model for prefill and a smaller model of the same family for decoding. A lightweight KV-stitching module translates the larger model's prompt cache into the smaller model's cache layout. It handles differences in cache shape and representation through learned local layer mixing and separate nonlinear maps for keys and values. With both models frozen, we train the module to align their caches and make the smaller model follow the larger model's next-token predictions. A second training stage adds low-rank adapters when further task adaptation is needed. Across six model pairs and five datasets, BridgeKV outperforms fine-tuned small-model baselines with matched trainable parameter budgets in all 30 settings. It closes up to 80% of the quality gap to using the larger model for both phases. On one A40 GPU, Llama-3.1-Instruct-8B to Llama-3.2-Instruct-1B achieves 3.0X faster requests than the larger model alone, with latency close to the smaller model alone. BridgeKV can improve the hardware and system solutions that separate prefill and decode phases across GPUs. A separate serving simulation models request arrivals, queues, and cache transfer. For Llama-3.1-Instruct-70B to Llama-3.2-Instruct-1B, it predicts up to 33.86X faster requests and 27.5X lower energy use than using the larger model for both prefill and decode phases.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2611.11761v1",
+        "source_title": "BridgeKV: Large-Model Prefill and Small-Model Decoding for LLM Inference via KV Cache Translation",
+        "source_version": "v1",
+        "retrieved_at": "2026-11-12T23:05:47Z",
+        "license": null
+      },
+      "source_dates": {
+        "published_at": "2026-11-09T02:03:03Z",
+        "updated_at": "2026-11-09T02:03:03Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2611.11761v1",
+        "verified_at": "2026-11-12T23:05:47Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "BridgeKV uses a large model for prompt prefill and a smaller model from the same family for decoding. A learned cache adapter mixes nearby layers and separately maps keys and values while both base models remain frozen; an optional second stage adds low-rank adapters. Across six model pairs and five datasets it beats matched-trainable-budget small-model baselines. A single-A40 experiment reports a threefold request speedup over the large model; larger gains come from simulation. The approach offers a quality-cost tradeoff to investigate for generative recommendation.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-13",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.11761v1",
+            "https://arxiv.org/pdf/2611.11761v1"
+          ]
+        },
+        "zh": {
+          "text": "BridgeKV 用大模型处理提示词预填充，再让同系列小模型逐 token 解码。缓存适配器学习相邻层混合及键、值的独立映射，基础模型保持冻结，后续可增加低秩适配。在六组模型、五个数据集上，它优于可训练参数预算匹配的小模型基线。单张 A40 实验相对大模型报告约三倍请求加速，更大的收益数字来自模拟。该方法为生成式推荐提供了质量与成本权衡的研究方向。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-13",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.11761v1",
+            "https://arxiv.org/pdf/2611.11761v1"
+          ]
+        }
+      },
+      "added_at": "2026-11-12T23:07:34Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2611.11761"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2611.11696",
+      "title": "Direct GPU Energy Measurements of Batch-Level Sharing in Mixture-of-Experts and Recurrent Models",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "Loughborough University London; Aston University",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2611.11696"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Energy claims for efficient neural networks are often inferred from operation counts. We report direct GPU energy measurements on two workloads that batch very differently, recurrent policies in GPU-vectorised multi-agent reinforcement learning (MARL) and mixture-of-experts (MoE) language models, and ask one question of both: can the rows of a batch be made to share computation, across the batch and over time, at a measured saving? On recurrent policies the answer so far is no. Shared activity patterns exist but rarely last one step, masking a frozen policy fails, and trained-in masks succeed only because a fixed mask is equivalent to a narrow GRU, at 11x the energy of a small dense policy in our implementation. Test-time steering adds nothing beyond re-picking on either workload. On MoE models the answer is yes, and granularity decides how much: on Qwen3-30B-A3B, batch-aware routing reads 25-31% fewer expert weights within KL 0.05, with benchmark changes within noise at 500 items, and uses 12-18% less energy per token on a fused forward. We also introduce persistence-aware OEA, a one-parameter rule that keeps the batch-aware cut with about 40% fewer new experts per step than native routing at batch 32-64, though its energy has not yet been measured. These are pilot measurements on one GPU type, and we state their limits.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2611.11696v1",
+        "source_title": "Direct GPU Energy Measurements of Batch-Level Sharing in Mixture-of-Experts and Recurrent Models",
+        "source_version": "v1",
+        "retrieved_at": "2026-11-12T23:05:54Z",
+        "license": null
+      },
+      "source_dates": {
+        "published_at": "2026-11-08T23:31:46Z",
+        "updated_at": "2026-11-08T23:31:46Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2611.11696v1",
+        "verified_at": "2026-11-12T23:05:54Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "The paper measures GPU energy directly when batch rows share computation in recurrent policies and MoE language models. Recurrent-policy masking does not produce savings in the evaluated implementation. For Qwen3-30B-A3B, batch-aware routing reads fewer expert weights and lowers energy per token by 12–18% in a fused forward pass, with benchmark changes within noise on 500 items. A persistence-aware rule reduces expert churn but has no energy measurement yet. These single-GPU-type pilot results motivate measuring energy rather than inferring savings from operation counts.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-13",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.11696v1",
+            "https://arxiv.org/pdf/2611.11696v1"
+          ]
+        },
+        "zh": {
+          "text": "论文直接测量批内共享计算的 GPU 能耗，分别考察循环策略模型和 MoE 语言模型。所测实现中的循环策略掩码没有节能；Qwen3-30B-A3B 的批感知路由减少专家权重读取，在融合前向中每 token 能耗降低 12%–18%，500 个样本上的基准变化处于噪声范围。另一个持续性感知规则减少专家切换，但尚未测量其能耗。这些单一 GPU 类型上的初步结果提示，扩模效率应直接测量，不能只靠运算量推算。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-13",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.11696v1",
+            "https://arxiv.org/pdf/2611.11696v1"
+          ]
+        }
+      },
+      "added_at": "2026-11-12T23:07:34Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2611.11696"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2611.10511",
+      "title": "CALFA-KV: Joint Calibration and Fisher-Guided Anchors for 1-Bit KV Cache Compression",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "Shenzhen Intellifusion Technologies",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2611.10511"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "1-bit key-value (KV) cache compression can combine quantizer calibration with selective high-precision storage to reduce reconstruction error. We propose Calibration and Fisher-guided Anchors for KV cache compression (CALFA-KV). Offline, we jointly fit a key center, radial normalization parameters, and K/V vector codebooks to match the frozen model's projected attention output. We also estimate channel-wise Fisher-type sensitivities from squared gradients of a reference next-token cross-entropy loss. Online, we use these sensitivities to weight the squared reconstruction errors of each KV state. Here, a KV state is one token's key-value pair within one layer and KV head. We retain the highest-scoring states at high precision under a per-layer, per-KV-head budget. Under exact restoration, we bound the excess risk of score-based anchor selection relative to the optimum at the same anchor budget, where risk is the conditional mean square of the first-order loss change. With a budget of 56 additional FP16 anchors per layer and KV head, CALFA-KV (d8b8) outperforms all evaluated nominal 1-bit baselines on the mean score across seven benchmarks for each of the three models. At the same anchor budget, CALFA-KV (d8b10) uses a nominal index rate of 1.25 bits per channel and narrows the gap to BF16 to 0.90--2.01 points on the same metric.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2611.10511v1",
+        "source_title": "CALFA-KV: Joint Calibration and Fisher-Guided Anchors for 1-Bit KV Cache Compression",
+        "source_version": "v1",
+        "retrieved_at": "2026-11-12T23:06:00Z",
+        "license": null
+      },
+      "source_dates": {
+        "published_at": "2026-11-07T06:21:15Z",
+        "updated_at": "2026-11-07T06:21:15Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2611.10511v1",
+        "verified_at": "2026-11-12T23:06:00Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "CALFA-KV combines offline codebook calibration with selective high-precision cache states. It fits quantization parameters against the frozen model’s attention output, then uses gradient-derived channel sensitivities to rank reconstruction errors and retain important states under a fixed anchor budget. Three-model experiments compare nominal one-bit baselines across seven benchmarks. A higher-rate variant narrows the BF16 quality gap, but additional FP16 anchors mean nominal index bits are not total storage cost. The method is relevant to long-history serving; recommendation quality and throughput remain untested.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-13",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.10511v1",
+            "https://arxiv.org/pdf/2611.10511v1"
+          ]
+        },
+        "zh": {
+          "text": "CALFA-KV 将离线码本校准与少量高精度缓存状态结合：先对齐冻结模型的注意力输出，再用梯度得到的通道敏感度衡量重建误差，在固定预算内保留重要状态。论文在三个模型、七个基准上比较名义一比特方案，更高索引位宽的变体进一步缩小与 BF16 的质量差距。额外 FP16 状态也占空间，索引位数不能当作总存储成本。该方法可供长历史服务参考，推荐质量和吞吐尚未验证。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-13",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.10511v1",
+            "https://arxiv.org/pdf/2611.10511v1"
+          ]
+        }
+      },
+      "added_at": "2026-11-12T23:07:34Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2611.10511"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2611.08487",
+      "title": "User Embeddings are Superpositions of Interpretable Behavioral Modes",
+      "collection": "related",
+      "category": "other",
+      "affiliation": "Amazon",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2611.08487"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "User embeddings are central components of modern recommendation, personalization, and behavioral modeling systems. Though these embeddings can compactly encode rich behavioral information, they are inherently dense and opaque, limiting interpretability. To address this gap, we argue that user embeddings can be understood as sparse superpositions of interpretable behavioral modes. This structure is directly predicted by generative models of user behavior for linear embeddings and extends approximately to deep-learning representations by the superposition hypothesis. Superimposed modes can naturally be recovered by sparse dictionary learning methods, such as sparse autoencoders (SAEs), and recovered modes can be automatically named and queried in natural language. We validate mode recovery against known ground truth on synthetic data, where SAEs recover modes better than classical sparse baselines. We then apply our methods to classical and transformer-based user embeddings from two real-world datasets. We also show how the corresponding natural-language labels enable zero-shot audience retrieval and characterization over embeddings never trained on text. The framework is post-hoc and model-agnostic, requiring no modification to the upstream embedding system.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2611.08487v2",
+        "source_title": "User Embeddings are Superpositions of Interpretable Behavioral Modes",
+        "source_version": "v2",
+        "retrieved_at": "2026-11-12T23:06:07Z",
+        "license": null
+      },
+      "source_dates": {
+        "published_at": "2026-11-05T18:59:42Z",
+        "updated_at": "2026-11-07T10:28:50Z",
+        "source_version": "v2",
+        "source_url": "https://arxiv.org/abs/2611.08487v2",
+        "verified_at": "2026-11-12T23:06:07Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "The paper treats user embeddings as superpositions of sparse behavioral modes. Sparse dictionary learning, including sparse autoencoders, recovers modes that can be named and queried in natural language. Synthetic experiments test recovery against known ground truth, while two real datasets cover classical and transformer-based user representations. The labels support zero-shot audience retrieval over embeddings not trained on text. This post-hoc interface may make shared user representations easier to inspect and reuse without changing the upstream model; it does not establish a ranking lift.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-13",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.08487v2",
+            "https://arxiv.org/pdf/2611.08487v2"
+          ]
+        },
+        "zh": {
+          "text": "论文将用户嵌入看作稀疏行为模式的叠加，用稀疏自编码器等字典学习方法恢复模式，再为其生成可用自然语言查询的名称。合成实验检验已知模式能否恢复，两个真实数据集覆盖传统和 Transformer 用户表示；这些标签还能支持对未用文本训练的嵌入进行零样本人群检索。它为共享用户表示提供了无需改动上游模型的解释与复用接口，但没有证明排序收益。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-13",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.08487v2",
+            "https://arxiv.org/pdf/2611.08487v2"
+          ]
+        }
+      },
+      "added_at": "2026-11-12T23:07:34Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2611.08487"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2611.07749",
+      "title": "ConvPE: Convolutional Position Embedding Improves Transformers",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "Nanjing University",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2611.07749"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "ConvPE (Convolutional Position Embedding) improves both the performance and efficiency of Transformer models in language modeling, long-context extension, and vision. It injects a windowed, content-dependent bias into attention scores through a lightweight causal convolution over a low-dimensional projection of the hidden states. As a lightweight plug-in, ConvPE is compatible with RoPE, attention masks, and KV concatenation. It also supports high-dimensional position embeddings via high-dimensional convolutions. In a reproduction, ConvPE outperforms five 1D baselines and eight 2D baselines. The code is publicly available at this https URL.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2611.07749v1",
+        "source_title": "ConvPE: Convolutional Position Embedding Improves Transformers",
+        "source_version": "v1",
+        "retrieved_at": "2026-11-12T23:06:14Z",
+        "license": null
+      },
+      "source_dates": {
+        "published_at": "2026-11-05T09:55:15Z",
+        "updated_at": "2026-11-05T09:55:15Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2611.07749v1",
+        "verified_at": "2026-11-12T23:06:14Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "ConvPE adds a local, content-dependent bias to attention scores using a lightweight causal convolution over projected hidden states. It remains compatible with rotary position embeddings, attention masks and cache concatenation, and also supports higher-dimensional positional structure. Reported experiments cover language modeling, context extension and vision, with comparisons against one- and two-dimensional baselines. The plug-in offers a concrete way to combine local structure with attention for sequence models; recommendation gains have not been established.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-13",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.07749v1",
+            "https://arxiv.org/pdf/2611.07749v1"
+          ]
+        },
+        "zh": {
+          "text": "ConvPE 对投影后的隐藏状态做轻量因果卷积，向注意力分数加入依赖内容的局部偏置，同时兼容旋转位置编码、注意力掩码和缓存拼接，也支持更高维的位置结构。论文在语言建模、上下文扩展和视觉任务中与一维、二维基线比较。这种插件为序列模型结合局部结构与注意力提供了具体方法，尚无推荐收益验证。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-13",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.07749v1",
+            "https://arxiv.org/pdf/2611.07749v1"
+          ]
+        }
+      },
+      "added_at": "2026-11-12T23:07:34Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2611.07749"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2611.08133",
+      "title": "Beyond K/V Caches: Cross-Model State Handoff in Hybrid Linear-Attention LLMs",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "South China University of Technology",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2611.08133"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Production deployments often use different models to balance cost and quality through cascading, routing, and switching models during long conversations. Context accumulates across turns. Each switch requires the target to repeat prefill over this context. Existing methods transfer full-attention (FA) K/V caches across models. Hybrid linear-attention models also retain recurrent states (REC) and convolution histories (Conv). The interaction between Conv and REC complicates cross-model state transfer. Conv perturbations can change keys and values in recurrent layers and alter REC updates. Conv histories are overwritten, but changes in REC can still affect later outputs. More accurate REC reconstruction need not improve continuation. Building on this, we propose Hybrid State Transfer (HST) for all three state types. It uses structured REC maps and preserves history order during Conv alignment. We calibrate the adapters using the frozen target's outputs during continuation. FA cache map updates are merged offline. Across five benchmarks, Qwen3.5 4B$\\rightarrow$27B and 9B$\\rightarrow$27B achieve mean task retentions of 89.88% and 94.11%, respectively. With source caches already available, separate timing on synthetic 16K inputs yields handoff body speedups of $21.66\\times$ and $21.91\\times$.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2611.08133v1",
+        "source_title": "Beyond K/V Caches: Cross-Model State Handoff in Hybrid Linear-Attention LLMs",
+        "source_version": "v1",
+        "retrieved_at": "2026-11-12T23:06:21Z",
+        "license": null
+      },
+      "source_dates": {
+        "published_at": "2026-11-05T15:00:50Z",
+        "updated_at": "2026-11-05T15:00:50Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2611.08133v1",
+        "verified_at": "2026-11-12T23:06:21Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "Hybrid State Transfer handles full-attention caches, recurrent states and convolution histories when switching between hybrid linear-attention models. It uses structured recurrent-state maps, preserves temporal order during convolution alignment and calibrates adapters on the frozen target’s continuation outputs. Qwen3.5 transfer experiments evaluate five benchmarks; separate synthetic-input timings assume source caches already exist. The work identifies state types that a reusable-history interface must preserve, but its handoff speedups are not end-to-end recommendation measurements.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-13",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.08133v1",
+            "https://arxiv.org/pdf/2611.08133v1"
+          ]
+        },
+        "zh": {
+          "text": "Hybrid State Transfer 在混合线性注意力模型切换时，同时处理完整注意力缓存、循环状态和卷积历史。它使用结构化循环状态映射，在卷积对齐中保留时间顺序，并用冻结目标模型的续写输出校准适配器。Qwen3.5 转移实验覆盖五个基准，单独的合成输入计时以源缓存已经存在为前提。该工作明确了复用历史接口需要保留哪些状态，交接加速不能当作推荐服务的端到端收益。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-13",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.08133v1",
+            "https://arxiv.org/pdf/2611.08133v1"
+          ]
+        }
+      },
+      "added_at": "2026-11-12T23:07:34Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2611.08133"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2611.10285",
+      "title": "FAIDER: Fairness-Aware Item-Level Decoding for Large Language Model Recommenders",
+      "collection": "related",
+      "category": "generative-recommendation",
+      "affiliation": "University of Illinois Urbana-Champaign",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2611.10285"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Large language model (LLM) recommenders can produce semantically different recommendations when a user's protected attribute changes, even if the interaction history remains fixed. Controlling this disparity is challenging when model weights and full-vocabulary logits are inaccessible. We propose FAIDER (Fairness-Aware Item-level DEcoding for Recommendation), which incorporates fairness into list construction by selecting complete item candidates rather than manipulating token-level logits or repeatedly repairing finished outputs. The central idea is to separate the operational criterion for a violation from how strongly generation is constrained. Conformal-inspired empirical calibration fixes a cross-group semantic-disparity threshold, while online decoding applies either hard filtering or a soft penalty adjusted through dual-inspired feedback to target a prescribed violation rate. Separately, we establish a pathwise guarantee: under a uniform enforceability assumption, the soft decoder's empirical violation rate exceeds its target by at most $O(1/T)$. Experiments across recommendation benchmarks and LLM backbones show that Soft FAIDER improves both measured semantic fairness and ranking quality over the evaluated prompt-repair baselines. It also generally achieves a more favorable fairness-utility balance than the hard variant, indicating that stricter per-recommendation constraints do not necessarily yield lower measured disparity.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2611.10285v2",
+        "source_title": "FAIDER: Fairness-Aware Item-Level Decoding for Large Language Model Recommenders",
+        "source_version": "v2",
+        "retrieved_at": "2026-11-12T23:06:28Z",
+        "license": null
+      },
+      "source_dates": {
+        "published_at": "2026-11-06T22:31:29Z",
+        "updated_at": "2026-11-10T11:21:43Z",
+        "source_version": "v2",
+        "source_url": "https://arxiv.org/abs/2611.10285v2",
+        "verified_at": "2026-11-12T23:06:28Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "FAIDER controls semantic disparities in LLM recommendations by selecting complete item candidates without requiring model weights or full-vocabulary logits. An empirically calibrated threshold defines violations; decoding uses hard filtering or a feedback-adjusted soft penalty. Recommendation experiments find better measured fairness and ranking quality than the evaluated prompt-repair baselines. Its theoretical violation-rate guarantee requires uniform enforceability. This provides a controllable list-construction mechanism for generative recommenders, rather than evidence of a scaling law or lower serving cost.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-13",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.10285v2",
+            "https://arxiv.org/pdf/2611.10285v2"
+          ]
+        },
+        "zh": {
+          "text": "FAIDER 在无需模型权重或完整词表分数的条件下，通过选择完整商品候选控制大模型推荐中的语义差异。它先用经验校准阈值定义违规，再采用硬过滤或随反馈调整的软惩罚。推荐实验中，所测公平性和排序质量优于提示词修复基线；违规率理论保证依赖统一可执行条件。它为生成式推荐提供了可控的列表构造方法，没有建立规模规律或证明服务成本下降。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-13",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.10285v2",
+            "https://arxiv.org/pdf/2611.10285v2"
+          ]
+        }
+      },
+      "added_at": "2026-11-12T23:07:34Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2611.10285"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2611.13534",
+      "title": "Beyond the Log-Linear Frontier: Pre-Asymptotic Analysis of Finite-Budget Neural Scaling Laws",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "LingQiong AI Lab; Shanghai Smart Logic Technology",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2611.13534"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Classical neural scaling laws model excess risk as a separable power law in model capacity $N$ and dataset size $D$. At finite budgets, however, empirical learning curves and compute-optimal allocations depart from this log-linear frontier. This paper analyzes how spectral and domain heterogeneity govern these finite-scale departures. Along the capacity axis, Mellin--Barnes analysis of covariance resolvents yields a three-term expansion where competing spectral and regularization modes produce finite-scale curvature and logarithmic transitions. Because fitting multiple power laws on narrow pilot grids is ill-conditioned, we eliminate the loss floor via first-order Aitken differencing to obtain a well-conditioned closed-form initializer. Along the data axis, KKT duality reduces $K$-domain mixing to scalar water-filling, yielding finite-budget bottleneck bounds, an online sampling curriculum, and a simplex Hessian metric for cross-domain transfer. Along the iso-compute frontier $C=6ND$, we prove that the optimal allocation exponent drifts in proportion to capacity and data exponent variances, while Schur-complement reduction separates intrinsic drift from frozen-hyperparameter bias. Across 45 operator spectra, Pythia (70M--12B), Chinchilla (245 runs), and RegMix (17 domains), our estimators achieve $5.89\\%$ holdout MAPE, cut high-compute allocation regret by up to $76.4\\%$, and reduce cross-scale mixture RMSE by $59.4\\%$ with zero selection regret.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2611.13534v1",
+        "source_title": "Beyond the Log-Linear Frontier: Pre-Asymptotic Analysis of Finite-Budget Neural Scaling Laws",
+        "source_version": "v1",
+        "retrieved_at": "2026-11-12T23:06:35Z",
+        "license": null
+      },
+      "source_dates": {
+        "published_at": "2026-11-10T03:56:41Z",
+        "updated_at": "2026-11-10T03:56:41Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2611.13534v1",
+        "verified_at": "2026-11-12T23:06:35Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "The paper studies why scaling curves and compute allocations depart from simple power laws at finite budgets. It connects spectral and data-domain heterogeneity to curved learning curves, proposes an initialization method for small pilot grids and derives budget-dependent data mixing and model-data allocation rules. Evaluations use operator spectra and Pythia, Chinchilla and RegMix data. The practical connection to CTR scaling is to check finite-budget curvature before extrapolating from small experiments; the reported fits do not validate these laws for recommendation workloads.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-13",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.13534v1",
+            "https://arxiv.org/pdf/2611.13534v1"
+          ]
+        },
+        "zh": {
+          "text": "论文研究有限预算下学习曲线和计算分配为何偏离简单幂律，将偏离与谱结构、数据域差异联系起来，并提出适合小规模试验网格的拟合初始化，以及随预算变化的数据混合和模型—数据分配规则。评估使用算子谱及 Pythia、Chinchilla、RegMix 数据。对 CTR 扩模的启发是，外推小实验前先检查有限预算下的曲率；现有拟合结果不代表推荐负载也服从这些规律。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-13",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.13534v1",
+            "https://arxiv.org/pdf/2611.13534v1"
+          ]
+        }
+      },
+      "added_at": "2026-11-12T23:07:34Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2611.13534"
       },
       "change_history": [],
       "reading_tier": null

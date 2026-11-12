@@ -6,7 +6,7 @@
 
 Generative retrieval, recommendation and ranking beyond discriminative CTR.
 
-128 papers · Updated 2026-11-12
+129 papers · Updated 2026-11-13
 
 <a id="paper-2605-12617"></a>
 
@@ -519,3 +519,7 @@ Generative retrieval, recommendation and ranking beyond discriminative CTR.
 <a id="paper-2609-14493"></a>
 
 - **VARG: Value-Aware and Ranking-Aligned Generative Retrieval for Dynamic E-commerce Search**: VARG generates candidates directly for an existing final ranker in Tmall search. Semantic prefixes plus a value-ordered final token encode item addresses; staged supervised training and prefix-aware group-relative optimization align generation with relevance, personalization and business value. Daily item/model updates preserve existing addresses. The authors report a 14-day A/B test on 20% of traffic with 1.45% higher GMV, 0.22% higher per-user IPV and 0.31% higher PCTR. It illustrates how ranking-aligned generative retrieval can retain stable identifiers as the product catalog changes. — [Paper](https://arxiv.org/abs/2609.14493) (Taobao & Tmall Group of Alibaba; University of Science and Technology of China; Nankai University · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-10285"></a>
+
+- **FAIDER: Fairness-Aware Item-Level Decoding for Large Language Model Recommenders**: FAIDER controls semantic disparities in LLM recommendations by selecting complete item candidates without requiring model weights or full-vocabulary logits. An empirically calibrated threshold defines violations; decoding uses hard filtering or a feedback-adjusted soft penalty. Recommendation experiments find better measured fairness and ranking quality than the evaluated prompt-repair baselines. Its theoretical violation-rate guarantee requires uniform enforceability. This provides a controllable list-construction mechanism for generative recommenders, rather than evidence of a scaling law or lower serving cost. — [Paper](https://arxiv.org/abs/2611.10285) (University of Illinois Urbana-Champaign · arXiv 2026). Reading priority: Unrated.
