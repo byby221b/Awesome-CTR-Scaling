@@ -6,7 +6,7 @@
 
 Generative retrieval, recommendation and ranking beyond discriminative CTR.
 
-129 papers · Updated 2026-11-13
+133 papers · Updated 2026-11-14
 
 <a id="paper-2605-12617"></a>
 
@@ -523,3 +523,19 @@ Generative retrieval, recommendation and ranking beyond discriminative CTR.
 <a id="paper-2611-10285"></a>
 
 - **FAIDER: Fairness-Aware Item-Level Decoding for Large Language Model Recommenders**: FAIDER controls semantic disparities in LLM recommendations by selecting complete item candidates without requiring model weights or full-vocabulary logits. An empirically calibrated threshold defines violations; decoding uses hard filtering or a feedback-adjusted soft penalty. Recommendation experiments find better measured fairness and ranking quality than the evaluated prompt-repair baselines. Its theoretical violation-rate guarantee requires uniform enforceability. This provides a controllable list-construction mechanism for generative recommenders, rather than evidence of a scaling law or lower serving cost. — [Paper](https://arxiv.org/abs/2611.10285) (University of Illinois Urbana-Champaign · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-16395"></a>
+
+- **TriGen: A Generative Paradigm for Trigger-Induced Recommendation**: TriGen adapts generative recommendation to feeds opened immediately after a user clicks an item. It re-encodes recent history with calibrated trigger injection, uses a dynamic gate to balance persistent preferences and immediate intent, and applies position-specific guidance during semantic-ID decoding. Offline comparisons and online A/B tests across six country markets report gains, followed by production deployment. This provides a mechanism for conditioning a shared generative recommender on short-lived intent; it does not establish a model-size scaling law. — [Paper](https://arxiv.org/abs/2611.16395) (Alibaba International Digital Commerce Group; Nankai University; Independent Researcher · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-16159"></a>
+
+- **From Tokens to Behaviors: Rethinking Generative Recommendation for User Trajectory Prediction**: TraGR predicts future user interactions at the behavior level: semantic-ID tokens are generated in parallel within an interaction, while recurrent states model transitions between behaviors. Probability-weighted feedback preserves information about alternative items, and trajectory learning uses collaborative transition signals and later credit assignment on model-generated sequences. Four public datasets show gains across prediction horizons. The architecture separates within-item decoding from between-behavior evolution, offering a design for efficient trajectory generation without an established online serving gain. — [Paper](https://arxiv.org/abs/2611.16159) (Tongji University; The Chinese University of Hong Kong; Kuaishou Technology; Fudan University · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-15445"></a>
+
+- **ReAlign: Reward-Guided Preference Alignment for Generative Re-Ranking**: ReAlign couples a candidate-aware autoregressive reranker with a listwise reward model. The reward separates position-wise exposure from item value across engagement objectives. Supervised training first learns from logged lists, then reward-guided post-training aligns both generation distributions and ranking preferences using standardized within-pool rewards. Offline comparisons report improvements over evaluated baselines. The contribution is connecting list generation to an explicit utility signal, which can inform generative ranking systems; online business gains are not established. — [Paper](https://arxiv.org/abs/2611.15445) (Intuit Credit Karma · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-15426"></a>
+
+- **SimRec: Learning to Search, Ask, and Recommend from Simulated Interaction**: SimRec trains the complete search, clarification and recommendation policy of a tool-using agent with reinforcement learning. A task-conditioned simulator supplies feedback, and trajectory rewards include retrieval quality, valid tool use and the final hit; target injection is used only during training to address sparse successes. ESCI and Amazon C4 experiments improve a Qwen3-4B agent over its untrained counterpart and evaluated alternatives. This suggests a way to spend model capacity on useful interaction behavior, but simulated feedback and offline ranking gains are not live-user evidence. — [Paper](https://arxiv.org/abs/2611.15426) (Zhejiang University; Tsinghua University; Hikvision Research Institute · arXiv 2026). Reading priority: Unrated.

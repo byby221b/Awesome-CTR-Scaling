@@ -6,7 +6,7 @@
 
 Transferable ideas from general-purpose model architecture research.
 
-320 papers · Updated 2026-11-13
+323 papers · Updated 2026-11-14
 
 <a id="paper-2606-16825"></a>
 
@@ -1234,7 +1234,7 @@ Transferable ideas from general-purpose model architecture research.
 
 <a id="paper-2611-12362"></a>
 
-- **Release Sooner, Expose Less: Offloading MoE Dispatch in NCCL-EP under Dual-Batch Overlap**: The paper offloads MoE dispatch progression so GPU resources can be released earlier and communication can overlap another microbatch’s computation. Three NCCL-EP research configurations move work toward network-interface or host-side progression. GB300 NVL72 experiments examine the computation window needed to hide communication and report lower median time per output token in vLLM. This is a concrete communication-computation overlap technique for sparse-model serving, with results tied to the evaluated hardware and batching conditions. — [Paper](https://arxiv.org/abs/2611.12362) (NVIDIA · arXiv 2026). Reading priority: Unrated.
+- **Release Sooner, Expose Less: Offloading MoE Dispatch in NCCL-EP under Dual-Batch Overlap**: The revised paper evaluates GDA-KI Free Flow, an NCCL-EP configuration that keeps construction of work-queue entries on the GPU but moves send progression to a host thread. Releasing GPU resources earlier lets another microbatch’s computation hide deferred communication. GB300 NVL72 tests report that 32–96 microseconds of independent work can hide that progress; disaggregated vLLM experiments lower median time per output token by 15–25% versus default GDA-KI and 16–42% versus DeepEP v1. The technique may inform sparse recommendation serving, but results remain tied to the evaluated hardware and workloads. — [Paper](https://arxiv.org/abs/2611.12362) (NVIDIA · arXiv 2026). Reading priority: Unrated.
 
 <a id="paper-2611-12956"></a>
 
@@ -1287,3 +1287,15 @@ Transferable ideas from general-purpose model architecture research.
 <a id="paper-2611-13534"></a>
 
 - **Beyond the Log-Linear Frontier: Pre-Asymptotic Analysis of Finite-Budget Neural Scaling Laws**: The paper studies why scaling curves and compute allocations depart from simple power laws at finite budgets. It connects spectral and data-domain heterogeneity to curved learning curves, proposes an initialization method for small pilot grids and derives budget-dependent data mixing and model-data allocation rules. Evaluations use operator spectra and Pythia, Chinchilla and RegMix data. The practical connection to CTR scaling is to check finite-budget curvature before extrapolating from small experiments; the reported fits do not validate these laws for recommendation workloads. — [Paper](https://arxiv.org/abs/2611.13534) (LingQiong AI Lab; Shanghai Smart Logic Technology · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-16219"></a>
+
+- **GC-MoE on SM120: Overlapping Expert-Parallel Token Dispatch with Warp-Level FP8xFP4 Block-Scaled MMA on Consumer Blackwell**: GC-MoE adapts a persistent fused dispatch-compute-combine operator to SM120 consumer Blackwell GPUs over PCIe. It overlaps expert token transfers with warp-level FP8-activation/FP4-weight matrix multiplication and uses hardware-specific buffering and synchronization. Eight-RTX-PRO-5000 operator benchmarks outperform the evaluated MegaMoE implementations across 18 decode points, with numerical checks reported. The result is a hardware-specific kernel improvement relevant to sparse serving; it is not an end-to-end recommendation throughput measurement. — [Paper](https://arxiv.org/abs/2611.16219) (Alibaba Inc. · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-15842"></a>
+
+- **Fewer Expert Transfers Without Changing Routing: Expert Eviction for MoE Offloading**: The study measures actual CPU-to-GPU expert transfers for offloaded OLMoE-1B-7B. Holding expert sets fixed can trade faster decoding for higher loss. Keeping routing unchanged and evicting the expert whose next use is farthest away instead reduces copies by 2.1 times versus LRU without quality loss. This is a future-demand oracle: sixteen-token lookahead captures most of its benefit, while a past-count heuristic captures much less. It provides a cache-policy upper bound and design target, not a deployable predictor of future requests. — [Paper](https://arxiv.org/abs/2611.15842) (CarbonForge; Mila; Université de Montréal · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-15271"></a>
+
+- **MoE Pretraining:Parallelism Layout Changes the Model, Not Quality**: The paper studies how data- and expert-parallel layouts affect MoE training reproducibility. Across 80 small-model runs, changing layout substantially changes routing and predictions without a corresponding quality change in the evaluated settings. Near-ties in expert selection amplify arithmetic perturbations; changing layout early in training has more effect than changing it late. Experiments use 25M–117M models and 20M training tokens. This motivates controlling layout when comparing sparse-model experiments, while extrapolation to industrial-scale recommendation remains unverified. — [Paper](https://arxiv.org/abs/2611.15271) (Independent Researcher · arXiv 2026). Reading priority: Unrated.

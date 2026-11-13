@@ -6,7 +6,7 @@
 
 Scaling retrieval and reranking stages of recommendation pipelines.
 
-57 papers · Updated 2026-11-13
+59 papers · Updated 2026-11-14
 
 <a id="paper-2603-04816"></a>
 
@@ -235,3 +235,11 @@ Scaling retrieval and reranking stages of recommendation pipelines.
 <a id="paper-2611-02556"></a>
 
 - **OctEx: Billion-Scale Vector Search by Precomputed Lattice Neighbor Lists on GPUs**: OctEx trades index memory and preprocessing for parallel vector search. Multiple random projections map vectors into lattice cells with precomputed neighbor lists; queries read candidate lists in parallel, rank their union with an int8 sketch and perform one exact rerank. Four-H100 experiments include billion-vector datasets and compare throughput at high recall against graph and inverted-file indexes. It offers a retrieval-stage scaling option when the index-memory budget is large enough, without establishing downstream recommendation gains. — [Paper](https://arxiv.org/abs/2611.02556) (arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-15434"></a>
+
+- **SurvEval: Listwise Re-Ranking Evaluator via Survival-Based Exposure and Multi-Objective Value Modeling**: SurvEval estimates listwise utility by multiplying each position’s reaching probability by its conditional item value, then summing across the list. A discrete-time survival model captures sequential browsing; separate objective heads and uncertainty-based loss weights balance heterogeneous feedback on a shared transformer. KuaiRand and Avito experiments compare evaluation performance against existing baselines. This offers a structured reward or evaluation component for scaled reranking pipelines, while the browsing model remains an assumption and no online lift is demonstrated. — [Paper](https://arxiv.org/abs/2611.15434) (Intuit Credit Karma · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-16488"></a>
+
+- **Active Learning of Approximate LLM Ranking for Energy-Efficient Retrieval of Long Queries**: LAAM uses active learning to approximate expensive LLM relevance judgments with a lightweight predictor. It requests labels for informative documents rather than reranking every candidate with the large model. On TREC Robust 2004 with verbose queries, it reaches 87% of DeepSeek v3’s P@10 with 3.3% of its per-query energy use; comparisons vary by ranking metric. The framework exposes a retrieval quality-energy tradeoff useful for compute allocation, but its evidence is limited to the evaluated retrieval setup rather than recommendation deployment. — [Paper](https://arxiv.org/abs/2611.16488) (Bar Ilan University · arXiv 2026). Reading priority: Unrated.

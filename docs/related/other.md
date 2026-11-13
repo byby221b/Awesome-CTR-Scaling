@@ -6,7 +6,7 @@
 
 Adjacent research, diagnostics and other relevant recommendation methods.
 
-22 papers · Updated 2026-11-13
+23 papers · Updated 2026-11-14
 
 <a id="paper-2411-13700"></a>
 
@@ -94,4 +94,8 @@ Adjacent research, diagnostics and other relevant recommendation methods.
 
 <a id="paper-2611-08487"></a>
 
-- **User Embeddings are Superpositions of Interpretable Behavioral Modes**: The paper treats user embeddings as superpositions of sparse behavioral modes. Sparse dictionary learning, including sparse autoencoders, recovers modes that can be named and queried in natural language. Synthetic experiments test recovery against known ground truth, while two real datasets cover classical and transformer-based user representations. The labels support zero-shot audience retrieval over embeddings not trained on text. This post-hoc interface may make shared user representations easier to inspect and reuse without changing the upstream model; it does not establish a ranking lift. — [Paper](https://arxiv.org/abs/2611.08487) (Amazon · arXiv 2026). Reading priority: Unrated.
+- **User Embeddings are Superpositions of Interpretable Behavioral Modes**: The paper treats user embeddings as superpositions of sparse behavioral modes. Sparse dictionary learning, including sparse autoencoders, recovers modes that can be named and queried in natural language. Synthetic experiments test recovery against known ground truth, while two real datasets cover classical and transformer-based user representations. The labels support zero-shot audience retrieval over embeddings not trained on text. This post-hoc interface may make shared user representations easier to inspect and reuse without changing the upstream model; it does not establish a ranking lift. — [Paper](https://arxiv.org/abs/2611.08487) · [Venue](https://neurips.cc/virtual/2026/poster/155845) (Amazon · NeurIPS 2026). Reading priority: Unrated.
+
+<a id="paper-2611-16795"></a>
+
+- **KuaiRecV2: Benchmarking Large-Scale Continual Learning for Diversified and Multi-task Recommendation**: KuaiRecV2 evaluates recommendation under continual learning, diversity and multi-task demands. Its industrial dataset combines million-scale multimodal items, 30 days of interactions and a changing video candidate pool. The benchmark jointly measures retrieval accuracy, diversity and task performance instead of treating a single offline score as sufficient progress. This provides a more realistic setting for testing scaled recommendation models under distribution shifts; it is a benchmark contribution, not evidence that a particular model improves online outcomes. — [Paper](https://arxiv.org/abs/2611.16795) (University of Science and Technology of China; Kuaishou Technology · arXiv 2026). Reading priority: Unrated.

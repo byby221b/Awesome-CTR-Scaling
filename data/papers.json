@@ -5,7 +5,7 @@
     "description": "Scaling laws and scalable ranking models for industrial recommendation.",
     "repository_url": "https://github.com/byby221b/Awesome-CTR-Scaling",
     "site_url": "https://byby221b.github.io/Awesome-CTR-Scaling/",
-    "updated": "2026-11-13",
+    "updated": "2026-11-14",
     "source_commit": "31ad30becff83ca14a01f37fc99d52ba79f85565",
     "scope": "We cover papers that (1) study scaling laws for recommendation models, (2) propose scalable Transformer-based architectures for CTR/ranking, (3) address efficiency challenges in scaling up industrial ranking systems, or (4) explore novel paradigms (e.g., sparse scaling, generative pre-training, foundation models) for scalable recommendation.",
     "history": {
@@ -1613,6 +1613,30 @@
       "name": "Shanghai Smart Logic Technology",
       "affiliation_aliases": [
         "Shanghai Smart Logic Technology"
+      ],
+      "legacy_entries": []
+    },
+    {
+      "id": "intuit-credit-karma",
+      "name": "Intuit Credit Karma",
+      "affiliation_aliases": [
+        "Intuit Credit Karma"
+      ],
+      "legacy_entries": []
+    },
+    {
+      "id": "hikvision",
+      "name": "Hikvision",
+      "affiliation_aliases": [
+        "Hikvision Research Institute"
+      ],
+      "legacy_entries": []
+    },
+    {
+      "id": "carbonforge",
+      "name": "CarbonForge",
+      "affiliation_aliases": [
+        "CarbonForge"
       ],
       "legacy_entries": []
     }
@@ -54129,40 +54153,40 @@
       ],
       "original_abstract": {
         "status": "verified",
-        "text": "Dual-batch overlap (DBO) hides mixture-of-experts (MoE) communication behind another microbatch's computation, but only after dispatch send releases the GPU. The time dispatch send holds the GPU therefore stays exposed, while network progress after release can be hidden. We evaluate three research configurations built on NCCL-EP that target this exposed communication time: GPI, in which the GPU constructs GPU-Friendly Descriptors (GFDs) and submits them to NIC-accessible memory for transport; GPI-MC, which describes MoE token fan-out in one GFD; and GDAKI Free Flow, which moves send progression to a host thread. On a GB300 NVL72 system, all three approaches reduce dispatch-send time relative to default GDAKI over most operating points in the evaluated parameter sweep. An experiment that inserts a GPU delay between dispatch send and receive shows that offload increases the in-flight interval. Depending on the configuration, 32 to 512 microseconds of computation or other independent work between send and receive hides the deferred progress, leaving less exposed time than default GDAKI. In disaggregated vLLM serving with DBO, these approaches lower median TPOT by 15-25% relative to NCCL-EP default GDAKI and by 16-42% relative to DeepEP v1.",
+        "text": "Dual-batch overlap (DBO) hides mixture-of-experts (MoE) communication behind another microbatch's computation, but only after dispatch send releases the GPU. The time dispatch send holds the GPU therefore stays exposed, while network progress after release can be hidden. We evaluate GPUDirect Async - Kernel Initiated (GDA-KI) Free Flow, an NCCL-EP research configuration that leaves WQE construction on the GPU but moves send progression to a host thread. On a GB300 NVL72 system, GDA-KI Free Flow reduces dispatch-send time relative to default GDA-KI at every operating point in the evaluated parameter sweep. An experiment that inserts a GPU delay between dispatch send and receive shows that offload increases the in-flight interval. Depending on the load, 32-96 microseconds of computation or other independent work between send and receive hides the deferred progress, leaving less exposed time than default GDA-KI. In disaggregated vLLM serving with DBO, GDA-KI Free Flow lowers median TPOT by 15-25% relative to NCCL-EP default GDA-KI and by 16-42% relative to DeepEP v1.",
         "language": "en",
-        "source_url": "https://arxiv.org/abs/2611.12362v1",
+        "source_url": "https://arxiv.org/abs/2611.12362v2",
         "source_title": "Release Sooner, Expose Less: Offloading MoE Dispatch in NCCL-EP under Dual-Batch Overlap",
-        "source_version": "v1",
-        "retrieved_at": "2026-11-11T23:08:55Z",
+        "source_version": "v2",
+        "retrieved_at": "2026-11-13T23:08:42Z",
         "license": null
       },
       "source_dates": {
         "published_at": "2026-11-09T13:10:41Z",
-        "updated_at": "2026-11-09T13:10:41Z",
-        "source_version": "v1",
-        "source_url": "https://arxiv.org/abs/2611.12362v1",
-        "verified_at": "2026-11-11T23:04:41Z"
+        "updated_at": "2026-11-12T14:20:44Z",
+        "source_version": "v2",
+        "source_url": "https://arxiv.org/abs/2611.12362v2",
+        "verified_at": "2026-11-13T23:08:42Z"
       },
       "summaries": {
         "en": {
-          "text": "The paper offloads MoE dispatch progression so GPU resources can be released earlier and communication can overlap another microbatch’s computation. Three NCCL-EP research configurations move work toward network-interface or host-side progression. GB300 NVL72 experiments examine the computation window needed to hide communication and report lower median time per output token in vLLM. This is a concrete communication-computation overlap technique for sparse-model serving, with results tied to the evaluated hardware and batching conditions.",
+          "text": "The revised paper evaluates GDA-KI Free Flow, an NCCL-EP configuration that keeps construction of work-queue entries on the GPU but moves send progression to a host thread. Releasing GPU resources earlier lets another microbatch’s computation hide deferred communication. GB300 NVL72 tests report that 32–96 microseconds of independent work can hide that progress; disaggregated vLLM experiments lower median time per output token by 15–25% versus default GDA-KI and 16–42% versus DeepEP v1. The technique may inform sparse recommendation serving, but results remain tied to the evaluated hardware and workloads.",
           "basis": "original_abstract",
           "method": "ai_assisted",
-          "updated_at": "2026-11-12",
+          "updated_at": "2026-11-14",
           "source_urls": [
-            "https://arxiv.org/abs/2611.12362v1",
-            "https://arxiv.org/pdf/2611.12362v1"
+            "https://arxiv.org/abs/2611.12362v2",
+            "https://arxiv.org/pdf/2611.12362v2"
           ]
         },
         "zh": {
-          "text": "这项工作将 MoE 分发通信的推进工作移交给网卡或主机，使 GPU 更早释放资源，再用另一微批次的计算覆盖通信时间。作者实现了三种 NCCL-EP 研究配置，在 GB300 NVL72 上测量隐藏通信所需的计算窗口，并在 vLLM 中观察到输出 token 中位耗时下降。它提供了稀疏模型服务中重叠通信与计算的具体做法，收益受硬件和批处理条件约束。",
+          "text": "修订版集中评估 GDA-KI Free Flow：GPU 仍负责构建工作队列项，发送推进则移到主机线程，让 GPU 更早释放资源，用另一微批次计算覆盖延后的通信。GB300 NVL72 测试中，32–96 微秒独立工作可隐藏这部分推进；分离式 vLLM 实验的输出 token 中位耗时比默认 GDA-KI 低 15%–25%，比 DeepEP v1 低 16%–42%。该技术可供稀疏推荐服务参考，结果仍受所测硬件和负载限制。",
           "basis": "original_abstract",
           "method": "ai_assisted",
-          "updated_at": "2026-11-12",
+          "updated_at": "2026-11-14",
           "source_urls": [
-            "https://arxiv.org/abs/2611.12362v1",
-            "https://arxiv.org/pdf/2611.12362v1"
+            "https://arxiv.org/abs/2611.12362v2",
+            "https://arxiv.org/pdf/2611.12362v2"
           ]
         }
       },
@@ -54171,7 +54195,19 @@
         "kind": "catalog_entry",
         "source_url": "https://arxiv.org/abs/2611.12362"
       },
-      "change_history": [],
+      "change_history": [
+        {
+          "at": "2026-11-13T23:10:28Z",
+          "kind": "paper_revision",
+          "fields": [
+            "original_abstract",
+            "source_dates",
+            "summaries"
+          ],
+          "source_url": "https://arxiv.org/abs/2611.12362v2",
+          "source_version": "v2"
+        }
+      ],
       "reading_tier": null
     },
     {
@@ -54990,13 +55026,17 @@
       "collection": "related",
       "category": "other",
       "affiliation": "Amazon",
-      "venue": "arXiv",
+      "venue": "NeurIPS",
       "year": 2026,
       "tags": [],
       "links": [
         {
           "label": "Paper",
           "url": "https://arxiv.org/abs/2611.08487"
+        },
+        {
+          "label": "Venue",
+          "url": "https://neurips.cc/virtual/2026/poster/155845"
         }
       ],
       "original_abstract": {
@@ -55043,7 +55083,24 @@
         "kind": "catalog_entry",
         "source_url": "https://arxiv.org/abs/2611.08487"
       },
-      "change_history": [],
+      "change_history": [
+        {
+          "at": "2026-11-13T23:10:28Z",
+          "kind": "venue_update",
+          "fields": [
+            "venue"
+          ],
+          "source_url": "https://neurips.cc/virtual/2026/poster/155845"
+        },
+        {
+          "at": "2026-11-13T23:10:28Z",
+          "kind": "metadata_enrichment",
+          "fields": [
+            "links"
+          ],
+          "source_url": "https://neurips.cc/virtual/2026/poster/155845"
+        }
+      ],
       "reading_tier": null
     },
     {
@@ -55290,6 +55347,692 @@
       "added_provenance": {
         "kind": "catalog_entry",
         "source_url": "https://arxiv.org/abs/2611.13534"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2611.16795",
+      "title": "KuaiRecV2: Benchmarking Large-Scale Continual Learning for Diversified and Multi-task Recommendation",
+      "collection": "related",
+      "category": "other",
+      "affiliation": "University of Science and Technology of China; Kuaishou Technology",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2611.16795"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Recommender systems, which retrieve items of interest to users based on their interaction histories, have recently witnessed several key technological advancements, benefiting from the semantic representation space and model-data scaling. Nevertheless, practitioners and researchers have frequently encountered critical inconsistencies between simple offline evaluations and complex online results, and this gap still exists in the era of large models. In this work, we address several key factors that contribute to this inconsistency: 1) the \\textit{large-scale continual learning challenge} that assumes a practical demand to maintain long-term model effectiveness under dynamic item pools and distributional shifts; 2) the \\textit{combinatorial diversity challenge} that requires the generation strategy to solve the accuracy-diversity trade-off in both the finer token level and the holistic item level; and 3) the \\textit{multi-task reward balancing challenge}, which is particularly critical for modern generative models that can accurately model the sequence distribution but are less controllable for the multi-task demands.\nTo address these challenges and further pave the way for the development of more realistic recommendation solutions, we introduce KuaiRecV2, a deliberately constructed benchmark with industrial-level datasets from Kuaishou. Specifically, we provide a large-scale interaction dataset with million-scale multi-modal item information and long-term interaction records across 30 days, with a dynamic video candidate pool. Additionally, we provide a rigorous benchmark that evaluates retrieval accuracy, diversity, and multi-task performance in one rubric system, where an effective advancement occurs if and only if the new method improves all metrics. The code is available at this https URL",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2611.16795v1",
+        "source_title": "KuaiRecV2: Benchmarking Large-Scale Continual Learning for Diversified and Multi-task Recommendation",
+        "source_version": "v1",
+        "retrieved_at": "2026-11-13T23:07:18Z",
+        "license": null
+      },
+      "source_dates": {
+        "published_at": "2026-11-12T13:39:12Z",
+        "updated_at": "2026-11-12T13:39:12Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2611.16795v1",
+        "verified_at": "2026-11-13T23:07:18Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "KuaiRecV2 evaluates recommendation under continual learning, diversity and multi-task demands. Its industrial dataset combines million-scale multimodal items, 30 days of interactions and a changing video candidate pool. The benchmark jointly measures retrieval accuracy, diversity and task performance instead of treating a single offline score as sufficient progress. This provides a more realistic setting for testing scaled recommendation models under distribution shifts; it is a benchmark contribution, not evidence that a particular model improves online outcomes.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-14",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.16795v1",
+            "https://arxiv.org/pdf/2611.16795v1"
+          ]
+        },
+        "zh": {
+          "text": "KuaiRecV2 面向持续学习、多样性和多任务推荐评估，提供百万量级多模态商品信息、30 天交互记录及动态视频候选池。评估同时考察召回准确率、多样性和任务表现，避免用单项离线分数代表整体进步。它为检验扩模后的推荐系统如何应对分布变化提供了更贴近业务的环境，贡献在于基准，而非证明某个模型已有线上收益。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-14",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.16795v1",
+            "https://arxiv.org/pdf/2611.16795v1"
+          ]
+        }
+      },
+      "added_at": "2026-11-13T23:10:28Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2611.16795"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2611.16404",
+      "title": "ReSID: Rethinking Long-Tail Retrieval in Generative Recommendation through Item Reachability",
+      "collection": "core",
+      "category": "efficiency-deployment",
+      "affiliation": "Alibaba International Digital Commerce Group; Nankai University",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [
+        "Tokenization",
+        "Generative Rec",
+        "Serving"
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2611.16404"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Generative recommendation (GR) represents items with discrete Semantic IDs (SIDs) and casts retrieval as sequence generation. Under skewed interaction distributions and tight serving budgets, GR struggles to retrieve long-tail items. In this work, we are the first to study long-tail reachability across the complete pipeline of SID construction, decoding, and matching. We find that under equal code lengths, parallel SID construction consistently outperforms sequential SIDs on tail items. Moreover, even when full generation fails, decoded sequences carry locally consistent information that retrieves relevant tail items via partial matching. Yet this recovery is bounded by upstream search, failing once beam search prunes all prefixes completable within a fixed mismatch tolerance. Motivated by these findings, we propose ReSID to jointly preserve and recover tail candidates. Built on long parallel SIDs, ReSID pairs popularity-debiased and user-semantic-aware beam search to keep promising paths alive with partial SID matching to recover items from surviving tokens. ReSID achieves state-of-the-art long-tail retrieval while maintaining competitive overall accuracy, with lower latency and higher throughput under narrow beams. ReSID is deployed in our production system, serving main user traffic with substantial business gains. We release our complete code and model checkpoints to support full reproducibility and real-world deployment at this https URL.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2611.16404v1",
+        "source_title": "ReSID: Rethinking Long-Tail Retrieval in Generative Recommendation through Item Reachability",
+        "source_version": "v1",
+        "retrieved_at": "2026-11-13T23:07:25Z",
+        "license": null
+      },
+      "source_dates": {
+        "published_at": "2026-11-12T07:12:15Z",
+        "updated_at": "2026-11-12T07:12:15Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2611.16404v1",
+        "verified_at": "2026-11-13T23:07:25Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "ReSID studies whether long-tail items remain reachable throughout semantic-ID construction, decoding and matching. Parallel IDs, popularity-debiased and user-semantic-aware beam search preserve promising paths, while partial matching recovers items from surviving tokens. Experiments report strong tail retrieval, competitive overall accuracy and better latency and throughput under narrow beams; the paper also reports production deployment and business gains. The method offers a concrete way to allocate limited decoding work without prematurely losing tail candidates; partial matching cannot recover paths already eliminated upstream.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-14",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.16404v1",
+            "https://arxiv.org/pdf/2611.16404v1"
+          ]
+        },
+        "zh": {
+          "text": "ReSID 检查长尾商品在语义 ID 构造、解码和匹配全过程中是否仍有机会被找回。它结合并行 ID、去流行度偏置及用户语义感知的束搜索保留候选路径，再用部分匹配从幸存 token 中恢复商品。论文报告长尾召回改善、总体准确率保持竞争力，窄束宽下延迟和吞吐更好，并已生产部署取得业务收益。它为有限解码预算下保留长尾候选提供了具体方案，但部分匹配无法恢复已被上游完全剪掉的路径。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-14",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.16404v1",
+            "https://arxiv.org/pdf/2611.16404v1"
+          ]
+        }
+      },
+      "added_at": "2026-11-13T23:10:28Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2611.16404"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2611.16395",
+      "title": "TriGen: A Generative Paradigm for Trigger-Induced Recommendation",
+      "collection": "related",
+      "category": "generative-recommendation",
+      "affiliation": "Alibaba International Digital Commerce Group; Nankai University; Independent Researcher",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2611.16395"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Generative recommendation typically operates under the User-Induced Recommendation (UIR) setting, predicting target items by autoregressively generating semantic IDs as a passive continuation of long-term user history. However, this paradigm overlooks Trigger-Induced Recommendation (TIR), an essential industrial scenario where a user click triggers an immediate follow-up feed. In TIR, recommendations must dynamically align with the instant trigger intent without compromising historical preference continuity. Traditional TIR methods rely on discriminative scoring and cannot guide token-level generation, while existing generative models lack mechanisms to reconcile this structural tension. To address this challenge, we propose TriGen, establishing a tailored generative paradigm for trigger-induced recommendation. TriGen introduces calibrated tail injection to re-encode local history, adaptively arbitrates between persistent tastes and immediate impulses via dynamic gating, and applies position-specific transformations to sustain level-aware trigger guidance across decoding steps. Extensive offline evaluations confirm consistent gains over competitive baselines. Furthermore, online A/B tests across six country markets demonstrate significant revenue and GMV improvements, leading to the full production deployment of TriGen.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2611.16395v1",
+        "source_title": "TriGen: A Generative Paradigm for Trigger-Induced Recommendation",
+        "source_version": "v1",
+        "retrieved_at": "2026-11-13T23:07:32Z",
+        "license": null
+      },
+      "source_dates": {
+        "published_at": "2026-11-12T07:07:10Z",
+        "updated_at": "2026-11-12T07:07:10Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2611.16395v1",
+        "verified_at": "2026-11-13T23:07:32Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "TriGen adapts generative recommendation to feeds opened immediately after a user clicks an item. It re-encodes recent history with calibrated trigger injection, uses a dynamic gate to balance persistent preferences and immediate intent, and applies position-specific guidance during semantic-ID decoding. Offline comparisons and online A/B tests across six country markets report gains, followed by production deployment. This provides a mechanism for conditioning a shared generative recommender on short-lived intent; it does not establish a model-size scaling law.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-14",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.16395v1",
+            "https://arxiv.org/pdf/2611.16395v1"
+          ]
+        },
+        "zh": {
+          "text": "TriGen 面向用户点击商品后立即打开的后续推荐流。它将触发信息校准后注入近期历史，用动态门控平衡长期偏好与即时意图，再按解码位置持续引导语义 ID 生成。论文报告离线比较和六个国家市场的线上 A/B 收益，并已部署。它为生成式推荐适配短时意图提供了机制，没有建立模型规模的扩展规律。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-14",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.16395v1",
+            "https://arxiv.org/pdf/2611.16395v1"
+          ]
+        }
+      },
+      "added_at": "2026-11-13T23:10:28Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2611.16395"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2611.16159",
+      "title": "From Tokens to Behaviors: Rethinking Generative Recommendation for User Trajectory Prediction",
+      "collection": "related",
+      "category": "generative-recommendation",
+      "affiliation": "Tongji University; The Chinese University of Hong Kong; Kuaishou Technology; Fudan University",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2611.16159"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "User behavior trajectory prediction (UBTP) aims to capture how a user's needs evolve over time by predicting the sequence of future interactions from that user's interaction history. Recent generative recommendation (GR) methods address this task through autoregressive generation of semantic IDs (SIDs). However, serial SID decoding couples token generation with behavior state transitions and requires multiple dependent steps per interaction. Discrete item feedback overlooks predictive uncertainty, and teacher-forced training leaves a training-inference gap in trajectory generation. To address these limitations, we propose TraGR, a behavior-aware generative recommendation framework that aligns generation, feedback, and learning with successive user behaviors. Its behavior-level architecture predicts SID tokens in parallel within each interaction and models behavioral transitions through recurrent state updates, with joint SID and item-level supervision. Probability feedback combines the selected behavior with a probability-weighted summary of alternatives to guide subsequent predictions. Relation-aware trajectory learning incorporates collaborative transition signals and later credit assignment into training on model-generated trajectories. Experiments on four public datasets demonstrate that TraGR consistently outperforms state-of-the-art baselines across different prediction horizons. Code: this https URL.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2611.16159v1",
+        "source_title": "From Tokens to Behaviors: Rethinking Generative Recommendation for User Trajectory Prediction",
+        "source_version": "v1",
+        "retrieved_at": "2026-11-13T23:07:39Z",
+        "license": null
+      },
+      "source_dates": {
+        "published_at": "2026-11-12T01:42:27Z",
+        "updated_at": "2026-11-12T01:42:27Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2611.16159v1",
+        "verified_at": "2026-11-13T23:07:39Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "TraGR predicts future user interactions at the behavior level: semantic-ID tokens are generated in parallel within an interaction, while recurrent states model transitions between behaviors. Probability-weighted feedback preserves information about alternative items, and trajectory learning uses collaborative transition signals and later credit assignment on model-generated sequences. Four public datasets show gains across prediction horizons. The architecture separates within-item decoding from between-behavior evolution, offering a design for efficient trajectory generation without an established online serving gain.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-14",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.16159v1",
+            "https://arxiv.org/pdf/2611.16159v1"
+          ]
+        },
+        "zh": {
+          "text": "TraGR 以行为为单位预测用户未来交互：同一次交互内并行生成语义 ID token，行为之间用循环状态建模转移；概率加权反馈保留其他候选的信息，并在模型生成的轨迹上结合协同转移信号和后续贡献分配训练。四个公开数据集上的不同预测跨度均报告改善。它将商品内部解码与行为之间的演化分开，为高效轨迹生成提供了架构思路，尚未证明线上服务收益。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-14",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.16159v1",
+            "https://arxiv.org/pdf/2611.16159v1"
+          ]
+        }
+      },
+      "added_at": "2026-11-13T23:10:28Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2611.16159"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2611.15445",
+      "title": "ReAlign: Reward-Guided Preference Alignment for Generative Re-Ranking",
+      "collection": "related",
+      "category": "generative-recommendation",
+      "affiliation": "Intuit Credit Karma",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2611.15445"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Re-ranking refines the upstream ranked list to maximize listwise user utility. Existing two-stage generator-evaluator methods decouple list generation from list evaluation, leaving the generator without direct access to the listwise utility signal, while scoring-based one-stage methods score items under a fixed upstream permutation context without explicitly searching the permutation space. We propose \\textbf{ReAlign}, a reward-guided preference alignment framework that couples a listwise reward model with a candidate-aware autoregressive generator. The reward model decomposes the listwise reward into position-wise contributions, modeling user exposure through a survival-based exposure module and item value through per-objective heads for heterogeneous engagement signals. The generator is trained in two stages: supervised pre-training on logged exposure lists to establish a relevance prior, followed by reward-guided post-training that aligns the generator with the reward model through complementary distribution and ranking alignment over within-pool standardized rewards. Extensive offline experiments show that ReAlign consistently outperforms existing state-of-the-art baselines.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2611.15445v1",
+        "source_title": "ReAlign: Reward-Guided Preference Alignment for Generative Re-Ranking",
+        "source_version": "v1",
+        "retrieved_at": "2026-11-13T23:07:46Z",
+        "license": null
+      },
+      "source_dates": {
+        "published_at": "2026-11-11T13:16:18Z",
+        "updated_at": "2026-11-11T13:16:18Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2611.15445v1",
+        "verified_at": "2026-11-13T23:07:46Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "ReAlign couples a candidate-aware autoregressive reranker with a listwise reward model. The reward separates position-wise exposure from item value across engagement objectives. Supervised training first learns from logged lists, then reward-guided post-training aligns both generation distributions and ranking preferences using standardized within-pool rewards. Offline comparisons report improvements over evaluated baselines. The contribution is connecting list generation to an explicit utility signal, which can inform generative ranking systems; online business gains are not established.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-14",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.15445v1",
+            "https://arxiv.org/pdf/2611.15445v1"
+          ]
+        },
+        "zh": {
+          "text": "ReAlign 将候选感知的自回归重排器与列表奖励模型连接起来，奖励按位置拆分曝光概率和多种互动目标下的商品价值。生成器先从日志列表监督学习，再利用候选池内标准化奖励，同时对齐生成分布与排序偏好。离线实验优于所测基线。它为生成式排序接入明确的列表效用信号提供了方法，尚无线上业务收益验证。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-14",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.15445v1",
+            "https://arxiv.org/pdf/2611.15445v1"
+          ]
+        }
+      },
+      "added_at": "2026-11-13T23:10:28Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2611.15445"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2611.15434",
+      "title": "SurvEval: Listwise Re-Ranking Evaluator via Survival-Based Exposure and Multi-Objective Value Modeling",
+      "collection": "related",
+      "category": "retrieval-reranking-scaling",
+      "affiliation": "Intuit Credit Karma",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2611.15434"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Re-ranking is a crucial stage in recommender systems, yet existing evaluators oversimplify user browsing assumptions and collapse multi-objective signals into a single scalar, limiting their ability to reflect true listwise utility. We propose \\textbf{SurvEval}, a listwise evaluator that jointly models user exposure and item value for re-ranking evaluation. We formalize the sequential browsing process as a discrete-time survival model, deriving monotonically decreasing reaching probabilities that capture the cascading structure of user browsing. We further introduce a multi-objective value estimation module with dedicated per-objective prediction heads and uncertainty-based loss weighting to adaptively balance objectives of varying scales and noise levels. Both components are jointly optimized via a unified transformer backbone, and the listwise utility is obtained by summing the position-wise products of reaching probabilities and conditional item value estimates. Extensive experiments on KuaiRand and Avito demonstrate that SurvEval achieves superior performance over state-of-the-art baselines.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2611.15434v1",
+        "source_title": "SurvEval: Listwise Re-Ranking Evaluator via Survival-Based Exposure and Multi-Objective Value Modeling",
+        "source_version": "v1",
+        "retrieved_at": "2026-11-13T23:07:53Z",
+        "license": null
+      },
+      "source_dates": {
+        "published_at": "2026-11-11T13:05:16Z",
+        "updated_at": "2026-11-11T13:05:16Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2611.15434v1",
+        "verified_at": "2026-11-13T23:07:53Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "SurvEval estimates listwise utility by multiplying each position’s reaching probability by its conditional item value, then summing across the list. A discrete-time survival model captures sequential browsing; separate objective heads and uncertainty-based loss weights balance heterogeneous feedback on a shared transformer. KuaiRand and Avito experiments compare evaluation performance against existing baselines. This offers a structured reward or evaluation component for scaled reranking pipelines, while the browsing model remains an assumption and no online lift is demonstrated.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-14",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.15434v1",
+            "https://arxiv.org/pdf/2611.15434v1"
+          ]
+        },
+        "zh": {
+          "text": "SurvEval 将用户到达每个位置的概率与该位置商品的条件价值相乘，再累加得到列表效用。离散时间生存模型刻画顺序浏览，共享 Transformer 上的多目标预测头和不确定性损失权重平衡不同反馈。KuaiRand、Avito 实验比较了评估效果。它可作为大规模重排的奖励或评估组件，但浏览模型仍有假设，论文未证明线上收益。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-14",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.15434v1",
+            "https://arxiv.org/pdf/2611.15434v1"
+          ]
+        }
+      },
+      "added_at": "2026-11-13T23:10:28Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2611.15434"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2611.15426",
+      "title": "SimRec: Learning to Search, Ask, and Recommend from Simulated Interaction",
+      "collection": "related",
+      "category": "generative-recommendation",
+      "affiliation": "Zhejiang University; Tsinghua University; Hikvision Research Institute",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2611.15426"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "LLM-based recommendation agents can search catalogs, inspect products, ask users, and revise rejected recommendations. However, these behaviors are often governed by hand-designed workflows, while existing training methods optimize isolated components such as query rewriting or list ranking rather than the interaction policy as a whole. We present SimRec, a reinforcement learning framework that trains the full interaction policy of a tool-integrated recommendation agent. SimRec introduces two components. A task-anchored user simulator provides feedback on every recommendation: conditioned on the current task need rather than on user profile, and it can be an external LLM or the recommender itself under self-play. A task-aligned reward optimizes the whole trajectory with GRPO, crediting natural retrieval quality and valid tool use alongside the final hit, with training-only target injection to handle sparse hits over large catalogs. On ESCI and Amazon C4, SimRec improves the NDCG@100 of a Qwen3-4B agent from 32.23% to 35.42% and from 22.94% to 24.72%}, outperforming training-free agents on far larger backbones and task-aligned baselines on NDCG. Analysis shows that the trained agent verifies candidates, uses preferences, and recovers from rejected recommendations far more often than its untrained counterpart. Our code is available at this https URL .",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2611.15426v1",
+        "source_title": "SimRec: Learning to Search, Ask, and Recommend from Simulated Interaction",
+        "source_version": "v1",
+        "retrieved_at": "2026-11-13T23:08:00Z",
+        "license": null
+      },
+      "source_dates": {
+        "published_at": "2026-11-11T12:53:52Z",
+        "updated_at": "2026-11-11T12:53:52Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2611.15426v1",
+        "verified_at": "2026-11-13T23:08:00Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "SimRec trains the complete search, clarification and recommendation policy of a tool-using agent with reinforcement learning. A task-conditioned simulator supplies feedback, and trajectory rewards include retrieval quality, valid tool use and the final hit; target injection is used only during training to address sparse successes. ESCI and Amazon C4 experiments improve a Qwen3-4B agent over its untrained counterpart and evaluated alternatives. This suggests a way to spend model capacity on useful interaction behavior, but simulated feedback and offline ranking gains are not live-user evidence.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-14",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.15426v1",
+            "https://arxiv.org/pdf/2611.15426v1"
+          ]
+        },
+        "zh": {
+          "text": "SimRec 用强化学习训练推荐智能体完整的搜索、追问和推荐策略。按任务条件运行的用户模拟器提供反馈，轨迹奖励同时考虑检索质量、有效工具调用和最终命中；为缓解命中稀疏，只在训练时注入目标候选。ESCI 与 Amazon C4 实验中，Qwen3-4B 智能体优于未训练版本及所测方案。它说明模型能力可用于改进交互策略，但模拟反馈和离线排序收益不等于真实用户验证。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-14",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.15426v1",
+            "https://arxiv.org/pdf/2611.15426v1"
+          ]
+        }
+      },
+      "added_at": "2026-11-13T23:10:28Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2611.15426"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2611.16219",
+      "title": "GC-MoE on SM120: Overlapping Expert-Parallel Token Dispatch with Warp-Level FP8xFP4 Block-Scaled MMA on Consumer Blackwell",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "Alibaba Inc.",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2611.16219"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Expert-parallel Mixture-of-Experts decoding is latency bound: each layer serializes a token exchange, a grouped GEMM over routed experts, and a combine, while only a few tokens per rank are in flight. Prior GC-MoE fused these phases into one persistent, Green-Context-partitioned CUDA Graph on Hopper (SM90) and datacenter Blackwell (SM100). This paper rebuilds the operator for SM120 (compute capability 12.0, e.g. RTX PRO 5000) over PCIe. SM120 exposes block-scaled tensor cores only through warp-level this http URL::mxf8f6f4: no tensor memory, no two-CTA MMA, no cluster multicast. We rebuild the kernel around a swap-AB warp-level block-scaled MMA with FP4 weights in the register A operand and FP8 activations in B, plus SM120-specific mechanisms: scale-byte selection through MMA immediates, a compact-weights path, an adaptive token-tile geometry, an expert-granular streaming dispatch with a batched bulk-pull engine and a 64-bit deduplicating pull cache, full-width BF16 returns drained by resident relay copiers over a position-major arena, and shared experts folded into the compute role. On 8xRTX PRO 5000 over PCIe the operator is 1.522x and 1.387x faster than the FlashInfer CuTe DSL W4A8 MegaMoE and the Cake MegaMoE across 18 decode points (18/18 wins each), and 1.388x faster than Cake with shared experts fused; all 94 numerical cases and 752 per-rank checks pass, at cross-operator cosine similarity of at least 0.9999997.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2611.16219v1",
+        "source_title": "GC-MoE on SM120: Overlapping Expert-Parallel Token Dispatch with Warp-Level FP8xFP4 Block-Scaled MMA on Consumer Blackwell",
+        "source_version": "v1",
+        "retrieved_at": "2026-11-13T23:08:07Z",
+        "license": null
+      },
+      "source_dates": {
+        "published_at": "2026-11-12T03:10:15Z",
+        "updated_at": "2026-11-12T03:10:15Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2611.16219v1",
+        "verified_at": "2026-11-13T23:08:07Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "GC-MoE adapts a persistent fused dispatch-compute-combine operator to SM120 consumer Blackwell GPUs over PCIe. It overlaps expert token transfers with warp-level FP8-activation/FP4-weight matrix multiplication and uses hardware-specific buffering and synchronization. Eight-RTX-PRO-5000 operator benchmarks outperform the evaluated MegaMoE implementations across 18 decode points, with numerical checks reported. The result is a hardware-specific kernel improvement relevant to sparse serving; it is not an end-to-end recommendation throughput measurement.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-14",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.16219v1",
+            "https://arxiv.org/pdf/2611.16219v1"
+          ]
+        },
+        "zh": {
+          "text": "GC-MoE 将持续执行的分发、计算、合并融合算子适配到通过 PCIe 连接的 SM120 消费级 Blackwell GPU，重叠专家 token 传输与 FP8 激活、FP4 权重矩阵乘法，并针对硬件设计缓冲和同步。八张 RTX PRO 5000 的算子测试在 18 个解码点上优于所测 MegaMoE 实现，并报告数值检查。这是稀疏服务可借鉴的硬件内核优化，不是推荐端到端吞吐测量。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-14",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.16219v1",
+            "https://arxiv.org/pdf/2611.16219v1"
+          ]
+        }
+      },
+      "added_at": "2026-11-13T23:10:28Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2611.16219"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2611.15842",
+      "title": "Fewer Expert Transfers Without Changing Routing: Expert Eviction for MoE Offloading",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "CarbonForge; Mila; Université de Montréal",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2611.15842"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "A mixture-of-experts (MoE) language model uses only a few experts per token, so a server can keep most expert weights in CPU memory and copy an expert to the GPU when the router requests it. Recent methods train the router to keep the same experts for several tokens, and treat fewer routing switches as a proxy for fewer copies. We measure the trade-off directly, in a harness that performs and times real CPU-to-GPU copies for OLMoE-1B-7B. On an L40S GPU, every tested policy that holds an expert set fixed and decodes faster than the least-recently-used (LRU) cache increases next-token loss by at least 0.067 nats. A change that leaves every routing decision intact does better: when the cache must evict an expert, evict the one whose next use lies farthest in the future. This rule copies 2.1x fewer experts than LRU at no loss in quality and is within 3.5% of the fewest copies possible. It needs future requests; the next sixteen tokens of demand recover 96% of its reduction, whereas a rule based on counts of past requests recovers 27%.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2611.15842v1",
+        "source_title": "Fewer Expert Transfers Without Changing Routing: Expert Eviction for MoE Offloading",
+        "source_version": "v1",
+        "retrieved_at": "2026-11-13T23:08:13Z",
+        "license": null
+      },
+      "source_dates": {
+        "published_at": "2026-11-11T18:54:03Z",
+        "updated_at": "2026-11-11T18:54:03Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2611.15842v1",
+        "verified_at": "2026-11-13T23:08:13Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "The study measures actual CPU-to-GPU expert transfers for offloaded OLMoE-1B-7B. Holding expert sets fixed can trade faster decoding for higher loss. Keeping routing unchanged and evicting the expert whose next use is farthest away instead reduces copies by 2.1 times versus LRU without quality loss. This is a future-demand oracle: sixteen-token lookahead captures most of its benefit, while a past-count heuristic captures much less. It provides a cache-policy upper bound and design target, not a deployable predictor of future requests.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-14",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.15842v1",
+            "https://arxiv.org/pdf/2611.15842v1"
+          ]
+        },
+        "zh": {
+          "text": "论文在卸载到 CPU 的 OLMoE-1B-7B 上测量真实专家传输。固定专家集合虽可加快解码，却可能增加损失；保持路由不变、淘汰下次使用最晚的专家，相比 LRU 可将复制次数降至约 1/2.1，且不损失质量。但该规则需要未来请求，前瞻 16 个 token 可获得大部分收益，基于历史计数的规则只能获得较少收益。它提供的是缓存策略的理想参照和设计目标，并非已解决未来需求预测。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-14",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.15842v1",
+            "https://arxiv.org/pdf/2611.15842v1"
+          ]
+        }
+      },
+      "added_at": "2026-11-13T23:10:28Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2611.15842"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2611.15271",
+      "title": "MoE Pretraining:Parallelism Layout Changes the Model, Not Quality",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "Independent Researcher",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2611.15271"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Large Mixture-of-Experts (MoE) models are trained across many machines, and the way the work is split, the parallelism layout, often changes between runs: a job resumes on a different GPU count, a cluster is resized, or an ablation runs on a new setup. In exact arithmetic the layout should not matter, but in real arithmetic it changes the order in which numbers are added, and some MoE rules such as load balancing and expert capacity are often computed per machine. We ask whether the layout changes the trained MoE model. We pretrain the same small MoE language models (25M to 117M parameters, 20M FineWeb-Edu tokens) with the same seed, data and hyperparameters under 9 data-parallel and expert-parallel layouts, in fp32 on CPUs and fp16 on a GPU, and compare each run with the effect of a new random seed. Across 80 runs we find: (1) The layout does not change model quality, but it does change the model: final predictions differ about 80% as much as with a new seed, and over 90% of routing decisions differ. Any layout, a one-bit change to one weight, or a different CPU thread count has the same effect. (2) The cause is the router: decisions that flip are almost exactly those where two experts were nearly tied (AUC 0.97 to 1.00 in the first 16 steps). (3) More, smaller experts create more near-ties (2.7% with 8 experts, 23% with 64) and less reproducible routing (68% vs. 100% of decisions differ), but outputs do not drift further. (4) A dense model of the same active size is far more stable (0.12x the seed level in fp32, 0.58x in fp16), while the MoE reaches about 0.8x at both precisions and twice as fast. (5) When pretraining resumes on a new layout, timing matters: switching at 84% of pretraining barely changes the final model, while switching at 10%, just after warm-up, changes it substantially. We release code, run logs and data.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2611.15271v1",
+        "source_title": "MoE Pretraining:Parallelism Layout Changes the Model, Not Quality",
+        "source_version": "v1",
+        "retrieved_at": "2026-11-13T23:08:20Z",
+        "license": null
+      },
+      "source_dates": {
+        "published_at": "2026-11-11T10:02:28Z",
+        "updated_at": "2026-11-11T10:02:28Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2611.15271v1",
+        "verified_at": "2026-11-13T23:08:20Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "The paper studies how data- and expert-parallel layouts affect MoE training reproducibility. Across 80 small-model runs, changing layout substantially changes routing and predictions without a corresponding quality change in the evaluated settings. Near-ties in expert selection amplify arithmetic perturbations; changing layout early in training has more effect than changing it late. Experiments use 25M–117M models and 20M training tokens. This motivates controlling layout when comparing sparse-model experiments, while extrapolation to industrial-scale recommendation remains unverified.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-14",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.15271v1",
+            "https://arxiv.org/pdf/2611.15271v1"
+          ]
+        },
+        "zh": {
+          "text": "论文研究数据并行、专家并行布局对 MoE 训练复现的影响。80 次小模型运行中，布局变化明显改变路由与预测，却未在所测条件下相应改变质量；专家选择的近似平局会放大数值扰动，训练早期换布局的影响大于后期。实验规模为 25M–117M 参数、20M 训练 token。这提示比较稀疏扩模实验时应控制并行布局，工业推荐规模上的结论仍待验证。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-14",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.15271v1",
+            "https://arxiv.org/pdf/2611.15271v1"
+          ]
+        }
+      },
+      "added_at": "2026-11-13T23:10:28Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2611.15271"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2611.16488",
+      "title": "Active Learning of Approximate LLM Ranking for Energy-Efficient Retrieval of Long Queries",
+      "collection": "related",
+      "category": "retrieval-reranking-scaling",
+      "affiliation": "Bar Ilan University",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2611.16488"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Search engines and Large Language Models (LLMs) offer complementary strengths for document retrieval: lexical retrievers which rely on keyword matching are fast and energy-efficient, whereas LLMs capture semantic meaning and excel at interpreting long, context-rich queries. However, this comes at a cost that is computationally and energetically prohibitive.\nWe propose the LLM Active Approximation Model (LAAM), a hybrid retrieval framework that introduces a lightweight learned predictor which serves as an intermediary between semantic retrieval and LLM retrieval. LAAM is refined through an active learning loop where an LLM labels a small number of documents. By concentrating LLM evaluations on the most informative documents, the framework substantially reduces inference cost while preserving retrieval effectiveness.\nWe evaluate the proposed framework on TREC Robust 2004 using Lucene with BM25 retrieval and DeepSeek v3 as the LLM, under three levels of query verbosity. For verbose queries, LAAM achieves 87% of average P@10 achieved by DeepSeek's reranking (0.459 vs. 0.526), while requiring only 3.3% of the per-query energy consumption. LAAM is statistically significantly better than BM25 and is indistinguishable from DeepSeek on average precision, though not on MAP (Friedman test, P<0.05 with post-hoc testing).\nOverall, our results demonstrate that selectively approximating LLM relevance judgments through active learning enables retrieval accuracy to be controlled directly through the evaluation (and consequently energy) budget. Rather than committing to either inexpensive (and less accurate) lexical retrieval or exhaustive (and expensive) LLM reranking, our framework exposes a continuous spectrum of operating points along the energy--accuracy curve, allowing practitioners to select how to trade retrieval quality with computational budget.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2611.16488v1",
+        "source_title": "Active Learning of Approximate LLM Ranking for Energy-Efficient Retrieval of Long Queries",
+        "source_version": "v1",
+        "retrieved_at": "2026-11-13T23:08:27Z",
+        "license": null
+      },
+      "source_dates": {
+        "published_at": "2026-11-12T08:59:23Z",
+        "updated_at": "2026-11-12T08:59:23Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2611.16488v1",
+        "verified_at": "2026-11-13T23:08:27Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "LAAM uses active learning to approximate expensive LLM relevance judgments with a lightweight predictor. It requests labels for informative documents rather than reranking every candidate with the large model. On TREC Robust 2004 with verbose queries, it reaches 87% of DeepSeek v3’s P@10 with 3.3% of its per-query energy use; comparisons vary by ranking metric. The framework exposes a retrieval quality-energy tradeoff useful for compute allocation, but its evidence is limited to the evaluated retrieval setup rather than recommendation deployment.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-14",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.16488v1",
+            "https://arxiv.org/pdf/2611.16488v1"
+          ]
+        },
+        "zh": {
+          "text": "LAAM 用主动学习训练轻量预测器近似昂贵的大模型相关性判断，只请大模型标注信息量较高的文档。在 TREC Robust 2004 的冗长查询设置中，它以 DeepSeek v3 每查询能耗的 3.3% 达到其 P@10 的 87%，不同排序指标上的比较结论并不相同。该方法为检索计算分配提供了质量与能耗的权衡，证据限于所测检索环境，尚非推荐部署结果。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-14",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.16488v1",
+            "https://arxiv.org/pdf/2611.16488v1"
+          ]
+        }
+      },
+      "added_at": "2026-11-13T23:10:28Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2611.16488"
       },
       "change_history": [],
       "reading_tier": null

@@ -8,13 +8,13 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 
 - [Meta](#company-meta) (64)
 - [ByteDance / TikTok](#company-bytedance-tiktok) (29)
-- [Alibaba](#company-alibaba) (63)
+- [Alibaba](#company-alibaba) (66)
 - [Meituan](#company-meituan) (11)
 - [Tencent](#company-tencent) (33)
 - [Google](#company-google) (28)
 - [LinkedIn](#company-linkedin) (7)
 - [NetEase](#company-netease) (2)
-- [Kuaishou](#company-kuaishou) (41)
+- [Kuaishou](#company-kuaishou) (43)
 - [Huawei](#company-huawei) (13)
 - [Baidu](#company-baidu) (11)
 - [Shopee](#company-shopee) (4)
@@ -101,6 +101,9 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [Hostinger](#company-hostinger) (2)
 - [Intellifusion](#company-intellifusion) (1)
 - [Shanghai Smart Logic Technology](#company-shanghai-smart-logic) (1)
+- [Intuit Credit Karma](#company-intuit-credit-karma) (2)
+- [Hikvision](#company-hikvision) (1)
+- [CarbonForge](#company-carbonforge) (1)
 
 <a id="company-meta"></a>
 
@@ -272,6 +275,9 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [VARG: Value-Aware and Ranking-Aligned Generative Retrieval for Dynamic E-commerce Search](related/generative-recommendation.md#paper-2609-14493) · 2026 · Related
 - [OverlapAdvisor: Modeling and Adapting Computation-Communication Overlap for Distributed MoE Serving](related/architecture-innovations-beyond-recommendation.md#paper-2611-11857) · 2026 · Related
 - [ADIndex: Layer-Adaptive Sparse Attention Indexing via Group-Level Distillation](related/architecture-innovations-beyond-recommendation.md#paper-2611-12956) · 2026 · Related
+- [ReSID: Rethinking Long-Tail Retrieval in Generative Recommendation through Item Reachability](topics/efficiency-deployment.md#paper-2611-16404) · 2026 · Core
+- [TriGen: A Generative Paradigm for Trigger-Induced Recommendation](related/generative-recommendation.md#paper-2611-16395) · 2026 · Related
+- [GC-MoE on SM120: Overlapping Expert-Parallel Token Dispatch with Warp-Level FP8xFP4 Block-Scaled MMA on Consumer Blackwell](related/architecture-innovations-beyond-recommendation.md#paper-2611-16219) · 2026 · Related
 
 <a id="company-meituan"></a>
 
@@ -424,6 +430,8 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [TAGR: Temporally Adaptive Generative Recommendation for Industrial Live-Streaming Advertising](related/generative-recommendation.md#paper-2608-24034) · 2026 · Related
 - [MuonRec: Shifting the Optimizer Paradigm Beyond Adam in Scalable Generative Recommendation](topics/efficiency-deployment.md#paper-2603-00416) · 2026 · Core
 - [RecoGEM: A Serving System for Production-Scale Generative Recommendation](topics/efficiency-deployment.md#paper-2611-12296) · 2026 · Core
+- [KuaiRecV2: Benchmarking Large-Scale Continual Learning for Diversified and Multi-task Recommendation](related/other.md#paper-2611-16795) · 2026 · Related
+- [From Tokens to Behaviors: Rethinking Generative Recommendation for User Trajectory Prediction](related/generative-recommendation.md#paper-2611-16159) · 2026 · Related
 
 <a id="company-huawei"></a>
 
@@ -1065,3 +1073,22 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 ## Shanghai Smart Logic Technology
 
 - [Beyond the Log-Linear Frontier: Pre-Asymptotic Analysis of Finite-Budget Neural Scaling Laws](related/architecture-innovations-beyond-recommendation.md#paper-2611-13534) · 2026 · Related
+
+<a id="company-intuit-credit-karma"></a>
+
+## Intuit Credit Karma
+
+- [ReAlign: Reward-Guided Preference Alignment for Generative Re-Ranking](related/generative-recommendation.md#paper-2611-15445) · 2026 · Related
+- [SurvEval: Listwise Re-Ranking Evaluator via Survival-Based Exposure and Multi-Objective Value Modeling](related/retrieval-reranking-scaling.md#paper-2611-15434) · 2026 · Related
+
+<a id="company-hikvision"></a>
+
+## Hikvision
+
+- [SimRec: Learning to Search, Ask, and Recommend from Simulated Interaction](related/generative-recommendation.md#paper-2611-15426) · 2026 · Related
+
+<a id="company-carbonforge"></a>
+
+## CarbonForge
+
+- [Fewer Expert Transfers Without Changing Routing: Expert Eviction for MoE Offloading](related/architecture-innovations-beyond-recommendation.md#paper-2611-15842) · 2026 · Related
