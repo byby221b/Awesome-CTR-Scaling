@@ -6,7 +6,7 @@
 
 Transferable ideas from general-purpose model architecture research.
 
-323 papers · Updated 2026-11-14
+323 papers · Updated 2026-11-15
 
 <a id="paper-2606-16825"></a>
 

@@ -4,7 +4,7 @@
 
 A curated library of **scaling laws and scalable ranking/CTR models** for industrial recommendation systems.
 
-**782 papers** · **133 core** · **649 related** · Updated 2026-11-14
+**782 papers** · **133 core** · **649 related** · Updated 2026-11-15
 
 <a id="table-of-contents"></a>
 

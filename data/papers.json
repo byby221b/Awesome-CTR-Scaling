@@ -5,7 +5,7 @@
     "description": "Scaling laws and scalable ranking models for industrial recommendation.",
     "repository_url": "https://github.com/byby221b/Awesome-CTR-Scaling",
     "site_url": "https://byby221b.github.io/Awesome-CTR-Scaling/",
-    "updated": "2026-11-14",
+    "updated": "2026-11-15",
     "source_commit": "31ad30becff83ca14a01f37fc99d52ba79f85565",
     "scope": "We cover papers that (1) study scaling laws for recommendation models, (2) propose scalable Transformer-based architectures for CTR/ranking, (3) address efficiency challenges in scaling up industrial ranking systems, or (4) explore novel paradigms (e.g., sparse scaling, generative pre-training, foundation models) for scalable recommendation.",
     "history": {
@@ -55357,13 +55357,17 @@
       "collection": "related",
       "category": "other",
       "affiliation": "University of Science and Technology of China; Kuaishou Technology",
-      "venue": "arXiv",
+      "venue": "NeurIPS",
       "year": 2026,
       "tags": [],
       "links": [
         {
           "label": "Paper",
           "url": "https://arxiv.org/abs/2611.16795"
+        },
+        {
+          "label": "Venue",
+          "url": "https://neurips.cc/virtual/2026/poster/139710"
         }
       ],
       "original_abstract": {
@@ -55410,7 +55414,24 @@
         "kind": "catalog_entry",
         "source_url": "https://arxiv.org/abs/2611.16795"
       },
-      "change_history": [],
+      "change_history": [
+        {
+          "at": "2026-11-14T23:07:44Z",
+          "kind": "venue_update",
+          "fields": [
+            "venue"
+          ],
+          "source_url": "https://neurips.cc/virtual/2026/poster/139710"
+        },
+        {
+          "at": "2026-11-14T23:07:44Z",
+          "kind": "metadata_enrichment",
+          "fields": [
+            "links"
+          ],
+          "source_url": "https://neurips.cc/virtual/2026/poster/139710"
+        }
+      ],
       "reading_tier": null
     },
     {

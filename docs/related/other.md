@@ -6,7 +6,7 @@
 
 Adjacent research, diagnostics and other relevant recommendation methods.
 
-23 papers · Updated 2026-11-14
+23 papers · Updated 2026-11-15
 
 <a id="paper-2411-13700"></a>
 
@@ -98,4 +98,4 @@ Adjacent research, diagnostics and other relevant recommendation methods.
 
 <a id="paper-2611-16795"></a>
 
-- **KuaiRecV2: Benchmarking Large-Scale Continual Learning for Diversified and Multi-task Recommendation**: KuaiRecV2 evaluates recommendation under continual learning, diversity and multi-task demands. Its industrial dataset combines million-scale multimodal items, 30 days of interactions and a changing video candidate pool. The benchmark jointly measures retrieval accuracy, diversity and task performance instead of treating a single offline score as sufficient progress. This provides a more realistic setting for testing scaled recommendation models under distribution shifts; it is a benchmark contribution, not evidence that a particular model improves online outcomes. — [Paper](https://arxiv.org/abs/2611.16795) (University of Science and Technology of China; Kuaishou Technology · arXiv 2026). Reading priority: Unrated.
+- **KuaiRecV2: Benchmarking Large-Scale Continual Learning for Diversified and Multi-task Recommendation**: KuaiRecV2 evaluates recommendation under continual learning, diversity and multi-task demands. Its industrial dataset combines million-scale multimodal items, 30 days of interactions and a changing video candidate pool. The benchmark jointly measures retrieval accuracy, diversity and task performance instead of treating a single offline score as sufficient progress. This provides a more realistic setting for testing scaled recommendation models under distribution shifts; it is a benchmark contribution, not evidence that a particular model improves online outcomes. — [Paper](https://arxiv.org/abs/2611.16795) · [Venue](https://neurips.cc/virtual/2026/poster/139710) (University of Science and Technology of China; Kuaishou Technology · NeurIPS 2026). Reading priority: Unrated.
