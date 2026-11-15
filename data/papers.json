@@ -5,7 +5,7 @@
     "description": "Scaling laws and scalable ranking models for industrial recommendation.",
     "repository_url": "https://github.com/byby221b/Awesome-CTR-Scaling",
     "site_url": "https://byby221b.github.io/Awesome-CTR-Scaling/",
-    "updated": "2026-11-15",
+    "updated": "2026-11-16",
     "source_commit": "31ad30becff83ca14a01f37fc99d52ba79f85565",
     "scope": "We cover papers that (1) study scaling laws for recommendation models, (2) propose scalable Transformer-based architectures for CTR/ranking, (3) address efficiency challenges in scaling up industrial ranking systems, or (4) explore novel paradigms (e.g., sparse scaling, generative pre-training, foundation models) for scalable recommendation.",
     "history": {
@@ -1637,6 +1637,30 @@
       "name": "CarbonForge",
       "affiliation_aliases": [
         "CarbonForge"
+      ],
+      "legacy_entries": []
+    },
+    {
+      "id": "reddit",
+      "name": "Reddit",
+      "affiliation_aliases": [
+        "Reddit"
+      ],
+      "legacy_entries": []
+    },
+    {
+      "id": "naver",
+      "name": "NAVER",
+      "affiliation_aliases": [
+        "NAVER AI Lab"
+      ],
+      "legacy_entries": []
+    },
+    {
+      "id": "openai",
+      "name": "OpenAI",
+      "affiliation_aliases": [
+        "OpenAI"
       ],
       "legacy_entries": []
     }
@@ -56054,6 +56078,378 @@
       "added_provenance": {
         "kind": "catalog_entry",
         "source_url": "https://arxiv.org/abs/2611.16488"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2611.15137",
+      "title": "Serving-Aligned Entire-Space Conversion Modeling via Click-Through Rate Knowledge Distillation",
+      "collection": "related",
+      "category": "knowledge-distillation-compression",
+      "affiliation": "Arizona State University; Reddit",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2611.15137"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Recommendation systems may use predicted click-through conversion rate (pCTCVR), the product of predicted click-through rate (pCTR) and post-click conversion rate (pCVR), to guide ranking decisions. Many pCVR models build on the Entire Space Multi-Task Model (ESMM), which jointly trains pCVR and auxiliary pCTR towers using pCTR and pCTCVR losses, but deploys only the pCVR tower. At serving time, this tower may be paired with a separately trained pCTR model, creating a training-serving mismatch in pCTCVR when its predictions differ from those of the auxiliary pCTR tower. In this paper, we use knowledge distillation (KD) from logged serving pCTR scores to supervise ESMM's auxiliary pCTR tower and improve training-serving pCTCVR alignment. We denote variants by KD-$\\alpha$, where $\\alpha$ controls the hard-label loss weight. On the Ali-CCP dataset, KD-0.3, the best variant on serving pCTCVR, increases ROC-AUC not only for serving pCTCVR but also for pCVR by 2.1% and 1.6%, respectively, and PR-AUC by 9.9% and 8.8%, respectively, relative to the ESMM baseline. We also test negative downsampling with 5% nonclick retention. Downsampled KD-0.3 increases mean AUC for serving pCTCVR and pCVR by 1.2% and 0.9%, respectively, -and PR-AUC by 8.5% and 4.5%, respectively, relative to downsampled ESMM.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2611.15137v1",
+        "source_title": "Serving-Aligned Entire-Space Conversion Modeling via Click-Through Rate Knowledge Distillation",
+        "source_version": "v1",
+        "retrieved_at": "2026-11-15T23:07:02Z",
+        "license": null
+      },
+      "source_dates": {
+        "published_at": "2026-11-11T07:25:25Z",
+        "updated_at": "2026-11-11T07:25:25Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2611.15137v1",
+        "verified_at": "2026-11-15T23:07:02Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "Serving-time click and conversion models can be trained separately, so the auxiliary click predictor used to train ESMM may disagree with the predictor used at deployment. This paper distills logged serving click scores into ESMM’s auxiliary tower to align the product used for ranking. Ali-CCP experiments report improved conversion and joint click-conversion metrics, including a setting retaining only 5% of nonclicks. The useful idea is to make the deployed model’s outputs part of the training target when independently developed ranking components are combined; these offline results do not establish online business gains or a scaling law.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-16",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.15137v1",
+            "https://arxiv.org/pdf/2611.15137v1"
+          ]
+        },
+        "zh": {
+          "text": "点击与转化模型分别训练时，ESMM 训练所用的辅助点击率模型可能与线上模型不一致，影响两者乘积形成的排序分数。论文把日志中的线上点击率预测作为蒸馏目标，监督辅助点击率分支，使训练更贴近实际组合方式。Ali-CCP 实验中，转化及点击后转化联合指标得到改善，只保留 5% 未点击样本时也有收益。可借鉴点是将实际服务模型的输出纳入训练目标，减少独立组件组合时的偏差；现有证据来自离线实验。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-16",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.15137v1",
+            "https://arxiv.org/pdf/2611.15137v1"
+          ]
+        }
+      },
+      "added_at": "2026-11-15T23:09:55Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2611.15137"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2611.15569",
+      "title": "TraceKV: Policy-Preserving Low-Rank KV Cache Compression for Reasoning Vision-Language Models",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "Duke University",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2611.15569"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Reasoning vision-language models (VLMs) impose substantial KV cache demands from both large multimodal contexts and growing reasoning traces. Low-rank KV compression has emerged as a promising paradigm that stores low-dimensional latents of KV states and can be combined with quantization. However, existing low-rank methods often induce growing predictive policy drift from the dense model when compressing reasoning KV states, resulting in reasoning failures. We identify two key causes of this degradation: calibration-state mismatch between static contexts and on-policy reasoning states, and unequal error sensitivity across KV states. To address these challenges, we propose TraceKV, a training-free low-rank KV compression framework that unifies on-policy calibration, sensitivity-aware SVD, and global rank allocation under a single policy-preserving principle, substantially reducing policy-KL divergence during reasoning. Experiments across multiple VLMs and visual reasoning benchmarks demonstrate superior accuracy--memory trade-offs, achieving near-lossless reasoning accuracy with 5.64$\\times$ KV cache compression when combined with quantization. Optimized low-rank attention kernels further deliver up to 1.83$\\times$ end-to-end decoding speedup. Code will be available at this https URL.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2611.15569v1",
+        "source_title": "TraceKV: Policy-Preserving Low-Rank KV Cache Compression for Reasoning Vision-Language Models",
+        "source_version": "v1",
+        "retrieved_at": "2026-11-15T23:07:09Z",
+        "license": "CC-BY-4.0"
+      },
+      "source_dates": {
+        "published_at": "2026-11-11T14:54:19Z",
+        "updated_at": "2026-11-11T14:54:19Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2611.15569v1",
+        "verified_at": "2026-11-15T23:07:09Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "TraceKV compresses the key-value cache of reasoning vision-language models without training. It calibrates on states generated by the model’s own reasoning process, weights low-rank approximation by sensitivity, and allocates ranks globally to limit changes in output distributions. Visual reasoning experiments report near-lossless accuracy at 5.64-fold cache compression when combined with quantization, with optimized kernels giving up to 1.83-fold end-to-end decoding speedup. Calibration that follows generated trajectories may inform generative recommendation serving, but recommendation accuracy and speed have not been tested.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-16",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.15569v1",
+            "https://arxiv.org/pdf/2611.15569v1"
+          ]
+        },
+        "zh": {
+          "text": "TraceKV 在无需训练的条件下压缩视觉语言推理模型的键值缓存。它用模型实际生成的推理状态做校准，按敏感程度进行低秩近似，并统一分配各处的秩，减少压缩对输出分布的扰动。视觉推理实验结合量化实现 5.64 倍缓存压缩，精度接近未压缩模型；优化内核的端到端解码加速最高为 1.83 倍。沿实际生成轨迹校准的思路可供生成式推荐服务参考，推荐任务的精度和速度尚未验证。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-16",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.15569v1",
+            "https://arxiv.org/pdf/2611.15569v1"
+          ]
+        }
+      },
+      "added_at": "2026-11-15T23:09:55Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2611.15569"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2611.16905",
+      "title": "Factored One-sided Adam-Moment for Practical and Scalable SOAP",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "NAVER AI Lab",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2611.16905"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Second-order optimizers (e.g., Shampoo, SOAP) have emerged as compelling alternatives to Adam/AdamW and promise faster per-step convergence than AdamW in transformer training. However, they still remain costly in practice, and even SOAP still pays substantial optimizer-state memory and eigendecomposition overhead. We ask whether the benefits of SOAP can be retained at nearly the efficiency of AdamW. In this paper, we answer yes with a lightweight SOAP variant, Factored One-sided Adam-Moment (FOAM). The path to practical impact is twofold: first, FOAM employs input-only preconditioning, dropping the output-side Kronecker factor to reduce memory and remove one eigendecomposition. The Kronecker structure of the Hessian shows that this is exact for a diagonal output-side curvature and nearly lossless for a near-diagonal one, as we observe empirically. Second, FOAM replaces SOAP's dense rotated second moment with a factored Adam-moment estimator based on row-by-column statistics. Under the K-FAC Fisher assumption with a diagonal output curvature, this estimator exactly recovers SOAP's dense second moment, and we measure only a 15-20% K-FAC violation, with negligible effect on the update. Our empirical results support the claim that FOAM matches strong SOAP and Muon baselines in validation loss across scales of large language model (LLM) pre-training, uses half of SOAP's optimizer state, runs at Muon-class wall-clock time, and retains robustness across a three-fold learning-rate range. The results hold from 124M to 760M parameters, demonstrating that SOAP's gains need not require SOAP's cost. Code: this https URL",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2611.16905v1",
+        "source_title": "Factored One-sided Adam-Moment for Practical and Scalable SOAP",
+        "source_version": "v1",
+        "retrieved_at": "2026-11-15T23:07:17Z",
+        "license": "CC-BY-4.0"
+      },
+      "source_dates": {
+        "published_at": "2026-11-12T14:59:01Z",
+        "updated_at": "2026-11-12T14:59:01Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2611.16905v1",
+        "verified_at": "2026-11-15T23:07:17Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "FOAM reduces the optimizer-state and matrix-decomposition costs of SOAP through input-side-only preconditioning and a row-by-column factorization of the rotated second moment. Its exact equivalence claims require stated curvature and Fisher assumptions. In language-model pretraining from 124M to 760M parameters, it matches strong SOAP and Muon baselines in validation loss while using half of SOAP’s optimizer state and reporting Muon-class wall-clock time. This offers an optimizer design to evaluate when scaling ranking models under memory limits; the experiments do not establish recommendation gains.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-16",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.16905v1",
+            "https://arxiv.org/pdf/2611.16905v1"
+          ]
+        },
+        "zh": {
+          "text": "FOAM 从两处降低 SOAP 优化器的成本：只保留输入侧预条件处理，并用行、列统计分解旋转后的二阶矩，减少状态存储和矩阵分解。理论上的精确等价依赖论文给定的曲率与 Fisher 假设。124M–760M 参数语言模型预训练中，验证损失接近强 SOAP、Muon 基线，优化器状态为 SOAP 的一半，运行时间与 Muon 同量级。它提供了在显存约束下扩展排序模型时可评估的优化器设计，推荐收益仍需实验。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-16",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.16905v1",
+            "https://arxiv.org/pdf/2611.16905v1"
+          ]
+        }
+      },
+      "added_at": "2026-11-15T23:09:55Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2611.16905"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2611.16426",
+      "title": "SoScale: Second-Order Scale Search for FP4 Quantization",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "Huawei Technologies Co., Ltd.",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2611.16426"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Low-bit quantization reduces the memory footprint and inference cost of large language models (LLMs), yet accurate FP4 quantization remains challenging. Practical formats such as MXFP4, NVFP4, and HiF4 pair a 4-bit floating-point payload with block-wise or hierarchical scale codes, making accuracy highly sensitive to how each local distribution is scaled. Default maximum-absolute-value scaling preserves dynamic range, but can spend scarce FP4 levels on rarely occupied outlier regions and leave dense tensor values poorly resolved. Existing scale-search methods minimize local element-wise reconstruction error, optimizing tensor fidelity rather than layer-output fidelity. We propose SoScale, a second-order weight scale-code search method for hierarchical FP4 quantization. SoScale searches hardware-valid scale codes under a Hessian-aware layer reconstruction objective and couples this search with GPTQ-style error recovery, selecting scales by their impact on layer outputs. Across Qwen3 models, SoScale consistently reduces downstream quantization degradation under MXFP4, NVFP4, and HiF4.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2611.16426v1",
+        "source_title": "SoScale: Second-Order Scale Search for FP4 Quantization",
+        "source_version": "v1",
+        "retrieved_at": "2026-11-15T23:07:24Z",
+        "license": "CC-BY-4.0"
+      },
+      "source_dates": {
+        "published_at": "2026-11-12T07:36:46Z",
+        "updated_at": "2026-11-12T07:36:46Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2611.16426v1",
+        "verified_at": "2026-11-15T23:07:24Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "SoScale chooses hardware-valid FP4 scale codes by their effect on layer outputs instead of only minimizing elementwise tensor reconstruction error. It combines a Hessian-aware objective with GPTQ-style error recovery for hierarchical four-bit floating-point formats. Qwen3 experiments report reduced downstream quantization degradation across MXFP4, NVFP4 and HiF4. The transferable idea is to optimize quantization scales against the computation that consumes the weights; neither ranking quality nor recommendation-serving speed is established by these language-model experiments.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-16",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.16426v1",
+            "https://arxiv.org/pdf/2611.16426v1"
+          ]
+        },
+        "zh": {
+          "text": "SoScale 按量化对层输出的影响选择硬件允许的 FP4 尺度编码，而不只比较张量逐元素的重建误差。它结合考虑曲率的目标与 GPTQ 式误差补偿，在 Qwen3 实验中减轻 MXFP4、NVFP4 和 HiF4 格式的下游精度损失。可借鉴点是让尺度选择对准权重实际参与的计算；语言模型上的结果尚不能证明推荐排序质量或服务速度收益。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-16",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.16426v1",
+            "https://arxiv.org/pdf/2611.16426v1"
+          ]
+        }
+      },
+      "added_at": "2026-11-15T23:09:55Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2611.16426"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2611.12304",
+      "title": "Evolving Infra: Agent-Adaptive LLM Serving at Scale",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "Georgia Institute of Technology; University of Illinois Urbana-Champaign; University of California, Berkeley; NVIDIA; OpenAI; Massachusetts Institute of Technology",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2611.12304"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Agentic workloads are a major source of LLM inference demand. Existing prefill--decode (PD) disaggregated serving systems offer limited flexibility for runtime adaptation of compute allocation and KV cache management, and rely on coarse signals that only partly capture the diverse and dynamic agent workload. These limitations lead to load imbalance between prefill and decode nodes and eviction of KV caches that agents will reuse. We present Evolving Infra, an agent-adaptive serving framework that adapts compute allocation to agent workloads and KV cache management to agent context management at runtime. We decouple compute allocation from key--value (KV) cache management, allowing nodes to switch efficiently between prefill and decode. Building on this design, an online planner matches the PD split to workload composition, while an agent-aware distributed KV manager guides cache eviction and transfer with signals from agent context management. Across coding, math, and computer-use tasks with GLM-5.2 and Kimi K2.6 on up to 256 GB300 GPUs, Evolving Infra reduces mean end-to-end request latency and P95 TTFT by up to 4.1x and 14x over Dynamo, NVIDIA's production framework. We open-source the system implementation of Evolving Infra at this https URL.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2611.12304v2",
+        "source_title": "Evolving Infra: Agent-Adaptive LLM Serving at Scale",
+        "source_version": "v2",
+        "retrieved_at": "2026-11-15T23:07:56Z",
+        "license": "CC-BY-NC-SA-4.0"
+      },
+      "source_dates": {
+        "published_at": "2026-11-09T12:26:02Z",
+        "updated_at": "2026-11-12T08:20:30Z",
+        "source_version": "v2",
+        "source_url": "https://arxiv.org/abs/2611.12304v2",
+        "verified_at": "2026-11-15T23:07:56Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "Evolving Infra separates compute allocation from KV-cache management so serving nodes can switch between prefill and decode. An online planner adjusts that split to agent workloads, while a distributed cache manager uses agent-context signals for eviction and transfer. Coding, mathematics and computer-use experiments with GLM-5.2 and Kimi K2.6 on up to 256 GB300 GPUs report up to 4.1-fold lower mean end-to-end latency and 14-fold lower P95 time to first token than Dynamo. Runtime adaptation and anticipated cache reuse may inform generative recommendation infrastructure, but the reported workloads are agents rather than recommendation.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-16",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.12304v2",
+            "https://arxiv.org/pdf/2611.12304v2"
+          ]
+        },
+        "zh": {
+          "text": "Evolving Infra 将计算分配与键值缓存管理分开，使服务节点能够在预填充和解码之间切换；在线规划器按智能体负载调整资源比例，分布式缓存管理器利用上下文信号决定淘汰和传输。论文在最多 256 张 GB300 上，使用 GLM-5.2、Kimi K2.6 运行编程、数学和计算机操作任务，相比 Dynamo，平均端到端延迟和首 token 延迟的第 95 百分位最高分别改善 4.1 倍、14 倍。动态分配计算及预判缓存复用值得借鉴，但这些是智能体负载结果，未验证推荐服务收益。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-16",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.12304v2",
+            "https://arxiv.org/pdf/2611.12304v2"
+          ]
+        }
+      },
+      "added_at": "2026-11-15T23:09:55Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2611.12304"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2611.12186",
+      "title": "NearFormer: Linear-Size Sparse Attention via Randomized Near Neighbors",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "University of California, San Diego",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2611.12186"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Graph transformers can capture long-range interactions, but their quadratic attention cost limits their use on large graphs. We introduce \\emph{NearFormer}, a graph transformer whose global attention is restricted to a randomized near-neighbor (NN) graph. NearFormer uses an efficient randomized construction to connect each node to a small number of near neighbors from a broader neighborhood defined by a label-independent feature or spectral geometry. For a fixed retained budget \\(k\\), the resulting attention support has linear size \\(\\mathcal{O}(|E|+nk)\\). The NN graph is built once by within-bin search and then held fixed. We use these edges as sparse global-attention supports, with optional learned attention biases, while preserving the original graph for local message passing. Experiments on long-range graph benchmarks and synthetic structural tasks show that NearFormer provides a favorable accuracy--scalability trade-off relative to local message passing, dense and sparse attention.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2611.12186v1",
+        "source_title": "NearFormer: Linear-Size Sparse Attention via Randomized Near Neighbors",
+        "source_version": "v1",
+        "retrieved_at": "2026-11-15T23:07:38Z",
+        "license": "CC-BY-4.0"
+      },
+      "source_dates": {
+        "published_at": "2026-11-09T10:40:42Z",
+        "updated_at": "2026-11-09T10:40:42Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2611.12186v1",
+        "verified_at": "2026-11-15T23:07:38Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "NearFormer restricts a graph transformer’s global attention to a randomized near-neighbor graph built from label-independent feature or spectral geometry. It constructs these extra edges once and keeps them fixed, while retaining the original graph for local message passing. At a fixed retained-neighbor budget, attention support grows linearly with graph size. Long-range graph benchmarks and synthetic structural tasks show a favorable accuracy–scalability trade-off. The fixed sparse support offers a design option for large recommendation graphs, but its suitability and accuracy on user-item graphs remain untested.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-16",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.12186v1",
+            "https://arxiv.org/pdf/2611.12186v1"
+          ]
+        },
+        "zh": {
+          "text": "NearFormer 先根据不使用标签的特征或谱几何，随机构建近邻图，再把图 Transformer 的全局注意力限制在这些边上；新增边一次构建后保持固定，原图仍用于局部消息传递。固定保留近邻数量时，注意力连接规模随图大小线性增长。长距离图基准与合成结构任务显示了精度和规模效率之间的较好权衡。固定稀疏连接可为大型推荐图提供设计参考，但用户—商品图上的适用性及准确率仍待验证。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-16",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.12186v1",
+            "https://arxiv.org/pdf/2611.12186v1"
+          ]
+        }
+      },
+      "added_at": "2026-11-15T23:09:55Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2611.12186"
       },
       "change_history": [],
       "reading_tier": null

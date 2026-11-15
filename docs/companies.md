@@ -15,7 +15,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [LinkedIn](#company-linkedin) (7)
 - [NetEase](#company-netease) (2)
 - [Kuaishou](#company-kuaishou) (43)
-- [Huawei](#company-huawei) (13)
+- [Huawei](#company-huawei) (14)
 - [Baidu](#company-baidu) (11)
 - [Shopee](#company-shopee) (4)
 - [Coupang](#company-coupang) (3)
@@ -35,7 +35,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [Liquid AI](#company-liquid-ai) (5)
 - [IBM (MIT-IBM Computing Research Lab)](#company-ibm-mit-ibm-computing-research-lab) (5)
 - [Perplexity AI](#company-perplexity-ai) (1)
-- [NVIDIA](#company-nvidia) (17)
+- [NVIDIA](#company-nvidia) (18)
 - [StepFun](#company-stepfun) (1)
 - [Adobe Research](#company-adobe-research) (2)
 - [Unbox AI](#company-unbox-ai) (2)
@@ -104,6 +104,9 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [Intuit Credit Karma](#company-intuit-credit-karma) (2)
 - [Hikvision](#company-hikvision) (1)
 - [CarbonForge](#company-carbonforge) (1)
+- [Reddit](#company-reddit) (1)
+- [NAVER](#company-naver) (1)
+- [OpenAI](#company-openai) (1)
 
 <a id="company-meta"></a>
 
@@ -450,6 +453,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [Aligning Training and Rollout Policies for End-to-End FP4 RL on Mixture-of-Experts LLMs](related/architecture-innovations-beyond-recommendation.md#paper-2611-04376) · 2026 · Related
 - [MACaQ: Fast, Model Agnostic Calibrated Quantization for Low-Precision Weights and Activations](related/architecture-innovations-beyond-recommendation.md#paper-2611-10649) · 2026 · Related
 - [FlashOffloading: Low-Latency KV Cache Offloading for Long-Context LLM Serving](related/architecture-innovations-beyond-recommendation.md#paper-2611-07542) · 2026 · Related
+- [SoScale: Second-Order Scale Search for FP4 Quantization](related/architecture-innovations-beyond-recommendation.md#paper-2611-16426) · 2026 · Related
 
 <a id="company-baidu"></a>
 
@@ -659,6 +663,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [Decode Token Parallelism: Memory-Efficient Distributed Attention Parallelism for Scalable LLM Decoding](related/architecture-innovations-beyond-recommendation.md#paper-2611-13293) · 2026 · Related
 - [One-Sided Expert-Parallel All-to-All for Mixture-of-Experts Inference over NVLink](related/architecture-innovations-beyond-recommendation.md#paper-2611-13188) · 2026 · Related
 - [Release Sooner, Expose Less: Offloading MoE Dispatch in NCCL-EP under Dual-Batch Overlap](related/architecture-innovations-beyond-recommendation.md#paper-2611-12362) · 2026 · Related
+- [Evolving Infra: Agent-Adaptive LLM Serving at Scale](related/architecture-innovations-beyond-recommendation.md#paper-2611-12304) · 2026 · Related
 
 <a id="company-stepfun"></a>
 
@@ -1092,3 +1097,21 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 ## CarbonForge
 
 - [Fewer Expert Transfers Without Changing Routing: Expert Eviction for MoE Offloading](related/architecture-innovations-beyond-recommendation.md#paper-2611-15842) · 2026 · Related
+
+<a id="company-reddit"></a>
+
+## Reddit
+
+- [Serving-Aligned Entire-Space Conversion Modeling via Click-Through Rate Knowledge Distillation](related/knowledge-distillation-compression.md#paper-2611-15137) · 2026 · Related
+
+<a id="company-naver"></a>
+
+## NAVER
+
+- [Factored One-sided Adam-Moment for Practical and Scalable SOAP](related/architecture-innovations-beyond-recommendation.md#paper-2611-16905) · 2026 · Related
+
+<a id="company-openai"></a>
+
+## OpenAI
+
+- [Evolving Infra: Agent-Adaptive LLM Serving at Scale](related/architecture-innovations-beyond-recommendation.md#paper-2611-12304) · 2026 · Related

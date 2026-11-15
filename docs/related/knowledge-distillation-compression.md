@@ -6,7 +6,7 @@
 
 Transferring, compressing and deploying larger recommendation models.
 
-15 papers · Updated 2026-11-15
+16 papers · Updated 2026-11-16
 
 <a id="paper-2411-16122"></a>
 
@@ -67,3 +67,7 @@ Transferring, compressing and deploying larger recommendation models.
 <a id="paper-2611-01129"></a>
 
 - **HiGenTrans: Hierarchical LLM Knowledge Transfer for Generative Recommendation**: HiGenTrans transfers LLM knowledge into semantic-ID recommendation through a user semantic prior, depth-aligned hidden representations and a lightweight MoE beam-output calibrator. Prefix-only semantic features can be cached offline; three benchmarks show up to 12.9% Recall@10 and 33.7% NDCG@10 improvements over the strongest baselines. — [Paper](https://arxiv.org/abs/2611.01129) (The Hong Kong Polytechnic University; Kuaishou Technology · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-15137"></a>
+
+- **Serving-Aligned Entire-Space Conversion Modeling via Click-Through Rate Knowledge Distillation**: Serving-time click and conversion models can be trained separately, so the auxiliary click predictor used to train ESMM may disagree with the predictor used at deployment. This paper distills logged serving click scores into ESMM’s auxiliary tower to align the product used for ranking. Ali-CCP experiments report improved conversion and joint click-conversion metrics, including a setting retaining only 5% of nonclicks. The useful idea is to make the deployed model’s outputs part of the training target when independently developed ranking components are combined; these offline results do not establish online business gains or a scaling law. — [Paper](https://arxiv.org/abs/2611.15137) (Arizona State University; Reddit · arXiv 2026). Reading priority: Unrated.

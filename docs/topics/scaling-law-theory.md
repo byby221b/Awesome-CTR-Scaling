@@ -6,7 +6,7 @@
 
 Empirical laws, scaling recipes and theoretical limits for recommendation models.
 
-20 papers · Updated 2026-11-15
+20 papers · Updated 2026-11-16
 
 | Paper | Affiliation | Venue | Year | Tags | Links | Key Contribution |
 |:------|:------------|:------|:-----|:-----|:------|:-----------------|
