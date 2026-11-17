@@ -6,7 +6,7 @@
 
 Transferring, compressing and deploying larger recommendation models.
 
-16 papers · Updated 2026-11-16
+17 papers · Updated 2026-11-18
 
 <a id="paper-2411-16122"></a>
 
@@ -71,3 +71,7 @@ Transferring, compressing and deploying larger recommendation models.
 <a id="paper-2611-15137"></a>
 
 - **Serving-Aligned Entire-Space Conversion Modeling via Click-Through Rate Knowledge Distillation**: Serving-time click and conversion models can be trained separately, so the auxiliary click predictor used to train ESMM may disagree with the predictor used at deployment. This paper distills logged serving click scores into ESMM’s auxiliary tower to align the product used for ranking. Ali-CCP experiments report improved conversion and joint click-conversion metrics, including a setting retaining only 5% of nonclicks. The useful idea is to make the deployed model’s outputs part of the training target when independently developed ranking components are combined; these offline results do not establish online business gains or a scaling law. — [Paper](https://arxiv.org/abs/2611.15137) (Arizona State University; Reddit · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-18244"></a>
+
+- **RACE: Ranking-Uncertainty Aware Capacity-Adaptive Customization for Efficient Sequential Recommendation**: RACE uses the stability of top-K prediction distributions as a proxy for instance complexity, then predicts this ranking uncertainty from early-layer features. It adapts both model channels and input-history length through channel sensitivity estimation and progressive sequence filtering. Experiments on four datasets report better accuracy, efficiency and adaptability than the evaluated baselines. This suggests a way to allocate recommendation inference capacity by request difficulty; the abstract does not establish production-scale CTR gains. — [Paper](https://arxiv.org/abs/2611.18244) (Zhejiang University; Huawei Technologies Co., Ltd. · arXiv 2026). Reading priority: Unrated.

@@ -6,16 +6,16 @@
 
 Company membership follows recorded affiliation aliases and preserved company-overview mentions. A paper may appear under multiple companies. This structural migration does not independently reverify affiliations or publication claims.
 
-- [Meta](#company-meta) (64)
+- [Meta](#company-meta) (66)
 - [ByteDance / TikTok](#company-bytedance-tiktok) (29)
-- [Alibaba](#company-alibaba) (66)
+- [Alibaba](#company-alibaba) (67)
 - [Meituan](#company-meituan) (11)
-- [Tencent](#company-tencent) (33)
+- [Tencent](#company-tencent) (34)
 - [Google](#company-google) (28)
 - [LinkedIn](#company-linkedin) (7)
 - [NetEase](#company-netease) (2)
 - [Kuaishou](#company-kuaishou) (43)
-- [Huawei](#company-huawei) (14)
+- [Huawei](#company-huawei) (15)
 - [Baidu](#company-baidu) (11)
 - [Shopee](#company-shopee) (4)
 - [Coupang](#company-coupang) (3)
@@ -90,7 +90,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [Workday](#company-workday) (1)
 - [Roblox](#company-roblox) (1)
 - [Wildberries and Russ](#company-wildberries) (1)
-- [AMD](#company-amd) (2)
+- [AMD](#company-amd) (3)
 - [Together AI](#company-together-ai) (1)
 - [Lenovo](#company-lenovo) (2)
 - [Uber](#company-uber) (1)
@@ -176,6 +176,8 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [SGA-Sparse: Training Native SwiGLU Gates for Activation-Sparse and Low-Bit LLMs](related/architecture-innovations-beyond-recommendation.md#paper-2611-11223) · 2026 · Related
 - [HybridSpec: Throughput-Aware Speculative Decoding for Hybrid GDN-MoE Models](related/architecture-innovations-beyond-recommendation.md#paper-2611-04055) · 2026 · Related
 - [Exploiting Feature-invariant Scaling Laws for Efficient A/B Experimentation in Recommendation Systems](topics/scaling-law-theory.md#paper-2611-13539) · 2026 · Core
+- [Fuse-All MoE Inference Kernel with Load Balancing on TPUs](related/architecture-innovations-beyond-recommendation.md#paper-2611-17857) · 2026 · Related
+- [Advancing Quantization for R&R Models with Microscaling Formats](topics/efficiency-deployment.md#paper-2611-17501) · 2026 · Core
 
 <a id="company-bytedance-tiktok"></a>
 
@@ -281,6 +283,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [ReSID: Rethinking Long-Tail Retrieval in Generative Recommendation through Item Reachability](topics/efficiency-deployment.md#paper-2611-16404) · 2026 · Core
 - [TriGen: A Generative Paradigm for Trigger-Induced Recommendation](related/generative-recommendation.md#paper-2611-16395) · 2026 · Related
 - [GC-MoE on SM120: Overlapping Expert-Parallel Token Dispatch with Warp-Level FP8xFP4 Block-Scaled MMA on Consumer Blackwell](related/architecture-innovations-beyond-recommendation.md#paper-2611-16219) · 2026 · Related
+- [RecMem: Recurrent Memory Compression for Long-Sequence Generative Recommendation](topics/efficiency-deployment.md#paper-2611-17921) · 2026 · Core
 
 <a id="company-meituan"></a>
 
@@ -335,6 +338,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [BitDecoding-FP4: Native FP4 KV Cache Decoding via Algorithm-System Co-Design](related/architecture-innovations-beyond-recommendation.md#paper-2611-09825) · 2026 · Related
 - [Yuanbao-Reranker: Document-Grounded Synthesis and Preference Distillation for Text Reranking](related/retrieval-reranking-scaling.md#paper-2611-10405) · 2026 · Related
 - [Understanding Mixture-of-Experts Language Models Beyond Expert Boundaries](related/architecture-innovations-beyond-recommendation.md#paper-2611-13975) · 2026 · Related
+- [TokenFormer V2: Breaking the Resolution-Complexity Dilemma in Unified Recommendation](topics/unified-feature-sequence-modeling.md#paper-2611-19074) · 2026 · Core
 
 <a id="company-google"></a>
 
@@ -454,6 +458,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [MACaQ: Fast, Model Agnostic Calibrated Quantization for Low-Precision Weights and Activations](related/architecture-innovations-beyond-recommendation.md#paper-2611-10649) · 2026 · Related
 - [FlashOffloading: Low-Latency KV Cache Offloading for Long-Context LLM Serving](related/architecture-innovations-beyond-recommendation.md#paper-2611-07542) · 2026 · Related
 - [SoScale: Second-Order Scale Search for FP4 Quantization](related/architecture-innovations-beyond-recommendation.md#paper-2611-16426) · 2026 · Related
+- [RACE: Ranking-Uncertainty Aware Capacity-Adaptive Customization for Efficient Sequential Recommendation](related/knowledge-distillation-compression.md#paper-2611-18244) · 2026 · Related
 
 <a id="company-baidu"></a>
 
@@ -1016,6 +1021,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 
 - [ResQAdam: Residual-Preserving Adaptive Optimization for Memory-Efficient Quantization Aware Training](related/architecture-innovations-beyond-recommendation.md#paper-2611-08924) · 2026 · Related
 - [Fused-Softmax for efficient quantized attention](related/architecture-innovations-beyond-recommendation.md#paper-2611-09225) · 2026 · Related
+- [Advancing Quantization for R&R Models with Microscaling Formats](topics/efficiency-deployment.md#paper-2611-17501) · 2026 · Core
 
 <a id="company-together-ai"></a>
 

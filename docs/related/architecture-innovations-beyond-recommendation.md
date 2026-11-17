@@ -6,7 +6,7 @@
 
 Transferable ideas from general-purpose model architecture research.
 
-328 papers · Updated 2026-11-16
+332 papers · Updated 2026-11-18
 
 <a id="paper-2606-16825"></a>
 
@@ -1306,7 +1306,7 @@ Transferable ideas from general-purpose model architecture research.
 
 <a id="paper-2611-16905"></a>
 
-- **Factored One-sided Adam-Moment for Practical and Scalable SOAP**: FOAM reduces the optimizer-state and matrix-decomposition costs of SOAP through input-side-only preconditioning and a row-by-column factorization of the rotated second moment. Its exact equivalence claims require stated curvature and Fisher assumptions. In language-model pretraining from 124M to 760M parameters, it matches strong SOAP and Muon baselines in validation loss while using half of SOAP’s optimizer state and reporting Muon-class wall-clock time. This offers an optimizer design to evaluate when scaling ranking models under memory limits; the experiments do not establish recommendation gains. — [Paper](https://arxiv.org/abs/2611.16905) (NAVER AI Lab · arXiv 2026). Reading priority: Unrated.
+- **Factored One-sided Adam-Moment for Practical and Scalable SOAP**: FOAM reduces the optimizer-state and matrix-decomposition costs of SOAP through input-side-only preconditioning and a row-by-column factorization of the rotated second moment. Its exact equivalence claims require stated curvature and Fisher assumptions. In language-model pretraining from 124M to 760M parameters, it matches strong SOAP and Muon baselines in validation loss while using half of SOAP’s optimizer state and reporting Muon-class wall-clock time. This offers an optimizer design to evaluate when scaling ranking models under memory limits; the experiments do not establish recommendation gains. — [Paper](https://arxiv.org/abs/2611.16905) (NAVER AI Lab · NeurIPS 2026). Reading priority: Unrated.
 
 <a id="paper-2611-16426"></a>
 
@@ -1319,3 +1319,19 @@ Transferable ideas from general-purpose model architecture research.
 <a id="paper-2611-12186"></a>
 
 - **NearFormer: Linear-Size Sparse Attention via Randomized Near Neighbors**: NearFormer restricts a graph transformer’s global attention to a randomized near-neighbor graph built from label-independent feature or spectral geometry. It constructs these extra edges once and keeps them fixed, while retaining the original graph for local message passing. At a fixed retained-neighbor budget, attention support grows linearly with graph size. Long-range graph benchmarks and synthetic structural tasks show a favorable accuracy–scalability trade-off. The fixed sparse support offers a design option for large recommendation graphs, but its suitability and accuracy on user-item graphs remain untested. — [Paper](https://arxiv.org/abs/2611.12186) (University of California, San Diego · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-17857"></a>
+
+- **Fuse-All MoE Inference Kernel with Load Balancing on TPUs**: Fuse-All MoE combines token collection, expert projections, gated activation and output writes in one TPU kernel, keeping intermediates on chip while preserving routing semantics across scheduling and placement changes. On 32–512 decode tokens, symmetric EP8TP2 reduces kernel latency by up to 21.3% versus fused EP16. The integrated serving system, including additional stack optimizations, improves throughput by up to 34.5% over Megablox EP16. Its transferable lesson for sparse ranking models is to optimize memory traffic and expert imbalance together; these are TPU LLM results, not demonstrated recommendation gains. — [Paper](https://arxiv.org/abs/2611.17857) (Meta SuperIntelligence Lab · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-18974"></a>
+
+- **Bilateral Log-Linear Attention**: Bilateral log-linear attention adds a hierarchy anchored at the sequence origin to the existing hierarchy favoring recent context, improving access to both early and recent tokens while remaining causal. At fixed feature dimensions and chunk size, it preserves log-linear training/prefill work and logarithmic per-token decoding work and persistent state. Under approximate parameter matching, mean performance on six selected RULER tasks at 6,144 tokens rises from 26.97% to 50.03% relative to forward log-linear attention. This motivates testing dual-resolution memory for long behavior histories; recommendation benefits remain unverified. — [Paper](https://arxiv.org/abs/2611.18974) (Oak Ridge National Laboratory · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-18956"></a>
+
+- **Supercharging Olmo-core for Efficient and Scalable MoE Training**: The redesigned Olmo-core training stack combines expert and pipeline parallelism, a distributed optimizer, activation recomputation and MXFP8. Rowwise expert parallelism writes tokens directly into expert buffers, while GPU-resident routing metadata removes host synchronization. On B300 nodes it supports 12.9B–1.2T parameter configurations on up to 512 GPUs, reporting 858 useful-model TFLOP/s/GPU at 1.2T with MXFP8 and per-layer recomputation. The transferable insight for sparse ranking training is that total expert parameters drive memory and communication costs even when active computation stays fixed; the reported measurements are language-model training results. — [Paper](https://arxiv.org/abs/2611.18956) (Allen Institute for AI; University of Washington · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-16265"></a>
+
+- **Rectified Looped Transformer**: Rectified Looped Transformer interpolates between the current state and its prediction when forming the next loop input, smoothing the trajectory of repeated shared-block computation. Its bounded-state and perturbation-amplification results require stated assumptions. At matched training and inference depths, language-model experiments report lower perplexity and greater robustness than a standard looped Transformer without extra trainable parameters or recurrent block evaluations. This offers a feedback design to test in loop-scaled ranking models; recommendation gains are not established. — [Paper](https://arxiv.org/abs/2611.16265) (Tsinghua University · arXiv 2026). Reading priority: Unrated.

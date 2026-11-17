@@ -5,7 +5,7 @@
     "description": "Scaling laws and scalable ranking models for industrial recommendation.",
     "repository_url": "https://github.com/byby221b/Awesome-CTR-Scaling",
     "site_url": "https://byby221b.github.io/Awesome-CTR-Scaling/",
-    "updated": "2026-11-16",
+    "updated": "2026-11-18",
     "source_commit": "31ad30becff83ca14a01f37fc99d52ba79f85565",
     "scope": "We cover papers that (1) study scaling laws for recommendation models, (2) propose scalable Transformer-based architectures for CTR/ranking, (3) address efficiency challenges in scaling up industrial ranking systems, or (4) explore novel paradigms (e.g., sparse scaling, generative pre-training, foundation models) for scalable recommendation.",
     "history": {
@@ -56212,7 +56212,7 @@
       "collection": "related",
       "category": "architecture-innovations-beyond-recommendation",
       "affiliation": "NAVER AI Lab",
-      "venue": "arXiv",
+      "venue": "NeurIPS",
       "year": 2026,
       "tags": [],
       "links": [
@@ -56265,7 +56265,16 @@
         "kind": "catalog_entry",
         "source_url": "https://arxiv.org/abs/2611.16905"
       },
-      "change_history": [],
+      "change_history": [
+        {
+          "at": "2026-11-17T23:11:46Z",
+          "kind": "venue_update",
+          "fields": [
+            "venue"
+          ],
+          "source_url": "https://neurips.cc/virtual/2026/poster/149122"
+        }
+      ],
       "reading_tier": null
     },
     {
@@ -56450,6 +56459,504 @@
       "added_provenance": {
         "kind": "catalog_entry",
         "source_url": "https://arxiv.org/abs/2611.12186"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2611.17921",
+      "title": "RecMem: Recurrent Memory Compression for Long-Sequence Generative Recommendation",
+      "collection": "core",
+      "category": "efficiency-deployment",
+      "affiliation": "Shanghai Jiao Tong University; Taobao & Tmall Group of Alibaba",
+      "venue": "NeurIPS",
+      "year": 2026,
+      "tags": [
+        "Architecture",
+        "Long Sequence",
+        "Generative Rec",
+        "Serving"
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2611.17921"
+        },
+        {
+          "label": "Venue",
+          "url": "https://neurips.cc/virtual/2026/poster/149955"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Generative recommendation benefits from long interaction histories, but the cost of processing them directly grows with history length. We propose RecMem, a recurrent memory compression framework guided by three desiderata: space invariance, semantic fidelity, and lifelong evolvability. RecMem compresses historical segments into a fixed set of memory slots using a bifurcated encoder-decoder with shared lower layers and slot-wise forget-gated updates. Recommendation supervision trains the memory to preserve predictive information, while stream-consistency training aligns predictions from sequential and packed processing. By construction, the memory state and decoder context are independent of history length; under contraction and approximate semigroup consistency, we further derive a horizon-independent bound on the state discrepancy between these two processing orders. On MerRec, RecMem uses 16 memory slots and a 216-token decoder context, compared with 1,200 tokens for HSTU-1200, while retaining 87.9% of HSTU-1200's Recall@10 and 97.0% of its Recall@200. It outperforms PHSTU and the evaluated recent-only and retrieval baselines, and analyses of distant history show that archived interactions contribute predictive signal.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2611.17921v1",
+        "source_title": "RecMem: Recurrent Memory Compression for Long-Sequence Generative Recommendation",
+        "source_version": "v1",
+        "retrieved_at": "2026-11-17T23:07:08Z",
+        "license": "CC0-1.0"
+      },
+      "source_dates": {
+        "published_at": "2026-11-13T08:59:44Z",
+        "updated_at": "2026-11-13T08:59:44Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2611.17921v1",
+        "verified_at": "2026-11-17T23:11:46Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "RecMem compresses historical behavior segments into fixed memory slots with shared encoder-decoder layers and slot-wise forget gates; stream-consistency training aligns sequential and packed processing. On MerRec, 16 slots and a 216-token decoder context retain 87.9% of HSTU-1200’s Recall@10 and 97.0% of its Recall@200, versus its 1,200-token context. The rollout discrepancy bound requires contraction and approximate semigroup consistency. This offers a concrete memory-budget tradeoff for long-history generative recommendation, with some recall loss relative to the full-context baseline.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-18",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.17921v1"
+          ]
+        },
+        "zh": {
+          "text": "RecMem 将历史行为分段写入固定数量的记忆槽，通过共享编码器与解码器底层、逐槽遗忘门和流式一致性训练，保留有助于预测的信息。在 MerRec 上，16 个记忆槽、216 个解码上下文 token 保留了 HSTU-1200 的 87.9% Recall@10 和 97.0% Recall@200，后者使用 1,200 个上下文 token。误差界依赖收缩性与近似半群一致性假设。它为长历史生成式推荐提供了明确的内存与召回率取舍，相对完整上下文基线仍有召回损失。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-18",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.17921v1"
+          ]
+        }
+      },
+      "added_at": "2026-11-17T23:11:46Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2611.17921"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2611.18244",
+      "title": "RACE: Ranking-Uncertainty Aware Capacity-Adaptive Customization for Efficient Sequential Recommendation",
+      "collection": "related",
+      "category": "knowledge-distillation-compression",
+      "affiliation": "Zhejiang University; Huawei Technologies Co., Ltd.",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2611.18244"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Efficient sequential recommendation has emerged as a promising paradigm for providing real-time personalized service. To deploy models under resource-constrained environment, model compression becomes a necessity, yet existing methods typically apply uniform compression ratios, overlooking the heterogeneity in user intent complexity. This \"one-size-fits-all\" approach leads to a fundamental Capacity-Complexity Mismatch, where computational resources are either wasted on simple instances or insufficient for complex ones. To address this, we propose RACE (Ranking-uncertainty Aware Capacity-Adaptive Customization for Efficient Sequential Recommendation), a framework that dynamically adapts both model structures and input sequences with uncertainty-aware compression ratios. To ensure capacity-adaptive inference, RACE captures the model's intrinsic uncertainty of its predictions and transforms it into a proactive resource allocator. Specifically, we derive a list-wise ranking-uncertainty metric from the distributional stability of top-$K$ predictions, which serves as a measurable proxy for instance complexity. A lightweight predictor is then trained via self-supervision to anticipate this uncertainty from early-layer features. Guided by this signal, RACE performs instance-specific slimming in two dimensions: a hypernetwork-style channel sensitivity extractor identifies parameter redundancy, while importance-aware progressive sequence filtering mitigates data redundancy. Extensive experiments on four popular datasets demonstrate that RACE outperforms state-of-the-art baselines on accuracy, efficiency, and adaptability.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2611.18244v1",
+        "source_title": "RACE: Ranking-Uncertainty Aware Capacity-Adaptive Customization for Efficient Sequential Recommendation",
+        "source_version": "v1",
+        "retrieved_at": "2026-11-17T23:07:08Z",
+        "license": "CC0-1.0"
+      },
+      "source_dates": {
+        "published_at": "2026-11-13T14:40:26Z",
+        "updated_at": "2026-11-13T14:40:26Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2611.18244v1",
+        "verified_at": "2026-11-17T23:11:46Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "RACE uses the stability of top-K prediction distributions as a proxy for instance complexity, then predicts this ranking uncertainty from early-layer features. It adapts both model channels and input-history length through channel sensitivity estimation and progressive sequence filtering. Experiments on four datasets report better accuracy, efficiency and adaptability than the evaluated baselines. This suggests a way to allocate recommendation inference capacity by request difficulty; the abstract does not establish production-scale CTR gains.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-18",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.18244v1"
+          ]
+        },
+        "zh": {
+          "text": "RACE 用前 K 个预测结果的分布稳定性衡量排序不确定性，再从浅层特征预测这一信号，估计每次请求的复杂程度。它据此同时裁减模型通道和历史序列，以通道敏感度估计与渐进式序列筛选分配推理资源。四个数据集上的实验报告了相对所评估基线的准确率、效率和适应性优势。可借鉴之处是按请求难度分配推荐模型容量；摘要没有证明生产规模的 CTR 收益。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-18",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.18244v1"
+          ]
+        }
+      },
+      "added_at": "2026-11-17T23:11:46Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2611.18244"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2611.17857",
+      "title": "Fuse-All MoE Inference Kernel with Load Balancing on TPUs",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "Meta SuperIntelligence Lab",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2611.17857"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Mixture-of-Experts (MoE) architectures activate only a subset of experts for each token, allowing large language models (LLMs) to scale parameter capacity without a proportional increase in computation per token. However, intermediate data movement and uneven expert loads limit the efficiency of MoE inference on TPUs. To address these bottlenecks, we introduce Fuse-All MoE, a TPU kernel design that jointly optimizes expert computation, output communication, and load balancing. The kernel fuses token collection, expert projections, gated activation, and output writes, retaining expert computation intermediates on chip. Fixed token-slot destinations allow scheduling and expert placement to change while preserving routing semantics. In prefill-decode (PD) disaggregated serving, Fuse-All MoE balances EP16 prefill workloads through scheduling and expert redistribution, while symmetric EP8TP2 shares active expert computation between the two TensorCore devices within each chip during decode. Our experiments show that Fuse-All MoE reduces kernel runtime for a measured skewed EP16 prefill workload from 2.3x to 1.09x the same fixed reference time for a balanced workload. Across 32-512 decode tokens, symmetric EP8TP2 reduces kernel latency by up to 21.3% relative to fused EP16. With accompanying serving stack optimizations, the integrated system improves serving throughput by up to 34.5% over the Megablox EP16 baseline.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2611.17857v1",
+        "source_title": "Fuse-All MoE Inference Kernel with Load Balancing on TPUs",
+        "source_version": "v1",
+        "retrieved_at": "2026-11-17T23:07:08Z",
+        "license": "CC0-1.0"
+      },
+      "source_dates": {
+        "published_at": "2026-11-13T07:43:04Z",
+        "updated_at": "2026-11-13T07:43:04Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2611.17857v1",
+        "verified_at": "2026-11-17T23:11:46Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "Fuse-All MoE combines token collection, expert projections, gated activation and output writes in one TPU kernel, keeping intermediates on chip while preserving routing semantics across scheduling and placement changes. On 32–512 decode tokens, symmetric EP8TP2 reduces kernel latency by up to 21.3% versus fused EP16. The integrated serving system, including additional stack optimizations, improves throughput by up to 34.5% over Megablox EP16. Its transferable lesson for sparse ranking models is to optimize memory traffic and expert imbalance together; these are TPU LLM results, not demonstrated recommendation gains.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-18",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.17857v1"
+          ]
+        },
+        "zh": {
+          "text": "Fuse-All MoE 将 token 收集、专家投影、门控激活和输出写入合并到一个 TPU 内核，让中间结果留在芯片内，并在调度和专家放置变化时保持路由语义。32–512 个解码 token 的测试中，EP8TP2 相对融合 EP16 的内核延迟最多降低 21.3%；包含其他服务栈优化的完整系统，相对 Megablox EP16 的吞吐最多提高 34.5%。对稀疏排序模型的借鉴是同时处理数据搬运与专家负载不均；这些结果来自 TPU 上的语言模型，不能直接当作推荐收益。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-18",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.17857v1"
+          ]
+        }
+      },
+      "added_at": "2026-11-17T23:11:46Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2611.17857"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2611.19074",
+      "title": "TokenFormer V2: Breaking the Resolution-Complexity Dilemma in Unified Recommendation",
+      "collection": "core",
+      "category": "unified-feature-sequence-modeling",
+      "affiliation": "Tencent Inc.; The Hong Kong Polytechnic University",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [
+        "Architecture",
+        "Unified FI+Seq",
+        "Long Sequence",
+        "Ads"
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2611.19074"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Industrial recommendation faces a resolution--complexity dilemma: dense interactions make detailed modeling of long behavior histories expensive, while compact history summaries restrict the evidence available to prediction. A unified backbone must preserve rich behavioral details within strict serving budgets. We introduce \\textbf{TokenFormer V2}, a unified architecture that explicitly decouples \\emph{representation resolution} from \\emph{interaction density}. Its group-wise token layout jointly encodes behavior segments with non-sequential context, expands interaction ranges via hierarchical group merging, and coordinates distributed groups through \\emph{NS Fusion} and \\emph{Global Sync} modules. Through this \\emph{local--global decomposition} paradigm, computation is concentrated on structured interactions while preserving fine-grained evidence, ensuring that every encoded event remains directly accessible to the \\emph{Full-Resolution Readout} module. On the Tencent Advertising Algorithm Competition 2026 (TAAC 2026) benchmark, TokenFormer V2 achieves top-ranking accuracy among unified recommendation baselines while using \\textbf{5.1$\\times$ fewer FLOPs} than leading baselines, sustaining its advantage across long histories and imbalanced behavior domains. Furthermore, in billion-parameter evaluations on WeChat Channels advertising, it consistently outperforms state-of-the-art industrial baselines, yielding up to a \\textbf{+0.07 pp} overall AUC gain. In live online A/B testing against the production model, TokenFormer V2 delivers a statistically significant \\textbf{2.33\\% increase in GMV}. These results establish TokenFormer V2 as a battle-tested blueprint for scalable, full-resolution behavior modeling in industrial recommendation.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2611.19074v1",
+        "source_title": "TokenFormer V2: Breaking the Resolution-Complexity Dilemma in Unified Recommendation",
+        "source_version": "v1",
+        "retrieved_at": "2026-11-17T23:08:45Z",
+        "license": "CC0-1.0"
+      },
+      "source_dates": {
+        "published_at": "2026-11-14T01:24:46Z",
+        "updated_at": "2026-11-14T01:24:46Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2611.19074v1",
+        "verified_at": "2026-11-17T23:11:46Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "TokenFormer V2 preserves individual behavior representations while limiting interaction density through local groups, hierarchical merging, non-sequential feature fusion and global synchronization. A full-resolution readout retains access to every encoded event. On TAAC 2026 it reports top-ranking accuracy among unified baselines with 5.1 times fewer FLOPs than leading baselines; billion-parameter WeChat Channels evaluations show up to 0.07 percentage-point overall AUC improvement. Online testing against the production model reports 2.33% GMV lift. This directly addresses the compute cost of unified feature and long-sequence ranking without compressing away event-level access.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-18",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.19074v1"
+          ]
+        },
+        "zh": {
+          "text": "TokenFormer V2 保留每个行为的独立表示，通过局部分组、层级合并、非序列特征融合和全局同步控制交互密度，预测时仍能直接读取每个编码后的事件。在 TAAC 2026 上，它以领先基线约 1/5.1 的 FLOPs达到统一推荐基线中的领先精度；微信视频号十亿参数评估中，整体 AUC 最多提高 0.07 个百分点，线上对比生产模型的 GMV 提高 2.33%。它提供了一种保留行为细节、同时控制特征与长序列统一建模成本的设计。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-18",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.19074v1"
+          ]
+        }
+      },
+      "added_at": "2026-11-17T23:11:46Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2611.19074"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2611.17501",
+      "title": "Advancing Quantization for R&R Models with Microscaling Formats",
+      "collection": "core",
+      "category": "efficiency-deployment",
+      "affiliation": "Meta Platforms, Inc.; Advanced Micro Devices, Inc.",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [
+        "Quantization",
+        "Serving",
+        "Ads"
+      ],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2611.17501"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Recommendation and Ranking (R&R) models, particularly in digital advertising, require massive inference throughput but exhibit extreme sensitivity to precision loss. Unlike Large Language Models (LLMs) that frequently tolerate quantization-induced accuracy drops of 1% or more, production-grade R&R models enforce a stringent launch bar: model quality must remain within a 0.01% Normalized Entropy (NE) margin relative to the baseline, which commonly uses FP16 or FP32. This tight constraint has historically hindered the adoption of aggressive quantization in this domain. In this paper, we present an empirical evaluation of both MXFP8 and the 6-bit MXFP6 format for industrial-scale R&R inference on the AMD MI350X architecture.\n  To the best of our knowledge, this is the first paper, across R&R and LLM domains, that reports significant speedups from native MXFP6 GEMMs, which quantize both weights and activations and compute directly on 6-bit elements, without sacrificing model quality. We demonstrate that we can selectively apply this 6-bit format to maximize overall QPS gain without breaching the strict NE parity threshold. We further show that MXFP8 is a viable alternative to row-wise FP8: the two formats have nearly the same accuracy on our models, so the faster kernel can be chosen for each GEMM shape. On two production ads ranking models, our implementation shows measured GEMM kernel speedups over FP16 of 1.33--1.55x for MXFP8 and 1.73--1.99x for MXFP6 across all supported linear layers, and up to 2.90x for MXFP6 on individual layers, alongside end-to-end (E2E) inference throughput gains from selective MXFP6 of 1.5--5.3% for Model A and 7.6--14.3% for Model B over their FP8 configurations.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2611.17501v1",
+        "source_title": "Advancing Quantization for R&R Models with Microscaling Formats",
+        "source_version": "v1",
+        "retrieved_at": "2026-11-17T23:08:45Z",
+        "license": "CC0-1.0"
+      },
+      "source_dates": {
+        "published_at": "2026-11-12T20:46:31Z",
+        "updated_at": "2026-11-12T20:46:31Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2611.17501v1",
+        "verified_at": "2026-11-17T23:11:46Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "This study evaluates MXFP8 and native MXFP6 weight-and-activation quantization for two production ads-ranking models on AMD MI350X under a 0.01% normalized-entropy quality margin. Selective MXFP6 improves end-to-end throughput over the models’ FP8 configurations by 1.5–5.3% for Model A and 7.6–14.3% for Model B. Kernel speedups over FP16 are larger and should not be confused with system gains. The practical lesson for ranking scaling is to choose precision by layer and matrix shape under an explicit quality budget, rather than assume every layer tolerates six bits.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-18",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.17501v1"
+          ]
+        },
+        "zh": {
+          "text": "这项研究在 AMD MI350X 上评估两个生产广告排序模型的 MXFP8 与原生 MXFP6 权重、激活量化，质量约束是归一化熵相对基线的差距不超过 0.01%。选择性使用 MXFP6 后，相对各模型的 FP8 配置，端到端吞吐在模型 A 上提高 1.5%–5.3%，模型 B 上提高 7.6%–14.3%。单个矩阵运算内核相对 FP16 的加速更大，不能混作整机收益。可借鉴的方法是在明确质量预算下按层和矩阵形状选择精度，避免假定所有层都能承受六比特量化。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-18",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.17501v1"
+          ]
+        }
+      },
+      "added_at": "2026-11-17T23:11:46Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2611.17501"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2611.18974",
+      "title": "Bilateral Log-Linear Attention",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "Oak Ridge National Laboratory",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2611.18974"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Sequence models represent past context at different resolutions, using token-level keys and values, fixed-size recurrent states, or hierarchies of compressed summaries. Full attention supports strong associative recall but requires quadratic work during training and prefill and a linearly growing key-value cache during inference. Linear attention and state-space models reduce these costs through fixed-size recurrent memory, but this compression can limit recall. Log-linear attention offers a middle ground by maintaining logarithmically many state matrices. However, its hierarchy favors finer resolution near the current query while compressing earlier context into coarser summaries. To complement this allocation of resolution, we introduce bilateral log-linear attention, which pairs the existing hierarchy with a second hierarchy anchored at the sequence origin. By combining their reads, the two branches provide finer access to both early and recent context while remaining causal. We derive recurrent and chunkwise parallel formulations for the added branch, preserving log-linear training and prefill work, logarithmic decoding work per token, and logarithmic persistent state storage at fixed feature dimensions and chunk size. In multi-query associative recall, this design raises mean overall test accuracy from 76.37% to 96.12% over forward log-linear attention across multiple training seeds. For pretrained language models under approximate parameter matching, it raises the mean score on six selected RULER needle-in-a-haystack tasks from 26.97% to 50.03% at a context length of 6144 tokens. In the same setting, bilateral attention also outperforms forward log-linear attention on seven of eight downstream retrieval tasks, including question answering and information extraction.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2611.18974v1",
+        "source_title": "Bilateral Log-Linear Attention",
+        "source_version": "v1",
+        "retrieved_at": "2026-11-17T23:08:45Z",
+        "license": "CC0-1.0"
+      },
+      "source_dates": {
+        "published_at": "2026-11-13T22:07:20Z",
+        "updated_at": "2026-11-13T22:07:20Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2611.18974v1",
+        "verified_at": "2026-11-17T23:11:46Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "Bilateral log-linear attention adds a hierarchy anchored at the sequence origin to the existing hierarchy favoring recent context, improving access to both early and recent tokens while remaining causal. At fixed feature dimensions and chunk size, it preserves log-linear training/prefill work and logarithmic per-token decoding work and persistent state. Under approximate parameter matching, mean performance on six selected RULER tasks at 6,144 tokens rises from 26.97% to 50.03% relative to forward log-linear attention. This motivates testing dual-resolution memory for long behavior histories; recommendation benefits remain unverified.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-18",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.18974v1"
+          ]
+        },
+        "zh": {
+          "text": "双侧对数线性注意力在偏向近期上下文的层级记忆之外，增加从序列起点建立的第二套层级，让早期和近期 token 都有较细粒度的读取路径，同时保持因果性。在特征维度和分块大小固定时，训练与预填充计算保持对数线性增长，逐 token 解码计算及持久状态保持对数增长。参数量近似匹配、上下文为 6,144 token 时，六项选定 RULER 任务的平均分从单向方案的 26.97% 提高到 50.03%。这一设计可用于探索长行为历史的记忆分配，推荐收益尚未验证。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-18",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.18974v1"
+          ]
+        }
+      },
+      "added_at": "2026-11-17T23:11:46Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2611.18974"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2611.18956",
+      "title": "Supercharging Olmo-core for Efficient and Scalable MoE Training",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "Allen Institute for AI; University of Washington",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2611.18956"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Mixture-of-Experts (MoE) models add parameters without proportionally increasing per-token compute. However, training cost also depends on bytes moved, memory held, and kernels launched, and many of those costs follow total parameter size rather than active compute. On infrastructure built for dense models, this mismatch is costly: in early baselines, throughput fell as stored expert parameter size grew, even though the useful work per token stayed nearly fixed. To close this gap, we present a redesigned training stack in Olmo-core, built for efficient, scalable MoE training. We replace the Fully Sharded Data Parallel (FSDP) of earlier Olmo-core versions with an architecture built on Distributed Data Parallel (DDP), and add Expert Parallelism (EP), Pipeline Parallelism (PP), a distributed optimizer, and activation recompute. We propose NVSHMEM-based rowwise EP, which writes each token directly into its expert's buffer, avoiding dispatch and combine permutation overhead. We make EP fully synchronization-free by keeping routing metadata on the GPU and using device-scheduled grouped GEMMs. Closely integrated MXFP8 cuts compute, activation-memory, and transport costs, and topology-agnostic checkpoints let the parallel layout change between runs. On NVL8 B300 nodes, the stack supports training configurations from 12.9 billion to 1.2 trillion total parameters on up to 512 GPUs, reaching 858 useful-model TFLOP/s/GPU at 1.2 trillion with MXFP8 and per-layer recompute; an experimental capacity test with the optional DeepEP v2 backend reaches 2.38 trillion. We also explain each design choice and share findings for other training systems; for example, we identify a failure pattern we call Token Gerrymandering, in which the MoE router can learn to hack the load-balancing loss, and find that overlapping communication with computation can slow the overlapped kernels by more than it hides.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2611.18956v1",
+        "source_title": "Supercharging Olmo-core for Efficient and Scalable MoE Training",
+        "source_version": "v1",
+        "retrieved_at": "2026-11-17T23:08:45Z",
+        "license": "CC0-1.0"
+      },
+      "source_dates": {
+        "published_at": "2026-11-13T21:20:46Z",
+        "updated_at": "2026-11-13T21:20:46Z",
+        "source_version": "v1",
+        "source_url": "https://arxiv.org/abs/2611.18956v1",
+        "verified_at": "2026-11-17T23:11:46Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "The redesigned Olmo-core training stack combines expert and pipeline parallelism, a distributed optimizer, activation recomputation and MXFP8. Rowwise expert parallelism writes tokens directly into expert buffers, while GPU-resident routing metadata removes host synchronization. On B300 nodes it supports 12.9B–1.2T parameter configurations on up to 512 GPUs, reporting 858 useful-model TFLOP/s/GPU at 1.2T with MXFP8 and per-layer recomputation. The transferable insight for sparse ranking training is that total expert parameters drive memory and communication costs even when active computation stays fixed; the reported measurements are language-model training results.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-18",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.18956v1"
+          ]
+        },
+        "zh": {
+          "text": "重构后的 Olmo-core 将专家并行、流水线并行、分布式优化器、激活重计算与 MXFP8 配合使用。逐行专家并行把 token 直接写入专家缓冲区，路由元数据留在 GPU 上，减少重排和主机同步。在 B300 节点、最多 512 张 GPU 上，它支持 12.9B–1.2T 参数配置；1.2T 参数、MXFP8 和逐层重计算条件下报告每张 GPU 858 useful-model TFLOP/s。对稀疏排序训练的启发是：即使激活计算量不变，专家总参数仍会推高存储与通信成本；这些测量来自语言模型训练。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-18",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.18956v1"
+          ]
+        }
+      },
+      "added_at": "2026-11-17T23:11:46Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2611.18956"
+      },
+      "change_history": [],
+      "reading_tier": null
+    },
+    {
+      "id": "2611.16265",
+      "title": "Rectified Looped Transformer",
+      "collection": "related",
+      "category": "architecture-innovations-beyond-recommendation",
+      "affiliation": "Tsinghua University",
+      "venue": "arXiv",
+      "year": 2026,
+      "tags": [],
+      "links": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2611.16265"
+        }
+      ],
+      "original_abstract": {
+        "status": "verified",
+        "text": "Looped Transformers increase effective depth by repeatedly applying a shared block, offering a parameter-efficient approach to language modeling. However, most existing works directly reuse each loop's output as the next's input, which can lead to hidden-state scale growth and perturbation amplification as recurrence deepens. We propose Rectified Looped Transformer (RLT), which redesigns feedback between loops using an interpolation schedule inspired by flow-based modeling. At each loop, RLT forms the next input by linearly interpolating between the current state and its prediction. Such interpolation distributes state changes across loops, encouraging a smoother trajectory from the initial input to the final output. Theoretical analysis proves that, under appropriate assumptions, RLT keeps state magnitudes uniformly bounded across loops and reduces the worst-case perturbation amplification. We evaluate RLT on language modeling corpora and downstream benchmarks. At matched training and inference depths, RLT consistently achieves lower perplexity than a standard looped Transformer, while exhibiting greater robustness to input perturbations and variance in inference depth. Consistent with the theoretical results, latent trajectory analysis shows that RLT maintains more stable hidden-state norms across loops, which also facilitates extrapolation-based decoding strategies. Notably, RLT achieves these gains without requiring additional trainable parameters or extra recurrent block evaluations, thus providing a simple yet more stable feedback mechanism for looped Transformers.",
+        "language": "en",
+        "source_url": "https://arxiv.org/abs/2611.16265v2",
+        "source_title": "Rectified Looped Transformer",
+        "source_version": "v2",
+        "retrieved_at": "2026-11-17T23:08:45Z",
+        "license": "CC0-1.0"
+      },
+      "source_dates": {
+        "published_at": "2026-11-12T04:07:40Z",
+        "updated_at": "2026-11-13T16:14:22Z",
+        "source_version": "v2",
+        "source_url": "https://arxiv.org/abs/2611.16265v2",
+        "verified_at": "2026-11-17T23:11:46Z"
+      },
+      "summaries": {
+        "en": {
+          "text": "Rectified Looped Transformer interpolates between the current state and its prediction when forming the next loop input, smoothing the trajectory of repeated shared-block computation. Its bounded-state and perturbation-amplification results require stated assumptions. At matched training and inference depths, language-model experiments report lower perplexity and greater robustness than a standard looped Transformer without extra trainable parameters or recurrent block evaluations. This offers a feedback design to test in loop-scaled ranking models; recommendation gains are not established.",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-18",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.16265v2"
+          ]
+        },
+        "zh": {
+          "text": "Rectified Looped Transformer 在当前状态与预测状态之间插值，形成下一轮共享模块的输入，让循环计算的状态变化更平滑。状态有界和扰动放大受控的理论结论依赖论文给定假设。在训练与推理深度匹配时，语言模型实验报告了更低的困惑度和更好的稳健性，且不增加可训练参数或循环模块调用次数。这为循环扩展排序模型提供了可测试的反馈设计，推荐收益仍待验证。",
+          "basis": "original_abstract",
+          "method": "ai_assisted",
+          "updated_at": "2026-11-18",
+          "source_urls": [
+            "https://arxiv.org/abs/2611.16265v2"
+          ]
+        }
+      },
+      "added_at": "2026-11-17T23:11:46Z",
+      "added_provenance": {
+        "kind": "catalog_entry",
+        "source_url": "https://arxiv.org/abs/2611.16265"
       },
       "change_history": [],
       "reading_tier": null
