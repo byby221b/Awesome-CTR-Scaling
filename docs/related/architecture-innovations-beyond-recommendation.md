@@ -6,7 +6,7 @@
 
 Transferable ideas from general-purpose model architecture research.
 
-332 papers · Updated 2026-11-18
+338 papers · Updated 2026-11-19
 
 <a id="paper-2606-16825"></a>
 
@@ -1335,3 +1335,27 @@ Transferable ideas from general-purpose model architecture research.
 <a id="paper-2611-16265"></a>
 
 - **Rectified Looped Transformer**: Rectified Looped Transformer interpolates between the current state and its prediction when forming the next loop input, smoothing the trajectory of repeated shared-block computation. Its bounded-state and perturbation-amplification results require stated assumptions. At matched training and inference depths, language-model experiments report lower perplexity and greater robustness than a standard looped Transformer without extra trainable parameters or recurrent block evaluations. This offers a feedback design to test in loop-scaled ranking models; recommendation gains are not established. — [Paper](https://arxiv.org/abs/2611.16265) (Tsinghua University · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-21917"></a>
+
+- **Lost in a Few Heads: Diagnosing and Repairing Block Selection in Sparse Attention**: This study localizes sparse-attention retrieval failures to block selectors in a small subset of heads for several model families. Calibration identifies heads whose pooled key summaries hide decisive tokens; full attention in those heads or a 4-bit scorer recovers much of the loss without training. On MiniCPM4.1-8B at 64K, multi-key retrieval rises from 54.1% to 97.5%. It motivates head-specific selection diagnostics for long-history recommendation, although the experiments are on language models and some architectures require many repaired heads. — [Paper](https://arxiv.org/abs/2611.21917) (Yale University; Huawei Canada · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-22191"></a>
+
+- **RISA: Recoverable Sparse Attention for Block-Diffusion Language Models**: RISA separates preservation of historical KV states from repeated reads in block-diffusion language models. Priority and recovery tiers retain history, while a bounded shared read plan is reused across denoising steps with fresh queries. On DreamReasoner-8B at 32K, the default configuration accelerates attention 2.67× and fixed-trajectory requests 1.36× over dense attention with comparable task performance. Reusing sparse read plans is relevant to iterative recommendation inference, but this transfer is not evaluated in the paper. — [Paper](https://arxiv.org/abs/2611.22191) (Rice University · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-20663"></a>
+
+- **ParGLU: Partial Gating Improves Language Modeling in MoE Transformers**: ParGLU combines SwiGLU and squared-ReLU branches to trade partial gating for wider expert representations at matched parameter count and principal matrix-computation budget. In three-seed MoE language-model experiments, it improves validation loss consistently at 75M and 152M parameters, while 30M results are mixed. The design suggests reconsidering how sparse recommendation experts spend limited parameters; evidence is small-scale language modeling, not large-model or CTR validation. — [Paper](https://arxiv.org/abs/2611.20663) (arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-21216"></a>
+
+- **MiSTiQ: MicroScaling Trellis Quantization for Extreme KV Cache Compression**: MiSTiQ combines trellis-coded KV storage with microscaling formats and reconstructs values directly in the target low-precision element format. Beam-search encoding explores large reconstruction spaces without large codebooks. At about 1.25 effective bits per element, tests on Llama3 and Qwen3 improve the reported perplexity and task metrics over evaluated baselines. This offers a cache-compression design for long-sequence and high-concurrency serving; recommendation transfer and end-to-end serving speedups are not established by the abstract. — [Paper](https://arxiv.org/abs/2611.21216) (Arm AI Research (AAIR), Arm Ltd; Graphcore Research · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-20119"></a>
+
+- **CECAR: Cache & Expert Co-Aware Routing Accelerates On-Device Inference of MoE LLMs**: CECAR jointly controls expert routing and cache management using predicted expert reuse distances, rather than binary cache presence. This reduces expert-loading pressure when MoE weights exceed GPU memory. On Qwen3-30B-A3B with 16 GB VRAM and SSD-backed nonresident experts, it reports 12.5 tokens/s and 4.5× speedup over conventional MoE inference. Cache-aware sparse routing is a potential design for resource-limited recommendation serving; the measured gains are for the stated language-model setup. — [Paper](https://arxiv.org/abs/2611.20119) (KAIST; Agency for Defense Development; Yonsei University · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-19413"></a>
+
+- **PMR: MoE Routing with Shared Prototypes and Congestion Pricing**: PMR routes tokens through shared prototypes before mixing prototype-conditioned expert distributions, separating input matching from expert allocation. Short-term context adapts prototypes, and dispatch-feedback congestion prices regulate load without an auxiliary balancing loss. Three pretraining configurations improve mean zero-shot accuracy over matched-expert linear routers. Two-pass processing is over 20× faster than eager tokenwise PMR, not a claim of 20× acceleration over standard MoE. The mechanism may inform adaptive, balanced sparse recommendation architectures. — [Paper](https://arxiv.org/abs/2611.19413) (Sichuan University; University of Science and Technology of China · arXiv 2026). Reading priority: Unrated.

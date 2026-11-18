@@ -6,7 +6,7 @@
 
 Scaling retrieval and reranking stages of recommendation pipelines.
 
-59 papers · Updated 2026-11-18
+61 papers · Updated 2026-11-19
 
 <a id="paper-2603-04816"></a>
 
@@ -243,3 +243,11 @@ Scaling retrieval and reranking stages of recommendation pipelines.
 <a id="paper-2611-16488"></a>
 
 - **Active Learning of Approximate LLM Ranking for Energy-Efficient Retrieval of Long Queries**: LAAM uses active learning to approximate expensive LLM relevance judgments with a lightweight predictor. It requests labels for informative documents rather than reranking every candidate with the large model. On TREC Robust 2004 with verbose queries, it reaches 87% of DeepSeek v3’s P@10 with 3.3% of its per-query energy use; comparisons vary by ranking metric. The framework exposes a retrieval quality-energy tradeoff useful for compute allocation, but its evidence is limited to the evaluated retrieval setup rather than recommendation deployment. — [Paper](https://arxiv.org/abs/2611.16488) (Bar Ilan University · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-22163"></a>
+
+- **Cluster-Guided Decoding with Trust-Region Constraints for Personalized Recommendation**: CG2R learns hierarchical semantic clusters and inserts a cluster prior directly into item scoring, rather than using clusters only to select candidates. Centroid-based priors remain defined for users without interaction history. Three benchmarks show improved Recall and nDCG against the evaluated classical, neural and LLM baselines, with millisecond serving. The transferable idea is to incorporate coarse semantic structure into low-latency retrieval scoring; production CTR gains are not established. — [Paper](https://arxiv.org/abs/2611.22163) (Amazon · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-22392"></a>
+
+- **Deal With It: On Better Schedules for Listwise Reranking**: DealRank distributes retriever-ranked candidates round-robin across parallel listwise reranking calls, reducing good candidates lost to per-group quotas. Under a simple retriever model, this minimizes expected top-ten cuts among equal-quota splits. Across six LLMs it is within 0.1 nDCG@10 points of the best schedules on average and is 1.1–1.4× faster than BlitzRank. This offers a scheduling technique for scaling candidate reranking without changing the underlying ranker; the optimality claim depends on the stated model. — [Paper](https://arxiv.org/abs/2611.22392) (Mixedbread; National Institute of Informatics; University of Tsukuba · arXiv 2026). Reading priority: Unrated.

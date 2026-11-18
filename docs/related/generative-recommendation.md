@@ -6,7 +6,7 @@
 
 Generative retrieval, recommendation and ranking beyond discriminative CTR.
 
-133 papers · Updated 2026-11-18
+137 papers · Updated 2026-11-19
 
 <a id="paper-2605-12617"></a>
 
@@ -434,7 +434,7 @@ Generative retrieval, recommendation and ranking beyond discriminative CTR.
 
 <a id="paper-2610-37584"></a>
 
-- **REGER: Modeling inter-item Relations with Semantic IDs for Generative Recommendation**: REGER explicitly models inter-item relations through semantic-neighbor SID pretraining, combined global and SID-boundary local attention, and discriminative-teacher preference distillation. A hierarchical SID-prefix analysis factorizes collaborative preferences and item-level KL divergence, motivating distillation over all legal next tokens along target prefixes. Experiments on real-world datasets report consistent gains over generative-recommendation baselines. — [Paper](https://arxiv.org/abs/2610.37584) (University of Electronic Science and Technology of China · arXiv 2026). Reading priority: Unrated.
+- **REGER: Modeling inter-item Relations with Semantic IDs for Generative Recommendation**: REGER combines semantic-neighbor SID pretraining, global and SID-boundary local attention, and teacher-guided preference distillation. The v4 abstract explicitly describes renormalizing generator probabilities over legal next tokens before matching teacher conditional preferences along the ground-truth SID path, alongside cross-entropy. Real-world dataset experiments report gains over generative recommendation baselines while retaining efficient inference. This clarifies how distillation respects the identifier tree; it does not by itself establish a new numerical gain over earlier versions. — [Paper](https://arxiv.org/abs/2610.37584) (University of Electronic Science and Technology of China · arXiv 2026). Reading priority: Unrated.
 
 <a id="paper-2602-05945"></a>
 
@@ -539,3 +539,19 @@ Generative retrieval, recommendation and ranking beyond discriminative CTR.
 <a id="paper-2611-15426"></a>
 
 - **SimRec: Learning to Search, Ask, and Recommend from Simulated Interaction**: SimRec trains the complete search, clarification and recommendation policy of a tool-using agent with reinforcement learning. A task-conditioned simulator supplies feedback, and trajectory rewards include retrieval quality, valid tool use and the final hit; target injection is used only during training to address sparse successes. ESCI and Amazon C4 experiments improve a Qwen3-4B agent over its untrained counterpart and evaluated alternatives. This suggests a way to spend model capacity on useful interaction behavior, but simulated feedback and offline ranking gains are not live-user evidence. — [Paper](https://arxiv.org/abs/2611.15426) (Zhejiang University; Tsinghua University; Hikvision Research Institute · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-22838"></a>
+
+- **Better Rankers, Worse Retrievers: The Hidden Cost of RL Post-Training in Generative Recommendation**: Across five datasets, RL post-training improves small-K hit rates but reduces recall when generative recommenders supply hundreds of candidates. Controlled experiments attribute this to negative-advantage penalties on plausible sampled alternatives under single-next-item supervision. Out-of-rollout anchoring preserves the supervised model’s ordering outside sampled candidates and restores recall while retaining top-list gains. For scalable recommendation pipelines, the lesson is to evaluate candidate coverage alongside top-rank accuracy; evidence is from the studied datasets and RL settings. — [Paper](https://arxiv.org/abs/2611.22838) (The Hong Kong University of Science and Technology; Trip.com Group · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-22410"></a>
+
+- **More Than a Score: Reinforcement Learning with Verbalized Feedback for Generative Recommendation**: VerRec augments scalar-reward RL with personalized verbal feedback from a user simulator. Original and feedback-refined candidates are optimized together with group-relative policy optimization; the simulator is used only during training. Experiments with two generative recommendation backbones on three Amazon review datasets report improved accuracy and ranking quality. It suggests enriching training-time exploration without adding the simulator to the serving path, but does not establish industrial latency or CTR gains. — [Paper](https://arxiv.org/abs/2611.22410) (arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-19742"></a>
+
+- **Exploration of Reinforcement Learning in Generative Recommendation Models**: GBPO diagnoses dead-gradient regions, oversized negative updates and weak confidence sensitivity in ratio-based RL objectives for generative recommendation. Stop-gradient normalization keeps both positive and negative logit updates bounded and makes updates vanish as the policy becomes confident in the appropriate direction. The evaluated settings show competitive recommendation quality with more stable training. Its relevance to scaling is a training-stability mechanism for recommendation post-training, not a demonstrated scaling law. — [Paper](https://arxiv.org/abs/2611.19742) (University of Science and Technology of China; Kuaishou; Unaffiliated · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-19320"></a>
+
+- **Keep it Simple! A Multiple-Choice Task can Benefit Generative Recommendation**: This work adds a multiple-choice auxiliary task to semantic-ID generative recommendation so training explicitly learns relative rankings between positive and negative candidates. Task identifiers and candidate construction provide the additional supervision with little architectural adaptation. On four public benchmarks, the method improves TIGER’s NDCG@10 by 4.9–79%. It offers an objective-level route to improving generative retrieval, with gains limited to the evaluated model and datasets rather than industrial CTR evidence. — [Paper](https://arxiv.org/abs/2611.19320) (National Taiwan University; Coupang · arXiv 2026). Reading priority: Unrated.

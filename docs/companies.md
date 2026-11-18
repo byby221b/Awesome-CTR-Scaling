@@ -6,7 +6,7 @@
 
 Company membership follows recorded affiliation aliases and preserved company-overview mentions. A paper may appear under multiple companies. This structural migration does not independently reverify affiliations or publication claims.
 
-- [Meta](#company-meta) (66)
+- [Meta](#company-meta) (67)
 - [ByteDance / TikTok](#company-bytedance-tiktok) (29)
 - [Alibaba](#company-alibaba) (67)
 - [Meituan](#company-meituan) (11)
@@ -14,11 +14,11 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [Google](#company-google) (28)
 - [LinkedIn](#company-linkedin) (7)
 - [NetEase](#company-netease) (2)
-- [Kuaishou](#company-kuaishou) (43)
-- [Huawei](#company-huawei) (15)
+- [Kuaishou](#company-kuaishou) (44)
+- [Huawei](#company-huawei) (16)
 - [Baidu](#company-baidu) (11)
 - [Shopee](#company-shopee) (4)
-- [Coupang](#company-coupang) (3)
+- [Coupang](#company-coupang) (4)
 - [Netflix](#company-netflix) (3)
 - [Tubi](#company-tubi) (1)
 - [Pinterest](#company-pinterest) (6)
@@ -29,7 +29,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [Walmart](#company-walmart) (2)
 - [Snap](#company-snap) (4)
 - [Xiaohongshu](#company-xiaohongshu) (10)
-- [Amazon](#company-amazon) (7)
+- [Amazon](#company-amazon) (8)
 - [Capital One](#company-capital-one) (2)
 - [Shopify](#company-shopify) (3)
 - [Liquid AI](#company-liquid-ai) (5)
@@ -107,6 +107,9 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [Reddit](#company-reddit) (1)
 - [NAVER](#company-naver) (1)
 - [OpenAI](#company-openai) (1)
+- [Mixedbread](#company-mixedbread) (1)
+- [Trip.com Group](#company-trip-com) (1)
+- [Graphcore](#company-graphcore) (1)
 
 <a id="company-meta"></a>
 
@@ -178,6 +181,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [Exploiting Feature-invariant Scaling Laws for Efficient A/B Experimentation in Recommendation Systems](topics/scaling-law-theory.md#paper-2611-13539) · 2026 · Core
 - [Fuse-All MoE Inference Kernel with Load Balancing on TPUs](related/architecture-innovations-beyond-recommendation.md#paper-2611-17857) · 2026 · Related
 - [Advancing Quantization for R&R Models with Microscaling Formats](topics/efficiency-deployment.md#paper-2611-17501) · 2026 · Core
+- [KVUse: Reusable-KV User Memory for Efficient LLM Recommenders](topics/efficiency-deployment.md#paper-2611-21920) · 2026 · Core
 
 <a id="company-bytedance-tiktok"></a>
 
@@ -439,6 +443,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [RecoGEM: A Serving System for Production-Scale Generative Recommendation](topics/efficiency-deployment.md#paper-2611-12296) · 2026 · Core
 - [KuaiRecV2: Benchmarking Large-Scale Continual Learning for Diversified and Multi-task Recommendation](related/other.md#paper-2611-16795) · 2026 · Related
 - [From Tokens to Behaviors: Rethinking Generative Recommendation for User Trajectory Prediction](related/generative-recommendation.md#paper-2611-16159) · 2026 · Related
+- [Exploration of Reinforcement Learning in Generative Recommendation Models](related/generative-recommendation.md#paper-2611-19742) · 2026 · Related
 
 <a id="company-huawei"></a>
 
@@ -459,6 +464,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [FlashOffloading: Low-Latency KV Cache Offloading for Long-Context LLM Serving](related/architecture-innovations-beyond-recommendation.md#paper-2611-07542) · 2026 · Related
 - [SoScale: Second-Order Scale Search for FP4 Quantization](related/architecture-innovations-beyond-recommendation.md#paper-2611-16426) · 2026 · Related
 - [RACE: Ranking-Uncertainty Aware Capacity-Adaptive Customization for Efficient Sequential Recommendation](related/knowledge-distillation-compression.md#paper-2611-18244) · 2026 · Related
+- [Lost in a Few Heads: Diagnosing and Repairing Block Selection in Sparse Attention](related/architecture-innovations-beyond-recommendation.md#paper-2611-21917) · 2026 · Related
 
 <a id="company-baidu"></a>
 
@@ -492,6 +498,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [On the Practice of Scaling Search Conversion Rate Prediction](topics/scaling-law-theory.md#paper-2605-29232) · 2026 · Core
 - [Evolving Semantic Indexes for Generative Retrieval](related/generative-recommendation.md#paper-2610-28568) · 2026 · Related
 - [SeqFold: Timestamp-Addressable Compressed States for User Action Sequence Backbones](topics/efficiency-deployment.md#paper-2611-13704) · 2026 · Core
+- [Keep it Simple! A Multiple-Choice Task can Benefit Generative Recommendation](related/generative-recommendation.md#paper-2611-19320) · 2026 · Related
 
 <a id="company-netflix"></a>
 
@@ -605,6 +612,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [Mixed Precision Scaling Laws for Quantized Pretraining](related/architecture-innovations-beyond-recommendation.md#paper-2610-17637) · 2026 · Related
 - [QASP: Query-Adaptive Robust Vector Search Policy](related/retrieval-reranking-scaling.md#paper-2607-29606) · 2027 · Related
 - [User Embeddings are Superpositions of Interpretable Behavioral Modes](related/other.md#paper-2611-08487) · 2026 · Related
+- [Cluster-Guided Decoding with Trust-Region Constraints for Personalized Recommendation](related/retrieval-reranking-scaling.md#paper-2611-22163) · 2026 · Related
 
 <a id="company-capital-one"></a>
 
@@ -1121,3 +1129,21 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 ## OpenAI
 
 - [Evolving Infra: Agent-Adaptive LLM Serving at Scale](related/architecture-innovations-beyond-recommendation.md#paper-2611-12304) · 2026 · Related
+
+<a id="company-mixedbread"></a>
+
+## Mixedbread
+
+- [Deal With It: On Better Schedules for Listwise Reranking](related/retrieval-reranking-scaling.md#paper-2611-22392) · 2026 · Related
+
+<a id="company-trip-com"></a>
+
+## Trip.com Group
+
+- [Better Rankers, Worse Retrievers: The Hidden Cost of RL Post-Training in Generative Recommendation](related/generative-recommendation.md#paper-2611-22838) · 2026 · Related
+
+<a id="company-graphcore"></a>
+
+## Graphcore
+
+- [MiSTiQ: MicroScaling Trellis Quantization for Extreme KV Cache Compression](related/architecture-innovations-beyond-recommendation.md#paper-2611-21216) · 2026 · Related
