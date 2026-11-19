@@ -6,7 +6,7 @@
 
 Generative retrieval, recommendation and ranking beyond discriminative CTR.
 
-137 papers · Updated 2026-11-19
+139 papers · Updated 2026-11-20
 
 <a id="paper-2605-12617"></a>
 
@@ -555,3 +555,11 @@ Generative retrieval, recommendation and ranking beyond discriminative CTR.
 <a id="paper-2611-19320"></a>
 
 - **Keep it Simple! A Multiple-Choice Task can Benefit Generative Recommendation**: This work adds a multiple-choice auxiliary task to semantic-ID generative recommendation so training explicitly learns relative rankings between positive and negative candidates. Task identifiers and candidate construction provide the additional supervision with little architectural adaptation. On four public benchmarks, the method improves TIGER’s NDCG@10 by 4.9–79%. It offers an objective-level route to improving generative retrieval, with gains limited to the evaluated model and datasets rather than industrial CTR evidence. — [Paper](https://arxiv.org/abs/2611.19320) (National Taiwan University; Coupang · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-23710"></a>
+
+- **CONCORD-Rec: Catalog-Conditioned Modality Utility for Semantic-ID Diffusion Recommendation**: CONCORD-Rec uses counterfactual utility over feasible catalog partitions to supervise modality gates in a semantic-ID diffusion recommender. Bounded modality residuals augment a behavioral denoiser, with an explicit behavioral fallback when content is unreliable. The abstract reports ranking improvements under missing, degraded and conflicting modalities, plus quality-latency gains in a controlled decoding sweep. For scalable recommendation, the useful idea is to allocate multimodal information by its contribution to candidate discrimination rather than by token changes alone. — [Paper](https://arxiv.org/abs/2611.23710) (Tencent; University of Chinese Academy of Sciences; Beijing University of Posts and Telecommunications · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-21441"></a>
+
+- **Learning to Reason with Predictive Gains for Generative Recommendation**: GainReason measures each reasoning sentence by the change it induces in the target semantic-ID log-likelihood. These predictive gains provide sentence-level policy rewards, with a custom causal-attention mechanism for efficient computation and an auxiliary task that improves reasoning-conditioned prediction. Experiments on three public benchmarks report gains over competitive generative-recommendation baselines. It suggests training recommendation reasoning with signals tied to item prediction, instead of relying only on final-output rewards. — [Paper](https://arxiv.org/abs/2611.21441) (Renmin University of China; University of International Business and Economics; Alibaba International Digital Commercial Group · arXiv 2026). Reading priority: Unrated.

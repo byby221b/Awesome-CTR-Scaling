@@ -8,14 +8,14 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 
 - [Meta](#company-meta) (67)
 - [ByteDance / TikTok](#company-bytedance-tiktok) (29)
-- [Alibaba](#company-alibaba) (67)
+- [Alibaba](#company-alibaba) (68)
 - [Meituan](#company-meituan) (11)
-- [Tencent](#company-tencent) (34)
+- [Tencent](#company-tencent) (36)
 - [Google](#company-google) (28)
-- [LinkedIn](#company-linkedin) (7)
+- [LinkedIn](#company-linkedin) (8)
 - [NetEase](#company-netease) (2)
 - [Kuaishou](#company-kuaishou) (44)
-- [Huawei](#company-huawei) (16)
+- [Huawei](#company-huawei) (17)
 - [Baidu](#company-baidu) (11)
 - [Shopee](#company-shopee) (4)
 - [Coupang](#company-coupang) (4)
@@ -110,6 +110,9 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [Mixedbread](#company-mixedbread) (1)
 - [Trip.com Group](#company-trip-com) (1)
 - [Graphcore](#company-graphcore) (1)
+- [Netpreme](#company-netpreme) (1)
+- [Periodic Labs](#company-periodic-labs) (1)
+- [Framatome](#company-framatome) (1)
 
 <a id="company-meta"></a>
 
@@ -288,6 +291,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [TriGen: A Generative Paradigm for Trigger-Induced Recommendation](related/generative-recommendation.md#paper-2611-16395) · 2026 · Related
 - [GC-MoE on SM120: Overlapping Expert-Parallel Token Dispatch with Warp-Level FP8xFP4 Block-Scaled MMA on Consumer Blackwell](related/architecture-innovations-beyond-recommendation.md#paper-2611-16219) · 2026 · Related
 - [RecMem: Recurrent Memory Compression for Long-Sequence Generative Recommendation](topics/efficiency-deployment.md#paper-2611-17921) · 2026 · Core
+- [Learning to Reason with Predictive Gains for Generative Recommendation](related/generative-recommendation.md#paper-2611-21441) · 2026 · Related
 
 <a id="company-meituan"></a>
 
@@ -343,6 +347,8 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [Yuanbao-Reranker: Document-Grounded Synthesis and Preference Distillation for Text Reranking](related/retrieval-reranking-scaling.md#paper-2611-10405) · 2026 · Related
 - [Understanding Mixture-of-Experts Language Models Beyond Expert Boundaries](related/architecture-innovations-beyond-recommendation.md#paper-2611-13975) · 2026 · Related
 - [TokenFormer V2: Breaking the Resolution-Complexity Dilemma in Unified Recommendation](topics/unified-feature-sequence-modeling.md#paper-2611-19074) · 2026 · Core
+- [CONCORD-Rec: Catalog-Conditioned Modality Utility for Semantic-ID Diffusion Recommendation](related/generative-recommendation.md#paper-2611-23710) · 2026 · Related
+- [CARE: Contrastive-Anchored Residual Encoding with Listwise Reconstruction for Retrieval-Oriented Semantic IDs](related/retrieval-reranking-scaling.md#paper-2611-20721) · 2026 · Related
 
 <a id="company-google"></a>
 
@@ -388,6 +394,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [Reconstruction-Optimized Expert Pruning for Mixture-of-Experts Language Models](related/architecture-innovations-beyond-recommendation.md#paper-2610-27123) · 2026 · Related
 - [PAIR: Preference-Aligned Intent Retrieval for Premium People Recommendation at LinkedIn](related/retrieval-reranking-scaling.md#paper-2610-30941) · 2026 · Related
 - [From Generation to Scoring: Scaling LLM-Based Semantic Labeling at LinkedIn](related/engineering-serving.md#paper-2610-36383) · 2026 · Related
+- [Efficient Wide-Beam Generative Retrieval with Model-Native Trie Decoding and Shared-Context Attention](related/retrieval-reranking-scaling.md#paper-2611-22309) · 2026 · Related
 
 <a id="company-netease"></a>
 
@@ -465,6 +472,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [SoScale: Second-Order Scale Search for FP4 Quantization](related/architecture-innovations-beyond-recommendation.md#paper-2611-16426) · 2026 · Related
 - [RACE: Ranking-Uncertainty Aware Capacity-Adaptive Customization for Efficient Sequential Recommendation](related/knowledge-distillation-compression.md#paper-2611-18244) · 2026 · Related
 - [Lost in a Few Heads: Diagnosing and Repairing Block Selection in Sparse Attention](related/architecture-innovations-beyond-recommendation.md#paper-2611-21917) · 2026 · Related
+- [Optimize the Cob, Then the Kernel: Optimizing Beam Search for Generative Recommendation Inference](topics/efficiency-deployment.md#paper-2611-23339) · 2026 · Core
 
 <a id="company-baidu"></a>
 
@@ -1147,3 +1155,21 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 ## Graphcore
 
 - [MiSTiQ: MicroScaling Trellis Quantization for Extreme KV Cache Compression](related/architecture-innovations-beyond-recommendation.md#paper-2611-21216) · 2026 · Related
+
+<a id="company-netpreme"></a>
+
+## Netpreme
+
+- [XM-Sparse: High-Throughput Sparse-Attention LLM Serving over Scale-up Memory Pools](related/architecture-innovations-beyond-recommendation.md#paper-2611-22280) · 2026 · Related
+
+<a id="company-periodic-labs"></a>
+
+## Periodic Labs
+
+- [Communicate the Change: Efficient Expert Parallelism via Activation Compression](related/architecture-innovations-beyond-recommendation.md#paper-2611-22215) · 2026 · Related
+
+<a id="company-framatome"></a>
+
+## Framatome
+
+- [Learning Rate Transfer and Feature Learning Across Depth for Constrained Spectral Optimizers: Complete Scion](related/architecture-innovations-beyond-recommendation.md#paper-2611-15291) · 2026 · Related

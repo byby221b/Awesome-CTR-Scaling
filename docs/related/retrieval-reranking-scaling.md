@@ -6,7 +6,7 @@
 
 Scaling retrieval and reranking stages of recommendation pipelines.
 
-61 papers · Updated 2026-11-19
+63 papers · Updated 2026-11-20
 
 <a id="paper-2603-04816"></a>
 
@@ -251,3 +251,11 @@ Scaling retrieval and reranking stages of recommendation pipelines.
 <a id="paper-2611-22392"></a>
 
 - **Deal With It: On Better Schedules for Listwise Reranking**: DealRank distributes retriever-ranked candidates round-robin across parallel listwise reranking calls, reducing good candidates lost to per-group quotas. Under a simple retriever model, this minimizes expected top-ten cuts among equal-quota splits. Across six LLMs it is within 0.1 nDCG@10 points of the best schedules on average and is 1.1–1.4× faster than BlitzRank. This offers a scheduling technique for scaling candidate reranking without changing the underlying ranker; the optimality claim depends on the stated model. — [Paper](https://arxiv.org/abs/2611.22392) (Mixedbread; National Institute of Informatics; University of Tsukuba · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-22309"></a>
+
+- **Efficient Wide-Beam Generative Retrieval with Model-Native Trie Decoding and Shared-Context Attention**: Trie-Head stores the semantic-ID prefix tree as validated GPU tensors, scores compact codebook candidates, and streams the full-vocabulary normalizer without retraining. Shared-context attention reuses prompt KV blocks across beams while keeping private decode tails. On the Qualification Retrieval Platform at beam width 200, the combined SGLang implementation reports up to 5.57x throughput over a Python constraint processor and 2.63x over BF16 FlashRec. It provides a serving design for wide-beam generative retrieval with score-preserving constraints. — [Paper](https://arxiv.org/abs/2611.22309) (LinkedIn · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-20721"></a>
+
+- **CARE: Contrastive-Anchored Residual Encoding with Listwise Reconstruction for Retrieval-Oriented Semantic IDs**: CARE-SID learns a query-document contrastive alignment before semantic-ID quantization, using anchors and fixed reconstruction targets to limit drift. CARE-LR additionally distills query-conditioned candidate-list similarities into ID reconstructions. Industrial video-search evaluation measures partition and reconstruction recall without training a generator; listwise distillation improves reconstruction recall, and the source embedding matters more than the quantizer. CARE-SID is deployed in generative video search. It motivates retrieval-aware tokenizer evaluation before expensive generator training. — [Paper](https://arxiv.org/abs/2611.20721) (Tencent · arXiv 2026). Reading priority: Unrated.

@@ -6,7 +6,7 @@
 
 Transferable ideas from general-purpose model architecture research.
 
-338 papers · Updated 2026-11-19
+346 papers · Updated 2026-11-20
 
 <a id="paper-2606-16825"></a>
 
@@ -1354,8 +1354,40 @@ Transferable ideas from general-purpose model architecture research.
 
 <a id="paper-2611-20119"></a>
 
-- **CECAR: Cache & Expert Co-Aware Routing Accelerates On-Device Inference of MoE LLMs**: CECAR jointly controls expert routing and cache management using predicted expert reuse distances, rather than binary cache presence. This reduces expert-loading pressure when MoE weights exceed GPU memory. On Qwen3-30B-A3B with 16 GB VRAM and SSD-backed nonresident experts, it reports 12.5 tokens/s and 4.5× speedup over conventional MoE inference. Cache-aware sparse routing is a potential design for resource-limited recommendation serving; the measured gains are for the stated language-model setup. — [Paper](https://arxiv.org/abs/2611.20119) (KAIST; Agency for Defense Development; Yonsei University · arXiv 2026). Reading priority: Unrated.
+- **CECAR: Cache & Expert Co-Aware Routing Accelerates On-Device Inference of MoE LLMs**: CECAR jointly controls expert routing and cache management using predicted expert reuse distances, rather than binary cache presence. This reduces expert-loading pressure when MoE weights exceed GPU memory. On Qwen3-30B-A3B with 16 GB VRAM and SSD-backed nonresident experts, it reports 12.5 tokens/s and 4.5× speedup over conventional MoE inference. Cache-aware sparse routing is a potential design for resource-limited recommendation serving; the measured gains are for the stated language-model setup. — [Paper](https://arxiv.org/abs/2611.20119) (KAIST; Agency for Defense Development; Yonsei University · NeurIPS 2026). Reading priority: Unrated.
 
 <a id="paper-2611-19413"></a>
 
 - **PMR: MoE Routing with Shared Prototypes and Congestion Pricing**: PMR routes tokens through shared prototypes before mixing prototype-conditioned expert distributions, separating input matching from expert allocation. Short-term context adapts prototypes, and dispatch-feedback congestion prices regulate load without an auxiliary balancing loss. Three pretraining configurations improve mean zero-shot accuracy over matched-expert linear routers. Two-pass processing is over 20× faster than eager tokenwise PMR, not a claim of 20× acceleration over standard MoE. The mechanism may inform adaptive, balanced sparse recommendation architectures. — [Paper](https://arxiv.org/abs/2611.19413) (Sichuan University; University of Science and Technology of China · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-23896"></a>
+
+- **Kernel Ridge Attention: Nonlinear Memory with Selective Forgetting**: Kernel Ridge Attention stores nonlinear associations through recursive ridge regression, using past-key covariance to guide updates and a content-dependent retention process to selectively forget. Its inference state is independent of context length, while associative block maps enable parallel training. Controlled language-model experiments report stronger prediction and associative recall than the evaluated baselines with practical distributed throughput. It suggests a fixed-memory sequence mixer worth testing for long user histories; CTR performance has not been demonstrated. — [Paper](https://arxiv.org/abs/2611.23896) (Independent Researcher; Cornell University; Zhejiang University · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-22947"></a>
+
+- **The Kernel Reality Check: Benchmarking and Distilling Efficient Attention at Scale**: This benchmark separates the runtime and quality claims of kernelized attention. Across most tested sequence lengths, FlashAttention remains faster and uses less training memory; causal-language-model inference memory is the clear exception. Under unified distillation, existing kernel methods retain quality gaps, while adaptive importance-sampling LARA++ recovers up to 99% of softmax accuracy but keeps substantial compute overhead. For CTR architecture selection, the takeaway is to compare measured latency, memory and quality against optimized attention under matched conditions. — [Paper](https://arxiv.org/abs/2611.22947) · [Conference](https://neurips.cc/Downloads/2026) (Concordia University; Mila – Quebec AI Institute; Laval University; University of Tübingen · NeurIPS 2026). Reading priority: Unrated.
+
+<a id="paper-2611-22280"></a>
+
+- **XM-Sparse: High-Throughput Sparse-Attention LLM Serving over Scale-up Memory Pools**: XM-Sparse offloads both selected KV entries and the attention indexer cache to scale-up memory pools, using different I/O paths for dynamic retrieval and predictable prefetching. Retrieval is fused with attention; GPU-initiated DMA and priority scheduling serve indexer pages. Tests with an emulated memory pool on DeepSeek-V3.2 and GLM-5.3 report throughput gains across 16K–1M contexts, including up to 1.34x over a naive same-platform integration. It informs memory-system design for long-context serving, with the emulated-hardware condition essential to interpretation. — [Paper](https://arxiv.org/abs/2611.22280) (Netpreme; The Hong Kong University of Science and Technology; National University of Singapore · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-20403"></a>
+
+- **Attention Sinks as Spectral Spikes: A Mechanism Analysis of Gated Attention**: This study models attention sinks as low-rank covariance modes aligned with tokens receiving excessive attention. Output gating contracts these modes and reduces local value-path gradients through sink tokens. Spectral and training-time diagnostics report weaker sink alignment, higher effective rank and less coupled attention, gradient and representation concentration. It offers a diagnostic view for gated attention and representation collapse in deep sequence models; applying these conclusions to CTR training remains to be tested. — [Paper](https://arxiv.org/abs/2611.20403) · [Conference](https://neurips.cc/Downloads/2026) (KAIST · NeurIPS 2026). Reading priority: Unrated.
+
+<a id="paper-2611-20524"></a>
+
+- **GaugeRoPE: RoPE-Compatible Executable Latent Attention**: GaugeRoPE studies when compressed key states can execute pretrained rotary positional attention directly, without reconstructing every historical key at native dimension. Exact linear execution requires compatibility with the original rotation; its construction combines a compatible carrier with an approximate residual key-value correction. On Mistral-7B, the abstract reports 5.85x KV compression with near-full-cache quality and up to 2.48x decode throughput. The transferable idea is to co-design compression with the attention operation, rather than count stored bytes alone; CTR transfer is unverified. — [Paper](https://arxiv.org/abs/2611.20524) (National University of Defense Technology · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-22215"></a>
+
+- **Communicate the Change: Efficient Expert Parallelism via Activation Compression**: EchoMoE reduces expert-parallel inference communication by periodically sharing reference hidden states and synchronously transmitting compressed changes from those references. The lightweight retrofit reports 58% less inter-node traffic and 22.6% higher throughput, while average performance remains within 3.8 percentage points across 18 benchmarks; bandwidth-constrained Ethernet tests reach up to 2.38x throughput. The method suggests exploiting small inter-layer state changes for sparse-model scaling, with the quality trade-off and network regime retained when assessing transfer to recommenders. — [Paper](https://arxiv.org/abs/2611.22215) (Mila - Quebec AI Institute; McGill University; Periodic Labs; Canada CIFAR AI Chair · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-19446"></a>
+
+- **Architectures and KV Replay for Depth-Recurrent Language Models**: This work studies the KV-memory cost of repeatedly applying shared language-model blocks. It compares looped hybrids with recurrent mixers and attention anchors, dedicated recurrent workspaces, and training with KV replay across selected recurrence iterations. Results indicate that hybrid quality depends on mixer choice and sufficiently frequent attention anchors; replay can share KV states while retaining performance close to separately cached looped Transformers. It offers a cache-aware path for exploring depth recurrence in recommendation, without claiming validated CTR gains. — [Paper](https://arxiv.org/abs/2611.19446) (arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-15291"></a>
+
+- **Learning Rate Transfer and Feature Learning Across Depth for Constrained Spectral Optimizers: Complete Scion**: Complete Scion studies learning-rate transfer across depth for constrained spectral optimizers. It derives residual scaling proportional to inverse depth for Frank-Wolfe and projected normalized steepest-descent methods, supporting depth and width transfer while retaining feature learning. Experiments on language Transformers, vision Transformers and MLP-Mixers observe the predicted transfer under suitable scaling. This provides an optimizer-specific recipe to investigate for deep CTR models, rather than a guarantee that one learning rate transfers across arbitrary architectures. — [Paper](https://arxiv.org/abs/2611.15291) (CVN CentraleSupélec; Framatome · arXiv 2026). Reading priority: Unrated.
