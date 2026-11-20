@@ -6,7 +6,7 @@
 
 Generative retrieval, recommendation and ranking beyond discriminative CTR.
 
-139 papers · Updated 2026-11-20
+140 papers · Updated 2026-11-21
 
 <a id="paper-2605-12617"></a>
 
@@ -563,3 +563,7 @@ Generative retrieval, recommendation and ranking beyond discriminative CTR.
 <a id="paper-2611-21441"></a>
 
 - **Learning to Reason with Predictive Gains for Generative Recommendation**: GainReason measures each reasoning sentence by the change it induces in the target semantic-ID log-likelihood. These predictive gains provide sentence-level policy rewards, with a custom causal-attention mechanism for efficient computation and an auxiliary task that improves reasoning-conditioned prediction. Experiments on three public benchmarks report gains over competitive generative-recommendation baselines. It suggests training recommendation reasoning with signals tied to item prediction, instead of relying only on final-output rewards. — [Paper](https://arxiv.org/abs/2611.21441) (Renmin University of China; University of International Business and Economics; Alibaba International Digital Commercial Group · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-25256"></a>
+
+- **LQ-Rec: Late Quantization for Sequential Recommendation**: LQ-Rec keeps sequence encoding and scoring continuous and quantizes only the item side into semantic IDs, avoiding autoregressive code generation. Its error decomposition and pairwise ordering analysis connect quantization to ranking loss. Across four public benchmarks, longer IDs improve quality, and one model supports different compression budgets without retraining. The transferable idea is to decouple representation learning from storage precision when scaling recommendation retrieval. — [Paper](https://arxiv.org/abs/2611.25256) · [Conference](https://www3.cs.stonybrook.edu/~icdm2026/PosterwDemo/list.htm) (Toyota Motor North America; University of California San Diego · ICDM 2026). Reading priority: Unrated.

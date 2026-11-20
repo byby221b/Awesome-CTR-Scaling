@@ -6,7 +6,7 @@
 
 Scaling retrieval and reranking stages of recommendation pipelines.
 
-63 papers · Updated 2026-11-20
+64 papers · Updated 2026-11-21
 
 <a id="paper-2603-04816"></a>
 
@@ -259,3 +259,7 @@ Scaling retrieval and reranking stages of recommendation pipelines.
 <a id="paper-2611-20721"></a>
 
 - **CARE: Contrastive-Anchored Residual Encoding with Listwise Reconstruction for Retrieval-Oriented Semantic IDs**: CARE-SID learns a query-document contrastive alignment before semantic-ID quantization, using anchors and fixed reconstruction targets to limit drift. CARE-LR additionally distills query-conditioned candidate-list similarities into ID reconstructions. Industrial video-search evaluation measures partition and reconstruction recall without training a generator; listwise distillation improves reconstruction recall, and the source embedding matters more than the quantizer. CARE-SID is deployed in generative video search. It motivates retrieval-aware tokenizer evaluation before expensive generator training. — [Paper](https://arxiv.org/abs/2611.20721) (Tencent · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-25527"></a>
+
+- **Learning Generative Ranking Policies for Whole-Page Optimization**: Whole-page policy improvement decomposes a local page-level objective into position-specific targets that compare candidates at the same partial page by the complete pages they induce. This trains a generator to account for item competition and complementarity without enumerating all pages. It outperforms evaluated generative reranking baselines on two public datasets and industrial logs. The relevance to ranking scaling is tractable optimization of combinatorial page decisions rather than isolated item scores. — [Paper](https://arxiv.org/abs/2611.25527) (Meta · arXiv 2026). Reading priority: Unrated.

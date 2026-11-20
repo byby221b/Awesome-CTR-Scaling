@@ -6,9 +6,9 @@
 
 Company membership follows recorded affiliation aliases and preserved company-overview mentions. A paper may appear under multiple companies. This structural migration does not independently reverify affiliations or publication claims.
 
-- [Meta](#company-meta) (67)
-- [ByteDance / TikTok](#company-bytedance-tiktok) (29)
-- [Alibaba](#company-alibaba) (68)
+- [Meta](#company-meta) (70)
+- [ByteDance / TikTok](#company-bytedance-tiktok) (31)
+- [Alibaba](#company-alibaba) (69)
 - [Meituan](#company-meituan) (11)
 - [Tencent](#company-tencent) (36)
 - [Google](#company-google) (28)
@@ -35,7 +35,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [Liquid AI](#company-liquid-ai) (5)
 - [IBM (MIT-IBM Computing Research Lab)](#company-ibm-mit-ibm-computing-research-lab) (5)
 - [Perplexity AI](#company-perplexity-ai) (1)
-- [NVIDIA](#company-nvidia) (18)
+- [NVIDIA](#company-nvidia) (19)
 - [StepFun](#company-stepfun) (1)
 - [Adobe Research](#company-adobe-research) (2)
 - [Unbox AI](#company-unbox-ai) (2)
@@ -113,6 +113,9 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [Netpreme](#company-netpreme) (1)
 - [Periodic Labs](#company-periodic-labs) (1)
 - [Framatome](#company-framatome) (1)
+- [Toyota Motor North America](#company-toyota) (1)
+- [Autodesk](#company-autodesk) (1)
+- [Prior Labs](#company-prior-labs) (1)
 
 <a id="company-meta"></a>
 
@@ -185,6 +188,9 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [Fuse-All MoE Inference Kernel with Load Balancing on TPUs](related/architecture-innovations-beyond-recommendation.md#paper-2611-17857) · 2026 · Related
 - [Advancing Quantization for R&R Models with Microscaling Formats](topics/efficiency-deployment.md#paper-2611-17501) · 2026 · Core
 - [KVUse: Reusable-KV User Memory for Efficient LLM Recommenders](topics/efficiency-deployment.md#paper-2611-21920) · 2026 · Core
+- [Cost-Aware Agentic Feature Optimization System for Fleet-Scale Ranking Models](topics/efficiency-deployment.md#paper-2611-26531) · 2026 · Core
+- [Intelligent Embedding Pruning for Large-Scale Recommendation Models](topics/efficiency-deployment.md#paper-2611-25288) · 2026 · Core
+- [Learning Generative Ranking Policies for Whole-Page Optimization](related/retrieval-reranking-scaling.md#paper-2611-25527) · 2026 · Related
 
 <a id="company-bytedance-tiktok"></a>
 
@@ -219,6 +225,8 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [OneTrans-GSR: A Generative Slate Ranking Paradigm Unifying Reranking and Mix-Ranking with One Autoregressive Transformer](topics/scalable-architecture.md#paper-2611-04720) · 2026 · Core
 - [Hierarchical Residuals: A Minimalist Decoupling of Residual Width from Compute Width](related/architecture-innovations-beyond-recommendation.md#paper-2610-41711) · 2026 · Related
 - [SepLRM: A Foundation Model Paradigm for Recommendation](topics/foundation-models-multi-scenario.md#paper-2611-10356) · 2026 · Core
+- [Twindex: Index Cache Offloading with Coarse-to-Fine Selection for Long-Context Sparse-Attention Serving](related/architecture-innovations-beyond-recommendation.md#paper-2611-25078) · 2026 · Related
+- [On-Policy Morphing into Hybrid Attention Models](related/architecture-innovations-beyond-recommendation.md#paper-2611-24809) · 2026 · Related
 
 <a id="company-alibaba"></a>
 
@@ -292,6 +300,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [GC-MoE on SM120: Overlapping Expert-Parallel Token Dispatch with Warp-Level FP8xFP4 Block-Scaled MMA on Consumer Blackwell](related/architecture-innovations-beyond-recommendation.md#paper-2611-16219) · 2026 · Related
 - [RecMem: Recurrent Memory Compression for Long-Sequence Generative Recommendation](topics/efficiency-deployment.md#paper-2611-17921) · 2026 · Core
 - [Learning to Reason with Predictive Gains for Generative Recommendation](related/generative-recommendation.md#paper-2611-21441) · 2026 · Related
+- [DNA: Unlocking Depth Scaling in CTR Models](topics/scalable-architecture.md#paper-2611-25659) · 2026 · Core
 
 <a id="company-meituan"></a>
 
@@ -685,6 +694,7 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 - [One-Sided Expert-Parallel All-to-All for Mixture-of-Experts Inference over NVLink](related/architecture-innovations-beyond-recommendation.md#paper-2611-13188) · 2026 · Related
 - [Release Sooner, Expose Less: Offloading MoE Dispatch in NCCL-EP under Dual-Batch Overlap](related/architecture-innovations-beyond-recommendation.md#paper-2611-12362) · 2026 · Related
 - [Evolving Infra: Agent-Adaptive LLM Serving at Scale](related/architecture-innovations-beyond-recommendation.md#paper-2611-12304) · 2026 · Related
+- [NVFP4-MLA: Unified FP4 KV-Cache Storage and Attention Computation for Multi-Head Latent Attention](related/architecture-innovations-beyond-recommendation.md#paper-2611-18972) · 2026 · Related
 
 <a id="company-stepfun"></a>
 
@@ -1173,3 +1183,21 @@ Company membership follows recorded affiliation aliases and preserved company-ov
 ## Framatome
 
 - [Learning Rate Transfer and Feature Learning Across Depth for Constrained Spectral Optimizers: Complete Scion](related/architecture-innovations-beyond-recommendation.md#paper-2611-15291) · 2026 · Related
+
+<a id="company-toyota"></a>
+
+## Toyota Motor North America
+
+- [LQ-Rec: Late Quantization for Sequential Recommendation](related/generative-recommendation.md#paper-2611-25256) · 2026 · Related
+
+<a id="company-autodesk"></a>
+
+## Autodesk
+
+- [From Sessions to Serving: Integrating LLM-Based Embeddings into Retrieval for Production Content Recommendation](related/engineering-serving.md#paper-2611-26096) · 2026 · Related
+
+<a id="company-prior-labs"></a>
+
+## Prior Labs
+
+- [Towards Reliable Scaling Laws for Tabular Foundation Models](related/architecture-innovations-beyond-recommendation.md#paper-2611-24214) · 2026 · Related

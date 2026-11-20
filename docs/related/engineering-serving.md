@@ -6,7 +6,7 @@
 
 Systems, serving infrastructure and hardware-aware optimization.
 
-51 papers · Updated 2026-11-20
+52 papers · Updated 2026-11-21
 
 <a id="paper-2510-18239"></a>
 
@@ -211,3 +211,7 @@ Systems, serving infrastructure and hardware-aware optimization.
 <a id="paper-2611-11031"></a>
 
 - **Hybrid Product Search Without the Copy: Lexical, Semantic and Filtered Retrieval Served Directly from a Data Lake**: This system serves lexical, vector and filtered product search directly from Iceberg/Parquet lakehouse data through Apache Pinot, adding BM25 statistics and rank fusion without copying the catalog into separate search databases. It matches the reported exact-retrieval quality on Amazon ESCI and evaluates a 277-million-product, brand-sorted lake on one 16-vCPU node. Its scaling value is reduced duplication and synchronization work alongside measured search latency and data freshness. The large-lake latency figures concern brand-scoped queries, not unrestricted search over every product. — [Paper](https://arxiv.org/abs/2611.11031) (StarTree Inc. · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-26096"></a>
+
+- **From Sessions to Serving: Integrating LLM-Based Embeddings into Retrieval for Production Content Recommendation**: LSER adds pretrained-LLM session and history embeddings to an existing retrieval user tower alongside learned sequence encoders. A nearline path asynchronously refreshes user vectors to incorporate recent behavior. An ablation across the production multi-content catalog supports the incremental value of the LLM features, without numerical gains stated in the abstract. It provides an integration pattern for richer retrieval representations while keeping representation refresh outside the synchronous serving path. — [Paper](https://arxiv.org/abs/2611.26096) (Autodesk · arXiv 2026). Reading priority: Unrated.

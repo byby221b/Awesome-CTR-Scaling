@@ -6,7 +6,7 @@
 
 Transferable ideas from general-purpose model architecture research.
 
-346 papers · Updated 2026-11-20
+354 papers · Updated 2026-11-21
 
 <a id="paper-2606-16825"></a>
 
@@ -1391,3 +1391,35 @@ Transferable ideas from general-purpose model architecture research.
 <a id="paper-2611-15291"></a>
 
 - **Learning Rate Transfer and Feature Learning Across Depth for Constrained Spectral Optimizers: Complete Scion**: Complete Scion studies learning-rate transfer across depth for constrained spectral optimizers. It derives residual scaling proportional to inverse depth for Frank-Wolfe and projected normalized steepest-descent methods, supporting depth and width transfer while retaining feature learning. Experiments on language Transformers, vision Transformers and MLP-Mixers observe the predicted transfer under suitable scaling. This provides an optimizer-specific recipe to investigate for deep CTR models, rather than a guarantee that one learning rate transfers across arbitrary architectures. — [Paper](https://arxiv.org/abs/2611.15291) (CVN CentraleSupélec; Framatome · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-26363"></a>
+
+- **HiSA: Sparsifying the Hidden Dimension of RoPE Attention in LLMs**: HiSA exploits rotary-position structure to omit selected hidden-dimension terms in query-key dot products while leaving the projections intact. A static position-based rule computes about one third of the query-key products; language models trained from scratch improve over the evaluated dense counterparts, with kernel implementations for training and decoding. This introduces feature-dimension sparsity as an additional design axis for scalable attention; recommendation gains have not been demonstrated. — [Paper](https://arxiv.org/abs/2611.26363) (EPFL; Swiss Data Science Center; ETH Zurich · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-25938"></a>
+
+- **DTS: Delta-Based Tile Scoring for Efficient Long-Context Sparse Attention**: DTS chooses query/key representatives from local vector changes to score sparse-attention tiles, allocating fewer anchors to redundant regions. Parallel chunk-local scans reduce selection overhead, and retained tiles use the original vectors. On LLaMA-3.1-8B-Instruct, mean RULER and LongBench scores remain within 0.10 percentage points of full attention; at 128K tokens the scoring pipeline is 38% faster than XAttention. The transferable lesson is to budget sparse-selection overhead as carefully as attention computation. — [Paper](https://arxiv.org/abs/2611.25938) (Leiden University · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-26268"></a>
+
+- **Accelerating Mixture of Block Attention via Dynamic Routing, KV-Centric Execution and Runtime Pipelining**: LightningMoBA combines score-threshold dynamic block routing, KV-centric task ownership and Hopper runtime pipelining. Grouping work by shared KV blocks improves reuse while bounded tasks handle high fanout. At retention matched to Top-16 across five checkpoints, end-to-end generation accelerates by 1.20–1.60x and mean RULER rises from 74.42 to 75.28. It suggests co-designing sparse attention selection and data reuse for ranking, though the reported evidence is from language models. — [Paper](https://arxiv.org/abs/2611.26268) (arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-25078"></a>
+
+- **Twindex: Index Cache Offloading with Coarse-to-Fine Selection for Long-Context Sparse-Attention Serving**: Twindex keeps a compact indexer-cache copy on GPU and the full cache in host memory. Coarse selection narrows candidates before the model's original indexer selects exact rows from that subset, without changing model weights. At one million tokens, reported decode throughput improves by 1.25–2.54x across three models when host memory does not cap batch size, with mean benchmark scores at most 3.1% below baseline. It illustrates a memory-quality tradeoff for two-stage long-history retrieval, not established CTR gains. — [Paper](https://arxiv.org/abs/2611.25078) (New York University; Virginia Polytechnic Institute and State University; University of California, Merced; Imperial College London; Princeton University; ByteDance · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-24809"></a>
+
+- **On-Policy Morphing into Hybrid Attention Models**: FlashMorph2 selects full-versus-linear attention layers by evaluating sampled discrete hybrid models on their own hidden states while jointly adapting weights. This aligns selection with the subsequent recovery objective. Across Qwen3 scales and linear-attention variants, average gains over FlashMorph are 2.42 RULER points, 1.08 LongBench points and 0.76 points on recall-intensive tasks; selection takes 0.72–3.57 GPU hours for 0.6B–8B models. The design suggests evaluating hybrid ranking architectures after adaptation rather than relying on frozen proxies. — [Paper](https://arxiv.org/abs/2611.24809) (Fudan University; ByteDance Seed; Nanyang Technological University · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-23512"></a>
+
+- **DexAttention: Distributed Sparse Attention through Rapid Online Planning and Persistent GPU Execution**: DexAttention combines topology-aware GPU clustering, a lightweight scheduler and persistent GPU kernels to execute distributed sparse attention. Fast planning balances load and communication for changing masks, while kernels enforce fine-grained dependencies. On a four-node, 16-GPU cluster it reports a 1.39x geometric-mean end-to-end training speedup over the fastest applicable baseline across 11 configurations. The engineering insight for sparse ranking is that scheduling must cost less than the work it saves; recommendation results are not established. — [Paper](https://arxiv.org/abs/2611.23512) (Purdue University; Tsinghua University · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-24214"></a>
+
+- **Towards Reliable Scaling Laws for Tabular Foundation Models**: This study examines whether scaling laws for TabPFNv2-style models extrapolate across compute budgets and real-world datasets. Good fits on synthetic data do not ensure reliable prescriptions, and selecting with too few evaluation datasets gives optimistic estimates. Expanding synthetic training ranges in both rows and features alongside model size improves scaling predictability. For CTR scaling, the transferable caution is to validate allocation rules across representative datasets; this is tabular-model evidence, not a measured ranking improvement. — [Paper](https://arxiv.org/abs/2611.24214) (University of Freiburg; Zuse School ELIZA; Prior Labs; Delft University of Technology; ELLIS Institute Tübingen · arXiv 2026). Reading priority: Unrated.
+
+<a id="paper-2611-18972"></a>
+
+- **NVFP4-MLA: Unified FP4 KV-Cache Storage and Attention Computation for Multi-Head Latent Attention**: NVFP4-MLA co-designs FP4 latent-KV storage and attention computation using selective residual compensation and two-dimensional quantization blocks. On DeepSeek-R1 and Kimi-K3 it matches BF16 MLA mean accuracy across nine benchmarks while compressing cache by 3.20x and 3.05x. Rubin GPU attention-kernel speedups over FP8 reach 2.82x and 2.71x. It offers a transferable approach to jointly budget cache and arithmetic precision, with hardware- and model-specific results rather than demonstrated recommendation gains. — [Paper](https://arxiv.org/abs/2611.18972) (NVIDIA · arXiv 2026). Reading priority: Unrated.
